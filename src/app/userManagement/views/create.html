@@ -1,0 +1,47 @@
+<div ng-controller="userManagementCreateController" cg-busy="{promise:myPromise}">
+    <toaster-container
+            toaster-options="{'position-class': 'toast-top-right', 'showDuration':'200', 'hideDuration':'200','showMethod':'fadeIn','hideMethod':'fadeOut'}"></toaster-container>
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">Create User</h1>
+    </div>
+    <form name="userManagementAddForm" class="form-validation" novalidate>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="h4">User Details</span>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>User Name </label>
+                        <input type="text" name="userName" max="12" min="6" class="form-control" ng-model="userManagement.name" required>
+                        <div ng-show="userManagementAddForm.userName.$dirty" ng-messages="userManagementAddForm.userName.$error">
+                            <p>Enter Valid User Name</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>User Email-id </label>
+                        <input type="email" name="userEmail" class="form-control" ng-model="userManagement.email" required>
+                        <div ng-show="userManagementAddForm.userEmail.$dirty" ng-messages="userManagementAddForm.userEmail.$error">
+                            <p>Enter Valid Email id</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>User Role</label>
+                        <input type="role" name="userRole" class="form-control" ng-model="userManagement.role" required>
+                        <div ng-show="userManagementAddForm.userRole.$dirty" ng-messages="userManagementAddForm.userRole.$error">
+                            <p>Enter Valid Role</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="panel-footer text-right bg-light lter">
+                <button class="btn m-b-xs btn-sm btn-default btn-addon" ng-click="resetUser()"><i class="fa fa-circle"></i>Reset
+                </button>
+                <button class="btn m-b-xs btn-sm btn-primary btn-addon" ng-disabled="userManagementAddForm.$invalid"
+                        ng-click="createUser(userManagement,userManagementAddForm)"><i class="fa fa-plus"></i>Create
+                        <!---->
+                </button>
+            </footer>
+        </div>
+    </form>
+</div>

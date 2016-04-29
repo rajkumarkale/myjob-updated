@@ -1,0 +1,31 @@
+<div class="container w-xl w-auto-xs"  ng-controller="changeProfilePicController" >
+  <div class="m-b-lg">
+    <div class="wrapper text-center">
+      <h2>Change profile picture</h2>
+    </div>
+    <form name="changePasswordForm" ng-init="isCollapsed=true" ng-submit="changePassword(user)" cg-busy="{promise: myPromise}">
+      <div class="text-danger wrapper text-center" ng-show="authError">
+        {{authError}}
+      </div>
+      <div class="list-group list-group-sm">
+        <div class="">
+          <div class="form-group">
+            <img ng-src="{{profilePic}}" class ="b b-a wrapper-xs bg-white img-responsive" ng-hide="profilePicture.content">
+            <div ng-if="profilePicture.content"><img ng-src="{{profilePicture.content}}" class ="b b-a wrapper-xs bg-white img-responsive"/></div>
+            <div class="input-group">
+              <span class="input-group-btn">
+              <span class="btn btn-primary btn-file">
+              Browse&hellip;
+                <input type="file" name="bgimage" ng-file-select
+                       ng-file-change="onBGSelect($files)" ng-model="imageData"
+                       accept="" >
+              </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" ng-click="changeProfilePicture()" class="btn btn-lg btn-primary btn-block">Change</button>
+    </form>
+  </div>
+</div>

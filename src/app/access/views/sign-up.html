@@ -1,0 +1,92 @@
+<div cg-busy="{promise:myPromise}" ng-controller="SignUpFormController" ng-init="app.settings.container = false;">
+<toaster-container toaster-options="{'position-class': 'toast-top-right', 'showDuration':'200', 'hideDuration':'200','showMethod':'fadeIn','hideMethod':'fadeOut'}"></toaster-container>
+<div class="container w-xxl w-auto-xs">
+  <!--<span class="navbar-brand block m-t">{{app.name}}</span>-->
+  <img ng-src="{{app.iconMedium}}" alt="BULBUL" class="navbar-brand block m-t" style="width:65%;margin-left:20% " />
+    <div class="m-b-lg">
+        <form name="signupForm" class="form-validation" ng-init="isCollapsed=true" ng-submit="signUp(user)">
+            <div class="text-danger wrapper text-center" ng-show="authError">
+                {{authError}}
+            </div>
+          <div ng-hide="hide">
+            <div class="list-group list-group-sm">
+                <div class="list-group-item">
+                    <input type="text" placeholder="Name" name="name" class="form-control no-border" data-ng-model="user.name"
+                           ng-minlength="3" ng-maxlength="20" required>
+                    <div class="error-container" ng-show="signupForm.name.$dirty && signupForm.name.$invalid">
+                        <small class="error label label-danger" ng-show="signupForm.name.$error.required">Please
+                            input a username</small>
+                        <small class="error label label-danger" ng-show="signupForm.name.$error.minlength">Your
+                            username is required to be at least 3 characters</small>
+                        <small class="error label label-danger" ng-show="signupForm.name.$error.maxlength">Your
+                            username cannot be longer than 20 characters</small>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <input type="email" placeholder="Email" name="email" class="form-control no-border" data-ng-model="user.email"
+                           required>
+                    <div class="error-container" ng-show="signupForm.email.$dirty && signupForm.email.$invalid">
+                        <small class="error label label-danger" ng-show="signupForm.email.$error.required">Give
+                            your email-id for registration</small>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <input type="password" placeholder="Password" id="password" name="password" class="form-control no-border"
+                           ng-model="user.password" ng-minlength="6" ng-maxlength=18 required>
+                    <div class="error-container" ng-show="signupForm.password.$dirty && signupForm.password.$invalid">
+                        <small class="error label label-danger" ng-show="signupForm.password.$error.required">Enter
+                            strong Password</small>
+                        <small class="error label label-danger" ng-show="signupForm.password.$error.minlength">Your password
+                            is required to be at least 6 characters</small>
+                        <small class="error label label-danger" ng-show="signupForm.password.$error.maxlength">Your password
+                            cannot be longer than 18 characters</small>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <input type="password" placeholder="Confirm Password" id="confirmPassword" same-as="password" name="confirmPassword" class="form-control no-border"
+                           data-ng-model="user.confirmPassword" ng-minlength="6" ng-maxlength=18 required>
+                    <!--<small ng-show="signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty"
+                           class="label label-danger"><i class="glyphicon glyphicon-remove-circle"></i>&nbsp;Type same password
+                            again
+                    </small>-->
+                  <small ng-show="signupForm.confirmPassword.$error.matchpassword"
+                         class="label label-danger">Type same password
+                    again
+                  </small>
+                </div>
+            </div>
+          </div>
+            <!--<div class="checkbox m-b-md m-t-none">
+                <label class="i-checks">
+                    <input type="checkbox" data-ng-model="agree" required><i></i> Agree the <a href>terms and policy</a>
+                </label>
+            </div>-->
+            <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="isCollapsed = !isCollapsed"
+                    ng-disabled='signupForm.$invalid'  ng-hide="hide">Sign up
+            </button>
+            <div collapse="isCollapsed" class="m-t">
+                <div class="alert alert-success">
+                    <p>Thank you for signing up. We have sent you an email for verification of your mail ID. Please sign in after verification is done.</p>
+                </div>
+                <div class="alert alert-success">
+                    <p>Not yet received verification mail? please click resend. <br/> <button  class="btn btn-sm btn-success"
+                       ng-click="emailVerification(email)">Resend Verification</button></p>
+                </div>
+            </div>
+            <div class="line line-dashed"></div>
+            <p class="text-center">
+                <small>Already have an account?</small>
+            </p>
+            <a ui-sref="access.signin" class="btn btn-lg btn-default btn-block">Sign in</a>
+            <!--<div class="text-center m-t m-b">
+            <div class="">
+                <input type="image" src="../../img/facebook-icon.png" ng-click="fbLogin()">
+                &lt;!&ndash;<input type="image" src="../img/google_plus.png">&ndash;&gt;
+            </div>
+            </div>-->
+        </form>
+
+    </div>
+    <div class="text-center" ng-include="'js/app/user/views/footer.html'"></div>
+</div>
+</div>

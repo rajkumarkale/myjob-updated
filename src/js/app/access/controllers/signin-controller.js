@@ -1,4 +1,5 @@
-angular.module('com.module.access').controller('SignInFormController',['$scope', '$location', 'toaster',  'AuthService', 'appConfig','authService','$state', '$stateParams', function ($scope, $location, toaster,  AuthService, appConfig,authService,$state, $stateParams) {
+angular.module('com.module.access').controller('SignInFormController',['$scope', '$location', 'toaster',  'AuthService', 'appConfig','authService','$state', '$stateParams', '$modal',
+  function ($scope, $location, toaster,  AuthService, appConfig,authService,$state, $stateParams, $modal) {
 
   'use strict';
   var getApi, access_token = '', statusChangeCallback, register;
@@ -28,19 +29,33 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
       $scope.authError = error.data.message;
     });
   };
-
-  $scope.forgotPassword = function (data) {
-    $scope.myPromise =  AuthService.forgotPassword({
-      'email': data
-    }).then(function (response) {
-      toaster.pop(response, 'Reset Successful');
-      $scope.isCollapsed = false;
-      $scope.authError = false;
-    }, function (error) {
-      $scope.authError = true;
-      $scope.authError = error.error;
+  $scope.openModel = function(){
+    var modalInstance = $modal.open({
+      templateUrl: 'js/app/access/views/forgot-password.html',
+      backdrop: 'static',
+      controller: function($scope,$modalInstance,AuthService){
+        $scope.forgotPassword = function (data) {
+          $scope.myPromise =  AuthService.forgotPassword({
+            'email': data
+          }).then(function (response) {
+            toaster.pop(response, 'Reset Successful');
+            $scope.isCollapsed = false;
+            $scope.authError = false;
+          }, function (error) {
+            $scope.authError = true;
+            $scope.authError = error.error;
+          });
+        };
+        $scope.cancel = function(){
+          $modalInstance.dismiss('cancel');
+        };
+      },
+      size: 'md'
+    });
+    modalInstance.result.then(function () {
     });
   };
+
   $scope.changePassword = function (user) {
     AuthService.changePassword({
       'email_id': user.email,

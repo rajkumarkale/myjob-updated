@@ -3,6 +3,8 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
   $rootScope.user = user.data;
   $rootScope.profile = profile.data;
   $rootScope.isAdmin =  false;
+  $rootScope.backgroundImageDisplay = false;
+  $scope.backgroundImageDisplay = false;
   $scope.logout = function (){
     AuthService.logout().success(function (data){
       $state.go('access.signin');

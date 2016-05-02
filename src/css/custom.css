@@ -1,0 +1,11 @@
+.signin-background{
+  background: url('../img/background.png') no-repeat right top fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.color-black{
+  color : black;
+}

@@ -2,7 +2,7 @@
   "app": {
     "name": "MyJobs",
     "version": "1.0",
-    "icon": "",
+    "icon": "img/logo.png",
     "favicon": "",
     "iconMedium": "img/logo.png",
     "apiUrl": "",

@@ -1,4 +1,4 @@
-Use Grunt and Bower
+1: Use Grunt and Bower
 
 install node.js
 

@@ -27,10 +27,13 @@
   <!-- build:css(.tmp) css/main.css -->
     <link rel="stylesheet" href="css/animate.css" type="text/css"/>
     <link rel="stylesheet" href="css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="css/custom.css" type="text/css"/>
   <!-- endbuild -->
 </head>
 <body ng-controller="AppCtrl" class="bg-white-only">
-<div class="app fade-in-right-big smooth" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view>
+<div class="app fade-in-right-big smooth" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed,
+ 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock,
+  'container':app.settings.container, 'signin-background': backgroundImageDisplay}" ui-view>
   <img alt="Loading..." src="img/loadingblue.gif" style="left:45%;top:40%;position:fixed;">
 </div>
 <!-- build:js(.) scripts/vendor.js -->
@@ -47,12 +50,37 @@
 <script src="bower_components/angular-translate/angular-translate.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
 <script src="bower_components/moment/moment.js"></script>
 <script src="bower_components/screenfull/dist/screenfull.js"></script>
+<script src="bower_components/angular-bootstrap-nav-tree/dist/abn_tree_directive.js"></script>
+<script src="bower_components/ngImgCrop/compile/minified/ng-img-crop.js"></script>
 <script src="bower_components/angular-ui-select/dist/select.js"></script>
+<script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+<script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
 <script src="bower_components/angularjs-toaster/toaster.js"></script>
+<script src="bower_components/ng-grid/build/ng-grid.js"></script>
+<script src="bower_components/rangy/rangy-core.js"></script>
+<script src="bower_components/rangy/rangy-classapplier.js"></script>
+<script src="bower_components/rangy/rangy-highlighter.js"></script>
+<script src="bower_components/rangy/rangy-selectionsaverestore.js"></script>
+<script src="bower_components/rangy/rangy-serializer.js"></script>
+<script src="bower_components/rangy/rangy-textrange.js"></script>
+<script src="bower_components/textAngular/dist/textAngular.js"></script>
+<script src="bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+<script src="bower_components/textAngular/dist/textAngularSetup.js"></script>
+<script src="bower_components/venturocket-angular-slider/build/angular-slider.js"></script>
+<script src="bower_components/videogular/videogular.js"></script>
+<script src="bower_components/videogular-controls/vg-controls.js"></script>
+<script src="bower_components/videogular-buffering/buffering.js"></script>
+<script src="bower_components/videogular-overlay-play/overlay-play.js"></script>
+<script src="bower_components/videogular-poster/poster.js"></script>
+<script src="bower_components/videogular-ima-ads/ima-ads.js"></script>
+<script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
+<script src="bower_components/select2/select2.js"></script>
+<script src="bower_components/angular-ui-select2/src/select2.js"></script>
 <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
 <script src="bower_components/angular-dialog-service/dist/dialogs.min.js"></script>
 <script src="bower_components/angular-dialog-service/dist/dialogs-default-translations.min.js"></script>
@@ -62,6 +90,17 @@
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="bower_components/underscore.string/dist/underscore.string.js"></script>
 <script src="bower_components/ng-context-menu/dist/ng-context-menu.js"></script>
+<script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
+<script src="bower_components/angular-datatables/dist/angular-datatables.js"></script>
+<script src="bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+<script src="bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js"></script>
+<script src="bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js"></script>
+<script src="bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
+<script src="bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js"></script>
+<script src="bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js"></script>
+<script src="bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
+<script src="bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
+<script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 

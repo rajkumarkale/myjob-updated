@@ -1,0 +1,129 @@
+<div class="ribbon-bg lter b-b wrapper-md">
+  <h1 class="m-n   h3">Profile</h1>
+</div>
+<div class="wrapper-md">
+  <form name="profileForm" novalidate>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-warning">
+          <div class="panel-heading font-bold"><i class="icon-user"></i> Profile</div>
+          <div class="panel-body">
+            <form name="userForm" role="form">
+
+
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" placeholder="First Name" data-ng-model="profile.firstName" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" data-ng-model="profile.lastName" required>
+              </div>
+
+              <div>
+                <div class="form-group">
+                  <label>Country </label>
+                  <select class="form-control" data-ng-change="profile.country = selectedCountry.id"
+                          data-ng-model="selectedCountry"
+                          ng-options="country.name for country in countries track by country.id"></select>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-sm btn-warning btn-addon" data-ng-disabled="userForm.$invalid"
+                      data-ng-click="updateProfile()"><i class="fa fa-floppy-o"></i>Save Profile
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-success">
+          <div class="panel-heading font-bold"><i class="icon-lock"></i> Change Password</div>
+          <div class="panel-body">
+            <change-password></change-password>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading font-bold"><i class="icon-speech"></i> Usage </div>
+          <div class="panel-body">
+            <div data-ng-if="profile.booksCount != 0">
+              <div class="row  m-b-sm">
+                <div class="col-md-3">
+                  Books
+                </div>
+                <div class="col-md-6">
+                  {{profile.booksCountUse}} of {{profile.booksCount}} used
+                </div>
+                <!--<div class="col-md-3">
+                  <button class="btn btn-warning btn-xs pull-right" data-ng-click="openModel()">
+                    Upgrade
+                  </button>
+                </div>-->
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <progressbar class="progress-striped active m-b-sm " max="100"
+                               value="profile.booksCountUse/profile.booksCount*100" type="warning"><i>{{profile.booksCountUse}}
+                    / {{profile.booksCount}}</i></progressbar>
+                </div>
+
+              </div>
+            </div>
+            <div data-ng-if="profile.booksCount == 10000">
+              <div class="row">
+                <div class="col-md-3">
+                  Books
+                </div>
+                <div class="col-md-9">
+                  {{profile.booksCountUse}} of ~ used
+                </div>
+              </div>
+            </div>
+            <div data-ng-if="profile.diskSpace != 0">
+              <div class="row m-b-sm">
+                <div class="col-md-3">
+                  Disk space
+                </div>
+                <div class="col-md-6">
+                  {{profile.diskSpaceUse | byteFormat}} of {{profile.diskSpace | byteFormat}} used
+                </div>
+                <div class="col-md-3">
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <progressbar class="progress-striped active m-b-sm " max="100" value="diskSpaceProgress"
+                               type="warning"><i>{{profile.diskSpaceUse | byteFormat}}
+                    / {{profile.diskSpace | byteFormat}}</i></progressbar>
+                </div>
+
+              </div>
+            </div>
+            <div data-ng-if="profile.diskSpace == 0">
+              <div class="row">
+                <div class="col-md-3">
+                  Disk space
+                </div>
+                <div class="col-md-9">
+                  {{profile.diskSpaceUse}} of ~ used
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" data-ng-if="invoices.length > 0">
+             Invoices: <button class="btn btn-warning btn-xs pull-right" data-ng-click="openInvoices()">
+                View Invoices
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </form>
+</div>

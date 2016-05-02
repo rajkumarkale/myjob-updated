@@ -1,0 +1,38 @@
+<div class="ribbon-bg b-b wrapper-xs ng-scope">
+  <div class="font-thin h1">
+    <span> Books</span>
+  </div>
+</div>
+<div class="wrapper-md ">
+  <div class="row">
+    <div class="col-md-3" data-ng-repeat="item in allBooks">
+      <div class="panel b-a panel-default">
+         <div class="panel-heading">{{item.title}}</div>
+        <div class="panel-body">
+          <div>
+            <img ng-src="{{item.cover}}" class="img-responsive"/>
+          </div>
+          <div class="panel-heading">
+            <div class="clearfix">
+              <a href="" class="pull-left thumb-md avatar b-3x m-r">
+                <img data-ng-src="{{item.owner.gravatarUrl}}" alt="{{item.owner.username}}">
+              </a>
+              <div class="clear">
+                <div class="h3 m-t-xs m-b-xs">
+                  {{item.owner.username}}
+                </div>
+                <small  >{{item.owner.email}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+

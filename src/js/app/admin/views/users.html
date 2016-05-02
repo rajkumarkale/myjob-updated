@@ -1,0 +1,26 @@
+<div class="ribbon-bg b-b wrapper-xs ng-scope">
+  <div class="font-thin h1">
+    <span> Users [{{allUsers.length}}]</span>
+  </div>
+</div>
+<div class="wrapper-md ">
+  <div>
+    <table class="table table-bordered table-stripped">
+      <thead>
+      <th>Id</th>
+      <th>Email</th>
+      <th>Registered At</th>
+      </thead>
+      <tbody>
+      <tr data-ng-repeat="user in allUsers">
+        <td>{{ user.id }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.createdAt | date}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+

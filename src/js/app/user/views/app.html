@@ -1,0 +1,26 @@
+<!-- navbar -->
+<div data-ng-include=" 'js/app/user/views/header.html' " class="app-header navbar borderbottom">
+</div>
+
+<div class=" ">
+  <div ui-butterbar></div>
+  <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a>
+  <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+  <div ui-view class="app-content-body fade-in-right-big smooth  bg-white-only"></div>
+  <!--<div class="  wrapper b-t bg-light">-->
+    <!--<span class="pull-right"> <a href ui-scroll="app" class="m-l-sm text-muted"></a></span>-->
+
+
+  <!--</div>-->
+</div>
+<!--<div class="text-center padder-v footer-bg footer text-white b-t"><p class="v-middle m-t "></p></div>-->
+
+<footer id="footer" class="footer-bg text-white">
+  <div class="dk">
+    <div class="row m-t">
+      <div class="col-xs-4 col-xs-offset-4 text-center text-white">
+        {{app.name}} &copy; 2016 Copyright.
+      </div>
+    </div>
+  </div>
+</footer>

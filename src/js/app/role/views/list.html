@@ -1,0 +1,90 @@
+<div ng-controller="roleController">
+    <div class="bg-light lter b-b wrapper-md">
+        <span class="m-n font-thin h3">Roles</span>
+    </div>
+    <div class="wrapper-md" cg-busy="{promise: myPromise}">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Roles</div>
+            <div class="row wrapper">
+                <div class="col-sm-4 m-b-xs">
+                    <div class="input-group">
+                        <input type="text" class="input-sm form-control" placeholder="Search Role"
+                               data-ng-model="searchKey" data-ng-keyup="search(searchKey)">
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <pagination class="pagination-sm m-b-none m-t-none" data-ng-model="currentPage" total-items="filteredroles.length" max-size="4" data-ng-change="select(currentPage)" items-per-page="numPerPage" rotate="false" boundary-links="true"></pagination>
+                </div>
+                <div class="col-sm-4">
+                    <form name="addRoleForm" novalidate="novalidate">
+                        <div class="input-group">
+                            <input type="text" data-ng-model="role.name"
+                                   required="" class="input-sm form-control" placeholder="Role">
+                            <span class="input-group-btn">
+                            <button type="button" class="btn btn-sm  btn-success" data-ng-click="add()" data-ng-if="role.id==undefined"
+                                    data-ng-disabled="addRoleForm.$invalid"><i
+                                    class="fa fa-plus"></i>
+                            </button>
+                                <button type="button" class="btn btn-sm  btn-success" data-ng-click="save()"
+                                        data-ng-disabled="addRoleForm.$invalid" data-ng-if="role.id"><i
+                                        class="fa fa-save"></i>
+                                </button> <button type="button" class="btn btn-sm  btn-default"
+                                                  data-ng-click="reset()" data-ng-if="role.id"><i
+                                    class="fa fa-undo"></i>
+                            </button></span>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+            <div>
+
+                <table class="table table-striped table-responsive b-t b-light" data-ng-if="filteredroles.length > 0">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-repeat="wd in currentPageroles track by wd.id | filter: searchKey">
+                        <td data-ng-bind="wd.name"></td>
+                        <td>
+
+                            <a class="btn btn-sm btn-default" data-ng-click="edit(wd)" title="Edit"><i
+                                    class="glyphicon glyphicon-edit"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <footer class="panel-footer">
+                <div class="row">
+                    <div class="col-sm-4 m-b-xs">
+                        <div class="input-group"  >
+                            <input type="text" class="input-sm form-control" placeholder="Role" data-ng-model="search_Key" data-ng-keyup="search(search_Key)">
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 text-center" >
+                        <pagination class="pagination-sm m-b-none m-t-none" data-ng-model="currentPage" total-items="filteredroles.length" max-size="4" data-ng-change="select(currentPage)" items-per-page="numPerPage" rotate="false" boundary-links="true"></pagination>
+                    </div>
+                    <div class="col-sm-4">
+
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+

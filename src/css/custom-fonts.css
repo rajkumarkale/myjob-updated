@@ -1,0 +1,47 @@
+.fi-align-center, .fi-align-left, .fi-align-right, .fi-bg-colour, .fi-bold,
+.fi-browse, .fi-clear, .fi-color, .fi-delete, .fi-download,
+.fi-edit, .fi-gallery, .fi-indent, .fi-italic, .fi-justify-full,
+.fi-list-ol, .fi-list-ul, .fi-note, .fi-oudent, .fi-photo,
+.fi-resize, .fi-speaker, .fi-underline, .fi-undo, .fi-video
+{ display: inline-block; background: url('./images/spritesheet.png') no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+
+.fi-align-center { background-position: -5px -0px; width: 16px; height: 16px; }
+.fi-align-left { background-position: -26px -0px; width: 16px; height: 16px; }
+.fi-align-right { background-position: -47px -0px; width: 16px; height: 16px; }
+.fi-bg-colour { background-position: -68px -0px; width: 16px; height: 16px; }
+.fi-bold { background-position: -89px -0px; width: 16px; height: 16px; }
+.fi-browse { background-position: -5px -21px; width: 16px; height: 16px; }
+.fi-clear { background-position: -26px -21px; width: 16px; height: 16px; }
+.fi-color { background-position: -47px -21px; width: 16px; height: 16px; }
+.fi-delete { background-position: -68px -21px; width: 16px; height: 16px; }
+.fi-download { background-position: -89px -21px; width: 16px; height: 16px; }
+.fi-edit { background-position: -5px -42px; width: 16px; height: 16px; }
+.fi-gallery { background-position: -26px -42px; width: 16px; height: 16px; }
+.fi-indent { background-position: -47px -42px; width: 16px; height: 16px; }
+.fi-italic { background-position: -68px -42px; width: 16px; height: 16px; }
+.fi-justify-full { background-position: -89px -42px; width: 16px; height: 16px; }
+.fi-list-ol { background-position: -5px -63px; width: 16px; height: 16px; }
+.fi-list-ul { background-position: -26px -63px; width: 16px; height: 16px; }
+.fi-note { background-position: -47px -63px; width: 16px; height: 16px; }
+.fi-oudent { background-position: -68px -63px; width: 16px; height: 16px; }
+.fi-photo { background-position: -89px -63px; width: 16px; height: 16px; }
+.fi-resize { background-position: -5px -84px; width: 16px; height: 16px; }
+.fi-speaker { background-position: -26px -84px; width: 16px; height: 16px; }
+.fi-underline { background-position: -47px -84px; width: 16px; height: 16px; }
+.fi-undo { background-position: -68px -84px; width: 16px; height: 16px; }
+.fi-video { background-position: -89px -84px; width: 16px; height: 16px; }
+
+
+.fm-browse, .fm-delete, .fm-download, .fm-edit, .fm-gallery,
+.fm-note, .fm-photo, .fm-speaker, .fm-video
+{ display: inline-block; background: url('./images/spritesheet1.png') no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+
+.fm-browse { background-position: -5px -0px; width: 16px; height: 16px; }
+.fm-delete { background-position: -26px -0px; width: 16px; height: 16px; }
+.fm-download { background-position: -42px 9px; width: 16px; height: 16px; }
+.fm-edit { background-position: -5px -21px; width: 16px; height: 16px; }
+.fm-gallery { background-position: -26px -21px; width: 16px; height: 16px; }
+.fm-note { background-position: -47px -21px; width: 16px; height: 16px; }
+.fm-photo { background-position: -5px -42px; width: 16px; height: 16px; }
+.fm-speaker { background-position: -26px -42px; width: 16px; height: 16px; }
+.fm-video { background-position: -47px -42px; width: 16px; height: 16px; }

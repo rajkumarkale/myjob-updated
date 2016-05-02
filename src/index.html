@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"  >
+<head>
+    <meta charset="utf-8"/>
+    <title data-ng-bind="app.title"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <!-- build:css(.) css/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css" />
+  <link rel="stylesheet" href="bower_components/ngImgCrop/compile/minified/ng-img-crop.css" />
+  <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+  <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+  <link rel="stylesheet" href="bower_components/angularjs-toaster/toaster.css" />
+  <link rel="stylesheet" href="bower_components/ng-grid/ng-grid.css" />
+  <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css" />
+  <link rel="stylesheet" href="bower_components/ng-tags-input/ng-tags-input.min.css" />
+  <link rel="stylesheet" href="bower_components/select2/select2.css" />
+  <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
+  <link rel="stylesheet" href="bower_components/angular-dialog-service/dist/dialogs.min.css" />
+  <link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.css" />
+  <link rel="stylesheet" href="bower_components/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) css/main.css -->
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="css/app.css" type="text/css"/>
+  <!-- endbuild -->
+</head>
+<body ng-controller="AppCtrl" class="bg-white-only">
+<div class="app fade-in-right-big smooth" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view>
+  <img alt="Loading..." src="img/loadingblue.gif" style="left:45%;top:40%;position:fixed;">
+</div>
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/screenfull/dist/screenfull.js"></script>
+<script src="bower_components/angular-ui-select/dist/select.js"></script>
+<script src="bower_components/angularjs-toaster/toaster.js"></script>
+<script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+<script src="bower_components/angular-dialog-service/dist/dialogs.min.js"></script>
+<script src="bower_components/angular-dialog-service/dist/dialogs-default-translations.min.js"></script>
+<script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="bower_components/angular-audio/app/angular.audio.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/underscore.string/dist/underscore.string.js"></script>
+<script src="bower_components/ng-context-menu/dist/ng-context-menu.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,src}) scripts/scripts.js -->
+<script src="vendor/angular/angular-translate/loader-static-files.js"></script>
+<script src="vendor/angular/angular-translate/storage-cookie.js"></script>
+<script src="vendor/angular/angular-translate/storage-local.js"></script>
+<script src="vendor/libs/html2canvas.js"></script>
+<script src="vendor/angular/angular-colorpicker/angular-bootstrap-colorpicker.js"></script>
+<script src="vendor/angular/angular-messages/angular-messages.js"></script>
+<script src="vendor/angular/ng-infinite-scroll/ng-infinite-scroll.min.js"></script>
+<script src="vendor/angular/sortable.js"></script>
+<script src="vendor/angular/http-auth-interceptor.js"></script>
+<script src="vendor/angular/dropdownToggle.js"></script>
+<script src="vendor/angular/bootstrap-colorpicker.js"></script>
+<script src="js/app.js"></script>
+<script src="js/app/core/app-core.js"></script>
+<script src="js/app/core/config/config.js"></script>
+<script src="js/app/core/config/router.js"></script>
+<script src="js/app/core/controllers/core-controller.js"></script>
+<script src="js/app/core/services/core-service.js"></script>
+<script src="js/app/core/directives/ui-nav.js"></script>
+<script src="js/app/core/directives/ui-butterbar.js"></script>
+
+<script src="js/app/user/app-user.js"></script>
+<script src="js/app/user/config/config.js"></script>
+<script src="js/app/user/config/router.js"></script>
+<script src="js/app/user/controllers/app-controller.js"></script>
+<script src="js/app/user/controllers/change-password-controller.js"></script>
+<script src="js/app/user/controllers/support-controller.js"></script>
+<script src="js/app/user/controllers/invoices-controller.js"></script>
+<script src="js/app/user/controllers/profile-controller.js"></script>
+<script src="js/app/user/directives/change-password.js"></script>
+
+<script src="js/app/access/app-access.js"></script>
+<script src="js/app/access/config/config.js"></script>
+<script src="js/app/access/config/router.js"></script>
+<script src="js/app/access/services/authenticate-service.js"></script>
+<script src="js/app/access/controllers/signin-controller.js"></script>
+<script src="js/app/access/controllers/signout-controller.js"></script>
+
+<script src="js/app/admin/app-admin.js"></script>
+<script src="js/app/admin/config/config.js"></script>
+<script src="js/app/admin/config/router.js"></script>
+<script src="js/app/admin/controllers/admin-controller.js"></script>
+<script src="js/app/admin/controllers/admin-books-controller.js"></script>
+<script src="js/app/admin/controllers/admin-users-controller.js"></script>
+<script src="js/app/admin/services/admin-service.js"></script>
+<!-- endbuild -->
+</body>
+</html>

@@ -7,7 +7,7 @@
     "iconMedium": "img/logo.png",
     "apiUrl": "",
     "loginRedirect": "app.dashboard",
-    "appRoot": "access/sign-in",
+    "appRoot": "/sign-in",
     "color": {
       "primary": "#7266ba",
       "info": "#23b7e5",

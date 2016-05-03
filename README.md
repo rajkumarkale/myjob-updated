@@ -1,10 +1,15 @@
-1: Use Grunt and Bower
+### Installation of node.js
 
-install node.js
-npm install -g grunt-cli
-npm install 
-bower install 
-grunt build:dist 
-grunt serve    for development 
-npm start for test dist 
- 
+You need Grunt installed globally:
+
+```sh
+$ npm install -g grunt-cli
+```
+
+```sh
+$ npm install 
+$ bower install
+$ grunt build:dist 
+$ grunt serve    for development 
+$ npm start for test dist 
+```

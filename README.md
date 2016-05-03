@@ -1,4 +1,4 @@
-### Installation of node.js
+### Installation of Project
 
 You need Grunt installed globally:
 

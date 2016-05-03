@@ -50,7 +50,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
           $modalInstance.dismiss('cancel');
         };
       },
-      size: 'md'
+      size: 'sm'
     });
     modalInstance.result.then(function () {
     });

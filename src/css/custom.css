@@ -9,3 +9,23 @@
 .color-black{
   color : black;
 }
+
+.bg-red{
+  color:#db5358;
+  background-color: #db5358;
+}
+.bg-aside-dark{
+  color: #5d5e5c;
+  background-color: #5d5e5c;
+}
+
+.header-name{
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-size: 16px;
+  color:#ffffff;
+
+}
+.height-navBar{
+  height: 50px;
+}

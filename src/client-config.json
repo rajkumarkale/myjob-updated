@@ -20,10 +20,10 @@
     },
     "settings": {
       "navbarHeaderColor": "bg-white-only",
-      "navbarCollapseColor": "bg-white-only",
+      "navbarCollapseColor": "bg-red",
       "asideColor": "bg-black",
       "headerFixed": true,
-      "asideFixed": false,
+      "asideFixed": true,
       "asideFolded": false,
       "asideDock": false,
       "container": false

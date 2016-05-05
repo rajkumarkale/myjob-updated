@@ -6,7 +6,7 @@ angular.module('com.module.user').config(['$stateProvider', function ($stateProv
       templateUrl: 'js/app/user/views/app.html',
       controller:'appController',
       resolve: {
-        user: [ 'AuthService', function ( AuthService) {
+        /*user: [ 'AuthService', function ( AuthService) {
           return  AuthService.getUserInfo();
         }],
         profile: [ 'AuthService', function ( AuthService) {
@@ -14,7 +14,7 @@ angular.module('com.module.user').config(['$stateProvider', function ($stateProv
         }],
         invoices: ['AuthService', function (AuthService){
           return  AuthService.getInvoices();
-        }]
+        }]*/
       }
     })
 

@@ -1,7 +1,7 @@
-angular.module('com.module.user').controller('appController', ['$scope','$state','AuthService','user','profile','$rootScope','$modal', function ($scope,$state,AuthService,user,profile,$rootScope,$modal) {
+angular.module('com.module.user').controller('appController', ['$scope','$state','AuthService','$rootScope','$modal', function ($scope,$state,AuthService,$rootScope,$modal) {
   'use strict';
-  $rootScope.user = user.data;
-  $rootScope.profile = profile.data;
+  //$rootScope.user = user.data;
+  //$rootScope.profile = profile.data;
   $rootScope.isAdmin =  false;
   $rootScope.backgroundImageDisplay = false;
   $scope.backgroundImageDisplay = false;
@@ -21,7 +21,7 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
     }, function () {
     });
   };
-  function init(){
+  /*function init(){
     if($rootScope.user.roles.length == 0){
       return false;
     }
@@ -30,6 +30,6 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
     });
     $rootScope.isAdmin = (adminRole)?true:false;
   };
-  init();
+  init();*/
 
 }]);

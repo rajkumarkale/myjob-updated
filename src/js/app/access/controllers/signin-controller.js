@@ -4,10 +4,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
   'use strict';
   var getApi, access_token = '', statusChangeCallback, register;
   $scope.logIn = function (user) {
-    $scope.myPromise = AuthService.login({
-      'identifier': user.email,
-      'password': user.password
-    }).then(function (response) {
+    $scope.myPromise = AuthService.login(user).then(function (response) {
       if(response.data.message){
         $scope.authStatus = true;
         $scope.authError = response.data.message;

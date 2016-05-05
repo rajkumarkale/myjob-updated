@@ -2,7 +2,7 @@ angular.module('com.module.access').config(['$stateProvider', function ($statePr
   'use strict';
   $stateProvider
     .state('access', {
-      url: '/access',
+      abstract:true,
       templateUrl:'js/app/access/views/app.html',
       controller:['$cookies','appConfig','$location', '$scope', function ($cookies,appConfig,$location,$scope){
         $scope.backgroundImageDisplay = true;

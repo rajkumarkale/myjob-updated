@@ -5,7 +5,7 @@
     "icon": "img/logo.png",
     "favicon": "",
     "iconMedium": "img/logo.png",
-    "apiUrl": "",
+    "apiUrl": "http://myjobs-node-server-dev.herokuapp.com",
     "loginRedirect": "app.dashboard",
     "appRoot": "access/sign-in",
     "color": {

@@ -5,7 +5,8 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
   var getApi, access_token = '', statusChangeCallback, register;
   $scope.logIn = function (user) {
     $scope.myPromise = AuthService.login(user).then(function (response) {
-      if(response.data.message){
+      $state.go($scope.app.loginRedirect);
+      /*if(response.data.message){
         $scope.authStatus = true;
         $scope.authError = response.data.message;
         return ;
@@ -19,7 +20,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
         }
       } else {
         $state.go($scope.app.loginRedirect);
-      }
+      }*/
 
     }, function (error) {
       $scope.authStatus = true;

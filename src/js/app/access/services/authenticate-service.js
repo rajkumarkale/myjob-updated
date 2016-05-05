@@ -8,9 +8,10 @@ angular.module('com.module.access')
       });
     };
     this.login = function (data) {
+      console.log(data)
      return $http({
         method: 'POST',
-        url: appConfig.apiUrl + '/user/login',
+        url: appConfig.apiUrl + '/api/login',
         data: data
       })
     };

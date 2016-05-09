@@ -1,10 +1,9 @@
 angular.module('com.module.access').controller('SignInFormController',['$scope', '$location', 'toaster',  'AuthService', 'appConfig','authService','$state', '$stateParams', '$modal',
   function ($scope, $location, toaster,  AuthService, appConfig,authService,$state, $stateParams, $modal) {
-
   'use strict';
-  var getApi, access_token = '', statusChangeCallback, register;
   $scope.logIn = function (user) {
     $scope.myPromise = AuthService.login(user).then(function (response) {
+      console.log(response);
       $state.go($scope.app.loginRedirect);
       /*if(response.data.message){
         $scope.authStatus = true;
@@ -78,22 +77,6 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
     });
   };
 
-
-  register = function (accessToken, id) {
-    /*AuthService.register({
-      'push_id': 'APA91bHqeZdXXFCtkGh',
-      'device_id': appConfig.device_id,
-      'platform': appConfig.platform,
-      'accounts': [{
-        'provider': 'FACEBOOK',
-        'uid': id,
-        'access_token': accessToken
-      }]
-    }).success(function (response) {
-      $location.path(appConfig.appRoot);
-      toaster.pop(response, 'Welcome');
-    });*/
-  };
 
     $scope.resetPassword = function(user){
 

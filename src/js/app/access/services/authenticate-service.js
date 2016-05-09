@@ -1,6 +1,7 @@
 angular.module('com.module.access')
-  .service('AuthService',['$http', 'appConfig', '$q', function ($http, appConfig, $q) {
+  .service('AuthService',['$http', 'appConfig','$cookies', '$q', function ($http, appConfig,$cookies, $q) {
     'use strict';
+    var deferred = $q.defer();
     this.forgotPassword = function (data) {
       return $http({
         method: 'GET',
@@ -12,10 +13,19 @@ angular.module('com.module.access')
         method: 'POST',
         url: appConfig.apiUrl + '/api/login',
         data: data
-      })
+      }).success(function (data) {
+       var user = {
+         token: data.authHeader
+       };
+       $cookies.user = JSON.stringify(user);
+       deferred.resolve(user);
+     }).error(function (error) {
+       deferred.reject(error);
+     });
+      return deferred.promise;
     };
     this.getUserInfo = function () {
-      return $http.get('/users/me');
+      return $http.get('/users/my');
     };
 
     this.logout = function () {

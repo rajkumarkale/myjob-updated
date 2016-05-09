@@ -11,9 +11,6 @@ angular.module('com.module.user').config(['$stateProvider', function ($stateProv
         }],
         profile: [ 'AuthService', function ( AuthService) {
           return  AuthService.getProfile();
-        }],
-        invoices: ['AuthService', function (AuthService){
-          return  AuthService.getInvoices();
         }]*/
       }
     })

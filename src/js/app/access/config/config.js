@@ -8,9 +8,9 @@ angular.module('com.module.access')
     function ($q, $cookies) {
       return {
         'request': function (config) {
-          if ($cookies.userInfo) {
-            var token = JSON.parse($cookies.userInfo).token;
-            token ? config.headers.Authorization = 'token=' + token : null;
+          if ($cookies.user) {
+            var token = JSON.parse($cookies.user).token;
+            token ? config.headers.Authorization =  + token : null;
           }
           else {
           }

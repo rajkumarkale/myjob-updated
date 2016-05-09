@@ -1,16 +1,14 @@
-angular.module('com.module.access').controller('SignInFormController',['$scope', '$location', 'toaster',  'AuthService', 'appConfig','authService','$state', '$stateParams', '$modal',
-  function ($scope, $location, toaster,  AuthService, appConfig,authService,$state, $stateParams, $modal) {
+angular.module('com.module.access').controller('SignInFormController',['$scope', '$location', 'toaster',  'AuthService', 'appConfig','authService','$state', '$stateParams', '$modal', '$cookies',
+  function ($scope, $location, toaster,  AuthService, appConfig,authService,$state, $stateParams, $modal,$cookies) {
   'use strict';
   $scope.logIn = function (user) {
     $scope.myPromise = AuthService.login(user).then(function (response) {
-      console.log(response);
-      $state.go($scope.app.loginRedirect);
-      /*if(response.data.message){
+      if(response.data.message){
         $scope.authStatus = true;
         $scope.authError = response.data.message;
         return ;
       }
-      authService.loginConfirmed(response);
+      //authService.loginConfirmed(response);
       if ($scope.$prevState && $scope.$prevStateParams) {
         if(_.contains(['access.signin','access.signup','access.forgotpwd','access.signout'],$scope.$prevState)){
           $state.go($scope.app.loginRedirect);
@@ -19,7 +17,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
         }
       } else {
         $state.go($scope.app.loginRedirect);
-      }*/
+      }
 
     }, function (error) {
       $scope.authStatus = true;

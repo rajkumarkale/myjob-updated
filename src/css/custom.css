@@ -29,3 +29,117 @@
 .height-navBar{
   height: 50px;
 }
+/*create possibility*/
+.content {
+    margin-top: 10px;
+}
+#basic-addon2 {
+    padding-top: 1px;
+    background-color: white;
+}
+.head {
+    font-size: 22px;
+    color: #2277b1;
+}
+.filter {
+    padding-top: 10px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-bottom: 10px;
+    background-color: #049ad9 !important;
+}
+.maincol-apply {
+    background-color: #e4e9ef;
+}
+.detailsContent {
+    width: 80%;
+    margin: 0px auto;
+}
+.detailsContentDiv {
+    display: table;
+    width: 100%;
+}
+.listDetails {
+    display: table-cell;
+    padding: 10px;
+}
+.orange {
+    background: #f58207;
+    color: #fff;
+    height: 74px;
+}
+.listDetailsContent {
+    border: 1px solid #eee;
+    display: table;
+    width: 100%;
+    height: 70px;
+}
+.listDetailsContent > div {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+}
+.met {
+    color: #f58207;
+    font-weight: bold;
+}
+.met-num {
+    color: black;
+    font-weight: bold;
+}
+.notmet {
+    color: #8e8a67;
+    font-weight: bold;
+}
+.orangemet {
+    background-color: #8e8a67;
+    font-weight: bold;
+}
+.inactive {
+    color: #A8A8A7;
+    font-weight: bold;
+}
+.orangeactive {
+    background-color: #A8A8A7;
+    font-weight: bold;
+}
+.summary {
+    text-align: center;
+    background-color: #2277b1 !important;
+    font-size: 17px;
+}
+.pan-col {
+    border: white;
+}
+.buttons {
+    background-color: #f58207;
+    color: white;
+    font-weight: bold;
+}
+.buttonslast {
+    background-color: #049ad9;
+    color: white;
+    font-weight: bold;
+}
+.table-bod {
+    border: 1px solid white;
+    background-color: white;
+}
+.table-bod>tbody>tr>td {
+    border-top: none;
+}
+.table-bod>tbody tr:nth-child(odd) {
+    background-color: #F5F5F5;
+}
+.table-head {
+    background-color: white;
+    color: #2277b1;
+}
+td:nth-child(1) {
+    color: #2277b1;
+    font-weight: bold;
+}
+.possibilities {
+    margin-top: 80px;
+}
+/*end create possibility*/

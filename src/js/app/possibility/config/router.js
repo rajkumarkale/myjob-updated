@@ -8,4 +8,8 @@ angular.module('com.module.possibility').config(['$stateProvider', function ($st
       url: '/view-possibility',
       templateUrl: 'js/app/possibility/views/view-possibility.html'
     })
+   .state('app.createPossibility', {
+      url: '/create-possibility',
+      templateUrl: 'js/app/possibility/views/create-possibility.html'
+    })
 }]);

@@ -25,7 +25,7 @@ angular.module('com.module.access')
       return deferred.promise;
     };
     this.getUserInfo = function () {
-      return $http.get('/users/my');
+      return $http.get(appConfig.apiUrl +'/api/users/my');
     };
 
     this.logout = function () {

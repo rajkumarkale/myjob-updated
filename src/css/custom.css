@@ -203,4 +203,17 @@ td:nth-child(1) {
   content: '+';
 }
 .line1{border-top: 1px solid #8c8b8b;margin-top: 100px;}
+
+
 /*end suspect*/
+/*suspect-view styles*/
+.hot-color-suspect{
+  background-color: #e60505;
+}
+.warm-color-suspect{
+  background-color: #e68405;
+}
+.cold-color-suspect{
+  background-color: #87d7f8;
+}
+/*end suspect-view*/

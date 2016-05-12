@@ -15,6 +15,8 @@ angular.module('app', [
   'com.module.access',
   'com.module.core',
   'com.module.user',
+  'com.module.suspect',
+  'com.module.possibility',
   'com.module.admin',
   'ui.sortable'
 ]);

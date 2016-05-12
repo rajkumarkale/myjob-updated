@@ -1,6 +1,7 @@
-angular.module('com.module.user').controller('appController', ['$scope','$state','AuthService','$rootScope','$modal', function ($scope,$state,AuthService,$rootScope,$modal) {
+angular.module('com.module.user').controller('appController', ['$scope','$state','AuthService','$rootScope','user','$modal',
+  function ($scope,$state,AuthService,$rootScope,user,$modal) {
   'use strict';
-  //$rootScope.user = user.data;
+  $rootScope.user = user.data;
   //$rootScope.profile = profile.data;
   $rootScope.isAdmin =  false;
   $rootScope.backgroundImageDisplay = false;
@@ -11,17 +12,17 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
       $cookies.token = ''
     });
   };
-  $scope.openSupportModel = function () {
-    var modalInstance;
-    modalInstance = $modal.open({
-      templateUrl: 'js/app/user/views/support.html',
-      controller:'supportController',
-      size:'md'
+  $scope.changePassword = function(){
+    var modalInstance = $modal.open({
+      templateUrl: 'js/app/user/views/change-password.html',
+      backdrop: 'static',
+      controller: 'changePasswordModalInstanceCtrl',
+      size: 'md'
     });
     modalInstance.result.then(function () {
-    }, function () {
     });
   };
+
   /*function init(){
     if($rootScope.user.roles.length == 0){
       return false;

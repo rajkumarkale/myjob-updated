@@ -18,6 +18,7 @@ angular.module('com.module.user').config(['$stateProvider', function ($stateProv
     .state('app.dashboard', {
       url: '/dashboard',
       templateUrl: 'js/app/user/views/dashboard.html',
+      controller : 'dashboardController',
       data :{
         title:'Dashboard'
       }

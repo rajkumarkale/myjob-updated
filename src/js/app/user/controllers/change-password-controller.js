@@ -1,21 +1,16 @@
-angular.module('com.module.user').controller('changePasswordController', ['$scope','AuthService','$state',function ($scope, AuthService,$state) {
+angular.module('com.module.user').controller('changePasswordModalInstanceCtrl', ['$scope', '$modalInstance','AuthService','$state',
+  function ($scope,$modalInstance, AuthService,$state) {
   'use strict';
-  $scope.formData = {};
-  $scope.changePassword = function () {
-    AuthService.changePassword({
-      userId: $scope.user.id,
-      oldPassword: $scope.formData.oldPassword,
-      newPassword: $scope.formData.newPassword
-    }).success(function () {
-      $scope.common.toastSuccess('Success','Password updated successfully.');
-      AuthService.logout().success(function (data){
-        $state.go('access.signin');
-      }).error(function (err) {
-        $scope.common.toastWarning('Fail','Password updating failed.');
-      })
+  $scope.changePassword = function (formData) {
+    AuthService.changePassword(formData).success(function () {
+      toaster.pop('Success','Password updated successfully.');
+      $modalInstance.dismiss('cancel');
     }).error(function (err) {
       $scope.authError = err.message;
-      $scope.common.toastWarning('Fail','Password updating failed.');
+      toaster.pop('Fail','Password updating failed.');
     })
-  }
+  };
+  $scope.cancel = function(){
+    $modalInstance.dismiss('cancel');
+  };
 }]);

@@ -29,6 +29,19 @@
 .height-navBar{
   height: 50px;
 }
+/*Dashboard*/
+.target-header-color{
+  background-color: #5499f6;
+}
+.prospect-header-color{
+  background-color: #7f439b;
+}
+.empanelment-header-color{
+  background-color: #6dc7be;
+}
+
+/*end of dashboard*/
+
 /*create possibility*/
 .content {
     margin-top: 10px;

@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="css/animate.css" type="text/css"/>
     <link rel="stylesheet" href="css/app.css" type="text/css"/>
     <link rel="stylesheet" href="css/custom.css" type="text/css"/>
+    <link href="css/bootstrap-material-design.min.css" rel="stylesheet">
+    <link href="css/ripples.min.css" rel="stylesheet">
   <!-- endbuild -->
 </head>
 <body ng-controller="AppCtrl" class="bg-white-only">
@@ -101,6 +103,7 @@
 <script src="bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
 <script src="bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
 <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -124,10 +127,15 @@
 <script src="js/app/core/services/core-service.js"></script>
 <script src="js/app/core/directives/ui-nav.js"></script>
 <script src="js/app/core/directives/ui-butterbar.js"></script>
+
+
 <script src="js/app/possibility/app-possibility.js"></script>
 <script src="js/app/possibility/config/config.js"></script>
 <script src="js/app/possibility/config/router.js"></script>
-<script src="js/app/possibility/controller/possibility-list.js"></script>
+<script src="js/app/possibility/controllers/possibility-list.js"></script>
+<script src="js/app/possibility/controllers/create-possibility.js"></script>
+<script src="js/app/possibility/controllers/edit-possibility.js"></script>
+<script src="js/app/possibility/data/possibility-list.json"></script>
 
 <script src="js/app/user/app-user.js"></script>
 <script src="js/app/user/config/config.js"></script>

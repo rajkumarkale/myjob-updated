@@ -176,6 +176,61 @@ td:nth-child(1) {
 }
 .possibilities {
     margin-top: 80px;
+}.control-label{top: 0px !important;}
+.main-panel>.panel-heading{background-color: white !important;}
+.second-panel>.panel-heading {background-color:#90BBD8 !important;color: white !important;}
+.second-panel>.panel-heading a{color: white !important;}
+#grad1 {
+position:absolute;
+    height: 0px;
+width:0px;
+border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #DFDFDF;
+margin-top:-19px;
+margin-left: 520px;
+}
+.check{
+    width: 36px;
+    height: 20px;
+    vertical-align: -36%;
+}
+.contacts-button{background-color: #81ccec !important;color: white !important;}
+.panel-group .panel-heading a {
+  display: block;
+  
+  color: #ffffff;
+  padding: 15px;
+  text-decoration: none;
+  position: relative;
+}
+.panel-group .panel-heading a.collapsed {
+  color: inherit;
+}
+.panel-group .panel-heading a:after {
+  content: '-';
+  position: absolute;
+  right: 20px;
+  top:5px;
+  font-size:30px;
+}
+.panel-group .panel-heading a.collapsed:after {
+  content: '+';
+}
+.line1{border-top: 1px solid #8c8b8b;margin-top: 100px;}
+
+
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    width: 95%px;
+    height: 150px;
+    text-align: center;
+    padding-top: 25px;
+    margin: 10px;
+}
+.dragover {
+    border: 5px dashed blue;
 }
 .all-dateinputs{
      padding-top:25px;

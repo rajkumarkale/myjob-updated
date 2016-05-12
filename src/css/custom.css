@@ -29,7 +29,23 @@
 .height-navBar{
   height: 50px;
 }
+
+/*Dashboard*/
+.target-header-color{
+  background-color: #5499f6;
+}
+.prospect-header-color{
+  background-color: #7f439b;
+}
+.empanelment-header-color {
+  background-color: #6dc7be;
+}
+
+/*end of dashboard*/
+
 /*create possibility*/
+
+/*list possibility*/
 .content {
     margin-top: 10px;
 }
@@ -143,3 +159,48 @@ td:nth-child(1) {
     margin-top: 80px;
 }
 /*end create possibility*/
+
+/*end list possibility*/
+/*create suspect*/
+.control-label{top: 0px !important;}
+          .main-panel>.panel-heading{background-color: white !important;}
+          .second-panel>.panel-heading {background-color:#2277b0 !important;color: white !important;}
+          .second-panel>.panel-heading a{color: white !important;}
+          #grad1 {
+    position:absolute;
+    height: 0px;
+    width:0px;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #DFDFDF;
+    margin-top:-19px;
+    margin-left: 520px;
+}
+.check{
+    width: 36px;
+    height: 20px;
+    vertical-align: -36%;
+}
+.contacts-button{background-color: #049ad9 !important;color: white !important;}
+.panel-group .panel-heading a {
+  display: block;
+  color: #ffffff;
+  padding: 15px;
+  text-decoration: none;
+  position: relative;
+}
+.panel-group .panel-heading a.collapsed {
+  color: inherit;
+}
+.panel-group .panel-heading a:after {
+  content: '-';
+  position: absolute;
+  right: 20px;
+  top:5px;
+  font-size:30px;
+}
+.panel-group .panel-heading a.collapsed:after {
+  content: '+';
+}
+.line1{border-top: 1px solid #8c8b8b;margin-top: 100px;}
+/*end suspect*/

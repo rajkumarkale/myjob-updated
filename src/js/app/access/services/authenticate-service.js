@@ -25,7 +25,7 @@ angular.module('com.module.access')
       return deferred.promise;
     };
     this.getUserInfo = function () {
-      return $http.get('/users/my');
+      return $http.get(appConfig.apiUrl +'/api/users/my/profile');
     };
 
     this.logout = function () {
@@ -50,15 +50,15 @@ angular.module('com.module.access')
     };
     this.changePassword = function (data) {
       return $http({
-        method: 'POST',
-        url: appConfig.apiUrl + '/update-password/'+data.userId,
+        method: 'PUT',
+        url: appConfig.apiUrl + '/api/users/my/password/change',
         data: data
       });
     };
     this.getProfile = function (){
       return $http({
         method: 'GET',
-        url: appConfig.apiUrl + '/me/profile'
+        url: appConfig.apiUrl + '/api/my/profile'
       });
     };
 

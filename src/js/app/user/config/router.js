@@ -6,10 +6,10 @@ angular.module('com.module.user').config(['$stateProvider', function ($stateProv
       templateUrl: 'js/app/user/views/app.html',
       controller:'appController',
       resolve: {
-        /*user: [ 'AuthService', function ( AuthService) {
+        user: [ 'AuthService', function ( AuthService) {
           return  AuthService.getUserInfo();
-        }],
-        profile: [ 'AuthService', function ( AuthService) {
+        }]
+        /*profile: [ 'AuthService', function ( AuthService) {
           return  AuthService.getProfile();
         }]*/
       }
@@ -18,6 +18,7 @@ angular.module('com.module.user').config(['$stateProvider', function ($stateProv
     .state('app.dashboard', {
       url: '/dashboard',
       templateUrl: 'js/app/user/views/dashboard.html',
+      controller : 'dashboardController',
       data :{
         title:'Dashboard'
       }

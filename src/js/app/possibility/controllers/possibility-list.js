@@ -1,5 +1,7 @@
 angular.module('com.module.possibility')
-.controller('possibilityListController',['$scope',function($scope){
+.controller('possibilityListController',['$scope','$state',function($scope,$state){
 
-
+	$scope.openCreatePossibility = function(){
+				$state.go('app.createPossibility');
+		}
   }]);

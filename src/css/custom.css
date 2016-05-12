@@ -29,7 +29,21 @@
 .height-navBar{
   height: 50px;
 }
-
+.list-pad{
+  padding-top:35px;
+}
+/*.list-pad > li > a:hover,.list-pad > li > a:focus{
+   background-color:white !important;
+   color: #5D5E5C !important;
+   border-right:2px solid red;
+}
+/*.list-pad > li > .img-mg:hover,.list-pad > li > .img-mg:focus{
+   background-color:white !important;
+   color: #5D5E5C !important;
+}*/
+/*.img-mg:hover{
+   content: url('../img/left_nav_home_icon.png');
+}*/
 /*Dashboard*/
 .target-header-color{
   background-color: #5499f6;
@@ -39,6 +53,10 @@
 }
 .empanelment-header-color {
   background-color: #6dc7be;
+}
+.notification-icon{
+   color:white;
+   font-size:18px;   
 }
 
 /*end of dashboard*/
@@ -129,12 +147,13 @@
 }
 .buttons {
     background-color: #f58207;
-    color: white;
+    color: white !important;
     font-weight: bold;
+	width:88%;
 }
 .buttonslast {
     background-color: #049ad9;
-    color: white;
+    color: white !important;
     font-weight: bold;
 }
 .table-bod {
@@ -213,9 +232,12 @@ margin-left: 520px;
 .dragover {
     border: 5px dashed blue;
 }
+.all-dateinputs{
+     padding-top:25px;
+}
 /*end create possibility*/
 
-/*end list possibility*/
+
 /*create suspect*/
 .control-label{top: 0px !important;}
           .main-panel>.panel-heading{background-color: white !important;}

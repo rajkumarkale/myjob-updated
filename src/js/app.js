@@ -8,6 +8,7 @@ angular.module('app', [
   'ui.bootstrap',
   'ui.utils',
   'angularFileUpload',
+  'ngFileUpload',
   'cgBusy',
   'ngAudio',
   'http-auth-interceptor',

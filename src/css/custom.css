@@ -56,7 +56,7 @@
 }
 .notification-icon{
    color:white;
-   font-size:18px;   
+   font-size:18px;
 }
 
 /*end of dashboard*/
@@ -198,7 +198,7 @@ margin-left: 520px;
 .contacts-button{background-color: #81ccec !important;color: white !important;}
 .panel-group .panel-heading a {
   display: block;
-  
+
   color: #ffffff;
   padding: 15px;
   text-decoration: none;
@@ -294,3 +294,7 @@ margin-left: 520px;
   background-color: #87d7f8;
 }
 /*end suspect-view*/
+.navbar-custom{
+  background-color: transparent !important;
+  color: transparent !important;
+}

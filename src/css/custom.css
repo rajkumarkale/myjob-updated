@@ -176,10 +176,13 @@ td:nth-child(1) {
 }
 .possibilities {
     margin-top: 80px;
-}.control-label{top: 0px !important;}
-.main-panel>.panel-heading{background-color: white !important;}
-.second-panel>.panel-heading {background-color:#90BBD8 !important;color: white !important;}
-.second-panel>.panel-heading a{color: white !important;}
+}
+.control-label{top: 0px !important;}
+          .main-panel>.panel-heading{background-color: white !important;}
+          .second-panel>.panel-heading {background-color:#2277b0 !important;color: white !important;}
+         
+          .second-panel>.panel-heading a{color: white !important;}
+          .bord-remove{border-top: none;border-left: none;border-right: none;}
 #grad1 {
 position:absolute;
     height: 0px;
@@ -187,7 +190,7 @@ width:0px;
 border-top: 10px solid transparent;
     border-left: 10px solid transparent;
     border-right: 10px solid #DFDFDF;
-margin-top:-19px;
+margin-top:-10px;
 margin-left: 520px;
 }
 .check{
@@ -195,30 +198,25 @@ margin-left: 520px;
     height: 20px;
     vertical-align: -36%;
 }
-.contacts-button{background-color: #81ccec !important;color: white !important;}
-.panel-group .panel-heading a {
-  display: block;
-
-  color: #ffffff;
-  padding: 15px;
-  text-decoration: none;
-  position: relative;
-}
-.panel-group .panel-heading a.collapsed {
-  color: inherit;
-}
-.panel-group .panel-heading a:after {
-  content: '-';
-  position: absolute;
-  right: 20px;
-  top:5px;
-  font-size:30px;
-}
-.panel-group .panel-heading a.collapsed:after {
-  content: '+';
-}
+.contacts-button{background-color: #049ad9 !important;color: white !important;padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;border-radius: 0px;}
+.update-button{background-color: #049ad9 !important;color: white !important;border-radius: 0px;}
+.data-button{background-color: #049ad9 !important;color: white !important;margin-left: 10px;
+    border-radius: 0px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;}
 .line1{border-top: 1px solid #8c8b8b;margin-top: 100px;}
-
+.label-col{color: #DEDEDE !important;}
+.form-control:focus{box-shadow: none;}
+.contacts{color: #049ad9;}
+.remote{color: #A29595;
+    font-weight: normal;}
+.location{color: #A29595;
+    font-weight: normal;}
 
 .drop-box {
     background: #F8F8F8;

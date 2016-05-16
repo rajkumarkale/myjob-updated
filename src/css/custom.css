@@ -223,7 +223,7 @@ margin-left: 520px;
 .drop-box {
     background: #F8F8F8;
     border: 5px dashed #DDD;
-    width: 95%px;
+    width: 95px;
     height: 150px;
     text-align: center;
     padding-top: 25px;
@@ -298,3 +298,11 @@ margin-left: 520px;
   background-color: transparent !important;
   color: transparent !important;
 }
+
+.orange2 {
+  background: #f58207;
+  color: #fff;
+  height: 74px;
+  display:none;
+}
+

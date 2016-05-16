@@ -10,6 +10,9 @@ angular.module('com.module.access').config(['$stateProvider', function ($statePr
         if($cookies.userInfo) {
           $location.path(appConfig.loginRedirect);
         }
+        else{
+          $location.path(appConfig.appRoot);
+        }
       }]
     })
     .state('access.signin', {
@@ -17,7 +20,27 @@ angular.module('com.module.access').config(['$stateProvider', function ($statePr
       templateUrl: 'js/app/access/views/sign-in.html',
       data :{
         title:'Sign in'
-      }
+      },
+      controller : 'SignInFormController'
+    })
+    .state('access.signin.reset-password', {
+      url: '/reset-password',
+      data :{
+        title:'Reset Password'
+      },
+      controller: ['$modal', function ($modal){
+        console.log('happy');
+        var modalInstance = $modal.open({
+          templateUrl: 'js/app/access/views/reset-password.html',
+          backdrop: 'static',
+          controller: 'resetPasswordController',
+          size: 'md'
+        });
+        modalInstance.result.then(function () {
+        });
+      }],
+      template:'<div></div>'
+
     })
     .state('access.forgotpwd', {
       url: '/forgot-password',
@@ -33,13 +56,5 @@ angular.module('com.module.access').config(['$stateProvider', function ($statePr
         title:'Sign out'
       }
     })
-    .state('access.resetpwd', {
-      url: '/reset/:token',
-      templateUrl: 'js/app/access/views/reset-password.html',
-      controller: 'SignInFormController',
-      data :{
-        title:'Reset password'
-      }
-    }
-    );
+
 }]);

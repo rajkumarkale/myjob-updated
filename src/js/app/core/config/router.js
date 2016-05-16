@@ -16,7 +16,7 @@ angular.module('app')
   ['$stateProvider', '$urlRouterProvider', 'appConfig',
     function ($stateProvider, $urlRouterProvider, appConfig) {
       $urlRouterProvider
-        .otherwise(appConfig.appRoot);
+        .otherwise('/access/sign-in/reset-password');
       $stateProvider
         .state('error', {
           abstract: true,

@@ -4,9 +4,10 @@
 angular.module('com.module.prospect').config(['$stateProvider', function ($stateProvider) {
   'use strict';
   $stateProvider
-    .state('app.prospect', {
-      url: '/prospect',
-      controller:'prospectController',
-      templateUrl: 'js/app/prospect/views/prospect.html'
+    .state('app.createProspect', {
+      url: '/create-prospect',
+      templateUrl: 'js/app/prospect/views/create-prospect.html',
+      controller:'prospectCreateController'
     })
+
 }]);

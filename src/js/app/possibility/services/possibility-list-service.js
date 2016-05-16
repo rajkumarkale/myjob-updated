@@ -1,10 +1,10 @@
-angular.module('com.module.admin')
-  .service('possibilityService', ['$http',  '$q', function ($http, $q) {
+angular.module('com.module.possibility')
+  .service('possibilityService', ['$http', '$q', function ($http, $q) {
     'use strict';
     this.getPossibilitiess = function () {
       return $http({
         method: 'GET',
-        url: ''
+        url: 'js/app/possibility/data/possibility-list.json'
       });
     };
     

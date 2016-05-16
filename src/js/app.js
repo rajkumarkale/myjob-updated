@@ -8,6 +8,7 @@ angular.module('app', [
   'ui.bootstrap',
   'ui.utils',
   'angularFileUpload',
+  'ngFileUpload',
   'cgBusy',
   'ngAudio',
   'http-auth-interceptor',
@@ -15,6 +16,8 @@ angular.module('app', [
   'com.module.access',
   'com.module.core',
   'com.module.user',
+  'com.module.suspect',
+  'com.module.possibility',
   'com.module.admin',
   'ui.sortable'
 ]);

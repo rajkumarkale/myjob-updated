@@ -22,7 +22,8 @@ angular.module('com.module.user').config(['$stateProvider', function ($stateProv
       data :{
         title:'Dashboard'
       }
-    }).state('app.profile', {
+    })
+    .state('app.profile', {
       url: '/profile',
       templateUrl: 'js/app/user/views/profile.html',
       controller:'profileController',

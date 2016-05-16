@@ -1,2 +1,2 @@
 
-angular.module ('com.module.user',['com.module.possibility']);
+angular.module ('com.module.user',[]);

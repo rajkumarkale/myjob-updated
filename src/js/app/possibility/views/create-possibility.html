@@ -1,6 +1,10 @@
-<div class="container">
-<div class="panel panel-default second-panel">
-                    <div class="panel-heading">                       
+         <div class="container">
+                <div class="panel panel-default main-panel">
+                    <div class="panel-heading">Possibility > New Possibility</div>
+                </div>
+             
+                <div class="panel panel-primary second-panel">
+                    <div class="panel-heading">
                      New Possibility
                     </div>
                      <div>
@@ -11,8 +15,7 @@
                             <input class="form-control bord-remove" type="text" placeholder="Company Name">
           </div>
                         <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Employee Size of Company">
-          </div>
+                            <input class="form-control bord-remove" type="text" placeholder="Employee Size of Company">               
                 <div class="form-group">
                             <input class="form-control bord-remove" type="text" placeholder="Type of Customer">
                             <div id="grad1">
@@ -32,6 +35,7 @@
                             
                    
                     </div>
+
                          <div class="col-md-6">
                               <div class="form-group">
                             <input class="form-control bord-remove" type="text" placeholder="Website URL">
@@ -48,8 +52,26 @@
                               <div class="form-group">
                             <input class="form-control bord-remove" type="text" placeholder="Zipcode">
           </div>
+
                         
                     </div>
+
+
+                    </div>
+                            </div nv-file-drop="" uploader="uploader">
+                            <div class="row">
+                            <div class="col-md-12">
+                             <div ngf-drop ngf-select ng-model="files" class="drop-box"
+        ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+        accept="image/*,application/pdf"
+        ngf-pattern="'image/*,application/pdf'">Drop pdfs or images here or click to upload</div>
+    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+    Files:
+    <ul>
+        <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
+    </ul>
+
+                            </div>
                             </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -76,26 +98,36 @@
           </div> 
           
                           </div>
-                            
+
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                  <div class="form-group">
                             <input class="form-control bord-remove" type="text" placeholder="Remote Location">
           </div> 
+                                
                             </div>
+                           
                             
                         </div>
                         <div class="form-group">
                             <button class="btn btn-primary contacts-button"><i class="fa fa-plus"></i> Contacts</button>
                         </div>
                          <div class="col-md-6 col-md-offset-5">
-                        <div class="form-group">
-                           
+                        <div class="form-group">         
                             <button class="btn btn-primary data-button">Cancel</button><button class="btn btn-primary data-button">Submit</button>
+
+                            <button class="btn btn-primary contacts-button">Cancel</button><button class="btn btn-primary contacts-button">Submit</button>
                             </div>
                         </div>
                         </div>
                      </div>
                 </div>
 				</div>
+            </div>
+
+
+
+ 
+
+ 

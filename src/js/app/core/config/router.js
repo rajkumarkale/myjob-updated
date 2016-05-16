@@ -15,7 +15,6 @@ angular.module('app')
   .config(
   ['$stateProvider', '$urlRouterProvider', 'appConfig',
     function ($stateProvider, $urlRouterProvider, appConfig) {
-
       $urlRouterProvider
         .otherwise(appConfig.appRoot);
       $stateProvider

@@ -10,6 +10,16 @@ angular.module('com.module.possibility')
             $scope.files = [$scope.file]; 
         }
     });
+    $scope.createClient = function(){
+    var modalInstance = $modal.open({
+      templateUrl: 'js/app/possibility/views/create-client.html',
+      backdrop: 'static',
+      controller: 'createClientModalInstanceCtrl',
+      size: 'md'
+    });
+    modalInstance.result.then(function () {
+    });
+  };
     
 
     $scope.upload = function (files) {

@@ -8,12 +8,6 @@ angular.module('com.module.possibility').config(['$stateProvider', function ($st
       url: '/view-possibility',
       templateUrl: 'js/app/possibility/views/view-possibility.html',
       controller:'possibilityListController'
-      /*resolve: {
-        allPossibilities: [
-          'possibilityService', function (possibilityService) {
-            return possibilityService.getPossibilities();
-          }]
-      }*/
     })
    .state('app.createPossibility', {
       url: '/create-possibility',

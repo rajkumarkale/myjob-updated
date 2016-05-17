@@ -1,0 +1,46 @@
+<div class="modal-content">
+  <div class="modal-header header-name summary">
+    <span> Client Creation  </span>
+    <button type="button" ng-click="cancel()" data-target=".bs-example-modal-lg"
+            class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+    </button>
+  </div>
+  <div class="modal-body" style="max-height: 1000px;">
+    <div class=" " ng-form="createClientForm">
+      <form name="createClientForm" >
+        
+        <div >
+          <div class="form-group">
+            <label>Legal Entity</label>
+            <input type="text" name="legalEntity" placeholder="Legal Entity" ng-minlength="6"
+                   class="form-control" ng-maxlength="18"
+                   data-ng-model="formData.legal_entity" required>
+            
+          </div>
+          <div class="form-group">
+            <label>Short Name</label>
+            <input type="text" name="shortName"  placeholder="Short Name" ng-minlength="6" ng-maxlength="18"
+                   class="form-control"
+                   data-ng-model="formData.short_name" required>
+           
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <input type="password" name="confirmPassword" same-as="newPassword" placeholder="Confirm Password" ng-minlength="6"
+                   class="form-control" ng-maxlength="18"
+                   data-ng-model="confirmPassword" required>
+           
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" type="button"
+               ng-click="cancel()"><i class="fa fa-floppy-o"></i>&nbsp; Cancel
+      </button>
+      <button ng-disabled="createClientForm.$invalid" class="btn btn-warning" ><i class="glyphicon glyphicon-remove"></i>&nbsp;
+        Done
+      </button>
+    </div>
+  </div>
+</div>

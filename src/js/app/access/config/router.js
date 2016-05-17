@@ -10,9 +10,6 @@ angular.module('com.module.access').config(['$stateProvider', function ($statePr
         if($cookies.userInfo) {
           $location.path(appConfig.loginRedirect);
         }
-        else{
-          $location.path(appConfig.appRoot);
-        }
       }]
     })
     .state('access.signin', {

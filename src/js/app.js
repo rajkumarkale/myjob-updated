@@ -17,6 +17,8 @@ angular.module('app', [
   'com.module.core',
   'com.module.user',
   'com.module.suspect',
+  'com.module.empanelment',
+  'com.module.prospect',
   'com.module.possibility',
   'com.module.admin',
   'ui.sortable'

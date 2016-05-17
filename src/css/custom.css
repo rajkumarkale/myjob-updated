@@ -180,7 +180,7 @@ td:nth-child(1) {
 .control-label{top: 0px !important;}
           .main-panel>.panel-heading{background-color: white !important;}
           .second-panel>.panel-heading {background-color:#2277b0 !important;color: white !important;}
-         
+
           .second-panel>.panel-heading a{color: white !important;}
           .bord-remove{border-top: none;border-left: none;border-right: none;}
 #grad1 {
@@ -297,7 +297,57 @@ margin-left: 520px;
   color: transparent !important;
 }
 
-.sides{
-  margin-top:25px;
+
+
+.redBack {
+  background: #e60505;;
+  height: 74px;
 
 }
+.warmdBack {
+  background-color: #ffa342;
+  font-weight: bold;
+}
+
+.coldBack{
+  background-color: skyblue;
+  font-weight: bold;
+}
+
+.red{
+  color:#e60505;
+}
+.red-num{
+  color:black;
+}
+
+.warm{
+  color:#e68405;
+}
+.warm-num{
+  color:black;
+}
+
+.cold{
+  color: #87d7f8;
+}
+.cold-num{
+  color:black;
+}
+.blc{
+  color:black;
+}
+.hot-status{
+  background-color:#e60505 ;
+
+}
+
+.button-style{
+  width: 80px;
+  height: 20px;
+  border-radius: 3px;
+}
+
+.btn-new{
+color:white;
+ background-color: #3a81f8;}

@@ -296,6 +296,7 @@ margin-left: 520px;
   background-color: transparent !important;
   color: transparent !important;
 }
+
 /* Empanelment view */
 .orange2 {
   background: #f58207;
@@ -334,3 +335,85 @@ margin-left: 520px;
   color:white;
 }
 /* end of empanelment view */
+
+
+/* Prospect view */
+
+.redBack {
+  background: #e60505;;
+  height: 74px;
+
+}
+.warmdBack {
+  background-color: #ffa342;
+  font-weight: bold;
+}
+
+.coldBack{
+  background-color: skyblue;
+  font-weight: bold;
+}
+
+.red{
+  color:#e60505;
+}
+.red-num{
+  color:black;
+}
+
+.warm{
+  color:#e68405;
+}
+.warm-num{
+  color:black;
+}
+
+.cold{
+  color: #87d7f8;
+}
+.cold-num{
+  color:black;
+}
+.blc{
+  color:black;
+}
+.hot-status{
+  background-color:#e60505 ;
+  color: white;
+  text-align: center;
+  padding: 2px;
+}
+
+.warm-status{
+  background-color:#e68405 ;
+  color: white;
+  text-align: center;
+  padding: 2px;
+}
+
+
+.cold-status{
+  background-color:#87d7f8 ;
+  color: white;
+  text-align: center;
+  padding: 2px;
+}
+.button-style{
+  width: 80px;
+  height: 20px;
+  border-radius: 3px;
+
+}
+
+.btn-new{
+color:white;
+ background-color: #3a81f8;}
+
+.pageNav{
+
+  background-color: white;
+  color: black;
+
+}
+/* end of prospect view */
+

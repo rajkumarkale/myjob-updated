@@ -5,9 +5,14 @@ angular.module('com.module.prospect').config(['$stateProvider', function ($state
   'use strict';
   $stateProvider
     .state('app.viewProspect', {
-      url: '/create-prospect',
+      url: '/view-prospect',
       templateUrl: 'js/app/prospect/views/view-prospect.html',
-      controller:'prospectCreateController'
+      controller:'prospectViewController'
+    })
+    .state('app.viewDiscussions', {
+      url: '/view-discussions',
+      templateUrl: 'js/app/prospect/views/view-discussions.html',
+      controller:'viewDiscussionsController'
     })
 
 }]);

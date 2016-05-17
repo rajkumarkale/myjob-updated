@@ -5,7 +5,7 @@
         <div class="form-group">
           <label for="startDate">From</label>
           <div class="input-group">
-            <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"/>
+            <input id="startDate" type="date" class="form-control" aria-describedby="basic-addon1"/>
             <span class="input-group-addon" id="basic-addon1">
             <img src="img/calendar_icon.png" alt=""/></span>
           </div>
@@ -33,7 +33,7 @@
                 <div class="col-md-3 redBack ">
                   <img src="img/icon_hot.png" alt="" class="center-block img-pad"/>
                 </div>
-                <div class="col-md-9 text-center">
+                <div class="col-md-3 text-center">
                   <div class="red">HOT</div>
                   <div class="red-num">10</div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="col-md-3 warmdBack">
                   <img src="img/icon_warm.png" alt="" class="center-block img-pad"/>
                 </div>
-                <div class="col-md-9 text-center">
+                <div class="col-md-3 text-center">
                   <div class="warm">WARM</div>
                   <div class="warm-num">6</div>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="col-md-3 coldBack">
                   <img src="img/icon_cold.png" alt="" class="center-block img-pad"/>
                 </div>
-                <div class="col-md-9 text-center">
+                <div class="col-md-3 text-center">
                   <div class="cold">COLD</div>
                   <div class="cold-num">4</div>
                 </div>
@@ -67,33 +67,26 @@
     </div>
 
 
-    <!--
-        <div class="form-group pull-right">
-          <button class="btn btn-primary filter" data-ng-click="openCreatePossibility()"><i class="fa fa-plus"></i> New
-            Possibility
-          </button>
-        </div>
-    -->
     <div class="possibilities">
       <h4 class="pull-left head">All Prospects
                     <span class="pull-right col-md-4">
                     <div class="input-group">
-  <input type="text" class="form-control" placeholder="Search By Location,Company Name,Contact"
+  <input type="text" class="form-control btn-rounded" placeholder="Search By Location,Company Name,Contact"
          aria-describedby="basic-addon3">
   <span class="input-group-addon" id="basic-addon3"><i class="fa fa-search"></i></span>
 </div></span></h4>
     </div>
-    <table class="table table-striped table-bod">
+    <table class="table table-striped table-bod table-hover">
       <thead class="table-head">
       <tr>
-        <th class="col-lg-2">Legal Entity <span class="glyphicon glyphicon-sort blc"></span></th>
-        <th class="col-lg-2">Business Unit <span class="glyphicon glyphicon-sort blc"></span></th>
+        <th class="col-lg-2">Legal Entity</th>
+        <th class="col-lg-2">Business Unit</th>
         <th>Annual Number</th>
         <th class="col-lg-2">Busines Potential Revenue</th>
-        <th class="col-lg-2">EST Date of Closure <span class="glyphicon glyphicon-sort blc"></span></th>
+        <th class="col-lg-2">EST Date of Closure</th>
         <th>Contact Designation</th>
         <th>Business Vertical</th>
-        <th class="col-lg-2">Status <span class="glyphicon glyphicon-filter blc"></span></th>
+        <th>Status</th>
         <th>Discussions</th>
       </tr>
       </thead>
@@ -106,8 +99,13 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>Professional Staffing</td>
-        <td ><button type="button" class="btn-danger button-style">Hot</button></td>
-        <td><button type="button" class="btn-info button-style">New Call</button></td>
+        <td><p class="hot-status button-style ">Hot</p>
+
+
+        </td>
+        <td>
+          <button type="button" class="btn-info button-style">New Call</button>
+        </td>
       </tr>
       <tr>
         <td>Ashton Murray</td>
@@ -117,8 +115,12 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>General Staffing</td>
-        <td><button type="button" class="btn-info button-style">Cold</button></td>
-        <td><button type="button" class="btn-info button-style">New Call</button></td>
+        <td>
+          <p class="cold-status button-style ">Cold</p>
+        </td>
+        <td>
+          <button type="button" class="btn-info button-style">New Call</button>
+        </td>
       </tr>
       <tr>
         <td>Delores Polk</td>
@@ -128,8 +130,12 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>Perm</td>
-        <td><button type="button" class="btn-warning button-style">Warm</button></td>
-        <td><button type="button" class="btn-info button-style">New Call</button></td>
+        <td>
+          <p class="warm-status button-style ">Warm</p>
+        </td>
+        <td>
+          <button type="button" class="btn-info button-style">New Call</button>
+        </td>
       </tr>
       <tr>
         <td>Anthony Sanchez</td>
@@ -139,8 +145,12 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>Govt.Staffing</td>
-        <td><button type="button" class="btn-danger button-style">Hot</button></td>
-        <td><button type="button" class="btn-info button-style">New Call</button></td>
+        <td>
+          <p class="hot-status button-style ">Hot</p>
+        </td>
+        <td>
+          <button type="button" class="btn-info button-style">New Call</button>
+        </td>
       </tr>
       <tr>
         <td>James Maxwell</td>
@@ -150,8 +160,12 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>Professional Staffing</td>
-        <td><button type="button" class="btn-info button-style">Cold</button></td>
-        <td><button type="button" class="btn-info button-style">New Call</button></td>
+        <td>
+          <p class="cold-status button-style ">Cold</p>
+        </td>
+        <td>
+          <button type="button" class="btn-info button-style">New Call</button>
+        </td>
       </tr>
       <tr>
         <td>Delores Polk</td>
@@ -161,8 +175,12 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>Perm</td>
-        <td><button type="button" class="btn-warning button-style">Warm</button></td>
-        <td><button type="button" class="btn-info button-style">New Call</button></td>
+        <td>
+          <p class="warm-status button-style ">Warm</p>
+        </td>
+        <td>
+          <button type="button" class="btn-info button-style">New Call</button>
+        </td>
       </tr>
       <tr>
         <td>Anthony Sanchez</td>
@@ -172,8 +190,12 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>Govt.Staffing</td>
-        <td><button type="button" class="btn-danger button-style">Hot</button></td>
-        <td><button type="button" class="btn-info button-style">New Call</button></td>
+        <td>
+          <p class="hot-status button-style ">Hot</p>
+        </td>
+        <td>
+          <button type="button" class="btn-info button-style">New Call</button>
+        </td>
       </tr>
       <tr>
         <td>James Maxwell</td>
@@ -183,8 +205,12 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>Professional Staffing</td>
-        <td><button type="button" class="btn-info button-style">Cold</button></td>
-        <td><button type="button" class="btn-info button-style">New Call</button></td>
+        <td>
+          <p class="cold-status button-style ">Cold</p>
+        </td>
+        <td>
+          <button type="button" class="btn-info button-style">New Call</button>
+        </td>
       </tr>
       <tr>
         <td>Delores Polk</td>
@@ -194,8 +220,12 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>Perm</td>
-        <td><button type="button" class="btn-warning button-style">Warm</button></td>
-        <td><button type="button" class="btn-info button-style">New Call</button></td>
+        <td>
+          <p class="warm-status button-style ">Warm</p>
+        </td>
+        <td>
+          <button type="button" class="btn-info button-style">New Call</button>
+        </td>
       </tr>
       <tr>
         <td>Anthony Sanchez</td>
@@ -205,8 +235,12 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>Govt.Staffing</td>
-        <td><button type="button" class="btn-danger button-style">Hot</button></td>
-        <td><button type="button" class="btn-info button-style">New Call</button></td>
+        <td>
+          <p class="hot-status button-style ">Hot</p>
+        </td>
+        <td>
+          <button type="button" class="btn-info button-style">New Call</button>
+        </td>
       </tr>
       <tr>
         <td>James Maxwell</td>
@@ -216,12 +250,24 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>Professional Staffing</td>
-        <td><button type="button" class="btn-info button-style">Cold</button></td>
-        <td><button type="button" class="btn-info button-style">New Call</button></td>
+        <td>
+          <p class="cold-status button-style ">Cold</p>
+        </td>
+        <td>
+          <button type="button" class="btn-info button-style">New Call</button>
+        </td>
       </tr>
       </tbody>
     </table>
-    <div class="col-lg-4 col-lg-offset-10">1-10 of 100</div>
+    <div class="col-lg-4 col-lg-offset-10">
+      <label>
+        1-10 of 100
+      </label>
+
+      <button class="glyphicon glyphicon-chevron-left pageNav"></button>
+      <button class="glyphicon glyphicon-chevron-right pageNav"></button>
+
+    </div>
   </div>
 
 

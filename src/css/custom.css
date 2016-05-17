@@ -297,7 +297,7 @@ margin-left: 520px;
   color: transparent !important;
 }
 
-
+/* Prospect view */
 
 .redBack {
   background: #e60505;;
@@ -339,15 +339,40 @@ margin-left: 520px;
 }
 .hot-status{
   background-color:#e60505 ;
-
+  color: white;
+  text-align: center;
+  padding: 2px;
 }
 
+.warm-status{
+  background-color:#e68405 ;
+  color: white;
+  text-align: center;
+  padding: 2px;
+}
+
+
+.cold-status{
+  background-color:#87d7f8 ;
+  color: white;
+  text-align: center;
+  padding: 2px;
+}
 .button-style{
   width: 80px;
   height: 20px;
   border-radius: 3px;
+
 }
 
 .btn-new{
 color:white;
  background-color: #3a81f8;}
+
+.pageNav{
+
+  background-color: white;
+  color: black;
+
+}
+/* end of prospect view */

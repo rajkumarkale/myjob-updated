@@ -2,7 +2,10 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
   function ($scope, $location, toaster,  AuthService, appConfig,authService,$state, $stateParams, $modal,$cookies) {
   'use strict';
   $scope.logIn = function (user) {
-    $scope.myPromise = AuthService.login(user).then(function (response) {
+    $scope.myPromise = AuthService.login({
+      password: user.password,
+      email_id : user.email_id
+    }).then(function (response) {
       if(response.data.message){
         $scope.authStatus = true;
         $scope.authError = response.data.message;

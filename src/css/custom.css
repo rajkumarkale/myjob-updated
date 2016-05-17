@@ -121,12 +121,12 @@
     color: black;
     font-weight: bold;
 }
-.notmet {
-    color: #8e8a67;
+.won {
+    color: #15b929;
     font-weight: bold;
 }
 .orangemet {
-    background-color: #8e8a67;
+    background-color: #15b929;
     font-weight: bold;
 }
 .inactive {
@@ -180,7 +180,7 @@ td:nth-child(1) {
 .control-label{top: 0px !important;}
           .main-panel>.panel-heading{background-color: white !important;}
           .second-panel>.panel-heading {background-color:#2277b0 !important;color: white !important;}
-         
+
           .second-panel>.panel-heading a{color: white !important;}
           .bord-remove{border-top: none;border-left: none;border-right: none;}
 #grad1 {
@@ -221,7 +221,7 @@ margin-left: 520px;
 .drop-box {
     background: #F8F8F8;
     border: 5px dashed #DDD;
-    width: 95%px;
+    width: 95px;
     height: 150px;
     text-align: center;
     padding-top: 25px;
@@ -308,3 +308,124 @@ margin-top:-10px;
 margin-left: 100px;
 }
 /*end prospect*/
+/* Empanelment view */
+.orange2 {
+  background: #f58207;
+  color: #fff;
+  height: 74px;
+  display:none;
+}
+
+.listDetails2 {
+  display: none;
+
+}
+.listDetails3
+{
+  width: 20%;
+  align:center;
+  margin-left:40%
+}
+.arrow1
+{
+  color:black;
+}
+.wonbtn
+{
+  height:20px;
+  width:80px;
+
+}
+.won-status
+{
+  height:20px;
+  width:80px;
+  background-color: #15b929;
+  text-align: center;
+  padding-top: 1px;
+  color:white;
+}
+/* end of empanelment view */
+
+
+/* Prospect view */
+
+.redBack {
+  background: #e60505;;
+  height: 74px;
+
+}
+.warmdBack {
+  background-color: #ffa342;
+  font-weight: bold;
+}
+
+.coldBack{
+  background-color: skyblue;
+  font-weight: bold;
+}
+
+.red{
+  color:#e60505;
+}
+.red-num{
+  color:black;
+}
+
+.warm{
+  color:#e68405;
+}
+.warm-num{
+  color:black;
+}
+
+.cold{
+  color: #87d7f8;
+}
+.cold-num{
+  color:black;
+}
+.blc{
+  color:black;
+}
+.hot-status{
+  background-color:#e60505 ;
+  color: white;
+  text-align: center;
+  padding: 2px;
+}
+
+.warm-status{
+  background-color:#e68405 ;
+  color: white;
+  text-align: center;
+  padding: 2px;
+}
+
+
+.cold-status{
+  background-color:#87d7f8 ;
+  color: white;
+  text-align: center;
+  padding: 2px;
+}
+.button-style{
+  width: 80px;
+  height: 20px;
+  border-radius: 3px;
+
+}
+
+.btn-new{
+color:white;
+ background-color: #3a81f8;}
+
+.pageNav{
+
+  background-color: white;
+  color: black;
+
+}
+/* end of prospect view */
+
+>>>>>>> main-repo/master

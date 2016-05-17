@@ -4,9 +4,9 @@
 angular.module('com.module.empanelment').config(['$stateProvider', function ($stateProvider) {
   'use strict';
   $stateProvider
-    .state('app.empanelment', {
-      url: '/empanelment',
+    .state('app.viewempanelment', {
+      url: '/view-empanelment',
       controller:'empanelmentController',
-      templateUrl: 'js/app/empanelment/views/empanelment.html'
+      templateUrl: 'js/app/empanelment/views/view-empanelment.html'
     })
 }]);

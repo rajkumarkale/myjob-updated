@@ -1,8 +1,9 @@
-angular.module('com.module.possibility').controller('createClientModalInstanceCtrl', ['$scope', '$modalInstance',
-  function ($scope,$modalInstance) {
+angular.module('com.module.possibility').controller('createClientModalInstanceCtrl', ['$scope', '$modalInstance','possibilityCreateService','toaster',
+  function ($scope,$modalInstance,possibilityCreateService,toaster) {
   'use strict';
   $scope.createClient = function (formData) {
-    clientCreationService.createClient(formData).success(function () {
+    console.log(formData);
+    possibilityCreateService.createClient(formData).success(function () {
       toaster.pop('Success','Created Client successfully.');
       $modalInstance.dismiss('cancel');
     }).error(function (err) {

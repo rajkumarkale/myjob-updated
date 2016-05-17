@@ -1,5 +1,5 @@
-angular.module('com.module.user').controller('changePasswordModalInstanceCtrl', ['$scope', '$modalInstance','AuthService','$state',
-  function ($scope,$modalInstance, AuthService,$state) {
+angular.module('com.module.user').controller('changePasswordModalInstanceCtrl', ['$scope', '$modalInstance','AuthService',
+  function ($scope,$modalInstance, AuthService) {
   'use strict';
   $scope.changePassword = function (formData) {
     AuthService.changePassword(formData).success(function () {

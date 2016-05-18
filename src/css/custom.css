@@ -417,3 +417,31 @@ color:white;
 }
 /* end of prospect view */
 
+.panel-heading1 {
+  height: 13%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: #6282f3;
+  padding-top: 1px;
+}
+.panel2
+{
+  margin-left: 4%;
+  border:solid black 1px;
+  height:100%;
+  width:92%;
+}
+.text-class
+{
+  color:red;
+}
+.text-class1
+{
+  height: 13%;
+  width: 100%;
+  background-color: #ebebe0;
+  padding:5px;
+}
+
+

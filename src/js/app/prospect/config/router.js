@@ -6,13 +6,11 @@ angular.module('com.module.prospect').config(['$stateProvider', function ($state
   $stateProvider
     .state('app.viewProspect', {
       url: '/view-prospect',
-      templateUrl: 'js/app/prospect/views/view-prospect.html',
-      controller:'prospectViewController'
+      templateUrl: 'js/app/prospect/views/view-prospect.html'
     })
     .state('app.viewDiscussions', {
       url: '/view-discussions',
-      templateUrl: 'js/app/prospect/views/view-discussions.html',
-      controller:'viewDiscussionsController'
+      templateUrl: 'js/app/prospect/views/view-discussions.html'
     })
 
 }]);

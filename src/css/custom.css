@@ -417,3 +417,33 @@ color:white;
 }
 /* end of prospect view */
 
+.checkBoxDrop{
+  width: 61px;
+  height: 40px;
+  color: white;
+  background-color: lightgrey;
+  padding: 5px 5px 2px 5px;
+}
+
+.checkBox{
+  width: 20px;
+  height: 20px;
+  color: white;
+  border-radius: 3px;
+}
+
+.checkBxDrop{
+  border-top: 10px solid;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-bottom: 10px solid transparent;
+  color: white;
+  margin-left: 5px;
+
+  }
+
+.panel-heading-custom {
+  background-color: #00a8f3;
+  text-align: center;
+}
+/* Discussion * /

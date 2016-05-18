@@ -296,7 +296,18 @@ margin-left: 520px;
   background-color: transparent !important;
   color: transparent !important;
 }
-
+/*create prospect*/
+#grad1-status {
+position:absolute;
+    height: 0px;
+width:0px;
+border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #DFDFDF;
+margin-top:-10px;
+margin-left: 100px;
+}
+/*end prospect*/
 /* Empanelment view */
 .orange2 {
   background: #f58207;
@@ -417,6 +428,7 @@ color:white;
 }
 /* end of prospect view */
 
+<<<<<<< HEAD
 .checkBoxDrop{
   width: 61px;
   height: 40px;
@@ -544,3 +556,6 @@ color:white;
 .add-discussions{
   padding: 5px;
 }
+=======
+
+>>>>>>> main-repo/master

@@ -1,5 +1,5 @@
 angular.module('com.module.possibility')
-.controller('createPossibilityController',['$scope','$state','FileUploader','Upload',function($scope,$state,FileUploader,Upload){
+.controller('createPossibilityController',['$scope','$state','FileUploader','Upload','$modal',function($scope,$state,FileUploader,Upload,$modal){
 
 		
           $scope.$watch('files', function () {
@@ -15,7 +15,7 @@ angular.module('com.module.possibility')
       templateUrl: 'js/app/possibility/views/create-client.html',
       backdrop: 'static',
       controller: 'createClientModalInstanceCtrl',
-      size: 'md'
+      size: 'lg'
     });
     modalInstance.result.then(function () {
     });

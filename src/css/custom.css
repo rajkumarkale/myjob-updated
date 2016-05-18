@@ -446,4 +446,101 @@ color:white;
   background-color: #00a8f3;
   text-align: center;
 }
-/* Discussion * /
+
+
+.container-custom {
+  padding-right: 5px;
+  padding-left: 0px;
+  padding-bottom: 5px;
+  margin-right: auto;
+  padding-top: 5px;
+  margin-left: auto;
+  margin-top: 14px;
+  background-color: white;
+  border-radius: 5px;
+  width: 96%;
+}
+
+.discussion-body {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top:1px ;
+
+}
+.Discus-checkBx{
+  width:20px;
+  height: 20px;
+}
+
+.margin-left-custom{
+  margin-left: 80%;
+}
+
+.contact-person{
+  font-family:"Helvetica Neue";
+  font-weight: normal !important;
+  font-size: 24px;
+  color: #000000 !important;
+}
+ .person-name{
+
+  font-weight: bold;
+  color: #2277b1;
+}
+
+.type-of-call{
+  font-family: "Helvetica Neue";
+  font-weight: lighter;
+  font-size: 20px;
+  color:#9f9c9c !important;
+
+
+}
+ .call-follow{
+  color:#2277b1;
+   font-weight: lighter;
+  font-size: 20px;
+}
+
+
+.date-venue{
+  font-family:"Helvetica Neue";
+  font-weight: lighter;
+  font-size: 18px;
+  color: #000000 !important;
+}
+
+ .location-name{
+   font-family:"Helvetica Neue";
+   font-weight: lighter;
+   font-size: 18px;
+
+   color: #2277b1;}
+.summary-head{
+  font-family:"Helvetica Neue";
+  font-weight: lighter;
+  font-size: 22px;
+  color: #2277b1 !important;
+}
+
+.summary-details{
+  font-family:"Helvetica Neue";
+  font-weight: lighter;
+  font-size: 22px;
+  color: #000000 ;
+
+}
+
+.ssdummary-div{
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.left-align{
+  padding-left: 0px;
+}
+.add-discussions{
+  padding: 5px;
+}

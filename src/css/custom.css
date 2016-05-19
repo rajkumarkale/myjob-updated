@@ -428,7 +428,7 @@ color:white;
 }
 /* end of prospect view */
 
-<<<<<<< HEAD
+
 .checkBoxDrop{
   width: 61px;
   height: 40px;
@@ -457,6 +457,11 @@ color:white;
 .panel-heading-custom {
   background-color: #00a8f3;
   text-align: center;
+  color: white;
+  border-top: 1px solid #ddd;
+  border-color: #428bca;
+  font-size: 16px;
+  line-height: 44px;
 }
 
 
@@ -556,6 +561,23 @@ color:white;
 .add-discussions{
   padding: 5px;
 }
-=======
 
->>>>>>> main-repo/master
+.attachment{
+  margin-top: 15px;
+  color:black;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+.attach-image{
+  margin-left: 15px;
+  width: 70px;
+  height: 70px;
+}
+
+.attach-image-detail{
+  width: 40px;
+  height: 40px;
+
+}
+

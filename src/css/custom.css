@@ -389,29 +389,32 @@ margin-left: 100px;
   color:black;
 }
 .hot-status{
-  background-color:#e60505 ;
-  color: white;
+  background-color:#e60505 !important; ;
   text-align: center;
-  padding: 2px;
+  padding: 5px;
+  width: 80px;
+  color:white !important;;
 }
 
-.warm-status{
-  background-color:#e68405 ;
-  color: white;
-  text-align: center;
-  padding: 2px;
+ .warm-status{
+  background-color:#e68405 !important; ;
+   text-align: center;
+   padding: 5px;
+   width: 80px;
+   color:white !important;;
 }
 
 
 .cold-status{
-  background-color:#87d7f8 ;
-  color: white;
+  background-color:#87d7f8 !important; ;
   text-align: center;
-  padding: 2px;
-}
+  padding: 5px;
+  width: 80px;
+  color:white !important;;
+  }
 .button-style{
   width: 80px;
-  height: 20px;
+
   border-radius: 3px;
 
 }
@@ -579,5 +582,8 @@ color:white;
   width: 40px;
   height: 40px;
 
+}
+.displayDiv{
+  display: none;
 }
 

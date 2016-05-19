@@ -323,6 +323,11 @@ margin-left: 520px;
 {
   height:20px;
   width:80px;
+  border-radius: 3px;
+  text-align: center;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  color:white;
 
 }
 .won-status
@@ -332,6 +337,7 @@ margin-left: 520px;
   background-color: #15b929;
   text-align: center;
   padding-top: 1px;
+  border-radius: 3px;
   color:white;
 }
 /* end of empanelment view */
@@ -418,23 +424,27 @@ color:white;
 /* end of prospect view */
 
 .panel-heading1 {
-  height: 13%;
+  height: 9%;
   width: 100%;
   text-align: center;
   color: white;
-  background-color: #6282f3;
+  background-color: #40aaf3;
   padding-top: 1px;
 }
 .panel2
 {
   margin-left: 4%;
-  border:solid black 1px;
+
   height:100%;
   width:92%;
 }
 .text-class
 {
+  padding-top: 20px;
+  padding-left:5px;
+  padding-bottom: 10px;
   color:red;
+  background-color: white;
 }
 .text-class1
 {
@@ -443,5 +453,28 @@ color:white;
   background-color: #ebebe0;
   padding:5px;
 }
+.client-class
+{
+  background-color: #ebebe0;
+  height:40px;
+}
+.Address-class
+{
+  padding-top:30px;
+}
+.sub-container
+{
+  padding-left:20px;
+  padding-right:20px;
 
-
+}
+.grad2 {
+  position:absolute;
+  height: 0px;
+  width:0px;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #DFDFDF;
+  margin-top:-10px;
+  margin-left: 520px;
+}

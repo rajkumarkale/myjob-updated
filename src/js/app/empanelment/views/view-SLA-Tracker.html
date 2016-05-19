@@ -1,133 +1,168 @@
-<br>
-<div class = "panel-body">
-  <div class = "panel-heading1 ">
-    <h3>SLA Tracker intrnal process(ver 1.0)</h3>
-  </div>
-  <div class="container">
-    <div class="panel panel-primary second-panel">
-     
-      <div>
-        <div class="panel-body" >
-          <div class="row">
-            <div class="col-md-6">
+<div class="main-container">
+  <br>
+  <div class="sub-container">
+    <div class="panel-heading1 ">
+      <h3>SLA Tracker intrnal process(ver 1.0)</h3>
+    </div>
+    <div>
+      <div class="text-class">All fields are mandatory</div>
+      <div class="sub-main-container">
+        <div>
+          <div class="col-md-6 client-class">
+            <div class="form-group"><label><h4>Client Address:</h4></label></div>
+          </div>
+          <div class="col-md-6 client-class ">
+            <div class="form-group "><label><h4>Commercials:</h4></label></div>
+          </div>
+        </div>
+      </div>
+      <div class="container1 ">
 
-              <div class="form-group col-md-5">
-                <input class="form-control bord-remove" type="text" placeholder="Legal Entity">
-                <span class=" form-control glyphicon glyphicon-plus-sign"></span>
+        <div class="panel panel-primary second-panel ">
+
+          <div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6 Address-class">
+                  <div class="form-group"><label>Client Name:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Client name">
+
+                  </div>
+                  <div class="form-group"><label>Corporate Office:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Corporate Office">
+                  </div>
+                  <div class="form-group"><label>Address1:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Address1">
+                  </div>
+                  <div class="form-group"><label>Address2:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Address2">
+                    <div class="grad2"></div>
+                  </div>
+                  <div class="form-group"><label>Contact Number:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Contact Number">
+                  </div>
+
+
+                </div>
+
+                <div class="col-md-5 Address-class">
+                  <div class="form-group"><label>Client Name:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Forced Fee ">
+                  </div>
+                  <div class="form-group"><label>Client Name:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Reiumbursment Fee">
+                  </div>
+                  <div class="form-group"><label>Client Name:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Sourcing Fee">
+                  </div>
+                  <div class="form-group"><label>Client Name:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Absorption Fee and Clauses">
+                  </div>
+                  <div class="form-group"><label>Client Name:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Zipcode">
+                  </div>
+                  <div class="form-group">
+                    <button class="btn btn-primary contacts-button pull-right"><i class="fa fa-plus"></i> Other Fees
+                    </button>
+                  </div>
+
+
+                </div>
 
               </div>
-              <div class="form-group">
-                <input class="form-control bord-remove" type="text" placeholder="Employee Size of Company">
-                <div class="form-group">
-                  <input class="form-control bord-remove" type="text" placeholder="Type of Customer">
-
-                </div>
-                <div class="form-group">
-                  <input class="form-control bord-remove" type="text" placeholder="Address2">
-                </div>
-                <div class="form-group">
-                  <input class="form-control bord-remove" type="text" placeholder="City">
-                </div>
-                <div class="form-group">
-                  <input class="form-control bord-remove" type="text" placeholder="Status">
-                  <div id="grad1"></div>
-                </div>
-
-
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input class="form-control bord-remove" type="text" placeholder="Website URL">
-                </div>
-                <div class="form-group">
-                  <input class="form-control bord-remove" type="text" placeholder="Group Turnover">
-                </div>
-                <div class="form-group">
-                  <input class="form-control bord-remove" type="text" placeholder="Address1">
-                </div>
-                <div class="form-group">
-                  <input class="form-control bord-remove" type="text" placeholder="State">
-                </div>
-                <div class="form-group">
-                  <input class="form-control bord-remove" type="text" placeholder="Zipcode">
-                </div>
-
-
-              </div>
-
-
-            </div>
-          </div nv-file-drop="" uploader="uploader">
-          <div class="row">
-            <div class="col-md-12">
-              <div ngf-drop ngf-select ng-model="files" class="drop-box"
-                   ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
-                   accept="image/*,application/pdf"
-                   ngf-pattern="'image/*,application/pdf'">Drop pdfs or images here or click to upload</div>
-              <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-              Files:
-              <ul>
-                <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
-              </ul>
-
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6">
-
-              <div class="form-group">
-                <input class="form-control bord-remove" type="text" placeholder="Contact Person">
-              </div>
-              <div class="form-group">
-                <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-              </div>
-              <div class="form-group">
-                <label class="contacts">Contacts Provides</label>
-                <input type="checkbox" class="check">
-                <label class="remote">Remote</label>
-                <input type="checkbox" class="check">
-                <label class="location">Location</label>
-              </div>
-            </div>
-            <div class="col-md-6">
-
-              <div class="form-group">
-                <input class="form-control bord-remove" type="text" placeholder="Contact Person Phone Number">
-              </div>
-              <div class="form-group">
-                <input class="form-control bord-remove" type="text" placeholder="Email Id">
-              </div>
-            </div>
-
+        </div>
+        <div>
+          <div class="col-md-6 client-class">
+            <div class="form-group"><label><h4>Aggreement Relaed:</h4></label></div>
           </div>
-          <div class="row">
-            <div class="col-md-6">
+          <div class="col-md-6 client-class ">
+            <div class="form-group "><label><h4>Important Dates:</h4></label></div>
+          </div>
+        </div>
+      </div>
+      <div class="container1 ">
 
-              <div class="form-group">
-                <input class="form-control bord-remove" type="text" placeholder="Remote Location">
+        <div class="panel panel-primary second-panel ">
+
+          <div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6 Address-class">
+                  <div class="form-group"><label>Aggreement start date:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Client name">
+
+                  </div>
+                  <div class="form-group"><label>Agreement end Date:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Corporate Office">
+                  </div>
+                  <div class="form-group"><label>Agreement termination notice:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Address1">
+                  </div>
+                  <div class="form-group"><label>Association termination notice:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Address2">
+                    <div class="grad2"></div>
+                  </div>
+                  <div class="form-group"><label>payment Mode:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Contact Number">
+                  </div>
+                  <div class="form-group"><label>Credit Terms:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="45 days from invoice submission">
+                  </div>
+                  <div class="form-group">
+                    <label class="contacts">BGV</label>
+                    <input type="radio" name="yes" class="check">
+                    <label class="remote">YES</label>
+                    <input type="radio" name="yes" class="check">
+                    <label class="location">NO</label>
+                  </div>
+
+                  <div class="form-group">
+                    <input class="form-control bord-remove" type="text">
+                    <div class="grad2"></div>
+                  </div>
+                  <div class="form-group">
+                    <label class="contacts">Insurence</label>
+                    <input type="radio" name="yes" class="check">
+                    <label class="remote">Applicable</label>
+                    <input type="radio" name="yes" class="check">
+                    <label class="location">Not Applicable</label>
+                  </div>
+                  <div class="form-group">
+                    <label class="contacts">GPA</label>
+                    <input type="checkbox" class="check">
+                    <label class="remote">Remote</label>
+                    <input type="checkbox" class="check">
+                    <label class="location">Location</label>
+                  </div>
+
+                </div>
+
+                <div class="col-md-5 Address-class">
+                  <div class="form-group"><label>Time sheeet remainder:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Forced Fee ">
+                  </div>
+                  <div class="form-group"><label>sheet submission cutoff:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Reiumbursment Fee">
+                  </div>
+                  <div class="form-group"><label>Payroll input Upload Date:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Sourcing Fee">
+                  </div>
+                  <div class="form-group"><label>Invoice submission Date:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Absorption Fee and Clauses">
+                  </div>
+                  <div class="form-group"><label>Payout Date:</label>
+                    <input class="form-control bord-remove" type="text" placeholder="Zipcode">
+                  </div>
+
+                </div>
+
               </div>
-
-            </div>
-
-
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary contacts-button"><i class="fa fa-plus"></i> Contacts</button>
-          </div>
-          <div class="col-md-6 col-md-offset-5">
-            <div class="form-group">
-              <button class="btn btn-primary data-button">Cancel</button><button class="btn btn-primary data-button">Submit</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-</div>
-
-  </div>
-</div>
-</div>
 </div>

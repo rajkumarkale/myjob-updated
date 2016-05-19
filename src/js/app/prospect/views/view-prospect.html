@@ -21,6 +21,7 @@
     </div>
   </div>
   <div class="container content">
+
     <div class="panel panel-primary pan-col">
       <div class="panel-heading summary">Summary in the month of April 2016</div>
       <div class="panel-body">
@@ -28,34 +29,34 @@
           <div class="detailsContentDiv">
             <div class="listDetails">
               <div class="listDetailsContent">
-                <div class="col-md-3 redBack ">
-                  <img src="img/icon_hot.png" alt="" class="center-block img-pad"/>
+                <div class="col-md-3 hot-color-suspect">
+                  <img src="img/icon_hot.png" alt="" class="center-block img-pad">
                 </div>
-                <div class="col-md-3 text-center">
-                  <div class="red">HOT</div>
-                  <div class="red-num">10</div>
-                </div>
-              </div>
-            </div>
-            <div class="listDetails">
-              <div class="listDetailsContent">
-                <div class="col-md-3 warmdBack">
-                  <img src="img/icon_warm.png" alt="" class="center-block img-pad"/>
-                </div>
-                <div class="col-md-3 text-center">
-                  <div class="warm">WARM</div>
-                  <div class="warm-num">6</div>
+                <div class="col-md-9 text-center">
+                  <div class="met">HOT</div>
+                  <div class="met-num">10</div>
                 </div>
               </div>
             </div>
             <div class="listDetails">
               <div class="listDetailsContent">
-                <div class="col-md-3 coldBack">
-                  <img src="img/icon_cold.png" alt="" class="center-block img-pad"/>
+                <div class="col-md-3 orangemet">
+                  <img src="img/icon_warm.png" alt="" class="center-block img-pad">
                 </div>
-                <div class="col-md-3 text-center">
-                  <div class="cold">COLD</div>
-                  <div class="cold-num">4</div>
+                <div class="col-md-9 text-center">
+                  <div class="notmet">WARM</div>
+                  <div class="met-num">6</div>
+                </div>
+              </div>
+            </div>
+            <div class="listDetails">
+              <div class="listDetailsContent">
+                <div class="col-md-3 orangeactive">
+                  <img src="img/icon_cold.png" alt="" class="center-block img-pad">
+                </div>
+                <div class="col-md-9 text-center">
+                  <div class="inactive">COLD</div>
+                  <div class="met-num">4</div>
                 </div>
               </div>
             </div>
@@ -63,7 +64,6 @@
         </div>
       </div>
     </div>
-
 
     <div class="possibilities">
       <h4 class="pull-left head">All Prospects
@@ -97,12 +97,14 @@
         <td>26/04/16</td>
         <td>Lorem Ipsum</td>
         <td>Professional Staffing</td>
-        <td><p class="hot-status button-style ">Hot</p>
+        <td><p class="  btn btn-raised  hot-status ">Hot</p>
 
 
         </td>
         <td>
-          <button type="button" class="btn-info button-style">New Call</button>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info">New Call</button>
+          </a>
         </td>
       </tr>
       <tr>
@@ -114,55 +116,12 @@
         <td>Lorem Ipsum</td>
         <td>General Staffing</td>
         <td>
-          <p class="cold-status button-style ">Cold</p>
+          <p class="btn btn-raised  cold-status ">Cold</p>
         </td>
         <td>
-          <button type="button" class="btn-info button-style">New Call</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Delores Polk</td>
-        <td>Paradigm Creatives</td>
-        <td>00000</td>
-        <td>00000</td>
-        <td>26/04/16</td>
-        <td>Lorem Ipsum</td>
-        <td>Perm</td>
-        <td>
-          <p class="warm-status button-style ">Warm</p>
-        </td>
-        <td>
-          <button type="button" class="btn-info button-style">New Call</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Anthony Sanchez</td>
-        <td>Paradigm Creatives</td>
-        <td>00000</td>
-        <td>00000</td>
-        <td>26/04/16</td>
-        <td>Lorem Ipsum</td>
-        <td>Govt.Staffing</td>
-        <td>
-          <p class="hot-status button-style ">Hot</p>
-        </td>
-        <td>
-          <button type="button" class="btn-info button-style">New Call</button>
-        </td>
-      </tr>
-      <tr>
-        <td>James Maxwell</td>
-        <td>Paradigm Creatives</td>
-        <td>00000</td>
-        <td>00000</td>
-        <td>26/04/16</td>
-        <td>Lorem Ipsum</td>
-        <td>Professional Staffing</td>
-        <td>
-          <p class="cold-status button-style ">Cold</p>
-        </td>
-        <td>
-          <button type="button" class="btn-info button-style">New Call</button>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info">New Call</button>
+          </a>
         </td>
       </tr>
       <tr>
@@ -174,10 +133,12 @@
         <td>Lorem Ipsum</td>
         <td>Perm</td>
         <td>
-          <p class="warm-status button-style ">Warm</p>
+          <p class="btn btn-raised warm-status ">Warm</p>
         </td>
         <td>
-          <button type="button" class="btn-info button-style">New Call</button>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info">New Call</button>
+          </a>
         </td>
       </tr>
       <tr>
@@ -189,10 +150,12 @@
         <td>Lorem Ipsum</td>
         <td>Govt.Staffing</td>
         <td>
-          <p class="hot-status button-style ">Hot</p>
+          <p class="btn btn-raised hot-status ">Hot</p>
         </td>
         <td>
-          <button type="button" class="btn-info button-style">New Call</button>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info">New Call</button>
+          </a>
         </td>
       </tr>
       <tr>
@@ -204,10 +167,12 @@
         <td>Lorem Ipsum</td>
         <td>Professional Staffing</td>
         <td>
-          <p class="cold-status button-style ">Cold</p>
+          <p class="btn btn-raised cold-status">Cold</p>
         </td>
         <td>
-          <button type="button" class="btn-info button-style">New Call</button>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info">New Call</button>
+          </a>
         </td>
       </tr>
       <tr>
@@ -219,10 +184,12 @@
         <td>Lorem Ipsum</td>
         <td>Perm</td>
         <td>
-          <p class="warm-status button-style ">Warm</p>
+          <p class="btn btn-raised warm-status ">Warm</p>
         </td>
         <td>
-          <button type="button" class="btn-info button-style">New Call</button>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info">New Call</button>
+          </a>
         </td>
       </tr>
       <tr>
@@ -234,10 +201,12 @@
         <td>Lorem Ipsum</td>
         <td>Govt.Staffing</td>
         <td>
-          <p class="hot-status button-style ">Hot</p>
+          <p class="btn btn-raised hot-status ">Hot</p>
         </td>
         <td>
-          <button type="button" class="btn-info button-style">New Call</button>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info">New Call</button>
+          </a>
         </td>
       </tr>
       <tr>
@@ -249,23 +218,77 @@
         <td>Lorem Ipsum</td>
         <td>Professional Staffing</td>
         <td>
-          <p class="cold-status button-style ">Cold</p>
+          <p class="btn btn-raised cold-status">Cold</p>
         </td>
         <td>
-          <button type="button" class="btn-info button-style">New Call</button>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info">New Call</button>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Delores Polk</td>
+        <td>Paradigm Creatives</td>
+        <td>00000</td>
+        <td>00000</td>
+        <td>26/04/16</td>
+        <td>Lorem Ipsum</td>
+        <td>Perm</td>
+        <td>
+          <p class="btn btn-raised warm-status ">Warm</p>
+        </td>
+        <td>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info">New Call</button>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Anthony Sanchez</td>
+        <td>Paradigm Creatives</td>
+        <td>00000</td>
+        <td>00000</td>
+        <td>26/04/16</td>
+        <td>Lorem Ipsum</td>
+        <td>Govt.Staffing</td>
+        <td>
+          <p class="btn btn-raised hot-status ">Hot</p>
+        </td>
+        <td>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info">New Call</button>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>James Maxwell</td>
+        <td>Paradigm Creatives</td>
+        <td>00000</td>
+        <td>00000</td>
+        <td>26/04/16</td>
+        <td>Lorem Ipsum</td>
+        <td>Professional Staffing</td>
+        <td>
+          <p class="btn btn-raised cold-status">Cold</p>
+        </td>
+        <td>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info">New Call</button>
+          </a>
         </td>
       </tr>
       </tbody>
     </table>
     <div class="col-lg-4 col-lg-offset-10">
       <label>
-        1-10 of 100
+        1-10 of 10
       </label>
 
       <button class="glyphicon glyphicon-chevron-left pageNav"></button>
       <button class="glyphicon glyphicon-chevron-right pageNav"></button>
 
-    </div>
+
+    </div><br> <br>
   </div>
 
 

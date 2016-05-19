@@ -395,29 +395,32 @@ margin-left: 100px;
   color:black;
 }
 .hot-status{
-  background-color:#e60505 ;
-  color: white;
+  background-color:#e60505 !important; ;
   text-align: center;
-  padding: 2px;
+  padding: 5px;
+  width: 80px;
+  color:white !important;;
 }
 
-.warm-status{
-  background-color:#e68405 ;
-  color: white;
-  text-align: center;
-  padding: 2px;
+ .warm-status{
+  background-color:#e68405 !important; ;
+   text-align: center;
+   padding: 5px;
+   width: 80px;
+   color:white !important;;
 }
 
 
 .cold-status{
-  background-color:#87d7f8 ;
-  color: white;
+  background-color:#87d7f8 !important; ;
   text-align: center;
-  padding: 2px;
-}
+  padding: 5px;
+  width: 80px;
+  color:white !important;;
+  }
 .button-style{
   width: 80px;
-  height: 20px;
+
   border-radius: 3px;
 
 }
@@ -435,6 +438,161 @@ color:white;
 /* end of prospect view */
 
 
+
+.checkBoxDrop{
+  width: 61px;
+  height: 40px;
+  color: white;
+  background-color: lightgrey;
+  padding: 5px 5px 2px 5px;
+}
+
+.checkBox{
+  width: 20px;
+  height: 20px;
+  color: white;
+  border-radius: 3px;
+}
+
+.checkBxDrop{
+  border-top: 10px solid;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-bottom: 10px solid transparent;
+  color: white;
+  margin-left: 5px;
+
+  }
+
+.panel-heading-custom {
+  background-color: #00a8f3;
+  text-align: center;
+  color: white;
+  border-top: 1px solid #ddd;
+  border-color: #428bca;
+  font-size: 16px;
+  line-height: 44px;
+}
+
+
+.container-custom {
+  padding-right: 5px;
+  padding-left: 0px;
+  padding-bottom: 5px;
+  margin-right: auto;
+  padding-top: 5px;
+  margin-left: auto;
+  margin-top: 14px;
+  background-color: white;
+  border-radius: 5px;
+  width: 96%;
+}
+
+.discussion-body {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top:1px ;
+
+}
+.Discus-checkBx{
+  width:20px;
+  height: 20px;
+}
+
+.margin-left-custom{
+  margin-left: 80%;
+}
+
+.contact-person{
+  font-family:"Helvetica Neue";
+  font-weight: normal !important;
+  font-size: 24px;
+  color: #000000 !important;
+}
+ .person-name{
+
+  font-weight: bold;
+  color: #2277b1;
+}
+
+.type-of-call{
+  font-family: "Helvetica Neue";
+  font-weight: lighter;
+  font-size: 20px;
+  color:#9f9c9c !important;
+
+
+}
+ .call-follow{
+  color:#2277b1;
+   font-weight: lighter;
+  font-size: 20px;
+}
+
+
+.date-venue{
+  font-family:"Helvetica Neue";
+  font-weight: lighter;
+  font-size: 18px;
+  color: #000000 !important;
+}
+
+ .location-name{
+   font-family:"Helvetica Neue";
+   font-weight: lighter;
+   font-size: 18px;
+
+   color: #2277b1;}
+.summary-head{
+  font-family:"Helvetica Neue";
+  font-weight: lighter;
+  font-size: 22px;
+  color: #2277b1 !important;
+}
+
+.summary-details{
+  font-family:"Helvetica Neue";
+  font-weight: lighter;
+  font-size: 22px;
+  color: #000000 ;
+
+}
+
+.ssdummary-div{
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.left-align{
+  padding-left: 0px;
+}
+.add-discussions{
+  padding: 5px;
+}
+
+.attachment{
+  margin-top: 15px;
+  color:black;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+.attach-image{
+  margin-left: 15px;
+  width: 70px;
+  height: 70px;
+}
+
+.attach-image-detail{
+  width: 40px;
+  height: 40px;
+
+}
+.displayDiv{
+  display: none;
+}
 /* start of SLA TRacker */
 .panel-heading1 {
 
@@ -536,5 +694,3 @@ color:white;
 {
   color:black;
 }
-
-/* END of SLA Tracker view */

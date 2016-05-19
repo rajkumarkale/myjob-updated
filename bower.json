@@ -1,5 +1,5 @@
 {
-  "name": "BootstrapAngularAdminWebApp",
+  "name": "myjobs",
   "version": "1.3.3",
   "authors": [
     "Flatfull"
@@ -83,7 +83,8 @@
     "bootstrap-touchspin": "*",
     "angular-datatables": "~0.4.3",
     "angular-ui-grid": "~3.0.1",
-    "ng-file-upload": "^12.0.4"
+    "ng-file-upload": "^12.0.4",
+    "bootstrap-material-design": "*"
   },
   "resolutions": {
     "angular-touch": "1.3.2",
@@ -91,6 +92,7 @@
     "angular": "1.3.2",
     "jquery": "~1.10.2",
     "angular-translate": "~2.2.0",
-    "angular-bootstrap": "0.12.0"
+    "angular-bootstrap": "0.12.0",
+    "bootstrap": "~3.3.6"
   }
 }

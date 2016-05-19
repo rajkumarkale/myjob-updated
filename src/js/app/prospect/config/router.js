@@ -8,6 +8,10 @@ angular.module('com.module.prospect').config(['$stateProvider', function ($state
       url: '/view-prospect',
       templateUrl: 'js/app/prospect/views/view-prospect.html'
     })
+    .state('app.create-prospect', {
+      url: '/create-prospect',
+      templateUrl: 'js/app/prospect/views/create-prospect.html'
+    })
     .state('app.viewDiscussions', {
       url: '/view-discussions',
       templateUrl: 'js/app/prospect/views/view-discussions.html'

@@ -6,6 +6,10 @@
   background-size: cover;
 }
 
+.hand-cursor{
+  cursor: pointer;
+}
+
 .color-black{
   color : black;
 }

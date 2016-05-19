@@ -1,5 +1,5 @@
 {
-  "name": "MyJobs",
+  "name": "myjobs",
   "version": "1.0.0",
   "description": "MyJobs Portal Server",
   "main": "index.js",
@@ -40,6 +40,7 @@
   },
   "author": "Mahesh Guggilla",
   "contributors": [
-    "Mahesh Guggilla <mahesh.g@mtuity.com> (http://maheshchari.com)"
+    "Mahesh Guggilla <mahesh.g@mtuity.com> (http://maheshchari.com)",
+    "Revathi Bandi <revathi.bandi@mtuity.com>"
   ]
 }

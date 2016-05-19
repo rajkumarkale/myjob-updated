@@ -334,6 +334,11 @@ margin-left: 100px;
 {
   height:20px;
   width:80px;
+  border-radius: 3px;
+  text-align: center;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  color:white;
 
 }
 .won-status
@@ -343,6 +348,7 @@ margin-left: 100px;
   background-color: #15b929;
   text-align: center;
   padding-top: 1px;
+  border-radius: 3px;
   color:white;
 }
 /* end of empanelment view */
@@ -430,6 +436,7 @@ color:white;
 
 }
 /* end of prospect view */
+
 
 
 .checkBoxDrop{
@@ -586,4 +593,104 @@ color:white;
 .displayDiv{
   display: none;
 }
+/* start of SLA TRacker */
+.panel-heading1 {
 
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: #1f88f3;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.panel2
+{
+  margin-left: 4%;
+
+  height:100%;
+  width:92%;
+}
+.text-class
+{
+  padding-top: 20px;
+  padding-left:5px;
+  padding-bottom: 10px;
+  color:red;
+  background-color: white;
+
+}
+.text-class1
+{
+  height: 13%;
+  width: 100%;
+  background-color: #ebebe0;
+  padding:5px;
+}
+.client-class
+{
+
+  background-color: #ebebe0;
+  height:50px;
+}
+.Address-class
+{
+  padding-top:30px;
+}
+.sub-container
+{
+  padding-left:20px;
+  padding-right:20px;
+ background-color:#ebebe0 ;
+}
+.grad2 {
+  position:absolute;
+  height: 0px;
+  width:0px;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #DFDFDF;
+  margin-top:-10px;
+  margin-left: 520px;
+}
+.escalation
+{
+  text-align: center;
+}
+.first-class1{
+  color: #049ad9;
+ margin-left: 20px;
+}
+.data-button1{background-color: #808080 !important;color: white !important;margin-left: 20%;
+  width: 120px;
+  border-radius: 0px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;}
+.data-button2
+{
+  background-color: #FF7217 !important;color: white !important;
+  width: 120px;
+  border-radius: 0px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.data-button3
+{
+  background-color: #3499ff !important;color: white !important;margin-left: 20%;
+  width: 120px;
+  border-radius: 0px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.no-border{
+  border:none;
+}
+.text-class2
+{
+  color:black;
+}

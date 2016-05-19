@@ -1,7 +1,7 @@
-angular.module('com.module.user').controller('appController', ['$scope','$state','AuthService', 'user','$rootScope','$modal',
-  function ($scope,$state,AuthService, user,$rootScope,$modal) {
+angular.module('com.module.user').controller('appController', ['$scope','$state','AuthService','$rootScope','$modal',
+  function ($scope,$state,AuthService,$rootScope,$modal) {
   'use strict';
-  $rootScope.user = user.data;
+ /* $rootScope.user = user.data;*/
   //$rootScope.profile = profile.data;
   $rootScope.isAdmin =  false;
   $rootScope.backgroundImageDisplay = false;

@@ -444,11 +444,6 @@ a.list-group-item.hover {
   border-width: 0;
 }
 
-.panel-heading {
-  border-radius: 2px 2px 0 0;
-  background-color: #414141 !important;
-  color: #ffffff !important;
-}
 
 .panel-default .panel-heading {
   background-color: #f6f8f8;

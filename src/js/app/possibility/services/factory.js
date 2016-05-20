@@ -8,12 +8,23 @@ angular.module('com.module.possibility').factory('possibilityCreateService', fun
       data: data
     });
   };
-
-  
-
+  var getLegalEntity = function (data) {
+    return $http({
+      method: 'GET',
+      url: BASEURI + '/api/clients?legal_name='+data
+    });
+  };
+  var setPossibility = function (data) {
+    return $http({
+      method: 'POST',
+      url: BASEURI + '/api/possibility/create',
+      data:data
+    });
+  };
 
   return {
-    createClient: createClient
-    
+    createClient: createClient,
+    getLegalEntity:getLegalEntity,
+    setPossibility:setPossibility
   }
 });

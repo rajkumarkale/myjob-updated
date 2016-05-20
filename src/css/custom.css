@@ -421,6 +421,7 @@ margin-left: 100px;
 .button-style{
   width: 80px;
 
+
   border-radius: 3px;
 
 }
@@ -694,3 +695,18 @@ color:white;
 {
   color:black;
 }
+/* add new discussions */
+
+.mouseHand:hover{
+  cursor: hand;
+}
+
+.modalCenter{
+
+
+
+  margin-top: 10% !important;
+
+}
+
+/* add new discussions */

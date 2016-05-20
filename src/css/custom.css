@@ -111,6 +111,7 @@
     display: table;
     width: 100%;
     height: 70px;
+
 }
 .listDetailsContent > div {
     display: table-cell;
@@ -326,9 +327,9 @@ margin-left: 100px;
 }
 .listDetails3
 {
-  width: 20%;
+  width: 30%;
   align:center;
-  margin-left:40%
+  margin-left:35%
 }
 .arrow1
 {
@@ -350,10 +351,17 @@ margin-left: 100px;
 
   background-color: #15b929;
   color: white !important;
-  font-weight: bold;
   text-align: center;
   border-radius: 3px;
-  width:95%;
+  width:100%;
+  height:93%;
+
+}
+.newcall-buton
+{
+
+  background-color: #049ad9;
+  color: white !important;
 
 }
 /* end of empanelment view */
@@ -604,7 +612,7 @@ color:white;
   width: 100%;
   text-align: center;
   color: white;
-  background-color: #1f88f3;
+  background-color:  #034f84;
   padding-top: 1px;
   padding-bottom: 1px;
 }
@@ -704,9 +712,12 @@ color:white;
 
 }
 
+
+
 .space-class {
   height: 16px;
 }
+/*end of sla tracker view */
 .select {
   position: relative;
   display: block;

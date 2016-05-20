@@ -14,7 +14,8 @@ angular.module('com.module.prospect').config(['$stateProvider', function ($state
     })
     .state('app.viewDiscussions', {
       url: '/view-discussions',
-      templateUrl: 'js/app/prospect/views/view-discussions.html'
+      templateUrl: 'js/app/prospect/views/view-discussions.html',
+      controller:'viewDiscussionCtrl'
     })
     .state('app.viewDiscussions.AddDiscussions', {
       url: '/view-discussions-add-discussions',

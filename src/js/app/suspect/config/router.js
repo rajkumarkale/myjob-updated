@@ -4,9 +4,12 @@
 angular.module('com.module.suspect').config(['$stateProvider', function ($stateProvider) {
   'use strict';
   $stateProvider
-
     .state('app.suspect-view', {
       url: '/suspect-view',
       templateUrl: 'js/app/suspect/views/suspect-view.html'
+    })
+    .state('app.create-suspect-view', {
+      url: '/create-suspect',
+      templateUrl: 'js/app/suspect/views/create-suspect.html'
     })
 }]);

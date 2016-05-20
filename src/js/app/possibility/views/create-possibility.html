@@ -12,55 +12,57 @@
                         <div class="row">
                         <div class="col-md-6">
 
-                        <div class="form-group input-group ">
-                            <input class="form-control bord-remove" type="text" placeholder="Legal Entity"><span class=" input-group-addon glyphicon glyphicon-plus-sign" ng-click="createClient()" ></span>
-
+                        <div class="form-group  ">
+                            <input class="form-control bord-remove"  data-ng-keyup="getLegalEntity(createPossibility.legal_name)" data-ng-model="createPossibility.legal_name" type="text" placeholder="Legal Entity">
+                             
           </div>
-                        <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Employee Size of Company">
-                            </div>
-                <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Type of Customer">
+                        
+                            <div class="form-group">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.division" type="text" placeholder="Division Name">
+                            
+          </div>
+                           
+                            
+          <div class="form-group" custom-select data="businessVertical"></div>
+          <div class="form-group" custom-select data="employeeSize"></div>
 
+          
+                             <div class="form-group">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.address.address_line_2 " type="text" placeholder="Address2">
           </div>
                              <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Address2">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.address.city " type="text" placeholder="City">
           </div>
-                             <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="City">
-          </div>
-                             <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Status">
-                            <div id="grad1"></div>
-          </div>
-
+                           <div class="form-group">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.address.pin" type="text" placeholder="Zipcode">
+          </div>  
 
                     </div>
 
                          <div class="col-md-6">
                 <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Website URL">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.unit_name" type="text" placeholder=" Business Unit ">
+                </div>
+                  <div class="form-group">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.url" type="text" placeholder="Website Url">     
+                              </div>
+                              <div class="form-group" custom-select data="groupTurnover">
+                            
+          </div>
+          <div class="form-group" custom-select data="customerType">
+                            
           </div>
                               <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Group Turnover">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.address.address_line_1" type="text" placeholder="Address1">
           </div>
                               <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Address1">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.address.state" type="text" placeholder="State">
           </div>
-                              <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="State">
-          </div>
-                              <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Zipcode">
-          </div>
-
-
+                              
                     </div>
 
-
                     </div>
-                            </div nv-file-drop="" uploader="uploader">
-                            <div class="row">
+                                                        <div class="row">
                             <div class="col-md-12">
                              <div ngf-drop ngf-select ng-model="files" class="drop-box"
         ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
@@ -69,7 +71,7 @@
     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
     Files:
     <ul>
-        <li ng-repeat="f in files" >{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
+        <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
     </ul>
 
                             </div>
@@ -78,26 +80,29 @@
                             <div class="col-md-6">
 
                                 <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Contact Person">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.point_of_contacts[0].name" type="text" placeholder="Contact Person Name">
           </div>
                 <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.point_of_contacts[0].designation" type="text" placeholder="Contact Person Designation">
           </div>
                                 <div class="form-group">
                                     <label class="contacts">Contacts Provides</label>
-                                    <input type="checkbox" class="check">
+                                    <input type="checkbox" ng-model="remote" class="check">
                                     <label class="remote">Remote</label>
-                                    <input type="checkbox" class="check">
+                                    <input type="checkbox" ng-model="local" class="check">
                                     <label class="location">Location</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
 
                 <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Contact Person Phone Number">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.point_of_contacts[0].phone" type="text" placeholder="Contact Person Phone Number">
           </div>
                    <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Email Id">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.point_of_contacts[0].email_id" type="text" placeholder="Email Id">
+          </div>
+          <div class="form-group" custom-select data="localObj">
+                           
           </div>
                           </div>
 
@@ -106,23 +111,26 @@
                             <div class="col-md-6">
 
                                  <div class="form-group">
-                            <input class="form-control bord-remove" type="text" placeholder="Remote Location">
+                                     <div class="form-group" custom-select data="remoteLocation">
+
+
           </div>
 
                             </div>
 
 
                         </div>
+                        </div>
                         <div class="form-group">
                             <button class="btn btn-primary contacts-button"><i class="fa fa-plus"></i> Contacts</button>
                         </div>
                          <div class="col-md-6 col-md-offset-5">
                         <div class="form-group">
-                            <button class="btn btn-primary data-button">Cancel</button><button class="btn btn-primary data-button">Submit</button>
+                            <button class="btn btn-primary data-button" >Cancel</button><button class="btn btn-primary data-button" data-ng-click="save(createPossibility)">Submit</button>
                             </div>
                         </div>
-                        </div>
+                        
                      </div>
                 </div>
-				</div>
+        </div>
             </div>

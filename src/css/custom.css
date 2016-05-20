@@ -6,6 +6,10 @@
   background-size: cover;
 }
 
+.hand-cursor{
+  cursor: pointer;
+}
+
 .color-black{
   color : black;
 }
@@ -221,7 +225,7 @@ margin-left: 520px;
 .drop-box {
     background: #F8F8F8;
     border: 5px dashed #DDD;
-    width: 95px;
+    width: 95%;
     height: 150px;
     text-align: center;
     padding-top: 25px;
@@ -695,6 +699,7 @@ color:white;
 {
   color:black;
 }
+
 /* add new discussions */
 
 .mouseHand:hover{
@@ -710,3 +715,68 @@ color:white;
 }
 
 /* add new discussions */
+
+.select {
+  position: relative;
+  display: block;
+  min-width: 325px;
+  color: #999;
+  vertical-align: middle;
+  text-align: left;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: none;
+  border-bottom:3px solid #dfdfdf
+}
+.select .placeholder {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  z-index: 1;
+  padding: 14px;
+  cursor: pointer;
+}
+.select .placeholder:after {
+  position: absolute;
+  right: 0;
+  bottom:0;
+  content:"";
+  width: 0;
+  height: 0px;
+  border-bottom: 15px solid #dfdfdf;
+  border-left: 15px solid transparent;
+  z-index: 10;
+}
+.select.is-open ul {
+  display: block;
+-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+.select ul {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  width: auto;
+  background: #fff;
+  top: 100%;
+  right: 0;
+  list-style: none;
+  margin: 5px 0 0 0;
+  padding: 0;
+  z-index: 100;
+}
+.select ul li {
+  display: block;
+  text-align: left;
+  padding: 8px 15px;
+  color: #999;
+  cursor: pointer;
+}
+.select ul li:nth-child(odd){
+  background:#f5f5f5
+}
+
+

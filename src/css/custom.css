@@ -434,6 +434,7 @@ margin-left: 100px;
 .button-style{
   width: 80px;
 
+
   border-radius: 3px;
 
 }
@@ -713,11 +714,27 @@ color:white;
 }
 
 
-
 .space-class {
   height: 16px;
 }
 /*end of SLA tracker view */
+
+/* add new discussions */
+
+.mouseHand:hover{
+  cursor: hand;
+}
+
+.modalCenter{
+
+
+
+  margin-top: 10% !important;
+
+}
+
+/* add new discussions */
+
 .select {
   position: relative;
   display: block;
@@ -781,4 +798,5 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   background:#f5f5f5
 
 }
+
 

@@ -423,8 +423,8 @@ margin-left: 100px;
   color:white !important;;
   }
 .button-style{
-  width: 80px;
-
+  width: 100px;
+  text-align: center;
 
   border-radius: 3px;
 
@@ -701,20 +701,24 @@ color:white;
 }
 
 /* add new discussions */
-
-.mouseHand:hover{
-  cursor: hand;
-}
-
 .modalCenter{
-
-
-
   margin-top: 10% !important;
-
+  border:none;
 }
 
-/* add new discussions */
+.fileAttach{
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgrey;
+  border-radius: 5px;
+}
+.centerBtn{
+  margin-left: 25%;
+}
+.default{
+  background: lightslategray;
+}
+/* end add new discussions */
 
 .select {
   position: relative;

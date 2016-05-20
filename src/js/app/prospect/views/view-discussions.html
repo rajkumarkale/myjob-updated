@@ -1,21 +1,16 @@
 <div class="maincol-apply">
-  <!--<button ng-click="diplayPopUp('popUp','block')">btn</button>
-  <div ui-view>
-  </div>-->
+
+
   <div class="container all-dateinputs">
+
     <div class="pull-right">
-      <!--<a ui-sref="" >
-
-      </a>--><!--<a ui-sref="" >
-
-     </a>-->
 
       <table >
         <tr >
               <td class="add-discussions " >
-                <a ui-sref="app.viewDiscussions.AddDiscussions" >
-                  <img src="img/icon_add.png" />
-                </a>
+
+                  <img src="img/icon_add.png" class="mouseHand" ng-click="displayPopUp('popUp','block')" />
+
               </td>
               <td class="add-discussions"><img src="img/icon_edit.png"/></td>
               <td class="add-discussions"> <img src="img/icon_delete.png"/></td>
@@ -25,6 +20,45 @@
 
 
   <div class="container">
+    <div class="  modal " id="popUp">
+      <div class="modal-dialog modalCenter">
+        <div class="modal-content">
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <h3>Add Discussions</h3>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <label class="control-label" for="inputLarge">Contact person</label>
+                        <input class="form-control input-lg" type="text" id="inputLarge">
+                        <label class="control-label" for="inputLarge">Date
+                        </label>
+                        <input class="form-control input-lg" type="text" id="inputLarge">
+
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="control-label" for="inputLarge">Venue</label>
+                        <input class="form-control input-lg" type="text" id="inputLarge">
+
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="closeModal('popUp','none')">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="possibilities">
       <h4 class="pull-left head">
         <label class=" dropdown checkBoxDrop ">

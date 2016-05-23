@@ -1,7 +1,6 @@
+
          <div class="container">
-                <div class="panel panel-default main-panel">
-                    <div class="panel-heading">Possibility > New Possibility</div>
-                </div>
+               
 
                 <div class="panel panel-primary second-panel">
                     <div class="panel-heading">
@@ -9,16 +8,17 @@
                     </div>
                      <div>
                     <div class="panel-body" >
+                    <form name="createPossibilityForm" >
                         <div class="row">
                         <div class="col-md-6">
 
                         <div class="form-group  ">
-                            <input class="form-control bord-remove"  data-ng-keyup="getLegalEntity(createPossibility.legal_name)" data-ng-model="createPossibility.legal_name" type="text" placeholder="Legal Entity">
+                            <input class="form-control bord-remove"  typeahead="data for data in getLegalEntity($viewValue)" required  data-ng-model="createPossibility.legal_name" type="text" placeholder="Legal Entity*">
                              
           </div>
                         
                             <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.division" type="text" placeholder="Division Name">
+                            <input class="form-control bord-remove" required data-ng-model="createPossibility.division" type="text" placeholder="Division Name*">
                             
           </div>
                            
@@ -28,23 +28,23 @@
 
           
                              <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.address.address_line_2 " type="text" placeholder="Address2">
+                            <input class="form-control bord-remove" required data-ng-model="createPossibility.address.address_line_1 " type="text" placeholder="Address line 1*">
           </div>
                              <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.address.city " type="text" placeholder="City">
+                            <input class="form-control bord-remove" required data-ng-model="createPossibility.address.city " type="text" placeholder="City*">
           </div>
                            <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.address.pin" type="text" placeholder="Zipcode">
+                            <input class="form-control bord-remove" required data-ng-model="createPossibility.address.pin" type="text" numbers-only placeholder="Zipcode*">
           </div>  
 
                     </div>
 
                          <div class="col-md-6">
                 <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.unit_name" type="text" placeholder=" Business Unit ">
+                            <input class="form-control bord-remove" required data-ng-model="createPossibility.unit_name" type="text" placeholder=" Business Unit *">
                 </div>
                   <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.url" type="text" placeholder="Website Url">     
+                            <input class="form-control bord-remove" required data-ng-model="createPossibility.url" type="text" placeholder="Website URL*">     
                               </div>
                               <div class="form-group" custom-select data="groupTurnover">
                             
@@ -53,11 +53,18 @@
                             
           </div>
                               <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.address.address_line_1" type="text" placeholder="Address1">
+                            <input class="form-control bord-remove"  data-ng-model="createPossibility.address.address_line_2" type="text" placeholder="Address line 2">
           </div>
                               <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.address.state" type="text" placeholder="State">
+                            <input class="form-control bord-remove" required data-ng-model="createPossibility.address.state" type="text" placeholder="State*">
           </div>
+               <div class="form-group">
+                            <input class="form-control bord-remove" required data-ng-model="createPossibility.address.country" type="text" placeholder="Country*">
+          </div>
+          <div class="form-group">
+                            <button class="btn btn-primary contacts-button pull-right"><i class="fa fa-plus"></i> Contacts</button>
+                        </div>
+                        
                               
                     </div>
 
@@ -80,10 +87,10 @@
                             <div class="col-md-6">
 
                                 <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.point_of_contacts[0].name" type="text" placeholder="Contact Person Name">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.point_of_contacts[0].name" type="text" required placeholder="Contact Person Name*">
           </div>
                 <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.point_of_contacts[0].designation" type="text" placeholder="Contact Person Designation">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.point_of_contacts[0].designation" required type="text" placeholder="Contact Person Designation*">
           </div>
                                 <div class="form-group">
                                     <label class="contacts">Contacts Provides</label>
@@ -96,12 +103,11 @@
                             <div class="col-md-6">
 
                 <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.point_of_contacts[0].phone" type="text" placeholder="Contact Person Phone Number">
+                            <input class="form-control bord-remove" data-ng-model="createPossibility.point_of_contacts[0].phone" type="text" numbers-only required placeholder="Contact Person Phone Number*">
           </div>
                    <div class="form-group">
-                            <input class="form-control bord-remove" data-ng-model="createPossibility.point_of_contacts[0].email_id" type="text" placeholder="Email Id">
+                            <input class="form-control bord-remove" required data-ng-model="createPossibility.point_of_contacts[0].email_id" type="text" placeholder="Email Id*">
           </div>
-          <div class="form-group" custom-select data="localObj">
                            
           </div>
                           </div>
@@ -109,27 +115,21 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-
-                                 <div class="form-group">
-                                     <div class="form-group" custom-select data="remoteLocation">
-
-
+                            <div class="form-group col-md-12">
+                            <input class="form-control bord-remove" required data-ng-model="createPossibility.point_of_contacts[0].support_location" type="text" placeholder="Remote Location*">
           </div>
 
-                            </div>
-
-
-                        </div>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary contacts-button"><i class="fa fa-plus"></i> Contacts</button>
-                        </div>
-                         <div class="col-md-6 col-md-offset-5">
-                        <div class="form-group">
-                            <button class="btn btn-primary data-button" >Cancel</button><button class="btn btn-primary data-button" data-ng-click="save(createPossibility)">Submit</button>
-                            </div>
                         </div>
                         
+                         <div class="col-md-6 col-md-offset-5">
+                        <div class="form-group">
+                            <button class="btn btn-primary data-button" >Cancel</button><button class="btn btn-primary data-button" data-ng-disabled="!isValid(createPossibilityForm.$valid)"
+                             data-ng-click="save(createPossibility)" >Submit</button>
+                            </div>
+                        </div>
+                        </div>
+
+                        </form>
                      </div>
                 </div>
         </div>

@@ -20,13 +20,12 @@ angular.module('com.module.possibility')
     modalInstance.result.then(function () {
     });
   };
-$scope.employeeSize  ={title:"Employee Size of the company", data:["SMALL", "MEDIUM", "LARGE"],selectedItem:""};
+$scope.employeeSize  ={title:"Employee Size of the Company", data:["SMALL", "MEDIUM", "LARGE"],selectedItem:""};
 $scope.groupTurnover  ={title:"Group Turnover", data:["SMALL", "MEDIUM", "LARGE"],selectedItem:""};
 $scope.businessVertical  ={title:"Business Vertical", data:["IT", "GENERAL", "GOVT", "IT_STAFFING", "GENERAL_STAFFING", "GOVERNMENT_STAFFING", "PERM_SEARCH", "RPO"],selectedItem:""};
-$scope.customerType  ={title:"Type of customer", data:["MNC", "PVT_LTD", "PUBLIC_LTD", "PROPRIETORSHIP"],selectedItem:""};
-$scope.supportType  ={title:"Employee Size of the company", data:["REMOTE", "LOCAL", "BOTH"],selectedItem:""};
+$scope.customerType  ={title:"Type of Customer", data:["MNC", "PVT_LTD", "PUBLIC_LTD", "PROPRIETORSHIP"],selectedItem:""};
+$scope.supportType  ={title:"Employee Size of the Company", data:["REMOTE", "LOCAL", "BOTH"],selectedItem:""};
 $scope.remoteLocation ={title:"Remote Location", data:["Hyderabad", "Bangalore", "Mumbai","Pune"],selectedItem:""};
-$scope.localObj ={title:" Local", data:["Hyderabad", "Bangalore", "Mumbai","Pune"],selectedItem:""};
 
   $scope.createPossibility =  {
 					client_id:"",
@@ -46,18 +45,16 @@ $scope.localObj ={title:" Local", data:["Hyderabad", "Bangalore", "Mumbai","Pune
 					country  :"",
 					pin:""
 					},
-					"Current_status": {
+					"current_status": {
 					stage :"POSSIBILITY",
 					status :"NOT_MET"
 					 },
 					"point_of_contacts": [
 					
 					{
-					user_id:"",
 					name:"", 
 					email_id:"", 
 					support_type:"", 
-					support_location:"", 
 					designation:"",
 					phone:"",
 					}
@@ -65,10 +62,15 @@ $scope.localObj ={title:" Local", data:["Hyderabad", "Bangalore", "Mumbai","Pune
 }
 
 
- $scope.save = function(val){
+ $scope.save = function(possibilityObject){
  	
- 	$scope.processRequest(val);
+ 	$scope.processRequest(possibilityObject);
    
+  };
+  $scope.isValid = function(val){
+  	return (val  && ($scope.businessVertical.selectedItem && $scope.employeeSize.selectedItem  && $scope.groupTurnover.selectedItem 
+  		&& $scope.customerType.selectedItem ))
+
   };
 
  
@@ -77,7 +79,6 @@ $scope.processRequest = function(requestObject){
 	requestObject.turnover = $scope.groupTurnover.selectedItem;
 	requestObject.vertical = $scope.businessVertical.selectedItem;
 	requestObject.customer_type = $scope.customerType.selectedItem;
-	requestObject.point_of_contacts[0].support_location = $scope.remoteLocation.selectedItem;
 	if($scope.remote && $scope.local)
 	{
 		requestObject.point_of_contacts[0].support_type = 'BOTH';
@@ -88,21 +89,57 @@ $scope.processRequest = function(requestObject){
 			requestObject.point_of_contacts[0].support_type = 'LOCAL';
 		}
 	}
+	$scope.removeEmptyArrays (requestObject);
 	 possibilityCreateService.setPossibility(requestObject).success(function () {
       toaster.pop('Success','POSSIBILITY Created Successfully.');
-      $modalInstance.dismiss('cancel');
+      $state.go('app.viewPossibility');
     }).error(function (err) {
       $scope.authError = err.message;
-      toaster.pop('Fail','failed.');
     })
 } 
 $scope.getLegalEntity = function(val)
 {
 	possibilityCreateService.getLegalEntity(val).then(function(response){
-		
+
 	})
 
 };
+$scope.removeEmptyArrays = function (data) {
+    for (var key in data) {
+        var item = data[key];
+        if(!item || item == ""){
+        	delete data[key];
+        }
+        else if (Array.isArray(item)) {
+            if (item.length != 0) {
+            	for(var i=0 ;i<item.length;i++){
+            	if (typeof item[i] == "object"){
+            	 for (var key2 in item) {
+            	var item2 = item[key2]
+            		if(item2 == ""){
+            			delete item2[key2];
+            	}
+            	}
+            }
+            	}
+            }
+        } else if (typeof item == "object") {
+            for (var key1 in item) {
+            	var item1 = data[key1];
+            		if(item1 == ""){
+            			delete item[key1];
+
+            	}
+
+            }
+        }
+    }    
+};
+$scope.cancel = function()
+{
+		$state.go('app.viewPossibility');
+};
+
  $scope.upload = function (files) {
         if (files && files.length) {
             for (var i = 0; i < files.length; i++) {

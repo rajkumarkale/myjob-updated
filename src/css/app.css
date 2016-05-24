@@ -5326,26 +5326,26 @@ a.text-#000000:hover {
 }*/
 
 .modal-dialog .modal-content .btn-default {
-  color: #ffffff !important;
-  background-color: #F2800B;
-  border-color: #F2800B;
+  color: #000000 !important;
+  background-color: #d1d1d1;
+  border-color: #EEEEEE;
 }
 
 .modal-dialog .modal-content .btn-default:hover {
   color: #ffffff !important;
-  background-color: #f9d21a;
-  border-color: #f9cf0b;
+  background-color: #d1d1d1;
+  border-color: #ccc;
 }
 
 .modal-dialog .modal-content .btn-primary {
-  color: #ffffff !important;
-  background-color: #F22E2E;
-  border-color: #F22E2E;
+  color:rgba(255,255,255, 0.84) !important;
+  background-color: #009688;
+
 }
 .modal-dialog .modal-content .btn-primary:hover {
   color: #fff;
-  background-color: #c9302c;
-  border-color: #ac2925;
+  background-color: #4b9692;
+
 }
 
 .btn-check .btn-default {

@@ -4,14 +4,9 @@
 
 app.directive('inputPrice', function () {
   return {
-    restrict: 'EA',
-    template: '<input  class="form-control"  name="{{inputName}}" ng-model="inputValue"  />',
+    restrict: 'A',
 
-    scope: {
-      inputValue: '=',
-      inputName: '='
-    },
-    link: function (scope) {
+    link: function (scope,element,attribute,controller) {
       scope.$watch('inputValue', function(newValue,oldValue) {
         if(String(newValue).indexOf(',') != -1)
           scope.inputValue = String(newValue).replace(',', '.');

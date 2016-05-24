@@ -2,7 +2,7 @@
 
 
 
-<div  class="panel panel-primary" >
+<div   class="panel panel-primary" >
   <div class="panel-heading"><h4 class="SLA-text"><strong>SLA Tracker Internal Process(Ver 1.0)</strong></h4></div>
   <div class="panel-body ">
     <div class="text-class" >All fields are mandatory</div>
@@ -26,9 +26,8 @@
           <div class="col-md-6">
             <div ng-controller="Ctrl" class="form-group label-floating">
               <label class="control-label" >Fixed Fee</label>
-              <input-price input-value="wks.number" class="form-control"  input-name="wks.name" ng-model="wks.number" />
-
-              <span ng-show="!wks.validity">Value is invalid</span>
+              <input-price input-value="num.number" class="form-control"  input-name="num.name" ng-model="num.number" />
+              <span ng-show="!num.validity">Value is invalid</span>
             </div>
           </div>
         </div>

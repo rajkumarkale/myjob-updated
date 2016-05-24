@@ -6,6 +6,10 @@
   background-size: cover;
 }
 
+.hand-cursor{
+  cursor: pointer;
+}
+
 .color-black{
   color : black;
 }
@@ -20,7 +24,6 @@
 }
 
 .header-name{
-  font-family: "Helvetica Neue";
   font-style: normal;
   font-size: 16px;
   color:#ffffff;
@@ -177,12 +180,20 @@ td:nth-child(1) {
 .possibilities {
     margin-top: 80px;
 }
-.control-label{top: 0px !important;}
-          .main-panel>.panel-heading{background-color: white !important;}
-          .second-panel>.panel-heading {background-color:#2277b0 !important;color: white !important;}
 
-          .second-panel>.panel-heading a{color: white !important;}
-          .bord-remove{border-top: none;border-left: none;border-right: none;}
+.main-panel>.panel-heading{
+  background-color: white !important;
+}
+.second-panel>.panel-heading {
+  background-color:#2277b0 !important;color: white !important;
+}
+.second-panel>.panel-heading a{
+ color: white !important;
+}
+.bord-remove{
+  border-top: none;border-left: none;border-right: none;
+}
+
 #grad1 {
 position:absolute;
     height: 0px;
@@ -198,7 +209,8 @@ margin-left: 520px;
     height: 20px;
     vertical-align: -36%;
 }
-.contacts-button{background-color: #049ad9 !important;color: white !important;padding-left: 10px;
+.contacts-button{
+  background-color: #049ad9 !important;color: white !important;padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;border-radius: 0px;}
@@ -237,7 +249,7 @@ margin-left: 520px;
 
 
 /*create suspect*/
-.control-label{top: 0px !important;}
+
           .main-panel>.panel-heading{background-color: white !important;}
           .second-panel>.panel-heading {background-color:#2277b0 !important;color: white !important;}
           .second-panel>.panel-heading a{color: white !important;}
@@ -298,14 +310,14 @@ margin-left: 520px;
 }
 /*create prospect*/
 #grad1-status {
-position:absolute;
-    height: 0px;
-width:0px;
-border-top: 10px solid transparent;
-    border-left: 10px solid transparent;
-    border-right: 10px solid #DFDFDF;
-margin-top:-10px;
-margin-left: 100px;
+  position:absolute;
+  height: 0px;
+  width:0px;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #DFDFDF;
+  margin-top:-10px;
+  margin-left: 100px;
 }
 /*end prospect*/
 /* Empanelment view */
@@ -323,7 +335,6 @@ margin-left: 100px;
 .listDetails3
 {
   width: 20%;
-  align:center;
   margin-left:40%
 }
 .arrow1
@@ -476,11 +487,8 @@ color:white;
 
 
 .container-custom {
-  padding-right: 5px;
-  padding-left: 0px;
-  padding-bottom: 5px;
+  padding: 5px 5px 0 ;
   margin-right: auto;
-  padding-top: 5px;
   margin-left: auto;
   margin-top: 14px;
   background-color: white;
@@ -506,7 +514,6 @@ color:white;
 }
 
 .contact-person{
-  font-family:"Helvetica Neue";
   font-weight: normal !important;
   font-size: 24px;
   color: #000000 !important;
@@ -518,7 +525,6 @@ color:white;
 }
 
 .type-of-call{
-  font-family: "Helvetica Neue";
   font-weight: lighter;
   font-size: 20px;
   color:#9f9c9c !important;
@@ -533,27 +539,23 @@ color:white;
 
 
 .date-venue{
-  font-family:"Helvetica Neue";
   font-weight: lighter;
   font-size: 18px;
   color: #000000 !important;
 }
 
  .location-name{
-   font-family:"Helvetica Neue";
    font-weight: lighter;
    font-size: 18px;
 
    color: #2277b1;}
 .summary-head{
-  font-family:"Helvetica Neue";
   font-weight: lighter;
   font-size: 22px;
   color: #2277b1 !important;
 }
 
 .summary-details{
-  font-family:"Helvetica Neue";
   font-weight: lighter;
   font-size: 22px;
   color: #000000 ;
@@ -566,7 +568,7 @@ color:white;
 }
 
 .left-align{
-  padding-left: 0px;
+  padding-left: 0;
 }
 .add-discussions{
   padding: 5px;
@@ -660,7 +662,9 @@ color:white;
   color: #049ad9;
  margin-left: 20px;
 }
-.data-button1{background-color: #808080 !important;color: white !important;margin-left: 20%;
+.data-button1{
+  background-color: #808080 !important;
+  color: white !important;margin-left: 20%;
   width: 120px;
   border-radius: 0px;
   padding-left: 24px;
@@ -672,20 +676,14 @@ color:white;
   background-color: #FF7217 !important;color: white !important;
   width: 120px;
   border-radius: 0px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 24px;
 }
 .data-button3
 {
   background-color: #3499ff !important;color: white !important;margin-left: 20%;
   width: 120px;
-  border-radius: 0px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  border-radius: 0;
+  padding: 10px 24px;
 }
 .no-border{
   border:none;
@@ -761,5 +759,3 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   margin: 0px 0px 0px;
   padding-left: 10px;
 }
-
-s

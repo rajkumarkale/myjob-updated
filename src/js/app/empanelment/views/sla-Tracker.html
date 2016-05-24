@@ -1,328 +1,127 @@
 
-<div class="main-container">
-  <div class="sub-container ">
-    <div class="space-class"></div>
-    <div class="panel-heading1 "  class="panel panel-primary">
-      <h3>SLA Tracker intrnal process(ver 1.0)</h3>
-    </div>
-
-      <div class="text-class" >All fields are mandatory</div>
-      <div class="sub-main-container ">
-        <div>
-          <div class="col-md-6 client-class ">
-            <div class="form-group1"><label class="text-class2"><h4><strong>Client Address</strong></h4></label></div>
-          </div>
-          <div class="col-md-6 client-class ">
-            <div class="form-group1 text-class2"><label class="text-class2"><h4><strong>Commercials</strong></h4></label></div>
-          </div>
-        </div>
-      </div>
-      <div class="container1 ">
-
-        <div class="panel panel-primary second-panel no-border">
-
-          <div>
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-6 Address-class">
-                  <div class="form-group1"><label class="text-class2">Client Name:</label>
-                    <input class="form-control " type="text" >
-
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Corporate Office:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Address1:</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Address2:</label>
-                    <input class="form-control bord-remove" type="text">
-                    <div class="grad2"></div>
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Contact Number:</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
 
 
-                </div>
 
-                <div class="col-md-5 Address-class">
-                  <div class="form-group1"><label class="text-class2">Fixed Fee:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Reimbursment Service Fee:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Sourcing Fee:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Absorption Fee & Clauses:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
+<div  class="panel panel-primary" >
+  <div class="panel-heading"><h4 class="SLA-text"><strong>SLA Tracker Internal Process(Ver 1.0)</strong></h4></div>
+  <div class="panel-body ">
+    <div class="text-class" >All fields are mandatory</div>
+    <!--<div class="row" >
+        <div class="col-md-6">client</div>
+        <div class="col-md-6">client</div>
+    </div>-->
 
-                  <div class="form-group1">
-                    <button class="btn btn-raised btn-default  contacts-button pull-right"><i class="fa fa-plus"></i> Other Fees
-                    </button>
-                  </div>
+    <div class="col-md-12 ">
 
-                </div>
+      <form  name="usrform" novalidate id="usrform" class="bs-component ">
+        <div class="container-fluid ">
+          <div ng-controller="formCtrl" class="col-md-6 ">
+            <div class="form-group label-floating">
+              <label class="control-label" >Client Name:</label>
+              <input class="form-control" name="n1"  ng-model="n1" type="text" minlength="3" maxlength="20" ng-required="usrform.n1.$error" >
+              <span ng-show="usrform.n1.$invalid && usrform.n1.$dirty  ">please enter valid text</span>
 
-              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <div class="col-md-6 client-class">
-            <div class="form-group1"><label class="text-class2"><h4><strong>Aggreement Relaed</strong></h4></label></div>
-          </div>
-          <div class="col-md-6 client-class ">
-            <div class="form-group1 "><label class="text-class2"><h4><strong>Important Dates</strong></h4></label></div>
-          </div>
-        </div>
-      </div><br>
-      <div class="container1 ">
+          <div class="col-md-6">
+            <div ng-controller="Ctrl" class="form-group label-floating">
+              <label class="control-label" >Fixed Fee</label>
+              <input-price input-value="wks.number" class="form-control"  input-name="wks.name" ng-model="wks.number" />
 
-        <div class="panel panel-primary second-panel no-border ">
-
-          <div>
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-6 Address-class">
-                  <div class="form-group1"><label class="text-class2">Aggreement start date:</label>
-                    <input class="form-control bord-remove" type="text" >
-
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Agreement end Date:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Agreement termination notice:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Association termination notice:</label>
-                    <input class="form-control bord-remove" type="text" >
-                    <div class="grad2"></div>
-                  </div>
-                  <div class="form-group1"><label class="text-class2">payment Mode:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Credit Terms:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1">
-                    <label class="first-class1 ">BGV</label>&nbsp;
-                    <input type="radio" name="yes" class="check">
-                    <label class="remote ">YES</label>
-                    <input type="radio" name="yes" class="check ">
-                    <label class="location ">NO</label>
-                  </div>
-
-                  <div class="form-group1">
-                    <input class="form-control bord-remove" type="text">
-                    <div class="grad2"></div>
-                  </div>
-                  <div class="form-group1">
-                    <label class="contacts">Insurence</label>
-                    <input type="radio" name="yes" class="check">
-                    <label class="remote">Applicable</label>
-                    <input type="radio" name="yes" class="check">
-                    <label class="location">Not Applicable</label>
-                  </div><br>
-                  <div class="form-group1">
-                    <input type="radio" name="yes" class="check">
-                    <label class="remote">Family Floater</label>
-                    <input type="radio" name="yes" class="check">
-                    <label class="location">Individual Policy</label>
-
-                  </div><br>
-                  <div class="form-group1">
-                    <input type="checkbox" class="check">
-                    <label class=" first-class1">GPA</label>
-                  </div>
-
-
-                </div>
-
-                <div class="col-md-5 Address-class">
-                  <div class="form-group1"><label class="text-class2">Time sheeet remainder:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">sheet submission cutoff:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Payroll input Upload Date:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Invoice submission Date:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Payout Date:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="col-md-6 client-class">
-          <div class="form-group1"><label class="text-class2"><h4><strong>Time Sheet/Attendence Related</strong></h4></label></div>
-        </div>
-        <div class="col-md-6 client-class ">
-          <div class="form-group1 "><label class="text-class2"><h4><strong>Activity Owners</strong></h4></label></div>
-        </div>
-      </div><br>
-      <div class="container1 ">
-
-        <div class="panel panel-primary second-panel no-border ">
-
-          <div>
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-6 Address-class">
-                  <div class="form-group1"><label class="text-class2">Time Sheet/Attendence Cycle</label>
-                    <input class="form-control bord-remove" type="text" >
-
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Time Sheet/Attendence Collection Process</label>
-                    <textarea class="form-control bord-remove" type="text" ></textarea>
-                  </div>
-                </div>
-
-                <div class="col-md-5 Address-class">
-                  <div class="form-group1"><label class="text-class2">Time Sheet and Payroll:</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Salary Payout:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Invoice Submission&Payment Followup:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1" ><label class="text-class2">PO:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                  <div class="form-group1"><label class="text-class2">Disputes & Resolutions:</label>
-                    <input class="form-control bord-remove" type="text" >
-                  </div>
-                </div>
-
-              </div>
+              <span ng-show="!wks.validity">Value is invalid</span>
             </div>
           </div>
         </div>
 
-      </div>
-
-    <div>
-      <div class="col-md-6 client-class">
-        <div class="form-group1"><label class="text-class2"><h4><strong>Payroll & Invoice(Billing) Related</strong></h4></label></div>
-      </div>
-      <div class="col-md-6 client-class ">
-        <div class="form-group1 "><label class="text-class2"><h4><strong>PO & Invoice Related</strong></h4></label></div>
-      </div>
-    </div><br>
-    <div class="container1 ">
-
-      <div class="panel panel-primary second-panel no-border">
-
-        <div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6 Address-class">
-                <div class="form-group1"><label class="text-class2">Payroll Cycle</label>
-                  <input class="form-control bord-remove" type="text" >
-
-                </div>
-                <div class="form-group1"><label class="text-class2">Leaves</label>
-                  <input type="text" class="form-control bord-remove" type="text" />
-                </div>
-                <div class="form-group1"><label class="text-class2">Billing & Invoice Process</label>
-                  <input type="text" class="form-control bord-remove" type="text" />
-                </div>
-              </div>
-
-              <div class="col-md-5 Address-class">
-                <div class="form-group1"><label class="text-class2">PO Process</label>
-                  <input class="form-control bord-remove" type="text" >
-                </div>
-                <div class="form-group1"><label class="text-class2">Discounts</label>
-                  <input class="form-control bord-remove" type="text" >
-                </div>
-                <div class="form-group1"><label class="text-class2">Billing Office Address & Contact Number</label>
-                  <input class="form-control bord-remove" type="text" >
-                </div>
-                <div class="form-group1"><label class="text-class2">Shipping Office Address & Contact Number</label>
-                  <input class="form-control bord-remove" type="text" >
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
+      </form>
 
     </div>
-    <div>
-      <div class="col-md-12 client-class">
-        <div class="form-group1 escalation"><label class="text-class2"><h4 ><strong>Client Escalation Matrix</strong></h4></label></div>
-      </div>
+    <div class="col-md-12 ">
 
-    </div><br>
-    <div class="container1 ">
-
-      <div class="panel panel-primary second-panel no-border ">
-
-        <div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6 Address-class">
-                <div class="form-group1 "><label class="first-class1"><h4><strong>1st Point Of Contact</strong></h4></label></div>
-
-                <div class="form-group1"><label class="text-class2">Name</label>
-                  <input type="text" class="form-control bord-remove" type="text" />
-                </div>
-                <div class="form-group1"><label class="text-class2">Designation</label>
-                  <input type="text" class="form-control bord-remove" type="text" />
-                </div>
-                <div class="form-group1"><label class="text-class2">Contact Number</label>
-                  <input type="text" class="form-control bord-remove" type="text" />
-                </div>
-                <div class="form-group1"><label class="text-class2">Email ID</label>
-                  <input type="text" class="form-control bord-remove" type="text" />
-                </div>
-              </div>
-
-              <div class="col-md-5 Address-class">
-                <div class="form-group1  "><label class="first-class1"><h4><strong>2nd Point Of Contact</strong></h4></label></div>
-                <div class="form-group1"><label class="text-class2">Name</label>
-                  <input type="text" class="form-control bord-remove" type="text" />
-                </div>
-                <div class="form-group1"><label class="text-class2">Designation</label>
-                  <input type="text" class="form-control bord-remove" type="text" />
-                </div>
-                <div class="form-group1"><label class="text-class2">Contact Number</label>
-                  <input type="text" class="form-control bord-remove" type="text" />
-                </div>
-                <div class="form-group1"><label class="text-class2">Email ID</label>
-                  <input type="text" class="form-control bord-remove" type="text" />
-                </div>
-              </div>
-
+      <form class="bs-component">
+        <div class="container-fluid">
+          <div class="col-md-6">
+            <div class="form-group label-floating">
+              <label class="control-label" >Corporate office:</label>
+              <input class="form-control" class="focusedInput1" type="text" required>
             </div>
-            <br>
-            <div class="form-group1">
-              <button  class="btn btn-raised btn-default data-button1">Cancel</button>&nbsp;&nbsp;
-              <button class="btn btn-raised btn-default data-button2">Save</button>
-              <button class="btn btn-raised btn-default data-button3">Submit</button>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group label-floating">
+              <label class="control-label" >Reuimbersment Service Fee</label>
+              <input class="form-control" class="focusedInput1" type="text" required>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="col-md-12 ">
+
+      <form class="bs-component">
+        <div class="container-fluid">
+          <div class="col-md-6">
+            <div class="form-group label-floating">
+              <label class="control-label" >Address Line 1:</label>
+              <input class="form-control" class="focusedInput1" type="text" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group label-floating">
+              <label class="control-label" >Sourcing Fee</label>
+              <input class="form-control" class="focusedInput1" type="text" required>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="col-md-12 ">
+
+      <form class="bs-component">
+        <div class="container-fluid">
+          <div class="col-md-6">
+            <div class="form-group label-floating">
+              <label class="control-label" >Addresss Line 2:</label>
+              <input class="form-control" class="focusedInput1" type="text">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group label-floating">
+              <label class="control-label" >Absorption Fee & Clauses</label>
+              <input class="form-control" class="focusedInput1" type="text">
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="col-md-12 ">
+
+      <form class="bs-component">
+        <div class="container-fluid">
+          <div class="col-md-6">
+            <div class="form-group label-floating">
+              <label class="control-label" >Contact Number:</label>
+              <input class="form-control" class="focusedInput1" type="number">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group label-floating">
+              <button class="btn btn-raised btn-info  pull-right"><i class="fa fa-plus"></i> Other Fees
+              </button>
 
             </div>
           </div>
         </div>
-      </div>
+
+      </form>
 
     </div>
   </div>
+
 </div>
+

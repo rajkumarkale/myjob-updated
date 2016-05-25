@@ -424,17 +424,18 @@ margin-left: 520px;
   background-color:#e60505 !important; ;
   text-align: center;
   padding: 5px;
-  width: 80px;
-  color:white !important;;
+  width: 80px !important;
+  color:white ;
 }
 
  .warm-status{
   background-color:#e68405 !important; ;
    text-align: center;
    padding: 5px;
-   width: 80px;
-   color:white !important;;
+   width: 100% !important;
+   color:white;
 }
+
 
 
 .cold-status{
@@ -611,6 +612,19 @@ color:white;
 .displayDiv{
   display: none;
 }
+
+.addDiscusHeading{
+  background-color: #2277b1;
+  color: white;
+  padding:24px;
+  left:10%;
+}
+.upward{
+  margin-top:-15px;
+}
+
+/* end discussion  */
+
 /* start of SLA TRacker */
 .main-content{
  margin-top:2%;

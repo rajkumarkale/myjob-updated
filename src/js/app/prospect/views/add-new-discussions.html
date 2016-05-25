@@ -1,0 +1,69 @@
+<div class="modalCenter">
+<div class="addDiscusHeading modal-header ">
+  <h3 class="modal-title "> Add Discussions</h3></div>
+</div>
+<div class="modal-body ng-binding ng-scope">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group label-floating">
+        <label for="i1" class="control-label">Contact Person</label>
+        <input type="text" class="form-control" id="i1">
+      </div>
+      <div class="form-group label-floating">
+        <label for="i6" class="control-label">Date</label>
+        <input type="date" class="form-control" id="i6">
+      </div>
+      <div class="form-group ">
+        <select id="s1" class="form-control" placeholder="Type of Discussons">
+          <option value="Teliphonic">Type of Discussions</option>
+          <option value="Teliphonic">Teliphonic</option>
+          <option value="Email">Email</option>
+          <option value="Inperson">Inperson</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="col-lg-6">
+      <div class="form-group label-floating">
+        <label  for="i7" class="control-label">Venue</label>
+        <input type="text" class="form-control" id="i7">
+      </div>
+      <div class="form-group label-floating">
+        <label for="i5" class="control-label">Time</label>
+        <input type="time" class="form-control" id="i5">
+      </div>
+
+      <div class="form-group label-floating">
+        <div class="radio radio-primary">
+          <label>
+
+            <input type="radio" name="call" id="optionsRadios1" value="option1" checked="">
+            <span class="circle"></span>
+            <span class="check"></span>
+            Fresh Call
+          </label>
+          <label>
+            <input type="radio" value="option2" name="call">
+            <span class="circle"></span>
+            <span class="check"></span>
+            Followu Up
+            </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-12 upward">
+      <label for="textArea" class=" control-label"><h4>Discussion Summary</h4></label>
+      <textarea class="form-control" rows="3" id="textArea"></textarea>
+      <div class="btn-group">
+        <a class="btn btn-default warm-status " tooltip="Insert picture (or just drag &amp; drop)" id="pictureBtn">
+          <i class="glyphicon glyphicon-paperclip ">Attach File
+          </i></a>
+        <input type="file" data-edit="insertImage" >
+      </div>
+      <div class="centerBtn">
+      <a href="javascript:void(0)" class="btn btn-raised btn-default" ng-click="ok()">Cancle</a>&nbsp;
+      <a href="javascript:void(0)" class="btn btn-raised btn-info" ng-click="cancel()">Submit</a>
+    </div></div>
+  </div>
+</div>

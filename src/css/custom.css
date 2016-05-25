@@ -29,11 +29,19 @@
   color:#ffffff;
 
 }
+
 .height-navBar{
   height: 50px;
 }
 .list-pad{
   padding-top:35px;
+}
+.icon-bars
+{
+
+ font-size: 20px;
+  color:white;
+
 }
 /*.list-pad > li > a:hover,.list-pad > li > a:focus{
    background-color:white !important;
@@ -333,17 +341,14 @@ margin-left: 520px;
   display: none;
 
 }
-.listDetails3
-{
+.listDetails3 {
   width: 20%;
   margin-left:40%
 }
-.arrow1
-{
+.arrow1 {
   color:black;
 }
-.wonbtn
-{
+.wonbtn {
   height:20px;
   width:80px;
   border-radius: 3px;
@@ -463,7 +468,7 @@ color:white;
 
 .checkBoxDrop{
   width: 61px;
-  height: 40px;
+  height: 35px;
   color: white;
   background-color: lightgrey;
   padding: 5px 5px 2px 5px;
@@ -607,13 +612,49 @@ color:white;
   display: none;
 }
 /* start of SLA TRacker */
-.main-content
-{
+.main-content{
+ margin-top:2%;
   height:100%;
-  width:100%;
-  margin-left:5%;
+  width:97%;
+  margin-left:2%;
 }
+.text-class{
+  color: #ff0000;;
+  font-size:18px;
+  font-weight: normal;
+  font-family: Arial;
+  padding-bottom: 5px;
 
+}
+.checkBox-showall
+{
+  width: 100px;
+  height: 35px;
+  color: white;
+  background-color: lightgrey;
+  padding: 1px 5px 5px 5px;
+}
+.client-text
+{
+  background-color:lightgrey ;
+  line-height:60px;
+  font-weight:bold;
+  font-size:22px;
+}
+.SLA-text{
+  text-align: center;
+  color:white;
+  font-size: 22px;
+}
+/*
+.btn-blue-class{
+
+  width:90px;
+  height:30px;
+  font-size: 12px;
+  color:#ffffff;
+}
+*/
 
 
 /*end of SLA tracker view */

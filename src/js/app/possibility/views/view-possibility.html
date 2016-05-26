@@ -1,4 +1,4 @@
-<div class="maincol-apply">
+<div class="maincol-apply" >
   <div class="container all-dateinputs">
     <div class="pull-right">
       <form id="form" name="form" class="form-inline">
@@ -22,7 +22,7 @@
       </form>
     </div>
   </div>
-  <div class="container content">
+  <div class="container content" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
     <div class="panel panel-primary pan-col">
       <div class="panel-heading summary">Summary in the month of April 2016</div>
       <div class="panel-body">
@@ -91,78 +91,33 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>Robert Martin</td>
-        <td>Paradigm Creatives</td>
-        <td>Hyderabad</td>
-        <td>Anthony Sanchez</td>
-        <td>Lorem Ipsum</td>
-        <td>0000000000</td>
+      <tr ng-repeat="possibility in data.possibilities">
+        <td>{{possibility.legal_name}}</td>
+        <td>{{possibility.client_unit_name}}</td>
+        <td>{{possibility.city}}</td>
+        <td>{{possibility.pocs[0].name}}</td>
+        <td>{{possibility.pocs[0].designation}}</td>
+        <td>{{possibility.pocs[0].phone}}</td>
         <td>
-          <p class="btn btn-default buttons">Met</p>
+          <p class="btn btn-default buttons">{{possibility.status}}</p>
         </td>
         <td>
           <button class="btn btn-default buttonslast">New Call</button>
         </td>
       </tr>
-      <tr>
-        <td class="hand-cursor">Ashton Murray</td>
-        <td>Paradigm Creatives</td>
-        <td>Bangalore</td>
-        <td>James Maxwell</td>
-        <td>Lorem Ipsum</td>
-        <td>0000000000</td>
-        <td>
-          <p class="btn btn-default buttons">Not Met</p>
-        </td>
-        <td>
-          <button class="btn btn-default buttonslast" ui-sref='app.viewDiscussions'>New Call</button>
-        </td>
-      </tr>
-      <tr>
-        <td class="hand-cursor">Delores Polk</td>
-        <td>Paradigm Creatives</td>
-        <td>Delhi</td>
-        <td>Ashton Murray</td>
-        <td>Lorem Ipsum</td>
-        <td>0000000000</td>
-        <td>
-          <p class="btn btn-default buttons">Inactive</p>
-        </td>
-        <td>
-          <button ui-sref='app.viewDiscussions' class="btn btn-default buttonslast">New Call</button>
-        </td>
-      </tr>
-      <tr>
-        <td class="hand-cursor">Anthony Sanchez</td>
-        <td>Paradigm Creatives</td>
-        <td>Lucknow</td>
-        <td>Delores Polk</td>
-        <td>Lorem Ipsum</td>
-        <td>0000000000</td>
-        <td>
-          <p class="btn btn-default buttons">Met</p>
-        </td>
-        <td>
-          <button class="btn btn-default buttonslast" ui-sref='app.viewDiscussions'>New Call</button>
-        </td>
-      </tr>
-      <tr>
-        <td class="hand-cursor">James Maxwell</td>
-        <td>Paradigm Creatives</td>
-        <td>Pune</td>
-        <td>Anthony Sanchez</td>
-        <td>Lorem Ipsum</td>
-        <td>0000000000</td>
-        <td>
-          <p class="btn btn-default buttons">Not Met</p>
-        </td>
-        <td>
-          <button class="btn btn-default buttonslast" ui-sref='app.viewDiscussions'>New Call</button>
-        </td>
-      </tr>
+      
       </tbody>
     </table>
+     <pagination class="pagination-sm m-n pull-right"
+                                page ="data.currentPage"
+                                total-items="data.totalItems"
+                                ng-model="data.currentPage"
+                                ng-change ="getPossibilities(data.currentPage,data.numPerPage)"
+                                max-size="4"
+                                items-per-page="data.numPerPage"
+                                rotate="false"
+                                boundary-links="false">
+                                </pagination>
   </div>
 
 </div>

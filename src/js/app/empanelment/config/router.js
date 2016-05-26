@@ -18,4 +18,8 @@ angular.module('com.module.empanelment')
       url: '/SLA-Tracker',
       templateUrl: 'js/app/empanelment/views/sla-Tracker.html'
     })
+    .state('app.slaTracker-step2', {
+      url: '/SLA-Tracker-step2',
+      templateUrl: 'js/app/empanelment/views/sla-Tracker-step2.html'
+    })
 }]);

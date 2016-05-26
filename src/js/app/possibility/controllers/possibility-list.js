@@ -14,5 +14,8 @@ angular.module('com.module.possibility')
 		});
 		}
 		$scope.getPossibilities($scope.data.currentPage,$scope.data.numPerPage);
+		$scope.openEditPossibility = function(possibility){
+				$state.go('app.createPossibility',{possibility:possibility});
+		}
 
   }]);

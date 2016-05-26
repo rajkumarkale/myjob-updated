@@ -70,6 +70,10 @@
 .content {
     margin-top: 10px;
 }
+#basic-addon1 {
+    padding-top: 1px;
+    background-color: white;
+}
 #basic-addon2 {
     padding-top: 1px;
     background-color: white;
@@ -755,6 +759,7 @@ color:white;
   background-color: #fff;
   z-index: 1;
   cursor: pointer;
+  padding-bottom: 7px;
 }
 .select .placeholder:after {
   position: absolute;
@@ -800,6 +805,19 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 .dropdown-title{
   font-size: 16px;
   margin: 0px 0px 0px;
-  padding-left: 10px;
+  padding-left: 0px;
 }
-
+.form-custom-padding{
+  padding: 0px 50px;
+}
+.pad-t-20{
+  padding-top: 20px;
+}
+.app-container-blur {
+ position: relative;
+ pointer-events: none;
+ opacity: 0.5;
+}
+.pad-b-20{
+  padding-bottom: 20px;
+}

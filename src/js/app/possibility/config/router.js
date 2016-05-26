@@ -12,6 +12,9 @@ angular.module('com.module.possibility').config(['$stateProvider', function ($st
    .state('app.createPossibility', {
       url: '/create-possibility',
       templateUrl: 'js/app/possibility/views/create-possibility.html',
-      controller:'createPossibilityController'
+      controller:'createPossibilityController',
+      params: {
+        possibility: null
+    }
     })
 }]);

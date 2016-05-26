@@ -2,23 +2,21 @@
 
 
   <div class="container all-dateinputs">
-
-    <div class="pull-right">
-
-      <table>
-        <tr>
-          <td class="add-discussions ">
-
-          <a ng-click="openAddDiscussions()">  <img src="img/icon_add.png" class="hand-cursor" /></a>
-
-          </td>
-          <td class="add-discussions"><img src="img/icon_edit.png"/></td>
-          <td class="add-discussions"><img src="img/icon_delete.png"/></td>
-        </tr>
-      </table>
+   <div class="panel-body">
+     <div class="row">
+     <div class="pull-right">
+          <button ng-click="openAddDiscussions()" class="btn btn-raised btn-primary glyphicon glyphicon-plus btn-lg">  Discussion </button>
+      </div>
     </div>
-
-
+    <div class="row">
+      <span class="pull-right col-md-4">
+             <div class="input-group">
+                <input type="text" class="form-control btn-rounded back-color" placeholder="Search By Location,Company Name,Contact"
+                       aria-describedby="basic-addon3">
+                <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
+              </div>
+          </span>
+    </div>
     <!--<div class="container no-border">
       <div class="no-border  modal " id="popUp">
         <div class="no-border modal-dialog modalCenter ">
@@ -121,7 +119,23 @@
       </div>
 
     </div>-->
-    <div class="panel panel-info">
+  <div class="row">
+    <label class=" dropdown checkBoxDrop pull-left ">
+      <input type="checkbox" class="checkBox">
+      <span class="caret checkBxDrop" data-toggle="dropdown"></span>
+    </label>
+    <label class="checkBox-showall pull-left " ng-show="checked || checked2 || checked3 || checked4">
+      <span class="glyphicon glyphicon-pencil " data-toggle="dropdown"></span>&nbsp;&nbsp;Edit
+    </label>
+    <label class="  checkBox-showall pull-left " ng-show="checked || checked2 || checked3 || checked4">
+      <span class="glyphicon glyphicon-trash " data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
+    </label>
+    <label class="  checkBox-showall pull-right ">Show All
+      <span class="caret checkBxDrop" data-toggle="dropdown"></span>
+    </label>
+  </div>
+   </div>
+    <div class="panel panel-primary ">
       <div class=" panel-heading">
 
         <h3 class="panel-title">Discussions</h3>
@@ -129,7 +143,7 @@
     </div>
     <div class="container-custom">
       <div class="container ">
-        <input type="checkbox" class="Discus-checkBx"/>
+        <input type="checkbox" class="Discus-checkBx " ng-model="checked"/>
         <div class="discussion-body">
           <div class="row ">
             <div class="col-lg-9 ">
@@ -205,7 +219,7 @@
     </div>
     <div class="container-custom">
       <div class="container ">
-        <input type="checkbox" class="Discus-checkBx"/>
+        <input type="checkbox" class="Discus-checkBx" ng-model="checked2"/>
         <div class="discussion-body">
           <div class="row ">
             <div class="col-lg-9 ">
@@ -294,7 +308,7 @@
     </div>
     <div class="container-custom">
       <div class="container ">
-        <input type="checkbox" class="Discus-checkBx"/>
+        <input type="checkbox" class="Discus-checkBx" ng-model="checked3"/>
         <div class="discussion-body">
           <div class="row ">
             <div class="col-lg-9 ">
@@ -370,7 +384,7 @@
     </div>
     <div class="container-custom">
       <div class="container ">
-        <input type="checkbox" class="Discus-checkBx"/>
+        <input type="checkbox" class="Discus-checkBx" ng-model="checked4"/>
         <div class="discussion-body">
           <div class="row ">
             <div class="col-lg-9 ">

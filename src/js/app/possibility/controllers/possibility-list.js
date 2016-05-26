@@ -9,7 +9,6 @@ angular.module('com.module.possibility')
 
 		$scope.getPossibilities = function(currentPage,numPerPage){
 		$scope.myPromise = possibilityCreateService.getPossibility(currentPage,numPerPage).then(function(response){
-				console.log(response);
 			$scope.data.possibilities = response.data.possibilities;
 			$scope.data.totalItems = response.data.count;
 		});

@@ -1723,3 +1723,9 @@ td:nth-child(1) {
   padding-bottom: 20px;
 }
 
+/* comments for view od new oppurtunity */
+.new-class{
+  font-size: 20px;
+  text-align: center;
+  margin-left: 20px;
+}

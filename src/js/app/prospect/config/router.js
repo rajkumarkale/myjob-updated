@@ -6,7 +6,8 @@ angular.module('com.module.prospect').config(['$stateProvider', function ($state
   $stateProvider
     .state('app.viewProspect', {
       url: '/view-prospect',
-      templateUrl: 'js/app/prospect/views/view-prospect.html'
+      templateUrl: 'js/app/prospect/views/view-prospect.html',
+      controller:'viewProspectCtrl'
     })
     .state('app.create-prospect', {
       url: '/create-prospect',
@@ -17,5 +18,5 @@ angular.module('com.module.prospect').config(['$stateProvider', function ($state
       templateUrl: 'js/app/prospect/views/view-discussions.html',
       controller:'viewDiscussionCtrl'
     })
-   
+
 }]);

@@ -711,14 +711,6 @@ color:white;
   padding-bottom: 5px;
 
 }
-.checkBox-showall
-{
-  width: 100px;
-  height: 35px;
-  color: white;
-  background-color: lightgrey;
-  padding: 1px 5px 5px 5px;
-}
 .client-text
 {
   background-color:lightgrey ;
@@ -764,6 +756,7 @@ color:white;
 .default{
   background: lightslategray;
 }
+
 /* end add new discussions */
 
 
@@ -1323,11 +1316,11 @@ td:nth-child(1) {
 .button-style{
   text-align: center;
   width: 80px;
-
   border-radius: 3px;
-
 }
-
+.center-text{
+  text-align: center;
+}
 .btn-new{
   color:white;
   background-color: #3a81f8;}
@@ -1342,13 +1335,7 @@ td:nth-child(1) {
 
 
 
-.checkBoxDrop{
-  width: 61px;
-  height: 40px;
-  color: white;
-  background-color: lightgrey;
-  padding: 5px 5px 2px 5px;
-}
+
 
 .checkBox{
   width: 20px;

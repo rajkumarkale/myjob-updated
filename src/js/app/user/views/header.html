@@ -7,8 +7,8 @@
     <i class="glyphicon glyphicon-align-justify"></i>
   </button>
   <!-- brand -->
-  <a class="navbar-brand text-lt " href="/">
-     <span class="hidden-folded m-l-xs"><img data-ng-src={{app.iconMedium}}
+  <a class="navbar-brand text-lt background-anchor" href="/">
+     <span class="hidden-folded m-l-xs"><img class="ecentric-logo" data-ng-src={{app.iconMedium}}
                                             style="max-height: 47px !important;"/></span>
   </a>
   <!-- / brand -->
@@ -18,11 +18,13 @@
 <!-- navbar collapse -->
 <div class="collapse pos-rlt navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}">
   <!-- buttons -->
-  <div class="nav navbar-nav hidden-xs">
-    <a href="" class="btn no-shadow navbar-btn header-name"  ng-click="app.settings.asideFolded = !app.settings.asideFolded">
+
+  <div class="nav navbar-nav hidden-xs sales-mrg">
+    <a href="" class="btn navbar-btn header-name collapse-back" ng-click="app.settings.asideFolded = !app.settings.asideFolded">
+
       <i class="fa fa-bars fa-fw icon-bars"></i>
     </a>
-    <span class="header-name">Sales Module</span>
+    <span class="header-name sales-namemrg">Sales</span>
   </div>
 
   <!-- / buttons -->
@@ -35,7 +37,7 @@
       <a href class="dropdown-toggle" dropdown-toggle>
         <i class="fa fa-bell fa-fw notification-icon"></i>
         <span class="visible-xs-inline">Notifications</span>
-        <span class="badge badge-sm up bg-default pull-right-xs">2</span>
+        <span class="badge badge-sm up bg-default pull-right-xs notification-mrg">2</span>
       </a>
       <!-- dropdown -->
       <div class="dropdown-menu w-xl animated fadeInUp">
@@ -68,7 +70,7 @@
       </div>
       <!-- / dropdown -->
     </li>
-    <li class="dropdown" dropdown>
+    <li class="dropdown list-menu" dropdown>
       <a href class="dropdown-toggle clear" dropdown-toggle>
               <!--<span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
                 <img src="img/a0.jpg" alt="...">
@@ -78,7 +80,7 @@
         <b class="caret"></b>
       </a>
       <!-- dropdown -->
-      <ul class="dropdown-menu animated fadeInRight w">
+      <ul class="dropdown-menu animated fadeInRight w list-menu">
         <li>
           <a ui-sref="app.page.profile">Profile</a>
         </li>

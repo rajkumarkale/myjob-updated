@@ -2,22 +2,23 @@
   <div class="container all-dateinputs" >
     <div class="pull-right">
       <form id="form" name="form" class="form-inline">
-        <div class="form-group label-floating">
-          <label for="startDate" class="control-label">From</label>
-          <div class="input-group ">
-            <input id="startDate" type="date" class="form-control" aria-describedby="basic-addon2" />
-            <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" alt=""/></span>
-          </div>
-          <label for="endDate">To</label>
+        <div class="form-group">
+          <label for="startDate" class="color-black">From</label>
           <div class="input-group">
-            <input id="endDate" type="date" class="form-control" aria-describedby="basic-addon1" />
+            <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"/>
             <span class="input-group-addon" id="basic-addon1">
-            <img src="img/calendar_icon.png" alt=""/></span>
+            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
+          </div>
+
+          <label for="endDate" class="color-black">To</label>
+          <div class="input-group">
+            <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon2"/>
+            <span class="input-group-addon" id="basic-addon2">
+            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
           </div>
           <button class="btn btn-primary filter">Submit</button>
         </div>
-`     </form>
+     </form>
     </div>
   </div>
   <div class="container content">
@@ -32,7 +33,7 @@
                   <img src="img/target_icon.png" alt="" class="center-block img-pad" />
                 </div>
                 <div class="col-md-9 text-center">
-                  <div class="met">TARGET</div>
+                  <div class="met-target">TARGET</div>
                   <div class="met-num">10</div>
                 </div>
               </div>
@@ -43,8 +44,8 @@
                   <img src="img/prospect_icon.png" alt="" class="center-block img-pad" />
                 </div>
                 <div class="col-md-9 text-center">
-                  <div class="notmet">PROSPECT</div>
-                  <div class="met-num">10</div>
+                  <div class="met-prospect">PROSPECT</div>
+                  <div class="metprospect-num">10</div>
                 </div>
               </div>
             </div>
@@ -54,7 +55,7 @@
                   <img src="img/empanelment_icon.png" alt="" class="center-block img-pad" />
                 </div>
                 <div class="col-md-9 text-center">
-                  <div class="inactive">EMPANELMENT</div>
+                  <div class="empanel-col">EMPANELMENT</div>
                   <div class="met-num">10</div>
                 </div>
               </div>

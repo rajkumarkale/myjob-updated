@@ -2915,17 +2915,21 @@ fieldset[disabled] .i-checks input + i:before {
 .bg-dark .nav > li:hover > a,
 .bg-dark .nav > li:focus > a,
 .bg-dark .nav > li.active > a {
-  color: #ffffff;
+  color: #8A8A8A;
   background-color: #2e3344;
 }
-
+.bg-dark .nav > li:hover > a,
+.bg-dark .nav > li:focus > a,
+.bg-dark .nav > li.active > a {
+  color: #8A8A8A;
+}
 .bg-dark .nav > li > a {
   color: #b4b6bd;
 }
 
 .bg-dark .nav > li > a:hover,
 .bg-dark .nav > li > a:focus {
-  background-color: #32374a;
+  background-color: white;
 }
 
 .bg-dark .nav .open > a {

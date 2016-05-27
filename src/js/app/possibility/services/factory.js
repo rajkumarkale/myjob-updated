@@ -24,13 +24,19 @@ angular.module('com.module.possibility').factory('possibilityCreateService', fun
   var getPossibility = function (currentPage,numPerPage) {
     return $http({
       method: 'GET',
-      url: BASEURI + '/api/possibility/'+currentPage+'/'+numPerPage,
+      url: BASEURI + '/api/possibility/'+currentPage+'/'+numPerPage
     });
   };
-
+var possibilityDetails = function (id) {
+    return $http({
+      method: 'GET',
+      url: BASEURI + '/api/possibility/'+id
+    });
+  };
   return {
     getLegalEntity:getLegalEntity,
     setPossibility:setPossibility,
-    getPossibility:getPossibility
+    getPossibility:getPossibility,
+    possibilityDetails:possibilityDetails
   }
 });

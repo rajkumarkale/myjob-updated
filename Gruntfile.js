@@ -6,6 +6,7 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+
   // Configurable paths for the application
   var appConfig = {
     app: 'src',
@@ -17,7 +18,6 @@ module.exports = function (grunt) {
 
     // Project settings
     app: appConfig,
-
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -42,6 +42,7 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
+     
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'

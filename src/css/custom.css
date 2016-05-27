@@ -70,9 +70,13 @@
 .content {
     margin-top: 10px;
 }
-#basic-addon2 {
+#basic-addon1 {
     padding-top: 1px;
     background-color: white;
+}
+#basic-addon2 {
+    padding-top: 1px;
+    background-color: transparent;
 }
 .head {
     font-size: 22px;
@@ -417,18 +421,23 @@ margin-left: 520px;
 .hot-status{
   background-color:#e60505 !important; ;
   text-align: center;
-  padding: 5px;
-  width: 80px;
-  color:white !important;;
+  padding: 5px 20px;
+  font-size: 12px;
+  width: 80px !important;
+  color:white ;
+
 }
+
 
  .warm-status{
   background-color:#e68405 !important; ;
    text-align: center;
    padding: 5px;
-   width: 80px;
-   color:white !important;;
+   width: 100% !important;
+   color:white;
+   border-radius: 7px;
 }
+
 
 
 .cold-status{
@@ -438,6 +447,50 @@ margin-left: 520px;
   width: 80px;
   color:white !important;;
   }
+
+.lost-status-text{
+  background-color: #a948b8 !important;
+  text-align: center;
+  padding: 3px 10px;
+  font-size: 14px;
+  width: 90px !important;
+  color: white;
+  height: 27px;
+  margin-top: 11px;
+}
+ .won-status-text{
+  background-color: green;
+  text-align: center;
+  padding: 3px 10px;
+  font-size: 14px;
+  width: 90px !important;
+  color: white;
+  height: 27px;
+  margin-top: 11px;
+}
+.won-status-text-color{
+  color: green;
+
+}
+.lost-status-text-color{
+  color:#a948b8
+}
+.lost-status-text{
+  background-color: #a948b8;
+  text-align: center;
+  padding: 3px 10px;
+  font-size: 14px;
+  width: 90px !important;
+  color: white;
+  height: 27px;
+  margin-top: 11px;
+
+}
+ .detailsContentDiv-prosp{
+   display: table;
+   width: 35%;
+   margin-left: 25%;
+ }
 .button-style{
   text-align: center;
   width: 80px;
@@ -462,10 +515,11 @@ color:white;
 
 .checkBoxDrop{
   width: 61px;
-  height: 40px;
+  height: 35px;
   color: white;
-  background-color: lightgrey;
+  background-color: darkgrey;
   padding: 5px 5px 2px 5px;
+  margin-right: 10px;
 }
 
 .checkBox{
@@ -484,6 +538,15 @@ color:white;
   margin-left: 5px;
 
   }
+.checkBox-showall
+{
+  width: 100px;
+  height: 35px;
+  color: white;
+  margin-right: 10px;
+  background-color: darkgrey;
+  padding: 5px 5px 5px 5px;
+}
 
 .panel-heading-custom {
   background-color: #00a8f3;
@@ -605,6 +668,27 @@ color:white;
 .displayDiv{
   display: none;
 }
+
+.back-color{
+  background-color: white;
+}
+.back-color-search{
+  background-color: darkgrey;
+}
+.addDiscusHeading{
+  background-color: #2277b1;
+  color: white;
+  padding:24px;
+  left:10%;
+}
+.upward{
+  margin-top:-15px;
+}
+.upward-heading{
+  margin-top:5%;
+}
+/* end discussion  */
+
 /* start of SLA TRacker */
 .panel-heading1 {
 
@@ -715,8 +799,8 @@ color:white;
 
 /* add new discussions */
 .modalCenter{
-  margin-top: 10% !important;
-  border:none;
+
+  padding: 30px ;
 }
 
 .fileAttach{
@@ -726,7 +810,7 @@ color:white;
   border-radius: 5px;
 }
 .centerBtn{
-  margin-left: 25%;
+  margin-left: 35%;
 }
 .default{
   background: lightslategray;
@@ -755,6 +839,7 @@ color:white;
   background-color: #fff;
   z-index: 1;
   cursor: pointer;
+  padding-bottom: 7px;
 }
 .select .placeholder:after {
   position: absolute;
@@ -800,6 +885,19 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 .dropdown-title{
   font-size: 16px;
   margin: 0px 0px 0px;
-  padding-left: 10px;
+  padding-left: 0px;
 }
-
+.form-custom-padding{
+  padding: 0px 50px;
+}
+.pad-t-20{
+  padding-top: 20px;
+}
+.app-container-blur {
+ position: relative;
+ pointer-events: none;
+ opacity: 0.5;
+}
+.pad-b-20{
+  padding-bottom: 20px;
+}

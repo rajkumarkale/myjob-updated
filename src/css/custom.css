@@ -80,7 +80,7 @@
 }
 #basic-addon1 {
     padding-top: 1px;
-    background-color: white;
+    background-color: transparent;
 }
 #basic-addon2 {
     padding-top: 1px;
@@ -482,7 +482,7 @@ margin-left: 520px;
   color:#a948b8
 }
 .lost-status-text{
-  background-color: #a948b8;
+  background-color: #a948b8 !important;
   text-align: center;
   padding: 3px 10px;
   font-size: 14px;
@@ -495,7 +495,8 @@ margin-left: 520px;
  .detailsContentDiv-prosp{
    display: table;
    width: 35%;
-   margin-left: 25%;
+   margin-left:25%;
+
  }
 .button-style{
   text-align: center;
@@ -912,7 +913,7 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 #basic-addon2 {
   padding-top: 1px;
-  background-color: white;
+  background-color: transparent;
 }
 .head {
   font-size: 22px;
@@ -1157,12 +1158,33 @@ td:nth-child(1) {
 /*suspect-view styles*/
 .hot-color-suspect{
   background-color: #e60505;
+  text-align: center;
+  padding: 3px 10px;
+  font-size: 14px;
+  width: 90px !important;
+  color: white;
+  height: 27px;
+  margin-top: 11px;
 }
 .warm-color-suspect{
   background-color: #e68405;
+  text-align: center;
+  padding: 3px 10px;
+  font-size: 14px;
+  width: 90px !important;
+  color: white;
+  height: 27px;
+  margin-top: 11px;
 }
 .cold-color-suspect{
   background-color: #87d7f8;
+  text-align: center;
+  padding: 3px 10px;
+  font-size: 14px;
+  width: 90px !important;
+  color: white;
+  height: 27px;
+  margin-top: 11px;
 }
 /*end suspect-view*/
 .navbar-custom{

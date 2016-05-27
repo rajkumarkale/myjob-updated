@@ -65,23 +65,36 @@
       </div>
     </div>
     <div class="possibilities">
-      <h4 class="pull-left head">All Empanelments
+      <div class="panel-body">
+        <div class="row">
+          <h4 class="pull-left head">All Empanelments</h4>
         <span class="pull-right col-md-4">
-          <div class="input-group">
-            <input type="text" class="form-control btn-rounded" placeholder="Search By Location,Company Name,Contact"
-                   aria-describedby="basic-addon3">
-            <span class="input-group-addon" id="basic-addon3"><i class="fa fa-search"></i></span>
-          </div>
-        </span>
-      </h4>
+             <div class="input-group">
+                <input type="text" class="form-control btn-rounded back-color" placeholder="Search By Location,Company Name,Contact"
+                       aria-describedby="basic-addon3">
+                <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
+              </div>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body"> <div class="row">
       <label class=" dropdown checkBoxDrop pull-left ">
         <input type="checkbox" class="checkBox">
-        <span class="caret checkBxDrop" data-toggle="dropdown"></span></label>
-
-        <label class="  checkBox-showall pull-right ">Show All
-          <span class="caret checkBxDrop" data-toggle="dropdown"></span></label>
-
-    </div>
+        <span class="caret checkBxDrop" data-toggle="dropdown"></span>
+      </label>
+      <label class="checkBox-showall pull-left " ng-show="checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
+          || checked8 || checked9 || checked10 || checked11">
+        <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
+      </label>
+      <label class="  checkBox-showall pull-left " ng-show="checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
+          || checked8 || checked9 || checked10 || checked11">
+        <span class="glyphicon glyphicon-trash " data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
+      </label>
+      <label class="  checkBox-showall pull-right ">Show All
+        <span class="caret checkBxDrop" data-toggle="dropdown"></span>
+      </label>
+    </div></div>
     <table class="table table-striped table-bod table table-hover">
       <thead class="table-head">
       <tr>

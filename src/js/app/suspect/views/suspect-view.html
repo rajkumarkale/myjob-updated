@@ -65,16 +65,146 @@
     </div>
 
     <div class="possibilities">
-      <h4 class="pull-left head">All Suspects
-                    <span class="pull-right col-md-4">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search By Location,Company Name,Contact" aria-describedby="basic-addon3">
-                      <span class="input-group-addon" id="basic-addon3"><i class="fa fa-search"></i></span>
-                    </div></span></h4>
+
+     <div class="panel-body">
+      <div class="row">
+        <div class="pull-right">
+          <button ui-sref="app.new-oppurtunity" class="btn btn-raised btn-primary glyphicon glyphicon-plus btn-lg">  New Opportunity </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="pull-left head" ><h2>All Suspects</h2></div>
+      <span class="pull-right col-md-4">
+             <div class="input-group">
+                <input type="text" class="form-control btn-rounded back-color" placeholder="Search By Location,Company Name,Contact"
+                       aria-describedby="basic-addon3">
+                <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
+              </div>
+          </span>
+      </div>
+      <!--<div class="container no-border">
+        <div class="no-border  modal " id="popUp">
+          <div class="no-border modal-dialog modalCenter ">
+            <div class="modal-content no-border">
+
+              <div class="panel panel-info no-border">
+                <div class="panel-heading no-border">
+                  <div class="panel-title no-border">
+                    <h5>Add Discussions</h5>
+                  </div>
+                </div>
+                <div class="panel-body no-border">
+                  <form name="addNewDis" >
+                    <div class="form-group">
+                      <div class="panel-body no-border">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <label class="control-label" for="inputLarge">Contact person</label>
+                            <input class="form-control input-lg" type="text" id="inputLarge1">
+                            <label class="control-label" for="inputLarge">Date
+                            </label>
+                            <input class="form-control input-lg" type="date" id="inputLarge2">
+
+                            &lt;!&ndash;<textarea class="form-control input-lg"  id="inputLarge"></textarea>&ndash;&gt;
+                            <label for="s1">Type Of Discussions</label>
+                            <select id="s1" class="form-control">
+                              <option value="Teliphonic">Telephonic</option>
+                              <option value="Email">Email</option>
+                              <option value="Inperson">Inperson</option>
+                            </select>
+                          </div>
+                          <div class="col-lg-6">
+                            <label class="control-label" for="inputLarge">Venue</label>
+                            <input class="form-control input-lg" type="text" id="inputLarge">
+                            <label class="control-label" for="inputLarge">Time
+                            </label>
+                            <input class="form-control input-lg" type="time" id="inputLarge">
+                            <div class="radio radio-primary">
+                              <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                <span class="circle">
+                                </span>
+                                <span class="check">
+                                </span>
+                                &nbsp; Freshcall
+                              </label>
+                              <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
+                                       checked=""><span class="circle"></span><span class="check"></span>
+                                &nbsp;&nbsp;Follow Up Call
+                              </label>
+
+                            </div>
+                          </div>
+                        </div>
+                        <h3>Discussion Summary</h3>
+                        <div class="fileAttach">
+                          <textarea class="input-lg no-borders" cols=50>
+                          </textarea>
+
+                        </div>
+
+                        <div class="centerBtn">
+                          <span>
+
+                             <button type="button" class="btn btn-default "
+                                     ng-click="closeModal('popUp','none')">Close</button>
+                             <button type="button" class="btn btn-primary">Save </button>
+                        </span>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="possibilities">
+          <h4 class="pull-left head">
+            <label class=" dropdown checkBoxDrop ">
+              <input type="checkbox" class="checkBox">
+              <span class="caret checkBxDrop" data-toggle="dropdown"></span>
+              <ul class="dropdown-menu">
+                <li><a href="">All</a></li>
+                <li><a href="">read</a></li>
+                <li><a href="">unread</a></li>
+              </ul>
+            </label>
+          <span class="pull-right col-md-4">
+            <div class="input-group">
+              <input type="text" class="form-control btn-rounded" placeholder="Search By Location,Company Name,Contact"
+                     aria-describedby="basic-addon3">
+                 <span class="input-group-addon" id="basic-addon3">
+                   <i class="fa fa-search"></i>
+                 </span>
+            </div>
+          </span>
+          </h4>
+        </div>
+
+      </div>-->
+      <div class="row">
+        <label class=" dropdown checkBoxDrop pull-left ">
+          <input type="checkbox" class="checkBox">
+          <span class="caret checkBxDrop" data-toggle="dropdown"></span>
+        </label>
+        <label class="checkBox-showall pull-left " ng-show="checked || checked2 || checked3 || checked4">
+          <span class="glyphicon glyphicon-pencil " data-toggle="dropdown"></span>&nbsp;&nbsp;Edit
+        </label>
+        <label class="  checkBox-showall pull-left " ng-show="checked || checked2 || checked3 || checked4">
+          <span class="glyphicon glyphicon-trash " data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
+        </label>
+        <label class="  checkBox-showall pull-right ">Show All
+          <span class="caret checkBxDrop" data-toggle="dropdown"></span>
+        </label>
+      </div>
+    </div>
     </div>
     <table class="table table-striped table-bod">
       <thead class="table-head">
       <tr>
+        <th></th>
         <th>Legal Entity</th>
         <th>Business Unit</th>
         <th>Location</th>
@@ -87,57 +217,127 @@
       </thead>
       <tbody>
       <tr>
+        <td>
+          <div class="form-group">
+            <div class="chekbox">
+              <label >
+                <input type="checkbox" ng-model="checked1">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </td>
         <td class="hand-cursor"  ui-sref="app.create-suspect-view" ui-sref="app.create-suspect-view">Robert Martin</td>
         <td>Paradigm Creatives</td>
         <td>Hyderabad</td>
         <td>Anthony Sanchez</td>
         <td>Lorem Ipsum</td>
         <td>0000000000</td>
-        <td><p class="hot-status button-style ">Hot</p></td>
-        <td><button class="btn btn-info" ui-sref='app.viewDiscussions'>New Call</button></td>
+        <td><p class="hot-color-suspect btn-sm  ">Hot</p></td>
+        <td><button class="btn btn-info btn-sm" ui-sref='app.viewDiscussions'>New Call</button></td>
       </tr>
       <tr>
+        <td>
+          <div class="form-group">
+            <div class="chekbox">
+              <label >
+                <input type="checkbox" ng-model="checked2">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </td>
         <td class="hand-cursor"  ui-sref="app.create-suspect-view">Ashton Murray</td>
         <td>Paradigm Creatives</td>
         <td>Bangalore</td>
         <td>James Maxwell</td>
         <td>Lorem Ipsum</td>
         <td>0000000000</td>
-        <td><p class="cold-status button-style ">Cold</p></td>
-        <td><button class="btn btn-info" ui-sref='app.viewDiscussions'>New Call</button></td>
+        <td><p class="warm-color-suspect btn-sm ">Cold</p></td>
+        <td><button class="btn btn-info btn-sm" ui-sref='app.viewDiscussions'>New Call</button></td>
       </tr>
       <tr>
+        <td>
+          <div class="form-group">
+            <div class="chekbox">
+              <label >
+                <input type="checkbox" ng-model="checked3">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </td>
         <td class="hand-cursor"  ui-sref="app.create-suspect-view">Delores Polk</td>
         <td>Paradigm Creatives</td>
         <td>Delhi</td>
         <td>Ashton Murray</td>
         <td>Lorem Ipsum</td>
         <td>0000000000</td>
-        <td><p class="cold-status button-style ">Cold</p></td>
-        <td><button class="btn btn-info" ui-sref='app.viewDiscussions'>New Call</button></td>
+        <td><p class="cold-color-suspect btn-sm ">Cold</p></td>
+        <td><button class="btn btn-info btn-sm" ui-sref='app.viewDiscussions'>New Call</button></td>
       </tr>
       <tr>
+        <td>
+          <div class="form-group">
+            <div class="chekbox">
+              <label >
+                <input type="checkbox" ng-model="checked4">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </td>
         <td class="hand-cursor"  ui-sref="app.create-suspect-view">Anthony Sanchez</td>
         <td>Paradigm Creatives</td>
         <td>Lucknow</td>
         <td>Delores Polk</td>
         <td>Lorem Ipsum</td>
         <td>0000000000</td>
-        <td><p class="warm-status button-style">Warm</p></td>
-        <td><button class="btn btn-info" ui-sref='app.viewDiscussions'>New Call</button></td>
+        <td><p class="warm-color-suspect btn-sm">Warm</p></td>
+        <td><button class="btn btn-info btn-sm" ui-sref='app.viewDiscussions'>New Call</button></td>
       </tr>
       <tr>
+        <td>
+          <div class="form-group">
+            <div class="chekbox">
+              <label >
+                <input type="checkbox" ng-model="checked5">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </td>
         <td class="hand-cursor"  ui-sref="app.create-suspect-view">James Maxwell</td>
         <td>Paradigm Creatives</td>
         <td>Pune</td>
         <td>Anthony Sanchez</td>
         <td>Lorem Ipsum</td>
         <td>0000000000</td>
-        <td><p class="hot-status button-style ">Hot</p></td>
-        <td><button class="btn btn-info" ui-sref='app.viewDiscussions'>New Call</button></td>
+        <td><p class="hot-color-suspect btn-sm ">Hot</p></td>
+        <td><button class="btn btn-info btn-sm" ui-sref='app.viewDiscussions'>New Call</button></td>
       </tr>
       </tbody>
     </table>
+    <pagination class="pagination-sm pull-right"
+                page ="data.currentPage"
+                total-items="data.totalItems"
+                ng-model="data.currentPage"
+                ng-change ="getPossibilities(data.currentPage,data.numPerPage)"
+                max-size="4"
+                items-per-page="data.numPerPage"
+                rotate="false"
+                boundary-links="false">
+    </pagination>
   </div>
 
 </div>

@@ -4,8 +4,8 @@
   <div class="panel-body ">
     <div class="text-class" >All fields are mandatory</div>
     <div class="row client-text " >
-        <div class="col-md-6">Client Address</div>
-        <div class="col-md-6">Commercials</div>
+        <div class="col-md-6">TimeSheet/Atendence Related</div>
+        <div class="col-md-6">Activity Owners</div>
     </div>
 
     <div  class="col-md-12 ">
@@ -14,7 +14,7 @@
         <div class="container-fluid ">
           <div ng-controller="formCtrl" class="col-md-6 ">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Client Name:</label>
+              <label class="control-label" >TimeSheet/Attendence Cycle</label>
               <input class="form-control" name="n1"  ng-model="n1" type="text" minlength="3" maxlength="20" ng-required="usrform.n1.$error" >
               <span ng-show="usrform.n1.$invalid && usrform.n1.$dirty  ">please enter valid text</span>
 
@@ -22,7 +22,7 @@
           </div>
           <div class="col-md-6">
             <div ng-controller="Ctrl" class="form-group label-floating is-empty">
-              <label class="control-label" >Fixed Fee</label>
+              <label class="control-label" >TimeSheet and Payroll</label>
               <input class="form-control" name="n2" numbers-only  ng-model="n1" type="text" minlength="1" maxlength="20" ng-required="usrform.n2.$error" >
               <span ng-show="usrform.n2.$invalid && usrform.n2.$dirty  ">please enter valid text</span>
             </div>
@@ -38,14 +38,15 @@
         <div class="container-fluid">
           <div  class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Corporate office:</label>
-              <input class="form-control" name="n3"  ng-model="n3" type="text" minlength="3" maxlength="20" ng-required="usrform.n3.$error" >
+              <label class="control-label" >Timesheet/Atendence Collection Process</label>
+              <textarea class="form-control  bord-remove" name="n3"  ng-model="n3" type="text"
+              minlength="3" maxlength="20" ng-required="usrform.n3.$error" ></textarea>
                <span ng-show="usrform.n3.$invalid && usrform.n3.$dirty  ">please enter valid text</span>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Reuimbersment Service Fee</label>
+              <label class="control-label" >Salary Payout</label>
               <input class="form-control" name="n4"  ng-model="n4" type="text" minlength="3" maxlength="20" ng-required="usrform.n4.$error" >
               <span ng-show="usrform.n4.$invalid && usrform.n4.$dirty  ">please enter valid text</span>
             </div>
@@ -61,13 +62,12 @@
         <div class="container-fluid">
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Address Line 1:</label>
-              <input class="form-control" class="focusedInput1" type="text" required>
+
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Sourcing Fee</label>
+              <label class="control-label" >Invoice Submission & Payment Followup</label>
               <input class="form-control" class="focusedInput1" type="text" required>
             </div>
           </div>
@@ -82,13 +82,11 @@
         <div class="container-fluid">
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Addresss Line 2:</label>
-              <input class="form-control" class="focusedInput1" type="text">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Absorption Fee & Clauses</label>
+              <label class="control-label" >PO</label>
               <input class="form-control" class="focusedInput1" type="text">
             </div>
           </div>
@@ -103,15 +101,13 @@
         <div class="container-fluid">
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Contact Number:</label>
-              <input class="form-control" class="focusedInput1" >
+
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <button class="btn btn-raised btn-info btn-blue-class pull-right"><i class="fa fa-plus"></i> Other Fees
-              </button>
-
+              <label class="control-label" >Disputes & Resolutions</label>
+              <input class="form-control" class="focusedInput1" type="text">
             </div>
           </div>
         </div>
@@ -122,8 +118,8 @@
   </div>
   <div class="panel-body ">
     <div class="row client-text " >
-      <div class="col-md-6">Agreement Realated</div>
-      <div class="col-md-6">Important Dates</div>
+      <div class="col-md-6">Payroll & Invoicing(Billing) Related</div>
+      <div class="col-md-6">PO & Invoice Related</div>
     </div>
 
     <div  class="col-md-12 ">
@@ -132,17 +128,14 @@
         <div class="container-fluid ">
           <div ng-controller="formCtrl" class="col-md-6 ">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Agreement Start Date</label>
-              <input class="form-control" name="n1"  ng-model="n1" type="text" minlength="3" maxlength="20" ng-required="usrform.n1.$error" >
-              <span ng-show="usrform.n1.$invalid && usrform.n1.$dirty  ">please enter valid text</span>
-
+              <label class="control-label" >Payroll Cycle</label>
+              <input class="form-control"  type="text">
             </div>
           </div>
           <div class="col-md-6">
             <div ng-controller="Ctrl" class="form-group label-floating is-empty">
-              <label class="control-label" >Time Sheet Remainder</label>
-              <input class="form-control" name="n2" numbers-only  ng-model="n1" type="text" minlength="1" maxlength="20" ng-required="usrform.n2.$error" >
-              <span ng-show="usrform.n2.$invalid && usrform.n2.$dirty  ">please enter valid text</span>
+              <label class="control-label" >PO Process</label>
+              <input class="form-control" type="text">
             </div>
           </div>
         </div>
@@ -156,14 +149,14 @@
         <div class="container-fluid ">
           <div  class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Agreement End Date</label>
+              <label class="control-label" >Leaves</label>
               <input class="form-control" name="n3"  ng-model="n3" type="text" minlength="3" maxlength="20" ng-required="usrform.n3.$error" >
               <span ng-show="usrform.n3.$invalid && usrform.n3.$dirty  ">please enter valid text</span>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Time Sheet Submission Cutoff</label>
+              <label class="control-label" >Discounts</label>
               <input class="form-control" name="n4"  ng-model="n4" type="text" minlength="3" maxlength="20" ng-required="usrform.n4.$error" >
               <span ng-show="usrform.n4.$invalid && usrform.n4.$dirty  ">please enter valid text</span>
             </div>
@@ -179,13 +172,13 @@
         <div class="container-fluid">
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Agreement Termission Notice</label>
+              <label class="control-label" >Billing & Invoice Process</label>
               <input class="form-control" class="focusedInput1" type="text" required>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Payroll input upload Date</label>
+              <label class="control-label" >Billing Office Address & Contact Number</label>
               <input class="form-control" class="focusedInput1" type="text" required>
             </div>
           </div>
@@ -200,14 +193,67 @@
         <div class="container-fluid">
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Associate Termission Notice</label>
-              <input class="form-control" class="focusedInput1" type="text">
+
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Invoice Submission Date</label>
+              <label class="control-label" >Shipping Office Address & Contact Number</label>
               <input class="form-control" class="focusedInput1" type="text">
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+    </div>
+  <div class="panel-body ">
+    <div class="row client-text " >
+      <div class="col-md-12 matrix-class ">Client Escalation Matrix</div>
+
+    </div>
+
+    <div  class="col-md-12 ">
+
+      <form  name="usrform" novalidate id="usrform" class="bs-component ">
+        <div class="container-fluid ">
+          <div ng-controller="formCtrl" class="col-md-6 ">
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" >Name</label>
+              <input class="form-control" name="n1"  ng-model="n1" type="text" minlength="3" maxlength="20" ng-required="usrform.n1.$error" >
+              <span ng-show="usrform.n1.$invalid && usrform.n1.$dirty  ">please enter valid text</span>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div ng-controller="Ctrl" class="form-group label-floating is-empty">
+              <label class="control-label" >Name</label>
+              <input class="form-control" name="n2" numbers-only  ng-model="n1" type="text" minlength="1" maxlength="20" ng-required="usrform.n2.$error" >
+              <span ng-show="usrform.n2.$invalid && usrform.n2.$dirty  ">please enter valid text</span>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+    <div ng-controller="formCtrl"class="col-md-12 ">
+
+      <form name="usrform" novalidate id="usrform" class="bs-component">
+        <div class="container-fluid">
+          <div  class="col-md-6">
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" >Designation</label>
+              <input class="form-control" name="n3"  ng-model="n3" type="text" minlength="3" maxlength="20" ng-required="usrform.n3.$error" >
+              <span ng-show="usrform.n3.$invalid && usrform.n3.$dirty  ">please enter valid text</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" >Designation</label>
+              <input class="form-control" name="n4"  ng-model="n4" type="text" minlength="3" maxlength="20" ng-required="usrform.n4.$error" >
+              <span ng-show="usrform.n4.$invalid && usrform.n4.$dirty  ">please enter valid text</span>
             </div>
           </div>
         </div>
@@ -221,34 +267,14 @@
         <div class="container-fluid">
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Payment Mode</label>
-              <input class="form-control" class="focusedInput1" type="text">
+              <label class="control-label" >Contact Number</label>
+              <input class="form-control" class="focusedInput1" type="text" required>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Payment out Date</label>
-              <input class="form-control" class="focusedInput1" type="text">
-
-            </div>
-          </div>
-        </div>
-
-      </form>
-
-    </div><br>
-    <div class="col-md-12 ">
-
-      <form class="bs-component">
-        <div class="container-fluid">
-          <div class="col-md-6">
-            <div class="form-group label-floating is-empty ">
-              <label class="control-label" >Credit Terms</label>
-              <input class="form-control" class="focusedInput1" type="text">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group label-floating is-empty">
+              <label class="control-label" >Contact Number</label>
+              <input class="form-control" class="focusedInput1" type="text" required>
             </div>
           </div>
         </div>
@@ -256,57 +282,35 @@
       </form>
 
     </div>
-    <div class="form-group1 ">
-      <label class="first-class1 col-pad1 ">BGV</label>&nbsp;
-      <input type="radio" name="yes" class="check">
-      <label class="remote ">YES</label>
-      <input type="radio" name="yes" class="check ">
-      <label class="location ">NO</label>
-    </div>
     <div class="col-md-12 ">
 
       <form class="bs-component">
         <div class="container-fluid">
-          <div class="col-md-6 col-pad1">
-            <div class="form-group" custom-select data="groupTurnover"></div>
-             </div>
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
+              <label class="control-label" >Email ID</label>
+              <input class="form-control" class="focusedInput1" type="email">
             </div>
           </div>
-        </div></form>
+          <div class="col-md-6">
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" >Email Id</label>
+              <input class="form-control" class="focusedInput1" type="email">
+            </div>
+          </div>
+        </div>
 
-
-    <div class="form-group1 col-pad1">
-      <label class="contacts">Insurence</label>
-      <input type="radio" name="yes" class="check">
-      <label class="remote">Applicable</label>
-      <input type="radio" name="yes" class="check">
-      <label class="location">Not Applicable</label>
-    </div><br>
-    <div class="form-group1 col-pad1">
-      <input type="radio" name="yes" class="check">
-      <label class="remote">Family Floater</label>
-      <input type="radio" name="yes" class="check">
-      <label class="location">Individual Policy</label>
-
-    </div><br>
-    <div class="form-group1 col-pad1">
-      <input type="checkbox" class="check">
-      <label class=" first-class1">GPA</label>
+      </form>
     </div>
+    <div class="form-group ">
 
+        <button  class="btn btn-raised btn-default data-button1">Cancel</button>&nbsp;&nbsp;
+        <button class="btn btn-raised btn-default data-button2">Save</button>
+        <button class="btn btn-raised btn-default data-button3">Submit</button>
 
-  </div>
-    <div class="form-group cancel-sub-class">
-
-      <button class="btn btn-primary data-button">Cancel</button>
-      <button class="btn btn-primary data-button" ui-sref="app.slaTracker-step2">Save&Continue</button>
+      </div>
     </div>
   </div>
-
-  </div>
-
 
 </div>
 

@@ -6,10 +6,15 @@ angular.module('com.module.suspect').config(['$stateProvider', function ($stateP
   $stateProvider
     .state('app.suspect-view', {
       url: '/suspect-view',
-      templateUrl: 'js/app/suspect/views/suspect-view.html'
+      templateUrl: 'js/app/suspect/views/suspect-view.html',
+      controller:'viewSuspectCtrl'
     })
     .state('app.create-suspect-view', {
       url: '/create-suspect',
       templateUrl: 'js/app/suspect/views/create-suspect.html'
+    })
+    .state('app.new-oppurtunity', {
+      url: '/new-oppurtunity',
+      templateUrl: 'js/app/suspect/views/new-oppurtunity.html'
     })
 }]);

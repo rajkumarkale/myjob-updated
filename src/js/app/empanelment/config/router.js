@@ -7,7 +7,7 @@ angular.module('com.module.empanelment')
   $stateProvider
     .state('app.viewEmpanelment', {
       url: '/view-empanelment',
-      controller:'empanelmentController',
+      controller:'viewEmpanelmentCtrl',
       templateUrl: 'js/app/empanelment/views/view-empanelment.html'
     })
     .state('app.createEmpanelment', {
@@ -17,5 +17,9 @@ angular.module('com.module.empanelment')
     .state('app.slaTracker', {
       url: '/SLA-Tracker',
       templateUrl: 'js/app/empanelment/views/sla-Tracker.html'
+    })
+    .state('app.slaTracker-step2', {
+      url: '/SLA-Tracker-step2',
+      templateUrl: 'js/app/empanelment/views/sla-Tracker-step2.html'
     })
 }]);

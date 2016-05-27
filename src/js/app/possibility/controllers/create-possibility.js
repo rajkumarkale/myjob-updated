@@ -1,7 +1,75 @@
 angular.module('com.module.possibility')
-.controller('createPossibilityController',['$scope','toaster','$state','FileUploader','possibilityCreateService','Upload','$modal','appConfig',function($scope,toaster,$state,FileUploader,possibilityCreateService,Upload,$modal,appConfig){
+.controller('createPossibilityController',['$scope','toaster','$state','$stateParams','FileUploader','possibilityCreateService','Upload','$modal','appConfig',function($scope,toaster,$state,$stateParams,FileUploader,possibilityCreateService,Upload,$modal,appConfig){
 
 		
+		$scope.reset = function(){
+
+				return {	
+					client_id:"",
+					legal_name:"", 
+					unit_name:"",
+					division :"", 
+					url:"",
+					employee_size:"",
+					turnover:"",
+					vertical:"",
+					customer_type:"",
+					"address": {
+					address_line_1:"",
+					address_line_2 :"",
+					city :"",
+					state  :"",
+					country  :"",
+					pin:""
+					},
+					"current_Status": {
+					stage :"POSSIBILITY",
+					status :"NOT_MET"
+					 },
+					"point_of_contacts": [
+					
+					{
+					name:"", 
+					email_id:"", 
+					support_type:"", 
+					designation:"",
+					phone:"",
+					}
+					]
+					}
+};
+
+		$scope.init = function($stateParams){
+			$scope.isEditable = false;
+			if($stateParams.possibility){
+			$scope.title = "Edit Possibility";
+			$scope.myPromise = possibilityCreateService.possibilityDetails($stateParams.possibility.client_unit_id).then(function(response){
+			$scope.createPossibility = response.data;
+			 $scope.employeeSize.selectedItem = $scope.createPossibility.employee_size;
+			 $scope.groupTurnover.selectedItem = $scope.createPossibility.turnover;
+			$scope.businessVertical.selectedItem = $scope.createPossibility.vertical;
+			 $scope.customerType.selectedItem = $scope.createPossibility.customer_type;
+			 if($scope.createPossibility.point_of_contacts[0].support_type = 'BOTH')
+				{
+					$scope.remote =true;
+					$scope.local = true;
+				}else if(requestObject.point_of_contacts[0].support_type = 'REMOTE'){
+					$scope.remote = true;
+				}else{
+				if(requestObject.point_of_contacts[0].support_type = 'LOCAL'){
+					$scope.local = true;
+				}
+			}
+			$scope.isNewPossibility = false;
+			});
+			}else
+			{
+				$scope.isNewPossibility =true;
+				$scope.title = "New Possibility";
+				$scope.createPossibility = $scope.reset();
+			}
+		}
+		$scope.init($stateParams);
         $scope.$watch('files', function () {
         $scope.upload($scope.files);
     });
@@ -27,40 +95,7 @@ $scope.customerType  ={title:"Type of Customer", data:["MNC", "PVT_LTD", "PUBLIC
 $scope.supportType  ={title:"Employee Size of the Company", data:["REMOTE", "LOCAL", "BOTH"],selectedItem:""};
 $scope.remoteLocation ={title:"Remote Location", data:["Hyderabad", "Bangalore", "Mumbai","Pune"],selectedItem:""};
 
-  $scope.createPossibility =  {
-					client_id:"",
-					legal_name:"", 
-					unit_name:"",
-					division :"", 
-					url:"",
-					employee_size:"",
-					turnover:"",
-					vertical:"",
-					customer_type:"",
-					"address": {
-					address_line_1:"",
-					address_line_2 :"",
-					city :"",
-					state  :"",
-					country  :"",
-					pin:""
-					},
-					"current_status": {
-					stage :"POSSIBILITY",
-					status :"NOT_MET"
-					 },
-					"point_of_contacts": [
-					
-					{
-					name:"", 
-					email_id:"", 
-					support_type:"", 
-					designation:"",
-					phone:"",
-					}
-					]
-}
-
+  
 
  $scope.save = function(possibilityObject){
  	
@@ -92,7 +127,7 @@ $scope.processRequest = function(requestObject){
 	$scope.removeEmptyArrays (requestObject);
 	 possibilityCreateService.setPossibility(requestObject).success(function () {
       toaster.pop('Success','POSSIBILITY Created Successfully.');
-      $state.go('app.viewPossibility');
+      //$state.go('app.viewPossibility');
     }).error(function (err) {
       $scope.authError = err.message;
     })
@@ -100,8 +135,13 @@ $scope.processRequest = function(requestObject){
 $scope.getLegalEntity = function(val)
 {
 	possibilityCreateService.getLegalEntity(val).then(function(response){
+		
 
 	})
+
+};
+$scope.editForm = function(){
+	$scope.isEditable = true;
 
 };
 $scope.removeEmptyArrays = function (data) {
@@ -139,6 +179,12 @@ $scope.cancel = function()
 {
 		$state.go('app.viewPossibility');
 };
+$scope.disableForm = function(){
+	if(!$scope.isEditable && !$scope.isNewPossibility){
+		var className = 'app-container-blur';
+		return className;
+	}
+}
 
  $scope.upload = function (files) {
         if (files && files.length) {

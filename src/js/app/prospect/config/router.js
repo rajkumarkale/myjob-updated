@@ -17,6 +17,5 @@ angular.module('com.module.prospect').config(['$stateProvider', function ($state
       templateUrl: 'js/app/prospect/views/view-discussions.html',
       controller:'viewDiscussionCtrl'
     })
-    
-
+   
 }]);

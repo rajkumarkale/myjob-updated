@@ -21,10 +21,22 @@ angular.module('com.module.possibility').factory('possibilityCreateService', fun
       data:data
     });
   };
-
+  var getPossibility = function (currentPage,numPerPage) {
+    return $http({
+      method: 'GET',
+      url: BASEURI + '/api/possibility/'+currentPage+'/'+numPerPage
+    });
+  };
+var possibilityDetails = function (id) {
+    return $http({
+      method: 'GET',
+      url: BASEURI + '/api/possibility/'+id
+    });
+  };
   return {
-    createClient: createClient,
     getLegalEntity:getLegalEntity,
-    setPossibility:setPossibility
+    setPossibility:setPossibility,
+    getPossibility:getPossibility,
+    possibilityDetails:possibilityDetails
   }
 });

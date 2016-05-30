@@ -697,6 +697,10 @@ color:white;
 /* end discussion  */
 
 /* start of SLA TRacker */
+.pheading{
+  background-color: #337ab7;
+  color:white;
+}
 .main-content{
  margin-top:2%;
   height:100%;
@@ -1707,7 +1711,13 @@ td:nth-child(1) {
 }
 
 /* end of create possibility view */
+.first-class2{
+  color: #049ad9;
 
+}
+.class-space{
+  margin-left:65%
+}
 .form-custom-padding{
   padding: 0px 50px;
 }

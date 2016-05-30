@@ -7,7 +7,7 @@ angular.module('com.module.empanelment')
   $stateProvider
     .state('app.viewEmpanelment', {
       url: '/view-empanelment',
-      controller:'empanelmentController',
+      controller:'viewEmpanelmentCtrl',
       templateUrl: 'js/app/empanelment/views/view-empanelment.html'
     })
     .state('app.createEmpanelment', {

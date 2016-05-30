@@ -11,7 +11,7 @@
 }
 
 .color-black{
-  color : black;
+  color : black !important;
 }
 
 .bg-red{
@@ -36,11 +36,47 @@
 .list-pad{
   padding-top:35px;
 }
+
 .icon-bars
 {
 
  font-size: 20px;
   color:white;
+
+
+.ecentric-logo{
+  margin-top: 6px !important;
+  margin-left: -9px !important;
+}
+.background-anchor:hover{
+  background-color: #E2E7ED !important;
+}
+.background-anchor{
+  background: #E2E7ED;
+  padding-left: 26px !important;
+}
+.icon-bars {
+  font-size: 20px;
+  color: white;
+}
+.collapse-back:hover{
+  background-color: transparent !important;
+}
+.sales-mrg{
+  margin-left: -35px;
+}
+.sales-namemrg{
+  margin-left: -25px !important;
+}
+.notification-mrg{
+  background-color: #AAAAAA !important;
+  padding: 3px 5px !important;
+}
+.caret{
+  color: white;
+}
+.list-menu li > a{
+  padding: 2px 15px !important;
 
 }
 /*.list-pad > li > a:hover,.list-pad > li > a:focus{
@@ -69,7 +105,25 @@
    color:white;
    font-size:18px;
 }
-
+.calendar-img{
+  margin-left: -46px !important;
+}
+.met-target{
+  color:#5398F6;
+  font-weight: bold;
+}
+.met-prospect{
+  color:#81479D;
+  font-weight: bold;
+}
+.metprospect-num{
+  color:#81479D;
+  font-weight: bold;
+}
+.empanel-col{
+  color: #6BC5BE;
+  font-weight: bold;
+}
 /*end of dashboard*/
 
 /*create possibility*/
@@ -86,6 +140,17 @@
     padding-top: 1px;
     background-color: transparent;
 }
+#basic-addon-search{
+  background-color: #F1F1F2;
+  border-left: 1px solid #CFCFCF;
+}
+.input-search{
+  background-color: white;
+  padding-left: 10px;
+  border: 1px solid #CFCFCF;
+  border-radius: 15px;
+}
+.form-search{background-color: white;}
 .head {
     font-size: 22px;
     color: #2277b1;
@@ -96,6 +161,8 @@
     padding-right: 22px;
     padding-bottom: 10px;
     background-color: #049ad9 !important;
+     margin-right:12px ;
+  border-radius: 4px !important;
 }
 .maincol-apply {
     background-color: #e4e9ef;
@@ -156,7 +223,7 @@
 .summary {
     text-align: center;
     background-color: #2277b1 !important;
-    font-size: 17px;
+    font-size: 20px;
 }
 .pan-col {
     border: white;
@@ -715,14 +782,6 @@ color:white;
   padding-bottom: 5px;
 
 }
-.checkBox-showall
-{
-  width: 100px;
-  height: 35px;
-  color: white;
-  background-color: lightgrey;
-  padding: 1px 5px 5px 5px;
-}
 .client-text
 {
   background-color:lightgrey ;
@@ -768,6 +827,7 @@ color:white;
 .default{
   background: lightslategray;
 }
+
 /* end add new discussions */
 
 
@@ -858,6 +918,7 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 .color-black{
   color : black;
 }
+
 
 .bg-red{
   color:#db5358;
@@ -1327,11 +1388,11 @@ td:nth-child(1) {
 .button-style{
   text-align: center;
   width: 80px;
-
   border-radius: 3px;
-
 }
-
+.center-text{
+  text-align: center;
+}
 .btn-new{
   color:white;
   background-color: #3a81f8;}
@@ -1346,13 +1407,7 @@ td:nth-child(1) {
 
 
 
-.checkBoxDrop{
-  width: 61px;
-  height: 40px;
-  color: white;
-  background-color: lightgrey;
-  padding: 5px 5px 2px 5px;
-}
+
 
 .checkBox{
   width: 20px;
@@ -1729,8 +1784,13 @@ td:nth-child(1) {
  pointer-events: none;
  opacity: 0.5;
 }
+
+
+
 .pad-b-20{
   padding-bottom: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
 }
 
 /* comments for view od new oppurtunity */

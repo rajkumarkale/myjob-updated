@@ -1,10 +1,11 @@
 angular.module('com.module.possibility')
-.controller('createPossibilityController',['$scope','toaster','$state','$stateParams','FileUploader','possibilityCreateService','Upload','$modal','appConfig',function($scope,toaster,$state,$stateParams,FileUploader,possibilityCreateService,Upload,$modal,appConfig){
+.controller('createPossibilityController',['$scope','toaster','$state','$stateParams','FileUploader','possibilityCreateService','Upload','$modal','appConfig','$cookies',function($scope,toaster,$state,$stateParams,FileUploader,possibilityCreateService,Upload,$modal,appConfig,$cookies){
 
 		
 		$scope.reset = function(){
 
 				return {	
+					user_id:"",
 					client_id:"",
 					legal_name:"", 
 					unit_name:"",
@@ -14,6 +15,7 @@ angular.module('com.module.possibility')
 					turnover:"",
 					vertical:"",
 					customer_type:"",
+					freeze:"",
 					"address": {
 					address_line_1:"",
 					address_line_2 :"",
@@ -22,7 +24,7 @@ angular.module('com.module.possibility')
 					country  :"",
 					pin:""
 					},
-					"current_Status": {
+					"current_status": {
 					stage :"POSSIBILITY",
 					status :"NOT_MET"
 					 },
@@ -88,12 +90,10 @@ angular.module('com.module.possibility')
     modalInstance.result.then(function () {
     });
   };
-$scope.employeeSize  ={title:"Employee Size of the Company", data:["SMALL", "MEDIUM", "LARGE"],selectedItem:""};
-$scope.groupTurnover  ={title:"Group Turnover", data:["SMALL", "MEDIUM", "LARGE"],selectedItem:""};
-$scope.businessVertical  ={title:"Business Vertical", data:["IT", "GENERAL", "GOVT", "IT_STAFFING", "GENERAL_STAFFING", "GOVERNMENT_STAFFING", "PERM_SEARCH", "RPO"],selectedItem:""};
-$scope.customerType  ={title:"Type of Customer", data:["MNC", "PVT_LTD", "PUBLIC_LTD", "PROPRIETORSHIP"],selectedItem:""};
-$scope.supportType  ={title:"Employee Size of the Company", data:["REMOTE", "LOCAL", "BOTH"],selectedItem:""};
-$scope.remoteLocation ={title:"Remote Location", data:["Hyderabad", "Bangalore", "Mumbai","Pune"],selectedItem:""};
+$scope.employeeSize  ={title:"Employee Size of the Company", data:[{key:"SMALL",displayText:"SMALL"}, {key:"MEDIUM",displayText:"MEDIUM"}, {key:"LARGE",displayText:"LARGE"}],selectedItem:""};
+$scope.groupTurnover  ={title:"Group Turnover", data:[{key:"SMALL",displayText:"SMALL"}, {key:"MEDIUM",displayText:"MEDIUM"}, {key:"LARGE",displayText:"LARGE"}],selectedItem:""};
+$scope.businessVertical  ={title:"Business Vertical", data:[{key:"IT",displayText:"IT"}, {key:"GENERAL",displayText:"GENERAL"},{key: "GOVT",displayText:"GOVT"},{key: "IT_STAFFING",displayText:"IT STAFFING"}, {key:"GENERAL_STAFFING",displayText:"GENERAL STAFFING"},{key: "GOVERNMENT_STAFFING",displayText:"GOVERNMENT STAFFING"}, {key:"PERM_SEARCH",displayText:"PERM SEARCH"}, {key:"RPO",displayText:"RPO"}],selectedItem:""};
+$scope.customerType  ={title:"Type of Customer", data:[{key:"MNC",displayText:"MNC"}, {key:"PVT_LTD",displayText:"PVT LTD"},{key: "PUBLIC_LTD",displayText:"PUBLIC LTD"}, {key:"PROPRIETORSHIP",displayText:"PROPRIETORSHIP"}],selectedItem:""};
 
   
 
@@ -110,10 +110,11 @@ $scope.remoteLocation ={title:"Remote Location", data:["Hyderabad", "Bangalore",
 
  
 $scope.processRequest = function(requestObject){
-	requestObject.employee_size = $scope.employeeSize.selectedItem;
-	requestObject.turnover = $scope.groupTurnover.selectedItem;
-	requestObject.vertical = $scope.businessVertical.selectedItem;
-	requestObject.customer_type = $scope.customerType.selectedItem;
+	requestObject.user_id = JSON.parse($cookies.user).userDetails._id;
+	requestObject.employee_size = $scope.employeeSize.selectedItem.key;
+	requestObject.turnover = $scope.groupTurnover.selectedItem.key;
+	requestObject.vertical = $scope.businessVertical.selectedItem.key;
+	requestObject.customer_type = $scope.customerType.selectedItem.key;
 	if($scope.remote && $scope.local)
 	{
 		requestObject.point_of_contacts[0].support_type = 'BOTH';

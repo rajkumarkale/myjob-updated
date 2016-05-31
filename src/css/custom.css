@@ -324,6 +324,29 @@ margin-left: 520px;
 .all-dateinputs{
      padding-top:25px;
 }
+.mrg-button{
+   margin-right: 15px;
+}
+.poss-mrg{
+    margin-right: 10px;
+}
+.not-met{
+    color: #8C8866;
+    font-weight: bold;
+}
+.greenmet{
+   background-color: #8C8866;
+    font-weight: bold;
+}
+.poss-btn{
+     padding-top: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 14px;
+    background-color: #049ad9 !important;
+     margin-right:12px ;
+  border-radius: 4px !important;
+}
 /*end create possibility*/
 
 
@@ -746,7 +769,8 @@ color:white;
   background-color: white;
 }
 .back-color-search{
-  background-color: darkgrey;
+  background-color: #F2F2F2 !important;
+  border-left:1px solid #CDCDCD;
 }
 .addDiscusHeading{
   background-color: #2277b1;

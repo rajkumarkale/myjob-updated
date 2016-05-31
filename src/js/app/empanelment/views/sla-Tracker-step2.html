@@ -13,7 +13,7 @@
 
       <form  name="usrform" novalidate id="usrform" class="bs-component ">
         <div class="container-fluid ">
-          <div ng-controller="formCtrl" class="col-md-6 ">
+          <div  class="col-md-6 ">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >TimeSheet/Attendence Cycle</label>
               <input class="form-control" name="n1"  type="text" >
@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div ng-controller="Ctrl" class="form-group label-floating is-empty">
+            <div class="form-group label-floating is-empty">
               <label class="control-label" >TimeSheet and Payroll</label>
               <input class="form-control" type="text">
             </div>
@@ -31,7 +31,7 @@
       </form>
 
     </div>
-    <div ng-controller="formCtrl"class="col-md-12 ">
+    <div class="col-md-12 ">
 
       <form name="usrform" novalidate class="bs-component">
         <div class="container-fluid">
@@ -130,7 +130,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div ng-controller="Ctrl" class="form-group label-floating is-empty">
+            <div  class="form-group label-floating is-empty">
               <label class="control-label" >PO Process</label>
               <input class="form-control" type="text">
             </div>
@@ -203,6 +203,7 @@
 
     </div>
     </div>
+
   <div class="panel-body ">
     <div class="row client-text " >
       <div class="col-md-12 matrix-class ">Client Escalation Matrix</div>
@@ -211,17 +212,38 @@
 
     <div  class="col-md-12 ">
 
-      <form  class="bs-component ">
+      <form  name="usrform" class="bs-component ">
         <div class="container-fluid ">
           <div  class="col-md-6 ">
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" >Name</label>
+              <input class="form-control"  type="text">
+            </div>
+          </div>
+          <div class="col-md-6">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Name</label>
               <input class="form-control" type="text">
             </div>
           </div>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="col-md-12 ">
+
+      <form  class="bs-component">
+        <div class="container-fluid ">
+          <div  class="col-md-6">
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" >Designation</label>
+              <input class="form-control" type="text" >
+            </div>
+          </div>
           <div class="col-md-6">
-            <div  class="form-group label-floating is-empty">
-              <label class="control-label" >Name</label>
+            <div class="form-group label-floating is-empty">
+              <label class="control-label" >Designation</label>
               <input class="form-control" type="text" >
             </div>
           </div>
@@ -230,27 +252,7 @@
       </form>
 
     </div>
-    <div class="col-md-12 ">
 
-      <form class="bs-component">
-        <div class="container-fluid">
-          <div  class="col-md-6">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Designation</label>
-              <input class="form-control"  >
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Designation</label>
-              <input class="form-control" name="n4"  >
-            </div>
-          </div>
-        </div>
-
-      </form>
-
-    </div>
     <div class="col-md-12 ">
 
       <form class="bs-component">
@@ -258,13 +260,13 @@
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Contact Number</label>
-              <input class="form-control" class="focusedInput1" type="text" required>
+              <input class="form-control" type="text">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Contact Number</label>
-              <input class="form-control" class="focusedInput1" type="text" required>
+              <input class="form-control" type="text">
             </div>
           </div>
         </div>
@@ -279,27 +281,32 @@
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Email ID</label>
-              <input class="form-control" class="focusedInput1" type="email">
+              <input class="form-control" class="focusedInput1" type="email" required="required">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Email Id</label>
-              <input class="form-control" class="focusedInput1" type="email">
+              <label class="control-label" >Email ID</label>
+              <input class="form-control" class="focusedInput1" type="email" required="required">
             </div>
           </div>
         </div>
 
       </form>
-    </div>
-    <div class="form-group ">
 
-        <button  class="btn btn-raised btn-default data-button1">Cancel</button>&nbsp;&nbsp;
-        <button class="btn btn-raised btn-default data-button2">Save</button>
-        <button class="btn btn-raised btn-default data-button3">Submit</button>
-
-      </div>
     </div>
+
+  </div>
+  <div class="form-group ">
+
+   <a ui-sref="app.createEmpanelment" class="auto">
+     <button  class="btn btn-raised  data-button1 ">Cancel</button>&nbsp;&nbsp;
+   </a>
+    <button class="btn btn-raised  data-button2">Save</button>
+    <button class="btn btn-raised  data-button3">Submit</button>
+
+  </div>
+
   </div>
 
 </div>

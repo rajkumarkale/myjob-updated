@@ -37,12 +37,11 @@
   padding-top:35px;
 }
 
-.icon-bars
-{
+.icon-bars {
 
- font-size: 20px;
-  color:white;
-
+  font-size: 20px;
+  color: white;
+}
 
 .ecentric-logo{
   margin-top: 6px !important;
@@ -764,6 +763,7 @@ color:white;
 /* end discussion  */
 
 /* start of SLA TRacker */
+
 .pheading{
   background-color: #337ab7;
   color:white;
@@ -1770,9 +1770,7 @@ td:nth-child(1) {
   color: #049ad9;
 
 }
-.class-space{
-  margin-left:65%
-}
+
 .form-custom-padding{
   padding: 0px 50px;
 }

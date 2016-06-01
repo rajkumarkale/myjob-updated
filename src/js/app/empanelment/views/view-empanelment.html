@@ -1,23 +1,23 @@
 <div class="maincol-apply">
-  <div class="container all-dateinputs" >
+  <div class="container all-dateinputs">
     <div class="pull-right">
       <form id="form" name="form" class="form-inline">
         <div class="form-group">
           <label for="startDate" class="color-black">From</label>
           <div class="input-group">
-            <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"/>
-            <span class="input-group-addon" id="basic-addon1">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
+            <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
+            <span  class="input-group-addon" id="basic-addon1">
+            <img src="img/calendar_icon.png" ng-click="open($event,'opened1')"  alt=""/></span>
           </div>
         </div>
         <div class="form-group">
           <label for="endDate" class="color-black">To</label>
           <div class="input-group">
-            <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon2"/>
+            <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
             <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
+            <img src="img/calendar_icon.png" ng-click="open($event,'opened2')" alt=""/></span>
           </div>
-          <button class="btn btn-primary filter">Submit</button>
+          <button class="btn btn-primary filter">Filter</button>
         </div>
       </form>
     </div>
@@ -79,9 +79,9 @@
               </div>
           </span>
 
+        </div>
       </div>
     </div>
-  </div>
 
 
 
@@ -90,7 +90,7 @@
       <div class="row">
         <label class=" dropdown checkBoxDrop pull-left ">
           <input type="checkbox" class="checkBox" ng-model="selectAll">
-         <!-- <span class="caret checkBxDrop" data-toggle="dropdown"></span>-->
+          <!-- <span class="caret checkBxDrop" data-toggle="dropdown"></span>-->
         </label>
         <label class="checkBox-showall pull-left " ng-show="selectAll || checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
           || checked8 || checked9 || checked10 || checked11">
@@ -143,7 +143,7 @@
           <p class="won-status-text btn-sm ">Met</p>
         </td>
         <td>
-          <a ui-sref='app.viewDiscussions' class="auto">
+          <a ui-sref='app.viewDiscussions' >
             <button type="button" class="btn btn-raised btn-info btn-sm">New Call</button>
           </a>
         </td>
@@ -174,7 +174,7 @@
         </td>
         <td>
           <a ui-sref='app.viewDiscussions' class="auto">
-            <button type="button" class="btn btn-raised btn-info btn-sm">New Call</button>
+            <button type="button" class="btn btn-raised btn-info btn-sm">New Call </button>
           </a>
         </td>
 

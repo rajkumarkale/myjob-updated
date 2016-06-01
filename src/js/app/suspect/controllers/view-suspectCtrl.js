@@ -6,10 +6,6 @@ angular.module('com.module.suspect')
     $scope.open = function($event,opened) {
       $event.preventDefault();
       $event.stopPropagation();
-
       $scope[opened] = true;
     };
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = $scope.formats[0];
-
   }]);

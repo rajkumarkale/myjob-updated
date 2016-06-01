@@ -20,13 +20,13 @@
 
   <div class="row">
     <label class=" dropdown checkBoxDrop pull-left ">
-      <input type="checkbox" class="checkBox">
+      <input type="checkbox" class="checkBox" ng-model="selectAll">
       <!--<span class="caret checkBxDrop" data-toggle="dropdown"></span>-->
     </label>
    <!-- <label class="checkBox-showall pull-left " ng-show="checked || checked2 || checked3 || checked4">
       <span class="glyphicon glyphicon-pencil " data-toggle="dropdown"></span>&nbsp;&nbsp;Edit
     </label>-->
-    <label class="  checkBox-showall pull-left " ng-show="checked || checked2 || checked3 || checked4">
+    <label class="  checkBox-showall pull-left " ng-show=" selectAll || checked || checked2 || checked3 || checked4">
       <span class="glyphicon glyphicon-trash " data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
     </label>
     <label class="  checkBox-showall pull-right ">Show All
@@ -42,7 +42,7 @@
     </div>
     <div class="container-custom">
       <div class="container ">
-        <input type="checkbox" class="Discus-checkBx " ng-model="checked"/>
+        <input type="checkbox" class="Discus-checkBx " ng-model="checked" ng-checked="selectAll"/>
         <div class="discussion-body">
           <div class="row ">
             <div class="col-lg-9 ">
@@ -118,7 +118,7 @@
     </div>
     <div class="container-custom">
       <div class="container ">
-        <input type="checkbox" class="Discus-checkBx" ng-model="checked2"/>
+        <input type="checkbox" class="Discus-checkBx" ng-model="checked2" ng-checked="selectAll"/>
         <div class="discussion-body">
           <div class="row ">
             <div class="col-lg-9 ">
@@ -207,7 +207,7 @@
     </div>
     <div class="container-custom">
       <div class="container ">
-        <input type="checkbox" class="Discus-checkBx" ng-model="checked3"/>
+        <input type="checkbox" class="Discus-checkBx" ng-model="checked3" ng-checked="selectAll"/>
         <div class="discussion-body">
           <div class="row ">
             <div class="col-lg-9 ">
@@ -283,7 +283,7 @@
     </div>
     <div class="container-custom">
       <div class="container ">
-        <input type="checkbox" class="Discus-checkBx" ng-model="checked4"/>
+        <input type="checkbox" class="Discus-checkBx" ng-model="checked4" ng-checked="selectAll"/>
         <div class="discussion-body">
           <div class="row ">
             <div class="col-lg-9 ">

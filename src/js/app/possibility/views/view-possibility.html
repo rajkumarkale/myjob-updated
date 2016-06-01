@@ -3,6 +3,25 @@
     <div class="pull-right">
       <form id="form" name="form" class="form-inline">
         <div class="form-group">
+          <label for="startDate">From</label>
+          <div class="input-group">
+            <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
+            <span class="input-group-addon" id="basic-addon1">
+            <img src="img/calendar_icon.png" ng-click="open($event,'opened1')" alt=""/></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="endDate">To</label>
+          <div class="input-group">
+            <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
+            <span class="input-group-addon" id="basic-addon2">
+            <img src="img/calendar_icon.png" ng-click="open($event,'opened2')" alt=""/></span>
+          </div>
+          <button class="btn btn-primary filter">Filter</button>
+        </div>
+      </form>
+      <!--<form id="form" name="form" class="form-inline">
+        <div class="form-group">
           <label for="startDate" class="color-black">From</label>
           <div class="input-group">
             <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"/>
@@ -18,7 +37,7 @@
           </div>
           <button class="btn btn-primary filter mrg-button">Filter</button>
         </div>
-      </form>
+      </form>-->
     </div>
   </div>
   <div class="container content" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
@@ -100,13 +119,13 @@
         <td>{{possibility.pocs[0].designation}}</td>
         <td>{{possibility.pocs[0].phone}}</td>
         <td>
-          <p class="btn btn-raised warm-status m-n ">NOT MET</p>
+          <p class="btn btn-raised warm-status m-n btn-sm">NOT MET</p>
         </td>
         <td>
-          <button class="btn btn-raised  btn-info m-n">New Call</button>
+          <button class="btn btn-raised  btn-info m-n btn-sm">New Call</button>
         </td>
       </tr>
-      
+
       </tbody>
     </table>
      <pagination class="pagination-sm m-n m-r-sm pad-b-20 pull-right"

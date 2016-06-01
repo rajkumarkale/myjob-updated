@@ -2,55 +2,21 @@ angular.module('com.module.possibility')
 .controller('createPossibilityController',['$scope','toaster','$state','$stateParams','FileUploader','possibilityCreateService','Upload','$modal','appConfig','$cookies',function($scope,toaster,$state,$stateParams,FileUploader,possibilityCreateService,Upload,$modal,appConfig,$cookies){
 
 		
-		$scope.reset = function(){
-
-				return {	
-					user_id:"",
-					client_id:"",
-					legal_name:"", 
-					unit_name:"",
-					division :"", 
-					url:"",
-					employee_size:"",
-					turnover:"",
-					vertical:"",
-					customer_type:"",
-					freeze:"",
-					"address": {
-					address_line_1:"",
-					address_line_2 :"",
-					city :"",
-					state  :"",
-					country  :"",
-					pin:""
-					},
-					"current_status": {
-					stage :"POSSIBILITY",
-					status :"NOT_MET"
-					 },
-					"point_of_contacts": [
-					
-					{
-					name:"", 
-					email_id:"", 
-					support_type:"", 
-					designation:"",
-					phone:"",
-					}
-					]
-					}
-};
-
+		
 		$scope.init = function($stateParams){
 			$scope.isEditable = false;
+			$scope.employeeSize  = appConfig.possibility.employeeSize;
+				$scope.groupTurnover  = appConfig.possibility.groupTurnover;
+				$scope.businessVertical  = appConfig.possibility.businessVertical;
+				$scope.customerType  = appConfig.possibility.customerType;
 			if($stateParams.possibility){
 			$scope.title = "Edit Possibility";
 			$scope.myPromise = possibilityCreateService.possibilityDetails($stateParams.possibility.client_unit_id).then(function(response){
 			$scope.createPossibility = response.data;
-			 $scope.employeeSize.selectedItem = $scope.createPossibility.employee_size;
-			 $scope.groupTurnover.selectedItem = $scope.createPossibility.turnover;
-			$scope.businessVertical.selectedItem = $scope.createPossibility.vertical;
-			 $scope.customerType.selectedItem = $scope.createPossibility.customer_type;
+			 $scope.employeeSize.selectedItem = $scope.getSlectedItem($scope.createPossibility.employee_size,$scope.employeeSize);
+			 $scope.groupTurnover.selectedItem =$scope.getSlectedItem($scope.createPossibility.turnover,$scope.groupTurnover);
+			$scope.businessVertical.selectedItem = $scope.getSlectedItem($scope.createPossibility.vertical,$scope.businessVertical);
+			 $scope.customerType.selectedItem = $scope.getSlectedItem($scope.createPossibility.customer_type,$scope.customerType);
 			 if($scope.createPossibility.point_of_contacts[0].support_type = 'BOTH')
 				{
 					$scope.remote =true;
@@ -69,10 +35,8 @@ angular.module('com.module.possibility')
 				$scope.isNewPossibility =true;
 				$scope.title = "New Possibility";
 				$scope.createPossibility = {};
-				$scope.employeeSize  = appConfig.possibility.employeeSize;
-				$scope.groupTurnover  = appConfig.possibility.groupTurnover;
-				$scope.businessVertical  = appConfig.possibility.businessVertical;
-				$scope.customerType  = appConfig.possibility.customerType;
+				$scope.createPossibility.point_of_contacts=[];
+				
 			}
 		}
 		$scope.init($stateParams);
@@ -129,7 +93,6 @@ $scope.processRequest = function(requestObject){
 	$scope.removeEmptyArrays (requestObject);
 	 possibilityCreateService.setPossibility(requestObject).success(function () {
       toaster.pop('Success','POSSIBILITY Created Successfully.');
-      //$state.go('app.viewPossibility');
     }).error(function (err) {
       $scope.authError = err.message;
     })
@@ -142,6 +105,16 @@ $scope.getLegalEntity = function(val)
 	})
 
 };
+$scope.getSlectedItem = function(selectedItem,srcObj){
+	var returnObj;
+		angular.forEach(srcObj.data, function(obj){
+			if(obj.displayText  == selectedItem || obj.key  == selectedItem  ){
+				 returnObj = obj;
+			}
+});
+			return returnObj;
+
+}
 $scope.editForm = function(){
 	$scope.isEditable = true;
 

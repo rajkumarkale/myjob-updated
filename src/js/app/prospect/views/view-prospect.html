@@ -1,34 +1,40 @@
 <div class="maincol-apply">
      <div class="container all-dateinputs">
-        <div class="pull-right">
-      <form id="form" name="form" class="form-inline">
+
+        <div class="pull-right ">
+      <form id="form" name="form" class="form-inline" novalidate>
         <div class="form-group">
-          <label for="startDate">From</label>
+          <label  for="startDate" >From</label>
           <div class="input-group">
+            <a ng-click="open($event,'opened1')">
             <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
             <span class="input-group-addon" id="basic-addon1">
-            <img src="img/calendar_icon.png" ng-click="open($event,'opened1')" alt=""/></span>
+            <img src="img/calendar_icon.png"   alt=""/></span>
+            </a>
           </div>
           </div>
         <div class="form-group">
-          <label for="endDate">To</label>
+          <label for="endDate" >To</label>
           <div class="input-group">
+            <a ng-click="open($event,'opened2')">
             <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
             <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" ng-click="open($event,'opened2')" alt=""/></span>
+            <img src="img/calendar_icon.png"  alt=""/></span>
+            </a>
           </div>
           <button class="btn btn-primary filter">Filter</button>
         </div>
       </form>
     </div>
+
   </div>
      <div class="container content">
      <div class="panel panel-primary pan-col">
       <div class="panel-heading summary">Summary in the month of April 2016</div>
       <div class="panel-body">
-        <div class=" detailsContentDiv-prosp">
-          <div class="detailsContentDiv ">
-            <div class="listDetails">
+        <div class=" ">
+          <div class=" detailsContentDiv-prosp">
+            <div class="listDetails list-details">
               <div class="listDetailsContent">
                 <div class="col-md-3 lost-status-text">
                   <img src="img/icon_lost.png" alt="" class="center-block img-pad">
@@ -39,7 +45,7 @@
                 </div>
               </div>
             </div>
-            <div class="listDetails">
+            <div class="listDetails list-details">
               <div class="listDetailsContent">
                 <div class="col-md-3 orangemet">
                   <img src="img/icon_won.png" alt="" class="center-block img-pad">

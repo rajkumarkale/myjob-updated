@@ -9,7 +9,4 @@ angular.module('com.module.empanelment')
 
       $scope[opened] = true;
     };
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = $scope.formats[0];
-
-  }]);
+    }]);

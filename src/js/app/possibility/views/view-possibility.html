@@ -44,42 +44,43 @@
     </div>
   </div>
   <div class="container content" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
-  <div class="col-md-12">
-    <div class="panel panel-primary pan-col">
-      <div class="panel-heading summary">Summary in the month of April 2016</div>
-      <div class="panel-body">
-        <div class="detailsContent">
-          <div class="detailsContentDiv">
-            <div class="listDetails">
-              <div class="listDetailsContent">
-                <div class="col-md-3 orange">
-                  <img src="img/icon_met.png" alt="" class="center-block img-pad"/>
-                </div>
-                <div class="col-md-9 text-center">
-                  <div class="met">MET</div>
-                  <div class="met-num">{{data.met}}</div>
-                </div>
-              </div>
-            </div>
-            <div class="listDetails">
-              <div class="listDetailsContent">
-                <div class="col-md-3 greenmet">
-                  <img src="img/icon_not met.png" alt="" class="center-block img-pad"/>
-                </div>
-                <div class="col-md-9 text-center">
-                  <div class="not-met">NOT MET</div>
-                  <div class="met-num">{{data.notMet}}</div>
+    <div class="col-md-12">
+      <div class="panel panel-primary pan-col">
+        <div class="panel-heading summary">Summary in the month of April 2016</div>
+        <div class="panel-body">
+          <div class="detailsContent">
+            <div class="detailsContentDiv">
+              <div class="listDetails">
+                <div class="listDetailsContent">
+                  <div class="col-md-3 orange">
+                    <img src="img/icon_met.png" alt="" class="center-block img-pad"/>
+                  </div>
+                  <div class="col-md-9 text-center">
+                    <div class="met">MET</div>
+                    <div class="met-num">{{data.met}}</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="listDetails">
-              <div class="listDetailsContent">
-                <div class="col-md-3 orangeactive">
-                  <img src="img/icon-inactive.png" alt="" class="center-block img-pad"/>
+              <div class="listDetails">
+                <div class="listDetailsContent">
+                  <div class="col-md-3 greenmet">
+                    <img src="img/icon_not met.png" alt="" class="center-block img-pad"/>
+                  </div>
+                  <div class="col-md-9 text-center">
+                    <div class="not-met">NOT MET</div>
+                    <div class="met-num">{{data.notMet}}</div>
+                  </div>
                 </div>
-                <div class="col-md-9 text-center">
-                  <div class="inactive">INACTIVE</div>
-                  <div class="met-num">{{data.inactive}}</div>
+              </div>
+              <div class="listDetails">
+                <div class="listDetailsContent">
+                  <div class="col-md-3 orangeactive">
+                    <img src="img/icon-inactive.png" alt="" class="center-block img-pad"/>
+                  </div>
+                  <div class="col-md-9 text-center">
+                    <div class="inactive">INACTIVE</div>
+                    <div class="met-num">{{data.inactive}}</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -87,6 +88,7 @@
         </div>
       </div>
     </div>
+
    </div>
     <div class="possibilities">
 	<div class="row">
@@ -96,6 +98,13 @@
   </div>
            <!-- <div class="possibilities">
               &lt;!&ndash;  <h4 class="pull-left head">All Possiblities
+
+    <div class="form-group pull-right">
+      <button class="btn btn-primary poss-btn" ui-sref="app.createPossibility"><i class="fa fa-plus poss-mrg"></i> New Possibility</button>
+    </div>
+    <div class="possibilities">
+      <h4 class="pull-left head">All Possiblities
+r
                     <span class="pull-right col-md-4">
                     <div class="input-group">
                 <input type="text" class="form-control btn-rounded back-color" placeholder="Search By Location,Company Name,Contact"
@@ -181,16 +190,16 @@
 
       </tbody>
     </table>
-     <pagination class="pagination-sm m-n m-r-sm pad-b-20 pull-right"
-                                page ="data.currentPage"
-                                total-items="data.totalItems"
-                                ng-model="data.currentPage"
-                                ng-change ="getPossibilities(data.currentPage,data.numPerPage)"
-                                max-size="4"
-                                items-per-page="data.numPerPage"
-                                rotate="false"
-                                boundary-links="false">
-                                </pagination>
+    <pagination class="pagination-sm m-n m-r-sm pad-b-20 pull-right"
+                page ="data.currentPage"
+                total-items="data.totalItems"
+                ng-model="data.currentPage"
+                ng-change ="getPossibilities(data.currentPage,data.numPerPage)"
+                max-size="4"
+                items-per-page="data.numPerPage"
+                rotate="false"
+                boundary-links="false">
+    </pagination>
   </div>
 
 </div>

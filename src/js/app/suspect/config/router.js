@@ -13,8 +13,8 @@ angular.module('com.module.suspect').config(['$stateProvider', function ($stateP
       url: '/create-suspect',
       templateUrl: 'js/app/suspect/views/create-suspect.html'
     })
-    .state('app.new-oppurtunity', {
+   /* .state('app.new-oppurtunity', {
       url: '/new-oppurtunity',
       templateUrl: 'js/app/suspect/views/new-oppurtunity.html'
-    })
+    })*/
 }]);

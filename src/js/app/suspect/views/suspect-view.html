@@ -1,40 +1,23 @@
 <div class="maincol-apply">
   <div class="container all-dateinputs" >
     <div class="pull-right">
-     <!-- <form id="form" name="form" class="form-inline">
-        <div class="form-group">
-          <label for="startDate">From</label>
-          <div class="input-group">
-            <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1" />
-            <span class="input-group-addon" id="basic-addon1">
-            <img src="img/calendar_icon.png" alt=""/></span>
-          </div>
-          <label for="endDate">To</label>
-          <div class="input-group">
-            <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon2" />
-            <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" alt=""/></span>
-          </div>
-          <button class="btn btn-primary filter">Filter</button>
-        </div>
-`     </form>-->
       <form id="form" name="form" class="form-inline">
         <div class="form-group">
-          <label for="startDate">From</label>
+          <label for="startDate" class="color-black">From</label>
           <div class="input-group">
-            <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
+            <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"/>
             <span class="input-group-addon" id="basic-addon1">
-            <img src="img/calendar_icon.png" ng-click="open($event,'opened1')" alt=""/></span>
+            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
           </div>
         </div>
         <div class="form-group">
-          <label for="endDate">To</label>
+          <label for="endDate" class="color-black">To</label>
           <div class="input-group">
-            <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
+            <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon2"/>
             <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" ng-click="open($event,'opened2')" alt=""/></span>
+            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
           </div>
-          <button class="btn btn-primary filter">Filter</button>
+          <button class="btn btn-primary filter">Submit</button>
         </div>
       </form>
     </div>
@@ -87,9 +70,9 @@
 
      <div class="panel-body">
       <div class="row">
-        <div class="pull-right">
+  <!--      <div class="pull-right">
           <button ui-sref="app.new-oppurtunity" class="btn btn-raised btn-primary glyphicon glyphicon-plus btn-lg">  New Opportunity </button>
-        </div>
+        </div>-->
       </div>
       <div class="row">
         <div class="pull-left head" ><h2>All Suspects</h2></div>

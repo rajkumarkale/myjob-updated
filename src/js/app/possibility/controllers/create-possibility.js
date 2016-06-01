@@ -68,7 +68,11 @@ angular.module('com.module.possibility')
 			{
 				$scope.isNewPossibility =true;
 				$scope.title = "New Possibility";
-				$scope.createPossibility = $scope.reset();
+				$scope.createPossibility = {};
+				$scope.employeeSize  = appConfig.possibility.employeeSize;
+				$scope.groupTurnover  = appConfig.possibility.groupTurnover;
+				$scope.businessVertical  = appConfig.possibility.businessVertical;
+				$scope.customerType  = appConfig.possibility.customerType;
 			}
 		}
 		$scope.init($stateParams);
@@ -90,10 +94,7 @@ angular.module('com.module.possibility')
     modalInstance.result.then(function () {
     });
   };
-$scope.employeeSize  ={title:"Employee Size of the Company", data:[{key:"SMALL",displayText:"SMALL"}, {key:"MEDIUM",displayText:"MEDIUM"}, {key:"LARGE",displayText:"LARGE"}],selectedItem:""};
-$scope.groupTurnover  ={title:"Group Turnover", data:[{key:"SMALL",displayText:"SMALL"}, {key:"MEDIUM",displayText:"MEDIUM"}, {key:"LARGE",displayText:"LARGE"}],selectedItem:""};
-$scope.businessVertical  ={title:"Business Vertical", data:[{key:"IT",displayText:"IT"}, {key:"GENERAL",displayText:"GENERAL"},{key: "GOVT",displayText:"GOVT"},{key: "IT_STAFFING",displayText:"IT STAFFING"}, {key:"GENERAL_STAFFING",displayText:"GENERAL STAFFING"},{key: "GOVERNMENT_STAFFING",displayText:"GOVERNMENT STAFFING"}, {key:"PERM_SEARCH",displayText:"PERM SEARCH"}, {key:"RPO",displayText:"RPO"}],selectedItem:""};
-$scope.customerType  ={title:"Type of Customer", data:[{key:"MNC",displayText:"MNC"}, {key:"PVT_LTD",displayText:"PVT LTD"},{key: "PUBLIC_LTD",displayText:"PUBLIC LTD"}, {key:"PROPRIETORSHIP",displayText:"PROPRIETORSHIP"}],selectedItem:""};
+
 
   
 

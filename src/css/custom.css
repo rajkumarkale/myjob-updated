@@ -39,12 +39,11 @@
 
 .icon-bars {
 
+
   font-size: 20px;
   color: white;
 
 }
-
-
 
 .ecentric-logo{
   margin-top: 6px !important;
@@ -766,6 +765,7 @@ color:white;
 /* end discussion  */
 
 /* start of SLA TRacker */
+
 .pheading{
   background-color: #337ab7;
   color:white;

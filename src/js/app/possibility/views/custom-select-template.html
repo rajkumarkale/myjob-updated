@@ -1,7 +1,7 @@
 <div><div class="select">
-  <span class="placeholder"><p class="dropdown-title">{{(dataList.selectedItem.displayText)?dataList.selectedItem.displayText:dataList.title}}</p></span>
+  <span class="placeholder"><p class="dropdown-title">{{(dataList.selectedItem)?dataList.selectedItem.displayText:dataList.title}}</p></span>
   <ul>
-    <li ng-repeat="data in dataList.data" ng-model="dataList.selectedItem" ng-click="dataList.selectedItem = data" data-value="{{data}}">{{data.displayText}}</li>
+    <li ng-repeat="data in dataList.data" ng-model="(dataList.selectedItem)" ng-click="dataList.selectedItem = data" data-value="{{data}}">{{data.displayText}}</li>
   </ul>
 </div>
 </div>

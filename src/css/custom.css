@@ -39,8 +39,10 @@
 
 .icon-bars {
 
+
   font-size: 20px;
   color: white;
+
 }
 
 .ecentric-logo{
@@ -324,6 +326,29 @@ margin-left: 520px;
 .all-dateinputs{
      padding-top:25px;
 }
+.mrg-button{
+   margin-right: 15px;
+}
+.poss-mrg{
+    margin-right: 10px;
+}
+.not-met{
+    color: #8C8866;
+    font-weight: bold;
+}
+.greenmet{
+   background-color: #8C8866;
+    font-weight: bold;
+}
+.poss-btn{
+     padding-top: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 14px;
+    background-color: #049ad9 !important;
+     margin-right:12px ;
+  border-radius: 4px !important;
+}
 /*end create possibility*/
 
 
@@ -587,7 +612,7 @@ color:white;
 
 
 .checkBoxDrop{
-  width: 61px;
+  width: 30px;
   height: 35px;
   color: white;
   background-color: darkgrey;
@@ -596,8 +621,8 @@ color:white;
 }
 
 .checkBox{
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   color: white;
   border-radius: 3px;
 }
@@ -661,7 +686,7 @@ color:white;
 
 .contact-person{
   font-weight: normal !important;
-  font-size: 24px;
+  font-size: 18px;
   color: #000000 !important;
 }
  .person-name{
@@ -672,7 +697,7 @@ color:white;
 
 .type-of-call{
   font-weight: lighter;
-  font-size: 20px;
+  font-size: 18px;
   color:#9f9c9c !important;
 
 
@@ -680,30 +705,30 @@ color:white;
  .call-follow{
   color:#2277b1;
    font-weight: lighter;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 
 .date-venue{
   font-weight: lighter;
-  font-size: 18px;
+  font-size: 16px;
   color: #000000 !important;
 }
 
  .location-name{
    font-weight: lighter;
-   font-size: 18px;
+   font-size: 16px;
 
    color: #2277b1;}
 .summary-head{
   font-weight: lighter;
-  font-size: 22px;
+  font-size: 18px;
   color: #2277b1 !important;
 }
 
 .summary-details{
   font-weight: lighter;
-  font-size: 22px;
+  font-size: 16px;
   color: #000000 ;
 
 }
@@ -746,7 +771,8 @@ color:white;
   background-color: white;
 }
 .back-color-search{
-  background-color: darkgrey;
+  background-color: #F2F2F2 !important;
+  border-left:1px solid #CDCDCD;
 }
 .addDiscusHeading{
   background-color: #2277b1;
@@ -1409,22 +1435,7 @@ td:nth-child(1) {
 
 
 
-.checkBox{
-  width: 20px;
-  height: 20px;
-  color: white;
-  border-radius: 3px;
-}
 
-.checkBxDrop{
-  border-top: 10px solid;
-  border-right: 7px solid transparent;
-  border-left: 7px solid transparent;
-  border-bottom: 10px solid transparent;
-  color: white;
-  margin-left: 5px;
-
-}
 
 .panel-heading-custom {
   background-color: #00a8f3;
@@ -1462,60 +1473,6 @@ td:nth-child(1) {
 
 .margin-left-custom{
   margin-left: 80%;
-}
-
-.contact-person{
-  font-weight: normal !important;
-  font-size: 24px;
-  color: #000000 !important;
-}
-.person-name{
-
-  font-weight: bold;
-  color: #2277b1;
-}
-
-.type-of-call{
-  font-weight: lighter;
-  font-size: 20px;
-  color:#9f9c9c !important;
-
-
-}
-.call-follow{
-  color:#2277b1;
-  font-weight: lighter;
-  font-size: 20px;
-}
-
-
-.date-venue{
-  font-weight: lighter;
-  font-size: 18px;
-  color: #000000 !important;
-}
-
-.location-name{
-  font-weight: lighter;
-  font-size: 18px;
-
-  color: #2277b1;}
-.summary-head{
-  font-weight: lighter;
-  font-size: 22px;
-  color: #2277b1 !important;
-}
-
-.summary-details{
-  font-weight: lighter;
-  font-size: 22px;
-  color: #000000 ;
-
-}
-
-.ssdummary-div{
-  padding-right: 10px;
-  margin-right: 10px;
 }
 
 .left-align{

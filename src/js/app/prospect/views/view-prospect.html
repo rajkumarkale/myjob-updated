@@ -75,14 +75,14 @@
        <div class="panel-body">
          <div class="row">
        <label class=" dropdown checkBoxDrop pull-left ">
-         <input type="checkbox" class="checkBox">
-         <span class="caret checkBxDrop" data-toggle="dropdown"></span>
+         <input type="checkbox" class="checkBox" ng-model="selectAll">
+        <!-- <span class="caret checkBxDrop" data-toggle="dropdown"></span>-->
        </label>
-       <label class="checkBox-showall pull-left " ng-show="checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
+       <label class="checkBox-showall pull-left " ng-show="selectAll || checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
           || checked8 || checked9 || checked10 || checked11">
          <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
        </label>
-       <label class="  checkBox-showall pull-left " ng-show="checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
+       <label class="  checkBox-showall pull-left " ng-show="selectAll || checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
           || checked8 || checked9 || checked10 || checked11">
          <span class="glyphicon glyphicon-trash " data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
        </label>
@@ -113,7 +113,7 @@
           <div class="form-group">
             <div class="chekbox">
             <label >
-              <input type="checkbox" ng-model="checked1">
+              <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -141,7 +141,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked2">
+                <input type="checkbox" ng-model="checked2" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -170,7 +170,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked3">
+                <input type="checkbox" ng-model="checked3" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -199,7 +199,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked4">
+                <input type="checkbox" ng-model="checked4" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -228,7 +228,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked5">
+                <input type="checkbox" ng-model="checked5" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -257,7 +257,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked6">
+                <input type="checkbox" ng-model="checked6" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -286,7 +286,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked7">
+                <input type="checkbox" ng-model="checked7" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -315,7 +315,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked8">
+                <input type="checkbox" ng-model="checked8" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -344,7 +344,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked9">
+                <input type="checkbox" ng-model="checked9" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -373,7 +373,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked10">
+                <input type="checkbox" ng-model="checked10" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -402,7 +402,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked11">
+                <input type="checkbox" ng-model="checked11" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>

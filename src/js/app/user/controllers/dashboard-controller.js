@@ -58,4 +58,10 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
     };
 
     $scope.d4 = $scope.getRandomData();
+
+    $scope.open = function($event,opened) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      $scope[opened] = true;
+    };
   }]);

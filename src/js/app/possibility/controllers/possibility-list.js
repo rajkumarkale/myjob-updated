@@ -11,11 +11,20 @@ angular.module('com.module.possibility')
 		$scope.myPromise = possibilityCreateService.getPossibility(currentPage,numPerPage).then(function(response){
 			$scope.data.possibilities = response.data.possibilities;
 			$scope.data.totalItems = response.data.count;
+			$scope.data.met=response.data.met;
+			$scope.data.notMet=response.data.not_met;
+			$scope.data.inactive=response.data.inactive;
 		});
 		}
 		$scope.getPossibilities($scope.data.currentPage,$scope.data.numPerPage);
 		$scope.openEditPossibility = function(possibility){
 				$state.go('app.createPossibility',{possibility:possibility});
 		}
+
+  $scope.open = function($event,opened) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    $scope[opened] = true;
+  };
 
   }]);

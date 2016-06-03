@@ -425,6 +425,32 @@ margin-left: 520px;
 }
 /*end prospect*/
 /* Empanelment view */
+.data-button-cancel{
+  background-color: #808080 !important;
+  color: white !important;
+  width: 120px;
+  border-radius: 0px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 10px;
+  padding-bottom:10px;}
+.data-button-sub{
+ background-color: #049ad9 !important;color: white !important;
+  width: 120px;
+  border-radius: 0px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;}
+.SLA-button{
+  background-color: #049ad9 !important;color: white !important;
+  width: 150px;
+  border-radius: 0px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .orange2 {
   background: #f58207;
   color: #fff;
@@ -810,6 +836,7 @@ color:white;
 }
 .client-text
 {
+  padding-left: 39px;
   background-color:lightgrey ;
   line-height:60px;
   font-weight:bold;
@@ -1575,7 +1602,8 @@ td:nth-child(1) {
 }
 .data-button1{
   background-color: #808080 !important;
-  color: white !important;margin-left: 25%;
+  color: white !important;
+  margin-left: 25%;
   width: 120px;
   border-radius: 0px;
   padding-left: 24px;
@@ -1592,7 +1620,7 @@ td:nth-child(1) {
 .data-button3
 {
   background-color: #3499ff !important;color: white !important;margin-left: 15%;
-  width: 120px;
+  width: 130px;
   border-radius: 0;
   padding: 10px 24px;
 }
@@ -1609,6 +1637,9 @@ td:nth-child(1) {
 }
 .col-pad1{
   padding:4px 20px;
+}
+.col-pad-post{
+  padding:1px 23px;
 }
 .cancel-sub-class{
   padding-left:39%;

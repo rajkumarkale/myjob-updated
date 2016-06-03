@@ -7,7 +7,7 @@ angular.module('com.module.access').config(['$stateProvider', function ($statePr
       templateUrl:'js/app/access/views/app.html',
       controller:['$cookies','appConfig','$location', '$scope', function ($cookies,appConfig,$location,$scope){
         $scope.backgroundImageDisplay = true;
-        if($cookies.userInfo) {
+        if($cookies.userData) {
           $location.path(appConfig.loginRedirect);
         }
       }]

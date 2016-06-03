@@ -1,3 +1,4 @@
+
   <div class="container">
                 <div class="panel panel-default second-panel up-margin">
                     <div class="panel-heading">
@@ -33,21 +34,127 @@
                             <input class="form-control bord-remove" type="text" placeholder="Bill Cycle Date">
           </div>
 
-                          </div>
 
+<div class="container col-md-12 pad-t-20">
+  <div class="panel panel-primary second-panel up-margin">
+    <div class="panel-heading " >
+      Empanelment
+    </div>
 
+    <div class="panel-body">
+      <div class="form-group pull-right">
+        <button class="btn btn-primary SLA-button" ui-sref="app.slaTracker">SLA Tracker</button>
+      </div>
+      <hr class="line1">
+     <div class="col-md-12">
+       <div class="row">
+         <div class="col-lg-5 col-pad">
+           <div class="form-group ">
+             <select id="s1" class="form-control" >
+               <option value="Teliphonic">Pricing Mode</option>
+               <option value="Teliphonic">Fixed Fee</option>
+               <option value="Email">Fixed % Margin</option>
+               <option value="Inperson">Fixed Rate Card</option>
+               <option value="Inperson">Case to Case Basis</option>
+               <option value="Inperson">Hourly Rate</option>
+             </select>
+           </div>
+         </div><div class="col-lg-1"></div>
+         <div class="col-lg-5 col-pad">
+           <div class="form-group ">
+             <select id="s2" class="form-control" >
+               <option value="Teliphonic">Collect & Pay</option>
+               <option value="Teliphonic">Upfront</option>
+             </select>
+           </div>
+         </div>
+       </div>
+     </div>
+      <div class="col-md-12 ">
 
-                            </div>
-
-                         <div class="col-md-6 col-md-offset-5">
-                        <div class="form-group">
-
-                            <button class="btn btn-primary data-button">Cancel</button><button class="btn btn-primary data-button">Submit</button>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
+        <form name="usrform" novalidate id="usrform" class="bs-component">
+          <div class="container-fluid">
+            <div  class="col-md-5">
+              <div class="form-group label-floating is-empty">
+                <label class="control-label" >No Of credit Days</label>
+                <input class="form-control" name="n1"  type="text" minlength="3" maxlength="20"  >
+              </div>
             </div>
+            <div  class="col-md-1"></div>
+            <div class="col-md-5 col-pad">
+              <div class="form-group label-floating is-empty">
+                <label class="control-label" >PayCycle Date</label>
+                <input class="form-control"   required="required"  type="text" minlength="3" maxlength="20"  >
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+      <div class="col-md-12 ">
+
+        <form name="usrform" novalidate id="usrform" class="bs-component">
+          <div class="container-fluid">
+            <div  class="col-md-5">
+              <div class="form-group label-floating is-empty">
+                <label class="control-label" >Bill Cycle Date</label>
+                <input class="form-control" name="n1"  type="text" minlength="3" maxlength="20"  >
+              </div>
+            </div>
+            <div  class="col-md-1"></div>
+            <div class="col-md-5 col-pad">
+              <div class="form-group label-floating ">
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-lg-5 col-pad">
+            <div class="form-group is-empty is-fileinput">
+              <input type="file"  multiple="">
+              <div class="input-group">
+                <input type="text" readonly="" class="form-control" placeholder="Pan Copy">
+                <span class="input-group-btn input-group-sm">
+                  <button type="button" class="btn warm-status">
+                  <i class="material-icons">Browse</i>
+                  </button>
+                </span>
+              </div>
+              <span class="material-input control-label">Supported file formar PDF,JPEG</span>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-lg-5 col-pad">
+            <div class="form-group is-empty is-fileinput">
+              <input type="file" id="inputFile4" multiple="">
+              <div class="input-group">
+                <input type="text" readonly="" class="form-control" placeholder="Agreement Copy">
+                <span class="input-group-btn input-group-sm">
+                  <button type="button" class="btn warm-status">
+                  <i class="material-icons">Browse</i>
+                  </button>
+                </span>
+              </div>
+              <span class="material-input control-label">Supported file formar PDF,JPEG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-6 col-md-offset-5">
+        <div class="form-group">
+          <a ui-sref="app.viewEmpanelment" class="auto">
+          <button  class="btn btn-raised  data-button-cancel " >Cancel</button>&nbsp;&nbsp;</a>
+          <button class="btn btn-primary data-button-sub">Submit</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

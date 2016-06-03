@@ -107,7 +107,8 @@
       <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
     </ul>
     <div >
-      <button type="file" ngf-select="" ng-model="picFile" name="file" ngf-accept="'image/*,application/pdf'" class="btn btn-warning attach-button"><i class="fa fa-paperclip"></i> Attach File</button>
+      <button type="file" ngf-select="" ng-model="picFile" name="file" ngf-accept="'image/*,application/pdf'" class="btn btn-warning attach-button">
+        <i class="fa fa-paperclip"></i> Attach File</button>
     </div>
   </div>
 </div>

@@ -21,4 +21,10 @@ angular.module('com.module.possibility')
 				$state.go('app.createPossibility',{possibility:possibility});
 		}
 
+  $scope.open = function($event,opened) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    $scope[opened] = true;
+  };
+
   }]);

@@ -18,7 +18,7 @@ angular.module('com.module.access')
          token: data.authHeader,
          userDetails:data.user
        };
-       $cookies.user = JSON.stringify(user);
+       $cookies.userData = JSON.stringify(user);
        deferred.resolve(user);
      }).error(function (error) {
        deferred.reject(error);

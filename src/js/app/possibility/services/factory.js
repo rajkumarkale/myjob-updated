@@ -33,10 +33,18 @@ var possibilityDetails = function (id) {
       url: BASEURI + '/api/possibility/'+id
     });
   };
+  var updatePossibility = function(data){
+    return $http({
+      method:'PUT',
+      url:BASEURI+'/api/possibility/update',
+      data:data
+    })
+  }
   return {
     getLegalEntity:getLegalEntity,
     setPossibility:setPossibility,
     getPossibility:getPossibility,
-    possibilityDetails:possibilityDetails
+    possibilityDetails:possibilityDetails,
+    updatePossibility:updatePossibility
   }
 });

@@ -6,3 +6,4 @@ var app=angular.module('com.module.empanelment')
     
   }]);
 
+

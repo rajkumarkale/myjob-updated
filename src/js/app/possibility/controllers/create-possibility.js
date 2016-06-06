@@ -1,8 +1,5 @@
 angular.module('com.module.possibility')
-    .controller('createPossibilityController', ['$scope', 'toaster', '$state', '$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies', function($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies) {
-
-
-
+    .controller('createPossibilityController', ['$scope', 'toaster', '$state', '$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies','$timeout', function($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies,$timeout) {
         $scope.init = function($stateParams) {
             $scope.isEditable = false;
             $scope.employeeSize = appConfig.possibility.employeeSize;
@@ -13,6 +10,7 @@ angular.module('com.module.possibility')
                 $scope.title = "Edit Possibility";
                 $scope.myPromise = possibilityCreateService.possibilityDetails($stateParams.possibility.client_unit_id).then(function(response) {
                     $scope.createPossibility = response.data;
+                    $scope.client_unit_id = $scope.createPossibility.point_of_contacts[0].client_unit_id;
                     $scope.employeeSize.selectedItem = $scope.getSlectedItem($scope.createPossibility.employee_size, $scope.employeeSize);
                     $scope.groupTurnover.selectedItem = $scope.getSlectedItem($scope.createPossibility.turnover, $scope.groupTurnover);
                     $scope.businessVertical.selectedItem = $scope.getSlectedItem($scope.createPossibility.vertical, $scope.businessVertical);
@@ -60,8 +58,33 @@ angular.module('com.module.possibility')
 
 
         $scope.save = function(possibilityObject) {
-
+        	if($scope.isNewPossibility)
             $scope.processRequest(possibilityObject);
+        	else{
+        		var current_status ={stage:possibilityObject.current_status.stage,status:possibilityObject.current_status.status};
+        		possibilityObject.employee_size = $scope.employeeSize.selectedItem.key;
+            	possibilityObject.turnover = $scope.groupTurnover.selectedItem.key;
+            	possibilityObject.vertical = $scope.businessVertical.selectedItem.key;
+            	possibilityObject.customer_type = $scope.customerType.selectedItem.key;
+        		possibilityObject.client_unit_id = $scope.client_unit_id;
+        		possibilityObject.current_status = current_status;
+        		delete possibilityObject.point_of_contacts[0].time_created;
+        		delete possibilityObject._id;
+        		delete possibilityObject.created_by;
+         		delete possibilityObject.time_created;
+         		delete possibilityObject.freeze
+       			delete possibilityObject.address.time_updated;
+       			delete possibilityObject.time_updated;
+       			delete possibilityObject.point_of_contacts[0].client_unit_id ;
+       			delete possibilityObject.address.user_id ;
+       			delete possibilityObject.point_of_contacts[0]._id ;
+        		possibilityCreateService.updatePossibility(possibilityObject).success(function() {
+                toaster.pop('Success', 'POSSIBILITY Created Successfully.');
+                $state.go('app.viewPossibility');
+            }).error(function(err) {
+                $scope.authError = err.message;
+            })
+        	}
 
         };
         $scope.isValid = function(val) {
@@ -87,13 +110,14 @@ angular.module('com.module.possibility')
                 }
             }
             possibilityCreateService.setPossibility(requestObject).success(function() {
+                $state.go('app.viewPossibility');
                 toaster.pop('Success', 'POSSIBILITY Created Successfully.');
             }).error(function(err) {
                 $scope.authError = err.message;
             })
         }
         $scope.getLegalEntity = function(val) {
-            possibilityCreateService.getLegalEntity(val).then(function(response) {
+            possibilityCreateService.getLegalEntity(val).then(function() {
 
 
             })
@@ -102,47 +126,18 @@ angular.module('com.module.possibility')
         $scope.getSlectedItem = function(selectedItem, srcObj) {
             var returnObj;
             angular.forEach(srcObj.data, function(obj) {
-                if (obj.displayText == selectedItem || obj.key == selectedItem) {
+                if (obj.displayText === selectedItem || obj.key === selectedItem) {
                     returnObj = obj;
                 }
             });
             return returnObj;
 
-        }
+        };
         $scope.editForm = function() {
             $scope.isEditable = true;
 
         };
-        $scope.removeEmptyArrays = function(data) {
-            for (var key in data) {
-                var item = data[key];
-                if (!item || item == "") {
-                    delete data[key];
-                } else if (Array.isArray(item)) {
-                    if (item.length != 0) {
-                        for (var i = 0; i < item.length; i++) {
-                            if (typeof item[i] == "object") {
-                                for (var key2 in item) {
-                                    var item2 = item[key2]
-                                    if (item2 == "") {
-                                        delete item2[key2];
-                                    }
-                                }
-                            }
-                        }
-                    }
-                } else if (typeof item == "object") {
-                    for (var key1 in item) {
-                        var item1 = data[key1];
-                        if (item1 == "") {
-                            delete item[key1];
-
-                        }
-
-                    }
-                }
-            }
-        };
+        
         $scope.cancel = function() {
             $state.go('app.viewPossibility');
         };
@@ -159,10 +154,9 @@ angular.module('com.module.possibility')
                     var file = files[i];
                     if (!file.$error) {
                         Upload.upload({
-                            url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
+                            url: appConfig.apiUrl+'/api/upload/file',
                             data: {
-                                username: $scope.username,
-                                file: file
+                                content: file
                             }
                         }).then(function(resp) {
                             $timeout(function() {

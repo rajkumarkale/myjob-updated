@@ -12,7 +12,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
         return ;
       }
       //authService.loginConfirmed(response);
-      if ($scope.$prevState && $scope.$prevStateParams) {
+      /*if ($scope.$prevState && $scope.$prevStateParams) {
         if(_.contains(['access.signin','access.signup','access.forgotpwd','access.signout'],$scope.$prevState)){
           $state.go($scope.app.loginRedirect);
         }else {
@@ -20,7 +20,8 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
         }
       } else {
         $state.go($scope.app.loginRedirect);
-      }
+      }*/
+      $state.go($scope.app.loginRedirect);
 
     }, function (error) {
       $scope.authStatus = true;

@@ -1,38 +1,25 @@
 <div class="maincol-apply">
-  <div class="container all-dateinputs" >
+  <div class="container all-dateinputs">
     <div class="pull-right">
-     <!-- <form id="form" name="form" class="form-inline">
-        <div class="form-group">
-          <label for="startDate">From</label>
-          <div class="input-group">
-            <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1" />
-            <span class="input-group-addon" id="basic-addon1">
-            <img src="img/calendar_icon.png" alt=""/></span>
-          </div>
-          <label for="endDate">To</label>
-          <div class="input-group">
-            <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon2" />
-            <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" alt=""/></span>
-          </div>
-          <button class="btn btn-primary filter">Filter</button>
-        </div>
-`     </form>-->
       <form id="form" name="form" class="form-inline">
         <div class="form-group">
-          <label for="startDate">From</label>
+          <label for="startDate" class="color-black">From</label>
           <div class="input-group">
+            <a ng-click="open($event,'opened1')">
             <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
             <span class="input-group-addon" id="basic-addon1">
-            <img src="img/calendar_icon.png" ng-click="open($event,'opened1')" alt=""/></span>
+            <img src="img/calendar_icon.png"  class="calendar-img" alt=""/></span>
+            </a>
           </div>
         </div>
         <div class="form-group">
-          <label for="endDate">To</label>
+          <label for="endDate" class="color-black">To</label>
           <div class="input-group">
+            <a ng-click="open($event,'opened2')">
             <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
             <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" ng-click="open($event,'opened2')" alt=""/></span>
+            <img src="img/calendar_icon.png" class="calendar-img"  alt=""/></span>
+            </a>
           </div>
           <button class="btn btn-primary filter">Filter</button>
         </div>
@@ -43,9 +30,9 @@
     <div class="panel panel-primary pan-col">
       <div class="panel-heading summary">Summary in the month of April 2016</div>
       <div class="panel-body">
-        <div class="detailsContent">
-          <div class="detailsContentDiv">
-            <div class="listDetails">
+        <div class="">
+          <div class="detailsContentDiv detailsContentDiv-new">
+            <div class="listDetails list-details">
               <div class="listDetailsContent">
                 <div class="col-md-3 hot-color-suspect">
                   <img src="img/icon_hot.png" alt="" class="center-block img-pad" />
@@ -56,7 +43,7 @@
                 </div>
               </div>
             </div>
-            <div class="listDetails">
+            <div class="listDetails list-details">
               <div class="listDetailsContent">
                 <div class="col-md-3 orangemet">
                   <img src="img/icon_warm.png" alt="" class="center-block img-pad" />
@@ -67,7 +54,7 @@
                 </div>
               </div>
             </div>
-            <div class="listDetails">
+            <div class="listDetails list-details">
               <div class="listDetailsContent">
                 <div class="col-md-3 orangeactive">
                   <img src="img/icon_cold.png" alt="" class="center-block img-pad" />
@@ -87,9 +74,9 @@
 
      <div class="panel-body">
       <div class="row">
-        <div class="pull-right">
+  <!--      <div class="pull-right">
           <button ui-sref="app.new-oppurtunity" class="btn btn-raised btn-primary glyphicon glyphicon-plus btn-lg">  New Opportunity </button>
-        </div>
+        </div>-->
       </div>
       <div class="row">
         <div class="pull-left head" ><h2>All Suspects</h2></div>
@@ -101,118 +88,17 @@
               </div>
           </span>
       </div>
-      <!--<div class="container no-border">
-        <div class="no-border  modal " id="popUp">
-          <div class="no-border modal-dialog modalCenter ">
-            <div class="modal-content no-border">
 
-              <div class="panel panel-info no-border">
-                <div class="panel-heading no-border">
-                  <div class="panel-title no-border">
-                    <h5>Add Discussions</h5>
-                  </div>
-                </div>
-                <div class="panel-body no-border">
-                  <form name="addNewDis" >
-                    <div class="form-group">
-                      <div class="panel-body no-border">
-                        <div class="row">
-                          <div class="col-lg-6">
-                            <label class="control-label" for="inputLarge">Contact person</label>
-                            <input class="form-control input-lg" type="text" id="inputLarge1">
-                            <label class="control-label" for="inputLarge">Date
-                            </label>
-                            <input class="form-control input-lg" type="date" id="inputLarge2">
-
-                            &lt;!&ndash;<textarea class="form-control input-lg"  id="inputLarge"></textarea>&ndash;&gt;
-                            <label for="s1">Type Of Discussions</label>
-                            <select id="s1" class="form-control">
-                              <option value="Teliphonic">Telephonic</option>
-                              <option value="Email">Email</option>
-                              <option value="Inperson">Inperson</option>
-                            </select>
-                          </div>
-                          <div class="col-lg-6">
-                            <label class="control-label" for="inputLarge">Venue</label>
-                            <input class="form-control input-lg" type="text" id="inputLarge">
-                            <label class="control-label" for="inputLarge">Time
-                            </label>
-                            <input class="form-control input-lg" type="time" id="inputLarge">
-                            <div class="radio radio-primary">
-                              <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                <span class="circle">
-                                </span>
-                                <span class="check">
-                                </span>
-                                &nbsp; Freshcall
-                              </label>
-                              <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
-                                       checked=""><span class="circle"></span><span class="check"></span>
-                                &nbsp;&nbsp;Follow Up Call
-                              </label>
-
-                            </div>
-                          </div>
-                        </div>
-                        <h3>Discussion Summary</h3>
-                        <div class="fileAttach">
-                          <textarea class="input-lg no-borders" cols=50>
-                          </textarea>
-
-                        </div>
-
-                        <div class="centerBtn">
-                          <span>
-
-                             <button type="button" class="btn btn-default "
-                                     ng-click="closeModal('popUp','none')">Close</button>
-                             <button type="button" class="btn btn-primary">Save </button>
-                        </span>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="possibilities">
-          <h4 class="pull-left head">
-            <label class=" dropdown checkBoxDrop ">
-              <input type="checkbox" class="checkBox">
-              <span class="caret checkBxDrop" data-toggle="dropdown"></span>
-              <ul class="dropdown-menu">
-                <li><a href="">All</a></li>
-                <li><a href="">read</a></li>
-                <li><a href="">unread</a></li>
-              </ul>
-            </label>
-          <span class="pull-right col-md-4">
-            <div class="input-group">
-              <input type="text" class="form-control btn-rounded" placeholder="Search By Location,Company Name,Contact"
-                     aria-describedby="basic-addon3">
-                 <span class="input-group-addon" id="basic-addon3">
-                   <i class="fa fa-search"></i>
-                 </span>
-            </div>
-          </span>
-          </h4>
-        </div>
-
-      </div>-->
       <div class="row">
         <label class=" dropdown checkBoxDrop pull-left ">
-          <input type="checkbox" class="checkBox">
-          <span class="caret checkBxDrop" data-toggle="dropdown"></span>
+          <input type="checkbox" class="checkBox" ng-model="selectAll">
+
         </label>
-        <label class="checkBox-showall pull-left " ng-show="checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
+        <label class="checkBox-showall pull-left " ng-show="selectAll || checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
           || checked8 || checked9 || checked10 || checked11">
           <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
         </label>
-        <label class="  checkBox-showall pull-left " ng-show="checked1 || checked2 || checked3 || checked4">
+        <label class="  checkBox-showall pull-left " ng-show="selectAll || checked1 || checked2 || checked3 || checked4">
           <span class="glyphicon glyphicon-trash " data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
         </label>
         <label class="  checkBox-showall pull-right ">Show All
@@ -241,7 +127,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked1">
+                <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -263,7 +149,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked2">
+                <input type="checkbox" ng-model="checked2" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -285,7 +171,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked3">
+                <input type="checkbox" ng-model="checked3" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -307,7 +193,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked4">
+                <input type="checkbox" ng-model="checked4" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
@@ -329,7 +215,7 @@
           <div class="form-group">
             <div class="chekbox">
               <label >
-                <input type="checkbox" ng-model="checked5">
+                <input type="checkbox" ng-model="checked5" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>

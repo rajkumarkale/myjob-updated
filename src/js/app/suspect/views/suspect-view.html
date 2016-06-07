@@ -109,6 +109,7 @@
 
     <table class="table table-striped table-bod">
       <thead class="table-head">
+
       <tr>
         <th class="table-th-heading"></th>
         <th  class="table-th-heading">Legal Entity <span class="glyphicon glyphicon-sort color-black " ></span> </th>
@@ -119,19 +120,24 @@
         <th class="table-th-heading">Contact Number</th>
         <th class="table-th-heading">Status <span class="glyphicon glyphicon-filter color-black" ></span></th>
         <th class="table-th-heading">Discussions</th>
+
       </tr>
       </thead>
       <tbody>
-      <tr>
+      <tr class="heads-space">
         <td>
 
-              <label class=" form-group">
+          <div class="form-group mrg-formgrp">
+            <div class="chekbox">
+              <label >
+
                 <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
               </label>
-
+              </div>
+            </div>
         </td>
         <td class="hand-cursor"  ui-sref="app.create-suspect-view" ui-sref="app.create-suspect-view">Robert Martin</td>
         <td>Paradigm Creatives</td>
@@ -142,9 +148,9 @@
         <td><p class="hot-color-suspect btn-sm  ">Hot</p></td>
         <td><button class="btn btn-info btn-sm" ui-sref='app.viewDiscussions'>New Call</button></td>
       </tr>
-      <tr>
+      <tr class="heads-space">
         <td>
-          <div class="form-group">
+          <div class="form-group mrg-formgrp">
             <div class="chekbox">
               <label >
                 <input type="checkbox" ng-model="checked2" ng-checked="selectAll">
@@ -163,10 +169,10 @@
         <td>0000000000</td>
         <td><p class="warm-color-suspect btn-sm ">Cold</p></td>
         <td><button class="btn btn-info btn-sm" ui-sref='app.viewDiscussions'>New Call</button></td>
-      </tr>
-      <tr>
+      </tr >
+      <tr class="heads-space">
         <td>
-          <div class="form-group">
+          <div class="form-group mrg-formgrp">
             <div class="chekbox">
               <label >
                 <input type="checkbox" ng-model="checked3" ng-checked="selectAll">
@@ -186,9 +192,9 @@
         <td><p class="cold-color-suspect btn-sm ">Cold</p></td>
         <td><button class="btn btn-info btn-sm" ui-sref='app.viewDiscussions'>New Call</button></td>
       </tr>
-      <tr>
+      <tr class="heads-space">
         <td>
-          <div class="form-group">
+          <div class="form-group mrg-formgrp">
             <div class="chekbox">
               <label >
                 <input type="checkbox" ng-model="checked4" ng-checked="selectAll">
@@ -208,9 +214,9 @@
         <td><p class="warm-color-suspect btn-sm">Warm</p></td>
         <td><button class="btn btn-info btn-sm" ui-sref='app.viewDiscussions'>New Call</button></td>
       </tr>
-      <tr>
+      <tr class="heads-space">
         <td>
-          <div class="form-group">
+          <div class="form-group mrg-formgrp">
             <div class="chekbox">
               <label >
                 <input type="checkbox" ng-model="checked5" ng-checked="selectAll">

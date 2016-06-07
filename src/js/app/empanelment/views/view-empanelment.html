@@ -6,7 +6,9 @@
           <label for="startDate" class="color-black">From</label>
           <div class="input-group">
             <a ng-click="open($event,'opened1')">
-            <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
+              <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
+                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
+                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
 
             <span class="input-group-addon" id="basic-addon1">
             <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
@@ -19,9 +21,11 @@
           <label for="endDate" class="color-black">To</label>
           <div class="input-group">
             <a ng-click="open($event,'opened2')">
-            <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
+              <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
+                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
+                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
             <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png"  class="calendar-img" alt=""/></span>
+            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
             </a>
           </div>
           <button class="btn btn-primary filter">Filter</button>
@@ -80,7 +84,8 @@
 
         <span class="pull-right col-md-4">
              <div class="input-group">
-                <input type="text" class="form-control btn-rounded back-color" placeholder="Search By Location,Company Name,Contact"
+                <input type="text" class="form-control btn-rounded back-color"
+                       placeholder="Search By Location,Company Name,Contact"
                        aria-describedby="basic-addon3">
                 <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
               </div>
@@ -89,8 +94,6 @@
         </div>
       </div>
     </div>
-
-
 
 
     <div class="panel-body">
@@ -127,11 +130,11 @@
       </tr>
       </thead>
       <tbody>
-      <tr >
+      <tr>
         <td>
           <div class="form-group">
             <div class="chekbox1">
-              <label >
+              <label>
                 <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
@@ -140,7 +143,7 @@
             </div>
           </div>
         </td>
-        <td class="hand-cursor" ui-sref="app.createEmpanelment" >Robert Martin</td>
+        <td class="hand-cursor" ui-sref="app.createEmpanelment">Robert Martin</td>
         <td class="col-lg-3">Paradigm Creatives</td>
         <td>Hyderabad</td>
         <td>Anthony Sanchez</td>
@@ -150,18 +153,18 @@
           <p class="won-status-text btn-sm ">Met</p>
         </td>
         <td>
-          <a ui-sref='app.viewDiscussions' >
+          <a ui-sref='app.viewDiscussions'>
             <button type="button" class="btn btn-raised btn-info btn-sm">New Call</button>
           </a>
         </td>
 
       </tr>
 
-      <tr >
+      <tr>
         <td>
           <div class="form-group">
             <div class="chekbox2">
-              <label >
+              <label>
                 <input type="checkbox" ng-model="checked2" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
@@ -181,16 +184,16 @@
         </td>
         <td>
           <a ui-sref='app.viewDiscussions' class="auto">
-            <button type="button" class="btn btn-raised btn-info btn-sm">New Call </button>
+            <button type="button" class="btn btn-raised btn-info btn-sm">New Call</button>
           </a>
         </td>
 
       </tr>
-      <tr >
+      <tr>
         <td>
           <div class="form-group">
             <div class="chekbox3">
-              <label >
+              <label>
                 <input type="checkbox" ng-model="checked3" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
@@ -215,11 +218,11 @@
         </td>
 
       </tr>
-      <tr >
+      <tr>
         <td>
           <div class="form-group">
             <div class="chekbox4">
-              <label >
+              <label>
                 <input type="checkbox" ng-model="checked4" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
@@ -244,11 +247,11 @@
         </td>
 
       </tr>
-      <tr >
+      <tr>
         <td>
           <div class="form-group">
             <div class="chekbox5">
-              <label >
+              <label>
                 <input type="checkbox" ng-model="checked5" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
@@ -273,11 +276,11 @@
         </td>
 
       </tr>
-      <tr >
+      <tr>
         <td>
           <div class="form-group">
             <div class="chekbox6">
-              <label >
+              <label>
                 <input type="checkbox" ng-model="checked6" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
@@ -306,7 +309,7 @@
         <td>
           <div class="form-group">
             <div class="chekbox7">
-              <label >
+              <label>
                 <input type="checkbox" ng-model="checked7" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
@@ -315,7 +318,7 @@
             </div>
           </div>
         </td>
-        <td class="hand-cursor"  ui-sref="app.createEmpanelment">James Maxwell</td>
+        <td class="hand-cursor" ui-sref="app.createEmpanelment">James Maxwell</td>
         <td>Paradigm Creatives</td>
         <td>Pune</td>
         <td>Anthony Sanchez</td>
@@ -332,11 +335,11 @@
         </td>
 
       </tr>
-      <tr >
+      <tr>
         <td>
           <div class="form-group">
             <div class="chekbox8">
-              <label >
+              <label>
                 <input type="checkbox" ng-model="checked8" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
@@ -366,7 +369,7 @@
         <td>
           <div class="form-group">
             <div class="chekbox9">
-              <label >
+              <label>
                 <input type="checkbox" ng-model="checked9" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
@@ -375,7 +378,7 @@
             </div>
           </div>
         </td>
-        <td class="hand-cursor"  ui-sref="app.createEmpanelment">James Maxwell</td>
+        <td class="hand-cursor" ui-sref="app.createEmpanelment">James Maxwell</td>
         <td>Paradigm Creatives</td>
         <td>Pune</td>
         <td>Anthony Sanchez</td>
@@ -396,7 +399,7 @@
         <td>
           <div class="form-group">
             <div class="chekbox10">
-              <label >
+              <label>
                 <input type="checkbox" ng-model="checked10" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
@@ -405,7 +408,7 @@
             </div>
           </div>
         </td>
-        <td class="hand-cursor"  ui-sref="app.createEmpanelment">James Maxwell</td>
+        <td class="hand-cursor" ui-sref="app.createEmpanelment">James Maxwell</td>
         <td>Paradigm Creatives</td>
         <td>Pune</td>
         <td>Anthony Sanchez</td>
@@ -425,10 +428,10 @@
       </tbody>
     </table>
     <pagination class="pagination-sm pull-right"
-                page ="data.currentPage"
+                page="data.currentPage"
                 total-items="data.totalItems"
                 ng-model="data.currentPage"
-                ng-change ="getPossibilities(data.currentPage,data.numPerPage)"
+                ng-change="getPossibilities(data.currentPage,data.numPerPage)"
                 max-size="4"
                 items-per-page="data.numPerPage"
                 rotate="false"

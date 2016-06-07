@@ -1345,89 +1345,8 @@ td:nth-child(1) {
 /* end of empanelment view */
 
 
-/* Prospect view */
-
-.redBack {
-  background: #e60505;;
-  height: 74px;
-
-}
-.warmdBack {
-  background-color: #ffa342;
-  font-weight: bold;
-}
-
-.coldBack{
-  background-color: skyblue;
-  font-weight: bold;
-}
-
-.red{
-  color:#e60505;
-}
-.red-num{
-  color:black;
-}
-
-.warm{
-  color:#e68405;
-}
-.warm-num{
-  color:black;
-}
-
-.cold{
-  color: #87d7f8;
-}
-.cold-num{
-  color:black;
-}
-.blc{
-  color:black;
-}
-.hot-status{
-  background-color:#e60505 !important; ;
-  text-align: center;
-  padding: 5px;
-  width: 80px;
-  color:white !important;;
-}
-
-.warm-status{
-  background-color:#e68405 !important; ;
-  text-align: center;
-  padding: 5px;
-  width: 80px;
-  color:white !important;;
-}
 
 
-.cold-status{
-  background-color:#87d7f8 !important; ;
-  text-align: center;
-  padding: 5px;
-  width: 80px;
-  color:white !important;;
-}
-.button-style{
-  text-align: center;
-  width: 80px;
-  border-radius: 3px;
-}
-.center-text{
-  text-align: center;
-}
-.btn-new{
-  color:white;
-  background-color: #3a81f8;}
-
-.pageNav{
-
-  background-color: white;
-  color: black;
-
-}
-/* end of prospect view */
 .panel-heading-custom {
   background-color: #00a8f3;
   text-align: center;

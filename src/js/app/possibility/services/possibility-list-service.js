@@ -1,5 +1,5 @@
 angular.module('com.module.possibility')
-  .service('possibilityService', ['$http', '$q', function ($http, $q) {
+  .service('possibilityService', ['$http',  function ($http) {
     'use strict';
     this.getPossibilitiess = function () {
       return $http({

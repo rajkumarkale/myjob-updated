@@ -13,10 +13,11 @@
 .bg-dark .nav > li.active > a {
   color: #8A8A8A;
   background-color:white;}
-
 .col-padding-class{
   padding:14px 58px;
 }
 .change-pwd-text{
+  background-color:white;
+  border-left: 1px solid red;
 
 }

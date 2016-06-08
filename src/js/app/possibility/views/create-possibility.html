@@ -1,5 +1,4 @@
 
-
 <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
 
   <button class="btn btn-primary contacts-button" data-ng-click="editForm();"> Edit</button>
@@ -7,7 +6,7 @@
 </div>
 <div class="container col-md-12 pad-t-20" data-ng-class ="disableForm()"  data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
 
-  <div class="panel panel-primary second-panel">
+  <div class="panel panel-default second-panel">
     <div class="panel-heading">
       <span>{{title}}</span>
     </div>
@@ -19,7 +18,7 @@
             <div class="col-md-12 ">
               <div class="col-md-6 form-custom-padding">
 
-                <div class=="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}"">
+                <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}"">
                 <label class="control-label">Legal Entity</label>
                 <input class="form-control" typeahead="data for data in getLegalEntity($viewValue)" required
                        data-ng-model="createPossibility.legal_name" type="text">
@@ -88,13 +87,12 @@
 </div><br>
 
 <div class="form-group1 pull-right ">
-  <input type="checkbox" class="check">
-  <label class=" first-class2 " >Freeze</label>
+  <button class="btn btn-primary freeze-button "> Freeze</button>
 </div>
 
 </div>
 </div>
-
+<div class="line-border">
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <div ngf-drop ngf-select ng-model="files" class="drop-box"
@@ -106,12 +104,13 @@
     <ul>
       <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
     </ul>
-    <div >
+    <div class="form-group">
       <button type="file" ngf-select="" ng-model="picFile" name="file" ngf-accept="'image/*,application/pdf'" class="btn btn-warning attach-button">
         <i class="fa fa-paperclip"></i> Attach File</button>
     </div>
   </div>
 </div>
+  </div>
 <div class="row col-md-12">
   <div class="col-md-6 form-custom-padding">
     <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}"">
@@ -127,11 +126,18 @@
 </div>
 
 <div class="form-group">
+ <div class="checkbox">
   <label class="contacts">Contacts Provides</label>
   <input type="checkbox" ng-model="remote" class="check">
-  <label class="remote">Remote</label>
-  <input type="checkbox" ng-model="local" class="check">
+   <label class="remote">Remote</label>
+   <input type="checkbox" ng-model="local" class="check">
   <label class="location">Location</label>
+
+                  </div>
+
+
+
+
 </div>
 </div>
 <div class="col-md-6 form-custom-padding">

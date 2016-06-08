@@ -402,6 +402,7 @@ margin-left: 520px;
 .mrg-formgrp{
   margin: 0px;
 }
+.mrg-top{ margin-top: 10px;}
 /*end suspect-view*/
 .navbar-custom{
   background-color: transparent !important;

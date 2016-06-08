@@ -9,10 +9,10 @@ angular.module('com.module.prospect')
     {
       $modalInstance.close();
     };
+
     $scope.cancel = function ()
     {
       $modalInstance.dismiss();
-    }
-    
+    };
     });
 

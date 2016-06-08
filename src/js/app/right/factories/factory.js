@@ -16,7 +16,7 @@ angular.module('com.module.right').factory('rightsFactory', function ($http, app
     return $http({
       method: 'GET',
       url: BASEURI + '/rights/list/0/1000'
-    })
+    });
   };
 
   var updateRight = function (data) {
@@ -32,5 +32,5 @@ angular.module('com.module.right').factory('rightsFactory', function ($http, app
     createRight: createRight,
     readRights: readRights,
     updateRole: updateRight
-  }
+  };
 });

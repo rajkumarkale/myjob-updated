@@ -1,2 +1,2 @@
-angular.module ('com.module.access',[])
+angular.module ('com.module.access',[]);
 

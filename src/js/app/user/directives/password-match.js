@@ -9,20 +9,9 @@ angular.module('com.module.user').directive('sameAs', [ function () {
       var firstPassword = '#' + attrs.sameAs;
       elm.add(firstPassword).on('keyup', function () {
         scope.$apply(function () {
-          // console.info(elm.val() === $(firstPassword).val());
           ctrl.$setValidity('matchpassword', elm.val() === $(firstPassword).val());
         });
       });
-      /*ctrl.$parsers.unshift(function(viewValue) {
-        if (viewValue === attrs.sameAs) {
-          ctrl.$setValidity('sameAs', true);
-          return viewValue;
-        } else {
-          ctrl.$setValidity('sameAs', false);
-          return undefined;
-        }
-      });*/
     }
-
   };
 }]);

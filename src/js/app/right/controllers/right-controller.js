@@ -2,6 +2,7 @@
  * Created by Mahesh Guggilla on 20/4/15.
  */
 
+/*
 angular.module('com.module.right').controller('rightController', function ($scope, rightsFactory, $modal, $filter, toaster) {
   'use strict';
   $scope.right = {
@@ -13,7 +14,7 @@ angular.module('com.module.right').controller('rightController', function ($scop
       $scope.search($scope.searchKey);
     }).error(function (error) {
       toaster.pop('danger', error);
-    })
+    });
   };
 
 
@@ -25,14 +26,14 @@ angular.module('com.module.right').controller('rightController', function ($scop
     }, function (error) {
       toaster.pop('danger', error);
     });
-  }
+  };
 
 
   $scope.edit = function (right) {
     $scope.right = right;
   };
   $scope.save = function () {
-         alert('No save api.')
+         alert('No save api.');
   };
   $scope.reset = function (){
     $scope.right = {
@@ -83,3 +84,4 @@ angular.module('com.module.right').controller('rightController', function ($scop
   };
   return init();
 });
+*/

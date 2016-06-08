@@ -2,6 +2,7 @@
  * Created by Mahesh Guggilla on 20/4/15.
  */
 
+/*
 angular.module('com.module.role').controller('roleController', function ($scope, rolesFactory, $modal, $filter, toaster) {
   'use strict';
   $scope.role = {
@@ -83,3 +84,4 @@ angular.module('com.module.role').controller('roleController', function ($scope,
   };
   return init();
 });
+*/

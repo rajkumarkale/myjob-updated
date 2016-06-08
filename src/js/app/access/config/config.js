@@ -14,5 +14,5 @@ angular.module('com.module.access')
           }
           return config;
         }
-      }
+      };
     }]);

@@ -17,6 +17,6 @@ angular.module('com.module.prospect').config(['$stateProvider', function ($state
       url: '/view-discussions',
       templateUrl: 'js/app/prospect/views/view-discussions.html',
       controller:'viewDiscussionCtrl'
-    })
+    });
 
 }]);

@@ -10,5 +10,5 @@ angular.module('com.module.access').controller('SignOutFormController',['$cookie
       console.log(error);
     });
   };
-  //logout();
+  
 }]);

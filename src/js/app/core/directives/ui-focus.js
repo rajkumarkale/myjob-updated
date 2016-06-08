@@ -5,7 +5,7 @@ angular.module('app')
       link: function (scope, element, attr) {
         var model = $parse(attr.uiFocus);
         scope.$watch(model, function (value) {
-          if (value === true) {
+          if (value) {
             $timeout(function () {
               element[0].focus();
             });

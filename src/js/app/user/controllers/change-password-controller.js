@@ -8,7 +8,7 @@ angular.module('com.module.user').controller('changePasswordModalInstanceCtrl', 
     }).error(function (err) {
       $scope.authError = err.message;
       toaster.pop('Fail','Password updating failed.');
-    })
+    });
   };
   $scope.cancel = function(){
     $modalInstance.dismiss('cancel');

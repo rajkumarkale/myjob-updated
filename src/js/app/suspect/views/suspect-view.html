@@ -1,5 +1,5 @@
 <div class="maincol-apply">
-  <div class="container all-dateinputs">
+  <div class="container  all-dateinputs">
     <div class="pull-right">
       <form id="form" name="form" class="form-inline">
         <div class="form-group">
@@ -26,10 +26,10 @@
       </form>
     </div>
   </div>
-  <div class="container content">
+  <div class="container col-md-12 pad-t-20 maincol-apply">
     <div class="panel panel-primary pan-col">
       <div class="panel-heading summary">Summary in the month of April 2016</div>
-      <div class="panel-body">
+      <div class="panel-body pan-col">
         <div class="">
           <div class="detailsContentDiv detailsContentDiv-new">
             <div class="listDetails list-details">
@@ -37,8 +37,9 @@
                 <div class="col-md-3 hot-color-suspect">
                   <img src="img/icon_hot.png" alt="" class="center-block img-pad" />
                 </div>
-                <div class="col-md-9 text-center">
-                  <div class="met">HOT</div>
+
+                <div class="col-md-9 text-center color-divs">
+                  <div class="hot">HOT</div>
                   <div class="met-num">10</div>
                 </div>
               </div>
@@ -48,7 +49,7 @@
                 <div class="col-md-3 orangemet">
                   <img src="img/icon_warm.png" alt="" class="center-block img-pad" />
                 </div>
-                <div class="col-md-9 text-center">
+                <div class="col-md-9 text-center color-divs">
                   <div class="notmet">WARM</div>
                   <div class="met-num">6</div>
                 </div>
@@ -59,8 +60,9 @@
                 <div class="col-md-3 orangeactive">
                   <img src="img/icon_cold.png" alt="" class="center-block img-pad" />
                 </div>
-                <div class="col-md-9 text-center">
-                  <div class="inactive">COLD</div>
+
+                <div class="col-md-9 text-center color-divs">
+                  <div class="cold">COLD</div>
                   <div class="met-num">4</div>
                 </div>
               </div>
@@ -75,16 +77,13 @@
      <div class="panel-body">
 
       <div class="row">
-
-  <!--      <div class="pull-right">
-          <button ui-sref="app.new-oppurtunity" class="btn btn-raised btn-primary glyphicon glyphicon-plus btn-lg">  New Opportunity </button>
-        </div>-->
       </div>
       <div class="row">
-        <div class="pull-left head" ><h4>All Suspects</h4></div>
-      <span class="pull-right col-md-4">
+
+        <h4 class="pull-left head" >All Suspects</h4>
+      <span class="pull-right col-md-6">
              <div class="input-group">
-                <input type="text" class="form-control btn-rounded back-color" placeholder="Search By Location,Company Name,Contact"
+                <input type="text" class="form-control btn-rounded back-color img-remove" placeholder="Search By Location,Company Name,Contact"
                        aria-describedby="basic-addon3">
                 <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
               </div>
@@ -109,7 +108,9 @@
       </div>
     </div>
 
-    <table class="table table-striped table-bod">
+    </div>
+<div class="panel-body">
+    <table class="table table-striped table-bod ">
       <thead class="table-head">
 
       <tr>
@@ -240,6 +241,7 @@
       </tr>
       </tbody>
     </table>
+</div>
     <pagination class="pagination-sm pull-right"
                 page ="data.currentPage"
                 total-items="data.totalItems"
@@ -252,4 +254,5 @@
     </pagination>
   </div>
 
+</div>
 </div>

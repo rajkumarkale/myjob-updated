@@ -1314,6 +1314,7 @@ td:nth-child(1) {
 /* end of empanelment view */
 
 
+
 /* Prospect view */
 
 .redBack {
@@ -1379,32 +1380,7 @@ td:nth-child(1) {
   margin-top: 11px;
 }
 
-.cold-status{
-  background-color:#87d7f8 !important; ;
-  text-align: center;
-  padding: 5px;
-  width: 80px;
-  color:white !important;;
-}
-.button-style{
-  text-align: center;
-  width: 80px;
-  border-radius: 3px;
-}
-.center-text{
-  text-align: center;
-}
-.btn-new{
-  color:white;
-  background-color: #3a81f8;}
 
-.pageNav{
-
-  background-color: white;
-  color: black;
-
-}
-/* end of prospect view */
 .panel-heading-custom {
   background-color: #00a8f3;
   text-align: center;

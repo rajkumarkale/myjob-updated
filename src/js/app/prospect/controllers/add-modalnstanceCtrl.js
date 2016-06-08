@@ -13,5 +13,6 @@ angular.module('com.module.prospect')
     {
       $modalInstance.dismiss();
     }
+    
     });
 

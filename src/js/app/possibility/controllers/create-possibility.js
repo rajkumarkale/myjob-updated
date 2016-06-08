@@ -6,36 +6,45 @@ angular.module('com.module.possibility')
             $scope.groupTurnover = appConfig.possibility.groupTurnover;
             $scope.businessVertical = appConfig.possibility.businessVertical;
             $scope.customerType = appConfig.possibility.customerType;
+            $scope.uploadFiles= [];
             if ($stateParams.possibility) {
                 $scope.title = "Edit Possibility";
                 $scope.myPromise = possibilityCreateService.possibilityDetails($stateParams.possibility.client_unit_id).then(function(response) {
                     $scope.createPossibility = response.data;
                     $scope.client_unit_id = $scope.createPossibility.point_of_contacts[0].client_unit_id;
+                    $scope.point_of_contacts = $scope.createPossibility.point_of_contacts;
                     $scope.employeeSize.selectedItem = $scope.getSlectedItem($scope.createPossibility.employee_size, $scope.employeeSize);
                     $scope.groupTurnover.selectedItem = $scope.getSlectedItem($scope.createPossibility.turnover, $scope.groupTurnover);
                     $scope.businessVertical.selectedItem = $scope.getSlectedItem($scope.createPossibility.vertical, $scope.businessVertical);
                     $scope.customerType.selectedItem = $scope.getSlectedItem($scope.createPossibility.customer_type, $scope.customerType);
-                    if ($scope.createPossibility.point_of_contacts[0].support_type = 'BOTH') {
-                        $scope.remote = true;
-                        $scope.local = true;
-                    } else if (requestObject.point_of_contacts[0].support_type = 'REMOTE') {
-                        $scope.remote = true;
+                    $scope.point_of_contacts.map(function(pocObject){
+                    if (pocObject.support_type === 'BOTH') {
+                        pocObject.remote = true;
+                        pocObject.local = true;
+                    } else if (pocObject.support_type === 'REMOTE') {
+                        pocObject.remote = true;
                     } else {
-                        if (requestObject.point_of_contacts[0].support_type = 'LOCAL') {
-                            $scope.local = true;
+                        if (pocObject.support_type ==='LOCAL') {
+                            pocObject.local = true;
                         }
                     }
+                });
                     $scope.isNewPossibility = false;
                 });
             } else {
                 $scope.isNewPossibility = true;
                 $scope.title = "New Possibility";
                 $scope.createPossibility = {};
-                $scope.createPossibility.point_of_contacts = [];
+                $scope.point_of_contacts =[{name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:""}];
 
             }
         }
         $scope.init($stateParams);
+        $scope.getNewPointofContact =  function(){
+        	var obj = {name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:""};
+        	 $scope.point_of_contacts.push(obj)
+
+        };
         $scope.$watch('files', function() {
             $scope.upload($scope.files);
         });
@@ -68,18 +77,34 @@ angular.module('com.module.possibility')
             	possibilityObject.customer_type = $scope.customerType.selectedItem.key;
         		possibilityObject.client_unit_id = $scope.client_unit_id;
         		possibilityObject.current_status = current_status;
-        		delete possibilityObject.point_of_contacts[0].time_created;
+        		$scope.point_of_contacts.map(function(pocObj){
+            	var requestPocObject ={}; 
+            	requestPocObject.name = pocObj.name;
+            	requestPocObject.phone = pocObj.phone;
+            	requestPocObject.designation = pocObj.designation;
+            	requestPocObject.email_id = pocObj.email_id;
+            	requestPocObject.support_location = pocObj.support_location;
+            	if (pocObj.remote && pocObj.local) {
+                requestPocObject.support_type = 'BOTH';
+            } else if (pocObj.remote) {
+                requestPocObject.support_type = 'REMOTE';
+            } else {
+                if (pocObj.local) {
+                    requestPocObject.support_type = 'LOCAL';
+                }
+            }
+            possibilityObject.push(requestPocObject);
+
+            })
         		delete possibilityObject._id;
         		delete possibilityObject.created_by;
          		delete possibilityObject.time_created;
          		delete possibilityObject.freeze
        			delete possibilityObject.address.time_updated;
        			delete possibilityObject.time_updated;
-       			delete possibilityObject.point_of_contacts[0].client_unit_id ;
        			delete possibilityObject.address.user_id ;
-       			delete possibilityObject.point_of_contacts[0]._id ;
-        		possibilityCreateService.updatePossibility(possibilityObject).success(function() {
-                toaster.pop('Success', 'POSSIBILITY Created Successfully.');
+	       		possibilityCreateService.updatePossibility(possibilityObject).success(function() {
+                toaster.pop('success', 'POSSIBILITY Created Successfully.');
                 $state.go('app.viewPossibility');
             }).error(function(err) {
                 $scope.authError = err.message;
@@ -95,20 +120,41 @@ angular.module('com.module.possibility')
 
 
         $scope.processRequest = function(requestObject) {
-            requestObject.user_id = JSON.parse($cookies.user).userDetails._id;
+            requestObject.user_id = JSON.parse($cookies.userData).userDetails.roles.account.id;
             requestObject.employee_size = $scope.employeeSize.selectedItem.key;
             requestObject.turnover = $scope.groupTurnover.selectedItem.key;
             requestObject.vertical = $scope.businessVertical.selectedItem.key;
             requestObject.customer_type = $scope.customerType.selectedItem.key;
-            if ($scope.remote && $scope.local) {
-                requestObject.point_of_contacts[0].support_type = 'BOTH';
-            } else if ($scope.remote) {
-                requestObject.point_of_contacts[0].support_type = 'REMOTE';
-            } else {
-                if (requestObject.local) {
-                    requestObject.point_of_contacts[0].support_type = 'LOCAL';
+            requestObject.urls = [];
+            requestObject.point_of_contacts =[];
+            if ($scope.files && $scope.files.length) {
+                for (var i = 0; i < $scope.files.length; i++) {
+                	var obj ={};
+                	obj.url = $scope.files[i].url;
+                	obj.type = "OTHERS";
+                	requestObject.urls.push(obj);
                 }
             }
+            $scope.point_of_contacts.map(function(pocObj){
+            	var requestPocObject ={}; 
+            	requestPocObject.name = pocObj.name;
+            	requestPocObject.phone = pocObj.phone;
+            	requestPocObject.designation = pocObj.designation;
+            	requestPocObject.email_id = pocObj.email_id;
+            	requestPocObject.support_location = pocObj.support_location;
+            	if (pocObj.remote && pocObj.local) {
+                requestPocObject.support_type = 'BOTH';
+            } else if (pocObj.remote) {
+                requestPocObject.support_type = 'REMOTE';
+            } else {
+                if (pocObj.local) {
+                    requestPocObject.support_type = 'LOCAL';
+                }
+            }
+            requestObject.point_of_contacts.push(requestPocObject);
+
+            })
+            
             possibilityCreateService.setPossibility(requestObject).success(function() {
                 $state.go('app.viewPossibility');
                 toaster.pop('Success', 'POSSIBILITY Created Successfully.');
@@ -159,18 +205,10 @@ angular.module('com.module.possibility')
                                 content: file
                             }
                         }).then(function(resp) {
-                            $timeout(function() {
-                                $scope.log = 'file: ' +
-                                    resp.config.data.file.name +
-                                    ', Response: ' + JSON.stringify(resp.data) +
-                                    '\n' + $scope.log;
-                            });
+                            file.url = resp.data.url;
+                            $scope.uploadFiles.push(file);
                         }, null, function(evt) {
-                            var progressPercentage = parseInt(100.0 *
-                                evt.loaded / evt.total);
-                            $scope.log = 'progress: ' + progressPercentage +
-                                '% ' + evt.config.data.file.name + '\n' +
-                                $scope.log;
+                            
                         });
                     }
                 }

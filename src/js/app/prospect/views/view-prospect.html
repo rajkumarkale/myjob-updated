@@ -3,6 +3,7 @@
     <div class="pull-right ">
       <form id="form" name="form" class="form-inline" novalidate>
         <div class="form-group">
+          <label  for="startDate" class="color-black">From</label>
           <label for="startDate">From</label>
           <div class="input-group">
             <a ng-click="open($event,'opened1')">
@@ -113,7 +114,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
+      <tr class="heads-space">
         <td>
 
 
@@ -139,10 +140,10 @@
           </a>
         </td>
       </tr>
-      <tr>
+      <tr class="heads-space">
 
         <td>
-          <div class="form-group">
+          <div class="form-group mrg-formgrp">
             <div class="chekbox">
               <label>
                 <input type="checkbox" ng-model="checked2" ng-checked="selectAll">
@@ -169,9 +170,9 @@
           </a>
         </td>
       </tr>
-      <tr>
+      <tr class="heads-space">
         <td>
-          <div class="form-group">
+          <div class="form-group mrg-formgrp">
             <div class="chekbox">
               <label>
                 <input type="checkbox" ng-model="checked3" ng-checked="selectAll">
@@ -198,9 +199,9 @@
           </a>
         </td>
       </tr>
-      <tr>
+      <tr class="heads-space">
         <td>
-          <div class="form-group">
+          <div class="form-group mrg-formgrp">
             <div class="chekbox">
               <label>
                 <input type="checkbox" ng-model="checked4" ng-checked="selectAll">
@@ -227,9 +228,9 @@
           </a>
         </td>
       </tr>
-      <tr>
+      <tr class="heads-space">
         <td>
-          <div class="form-group">
+          <div class="form-group mrg-formgrp">
             <div class="chekbox">
               <label>
                 <input type="checkbox" ng-model="checked5" ng-checked="selectAll">
@@ -256,9 +257,9 @@
           </a>
         </td>
       </tr>
-      <tr>
+      <tr class="heads-space">
         <td>
-          <div class="form-group">
+          <div class="form-group mrg-formgrp">
             <div class="chekbox">
               <label>
                 <input type="checkbox" ng-model="checked6" ng-checked="selectAll">
@@ -285,7 +286,151 @@
           </a>
         </td>
       </tr>
-
+      <tr class="heads-space">
+        <td>
+          <div class="form-group mrg-formgrp">
+            <div class="chekbox">
+              <label >
+                <input type="checkbox" ng-model="checked7" ng-checked="selectAll">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </td>
+        <td class="hand-cursor"  ui-sref="app.create-prospect">Anthony Sanchez</td>
+        <td>Paradigm Creatives</td>
+        <td>00000</td>
+        <td>00000</td>
+        <td>26/04/16</td>
+        <td>Lorem Ipsum</td>
+        <td>Govt.Staffing</td>
+        <td>
+          <p class="lost-status-text btn-sm  ">Lost</p>
+        </td>
+        <td>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info btn-sm">New Call</button>
+          </a>
+        </td>
+      </tr>
+      <tr class="heads-space">
+        <td>
+          <div class="form-group mrg-formgrp">
+            <div class="chekbox">
+              <label >
+                <input type="checkbox" ng-model="checked8" ng-checked="selectAll">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </td>
+        <td class="hand-cursor"  ui-sref="app.create-prospect">James Maxwell</td>
+        <td>Paradigm Creatives</td>
+        <td>00000</td>
+        <td>00000</td>
+        <td>26/04/16</td>
+        <td>Lorem Ipsum</td>
+        <td>Professional Staffing</td>
+        <td>
+          <p class="lost-status-text btn-sm">Lost</p>
+        </td>
+        <td>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info btn-sm">New Call</button>
+          </a>
+        </td>
+      </tr>
+      <tr class="heads-space">
+        <td>
+          <div class="form-group mrg-formgrp">
+            <div class="chekbox">
+              <label >
+                <input type="checkbox" ng-model="checked9" ng-checked="selectAll">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </td>
+        <td class="hand-cursor"  ui-sref="app.create-prospect">Delores Polk</td>
+        <td>Paradigm Creatives</td>
+        <td>00000</td>
+        <td>00000</td>
+        <td>26/04/16</td>
+        <td>Lorem Ipsum</td>
+        <td>Perm</td>
+        <td>
+          <p class="won-status-text btn-sm ">Won</p>
+        </td>
+        <td>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info btn-sm">New Call</button>
+          </a>
+        </td>
+      </tr>
+      <tr class="heads-space">
+        <td>
+          <div class="form-group mrg-formgrp">
+            <div class="chekbox">
+              <label >
+                <input type="checkbox" ng-model="checked10" ng-checked="selectAll">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </td>
+        <td class="hand-cursor"  ui-sref="app.create-prospect">Anthony Sanchez</td>
+        <td>Paradigm Creatives</td>
+        <td>00000</td>
+        <td>00000</td>
+        <td>26/04/16</td>
+        <td>Lorem Ipsum</td>
+        <td>Govt.Staffing</td>
+        <td>
+          <p class="won-status-text btn-sm">Won</p>
+        </td>
+        <td>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info btn-sm">New Call</button>
+          </a>
+        </td>
+      </tr>
+      <tr class="heads-space">
+        <td>
+          <div class="form-group mrg-formgrp">
+            <div class="chekbox">
+              <label >
+                <input type="checkbox" ng-model="checked11" ng-checked="selectAll">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </td>
+        <td class="hand-cursor"  ui-sref="app.create-prospect">James Maxwell</td>
+        <td>Paradigm Creatives</td>
+        <td>00000</td>
+        <td>00000</td>
+        <td>26/04/16</td>
+        <td>Lorem Ipsum</td>
+        <td>Professional Staffing</td>
+        <td>
+          <p class="lost-status-text btn-sm">Lost</p>
+        </td>
+        <td>
+          <a ui-sref='app.viewDiscussions' class="auto">
+            <button type="button" class="btn btn-raised btn-info btn-sm">New Call</button>
+          </a>
+        </td>
+      </tr>
       </tbody>
     </table>
     <pagination class="pagination-sm pull-right"

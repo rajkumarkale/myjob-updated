@@ -106,6 +106,8 @@
 }
 .calendar-img{
   margin-left: -46px !important;
+  width: 20px;
+  height: 20px;
 }
 .met-target{
   color:#5398F6;
@@ -160,11 +162,14 @@ padding-top: 6px;
   padding-right: 22px;
   padding-bottom: 6px;
   margin-top:-3px;
-  background-color: #049ad9 !important;
+  background-color: #1F9CD7 !important;
      margin-right:12px ;
 	 font-size: 16px;
 	 text-transform:none !important;
   border-radius: 4px !important;
+}
+.left-mrg{
+  margin-right:25px ;
 }
 
 .detailsContent {
@@ -196,10 +201,6 @@ padding-top: 6px;
     vertical-align: middle;
     float: none;
 }
-.met {
-    color: #f58207;
-    font-weight: bold;
-}
 .met-num {
     color: black;
     font-weight: bold;
@@ -209,7 +210,7 @@ padding-top: 6px;
     font-weight: bold;
 }
 .orangemet {
-    background-color: #15b929;
+    background-color: #E48204;
     font-weight: bold;
 }
 .inactive {
@@ -240,28 +241,24 @@ padding-top: 6px;
     font-weight: bold;
 }
 .table-bod {
-    border: 1px solid white;
+    border: 1px solid #D2D7DD;
     background-color: white;
 }
 .table-bod>tbody>tr>td {
     border-top: none;
 }
-.table-bod>tbody tr:nth-child(odd) {
-    background-color: #F5F5F5;
-}
 .table-head {
     background-color: white;
     color: #2277b1;
-}
-td:nth-child(1) {
-    color: #2277b1;
-    font-weight: bold;
 }
 .main-panel>.panel-heading{
   background-color: white !important;
 }
 .second-panel>.panel-heading {
-  background-color:#2277b0 !important;color: white !important;
+  background-color:#2176AF !important;color: white !important;
+  font-size: 17px;
+  padding: 15px;
+  font-weight: bold;
 }
 .second-panel>.panel-heading a{
  color: white !important;
@@ -327,9 +324,16 @@ margin-left: 520px;
 .poss-mrg{
     margin-right: 10px;
 }
-.not-met{
-    color: #8C8866;
+.notmet{
+    color: #E48204;
     font-weight: bold;
+}
+.orangeactive-cold{
+   background-color: #85D5F6;
+}
+.cold{
+  color: #85D5F6;
+  font-weight: bold;
 }
 .greenmet{
    background-color: #8C8866;
@@ -386,9 +390,6 @@ margin-left: 520px;
 
 /*end suspect*/
 /*suspect-view styles*/
-.hot-color-suspect{
-  background-color: #e60505;
-}
 .warm-color-suspect{
   background-color: #e68405;
 }
@@ -943,11 +944,6 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   -o-background-size: cover;
   background-size: cover;
 }
-
-.hand-cursor{
-  cursor: pointer;
-}
-
 .color-black{
   color : black;
 }
@@ -973,7 +969,7 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   height: 50px;
 }
 .list-pad{
-  padding-top:35px;
+  padding-top:54px;
 }
 /*.list-pad > li > a:hover,.list-pad > li > a:focus{
    background-color:white !important;
@@ -1052,8 +1048,12 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   vertical-align: middle;
   float: none;
 }
+.not-met{
+  color: #858261;
+  font-weight: bold;
+}
 .met {
-  color: #f58207;
+  color:#F38106;
   font-weight: bold;
 }
 .met-num {
@@ -1062,10 +1062,6 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 .won {
   color: #15b929;
-  font-weight: bold;
-}
-.orangemet {
-  background-color: #15b929;
   font-weight: bold;
 }
 .inactive {
@@ -1090,15 +1086,14 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   color: white !important;
   font-weight: bold;
 }
-.table-bod {
-  border: 1px solid white;
-  background-color: white;
-}
 .table-bod>tbody>tr>td {
   border-top: none;
 }
 .table-bod>tbody tr:nth-child(odd) {
-  background-color: #F5F5F5;
+  background-color: #F3F3F3;
+}
+.table-bod>tbody tr:nth-child(even) {
+  background-color: #FAFAFA;
 }
 .table-head {
   background-color: white;
@@ -1110,12 +1105,6 @@ td:nth-child(1) {
 }
 .main-panel>.panel-heading{
   background-color: white !important;
-}
-.second-panel>.panel-heading {
-  background-color:#2277b0 !important;color: white !important;
-}
-.second-panel>.panel-heading a{
-  color: white !important;
 }
 .bord-remove{
   border-top: none;border-left: none;border-right: none;
@@ -1182,7 +1171,7 @@ td:nth-child(1) {
   border-color: #f9cf0b;
 }
 .freeze-button{
-    background-color: #049ad9 !important;color: white !important;padding-left: 25px;
+    background-color: #2176AF !important;color: white !important;padding-left: 25px;
   padding-right: 25px;
   padding-top: 5px;
   padding-bottom: 5px;border-radius: 0px;
@@ -1227,7 +1216,6 @@ td:nth-child(1) {
   width: 90px !important;
   color: white;
   height: 27px;
-  margin-top: 11px;
 }
 .warm-color-suspect{
   background-color: #e68405;
@@ -1237,7 +1225,6 @@ td:nth-child(1) {
   width: 90px !important;
   color: white;
   height: 27px;
-  margin-top: 11px;
 }
 .cold-color-suspect{
   background-color: #87d7f8;
@@ -1247,7 +1234,13 @@ td:nth-child(1) {
   width: 90px !important;
   color: white;
   height: 27px;
-  margin-top: 11px;
+}
+.hot{
+  color: #E40404;
+  font-weight: bold;
+}
+.newcall-mrg{
+  margin: 0px;
 }
 /*end suspect-view*/
 .navbar-custom{
@@ -1319,8 +1312,88 @@ td:nth-child(1) {
 /* end of empanelment view */
 
 
+/* Prospect view */
+
+.redBack {
+  background: #e60505;;
+  height: 74px;
+
+}
+.warmdBack {
+  background-color: #ffa342;
+  font-weight: bold;
+}
+
+.coldBack{
+  background-color: skyblue;
+  font-weight: bold;
+}
+
+.red{
+  color:#e60505;
+}
+.red-num{
+  color:black;
+}
+
+.warm{
+  color:#e68405;
+}
+.warm-num{
+  color:black;
+}
+.cold{
+  color: #87d7f8;
+}
+.cold-num{
+  color:black;
+}
+.blc{
+  color:black;
+}
+.hot-status{
+  background-color:#e60505 !important; ;
+  text-align: center;
+  padding: 5px;
+  width: 80px;
+  color:white !important;;
+}
+
+.warm-status{
+  background-color:#e68405 !important; ;
+  text-align: center;
+  padding: 5px;
+  width: 80px;
+  color:white !important;;
+}
 
 
+.cold-status{
+  background-color:#87d7f8 !important; ;
+  text-align: center;
+  padding: 5px;
+  width: 80px;
+  color:white !important;;
+}
+.button-style{
+  text-align: center;
+  width: 80px;
+  border-radius: 3px;
+}
+.center-text{
+  text-align: center;
+}
+.btn-new{
+  color:white;
+  background-color: #3a81f8;}
+
+.pageNav{
+
+  background-color: white;
+  color: black;
+
+}
+/* end of prospect view */
 .panel-heading-custom {
   background-color: #00a8f3;
   text-align: center;
@@ -1377,7 +1450,7 @@ td:nth-child(1) {
 }
 .text-class
 {
-  size:18px;
+  font-size:18px;
   padding-top: 20px;
   padding-left:5px;
   padding-bottom: 10px;
@@ -1395,7 +1468,7 @@ td:nth-child(1) {
 .client-class
 {
   style:bold;
-  size:22px;
+  font-size:22px;
   color:#000000;
   background-color: #ebebe0;
   height:50px;

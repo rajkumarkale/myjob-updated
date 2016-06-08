@@ -12,7 +12,9 @@
 .bg-dark .nav > li:focus > a,
 .bg-dark .nav > li.active > a {
   color: #8A8A8A;
-  background-color:white;}
+  background-color:white;
+  border-left: 1px solid red;
+}
 
 
 .table-th-heading {

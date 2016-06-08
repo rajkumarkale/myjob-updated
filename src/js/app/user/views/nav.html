@@ -16,6 +16,7 @@
       <img src="img/possibility.png"> &nbsp;
       <span>Possibility</span>
     </a>
+    <span ui-sref="app.createPossibility" class="auto"></span>
   </li>
 
   <li ui-sref-active="active">
@@ -23,6 +24,7 @@
       <img src="img/suspect.png"> &nbsp;
       <span>Suspect</span>
     </a>
+    <span ui-sref="app.create-suspect-view" class="auto"></span>
   </li>
 
   <li ui-sref-active="active">
@@ -30,6 +32,7 @@
       <img src="img/prospect.png"> &nbsp;
       <span>Prospect</span>
     </a>
+    <span ui-sref="app.create-prospect" class="auto"></span>
   </li>
 
 
@@ -38,7 +41,9 @@
       <img src="img/empanelment.png"> &nbsp;
       <span>Empanelment</span>
     </a>
-    <span ui-sref="app.createEmpanelment" class="auto"></span>
+    <a ui-sref="app.createEmpanelment" data-ng-hide="true"></a>
+    <span ui-sref="app.slaTracker" data-ng-hide="true"></span>
+    <span ui-sref="app.slaTracker-step2" data-ng-hide="true" ></span>
 
   </li>
 

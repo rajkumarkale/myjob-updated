@@ -164,7 +164,7 @@ padding-top: 6px;
   padding-bottom: 6px;
   margin-top:-3px;
   background-color: #1F9CD7 !important;
-     margin-right:12px ;
+     margin-right:29px ;
 	 font-size: 16px;
 	 text-transform:none !important;
   border-radius: 4px !important;
@@ -403,6 +403,12 @@ margin-left: 520px;
 .mrg-formgrp{
   margin: 0px;
 }
+.pan-col{
+  background-color:#F1F1F1;
+}
+.color-divs{
+  background-color: white;
+}
 /*end suspect-view*/
 .navbar-custom{
   background-color: transparent !important;
@@ -588,11 +594,13 @@ margin-left: 520px;
   margin-top: 11px;
 }
 .won-status-text-color{
-  color: green;
+  color: #478804;
+  font-weight: bold;
 
 }
 .lost-status-text-color{
-  color:#a948b8
+  color:#a948b8;
+  font-weight: bold;
 }
 .lost-status-text{
   background-color: #a948b8 !important;
@@ -777,7 +785,7 @@ color:white;
 }
 .back-color-search{
   background-color: #F2F2F2 !important;
-  border-left:1px solid #CDCDCD;
+  border: 1px solid #D5D5D5 !important;
 }
 .addDiscusHeading{
   background-color: #2277b1;
@@ -1089,6 +1097,9 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 .table-bod>tbody>tr>td {
   border-top: none;
 }
+.table-bod>thead>tr>th {
+  padding:10px !important;
+}
 .table-bod>tbody tr:nth-child(odd) {
   background-color: #F3F3F3;
 }
@@ -1242,6 +1253,10 @@ td:nth-child(1) {
 .newcall-mrg{
   margin: 0px;
 }
+.img-remove{
+  background-image: none !important;
+  border: 1px solid #D5D5D5;
+}
 /*end suspect-view*/
 .navbar-custom{
   background-color: transparent !important;
@@ -1257,6 +1272,9 @@ td:nth-child(1) {
   border-right: 10px solid #DFDFDF;
   margin-top:-20px;
   margin-left: 100px;
+}
+.won{
+  background-color: #478804;
 }
 /*end prospect*/
 /* Empanelment view */
@@ -1294,7 +1312,7 @@ td:nth-child(1) {
 .won-status
 {
 
-  background-color: #15b929;
+  background-color: #478804;
   color: white !important;
   text-align: center;
   border-radius: 3px;

@@ -35,5 +35,5 @@ angular.module('com.module.user').config(['$stateProvider', function ($stateProv
           return  AuthService.getCountries();
         }]
       }
-    })
+    });
 }]);

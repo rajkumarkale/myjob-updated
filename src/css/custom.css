@@ -8,7 +8,6 @@
 
 .hand-cursor{
   cursor: pointer;
-  color: #6999C2;
 }
 
 .color-black{
@@ -403,6 +402,7 @@ margin-left: 520px;
 .mrg-formgrp{
   margin: 0px;
 }
+.mrg-top{ margin-top: 10px;}
 .pan-col{
   background-color:#F1F1F1;
 }
@@ -1316,6 +1316,30 @@ td:nth-child(1) {
 /* end of empanelment view */
 
 
+/* Prospect view */
+
+.redBack {
+  background: #e60505;;
+  height: 74px;
+
+}
+.warmdBack {
+  background-color: #ffa342;
+  font-weight: bold;
+}
+
+.coldBack{
+  background-color: skyblue;
+  font-weight: bold;
+}
+
+.red{
+  color:#e60505;
+}
+.red-num{
+  color:black;
+}
+
 
 /* Prospect view */
 
@@ -1382,6 +1406,9 @@ td:nth-child(1) {
   margin-top: 11px;
 }
 
+
+
+/* end of prospect view */
 
 .panel-heading-custom {
   background-color: #00a8f3;

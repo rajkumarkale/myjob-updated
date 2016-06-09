@@ -1,13 +1,4 @@
-/*.nav>li.act1>a:hover{
-  background-color: green;
-}*/
-/*.nav>li.act1>a:active{
-  background-color: #5cffbf !important;
-}*/
-/*.active-nav:hover,:active,:focus{
-  background-color: #00aa9a;
 
-}*/
 .bg-dark .nav > li:hover > a,
 .bg-dark .nav > li.active > a {
   color: white;
@@ -32,5 +23,4 @@
 .col-padding-class{
   padding:14px 58px;
 }
-
 

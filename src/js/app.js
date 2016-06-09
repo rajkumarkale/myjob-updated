@@ -21,7 +21,8 @@ angular.module('app', [
   'com.module.prospect',
   'com.module.possibility',
   'com.module.admin',
-  'ui.sortable'
+  'ui.sortable',
+  'toaster'
 ]);
 
 angular.element(document).ready(function () {

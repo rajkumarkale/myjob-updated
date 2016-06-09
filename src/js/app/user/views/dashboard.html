@@ -1,10 +1,10 @@
 <div class="maincol-apply">
   <div class="container all-dateinputs">
-    <div class="row">
+
+      <div class="container">
       <div class="pull-right">
         <form id="form" name="form" class="form-inline" novalidate>
-          <div class="form-group">
-            <label for="startDate" class="color-black">From</label>
+            <label for="startDate" class="labels-dates poss-mrg">From</label>
             <div class="input-group">
               <a ng-click="open($event,'opened1')">
                 <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
@@ -14,9 +14,7 @@
             <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
               </a>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="endDate" class="labels-dates color-black">to</label>
+            <label for="endDate" class="labels-dates poss-mrg">to</label>
             <div class="input-group">
               <a ng-click="open($event,'opened2')">
                 <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
@@ -26,14 +24,13 @@
             <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
               </a>
             </div>
-            <button class="btn btn-primary filter">Submit</button>
-          </div>
+            <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
         </form>
-
       </div>
-    </div>
-  </div>
-  <div class="container content">
+      </div>
+
+
+  <div class="container col-md-12 pad-t-20 maincol-apply">
     <div class="panel panel-primary pan-col">
       <div class="panel-heading summary">Summary for the year of April 2016 to March 2017</div>
       <div class="panel-body">
@@ -44,7 +41,7 @@
                 <div class="col-md-3 target-header-color">
                   <img src="img/target_icon.png" alt="" class="center-block img-pad"/>
                 </div>
-                <div class="col-md-9 text-center">
+                <div class="col-md-9 text-center color-divs">
                   <div class="met-target">TARGET</div>
                   <div class="met-num">10</div>
                 </div>
@@ -55,7 +52,7 @@
                 <div class="col-md-3 prospect-header-color">
                   <img src="img/prospect_icon.png" alt="" class="center-block img-pad"/>
                 </div>
-                <div class="col-md-9 text-center">
+                <div class="col-md-9 text-center color-divs">
                   <div class="met-prospect">PROSPECT</div>
                   <div class="metprospect-num">10</div>
                 </div>
@@ -66,7 +63,7 @@
                 <div class="col-md-3 empanelment-header-color">
                   <img src="img/empanelment_icon.png" alt="" class="center-block img-pad"/>
                 </div>
-                <div class="col-md-9 text-center">
+                <div class="col-md-9 text-center color-divs">
                   <div class="empanel-col">EMPANELMENT</div>
                   <div class="met-num">10</div>
                 </div>
@@ -93,4 +90,5 @@
                 tooltip: true
               }" style="height: 240px; padding: 0px; position: relative;"><canvas class="flot-base" width="508" height="240" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 508px; height: 240px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; max-width: 63px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 16px; text-align: center;">10</div><div style="position: absolute; max-width: 63px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 93px; text-align: center;">15</div><div style="position: absolute; max-width: 63px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 170px; text-align: center;">20</div><div style="position: absolute; max-width: 63px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 247px; text-align: center;">25</div><div style="position: absolute; max-width: 63px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 325px; text-align: center;">30</div><div style="position: absolute; max-width: 63px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 402px; text-align: center;">35</div><div style="position: absolute; max-width: 63px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 479px; text-align: center;">40</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; top: 216px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 11px; text-align: right;">0</div><div style="position: absolute; top: 173px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 5px; text-align: right;">25</div><div style="position: absolute; top: 130px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 5px; text-align: right;">50</div><div style="position: absolute; top: 87px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 5px; text-align: right;">75</div><div style="position: absolute; top: 44px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 0px; text-align: right;">100</div><div style="position: absolute; top: 2px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 0px; text-align: right;">125</div></div></div><canvas class="flot-overlay" width="508" height="240" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 508px; height: 240px;"></canvas><div class="legend"><div style="position: absolute; width: 29px; height: 66px; top: 13px; right: 13px; opacity: 0.85; background-color: rgb(255, 255, 255);"> </div><table style="position:absolute;top:13px;right:13px;;font-size:smaller;color:#ccc"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(35,183,229);overflow:hidden"></div></div></td><td class="legendLabel">A</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(39,194,76);overflow:hidden"></div></div></td><td class="legendLabel">B</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(114,102,186);overflow:hidden"></div></div></td><td class="legendLabel">C</td></tr></tbody></table></div></div>
   </div>-->
+</div>
 </div>

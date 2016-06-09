@@ -105,7 +105,8 @@
    font-size:18px;
 }
 .calendar-img{
-  margin-left: -46px !important;
+  margin-left: -35px !important;
+  margin-top: 10px;;
   width: 20px;
   height: 20px;
 }
@@ -681,10 +682,9 @@ color:white;
   width: 110px;
   height: 30px;
   color: white;
-  margin-right: 10px;
   background-color: darkgrey;
   padding: 3px 5px 5px 16px;
-
+  margin-right: 5px;
 }
 
 .panel-heading-custom {
@@ -1080,10 +1080,7 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   color: black;
   font-weight: bold;
 }
-.won {
-  color: #15b929;
-  font-weight: bold;
-}
+
 .inactive {
   color: #A8A8A7;
   font-weight: bold;
@@ -1285,9 +1282,7 @@ td:nth-child(1) {
   margin-top:-20px;
   margin-left: 100px;
 }
-.won{
-  background-color: #478804;
-}
+
 /*end prospect*/
 /* Empanelment view */
 .orange2 {

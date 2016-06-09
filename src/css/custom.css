@@ -1285,6 +1285,9 @@ td:nth-child(1) {
 
 /*end prospect*/
 /* Empanelment view */
+.cell-gap{
+  width:14%;
+}
 .orange2 {
   background: #f58207;
   color: #fff;

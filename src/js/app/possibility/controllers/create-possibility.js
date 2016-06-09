@@ -34,7 +34,7 @@ angular.module('com.module.possibility')
                 $scope.createPossibility.point_of_contacts = [];
 
             }
-        }
+        };
         $scope.init($stateParams);
         $scope.$watch('files', function() {
             $scope.upload($scope.files);
@@ -115,7 +115,7 @@ angular.module('com.module.possibility')
             }).error(function(err) {
                 $scope.authError = err.message;
             })
-        }
+        };
         $scope.getLegalEntity = function(val) {
             possibilityCreateService.getLegalEntity(val).then(function() {
 
@@ -137,7 +137,7 @@ angular.module('com.module.possibility')
             $scope.isEditable = true;
 
         };
-        
+
         $scope.cancel = function() {
             $state.go('app.viewPossibility');
         };
@@ -146,7 +146,7 @@ angular.module('com.module.possibility')
                 var className = 'app-container-blur';
                 return className;
             }
-        }
+        };
 
         $scope.upload = function(files) {
             if (files && files.length) {

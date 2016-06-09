@@ -23,7 +23,7 @@ angular.module('com.module.user')
         .error(function (err){
           $scope.common.toastWarning('Fail','Profile updating failed.');
       });
-    }
+    };
 
     $scope.openModel = function () {
       var modalInstance;
@@ -44,7 +44,7 @@ angular.module('com.module.user')
       }, function () {
         console.info('Modal dismissed at: ' + new Date());
       });
-    }
+    };
 
     $scope.openInvoices = function () {
       var modalInstance;
@@ -58,10 +58,6 @@ angular.module('com.module.user')
             return  AuthService.getInvoices();
           }]
         }
-
       });
-
-    }
-
-
+    };
   }]);

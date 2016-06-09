@@ -21,5 +21,5 @@ angular.module('com.module.empanelment')
     .state('app.slaTracker-step2', {
       url: '/SLA-Tracker-step2',
       templateUrl: 'js/app/empanelment/views/sla-Tracker-step2.html'
-    })
+    });
 }]);

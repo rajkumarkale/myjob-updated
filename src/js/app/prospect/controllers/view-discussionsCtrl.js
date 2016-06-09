@@ -4,6 +4,7 @@
 angular.module('com.module.prospect')
 .controller('viewDiscussionCtrl',['$scope','$modal',function($scope,$modal){
   console.log('sample');
+  
   $scope.openAddDiscussions = function () {
     var modalInstance = $modal.open({
       templateUrl: 'js/app/prospect/views/add-new-discussions.html',
@@ -14,6 +15,7 @@ angular.module('com.module.prospect')
     modalInstance.result.then(function () {
     });
   };
+
 
 }]);
 

@@ -8,7 +8,6 @@
 
 .hand-cursor{
   cursor: pointer;
-  color: #6999C2;
 }
 
 .color-black{
@@ -403,6 +402,7 @@ margin-left: 520px;
 .mrg-formgrp{
   margin: 0px;
 }
+.mrg-top{ margin-top: 10px;}
 .pan-col{
   background-color:#F1F1F1;
 }
@@ -465,8 +465,8 @@ margin-left: 520px;
 
 }
 .listDetails3 {
-  width: 20%;
-  margin-left:40%
+  width: 30%;
+  margin-left:35%
 }
 .arrow1 {
   color:black;
@@ -481,11 +481,21 @@ margin-left: 520px;
   color:white;
 
 }
+.won-img-class{
+  background-color:#15b929 !important;
+  width: 25%;
+
+}
+.emp-won-text{
+  border: 1px solid #eee;
+  display: table;
+  height: 70px;
+  width: 110% !important;
+}
 .won-status
 {
 
   background-color: #15b929 !important;
-
   text-align: center;
   border-radius: 3px;
   width:100%;
@@ -641,11 +651,11 @@ color:white;
 
 
 .checkBoxDrop{
-  width: 30px;
-  height: 35px;
+  width: 26px;
+  height: 30px;
   color: white;
   background-color: darkgrey;
-  padding: 5px 5px 2px 5px;
+  padding: 5px;
   margin-right: 10px;
 }
 
@@ -662,17 +672,18 @@ color:white;
   border-left: 7px solid transparent;
   border-bottom: 10px solid transparent;
   color: white;
+  margin-top:6px;
   margin-left: 5px;
 
   }
 .checkBox-showall
 {
-  width: 100px;
-  height: 35px;
+  width: 110px;
+  height: 30px;
   color: white;
   margin-right: 10px;
   background-color: darkgrey;
-  padding: 5px 5px 5px 5px;
+  padding: 3px 5px 5px 16px;
 
 }
 
@@ -971,6 +982,7 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   font-style: normal;
   font-size: 16px;
   color:#ffffff;
+  text-align: center;
 
 }
 .height-navBar{
@@ -1285,30 +1297,6 @@ td:nth-child(1) {
   display:none;
 }
 
-.listDetails2 {
-  display: none;
-
-}
-.listDetails3
-{
-  width: 20%;
-  margin-left:40%
-}
-.arrow1
-{
-  color:black;
-}
-.wonbtn
-{
-  height:20px;
-  width:80px;
-  border-radius: 3px;
-  text-align: center;
-  padding-top: 1px;
-  padding-bottom: 3px;
-  color:white;
-
-}
 .won-status
 {
 
@@ -1328,6 +1316,31 @@ td:nth-child(1) {
 
 }
 /* end of empanelment view */
+
+
+/* Prospect view */
+
+.redBack {
+  background: #e60505;;
+  height: 74px;
+
+}
+.warmdBack {
+  background-color: #ffa342;
+  font-weight: bold;
+}
+
+.coldBack{
+  background-color: skyblue;
+  font-weight: bold;
+}
+
+.red{
+  color:#e60505;
+}
+.red-num{
+  color:black;
+}
 
 
 /* Prospect view */
@@ -1384,34 +1397,21 @@ td:nth-child(1) {
   width: 80px;
   color:white !important;;
 }
-
-
-.cold-status{
-  background-color:#87d7f8 !important; ;
-  text-align: center;
-  padding: 5px;
-  width: 80px;
+.warm-status-pos{
+  background-color:#e68405 !important; ;
   color:white !important;;
-}
-.button-style{
   text-align: center;
-  width: 80px;
-  border-radius: 3px;
+  padding: 3px 10px;
+  font-size: 14px;
+  width: 90px !important;
+  height: 27px;
+  margin-top: 11px;
 }
-.center-text{
-  text-align: center;
-}
-.btn-new{
-  color:white;
-  background-color: #3a81f8;}
 
-.pageNav{
 
-  background-color: white;
-  color: black;
 
-}
 /* end of prospect view */
+
 .panel-heading-custom {
   background-color: #00a8f3;
   text-align: center;
@@ -1450,6 +1450,32 @@ td:nth-child(1) {
   display: none;
 }
 /* start of SLA TRacker */
+.step1-text{
+  font-size: 16px;
+  margin-left: 32% ;
+  font-weight: bold !important;
+}
+
+.step2-text{
+  font-size: 16px;
+  margin-left: 27%;
+}
+.step1-text-color{
+  font-size: 16px;
+  margin-left: 32% ;
+
+}
+ .step2-text-color{
+   font-size: 16px;
+   margin-left: 27%;
+   font-weight: bold !important;
+
+ }
+.sla-image{
+  margin-top:-15px;
+  margin-left: 31% !important;
+  padding: 25px !important;
+}
 .panel-heading1 {
 
   width: 100%;

@@ -12,6 +12,26 @@
 .bg-dark .nav > li:focus > a,
 .bg-dark .nav > li.active > a {
   color: #8A8A8A;
+
   background-color:white;
   border-left: 1px solid red;
 }
+
+.col-padding-class{
+  padding:14px 58px;
+}
+.change-pwd-text {
+  background-color: white;
+  border-left: 1px solid red;
+}
+
+.table-th-heading {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  text-align: center !important;
+}
+
+.col-padding-class{
+  padding:14px 58px;
+}
+

@@ -1,211 +1,36 @@
 <div class="container">
-  <div class="panel panel-default second-panel up-margin">
-    <div class="panel-title  panel-heading">
+  <div class="panel panel-default second-panel up-margin ">
+    <div class="panel-title  panel-heading ">
       Suspect
     </div>
-    <div class="panel-body">
-      <!-- <div class="panel-body">
-      &lt;!&ndash; <div class="form-group pull-right">
-
-         <select id="s1" class="form-control">
-           <option value="status">Status</option>
-           <option value="hot">Hot</option>
-           <option value="warm">Warm</option>
-           <option value="cold">Cold</option>
-         </select>
-      </div>&ndash;&gt;
-
-       <div class="form-group pull-right">
-       <div class="row">
-         <div class="col-md-8 col-lg-offset-4">
-           <div class=" is-empty">
-             <input class="form-control bord-remove" type="text" placeholder="Status">
-             <div id="grad1-status"></div>
-           </div>
-         </div>
-       </div>
-       </div>
-       <div class="row">
-       <hr class="line1">
-       </div>
-
-       <div class="row">
-       <div class="col-lg-8 back-color-label" >
-       <label class="inline ">
-       <h4 class="pull-left color-black">1) Primary Contact Person For Business</h4></label>
-         <label class="glyphicon glyphicon-minus pull-right minus-padding color-black"></label>
-       </div>
-       <div class="col-lg-1 col-lg-offset-2">
-         <a href="javascript:void(0)" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus"> Contact</a>
-       </div>
-       </div>
-       <div class="row">
-         <div class="col-md-6">
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Contact Person">
-           </div>
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Phone Number">
-           </div>
-         </div>
-         <div class="col-md-6">
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Address">
-           </div>
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-           </div>
-         </div>
-       </div>
-
-         <div class="row">
-         <div class="col-lg-8 back-color-label" >
-           <label class="inline ">
-             <h4 class="pull-left color-black">2) Escalation Contact Person For Business</h4></label>
-           <label class="glyphicon glyphicon-minus pull-right minus-padding color-black"></label>
-         </div>
-         </div>
-         <div class="row">
-         <div class="col-md-6">
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Contact Person">
-           </div>
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Phone Number">
-           </div>
-         </div>
-         <div class="col-md-6">
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Address">
-           </div>
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-           </div>
-
-
-         </div>
-         <div class="col-md-6">
-           <div class="form-group">
-             <label class="contacts">Contacts Provides</label>
-             <input type="checkbox" class="check">
-             <label>Remote</label>
-             <input type="checkbox" class="check">
-             <label>Local</label>
-           </div>
-         </div>
-
-       </div>
-         <div class="row">
-         <div class="col-md-6">
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Remote Location">
-           </div>
-         </div>
-
-       </div>
-
-         <div class="row">
-           <div class="col-lg-8 back-color-label" >
-             <label class="inline ">
-               <h4 class="pull-left color-black">3) Primary Contact Person For Finance</h4></label>
-             <label class="glyphicon glyphicon-minus pull-right minus-padding color-black"></label>
-           </div>
-         </div>
-         <div class="row">
-         <div class="col-md-6">
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Contact Person">
-           </div>
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Phone Number">
-           </div>
-         </div>
-         <div class="col-md-6">
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Address">
-           </div>
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-           </div>
-
-
-         </div>
-
-       </div>
-
-         <div class="row">
-           <div class="col-lg-8 back-color-label" >
-             <label class="inline ">
-               <h4 class="pull-left color-black">4) Primary Contact Person For Invoice</h4></label>
-             <label class="glyphicon glyphicon-minus pull-right minus-padding color-black"></label>
-           </div>
-         </div>
-       <div class="row">
-         <div class="col-md-6">
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Contact Person">
-           </div>
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Phone Number">
-           </div>
-           <div class="col-md-10">
-             <h4 class="color-black">Roll out of a proposal</h4>
-             <div class="form-group is-empty is-fileinput">
-               <input type="file" id="inputFile4" multiple="">
-               <div class="input-group">
-                 <input type="text" readonly="" class="form-control" placeholder="No selected file">
-                   <span class="input-group-btn input-group-sm">
-                     <button type="button" class="btn warm-status btn-sm glyphicon glyphicon-paperclip">
-                     <i class="material-icons">attach file</i>
-                     </button>
-                   </span>
-               </div>
-               <span class="material-input control-label">Supported file formar PDF,DOC,PPT.</span>
-             </div>
-           </div>
-         </div>
-         <div class="col-md-6">
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Address">
-           </div>
-           <div class="form-group">
-             <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-           </div>
-         </div>
-
-       </div>
-
-       <div class="col-md-6 col-md-offset-5">
-         <div class="form-group">
-           <button class="btn btn-primary data-button">Cancel</button>
-           <button class="btn btn-primary data-button">Submit</button>
-         </div>
-       </div>
-
-     </div>-->
-      <div class="row">
-        <div class="col-lg-10">
+    <div class="panel-body  ">
+      <div class="row ">
+        <div class="col-lg-10 ">
           <accordion>
             <accordion-group is-open="status.open">
+
               <accordion-heading>
-          <span class="color-black">
+          <span class="color-black ">
           1) Primary Contact Person For Business
           <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': status.open, ' glyphicon-plus': !status.open}">
             </i>
             </span>
               </accordion-heading>
               <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Contact Person">
+                <div class="col-md-5 col-pad">
+                  <div class=" form-group label-floating is-empty">
+                    <label class="control-label">Contact Person</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Phone Number">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Phone Number</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Address">
+                <div class="col-md-5 col-md-offset-2">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Address</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
                   <div class="form-group">
                     <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
@@ -228,25 +53,28 @@
                ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
          </span></accordion-heading>
               <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Contact Person">
+                <div class="col-md-5 col-pad">
+                  <div class=" form-group label-floating is-empty">
+                    <label class="control-label">Contact Person</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Phone Number">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Phone Number</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Address">
+                <div class="col-md-5 col-md-offset-2">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Address</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
                   <div class="form-group">
                     <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
                   </div>
-
-
                 </div>
-                <div class="col-md-6">
+              </div>
+                <div class="row ">
+                <div class="col-md-6 col-pad">
                   <div class="form-group">
                     <label class="contacts">Contacts Provides</label>
                     <input type="checkbox" class="check">
@@ -254,11 +82,11 @@
                     <input type="checkbox" class="check">
                     <label>Local</label>
                   </div>
-                </div>
+                </div></div>
 
-              </div>
+
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5 col-pad">
                   <div class="form-group">
                     <input class="form-control bord-remove" type="text" placeholder="Remote Location">
                   </div>
@@ -278,25 +106,25 @@
                ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
           </span></accordion-heading>
               <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Contact Person">
+                <div class="col-md-5 col-pad">
+                  <div class=" form-group label-floating is-empty">
+                    <label class="control-label">Contact Person</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Phone Number">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Phone Number</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Address">
+                <div class="col-md-5 col-md-offset-2">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Address</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
                   <div class="form-group">
                     <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
                   </div>
-
-
                 </div>
-
               </div>
             </accordion-group>
           </accordion>
@@ -311,17 +139,20 @@
                ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
           </span></accordion-heading>
               <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Contact Person">
+                <div class="col-md-5 col-pad">
+                  <div class=" form-group label-floating is-empty">
+                    <label class="control-label">Contact Person</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Phone Number">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Phone Number</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Address">
+                <div class="col-md-5 col-md-offset-2">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Address</label>
+                    <input class="form-control bord-remove" type="text" >
                   </div>
                   <div class="form-group">
                     <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
@@ -343,7 +174,7 @@
                   </button>
                 </span>
             </div>
-            <span class="material-input control-label">Supported file formar PDF,DOC,PPT.</span>
+            <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
           </div>
         </div>
       </div>

@@ -9,9 +9,7 @@ angular.module('app')
           _window = $(window),
           prev = _el.prev(),
           parent,
-          width = _window.width()
-          ;
-
+          width = _window.width();
         !prev.length && (parent = _el.parent());
 
         function sm() {

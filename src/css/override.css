@@ -1,9 +1,14 @@
 
-.bg-dark .nav > li:hover > a,
+.bg-dark .nav > li:hover > a{
+  color: white;
+  background-image:url("../img/navbar_selected.png") !important;
+  background-color: #d7d7d7;
+
+}
 .bg-dark .nav > li.active > a {
   color: white;
   background-image:url("../img/navbar_selected.png") !important;
- background-color: #d7d7d7;
+ background-color: #474747;
 }
 
 .col-padding-class{
@@ -27,7 +32,6 @@
 .search-box-width{
   width: 50%;
 }
-.suspect-pos-head-color{
+.td-text-color{
   color: #2277b1;
-  font-size: 18px;
 }

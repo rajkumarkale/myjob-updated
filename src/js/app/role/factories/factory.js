@@ -16,7 +16,7 @@ angular.module('com.module.role').factory('rolesFactory', function ($http, appCo
         return $http({
             method: 'GET',
             url: BASEURI + '/roles/list/0/1000'
-        })
+        });
     };
 
     var updateRole = function (data) {
@@ -32,5 +32,5 @@ angular.module('com.module.role').factory('rolesFactory', function ($http, appCo
         createRole: createRole,
         readRoles: readRoles,
         updateRole: updateRole
-    }
+    };
 });

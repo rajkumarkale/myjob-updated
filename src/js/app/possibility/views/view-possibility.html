@@ -1,50 +1,33 @@
-<div class="maincol-apply" >
+<div class="maincol-apply">
   <div class="container all-dateinputs">
-    <div class="pull-right">
-      <form id="form" name="form" class="form-inline">
-        <div class="form-group">
-          <label for="startDate">From</label>
+    <div class="container">
+      <div class="pull-right">
+        <form id="form" name="form" class="form-inline" novalidate>
+          <label for="startDate" class="labels-dates poss-mrg">From</label>
           <div class="input-group">
             <a ng-click="open($event,'opened1')">
-              <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
-            <span class="input-group-addon" id="basic-addon1">
-            <img src="img/calendar_icon.png" class="calendar-img"  alt=""/></span>
+              <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
+                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
+                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
+            <span class="input-group-btn" id="basic-addon1">
+            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
             </a>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="endDate">To</label>
+          <label for="endDate" class="labels-dates poss-mrg">to</label>
           <div class="input-group">
-            <a ng-click="open($event,'opened2')"><input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
+            <a ng-click="open($event,'opened2')">
+              <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
+                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
+                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
             <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png"  class="calendar-img" alt=""/></span>
+            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
             </a>
           </div>
-          <button class="btn btn-primary filter">Filter</button>
-        </div>
-      </form>
-      <!--<form id="form" name="form" class="form-inline">
-        <div class="form-group">
-          <label for="startDate" class="color-black">From</label>
-          <div class="input-group">
-            <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"/>
-            <span class="input-group-addon" id="basic-addon1">
-            <img src="img/calendar_icon.png" alt=""/></span>
-          </div>
-
-          <label for="endDate" class="color-black">To</label>
-          <div class="input-group">
-            <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon2"/>
-            <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" alt=""/></span>
-          </div>
-          <button class="btn btn-primary filter mrg-button">Filter</button>
-        </div>
-      </form>-->
+          <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="container content" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
-    <div class="col-md-12">
+  <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary in the month of April 2016</div>
         <div class="panel-body">
@@ -55,7 +38,7 @@
                   <div class="col-md-3 orange">
                     <img src="img/icon_met.png" alt="" class="center-block img-pad"/>
                   </div>
-                  <div class="col-md-9 text-center">
+                  <div class="col-md-9 text-center color-divs">
                     <div class="met">MET</div>
                     <div class="met-num">{{data.met}}</div>
                   </div>
@@ -66,7 +49,7 @@
                   <div class="col-md-3 greenmet">
                     <img src="img/icon_not met.png" alt="" class="center-block img-pad"/>
                   </div>
-                  <div class="col-md-9 text-center">
+                  <div class="col-md-9 text-center color-divs">
                     <div class="not-met">NOT MET</div>
                     <div class="met-num">{{data.notMet}}</div>
                   </div>
@@ -75,9 +58,9 @@
               <div class="listDetails">
                 <div class="listDetailsContent">
                   <div class="col-md-3 orangeactive">
-                    <img src="img/icon-inactive.png" alt="" class="center-block img-pad"/>
+                    <img src="img/icon_inactive.png" alt="" class="center-block img-pad"/>
                   </div>
-                  <div class="col-md-9 text-center">
+                  <div class="col-md-9 text-center color-divs">
                     <div class="inactive">INACTIVE</div>
                     <div class="met-num">{{data.inactive}}</div>
                   </div>
@@ -89,51 +72,33 @@
       </div>
     </div>
 
-   </div>
-    <div class="possibilities">
-	<div class="row">
-    <div class="form-group pull-right">
-                <button class="btn btn-primary poss-btn" ui-sref="app.createPossibility"><i class="fa fa-plus poss-mrg"></i> New Possibility</button>
-            </div>
-  </div>
-           <!-- <div class="possibilities">
-              &lt;!&ndash;  <h4 class="pull-left head">All Possiblities
-
-    <div class="form-group pull-right">
-      <button class="btn btn-primary poss-btn" ui-sref="app.createPossibility"><i class="fa fa-plus poss-mrg"></i> New Possibility</button>
-    </div>
-    <div class="possibilities">
-      <h4 class="pull-left head">All Possiblities
-r
-                    <span class="pull-right col-md-4">
-                    <div class="input-group">
-                <input type="text" class="form-control btn-rounded back-color" placeholder="Search By Location,Company Name,Contact"
-                       aria-describedby="basic-addon3">
-                <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
-              </div></span></h4>&ndash;&gt;
-
-    </div>-->
-
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-group pull-right">
+            <button class="btn btn-primary btn-raised btn-md poss-btn" ui-sref="app.createPossibility"><i
+              class="fa fa-plus poss-mrg"></i> New Possibility
+            </button>
+          </div>
+        </div>
+      </div>
     <div class="panel-body">
       <div class="row">
+        <div class="col-lg-12">
         <h4 class="pull-left head">All Possiblities</h4>
-        <span class="pull-right col-md-4">
+        <span class="pull-right search-box-width">
              <div class="input-group">
-                <input type="text" class="form-control btn-rounded back-color" placeholder="Search By Location,Company Name,Contact"
+
+                <input type="text" class="form-control btn-rounded back-color img-remove" placeholder="Search By Location,Company Name,Contact"
                        aria-describedby="basic-addon3">
                 <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
               </div>
           </span>
       </div>
-    </div>
-  </div>
-
-
+</div>
     <div class="panel-body">
       <div class="row">
         <label class=" dropdown checkBoxDrop pull-left ">
           <input type="checkbox" class="checkBox" ng-model="selectAll">
-          <!-- <span class="caret checkBxDrop" data-toggle="dropdown"></span>-->
         </label>
         <label class="checkBox-showall pull-left " ng-show="selectAll || checked1 ">
           <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
@@ -146,32 +111,32 @@ r
         </label>
       </div>
     </div>
-    <table class="table table-striped table-bod m-n">
-      <thead class="table-head">
+    <table class="table table-striped table-bod m-n ">
+      <thead class="table-head " >
       <tr>
-        <th></th>
-        <th>Legal Entity</th>
-        <th>Business Unit</th>
-        <th>Location</th>
-        <th>Contact Person</th>
-        <th>Contact Designation</th>
-        <th>Contact Number</th>
-        <th>Status</th>
-        <th>Discussions</th>
+        <th class="table-th-heading"></th>
+        <th  class="table-th-heading">Legal Entity <span class="glyphicon glyphicon-sort color-black " ></span> </th>
+        <th>Business Unit <span class="glyphicon glyphicon-sort color-black" ></span></th>
+        <th class="table-th-heading">Location <span class="glyphicon glyphicon-sort color-black" ></span></th>
+        <th class="table-th-heading">Contact Person <span class="glyphicon glyphicon-sort color-black" ></span></th>
+        <th class="table-th-heading">Contact Designation</th>
+        <th class="table-th-heading">Contact Number</th>
+        <th class="table-th-heading">Status <span class="glyphicon glyphicon-filter color-black" ></span></th>
+        <th class="table-th-heading">Discussions</th>
       </tr>
       </thead>
       <tbody>
       <tr data-ng-repeat="possibility in data.possibilities" data-ng-click="openEditPossibility(possibility)">
         <td>
 
-            <div class="chekbox">
-              <label >
-                <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
+          <div class="chekbox">
+            <label>
+              <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
-              </label>
-            </div>
+            </label>
+          </div>
 
         </td>
         <td>{{possibility.legal_name}}</td>
@@ -184,22 +149,26 @@ r
           <p class="btn btn-raised warm-status m-n btn-sm">NOT MET</p>
         </td>
         <td>
-          <button class="btn btn-raised  btn-info m-n btn-sm">New Call</button>
+          <button class="btn btn-raised  btn-info m-n btn-sm">Discussion</button>
         </td>
       </tr>
 
       </tbody>
     </table>
-    <pagination class="pagination-sm m-n m-r-sm pad-b-20 pull-right"
-                page ="data.currentPage"
-                total-items="data.totalItems"
-                ng-model="data.currentPage"
-                ng-change ="getPossibilities(data.currentPage,data.numPerPage)"
-                max-size="4"
-                items-per-page="data.numPerPage"
-                rotate="false"
-                boundary-links="false">
-    </pagination>
+    <div class="row">
+      <div class="col-lg-12">
+        <pagination class="pagination-sm pull-right"
+                    page="data.currentPage"
+                    total-items="data.totalItems"
+                    ng-model="data.currentPage"
+                    ng-change="getPossibilities(data.currentPage,data.numPerPage)"
+                    max-size="4"
+                    items-per-page="data.numPerPage"
+                    rotate="false"
+                    boundary-links="false">
+        </pagination>
+      </div>
+    </div>
   </div>
-
+</div>
 </div>

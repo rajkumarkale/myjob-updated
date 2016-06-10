@@ -5,7 +5,7 @@ angular.module('com.module.possibility').directive('customSelect',[function (){
       data:'=data'   },
     templateUrl:'js/app/possibility/views/custom-select-template.html',
     replace:true,
-   link:function(s,e,a){
+   link:function(s){
     {
      s.dataList=s.data;
      angular.element('.select').off('click').on('click', '.placeholder', function() {

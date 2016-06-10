@@ -78,9 +78,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
     });
   };
 
-/*
     $scope.resetPassword = function(user){
-
       $scope.myPromise =  AuthService.reset({
         password: user.password,
         confirmPassword: user.confirmPassword,
@@ -92,5 +90,5 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
         console.log(error);
         $scope.resetError = true;
         });
-    };*/
+    };
 }]);

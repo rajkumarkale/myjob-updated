@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <!-- build:css(.) css/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
   <link rel="stylesheet" href="bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css" />
   <link rel="stylesheet" href="bower_components/ngImgCrop/compile/minified/ng-img-crop.css" />
   <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
@@ -27,6 +27,8 @@
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) css/main.css -->
+
+   <link rel="stylesheet" href="css/material.css" type="text/css"/>
   <link rel="stylesheet" href="css/animate.css" type="text/css"/>
   <link rel="stylesheet" href="css/custom.css" type="text/css"/>
   <link rel="stylesheet" href="css/app.css" type="text/css"/>
@@ -143,6 +145,7 @@
 <script src="js/app/possibility/config/config.js"></script>
 <script src="js/app/possibility/config/router.js"></script>
 <script src="js/app/possibility/controllers/possibility-list.js"></script>
+<script src="js/app/possibility/controllers/checkbox.js"></script>
 <script src="js/app/possibility/controllers/create-possibility.js"></script>
 <script src="js/app/possibility/controllers/create-client-model-controller.js"></script>
 <script src="js/app/possibility/controllers/edit-possibility.js"></script>
@@ -155,7 +158,6 @@
 <script src="js/app/empanelment/config/router.js"></script>
 <script src="js/app/empanelment/controllers/create-empanelment-controller.js"></script>
 <script src="js/app/empanelment/controllers/view-empanelmentCtrl.js"></script>
-<script src="js/app/empanelment/Directives/create-SLA-Tracker-directive.js"></script>
 
 <script src="js/app/prospect/config/config.js"></script>
 <script src="js/app/prospect/config/router.js"></script>
@@ -167,6 +169,7 @@
 
 
 <script src="js/app/suspect/controllers/create-suspectCtrl.js"></script>
+<script src="js/app/suspect/controllers/suspect-viewCtrl.js"></script>
 
 
 
@@ -196,6 +199,7 @@
 <script src="js/app/admin/controllers/admin-books-controller.js"></script>
 <script src="js/app/admin/controllers/admin-users-controller.js"></script>
 <script src="js/app/admin/services/admin-service.js"></script>
+
 <!-- endbuild -->
 </body>
 </html>

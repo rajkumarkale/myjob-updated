@@ -2871,7 +2871,7 @@ fieldset[disabled] .i-checks input + i:before {
 
 .bg-dark {
   color: #a6a8b1;
-  background-color: #3a3f51;
+  background-color: #5c5d5b;
 }
 
 .bg-dark.lt,
@@ -2912,12 +2912,12 @@ fieldset[disabled] .i-checks input + i:before {
   background-color: inherit;
 }
 
-.bg-dark .nav > li:hover > a,
+/*.bg-dark .nav > li:hover > a,
 .bg-dark .nav > li:focus > a,
 .bg-dark .nav > li.active > a {
   color: #8A8A8A;
   background-color: #2e3344;
-}
+}*/
 .bg-dark .nav > li:hover > a,
 .bg-dark .nav > li:focus > a,
 .bg-dark .nav > li.active > a {

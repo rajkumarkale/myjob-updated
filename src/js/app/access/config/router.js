@@ -52,6 +52,6 @@ angular.module('com.module.access').config(['$stateProvider', function ($statePr
       data :{
         title:'Sign out'
       }
-    })
+    });
 
 }]);

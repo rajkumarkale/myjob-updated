@@ -1,15 +1,33 @@
-/*.nav>li.act1>a:hover{
-  background-color: green;
-}*/
-/*.nav>li.act1>a:active{
-  background-color: #5cffbf !important;
-}*/
-/*.active-nav:hover,:active,:focus{
-  background-color: #00aa9a;
 
-}*/
 .bg-dark .nav > li:hover > a,
-.bg-dark .nav > li:focus > a,
 .bg-dark .nav > li.active > a {
-  color: #8A8A8A;
-  background-color:white;}
+  color: white;
+  background-image:url("../img/navbar_selected.png") !important;
+ background-color: #d7d7d7;
+}
+
+.col-padding-class{
+  padding:14px 58px;
+}
+.change-pwd-text {
+  background-color: white;
+  border-left: 1px solid red;
+}
+
+.table-th-heading {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  text-align: center !important;
+}
+
+.col-padding-class{
+  padding:14px 58px;
+}
+
+.search-box-width{
+  width: 50%;
+}
+.suspect-pos-head-color{
+  color: #2277b1;
+  font-size: 18px;
+}

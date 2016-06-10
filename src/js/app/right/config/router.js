@@ -15,5 +15,5 @@ angular.module('com.module.right').config(['$stateProvider', function ($statePro
       data :{
         title:'rights List'
       }
-    })
+    });
 }]);

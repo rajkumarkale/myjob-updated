@@ -9,20 +9,21 @@ angular.module('com.module.access')
       });
     };
     this.login = function (data) {
-     return $http({
+      var deferred = $q.defer();
+      $http({
         method: 'POST',
         url: appConfig.apiUrl + '/api/login',
         data: data
-      }).success(function (data) {
-       var user = {
-         token: data.authHeader,
-         userDetails:data.user
-       };
-       $cookies.userData = JSON.stringify(user);
-       deferred.resolve(user);
-     }).error(function (error) {
-       deferred.reject(error);
-     });
+      }).success(function (data, status, headers, config) {
+        var user = {
+          token: data.authHeader,
+          userDetails:data.user
+        };
+        $cookies.userData = JSON.stringify(user);
+        deferred.resolve(user);
+      }).error(function (error) {
+        deferred.reject(error);
+      });
       return deferred.promise;
     };
     this.getUserInfo = function () {

@@ -1745,13 +1745,5 @@ td:nth-child(1) {
   color: black;
 }
 
-/* create suspect */
-.minus-padding{
-  padding-top: 15px;
-}
-.back-color-label{
-  padding-top: 3px;
-  background-color: rgba(238, 238, 238, 0.52);
-}
-/* end create suspect  */
+
 

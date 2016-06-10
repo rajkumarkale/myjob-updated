@@ -20,7 +20,7 @@ angular.module('com.module.prospect')
       $scope.opened1 = false;
     }
   };
-  
+
 
 }]);
 

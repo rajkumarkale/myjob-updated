@@ -3,6 +3,12 @@
  */
 angular.module('com.module.suspect')
   .controller('createSuspectCtrl',['$scope','$modal',function($scope,$modal){
+
+    $scope.status = {
+      isFirstOpen: true,
+      isFirstDisabled: false
+    }
+
     $scope.open = function($event,opened) {
       $event.preventDefault();
       $event.stopPropagation();

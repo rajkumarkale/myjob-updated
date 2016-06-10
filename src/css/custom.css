@@ -5,7 +5,12 @@
   -o-background-size: cover;
   background-size: cover;
 }
-
+.sign-button:hover{
+  background-color:#23b7e5 !important;
+}
+.sign-button{
+  background-color:#23b7e5 !important;
+}
 .hand-cursor{
   cursor: pointer;
 }
@@ -133,6 +138,9 @@
 /*list possibility*/
 .content {
     margin-top: 10px;
+}
+.del-pad{
+  padding-top: 0px;
 }
 #basic-addon1 {
     padding-top: 1px;
@@ -353,6 +361,12 @@ margin-left: 520px;
 }
 .poss-list{
    margin:0px;
+}
+.mrg-apply{
+  margin-top: -35px;
+}
+.table-topdiv{
+  overflow-x: scroll;
 }
 /*end create possibility*/
 
@@ -583,17 +597,6 @@ margin-left: 520px;
   width: 80px;
   color:white !important;;
   }
-
-.lost-status-text{
-  background-color: #a948b8 !important;
-  text-align: center;
-  padding: 3px 10px;
-  font-size: 14px;
-  width: 90px !important;
-  color: white;
-  height: 27px;
-  margin-top: 11px;
-}
  .won-status-text{
   background-color: green;
   text-align: center;
@@ -602,7 +605,6 @@ margin-left: 520px;
   width: 90px !important;
   color: white;
   height: 27px;
-  margin-top: 11px;
 }
 .won-status-text-color{
   color: #478804;
@@ -621,7 +623,6 @@ margin-left: 520px;
   width: 90px !important;
   color: white;
   height: 27px;
-  margin-top: 11px;
 
 }
  .detailsContentDiv-prosp{
@@ -1105,9 +1106,12 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 .table-bod>tbody>tr>td {
   border-top: none;
+  white-space: nowrap;
+  text-align: center;
 }
 .table-bod>thead>tr>th {
   padding:10px !important;
+  white-space: nowrap;
 }
 .table-bod>tbody tr:nth-child(odd) {
   background-color: #F3F3F3;
@@ -1119,9 +1123,8 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   background-color: white;
   color: #2277b1;
 }
-td:nth-child(1) {
+.table-bod>tbody>tr>td:nth-child(2) {
   color: #2277b1;
-  font-weight: bold;
 }
 .main-panel>.panel-heading{
   background-color: white !important;

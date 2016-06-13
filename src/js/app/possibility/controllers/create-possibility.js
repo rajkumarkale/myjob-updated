@@ -1,5 +1,5 @@
 angular.module('com.module.possibility')
-    .controller('createPossibilityController', ['$scope', 'toaster', '$state','$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies','$timeout', function($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies,$timeout) {
+    .controller('createPossibilityController', ['$scope', 'toaster', '$state','$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies', function($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies) {
         $scope.init = function($stateParams) {
 
             $scope.isEditable = false;
@@ -8,6 +8,7 @@ angular.module('com.module.possibility')
             $scope.businessVertical = appConfig.possibility.businessVertical;
             $scope.customerType = appConfig.possibility.customerType;
             $scope.contactType = appConfig.possibility.contactType;
+            $scope.status = appConfig.possibility.status;
 
             $scope.uploadFiles= [];
             if ($stateParams.possibility) {
@@ -20,14 +21,15 @@ angular.module('com.module.possibility')
                     $scope.groupTurnover.selectedItem = $scope.getSlectedItem($scope.createPossibility.turnover, $scope.groupTurnover);
                     $scope.businessVertical.selectedItem = $scope.getSlectedItem($scope.createPossibility.vertical, $scope.businessVertical);
                     $scope.customerType.selectedItem = $scope.getSlectedItem($scope.createPossibility.customer_type, $scope.customerType);
+                    $scope.status.selectedItem = $scope.getSlectedItem($scope.createPossibility.current_status.status,$scope.status);
                     $scope.point_of_contacts.map(function(pocObject){
                     	if(pocObject.contact_type !== 'PRIMARY'){
                     		var selectedItem = pocObject.contact_type;
                     		pocObject.contact_type=appConfig.possibility.contactType;
                     pocObject.contact_type.selectedItem = $scope.getSlectedItem(selectedItem, pocObject.contact_type);
 
-                    	} 
-                    	console.log(pocObject.contact_type);
+                    	}
+                    	pocObject.isOpen = true;
                     if (pocObject.support_type === 'BOTH') {
                         pocObject.remote = true;
                         pocObject.local = true;
@@ -47,7 +49,7 @@ angular.module('com.module.possibility')
 
                 $scope.title = "New Possibility";
                 $scope.createPossibility = {};
-                $scope.point_of_contacts =[{name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:"PRIMARY"}];
+                $scope.point_of_contacts =[{name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:"PRIMARY",isOpen:true}];
 
             }
         };
@@ -89,6 +91,8 @@ angular.module('com.module.possibility')
             	possibilityObject.customer_type = $scope.customerType.selectedItem.key;
         		possibilityObject.client_unit_id = $scope.client_unit_id;
         		possibilityObject.current_status = current_status;
+        		possibilityObject.current_status.status = $scope.status.selectedItem.key
+        		possibilityObject.user_id = $scope.point_of_contacts[0].user_id;
         		possibilityObject.point_of_contacts =[];
         		 possibilityObject.urls = [];
             if ($scope.uploadFiles && $scope.uploadFiles.length) {
@@ -100,7 +104,7 @@ angular.module('com.module.possibility')
                 }
             }
         		$scope.point_of_contacts.map(function(pocObj){
-            	var requestPocObject ={}; 
+            	var requestPocObject ={};
             	requestPocObject._id = pocObj._id;
             	requestPocObject.name = pocObj.name;
             	requestPocObject.phone = pocObj.phone;
@@ -129,6 +133,7 @@ angular.module('com.module.possibility')
        			delete possibilityObject.address.time_updated;
        			delete possibilityObject.time_updated;
        			delete possibilityObject.address.user_id ;
+       			delete possibilityObject.documents;
 	       		possibilityCreateService.updatePossibility(possibilityObject).success(function() {
                 toaster.pop('success', 'POSSIBILITY Created Successfully.');
                 $state.go('app.viewPossibility');
@@ -162,14 +167,13 @@ angular.module('com.module.possibility')
                 }
             }
             $scope.point_of_contacts.map(function(pocObj){
-            	var requestPocObject ={}; 
+            	var requestPocObject ={};
             	requestPocObject.name = pocObj.name;
             	requestPocObject.phone = pocObj.phone;
             	requestPocObject.designation = pocObj.designation;
             	requestPocObject.email_id = pocObj.email_id;
             	requestPocObject.support_location = pocObj.support_location;
             	requestPocObject.contact_type =pocObj.contact_type.selectedItem?pocObj.contact_type.selectedItem.key:pocObj.contact_type;
-            	console.log(requestPocObject.contact_type);
             	if (pocObj.remote && pocObj.local) {
                 requestPocObject.support_type = 'BOTH';
             } else if (pocObj.remote) {
@@ -182,7 +186,7 @@ angular.module('com.module.possibility')
             requestObject.point_of_contacts.push(requestPocObject);
 
             })
-            
+
             possibilityCreateService.setPossibility(requestObject).success(function() {
                 $state.go('app.viewPossibility');
                 toaster.pop('Success', 'POSSIBILITY Created Successfully.');
@@ -208,7 +212,10 @@ angular.module('com.module.possibility')
 
         };
         $scope.editForm = function() {
-            $scope.isEditable = true;
+        	if($scope.createPossibility.current_status.status !== "MET"){
+        		            $scope.isEditable = true;
+
+        	}
 
         };
 
@@ -216,7 +223,7 @@ angular.module('com.module.possibility')
             $state.go('app.viewPossibility');
         };
         $scope.disableForm = function() {
-            if (!$scope.isEditable && !$scope.isNewPossibility) {
+            if (!$scope.isEditable && !$scope.isNewPossibility ) {
                 var className = 'app-container-blur';
                 return className;
             }
@@ -236,10 +243,13 @@ angular.module('com.module.possibility')
                             file.url = resp.data.url;
                             $scope.uploadFiles.push(file);
                         }, null, function(evt) {
-                            
+
                         });
                     }
                 }
             }
+        };
+        $scope.toggleOpen = function(poc){
+        	return poc.isOpen =!poc.isOpen;
         };
     }]);

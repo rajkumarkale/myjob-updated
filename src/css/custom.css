@@ -1728,13 +1728,5 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   color: black;
 }
 
-/* create suspect */
-.minus-padding{
-  padding-top: 15px;
-}
-.back-color-label{
-  padding-top: 3px;
-  background-color: rgba(238, 238, 238, 0.52);
-}
-/* end create suspect  */
+
 

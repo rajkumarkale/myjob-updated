@@ -35,7 +35,7 @@ angular.module('com.module.access')
     this.logout = function () {
       return $http({
         method: 'DELETE',
-        url: appConfig.apiUrl + '/logout'
+        url: appConfig.apiUrl + '/api/logout'
       });
     };
     this.signUp = function (data) {

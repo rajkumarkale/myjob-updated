@@ -14,16 +14,19 @@ angular.module('com.module.access')
         method: 'POST',
         url: appConfig.apiUrl + '/api/login',
         data: data
-      }).success(function (data, status, headers, config) {
-        var user = {
-          token: data.authHeader,
-          userDetails:data.user
-        };
-        $cookies.userData = JSON.stringify(user);
-        deferred.resolve(user);
-      }).error(function (error) {
-        deferred.reject(error);
-      });
+      }).success(function (data) {
+        var now = new Date();
+        now.setDate(now.getDate()+1);
+       var user = {
+         token: data.authHeader,
+         userDetails:data.user,
+         expires:now
+       };
+       $cookies.userData = JSON.stringify(user);
+       deferred.resolve(user);
+     }).error(function (error) {
+       deferred.reject(error);
+     });
       return deferred.promise;
     };
     this.getUserInfo = function () {
@@ -32,7 +35,7 @@ angular.module('com.module.access')
 
     this.logout = function () {
       return $http({
-        method: 'GET',
+        method: 'DELETE',
         url: appConfig.apiUrl + '/logout'
       });
     };

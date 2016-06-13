@@ -21,4 +21,23 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
     modalInstance.result.then(function () {
     });
   };
+    $scope.updateProfile = function(){
+      var modalInstance = $modal.open({
+        templateUrl: 'js/app/user/views/update-profile.html',
+        backdrop: 'static',
+        controller: function($scope, $modalInstance){
+          $scope.ok = function ()
+          {
+            $modalInstance.close();
+          };
+          $scope.cancel = function ()
+          {
+            $modalInstance.dismiss();
+          };
+        },
+        size: 'md'
+      });
+      modalInstance.result.then(function () {
+      });
+    };
   }]);

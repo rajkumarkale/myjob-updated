@@ -1,5 +1,5 @@
-angular.module('com.module.user').controller('appController', ['$scope','$state','AuthService','$rootScope','$modal', 'user',
-  function ($scope,$state,AuthService,$rootScope,$modal, user) {
+angular.module('com.module.user').controller('appController', ['$scope','$state','AuthService','$rootScope','$modal', 'user','$cookieStore',
+  function ($scope,$state,AuthService,$rootScope,$modal, user,$cookieStore) {
   'use strict';
   $rootScope.user = user.data;
   $rootScope.isAdmin =  false;
@@ -7,8 +7,11 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
   $scope.backgroundImageDisplay = false;
   $scope.logout = function (){
     AuthService.logout().success(function (data){
+      $cookieStore.remove('userData');
       $state.go('access.signin');
-      $cookies.token = '';
+      /*$cookies.token = '';*/
+    }, function (error) {
+      console.log(error);
     });
   };
   $scope.changePassword = function(){

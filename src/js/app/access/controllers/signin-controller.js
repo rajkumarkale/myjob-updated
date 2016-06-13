@@ -70,12 +70,12 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
     });
 
   };
-  $scope.logout = function () {
+  /*$scope.logout = function () {
     AuthService.logout().then(function (response) {
 
     }, function (error) {
     });
-  };
+  };*/
 
     $scope.resetPassword = function(user){
       $scope.myPromise =  AuthService.reset({

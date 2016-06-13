@@ -1,0 +1,60 @@
+<div class="addDiscusHeading modal-header ">
+  <h3 class="modal-title "> Update Profile</h3>
+  </div>
+<div class="modal-body">
+<form>
+  <div class="row">
+  <div class="col-lg-5 col-pad">
+    <div class="form-group label-floating is-empty">
+      <label for="i1" class="control-label">Name</label>
+      <input type="text" class="form-control" id="i1">
+    </div>
+  </div>
+  <div class="col-lg-5 col-pad">
+    <div class="form-group label-floating is-empty">
+      <label for="i1" class="control-label">Conpany Name</label>
+      <input type="text" class="form-control" id="i2">
+    </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-lg-5 col-pad">
+      <div class="form-group label-floating is-empty">
+        <label for="i1" class="control-label">Email Id</label>
+        <input type="email" class="form-control" id="i3">
+      </div>
+    </div>
+    <div class="col-lg-5 col-pad">
+      <div class="form-group label-floating is-empty">
+        <label for="i1" class="control-label">Location</label>
+        <input type="text" class="form-control" id="i4">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-5 col-pad">
+
+      <div class="form-group label-floating is-empty">
+        <label class="control-label">Contact No.</label>
+        <input class="form-control" numbers-only name="n2" required="required" ng-model="n2" type="text"
+               minlength="10" maxlength="12" ng-required="usrform.n2.$error">
+        <span ng-show="usrform.n2.$invalid && usrform.n2.$dirty  ">please enter valid text</span>
+      </div>
+    </div>
+    <div class="col-lg-5 col-pad">
+      <div class="form-group label-floating is-empty">
+        <label class="control-label">Zip Code</label>
+        <input class="form-control" numbers-only name="n2" required="required" ng-model="n2" type="text"
+               minlength="6" maxlength="6" ng-required="usrform.n2.$error">
+        <span ng-show="usrform.n2.$invalid && usrform.n2.$dirty  ">please enter valid text</span>
+      </div>
+    </div>
+  </div>
+  <div class="centerBtn">
+    <a href="javascript:void(0)" class="btn btn-raised btn-default" ng-click="ok()">Cancle</a>&nbsp;
+    <a href="javascript:void(0)" class="btn btn-raised btn-info" ng-click="cancel()">Submit</a>
+  </div>
+</form>
+</div>
+
+

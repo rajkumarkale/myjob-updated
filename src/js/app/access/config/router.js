@@ -45,13 +45,14 @@ angular.module('com.module.access').config(['$stateProvider', function ($statePr
       data :{
         title:'Forgot password'
       }
-    })
-    .state('access.signout', {
+    });
+    /*.state('access.signout', {
       url: '/sign-out',
-      controller: 'SignInFormController',
+      controller: 'SignOutFormController',
+      templateUrl: 'js/app/access/views/sign-in.html',
       data :{
         title:'Sign out'
       }
-    });
+    });*/
 
 }]);

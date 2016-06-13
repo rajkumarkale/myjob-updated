@@ -14,9 +14,12 @@ angular.module('com.module.access')
         url: appConfig.apiUrl + '/api/login',
         data: data
       }).success(function (data) {
+        var now = new Date();
+        now.setDate(now.getDate()+1);
        var user = {
          token: data.authHeader,
-         userDetails:data.user
+         userDetails:data.user,
+         expires:now
        };
        $cookies.userData = JSON.stringify(user);
        deferred.resolve(user);
@@ -31,7 +34,7 @@ angular.module('com.module.access')
 
     this.logout = function () {
       return $http({
-        method: 'GET',
+        method: 'DELETE',
         url: appConfig.apiUrl + '/logout'
       });
     };

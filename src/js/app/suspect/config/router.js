@@ -7,7 +7,7 @@ angular.module('com.module.suspect').config(['$stateProvider', function ($stateP
     .state('app.suspect-view', {
       url: '/suspect-view',
       templateUrl: 'js/app/suspect/views/suspect-view.html',
-      controller:'suspectViewCtrl'
+      controller:'suspectListController'
     })
     .state('app.create-suspect-view', {
       url: '/create-suspect',

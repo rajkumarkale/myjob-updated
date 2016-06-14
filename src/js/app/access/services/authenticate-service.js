@@ -9,7 +9,8 @@ angular.module('com.module.access')
       });
     };
     this.login = function (data) {
-     return $http({
+      var deferred = $q.defer();
+      $http({
         method: 'POST',
         url: appConfig.apiUrl + '/api/login',
         data: data

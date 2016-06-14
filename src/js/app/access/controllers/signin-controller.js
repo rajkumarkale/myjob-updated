@@ -6,7 +6,8 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
       password: user.password,
       email_id : user.email_id
     }).then(function (response) {
-      if(response.data.message){
+      console.log(response);
+      if(response.message){
         $scope.authStatus = true;
         $scope.authError = response.data.message;
         return ;
@@ -20,7 +21,6 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
       } else {
         $state.go($scope.app.loginRedirect);
       }
-
     }, function (error) {
       $scope.authStatus = true;
       $scope.authError = error.data.message;
@@ -72,7 +72,8 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
   };
   /*$scope.logout = function () {
     AuthService.logout().then(function (response) {
-
+      $cookieStore.remove('userData');
+      $location.path('/access/signin');
     }, function (error) {
     });
   };*/

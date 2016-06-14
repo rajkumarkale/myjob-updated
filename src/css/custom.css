@@ -295,7 +295,9 @@ margin-left: 520px;
   background-color: #049ad9 !important;color: white !important;padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
-    padding-bottom: 5px;border-radius: 0px;}
+    padding-bottom: 5px;border-radius: 0px;
+text-transform: none;
+margin-left: 50px;}
 .update-button{background-color: #049ad9 !important;color: white !important;border-radius: 0px;}
 .data-button{background-color: #049ad9 !important;color: white !important;margin-left: 10px;
     border-radius: 0px;
@@ -1433,7 +1435,7 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 /* start of SLA TRacker */
 .step1-text{
   font-size: 16px;
-  margin-left: 32% ;
+  margin-left: 29% ;
   font-weight: bold !important;
 }
 
@@ -1443,7 +1445,7 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 .step1-text-color{
   font-size: 16px;
-  margin-left: 32% ;
+  margin-left: 29% ;
 
 }
  .step2-text-color{
@@ -1454,11 +1456,21 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
  }
 .sla-image{
   margin-top:-15px;
-  margin-left: 31% !important;
+  margin-left: 27% !important;
   padding: 25px !important;
 }
+.sla-cancel-button{
+  background-color: #808080 !important;
+  color: white !important;
+  margin-left: -5%;
+  width: 120px;
+  border-radius: 0px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .panel-heading1 {
-
   width: 100%;
   text-align: center;
   color: white;
@@ -1672,7 +1684,8 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 .dropdown-title{
   font-size: 16px;
   margin: 0px 0px 0px;
-  color: #BDBDBD;
+/*  color: #BDBDBD;*/
+  color:#555555;
 }
 
 .cancel-right-class{

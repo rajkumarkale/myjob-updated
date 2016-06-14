@@ -1,68 +1,69 @@
 <div class="maincol-apply">
   <div class="container all-dateinputs">
-      <div class="container">
+    <div class="container">
       <div class="pull-right">
         <form id="form" name="form" class="form-inline" novalidate>
-            <label for="startDate" class="labels-dates poss-mrg">From</label>
-            <div class="input-group">
-              <a ng-click="open($event,'opened1')">
-                <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                       datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
-                       datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
+          <label for="startDate" class="labels-dates poss-mrg">From</label>
+          <div class="input-group">
+            <a ng-click="open($event,'opened1')">
+              <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
+                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
+                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
             <span class="input-group-btn" id="basic-addon1">
             <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-              </a>
-            </div>
-            <label for="endDate" class="labels-dates poss-mrg">To</label>
-            <div class="input-group">
-              <a ng-click="open($event,'opened2')">
-                <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                       datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
-                       datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
+            </a>
+          </div>
+          <label for="endDate" class="labels-dates poss-mrg">To</label>
+          <div class="input-group">
+            <a ng-click="open($event,'opened2')">
+              <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
+                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
+                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
             <span class="input-group-addon" id="basic-addon2">
             <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-              </a>
-            </div>
-            <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
+            </a>
+          </div>
+          <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
         </form>
       </div>
-      </div>
-  <div class="container col-md-12 pad-t-20 maincol-apply">
-    <div class="panel panel-primary pan-col">
-      <div class="panel-heading summary">Summary for the year of April 2016 to March 2017</div>
-      <div class="panel-body">
-        <div class="detailsContent">
-          <div class="detailsContentDiv">
-            <div class="listDetails">
-              <div class="listDetailsContent">
-                <div class="col-md-3 target-header-color">
-                  <img src="img/target_icon.png" alt="" class="center-block img-pad"/>
-                </div>
-                <div class="col-md-9 text-center color-divs">
-                  <div class="met-target">TARGET</div>
-                  <div class="met-num">10</div>
-                </div>
-              </div>
-            </div>
-            <div class="listDetails">
-              <div class="listDetailsContent">
-                <div class="col-md-3 prospect-header-color">
-                  <img src="img/prospect_icon.png" alt="" class="center-block img-pad"/>
-                </div>
-                <div class="col-md-9 text-center color-divs">
-                  <div class="met-prospect">PROSPECT</div>
-                  <div class="metprospect-num">10</div>
+    </div>
+    <div class="container col-md-12 pad-t-20 maincol-apply">
+      <div class="panel panel-primary pan-col">
+        <div class="panel-heading summary">Summary for the year of April 2016 to March 2017</div>
+        <div class="panel-body">
+          <div class="detailsContent">
+            <div class="detailsContentDiv">
+              <div class="listDetails">
+                <div class="listDetailsContent">
+                  <div class="col-md-3 target-header-color">
+                    <img src="img/target_icon.png" alt="" class="center-block img-pad"/>
+                  </div>
+                  <div class="col-md-9 text-center color-divs">
+                    <div class="met-target">TARGET</div>
+                    <div class="met-num">10</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="listDetails">
-              <div class="listDetailsContent">
-                <div class="col-md-3 empanelment-header-color">
-                  <img src="img/empanelment_icon.png" alt="" class="center-block img-pad"/>
+              <div class="listDetails">
+                <div class="listDetailsContent">
+                  <div class="col-md-3 prospect-header-color">
+                    <img src="img/prospect_icon.png" alt="" class="center-block img-pad"/>
+                  </div>
+                  <div class="col-md-9 text-center color-divs">
+                    <div class="met-prospect">PROSPECT</div>
+                    <div class="metprospect-num">10</div>
+                  </div>
                 </div>
-                <div class="col-md-9 text-center color-divs">
-                  <div class="empanel-col">EMPANELMENT</div>
-                  <div class="met-num">10</div>
+              </div>
+              <div class="listDetails">
+                <div class="listDetailsContent">
+                  <div class="col-md-3 empanelment-header-color">
+                    <img src="img/empanelment_icon.png" alt="" class="center-block img-pad"/>
+                  </div>
+                  <div class="col-md-9 text-center color-divs">
+                    <div class="empanel-col">EMPANELMENT</div>
+                    <div class="met-num">10</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -72,5 +73,4 @@
     </div>
 
   </div>
-</div>
 </div>

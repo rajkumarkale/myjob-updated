@@ -1210,7 +1210,24 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   content: '+';
 }
 
-
+.possibility-head .panel-heading{
+    background-color: #2277b1 !important;
+  color: white;
+  padding: 4px;
+}
+.possibility-head .panel-heading span{
+  font-size: 17px;
+  font-weight: bold;
+}
+.suspect-head .panel-heading{
+  background-color: #2277b1 !important;
+  color: white;
+  padding: 4px;
+}
+.suspect-head .panel-heading span{
+  font-size: 17px;
+  font-weight: bold;
+}
 /*end suspect*/
 /*suspect-view styles*/
 .hot-color-suspect{

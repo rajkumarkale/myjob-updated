@@ -1,406 +1,199 @@
-
-
-<div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
-
-  <button class="btn btn-primary contacts-button" data-ng-click="editForm();"> Edit</button>
-  <button ui-sref="app.viewPossibility" class="btn btn-primary contacts-button "> Cancel</button>
-</div>
-<div class="container col-md-12 pad-t-20" data-ng-class ="disableForm()"  data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
-  <accordion class="possibility-head">
-    <accordion-group>
-
-      <accordion-heading>
-        Possibility
-      </accordion-heading>
-      <form name="createPossibilityForm" >
-
-        <div class="row">
-          <div class="col-md-12 ">
-            <div class="col-md-6 form-custom-padding">
-
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Legal Entity</label>
-                <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text">
-              </div>
-
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Division Name</label>
-                <input class="form-control" required data-ng-model="createPossibility.division" type="text">
-              </div>
-
-
-              <div class="form-group" custom-select data="businessVertical"></div>
-              <div class="form-group" custom-select data="employeeSize"></div>
-
-
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Address Line 1</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 "
-                       type="text">
-
-              </div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">City</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.city " type="text">
-
-              </div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Zipcode</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.pin" type="text">
-
-              </div>
-
-            </div>
-
-
-            <div class="col-md-6 form-custom-padding">
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Business Unit</label>
-                <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text">
-
-              </div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Website URL</label>
-                <input class="form-control" required data-ng-model="createPossibility.url" type="text">
-
-              </div>
-              <div class="form-group" custom-select data="groupTurnover">
-
-              </div>
-              <div class="form-group" custom-select data="customerType">
-
-              </div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Address Line 2</label>
-                <input class="form-control"  data-ng-model="createPossibility.address.address_line_2" type="text">
-              </div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">State</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.state" type="text">
-
-              </div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Country</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.country" type="text">
-
-              </div><br>
-              <div data-ng-if="!isNewPossibility" class="form-group" custom-select data="status">
-
-              </div>
-              <div class="form-group1 pull-right ">
-                <input type="checkbox" class="check">
-                <label class=" first-class2 " >Freeze</label>
-              </div>
-
-            </div>
+<div class="container">
+  <div class="panel panel-default second-panel up-margin ">
+    <div class="panel-title  panel-heading ">
+      Suspect
+    </div>
+    <div class="panel-body  ">
+      <div class="form-group pull-right">
+        <div class="col-md-8">
+          <div class="form-group">
+            <input class="form-control bord-remove" type="text" placeholder="Status">
+            <div id="grad1-status"></div>
           </div>
-
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <div ngf-drop ngf-select ng-model="files" class="drop-box"
-                   ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
-                   accept="image/*,application/pdf"
-                   ngf-pattern="'image/*,application/pdf'">Drop pdfs or images here or click to upload</div>
-              <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-
-
-              Files:
-              <ul>
-                <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-                  <img ng-src="f.url" class="thumb"></li>
-              </ul>
-              <ul>
-                <li ng-repeat="f in uploadFiles" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-                  <img ngf-thumbnail="f" class="thumb"></li>
-              </ul>
-            </div>
-          </div>
-          <div ng-repeat="poc in point_of_contacts" class="row col-md-12">
-            <accordion>
-              <accordion-group is-open="poc.isOpen" >
-                <accordion-heading>
-            <span  class="color-black">
-            {{$index+1}}) Business Contact
-            <i class="pull-right glyphicon"
-               ng-class="{'glyphicon-minus': poc.isOpen, 'glyphicon-plus': !poc.isOpen}"></i>
-          </span></accordion-heading>
-                <div class="col-md-6 form-custom-padding">
-                  <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                    <label class="control-label">Contact Person</label>
-                    <input class="form-control" required data-ng-model="poc.name" type="text">
-
-                  </div>
-
-                  <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                    <label class="control-label">Contact Person Designation</label>
-                    <input data-ng-model="poc.designation" required class="form-control" type="text">
-
-                  </div>
-
-                  <div class="form-group">
-                    <label class="contacts">Contacts Provides</label>
-                    <input type="checkbox" ng-model="poc.remote" class="check">
-                    <label class="remote">Remote</label>
-                    <input type="checkbox" ng-model="poc.local" class="check">
-                    <label class="location">Location</label>
-                  </div>
-                  <div >
-                    <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                      <label class="control-label">Remote Location</label>
-                      <input required data-ng-model="poc.support_location" class="form-control" type="text">
-
-                    </div>
-                  </div>
-
-                </div>
-                <div class="col-md-6 form-custom-padding">
-                  <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                    <label class="control-label">Contact Person Phone Number</label>
-                    <input class="form-control" numbers-only data-ng-model="poc.phone" required  type="text">
-
-                  </div>
-
-
-                  <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                    <label class="control-label">Email Id</label>
-                    <input required data-ng-model="poc.email_id" class="form-control" type="text">
-                  </div>
-                  <div ng-if="$first" >
-                    <div class="form-group label-floating " >
-                      <label class="control-label">Contact Type</label>
-                      <input class="form-control"  data-ng-model="poc.contact_type" required  type="text">
-
-                    </div>
-                  </div>
-                  <div ng-if="!$first" class=" form-group ">
-
-                    <div class="form-group" custom-select data="poc.contact_type">
-
-                    </div>
-                  </div>
-
-
-                </div>
-
-                <div>
-
-
-                </div>
-              </accordion-group>
-            </accordion>
-          </div>
-          <div >
-            <button type="button" class="btn btn-primary contacts-button " data-ng-if="isNewPossibility" data-ng-click="getNewPointofContact()"><i class="fa fa-plus"></i> Contacts</button>
-          </div>
-
-          <div class="col-md-6 form-custom-padding">
-          </div>
-          <div class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
-            <div class="form-group text-center">
-              <button ui-sref="app.viewPossibility" class="btn btn-primary data-button-cancel  ">Cancel</button>
-              <button class="btn btn-primary data-button-sub" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)" disabled="disabled">{{isNewPossibility?'Submit':'Update'}}</button>
-            </div>
-          </div>
-
         </div>
-
-      </form>
-  </accordion-group>
-  </accordion>
-
-</div>
-
-
-<div class="container col-md-12">
-  <accordion class="suspect-head">
-    <accordion-group>
-      <accordion-heading>
-        Suspect
-      </accordion-heading>
-      <form>
-        <div class="row ">
-          <div class="col-lg-10 ">
-            <accordion>
-              <accordion-group is-open="status.open">
-                <accordion-heading>
-          <span>
+      </div>
+      <hr class="line1">
+      <div class="row ">
+        <div class="col-lg-10 ">
+          <accordion>
+            <accordion-group is-open="status.open">
+              <accordion-heading >
+          <span class="color-black ">
           1) Primary Contact Person For Business
           <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': status.open, ' glyphicon-plus': !status.open}">
-          </i>
+            </i>
             </span>
-                </accordion-heading>
-                <div class="row">
-                  <div class="col-md-5 col-pad">
-                    <div class=" form-group label-floating is-empty">
-                      <label class="control-label">Contact Person</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
-                    <div class="form-group label-floating is-empty">
-                      <label class="control-label">Phone Number</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
+              </accordion-heading>
+              <div class="row">
+                <div class="col-md-5 col-pad">
+                  <div class=" form-group label-floating is-empty">
+                    <label class="control-label">Contact Person</label>
+                    <input class="form-control bord-remove" type="text">
                   </div>
-                  <div class="col-md-5 col-md-offset-2">
-                    <div class="form-group label-floating is-empty">
-                      <label class="control-label">Address</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
-                    <div class="form-group">
-                      <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-                    </div>
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Phone Number</label>
+                    <input class="form-control bord-remove" type="text">
                   </div>
                 </div>
-              </accordion-group>
-            </accordion>
-          </div>
-          <div class="col-lg-1 ">
-            <a href="javascript:void(0)" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus"
-               ng-click="createContact()"> Contact</a>
-          </div>
-          <div class="col-lg-10">
-            <accordion>
-              <accordion-group is-open="status.open">
-                <accordion-heading>
-            <span >
+                <div class="col-md-5 col-md-offset-2">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Address</label>
+                    <input class="form-control bord-remove" type="text">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
+                  </div>
+                </div>
+              </div>
+            </accordion-group>
+          </accordion>
+        </div>
+        <div class="col-lg-1 ">
+          <a href="javascript:void(0)" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus"
+             ng-click="createContact()"> Contact</a>
+        </div>
+        <div class="col-lg-10">
+          <accordion>
+            <accordion-group is-open="status.open">
+              <accordion-heading>
+            <span class="color-black">
             2) Escalation Contact Person For Business
             <i class="pull-right glyphicon"
                ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
          </span></accordion-heading>
-                <div class="row">
-                  <div class="col-md-5 col-pad">
-                    <div class=" form-group label-floating is-empty">
-                      <label class="control-label">Contact Person</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
-                    <div class="form-group label-floating is-empty">
-                      <label class="control-label">Phone Number</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
+              <div class="row">
+                <div class="col-md-5 col-pad">
+                  <div class=" form-group label-floating is-empty">
+                    <label class="control-label">Contact Person</label>
+                    <input class="form-control bord-remove" type="text">
                   </div>
-                  <div class="col-md-5 col-md-offset-2">
-                    <div class="form-group label-floating is-empty">
-                      <label class="control-label">Address</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
-                    <div class="form-group">
-                      <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-                    </div>
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Phone Number</label>
+                    <input class="form-control bord-remove" type="text">
                   </div>
                 </div>
-                <div class="row ">
-                  <div class="col-md-6 col-pad">
-                    <div class="form-group">
-                      <label class="contacts">Contacts Provides</label>
-                      <input type="checkbox" class="check">
-                      <label>Remote</label>
-                      <input type="checkbox" class="check">
-                      <label>Local</label>
-                    </div>
+                <div class="col-md-5 col-md-offset-2">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Address</label>
+                    <input class="form-control bord-remove" type="text">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-5 col-pad">
-                    <div class="form-group">
-                      <input class="form-control bord-remove" type="text" placeholder="Remote Location">
-                    </div>
+              </div>
+              <div class="row ">
+                <div class="col-md-6 col-pad">
+                  <div class="form-group">
+                    <label class="contacts">Contacts Provides</label>
+                    <input type="checkbox" class="check">
+                    <label>Remote</label>
+                    <input type="checkbox" class="check">
+                    <label>Local</label>
                   </div>
                 </div>
-              </accordion-group>
-            </accordion>
-          </div>
-          <div class="col-lg-10">
-            <accordion>
-              <accordion-group is-open="status.open">
-                <accordion-heading>
-            <span >
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-pad">
+                  <div class="form-group">
+                    <input class="form-control bord-remove" type="text" placeholder="Remote Location">
+                  </div>
+                </div>
+              </div>
+            </accordion-group>
+          </accordion>
+        </div>
+        <div class="col-lg-10">
+          <accordion>
+            <accordion-group is-open="status.open">
+              <accordion-heading>
+            <span class="color-black">
             3) Primary Contact Person For Finance
             <i class="pull-right glyphicon"
                ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
           </span></accordion-heading>
-                <div class="row">
-                  <div class="col-md-5 col-pad">
-                    <div class=" form-group label-floating is-empty">
-                      <label class="control-label">Contact Person</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
-                    <div class="form-group label-floating is-empty">
-                      <label class="control-label">Phone Number</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
+              <div class="row">
+                <div class="col-md-5 col-pad">
+                  <div class=" form-group label-floating is-empty">
+                    <label class="control-label">Contact Person</label>
+                    <input class="form-control bord-remove" type="text">
                   </div>
-                  <div class="col-md-5 col-md-offset-2">
-                    <div class="form-group label-floating is-empty">
-                      <label class="control-label">Address</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
-                    <div class="form-group">
-                      <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-                    </div>
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Phone Number</label>
+                    <input class="form-control bord-remove" type="text">
                   </div>
                 </div>
-              </accordion-group>
-            </accordion>
-          </div>
-          <div class="col-lg-10">
-            <accordion>
-              <accordion-group is-open="status.open">
-                <accordion-heading>
-            <span>
+                <div class="col-md-5 col-md-offset-2">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Address</label>
+                    <input class="form-control bord-remove" type="text">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
+                  </div>
+                </div>
+              </div>
+            </accordion-group>
+          </accordion>
+        </div>
+        <div class="col-lg-10">
+          <accordion>
+            <accordion-group is-open="status.open">
+              <accordion-heading>
+            <span class="color-black">
             4) Primary Contact Person For Invoice
             <i class="pull-right glyphicon"
                ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
           </span></accordion-heading>
-                <div class="row">
-                  <div class="col-md-5 col-pad">
-                    <div class=" form-group label-floating is-empty">
-                      <label class="control-label">Contact Person</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
-                    <div class="form-group label-floating is-empty">
-                      <label class="control-label">Phone Number</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
+              <div class="row">
+                <div class="col-md-5 col-pad">
+                  <div class=" form-group label-floating is-empty">
+                    <label class="control-label">Contact Person</label>
+                    <input class="form-control bord-remove" type="text">
                   </div>
-                  <div class="col-md-5 col-md-offset-2">
-                    <div class="form-group label-floating is-empty">
-                      <label class="control-label">Address</label>
-                      <input class="form-control bord-remove" type="text">
-                    </div>
-                    <div class="form-group">
-                      <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-                    </div>
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Phone Number</label>
+                    <input class="form-control bord-remove" type="text">
                   </div>
                 </div>
-              </accordion-group>
-            </accordion>
-          </div>
-          <div class="col-md-6">
-            <h4 class="color-black">Roll out of a proposal</h4>
-            <div class="form-group is-empty is-fileinput">
-              <input type="file" id="inputFile4" multiple="">
-              <div class="input-group">
-                <input type="text" readonly="" class="form-control" placeholder="No selected file">
+                <div class="col-md-5 col-md-offset-2">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Address</label>
+                    <input class="form-control bord-remove" type="text">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
+                  </div>
+                </div>
+              </div>
+            </accordion-group>
+          </accordion>
+        </div>
+        <div class="col-md-6">
+          <h4 class="color-black">Roll out of a proposal</h4>
+          <div class="form-group is-empty is-fileinput">
+            <input type="file" id="inputFile4" multiple="">
+            <div class="input-group">
+              <input type="text" readonly="" class="form-control" placeholder="No selected file">
                 <span class="input-group-btn input-group-sm">
                   <button type="button" class="btn warm-status btn-sm glyphicon glyphicon-paperclip">
-                    <i class="material-icons">attach file</i>
+                  <i class="material-icons">attach file</i>
                   </button>
                 </span>
-              </div>
-              <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
             </div>
+            <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
           </div>
         </div>
-        <div class="col-md-6 col-md-offset-5">
-          <div class="form-group">
-            <a ui-sref="app.suspect-view">
-              <button class="btn btn-primary data-button">Cancel</button>
-            </a>
-            <button class="btn btn-primary data-button">Submit</button>
-          </div>
+      </div>
+      <div class="col-md-6 col-md-offset-5">
+        <div class="form-group">
+          <a ui-sref="app.suspect-view">
+            <button class="btn btn-primary data-button">Cancel</button>
+          </a>
+          <button class="btn btn-primary data-button">Submit</button>
         </div>
-      </form>
-      </accordion-group>
-    </accordion>
-
+      </div>
+    </div>
+  </div>
 </div>
 </div>

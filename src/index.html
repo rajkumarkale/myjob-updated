@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8">
   <title data-ng-bind="app.title"></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <!-- build:css(.) css/vendor.css -->
@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
   <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css" />
   <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
+  <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css">
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) css/main.css -->
@@ -111,6 +112,15 @@
 <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
 <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+
+
+
+<script src="bower_components/d3/d3.js"></script>
+<script src="bower_components/nvd3/build/nv.d3.js"></script> <!-- or use another assembly -->
+<script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+
+
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -140,7 +150,6 @@
 <script src="js/app/suspect/config/config.js"></script>
 <script src="js/app/suspect/config/router.js"></script>
 <script src="js/app/suspect/controllers/create-suspectCtrl.js"></script>
-<script src="js/app/suspect/controllers/view-suspectCtrl.js"></script>
 <script src="js/app/suspect/services/suspectService.js"></script>
 <script src="js/app/suspect/controllers/add-contactCtrl.js"></script>
 

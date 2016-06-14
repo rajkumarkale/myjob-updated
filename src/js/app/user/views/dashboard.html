@@ -1,68 +1,69 @@
 <div class="maincol-apply">
   <div class="container all-dateinputs">
-      <div class="container">
+    <div class="container">
       <div class="pull-right">
         <form id="form" name="form" class="form-inline" novalidate>
-            <label for="startDate" class="labels-dates poss-mrg">From</label>
-            <div class="input-group">
-              <a ng-click="open($event,'opened1')">
-                <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                       datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
-                       datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
+          <label for="startDate" class="labels-dates poss-mrg">From</label>
+          <div class="input-group">
+            <a ng-click="open($event,'opened1')">
+              <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
+                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
+                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
             <span class="input-group-btn" id="basic-addon1">
             <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-              </a>
-            </div>
-            <label for="endDate" class="labels-dates poss-mrg">To</label>
-            <div class="input-group">
-              <a ng-click="open($event,'opened2')">
-                <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                       datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
-                       datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
+            </a>
+          </div>
+          <label for="endDate" class="labels-dates poss-mrg">To</label>
+          <div class="input-group">
+            <a ng-click="open($event,'opened2')">
+              <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
+                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
+                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
             <span class="input-group-addon" id="basic-addon2">
             <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-              </a>
-            </div>
-            <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
+            </a>
+          </div>
+          <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
         </form>
       </div>
-      </div>
-  <div class="container col-md-12 pad-t-20 maincol-apply">
-    <div class="panel panel-primary pan-col">
-      <div class="panel-heading summary">Summary for the year of April 2016 to March 2017</div>
-      <div class="panel-body">
-        <div class="detailsContent">
-          <div class="detailsContentDiv">
-            <div class="listDetails">
-              <div class="listDetailsContent">
-                <div class="col-md-3 target-header-color">
-                  <img src="img/target_icon.png" alt="" class="center-block img-pad"/>
-                </div>
-                <div class="col-md-9 text-center color-divs">
-                  <div class="met-target">TARGET</div>
-                  <div class="met-num">10</div>
-                </div>
-              </div>
-            </div>
-            <div class="listDetails">
-              <div class="listDetailsContent">
-                <div class="col-md-3 prospect-header-color">
-                  <img src="img/prospect_icon.png" alt="" class="center-block img-pad"/>
-                </div>
-                <div class="col-md-9 text-center color-divs">
-                  <div class="met-prospect">PROSPECT</div>
-                  <div class="metprospect-num">10</div>
+    </div>
+    <div class="container col-md-12 pad-t-20 maincol-apply">
+      <div class="panel panel-primary pan-col">
+        <div class="panel-heading summary">Summary for the year of April 2016 to March 2017</div>
+        <div class="panel-body">
+          <div class="detailsContent">
+            <div class="detailsContentDiv">
+              <div class="listDetails">
+                <div class="listDetailsContent">
+                  <div class="col-md-3 target-header-color">
+                    <img src="img/target_icon.png" alt="" class="center-block img-pad"/>
+                  </div>
+                  <div class="col-md-9 text-center color-divs">
+                    <div class="met-target">TARGET</div>
+                    <div class="met-num">10</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="listDetails">
-              <div class="listDetailsContent">
-                <div class="col-md-3 empanelment-header-color">
-                  <img src="img/empanelment_icon.png" alt="" class="center-block img-pad"/>
+              <div class="listDetails">
+                <div class="listDetailsContent">
+                  <div class="col-md-3 prospect-header-color">
+                    <img src="img/prospect_icon.png" alt="" class="center-block img-pad"/>
+                  </div>
+                  <div class="col-md-9 text-center color-divs">
+                    <div class="met-prospect">PROSPECT</div>
+                    <div class="metprospect-num">10</div>
+                  </div>
                 </div>
-                <div class="col-md-9 text-center color-divs">
-                  <div class="empanel-col">EMPANELMENT</div>
-                  <div class="met-num">10</div>
+              </div>
+              <div class="listDetails">
+                <div class="listDetailsContent">
+                  <div class="col-md-3 empanelment-header-color">
+                    <img src="img/empanelment_icon.png" alt="" class="center-block img-pad"/>
+                  </div>
+                  <div class="col-md-9 text-center color-divs">
+                    <div class="empanel-col">EMPANELMENT</div>
+                    <div class="met-num">10</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -71,24 +72,9 @@
       </div>
     </div>
   </div>
-<!--    <div class="col-md-12">
       <div class="panel ">
-        <div class="panel-body panel-default ">
-          <div ui-jq="plot" ui-options="[
-                { data: [[0,7],[1,6.5],[2,12.5],[3,7],[4,9],[5,6],[6,11],[7,6.5],[8,8],[9,7]], label: 'Unique Visits', points: { show: true } },
-                { data: [[0,4],[1,4.5],[2,7],[3,4.5],[4,3],[5,3.5],[6,6],[7,3],[8,4],[9,3]], label: 'Page Views', bars: { show: true, barWidth: 0.6, fillColor: { colors: [{ opacity: 0.2 }, { opacity: 0.4}] } } }
-              ],
-              {
-                colors: [ '#23b7e5','#27c24c' ],
-                series: { shadowSize: 2 },
-                xaxis:{ font: { color: '#ccc' } },
-                yaxis:{ font: { color: '#ccc' } },
-                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
-                tooltip: true,
-                tooltipOpts: { content: '%s of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 0, y: 20 } }
-              }" style="height: 240px; padding: 0px; position: relative;"><canvas class="flot-base" width="565" height="240" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 565px; height: 240px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; max-width: 51px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 22px; text-align: center;">0</div><div style="position: absolute; max-width: 51px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 77px; text-align: center;">1</div><div style="position: absolute; max-width: 51px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 133px; text-align: center;">2</div><div style="position: absolute; max-width: 51px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 188px; text-align: center;">3</div><div style="position: absolute; max-width: 51px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 244px; text-align: center;">4</div><div style="position: absolute; max-width: 51px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 299px; text-align: center;">5</div><div style="position: absolute; max-width: 51px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 355px; text-align: center;">6</div><div style="position: absolute; max-width: 51px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 410px; text-align: center;">7</div><div style="position: absolute; max-width: 51px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 466px; text-align: center;">8</div><div style="position: absolute; max-width: 51px; top: 227px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 521px; text-align: center;">9</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div style="position: absolute; top: 216px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 5px; text-align: right;">0.0</div><div style="position: absolute; top: 180px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 5px; text-align: right;">2.5</div><div style="position: absolute; top: 144px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 5px; text-align: right;">5.0</div><div style="position: absolute; top: 109px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 5px; text-align: right;">7.5</div><div style="position: absolute; top: 73px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 0px; text-align: right;">10.0</div><div style="position: absolute; top: 37px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 0px; text-align: right;">12.5</div><div style="position: absolute; top: 2px; font-style: normal; font-variant: normal; font-weight: 400; font-stretch: normal; font-size: 11px; line-height: 13px; font-family: &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(204, 204, 204); left: 0px; text-align: right;">15.0</div></div></div><canvas class="flot-overlay" width="565" height="240" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 565px; height: 240px;"></canvas><div class="legend"><div style="position: absolute; width: 86px; height: 44px; top: 13px; right: 13px; opacity: 0.85; background-color: rgb(255, 255, 255);"> </div><table style="position:absolute;top:13px;right:13px;;font-size:smaller;color:#ccc"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(35,183,229);overflow:hidden"></div></div></td><td class="legendLabel">Unique Visits</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(39,194,76);overflow:hidden"></div></div></td><td class="legendLabel">Page Views</td></tr></tbody></table></div></div>
-        </div>
+        <nvd3 options="options" data="data"></nvd3>
       </div>
-    </div>-->
+    </div>
 </div>
 </div>

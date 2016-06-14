@@ -4,8 +4,7 @@ angular.module('com.module.access').controller('SignOutFormController',['$cookie
     AuthService.logout().then(function (response) {
       console.log(response);
       $cookieStore.remove('userData');
-      /*$cookieStore.remove('userInfo');*/
-      $location.path('/access.signin');
+      $location.path('/access/signin');
     }, function (error) {
       console.log(error);
     });

@@ -17,58 +17,44 @@
           <div class="row">
             <div class="col-md-12 ">
               <div class="col-md-6 form-custom-padding">
-
                 <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                   <label class="control-label">Legal Entity</label>
                   <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text">
                 </div>
-
                 <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                   <label class="control-label">Division Name</label>
                   <input class="form-control" required data-ng-model="createPossibility.division" type="text">
                 </div>
-
-
                 <div class="form-group" custom-select data="businessVertical"></div>
                 <div class="form-group" custom-select data="employeeSize"></div>
-
-
                 <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+
                   <label class="control-label">Address Line 1</label>
                   <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 "
                          type="text">
-
                 </div>
                 <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+
                   <label class="control-label">City</label>
                   <input class="form-control" required data-ng-model="createPossibility.address.city " type="text">
-
                 </div>
                 <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                   <label class="control-label">Zipcode</label>
                   <input class="form-control" required data-ng-model="createPossibility.address.pin" type="text">
-
                 </div>
-
               </div>
-
-
               <div class="col-md-6 form-custom-padding">
                 <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                   <label class="control-label">Business Unit</label>
                   <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text">
-
                 </div>
                 <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                   <label class="control-label">Website URL</label>
                   <input class="form-control" required data-ng-model="createPossibility.url" type="text">
-
                 </div>
                 <div class="form-group" custom-select data="groupTurnover">
-
                 </div>
                 <div class="form-group" custom-select data="customerType">
-
                 </div>
                 <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                   <label class="control-label">Address Line 2</label>
@@ -77,25 +63,20 @@
                 <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                   <label class="control-label">State</label>
                   <input class="form-control" required data-ng-model="createPossibility.address.state" type="text">
-
                 </div>
                 <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                   <label class="control-label">Country</label>
                   <input class="form-control" required data-ng-model="createPossibility.address.country" type="text">
-
                 </div>
                 <br>
                 <div data-ng-if="!isNewPossibility" class="form-group" custom-select data="status">
-
                 </div>
                 <div class="form-group1 pull-right ">
                   <input type="checkbox" class="check">
                   <label class=" first-class2 ">Freeze</label>
                 </div>
-
               </div>
             </div>
-
             <div class="row">
               <div class="col-md-10 col-md-offset-1">
                 <div ngf-drop ngf-select ng-model="files" class="drop-box"
@@ -103,6 +84,7 @@
                      accept="image/*,application/pdf"
                      ngf-pattern="'image/*,application/pdf'">Drop pdfs or images here or click to upload
                 </div>
+
                 <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
 
 
@@ -115,6 +97,7 @@
                 <ul>
                   <li ng-repeat="f in uploadFiles" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}}
                     {{f.$errorParam}}
+
                     <img ngf-thumbnail="f" class="thumb"></li>
                 </ul>
               </div>
@@ -130,12 +113,14 @@
           </span></accordion-heading>
                   <div class="col-md-6 form-custom-padding">
                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+
                       <label class="control-label">Contact Person</label>
                       <input class="form-control" required data-ng-model="poc.name" type="text">
 
                     </div>
 
                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+
                       <label class="control-label">Contact Person Designation</label>
                       <input data-ng-model="poc.designation" required class="form-control" type="text">
 
@@ -150,6 +135,7 @@
                     </div>
                     <div>
                       <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+
                         <label class="control-label">Remote Location</label>
                         <input required data-ng-model="poc.support_location" class="form-control" type="text">
 
@@ -162,6 +148,7 @@
                       <label class="control-label">Contact Person Phone Number</label>
                       <input class="form-control" numbers-only data-ng-model="poc.phone" required type="text">
 
+
                     </div>
 
 
@@ -173,6 +160,7 @@
                       <div class="form-group label-floating ">
                         <label class="control-label">Contact Type</label>
                         <input class="form-control" data-ng-model="poc.contact_type" required type="text">
+
 
                       </div>
                     </div>
@@ -195,6 +183,7 @@
               </button>
             </div>
 
+
             <div class="col-md-6 form-custom-padding">
             </div>
             <div class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
@@ -209,6 +198,7 @@
             </div>
 
           </div>
+
 
         </form>
       </div>

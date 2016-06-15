@@ -31,16 +31,16 @@
     "possibility":{
       "employeeSize":{
         "title":"Employee Size of the Company",
-                       "data":[{"key":"SMALL","displayText":"0-100"},
-                               {"key":"MEDIUM","displayText":"100 - 1000"}, 
-                               {"key":"LARGE","displayText":"1000+"}],
+                       "data":[{"key":"SMALL","displayText":"0-100(SMALL)"},
+                               {"key":"MEDIUM","displayText":"100 - 1000(MEDIUM)"}, 
+                               {"key":"LARGE","displayText":"1000+(LARGE)"}],
                                "selectedItem":""},
-      "groupTurnover":{"title":"Group Turnover", "data":[{"key":"SMALL","displayText":"0-100Cr"}, {"key":"MEDIUM","displayText":"101Cr to 500Cr "}, {"key":"LARGE","displayText":"500Cr +"}],"selectedItem":""},
-      "businessVertical":{"title":"Business Vertical", "data":[{"key":"IT","displayText":"IT"}, {"key":"GENERAL","displayText":"GENERAL"},{"key": "GOVT","displayText":"GOVT"},{"key": "IT_STAFFING","displayText":"IT STAFFING"}, {"key":"GENERAL_STAFFING","displayText":"GENERAL STAFFING"},{"key": "GOVERNMENT_STAFFING","displayText":"GOVERNMENT STAFFING"}, {"key":"PERM_SEARCH","displayText":"PERM SEARCH"}, {"key":"RPO","displayText":"RPO"}],"selectedItem":""},
-      "customerType":{"title":"Type of Customer", "data":[{"key":"MNC","displayText":"MNC"}, {"key":"PVT_LTD","displayText":"PVT LTD"},{"key": "PUBLIC_LTD","displayText":"PUBLIC LTD"}, {"keÿ":"PROPRIETORSHIP","displayText":"PROPRIETORSHIP"}],"selectedItem":""},  
-      "contactType" :{"title":"Contact Type","data":[{"key":"ESCALATION","displayText":"ESCALATION"},{"key":"OTHER","displayText":"OTHER"}],"selectedItem":""},
-      "status" :{"title":"currentStatus","data":[{"key":"NOT_MET","displayText":"Not Met"},{"key":"MET","displayText":"Met"}],"selectedItem":""},
-       "documentType" :{"title":"Type","data":[{"key":"PAN","displayText":"Pan"},{"key":"TAN","displayText":"Tan"},{"key":"AGREEMENT","displayText":"Agreement"},{"key":"PROPOSAL","displayText":"Proposal"},{"key":"VISITING_CARD","displayText":"Visiting Card"},{"key":"ADDRESS_PROOF","displayText":"Address Proof"},{"key":"OTHERS","displayText":"Others"}],"selectedItem":""}
+      "groupTurnover":{"data":[{"key":"SMALL","displayText":"0-100Cr(SMALL)"}, {"key":"MEDIUM","displayText":"101Cr to 500Cr (MEDIUM)"}, {"key":"LARGE","displayText":"500Cr +(LARGE)"}],"selectedItem":""},
+      "businessVertical":{ "data":[{"key":"IT","displayText":"IT"}, {"key":"GENERAL","displayText":"GENERAL"},{"key": "GOVT","displayText":"GOVT"},{"key": "IT_STAFFING","displayText":"IT STAFFING"}, {"key":"GENERAL_STAFFING","displayText":"GENERAL STAFFING"},{"key": "GOVERNMENT_STAFFING","displayText":"GOVERNMENT STAFFING"}, {"key":"PERM_SEARCH","displayText":"PERM SEARCH"}, {"key":"RPO","displayText":"RPO"}],"selectedItem":""},
+      "customerType":{"data":[{"key":"MNC","displayText":"MNC"}, {"key":"PVT_LTD","displayText":"PVT LTD"},{"key": "PUBLIC_LTD","displayText":"PUBLIC LTD"}, {"keÿ":"PROPRIETORSHIP","displayText":"PROPRIETORSHIP"}],"selectedItem":""},  
+      "contactType" :{"data":[{"key":"ESCALATION","displayText":"ESCALATION"},{"key":"OTHER","displayText":"OTHER"}],"selectedItem":""},
+      "status" :{"data":[{"key":"NOT_MET","displayText":"NOT MET"},{"key":"MET","displayText":"MET"},{"key":"INACTIVE","displayText":"INACTIVE"}],"selectedItem":""},
+       "documentType" :{"data":[{"key":"PAN","displayText":"Pan"},{"key":"TAN","displayText":"Tan"},{"key":"AGREEMENT","displayText":"Agreement"},{"key":"PROPOSAL","displayText":"Proposal"},{"key":"VISITING_CARD","displayText":"Visiting Card"},{"key":"ADDRESS_PROOF","displayText":"Address Proof"},{"key":"OTHERS","displayText":"Others"}],"selectedItem":""}
     },
     "languages": {
       "en": "English"

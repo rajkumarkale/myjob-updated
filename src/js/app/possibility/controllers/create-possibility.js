@@ -84,22 +84,21 @@ angular.module('com.module.possibility')
         	if($scope.isNewPossibility)
             $scope.processRequest(possibilityObject);
         	else{
-        		var current_status ={_id:$scope.point_of_contacts[0]._id,stage:possibilityObject.current_status.stage,status:possibilityObject.current_status.status};
+        		var status ={current_status_id:$scope.point_of_contacts[0]._id,status:$scope.status.selectedItem.key};
         		possibilityObject.employee_size = $scope.employeeSize.selectedItem.key;
             	possibilityObject.turnover = $scope.groupTurnover.selectedItem.key;
             	possibilityObject.vertical = $scope.businessVertical.selectedItem.key;
             	possibilityObject.customer_type = $scope.customerType.selectedItem.key;
         		possibilityObject.client_unit_id = $scope.client_unit_id;
-        		possibilityObject.current_status = current_status;
-        		possibilityObject.current_status.status = $scope.status.selectedItem.key
+        		possibilityObject.status = status;
         		possibilityObject.user_id = $scope.point_of_contacts[0].user_id;
         		possibilityObject.point_of_contacts =[];
         		 possibilityObject.urls = [];
-            if ($scope.uploadFiles && $scope.uploadFiles.length) {
+             if ($scope.uploadFiles && $scope.uploadFiles.length) {
                 for (var i = 0; i < $scope.uploadFiles.length; i++) {
                 	var obj ={};
                 	obj.url = $scope.uploadFiles[i].url;
-                	obj.type = "OTHERS";
+                	obj.type = $scope.uploadFiles[i].documentType.selectedItem.key;
                 	possibilityObject.urls.push(obj);
                 }
             }
@@ -134,6 +133,7 @@ angular.module('com.module.possibility')
        			delete possibilityObject.time_updated;
        			delete possibilityObject.address.user_id ;
        			delete possibilityObject.documents;
+       			delete possibilityObject.current_status;
 	       		possibilityCreateService.updatePossibility(possibilityObject).success(function() {
                 toaster.pop('success', 'POSSIBILITY Created Successfully.');
                 $state.go('app.viewPossibility');
@@ -158,11 +158,11 @@ angular.module('com.module.possibility')
             requestObject.customer_type = $scope.customerType.selectedItem.key;
             requestObject.urls = [];
             requestObject.point_of_contacts =[];
-            if ($scope.files && $scope.files.length) {
-                for (var i = 0; i < $scope.files.length; i++) {
+            if ($scope.uploadFiles && $scope.uploadFiles.length) {
+                for (var i = 0; i < $scope.uploadFiles.length; i++) {
                 	var obj ={};
-                	obj.url = $scope.files[i].url;
-                	obj.type = "OTHERS";
+                	obj.url = $scope.uploadFiles[i].url;
+                	obj.type = $scope.uploadFiles[i].documentType.selectedItem.key;
                 	requestObject.urls.push(obj);
                 }
             }
@@ -241,6 +241,7 @@ angular.module('com.module.possibility')
                             }
                         }).then(function(resp) {
                             file.url = resp.data.url;
+                            file.documentType = angular.copy(appConfig.possibility.documentType);
                             $scope.uploadFiles.push(file);
                         }, null, function(evt) {
 

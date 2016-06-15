@@ -12,6 +12,9 @@ angular.module('com.module.suspect').config(['$stateProvider', function ($stateP
     .state('app.create-suspect-view', {
       url: '/create-suspect',
       templateUrl: 'js/app/suspect/views/create-suspect.html',
-      controller:'createSuspectCtrl'
+      controller:'createSuspectCtrl',
+      params: {
+        suspect: null
+    }
     });
 }]);

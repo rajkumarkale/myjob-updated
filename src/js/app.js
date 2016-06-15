@@ -24,6 +24,7 @@ angular.module('app', [
   'ui.sortable',
   'toaster',
   'nvd3'
+
 ]);
 
 angular.element(document).ready(function () {

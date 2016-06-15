@@ -49,7 +49,7 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
         }
         data.push(Math.round(y*100)/100);
       }
-      // Zip the generated y values with the x values
+    
       var res = [];
       for (var i = 0; i < data.length; ++i) {
         res.push([i, data[i]]);

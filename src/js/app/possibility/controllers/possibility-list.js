@@ -1,7 +1,7 @@
 angular.module('com.module.possibility')
 .controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies){
 	$scope.data = {
-		    numPerPage: 1,
+		    numPerPage: 10,
 		    searchKeywords: '',
 		    row: '',
 		    currentPage: 1

@@ -305,7 +305,7 @@ margin-left: 50px;}
     padding-right: 24px;
     padding-top: 10px;
     padding-bottom: 10px;}
-.line1{border-top: 1px solid #8c8b8b;margin-top: 100px;}
+.line1{border-top: 1px solid #8c8b8b;margin-top: 115px;}
 .label-col{color: #DEDEDE !important;}
 .form-control:focus{box-shadow: none;}
 .contacts{color: #049ad9;}
@@ -402,7 +402,6 @@ margin-left: 50px;}
 .panel-group .panel-heading a.collapsed:after {
   content: '+';
 }
-.line1{border-top: 1px solid #8c8b8b;margin-top: 100px;}
 
 
 /*end suspect*/
@@ -1144,7 +1143,6 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   padding-right: 24px;
   padding-top: 10px;
   padding-bottom: 10px;}
-.line1{border-top: 1px solid #8c8b8b;margin-top: 100px;}
 .label-col{color: #DEDEDE !important;}
 .form-control:focus{box-shadow: none;}
 .contacts{color: #049ad9 !important;}
@@ -1210,7 +1208,24 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   content: '+';
 }
 
-
+.possibility-head .panel-heading{
+    background-color: #2277b1 !important;
+  color: white;
+  padding: 4px;
+}
+.possibility-head .panel-heading span{
+  font-size: 17px;
+  font-weight: bold;
+}
+.suspect-head .panel-heading{
+  background-color: #2277b1 !important;
+  color: white;
+  padding: 4px;
+}
+.suspect-head .panel-heading span{
+  font-size: 17px;
+  font-weight: bold;
+}
 /*end suspect*/
 /*suspect-view styles*/
 .hot-color-suspect{
@@ -1740,6 +1755,15 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   margin-right: 10px;
   color: black;
 }
+/*  start of comments for dashboard UI */
+.graph-background{
+  width:90%;
+  margin-left: 5%;
+}
+.graph{
+  width: 80%;
 
 
+}
+/* end of dashboard UI comments */
 

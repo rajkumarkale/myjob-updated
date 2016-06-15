@@ -20,8 +20,11 @@ angular.module('com.module.suspect')
 		});
 		};
 		$scope.getSuspects($scope.data.currentPage,$scope.data.numPerPage);
-		$scope.openEditSuspect = function(possibility){
+		$scope.openEditSuspect = function(suspect){
+			$state.go('app.create-suspect-view',{suspect:suspect});
+
 		};
+		
 
   $scope.open = function($event,opened) {
     $event.preventDefault();

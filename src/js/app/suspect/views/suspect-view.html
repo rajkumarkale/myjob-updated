@@ -177,7 +177,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr data-ng-repeat="suspect in data.suspects" >
+          <tr data-ng-repeat="suspect in data.suspects" data-ng-click="openEditSuspect(suspect)" >
         <td>
 
           <div class="chekbox">
@@ -190,7 +190,7 @@
           </div>
 
         </td>
-        <td>{{suspect.legal_name}}</td>
+        <td ui-sref="app.create-suspect-view">{{suspect.legal_name}}</td>
         <td>{{suspect.client_unit_name}}</td>
         <td>{{suspect.city}}</td>
         <td>{{suspect.pocs[0].name}}</td>

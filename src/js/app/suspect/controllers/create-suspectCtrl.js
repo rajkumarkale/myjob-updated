@@ -13,6 +13,7 @@ angular.module('com.module.suspect')
     });*/
     $scope.contactType = appConfig.suspect.contactType;
     $scope.supportArea = appConfig.suspect.supportArea;
+    $scope.status = appConfig.suspect.status;
     $scope.createNewContactList = function(){
       var obj = {name:"",designation:"",phone:"",support_location:"",contact_type:appConfig.possibility.contactType,isOpen:true};
       $scope.point_of_contacts.push(obj);

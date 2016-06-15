@@ -190,14 +190,15 @@
           </div>
 
         </td>
-        <td data-ng-click="openEditSuspect(suspect)">{{suspect.legal_name}}</td>
+
+        <td class="hand-cursor td-text-color" ui-sref="app.create-suspect-view">{{suspect.legal_name}}</td>
         <td>{{suspect.client_unit_name}}</td>
         <td>{{suspect.city}}</td>
         <td>{{suspect.pocs[0].name}}</td>
         <td>{{suspect.pocs[0].designation}}</td>
         <td>{{suspect.pocs[0].phone}}</td>
         <td>
-          <p class="btn btn-raised warm-status m-n btn-sm">{{suspect.status}}</p>
+          <p class="btn-raised warm-status m-n btn-sm">{{suspect.status}}</p>
         </td>
         <td>
           <button class="btn btn-raised  btn-info m-n btn-sm">Discussion</button>

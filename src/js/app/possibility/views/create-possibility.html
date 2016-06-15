@@ -1,7 +1,8 @@
 <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
 
-  <button class="btn btn-primary contacts-button" data-ng-click="editForm();"> Edit</button>
-  <button ui-sref="app.viewPossibility" class="btn btn-primary contacts-button "> Cancel</button>
+
+  <button class="btn btn-primary contacts-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"> Edit</button>
+  <button ui-sref="app.viewPossibility" class="btn btn-primary contacts-button "> Close</button>
 </div>
 <div class="container col-md-12 pad-t-20" data-ng-class="disableForm()"
      data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
@@ -170,20 +171,21 @@
                   </div>
 
 
-                  <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                    <label class="control-label">Email Id</label>
-                    <input required data-ng-model="poc.email_id" class="form-control" type="text">
-                  </div>
-                  <div ng-if="$first">
-                    <div class="form-group label-floating ">
-                      <label class="control-label">Contact Type</label>
-                      <input class="form-control" data-ng-model="poc.contact_type" required type="text">
 
-                    </div>
-                  </div>
-                  <div ng-if="!$first" class=" form-group ">
+<div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
+<label class="control-label">Email Id</label>
+<input required data-ng-model="poc.email_id" class="form-control" type="text">
+</div>
+  <div ng-if="poc.contact_type ==='PRIMARY'" >
+    <div class="form-group label-floating " >
+      <label class="control-label">Contact Type</label>
+      <input class="form-control" disabled data-ng-model="poc.contact_type" required  type="text">
 
-                    <div class="form-group" custom-select data="poc.contact_type">
+    </div>
+  </div>
+  <div ng-if="poc.contact_type !=='PRIMARY'" class=" form-group ">
+    <label class="control-label "  data-ng-class ="{'col-drop':isNewPossibility}">Contact Type</label>
+    <div  custom-select data="poc.contact_type">
 
                     </div>
                   </div>

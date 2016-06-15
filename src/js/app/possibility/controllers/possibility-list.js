@@ -1,5 +1,9 @@
 angular.module('com.module.possibility')
 .controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies){
+    $scope.sortType     = ''; 
+    $scope.sortReverse  = true;  
+    $scope.searchView   = ''; 
+    
 	$scope.data = {
 		    numPerPage: 10,
 		    searchKeywords: '',

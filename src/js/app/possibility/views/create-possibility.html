@@ -2,7 +2,7 @@
 
 <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
 
-  <button class="btn btn-primary contacts-button" data-ng-if="!($scope.createPossibility.current_status.status === 'MET')" data-ng-click="editForm();"> Edit</button>
+  <button class="btn btn-primary contacts-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"> Edit</button>
   <button ui-sref="app.viewPossibility" class="btn btn-primary contacts-button "> Close</button>
 </div>
 <div class="container col-md-12 pad-t-20" data-ng-class ="disableForm()"  data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
@@ -10,7 +10,7 @@
   <div class="panel panel-primary second-panel">
     <div class="panel-heading">
       <span>{{title}}</span>
-    </div>
+    </div
     <div>
       <div class="panel-body" >
         <form name="createPossibilityForm" >

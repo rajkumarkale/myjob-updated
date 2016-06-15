@@ -1,7 +1,7 @@
 angular.module('com.module.suspect')
 .controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService',function($scope,$state,toaster,$timeout,suspectService){
 	$scope.data = {
-		    numPerPage: 1,
+		    numPerPage: 10,
 		    searchKeywords: '',
 		    row: '',
 		    currentPage: 1

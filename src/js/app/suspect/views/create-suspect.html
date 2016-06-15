@@ -25,7 +25,7 @@
             <accordion-group is-open="poc.isOpen" ng-repeat="poc in point_of_contacts">
               <accordion-heading >
           <span class="color-black ">
-          Add Contact Person
+          {{supportArea.selectedItem.displayText}} {{contactType.selectedItem.displayText}} Contact Person Details
           <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}">
             </i>
             </span>
@@ -40,9 +40,12 @@
                     <label class="control-label">Phone Number</label>
                     <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
                   </div>
-                  <div><label class="control-label">Contact type</label>
-                    <div class="form-group" custom-select data="contactType"></div>
+                  <div>
+                    <label class="control-label">Support Area</label>
+                    <div class="form-group" custom-select data="supportArea">
+                    </div>
                   </div>
+
 
                 </div>
                 <div class="col-md-5 col-md-offset-2">
@@ -53,11 +56,9 @@
                   <div class="form-group">
                     <input class="form-control bord-remove" type="text" data-ng-model="poc.designation" placeholder="Contact Person Designation">
                   </div>
-                  <div>
-                    <label class="control-label">Support Area</label>
-                  <div class="form-group" custom-select data="supportArea">
+                  <div><label class="control-label">Contact type</label>
+                    <div class="form-group" custom-select data="contactType"></div>
                   </div>
-                    </div>
                 </div>
               </div>
             </accordion-group>

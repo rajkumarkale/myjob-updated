@@ -2,20 +2,28 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-  .controller('createSuspectCtrl',['$scope','$modal','$stateParams','suspectService',function($scope,$modal,$stateParams,suspectService){
-
+  .controller('createSuspectCtrl',['$scope','appConfig','$modal','$stateParams','suspectService',function($scope,appConfig,$modal,$stateParams,suspectService){
     $scope.status = {
-      isFirstOpen: true,
-      isFirstDisabled: false
+      isFirstOpen: true
     };
-    $scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function(response) {
+    $scope.init = function () {
+      $scope.point_of_contacts =[{name:"",designation:"",phone:"",support_location:"",contact_type:""}];
+    };
+    $scope.init();
+    /*$scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function(response) {
+      console.log(response.data);
+    });*/
+    $scope.contactType = appConfig.suspect.contactType;
+    $scope.supportArea = appConfig.suspect.supportArea;
+    $scope.createNewContactList = function(){
+      var obj = {name:"",designation:"",phone:"",support_location:"",contact_type:appConfig.possibility.contactType};
+      $scope.point_of_contacts.push(obj);
+    };
 
-      console.log(response);
-
-    });
-
-
-    $scope.open = function($event,opened) {
+    $scope.cancel = function() {
+      $state.go('app.suspect-view');
+    };
+    /*$scope.open = function($event,opened) {
       $event.preventDefault();
       $event.stopPropagation();
 
@@ -31,11 +39,8 @@ angular.module('com.module.suspect')
         $scope.opened2 = true;
         $scope.opened1 = false;
       }
-    };
-
-    console.log('sample');
-
-    $scope.createContact = function () {
+    };*/
+    /*$scope.createContact = function () {
       var modalInstance1 = $modal.open({
         templateUrl: 'js/app/suspect/views/add-contact.html',
         backdrop: 'static',
@@ -44,5 +49,5 @@ angular.module('com.module.suspect')
       });
       modalInstance1.result.then(function () {
       });
-    };
+    };*/
   }]);

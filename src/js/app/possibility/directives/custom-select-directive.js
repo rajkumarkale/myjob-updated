@@ -8,6 +8,7 @@ angular.module('com.module.possibility').directive('customSelect',[function (){
    link:function(s){
     {
      s.dataList=s.data;
+     s.dataList.selectedItem = s.dataList.data[0];
      angular.element('.select').off('click').on('click', '.placeholder', function() {
   var parent = angular.element(this).closest('.select');
   if (!parent.hasClass('is-open')) {

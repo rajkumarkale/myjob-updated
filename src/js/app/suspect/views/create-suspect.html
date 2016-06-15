@@ -13,162 +13,54 @@
         </div>
       </div>
       <hr class="line1">
+      <div class=" pull-right">
+        <a href="" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus"
+           ng-click="createNewContactList()"> Contact</a>
+      </div>
       <div class="row ">
+
         <div class="col-lg-10 ">
-          <accordion>
-            <accordion-group is-open="status.open">
+          <accordion  close-others='opening'>
+            <accordion-group is-open="poc.isOpen" ng-repeat="poc in point_of_contacts">
               <accordion-heading >
           <span class="color-black ">
-          1) Primary Contact Person For Business
-          <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': status.open, ' glyphicon-plus': !status.open}">
+          Add Contact Person
+          <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.open, ' glyphicon-plus': !poc.open}">
             </i>
             </span>
               </accordion-heading>
               <div class="row">
                 <div class="col-md-5 col-pad">
                   <div class=" form-group label-floating is-empty">
-                    <label class="control-label">Contact Person</label>
-                    <input class="form-control bord-remove" type="text">
+                    <label class="control-label">Contact Person Name</label>
+                    <input class="form-control bord-remove" data-ng-model="poc.name" type="text">
                   </div>
                   <div class="form-group label-floating is-empty">
                     <label class="control-label">Phone Number</label>
-                    <input class="form-control bord-remove" type="text">
+                    <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
+                  </div>
+                  <div class="form-group" custom-select data="contactType">
                   </div>
                 </div>
                 <div class="col-md-5 col-md-offset-2">
                   <div class="form-group label-floating is-empty">
                     <label class="control-label">Address</label>
-                    <input class="form-control bord-remove" type="text">
+                    <input class="form-control bord-remove" data-ng-model="poc.support_location" type="text">
                   </div>
                   <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
+                    <input class="form-control bord-remove" type="text" data-ng-model="poc.designation" placeholder="Contact Person Designation">
                   </div>
+                  <div class=" form-group ">
+                  <div class="form-group" custom-select data="supportArea">
+                  </div>
+                    </div>
                 </div>
               </div>
             </accordion-group>
           </accordion>
         </div>
-        <div class="col-lg-1 ">
-          <a href="javascript:void(0)" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus"
-             ng-click="createContact()"> Contact</a>
-        </div>
-        <div class="col-lg-10">
-          <accordion>
-            <accordion-group is-open="status.open">
-              <accordion-heading>
-            <span class="color-black">
-            2) Escalation Contact Person For Business
-            <i class="pull-right glyphicon"
-               ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
-         </span></accordion-heading>
-              <div class="row">
-                <div class="col-md-5 col-pad">
-                  <div class=" form-group label-floating is-empty">
-                    <label class="control-label">Contact Person</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Phone Number</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
-                </div>
-                <div class="col-md-5 col-md-offset-2">
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Address</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-                  </div>
-                </div>
-              </div>
-              <div class="row ">
-                <div class="col-md-6 col-pad">
-                  <div class="form-group">
-                    <label class="contacts">Contacts Provides</label>
-                    <input type="checkbox" class="check">
-                    <label>Remote</label>
-                    <input type="checkbox" class="check">
-                    <label>Local</label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-5 col-pad">
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Remote Location">
-                  </div>
-                </div>
-              </div>
-            </accordion-group>
-          </accordion>
-        </div>
-        <div class="col-lg-10">
-          <accordion>
-            <accordion-group is-open="status.open">
-              <accordion-heading>
-            <span class="color-black">
-            3) Primary Contact Person For Finance
-            <i class="pull-right glyphicon"
-               ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
-          </span></accordion-heading>
-              <div class="row">
-                <div class="col-md-5 col-pad">
-                  <div class=" form-group label-floating is-empty">
-                    <label class="control-label">Contact Person</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Phone Number</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
-                </div>
-                <div class="col-md-5 col-md-offset-2">
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Address</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-                  </div>
-                </div>
-              </div>
-            </accordion-group>
-          </accordion>
-        </div>
-        <div class="col-lg-10">
-          <accordion>
-            <accordion-group is-open="status.open">
-              <accordion-heading>
-            <span class="color-black">
-            4) Primary Contact Person For Invoice
-            <i class="pull-right glyphicon"
-               ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
-          </span></accordion-heading>
-              <div class="row">
-                <div class="col-md-5 col-pad">
-                  <div class=" form-group label-floating is-empty">
-                    <label class="control-label">Contact Person</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Phone Number</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
-                </div>
-                <div class="col-md-5 col-md-offset-2">
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Address</label>
-                    <input class="form-control bord-remove" type="text">
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" placeholder="Contact Person Designation">
-                  </div>
-                </div>
-              </div>
-            </accordion-group>
-          </accordion>
-        </div>
+
+
         <div class="col-md-6">
           <h4 class="color-black">Roll out of a proposal</h4>
           <div class="form-group is-empty is-fileinput">

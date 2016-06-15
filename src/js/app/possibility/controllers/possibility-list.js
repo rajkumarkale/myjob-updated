@@ -1,7 +1,7 @@
 angular.module('com.module.possibility')
 .controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies){
     $scope.sortType     = ''; 
-    $scope.sortReverse  = false;  
+    $scope.sortReverse  = true;  
     $scope.searchView   = ''; 
     
 	$scope.data = {

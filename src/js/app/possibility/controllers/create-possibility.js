@@ -55,7 +55,10 @@ angular.module('com.module.possibility')
         };
         $scope.init($stateParams);
         $scope.getNewPointofContact =  function(){
-        	var obj = {name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:appConfig.possibility.contactType};
+        	var obj = {name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:appConfig.possibility.contactType,isOpen:true};
+            $scope.point_of_contacts.map(function(obj){
+                obj.isOpen = false;
+            })
         	 $scope.point_of_contacts.push(obj)
 
         };

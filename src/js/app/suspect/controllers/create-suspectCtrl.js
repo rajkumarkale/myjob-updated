@@ -2,12 +2,18 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-  .controller('createSuspectCtrl',['$scope','$modal',function($scope,$modal){
+  .controller('createSuspectCtrl',['$scope','$modal','$stateParams','suspectService',function($scope,$modal,$stateParams,suspectService){
 
     $scope.status = {
       isFirstOpen: true,
       isFirstDisabled: false
-    }
+    };
+    $scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function(response) {
+
+      console.log(response);
+
+    });
+
 
     $scope.open = function($event,opened) {
       $event.preventDefault();

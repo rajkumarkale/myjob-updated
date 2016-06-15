@@ -8,8 +8,15 @@ angular.module('com.module.suspect').factory('suspectService', function ($http, 
       url: BASEURI + '/api/suspect/'+currentPage+'/'+numPerPage
     });
   };
+  var getSuspectById = function (Id) {
+    return $http({
+      method: 'GET',
+      url: BASEURI + '/api/suspect/'+Id
+    });
+  };
 
   return {
-    getSuspects:getSuspects
+    getSuspects:getSuspects,
+    getSuspectById:getSuspectById
   }
 });

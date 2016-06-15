@@ -23,6 +23,7 @@ angular.module('app', [
   'com.module.admin',
   'ui.sortable',
   'toaster',
+  'nvd3'
 
 ]);
 

@@ -1755,6 +1755,15 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   margin-right: 10px;
   color: black;
 }
+/*  start of comments for dashboard UI */
+.graph-background{
+  width:90%;
+  margin-left: 5%;
+}
+.graph{
+  width: 80%;
 
 
+}
+/* end of dashboard UI comments */
 

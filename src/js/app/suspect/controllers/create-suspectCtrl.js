@@ -3,11 +3,9 @@
  */
 angular.module('com.module.suspect')
   .controller('createSuspectCtrl',['$scope','appConfig','$modal','$stateParams','suspectService',function($scope,appConfig,$modal,$stateParams,suspectService){
-    $scope.status = {
-      isFirstOpen: true
-    };
+    $scope.opening = true;
     $scope.init = function () {
-      $scope.point_of_contacts =[{name:"",designation:"",phone:"",support_location:"",contact_type:""}];
+      $scope.point_of_contacts =[{name:"",designation:"",phone:"",support_location:"",contact_type:"",isOpen:true}];
     };
     $scope.init();
     /*$scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function(response) {
@@ -16,7 +14,7 @@ angular.module('com.module.suspect')
     $scope.contactType = appConfig.suspect.contactType;
     $scope.supportArea = appConfig.suspect.supportArea;
     $scope.createNewContactList = function(){
-      var obj = {name:"",designation:"",phone:"",support_location:"",contact_type:appConfig.possibility.contactType};
+      var obj = {name:"",designation:"",phone:"",support_location:"",contact_type:appConfig.possibility.contactType,isOpen:true};
       $scope.point_of_contacts.push(obj);
     };
 

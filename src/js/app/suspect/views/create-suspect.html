@@ -13,14 +13,19 @@
         </div>
       </div>
       <hr class="line1">
+      <div class=" pull-right">
+        <a href="" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus"
+           ng-click="createNewContactList()"> Contact</a>
+      </div>
       <div class="row ">
-        <div class="col-lg-10 " ng-repeat="poc in point_of_contacts">
-          <accordion  close-others=true>
-            <accordion-group is-open="status.isFirstOpen">
+
+        <div class="col-lg-10 ">
+          <accordion  close-others='opening'>
+            <accordion-group is-open="poc.isOpen" ng-repeat="poc in point_of_contacts">
               <accordion-heading >
           <span class="color-black ">
           Add Contact Person
-          <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': status.open, ' glyphicon-plus': !status.open}">
+          <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.open, ' glyphicon-plus': !poc.open}">
             </i>
             </span>
               </accordion-heading>
@@ -54,10 +59,7 @@
             </accordion-group>
           </accordion>
         </div>
-        <div class="col-lg-1 ">
-          <a href="" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus"
-             ng-click="createNewContactList()"> Contact</a>
-        </div>
+
 
         <div class="col-md-6">
           <h4 class="color-black">Roll out of a proposal</h4>

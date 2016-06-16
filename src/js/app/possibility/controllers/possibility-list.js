@@ -1,5 +1,8 @@
 angular.module('com.module.possibility')
 .controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies){
+    $scope.placement = {
+    selected: 'bottom'
+  };
     $scope.sortType     = ''; 
     $scope.sortReverse  = true;  
     $scope.searchView   = ''; 

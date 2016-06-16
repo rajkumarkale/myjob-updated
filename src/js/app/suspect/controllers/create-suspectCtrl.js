@@ -8,9 +8,11 @@ angular.module('com.module.suspect')
       $scope.point_of_contacts =[{name:"",designation:"",phone:"",support_location:"",contact_type:"",isOpen:true}];
     };
     $scope.init();
-    /*$scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function(response) {
+    $scope.title = "Possibility";
+    $scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function(response) {
       console.log(response.data);
-    });*/
+      $scope.createPossibility=response.data;
+    });
     $scope.contactType = appConfig.suspect.contactType;
     $scope.supportArea = appConfig.suspect.supportArea;
     $scope.status = appConfig.suspect.status;
@@ -22,7 +24,7 @@ angular.module('com.module.suspect')
     $scope.cancel = function() {
       $state.go('app.suspect-view');
     };
-    
+
     /*$scope.createContact = function () {
       var modalInstance1 = $modal.open({
         templateUrl: 'js/app/suspect/views/add-contact.html',

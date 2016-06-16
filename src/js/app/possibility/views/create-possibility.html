@@ -1,16 +1,19 @@
 
+<div >
+  <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
 
 <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
 
   <button class="btn btn-primary contacts-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"> Edit</button>
-  <button ui-sref="app.viewPossibility" class="btn btn-primary contacts-button "> Close</button>
+  <button data-ng-click="onClose()" class="btn btn-primary contacts-button "> Close</button>
 </div>
-<div class="container col-md-12 pad-t-20" data-ng-class ="disableForm()"  data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
+
+<div class="container col-md-12 pad-t-20" data-ng-class ="disableForm()"  data-cg-busy="{promise:myPromise,message:'Loading Possibilities'}">
 
   <div class="panel panel-primary second-panel">
     <div class="panel-heading">
       <span>{{title}}</span>
-    </div
+      </div>
     <div>
       <div class="panel-body" >
         <form name="createPossibilityForm" >
@@ -53,7 +56,8 @@
       </div>
       <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
       <label class="control-label">Zipcode</label>
-      <input class="form-control" required data-ng-model="createPossibility.address.pin" type="text">
+
+      <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text">
 
     </div>
 
@@ -104,8 +108,9 @@
 
 </div>
 <div class="form-group1 pull-right ">
-  <input type="checkbox" class="check">
-  <label class=" first-class2 " >Freeze</label>
+
+  <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
+  <label   class=" first-class2 " >Freeze</label>
 </div>
 
 </div>
@@ -127,22 +132,20 @@
     </ul>
     <ul>
       <div ng-repeat="f in uploadFiles" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-      <img ng-src="{{f.url}}" class="thumb">   
+      <img ng-src="{{f.url}}" class="thumb">
          <div  custom-select data="f.documentType" style="min-width: 40px !important;width:40px;">
       </div>
       </div>
-
-</div>
     </ul>
   </div>
 </div>
-<div ng-repeat="poc in point_of_contacts" class="row col-md-12">
+<div  ng-repeat="poc in point_of_contacts" class="row col-md-12">
 <accordion>
             <accordion-group is-open="poc.isOpen" >
               <accordion-heading>
             <span  class="color-black">
             {{$index+1}}) Business Contact
-            <i class="pull-right glyphicon" 
+            <i class="pull-right glyphicon"
                ng-class="{'glyphicon-minus': poc.isOpen, 'glyphicon-plus': !poc.isOpen}"></i>
           </span></accordion-heading>
   <div class="col-md-6 form-custom-padding">
@@ -163,7 +166,7 @@
   <input type="checkbox" ng-model="poc.remote" class="check">
   <label class="remote">Remote</label>
   <input type="checkbox" ng-model="poc.local" class="check">
-  <label class="location">Location</label>
+  <label class="location">Local</label>
 </div>
 <div >
       <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
@@ -177,14 +180,15 @@
 <div class="col-md-6 form-custom-padding">
   <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
   <label class="control-label">Contact Person Phone Number</label>
-  <input class="form-control" numbers-only data-ng-model="poc.phone" required  type="text">
+
+  <input class="form-control" numbers-only maxlength="15" data-ng-model="poc.phone" required  type="text">
 
 </div>
 
 
 <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
 <label class="control-label">Email Id</label>
-<input required data-ng-model="poc.email_id" class="form-control" type="text">
+<input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im'>
 </div>
   <div ng-if="poc.contact_type ==='PRIMARY'" >
     <div class="form-group label-floating " >
@@ -216,7 +220,8 @@
 
   <div class="col-md-6 form-custom-padding">
   </div>
-  <div class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
+
+  <div data-cg-busy="{promise:createPromise,message:'Creating/Updating Possibilities'}" class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
     <div class="form-group text-center">
       <button ui-sref="app.viewPossibility" class="btn btn-primary data-button">Cancel</button>
       <button class="btn btn-primary data-button" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)" disabled="disabled">{{isNewPossibility?'Submit':'Update'}}</button>
@@ -226,6 +231,7 @@
 </div>
 
 </form>
+</div>
 </div>
 </div>
 </div>

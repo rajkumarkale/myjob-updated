@@ -40,6 +40,12 @@ var possibilityDetails = function (id) {
       data:data
     })
   }
+  var deleteDocument = function (id) {
+    return $http({
+      method: 'DELETE',
+      url: BASEURI + '/api/document/delete/'+id
+    })
+  }
   return {
     getLegalEntity:getLegalEntity,
     setPossibility:setPossibility,

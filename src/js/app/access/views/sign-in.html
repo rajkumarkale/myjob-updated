@@ -23,7 +23,7 @@
     <div class="col-lg-4 col-md-4 bg-white-only" cg-busy="{promise:myPromise}">
       <div class="m-md">
         <h3 class="color-black m-t-lg m-b-lg h3">Sign In</h3>
-        <form name="signinForm" class="form-validation" novalidate>
+        <form name="signinForm" class="form-validation" novalidate >
           <div class="text-danger wrapper text-center" ng-show="authStatus">
             {{ authError }}
           </div>
@@ -31,7 +31,7 @@
         <div class="form-group left-inner-addon">
               <label>Email</label>
               <input type="email" name="email" class="form-control bord-remove"
-                     data-ng-model="user.email_id"
+                     data-ng-model="user.email_id" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im'
                      required>
 
             </div>

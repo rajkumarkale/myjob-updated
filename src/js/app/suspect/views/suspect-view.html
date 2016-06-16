@@ -138,7 +138,7 @@
              <div class="input-group">
                 <input type="text" class="form-control btn-rounded back-color img-remove"
                        placeholder="Search By Location,Company Name,Contact"
-                       aria-describedby="basic-addon3">
+                       aria-describedby="basic-addon3" ng-model="searchView">
                 <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
               </div>
           </span>
@@ -147,10 +147,10 @@
             <label class=" dropdown checkBoxDrop pull-left ">
               <input type="checkbox" class="checkBox" ng-model="selectAll">
             </label>
-            <!--<label class="checkBox-showall pull-left "
+            <label class="checkBox-showall pull-left "
                    ng-show="selectAll || checked1 || checked2 || checked3 || checked4 || checked5 ">
               <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
-            </label>-->
+            </label>
             <label class="  checkBox-showall pull-left "
                    ng-show="selectAll || checked1 || checked2 || checked3 || checked4">
               <span class="glyphicon glyphicon-trash " data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
@@ -166,10 +166,10 @@
           <thead class="table-head">
           <tr>
             <th class="table-th-heading"></th>
-            <th class="table-th-heading">Legal Entity <span class="glyphicon glyphicon-sort color-black "></span></th>
-            <th>Business Unit <span class="glyphicon glyphicon-sort color-black"></span></th>
-            <th class="table-th-heading">Location <span class="glyphicon glyphicon-sort color-black"></span></th>
-            <th class="table-th-heading">Contact Person <span class="glyphicon glyphicon-sort color-black"></span></th>
+            <th class="table-th-heading">Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black " ></span></th>
+            <th>Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
+            <th class="table-th-heading">Location <span ng-click="sortType = 'city'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
+            <th class="table-th-heading">Contact Person <span ng-click="sortType = 'pocs[0].name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
             <th class="table-th-heading">Contact Designation</th>
             <th class="table-th-heading">Contact Number</th>
             <th class="table-th-heading">Status <span class="glyphicon glyphicon-filter color-black"></span></th>
@@ -177,7 +177,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr data-ng-repeat="suspect in data.suspects"  >
+          <tr data-ng-repeat="suspect in data.suspects | orderBy:sortType:sortReverse| filter:searchView"  >
         <td>
 
           <div class="chekbox">
@@ -190,7 +190,6 @@
           </div>
 
         </td>
-
         <td class="hand-cursor td-text-color" ui-sref="app.create-suspect-view">{{suspect.legal_name}}</td>
         <td>{{suspect.client_unit_name}}</td>
         <td>{{suspect.city}}</td>

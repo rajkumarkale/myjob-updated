@@ -3,8 +3,8 @@ angular.module('com.module.possibility')
     $scope.placement = {
     selected: 'bottom'
   };
-    $scope.sortType     = ''; 
-    $scope.sortReverse  = true;  
+    $scope.sortType     = 'legal_name'; 
+    $scope.sortReverse  = false;  
     $scope.searchView   = ''; 
     
 	$scope.data = {

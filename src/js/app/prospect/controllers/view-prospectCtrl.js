@@ -3,6 +3,9 @@
  */
 angular.module('com.module.prospect')
 .controller('viewProspectCtrl',['$scope',function($scope){
+        $scope.sortType     = 'legal_name'; 
+        $scope.sortReverse  = false;  
+        $scope.searchView   = '';
   $scope.open = function($event,opened) {
     $event.preventDefault();
     $event.stopPropagation();

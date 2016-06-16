@@ -66,7 +66,7 @@
              <div class="input-group">
                 <input type="text" class="form-control btn-rounded back-color  img-remove"
                        placeholder="Search By Location,Company Name,Contact"
-                       aria-describedby="basic-addon3">
+                       aria-describedby="basic-addon3" ng-model="searchView">
                 <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
               </div>
           </span>
@@ -98,11 +98,11 @@
 
         <tr>
           <th class="table-th-heading"></th>
-          <th class="table-th-heading"> Legal Entity <i class="glyphicon glyphicon-sort color-black"></i></th>
-          <th class="table-th-heading">Business Unit <span class="glyphicon glyphicon-sort color-black"></span></th>
+          <th class="table-th-heading"> Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black " ></span> </th>
+          <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
           <th class="table-th-heading">Annual Number</th>
           <th class="table-th-heading">Busines Potential Revenue</th>
-          <th class="table-th-heading">EST Date of Closure <span class="glyphicon glyphicon-sort color-black"></span>
+          <th class="table-th-heading">EST Date of Closure <span ng-click="sortType = ''; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span>
           </th>
           <th class="table-th-heading">Contact Designation</th>
           <th class="table-th-heading">Business Vertical</th>

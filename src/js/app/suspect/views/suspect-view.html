@@ -138,7 +138,7 @@
              <div class="input-group">
                 <input type="text" class="form-control btn-rounded back-color img-remove"
                        placeholder="Search By Location,Company Name,Contact"
-                       aria-describedby="basic-addon3">
+                       aria-describedby="basic-addon3" ng-model="searchView">
                 <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
               </div>
           </span>
@@ -166,10 +166,10 @@
           <thead class="table-head">
           <tr>
             <th class="table-th-heading"></th>
-            <th class="table-th-heading">Legal Entity <span class="glyphicon glyphicon-sort color-black "></span></th>
-            <th>Business Unit <span class="glyphicon glyphicon-sort color-black"></span></th>
-            <th class="table-th-heading">Location <span class="glyphicon glyphicon-sort color-black"></span></th>
-            <th class="table-th-heading">Contact Person <span class="glyphicon glyphicon-sort color-black"></span></th>
+            <th class="table-th-heading">Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black " ></span></th>
+            <th>Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
+            <th class="table-th-heading">Location <span ng-click="sortType = 'city'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
+            <th class="table-th-heading">Contact Person <span ng-click="sortType = 'pocs[0].name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
             <th class="table-th-heading">Contact Designation</th>
             <th class="table-th-heading">Contact Number</th>
             <th class="table-th-heading">Status <span class="glyphicon glyphicon-filter color-black"></span></th>
@@ -177,7 +177,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr data-ng-repeat="suspect in data.suspects"  >
+          <tr data-ng-repeat="suspect in data.suspects | orderBy:sortType:sortReverse| filter:searchView"  >
         <td>
 
           <div class="chekbox">

@@ -135,7 +135,7 @@
     </ul>
   </div>
 </div>
-<div data-cg-busy="{promise:createPromise,message:'Creating/Updating Possibilities'}" ng-repeat="poc in point_of_contacts" class="row col-md-12">
+<div  ng-repeat="poc in point_of_contacts" class="row col-md-12">
 <accordion>
             <accordion-group is-open="poc.isOpen" >
               <accordion-heading>
@@ -183,7 +183,7 @@
 
 <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
 <label class="control-label">Email Id</label>
-<input required data-ng-model="poc.email_id" class="form-control" type="text">
+<input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im'>
 </div>
   <div ng-if="poc.contact_type ==='PRIMARY'" >
     <div class="form-group label-floating " >
@@ -215,7 +215,7 @@
 
   <div class="col-md-6 form-custom-padding">
   </div>
-  <div class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
+  <div data-cg-busy="{promise:createPromise,message:'Creating/Updating Possibilities'}" class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
     <div class="form-group text-center">
       <button ui-sref="app.viewPossibility" class="btn btn-primary data-button">Cancel</button>
       <button class="btn btn-primary data-button" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)" disabled="disabled">{{isNewPossibility?'Submit':'Update'}}</button>

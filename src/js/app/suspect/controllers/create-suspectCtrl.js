@@ -13,6 +13,7 @@ angular.module('com.module.suspect')
     });*/
     $scope.contactType = appConfig.suspect.contactType;
     $scope.supportArea = appConfig.suspect.supportArea;
+    $scope.status = appConfig.suspect.status;
     $scope.createNewContactList = function(){
       var obj = {name:"",designation:"",phone:"",support_location:"",contact_type:appConfig.possibility.contactType,isOpen:true};
       $scope.point_of_contacts.push(obj);
@@ -21,23 +22,7 @@ angular.module('com.module.suspect')
     $scope.cancel = function() {
       $state.go('app.suspect-view');
     };
-    /*$scope.open = function($event,opened) {
-      $event.preventDefault();
-      $event.stopPropagation();
-
-      $scope.openCal=opened;
-
-      if($scope.openCal==='opened1')
-      {
-        $scope.opened1 = true;
-        $scope.opened2 = false;
-      }
-      else if($scope.openCal==='opened2')
-      {
-        $scope.opened2 = true;
-        $scope.opened1 = false;
-      }
-    };*/
+    
     /*$scope.createContact = function () {
       var modalInstance1 = $modal.open({
         templateUrl: 'js/app/suspect/views/add-contact.html',

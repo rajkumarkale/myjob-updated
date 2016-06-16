@@ -305,7 +305,8 @@ margin-left: 50px;}
     padding-right: 24px;
     padding-top: 10px;
     padding-bottom: 10px;}
-.line1{border-top: 1px solid #8c8b8b;margin-top: 115px;}
+.line1{border-top: 1px solid #8c8b8b;margin-top: 105px;}
+
 .label-col{color: #DEDEDE !important;}
 .form-control:focus{box-shadow: none;}
 .contacts{color: #049ad9;}
@@ -416,7 +417,10 @@ margin-left: 50px;}
   white-space: nowrap;
 }
 .mrg-formgrp{
-  margin: 0px;
+  margin: 0;
+}
+.mrg-top-apply{
+  margin-top: -30px;
 }
 .mrg-top{ margin-top: 10px;}
 .pan-col{
@@ -1761,9 +1765,13 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   margin-left: 5%;
 }
 .graph{
-  width: 80%;
-
-
+  width: 80%;}
+.nv-legend-text{
+  display:none;
 }
+.nv-legend-symbol{
+  display: none;
+}
+
 /* end of dashboard UI comments */
 

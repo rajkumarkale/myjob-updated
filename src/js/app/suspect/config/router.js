@@ -11,7 +11,7 @@ angular.module('com.module.suspect').config(['$stateProvider', function ($stateP
     })
     .state('app.create-suspect-view', {
       url: '/create-suspect',
-      templateUrl: 'js/app/suspect/views/create-suspect.html',
+      templateUrl: 'js/app/suspect/views/accord.html',
       controller:'createSuspectCtrl',
       params: {
         suspect: null

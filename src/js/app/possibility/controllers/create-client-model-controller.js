@@ -1,5 +1,5 @@
-angular.module('com.module.possibility').controller('createClientModalInstanceCtrl', ['$scope', '$modalInstance','possibilityCreateService','toaster',
-  function ($scope,$modalInstance,possibilityCreateService,toaster) {
+angular.module('com.module.possibility').controller('createClientModalInstanceCtrl', ['$scope', '$modalInstance','possibilityCreateService','toaster','$state',
+  function ($scope,$modalInstance,possibilityCreateService,toaster,$state) {
   'use strict';
   $scope.createClient = function (formData) {
     console.log(formData);
@@ -13,5 +13,9 @@ angular.module('com.module.possibility').controller('createClientModalInstanceCt
   };
   $scope.cancel = function(){
     $modalInstance.dismiss('cancel');
+  };
+  $scope.ok = function () {
+    $state.go('app.viewPossibility');
+    $modalInstance.close();     
   };
 }]);

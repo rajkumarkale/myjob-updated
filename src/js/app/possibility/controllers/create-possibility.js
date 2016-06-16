@@ -1,5 +1,5 @@
 angular.module('com.module.possibility')
-    .controller('createPossibilityController', ['$scope', 'toaster', '$state','$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies', function($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies) {
+    .controller('createPossibilityController', ['$scope', 'toaster', '$state','$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies','$q' , function($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies,$q) {
         $scope.init = function($stateParams) {
 
             $scope.isEditable = false;
@@ -17,6 +17,7 @@ angular.module('com.module.possibility')
                     $scope.createPossibility = response.data;
                     $scope.client_unit_id = $scope.createPossibility.point_of_contacts[0].client_unit_id;
                     $scope.point_of_contacts = $scope.createPossibility.point_of_contacts;
+                    $scope.createPossibility.freeze = $scope.createPossibility.client_freeze_details?true:false;
                     $scope.employeeSize.selectedItem = $scope.getSlectedItem($scope.createPossibility.employee_size, $scope.employeeSize);
                     $scope.groupTurnover.selectedItem = $scope.getSlectedItem($scope.createPossibility.turnover, $scope.groupTurnover);
                     $scope.businessVertical.selectedItem = $scope.getSlectedItem($scope.createPossibility.vertical, $scope.businessVertical);
@@ -79,13 +80,19 @@ angular.module('com.module.possibility')
             });
             modalInstance.result.then(function() {});
         };
-
-
-
+        $scope.onClose = function() {
+            var modalInstance = $modal.open({
+                templateUrl: 'js/app/possibility/views/on-close-modal.html',
+                backdrop: 'static',
+                controller: 'createClientModalInstanceCtrl',
+                size: 'md'
+            });
+            modalInstance.result.then(function() {});
+        };
 
         $scope.save = function(possibilityObject) {
         	if($scope.isNewPossibility)
-            $scope.processRequest(possibilityObject);
+            $scope.createPromise=asyncProcessRequest(possibilityObject);
         	else{
         		var status ={current_status_id:$scope.point_of_contacts[0]._id,status:$scope.status.selectedItem.key};
         		possibilityObject.employee_size = $scope.employeeSize.selectedItem.key;
@@ -137,6 +144,7 @@ angular.module('com.module.possibility')
        			delete possibilityObject.address.user_id ;
        			delete possibilityObject.documents;
        			delete possibilityObject.current_status;
+                delete possibilityObject.client_freeze_details;
 	       		possibilityCreateService.updatePossibility(possibilityObject).success(function() {
                 toaster.pop('success', 'POSSIBILITY Created Successfully.');
                 $state.go('app.viewPossibility');
@@ -153,7 +161,8 @@ angular.module('com.module.possibility')
         };
 
 
-        $scope.processRequest = function(requestObject) {
+        function asyncProcessRequest(requestObject) {
+            return $q( function() {
             requestObject.user_id = JSON.parse($cookies.userData).userDetails.roles.account.id;
             requestObject.employee_size = $scope.employeeSize.selectedItem.key;
             requestObject.turnover = $scope.groupTurnover.selectedItem.key;
@@ -190,12 +199,14 @@ angular.module('com.module.possibility')
 
             })
 
-            possibilityCreateService.setPossibility(requestObject).success(function() {
+            var possibilityCreatePromise=possibilityCreateService.setPossibility(requestObject).success(function() {
+                
                 $state.go('app.viewPossibility');
                 toaster.pop('Success', 'POSSIBILITY Created Successfully.');
             }).error(function(err) {
                 $scope.authError = err.message;
             })
+        })
         };
         $scope.getLegalEntity = function(val) {
             possibilityCreateService.getLegalEntity(val).then(function() {

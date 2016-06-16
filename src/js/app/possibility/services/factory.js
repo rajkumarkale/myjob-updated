@@ -11,40 +11,40 @@ angular.module('com.module.possibility').factory('possibilityCreateService', fun
   var getLegalEntity = function (data) {
     return $http({
       method: 'GET',
-      url: BASEURI + '/api/clients?legal_name=' + data
+      url: BASEURI + '/api/clients?legal_name='+data
     });
   };
   var setPossibility = function (data) {
     return $http({
       method: 'POST',
       url: BASEURI + '/api/possibility/create',
-      data: data
+      data:data
     });
   };
-  var getPossibility = function (currentPage, numPerPage) {
+  var getPossibility = function (currentPage,numPerPage) {
     return $http({
       method: 'GET',
-      url: BASEURI + '/api/possibility/' + currentPage + '/' + numPerPage
+      url: BASEURI + '/api/possibility/'+currentPage+'/'+numPerPage
     });
   };
-  var possibilityDetails = function (id) {
+var possibilityDetails = function (id) {
     return $http({
       method: 'GET',
-      url: BASEURI + '/api/possibility/' + id
+      url: BASEURI + '/api/possibility/'+id
     });
   };
-  var updatePossibility = function (data) {
+  var updatePossibility = function(data){
     return $http({
-      method: 'PUT',
-      url: BASEURI + '/api/possibility/update',
-      data: data
+      method:'PUT',
+      url:BASEURI+'/api/possibility/update',
+      data:data
     })
   }
   return {
-    getLegalEntity: getLegalEntity,
-    setPossibility: setPossibility,
-    getPossibility: getPossibility,
-    possibilityDetails: possibilityDetails,
-    updatePossibility: updatePossibility
+    getLegalEntity:getLegalEntity,
+    setPossibility:setPossibility,
+    getPossibility:getPossibility,
+    possibilityDetails:possibilityDetails,
+    updatePossibility:updatePossibility
   }
 });

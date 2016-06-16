@@ -1765,13 +1765,9 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   margin-left: 5%;
 }
 .graph{
-  width: 80%;}
-.nv-legend-text{
-  display:none;
-}
-.nv-legend-symbol{
-  display: none;
-}
+  width: 80%;
 
+
+}
 /* end of dashboard UI comments */
 

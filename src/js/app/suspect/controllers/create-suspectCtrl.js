@@ -22,7 +22,7 @@ angular.module('com.module.suspect')
     $scope.cancel = function() {
       $state.go('app.suspect-view');
     };
-    
+
     /*$scope.createContact = function () {
       var modalInstance1 = $modal.open({
         templateUrl: 'js/app/suspect/views/add-contact.html',

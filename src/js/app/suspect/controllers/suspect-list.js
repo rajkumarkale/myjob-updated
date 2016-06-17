@@ -6,8 +6,8 @@ angular.module('com.module.suspect')
 		    row: '',
 		    currentPage: 1
 		};
-        $scope.sortType     = 'legal_name'; 
-        $scope.sortReverse  = false;  
+      $scope.sortType     = 'legal_name';
+        $scope.sortReverse  = false;
         $scope.searchView   = '';
 		$scope.getSuspects = function(currentPage,numPerPage){
 		$scope.myPromise = suspectService.getSuspects(currentPage,numPerPage).then(function(response){
@@ -26,7 +26,7 @@ angular.module('com.module.suspect')
 			$state.go('app.create-suspect-view',{suspect:suspect});
 
 		};
-		
+
 
   $scope.open = function($event,opened) {
     $event.preventDefault();

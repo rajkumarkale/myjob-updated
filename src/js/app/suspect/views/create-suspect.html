@@ -23,7 +23,7 @@
         <div class="col-lg-10 ">
           <accordion  close-others='opening'>
             <accordion-group is-open="poc.isOpen" ng-repeat="poc in point_of_contacts">
-              <accordion-heading >
+              <accordion-heading ><span>{{title}}</span>
           <span class="color-black ">
           {{supportArea.selectedItem.displayText}} {{contactType.selectedItem.displayText}} Contact Person Details
           <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}">

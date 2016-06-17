@@ -1,8 +1,8 @@
 <div >
   <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
 
-  <button class="btn btn-primary contacts-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"> Edit</button>
-  <button data-ng-click="onClose()" class="btn btn-primary contacts-button "> Close</button>
+  <button class="btn btn-primary edit-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"> Edit</button>
+  <button data-ng-click="onClose()" class="btn btn-primary cancel-button "> Close</button>
 </div>
 <div class="container col-md-12 pad-t-20" data-ng-class ="disableForm()"  data-cg-busy="{promise:myPromise,message:'Loading Possibilities'}">
 
@@ -20,39 +20,39 @@
 
                <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
               <label class="control-label">Legal Entity</label>
-              <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text">
+              <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text" tabindex="1">
             </div>
 
               <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
               <label class="control-label">Division Name</label>
-              <input class="form-control" required data-ng-model="createPossibility.division" type="text">
+              <input class="form-control" required data-ng-model="createPossibility.division" type="text" tabindex="3">
             </div>
 
                           <div>
-                                        <label class="control-label">Bussiness Vertical</label>
+                                        <label class="control-label dropdown-col">Bussiness Vertical</label>
 
-            <div custom-select data="businessVertical"></div>
+            <div custom-select data="businessVertical" tabindex="5"></div>
             </div>
             <div>
-                   <label class="control-label">Employee Size of the Company</label>
-            <div  custom-select data="employeeSize"></div>
+                   <label class="control-label dropdown-col">Employee Size of the Company</label>
+            <div  custom-select data="employeeSize" tabindex="7"></div>
             </div>
 
 
             <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
             <label class="control-label">Address Line 1</label>
             <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 "
-                   type="text">
+                   type="text" tabindex="9">
 
           </div>
           <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
           <label class="control-label">City</label>
-          <input class="form-control" required data-ng-model="createPossibility.address.city " type="text">
+          <input class="form-control" required data-ng-model="createPossibility.address.city " type="text" tabindex="11">
 
       </div>
       <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
       <label class="control-label">Zipcode</label>
-      <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text">
+      <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text" tabindex="13">
 
     </div>
 
@@ -62,38 +62,38 @@
   <div class="col-md-6 form-custom-padding">
     <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
     <label class="control-label">Business Unit</label>
-    <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text">
+    <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text" tabindex="2">
 
   </div>
   <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
   <label class="control-label">Website URL</label>
-  <input class="form-control" required data-ng-model="createPossibility.url" type="text">
+  <input class="form-control" required data-ng-model="createPossibility.url" type="text" tabindex="4">
 
 </div>
 <div>
-                   <label class="control-label">Group Turnover</label>
-<div  custom-select data="groupTurnover">
+                   <label class="control-label dropdown-col">Group Turnover</label>
+<div  custom-select data="groupTurnover" tabindex="6">
 </div>
 
 </div>
 <div>
-                   <label class="control-label">Type of Customer</label>
-<div  custom-select data="customerType">
+                   <label class="control-label dropdown-col">Type of Customer</label>
+<div  custom-select data="customerType" tabindex="8">
 </div>
 
 </div>
 <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
 <label class="control-label">Address Line 2</label>
-<input class="form-control"  data-ng-model="createPossibility.address.address_line_2" type="text">
+<input class="form-control"  data-ng-model="createPossibility.address.address_line_2" type="text" tabindex="10">
 </div>
 <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
 <label class="control-label">State</label>
-<input class="form-control" required data-ng-model="createPossibility.address.state" type="text">
+<input class="form-control" required data-ng-model="createPossibility.address.state" type="text" tabindex="12">
 
 </div>
 <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
   <label class="control-label">Country</label>
-  <input class="form-control" required data-ng-model="createPossibility.address.country" type="text">
+  <input class="form-control" required data-ng-model="createPossibility.address.country" type="text" tabindex="14">
 
 </div><br>
 <div data-ng-if="!isNewPossibility">
@@ -147,27 +147,27 @@
   <div class="col-md-6 form-custom-padding">
     <div  class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
     <label class="control-label">Contact Person Name</label>
-    <input class="form-control" required data-ng-model="poc.name" type="text" >
+    <input class="form-control" required data-ng-model="poc.name" type="text" tabindex="15">
 
   </div>
 
   <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
   <label class="control-label">Contact Person Designation</label>
-  <input data-ng-model="poc.designation" required class="form-control" type="text">
+  <input data-ng-model="poc.designation" required class="form-control" type="text" tabindex="17">
 
 </div>
 
 <div class="form-group">
   <label class="contacts">Contacts Provides</label>
-  <input type="checkbox" ng-model="poc.remote" class="check">
+  <input type="checkbox" ng-model="poc.remote" class="check" tabindex="19">
   <label class="remote">Remote</label>
-  <input type="checkbox" ng-model="poc.local" class="check">
+  <input type="checkbox" ng-model="poc.local" class="check" tabindex="20">
   <label class="location">Local</label>
 </div>
 <div >
       <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
       <label class="control-label">Remote Location</label>
-      <input required data-ng-model="poc.support_location" class="form-control" type="text">
+      <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="22">
 
     </div>
     </div>
@@ -176,14 +176,14 @@
 <div class="col-md-6 form-custom-padding">
   <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
   <label class="control-label">Contact Person Phone Number</label>
-  <input class="form-control" numbers-only maxlength="15" data-ng-model="poc.phone" required  type="text">
+  <input class="form-control" numbers-only maxlength="15" data-ng-model="poc.phone" required  type="text" tabindex="16">
 
 </div>
 
 
 <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
 <label class="control-label">Email Id</label>
-<input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im'>
+<input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="18">
 </div>
   <div ng-if="poc.contact_type ==='PRIMARY'" >
     <div class="form-group label-floating " >
@@ -193,8 +193,8 @@
     </div>
   </div>
   <div ng-if="poc.contact_type !=='PRIMARY'" class=" form-group ">
-    <label class="control-label">Contact Type</label>
-    <div  custom-select data="poc.contact_type">
+    <label class="control-label contactdrop-col">Contact Type</label>
+    <div  custom-select data="poc.contact_type" tabindex="21">
 
     </div>
   </div>
@@ -215,7 +215,8 @@
 
   <div class="col-md-6 form-custom-padding">
   </div>
-  <div data-cg-busy="{promise:createPromise,message:'Creating/Updating Possibilities'}" class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
+  <div data-cg-busy="{promise:savePromise,message:'Updating Possibilities'}"></div>
+  <div data-cg-busy="{promise:createPromise,message:'Creating Possibilities'}" class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
     <div class="form-group text-center">
       <button ui-sref="app.viewPossibility" class="btn btn-primary data-button">Cancel</button>
       <button class="btn btn-primary data-button" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)" disabled="disabled">{{isNewPossibility?'Submit':'Update'}}</button>

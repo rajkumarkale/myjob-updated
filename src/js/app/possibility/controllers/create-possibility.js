@@ -90,10 +90,14 @@ angular.module('com.module.possibility')
             modalInstance.result.then(function() {});
         };
 
-        $scope.save = function(possibilityObject) {
-        	if($scope.isNewPossibility)
-            $scope.createPromise=asyncProcessRequest(possibilityObject);
-        	else{
+           $scope.save =function(possibilityObject) {
+        	if($scope.isNewPossibility){
+            $scope.createPromise=asyncProcessRequest(possibilityObject);}
+        	else{$scope.savePromise=asyncSave(possibilityObject); }
+           };
+            function asyncSave(possibilityObject) {
+            return $q( function() {
+                
         		var status ={current_status_id:$scope.point_of_contacts[0]._id,status:$scope.status.selectedItem.key};
         		possibilityObject.employee_size = $scope.employeeSize.selectedItem.key;
             	possibilityObject.turnover = $scope.groupTurnover.selectedItem.key;
@@ -151,9 +155,11 @@ angular.module('com.module.possibility')
             }).error(function(err) {
                 $scope.authError = err.message;
             })
-        	}
-
-        };
+        	
+        });
+                      }
+           
+        
         $scope.isValid = function(val) {
             return (val && ($scope.businessVertical.selectedItem && $scope.employeeSize.selectedItem && $scope.groupTurnover.selectedItem &&
                 $scope.customerType.selectedItem))

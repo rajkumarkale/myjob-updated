@@ -371,6 +371,27 @@ margin-left: 50px;}
 .table-topdiv{
   overflow-x: scroll;
 }
+.edit-button{
+  background-color: #049ad9 !important;color: white !important;padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;border-radius: 0px;
+  text-transform: none;
+}
+.cancel-button{
+  background-color: #049ad9 !important;color: white !important;padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;border-radius: 0px;
+  text-transform: none;
+  margin-right: 22px;
+}
+.dropdown-col{
+  color: #009688;
+}
+.contactdrop-col{
+  color: #009688 !important;
+}
 /*end create possibility*/
 
 

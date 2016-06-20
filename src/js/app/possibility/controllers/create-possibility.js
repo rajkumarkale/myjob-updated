@@ -81,13 +81,17 @@ angular.module('com.module.possibility')
             modalInstance.result.then(function() {});
         };
         $scope.onClose = function() {
+            if($scope.isEditable !== true){
+                $state.go('app.viewPossibility');
+            }else{
             var modalInstance = $modal.open({
                 templateUrl: 'js/app/possibility/views/on-close-modal.html',
                 backdrop: 'static',
                 controller: 'createClientModalInstanceCtrl',
-                size: 'md'
+                size: 'sm'
             });
             modalInstance.result.then(function() {});
+                }
         };
 
            $scope.save =function(possibilityObject) {
@@ -206,7 +210,7 @@ angular.module('com.module.possibility')
             })
 
             var possibilityCreatePromise=possibilityCreateService.setPossibility(requestObject).success(function() {
-                
+
                 $state.go('app.viewPossibility');
                 toaster.pop('Success', 'POSSIBILITY Created Successfully.');
             }).error(function(err) {

@@ -122,12 +122,18 @@
         <th class="table-th-heading">Contact Person <span ng-click="sortType = 'pocs[0].name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
         <th class="table-th-heading">Contact Designation</th>
         <th class="table-th-heading">Contact Number</th>
-        <th class="table-th-heading">Status <span class="glyphicon glyphicon-filter color-black" ></span></th>
+        <th class="table-th-heading">Status<span class="btn-group" dropdown > <span class="glyphicon glyphicon-filter color-black" id="single-button" dropdown-toggle ng-disabled="disabled"></span>
+      <ul class="dropdown-menu" dropdown-menu>
+        <li data-ng-repeat="item in ['NOT MET','MET','INACTIVE'] track by $index"> <a data-ng-click="setSelectedClient(item)">{{item}}<span data-ng-class="isChecked(item)"></span></a>
+
+                    </li>
+      </ul>
+    </span></th>
         <th class="table-th-heading">Discussions</th>
       </tr>
       </thead>
       <tbody>
-      <tr data-ng-repeat="possibility in data.possibilities | orderBy:sortType:sortReverse| filter:searchView" >
+      <tr data-ng-repeat="possibility in data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem | filter:searchView" >
         <td>
 
           <div class="chekbox">
@@ -178,3 +184,11 @@
   </div>
 </div>
 </div>
+<script type="text/ng-template" id="mypopover.html">
+        
+        <div class="form-group">
+          <ul>
+              <li ng-repeat="item in items=['NOT MET','MET','INACTIVE']"></li>
+          </ul>
+        </div>
+    </script>

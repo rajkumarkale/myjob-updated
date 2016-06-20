@@ -11,6 +11,9 @@ angular.module('com.module.possibility').directive('customSelect',[function (){
      s.dataList.selectedItem = s.dataList.data[0];
      angular.element('.select').off('click').on('click', '.placeholder', function() {
   var parent = angular.element(this).closest('.select');
+         s.$watch('dataList.selectedItem',function(n,o){
+             s.dataList.selectedItem =n;
+         });
   if (!parent.hasClass('is-open')) {
     parent.addClass('is-open');
     angular.element('.select.is-open').not(parent).removeClass('is-open');
@@ -23,5 +26,21 @@ angular.module('com.module.possibility').directive('customSelect',[function (){
 });
    } }
   }
+}]).filter('companyFilter', [function () {
+    return function (clients, seletedItem) {
+        if (!angular.isUndefined(clients) && !angular.isUndefined(seletedItem) && seletedItem.length > 0) {
+            var tempClients = [];
+            angular.forEach(seletedItem, function (id) {
+                angular.forEach(clients, function (client) {
+                    if (angular.equals(client.status, id)) {
+                        tempClients.push(client);
+                    }
+                });
+            });
+            return tempClients;
+        } else {
+            return clients;
+        }
+    };
 }]);
 

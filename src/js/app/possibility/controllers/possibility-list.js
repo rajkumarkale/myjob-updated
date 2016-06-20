@@ -1,12 +1,25 @@
 angular.module('com.module.possibility')
 .controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies){
-    $scope.placement = {
-    selected: 'bottom'
-  };
+    $scope.selectedItem = [];
     $scope.sortType     = 'legal_name'; 
     $scope.sortReverse  = false;  
     $scope.searchView   = ''; 
-    
+    $scope.setSelectedClient = function (item) {
+        /*var id = this.company.id;*/
+        if (_.contains($scope.selectedItem, item)) {
+            $scope.selectedItem = _.without($scope.selectedItem, item);
+        } else {
+            $scope.selectedItem.push(item);
+        }
+        return false;
+    };
+
+    $scope.isChecked = function (item) {
+        if (_.contains($scope.selectedItem, item)) {
+            return 'glyphicon glyphicon-ok pull-right';
+        }
+        return false;
+    };
 	$scope.data = {
 		    numPerPage: 10,
 		    searchKeywords: '',

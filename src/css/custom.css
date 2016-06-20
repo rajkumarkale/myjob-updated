@@ -371,6 +371,7 @@ margin-left: 50px;}
 .table-topdiv{
   overflow-x: scroll;
 }
+
 .edit-button{
   background-color: #049ad9 !important;color: white !important;padding-left: 20px;
   padding-right: 20px;
@@ -394,6 +395,46 @@ margin-left: 50px;}
 }
 /*end create possibility*/
 
+/* documents preview dis */
+.preview-div {
+   margin-top: 10px;
+ }
+.previews{
+  background-color:#eeeeee;
+  border-radius: 3px;
+  position: relative;
+  padding: 10px;
+  max-height: 228px;
+min-height: 228px;
+  margin-top: 10px;
+}
+.remove{
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -15px;
+  right: -10px;
+  background: url(../img/icon_Delete_file.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.text-in{
+  text-align: center;
+}
+.preview-img{
+  display: inline-block;
+  width: 100%;
+  max-height: 128px;
+  min-height: 128px;
+
+
+}
+.preview-select .select{ min-width: 140px !important;}
+
+
+/* documents preview dis */
+/*end create possibility*/
 
 /*create suspect*/
 
@@ -984,13 +1025,19 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   color: #5d5e5c;
   background-color: #5d5e5c;
 }
-
+.mod-head{
+  padding: 10px !important;
+}
 .header-name{
   font-style: normal;
   font-size: 16px;
   color:#ffffff;
-  text-align: center;
+  text-align: left;
 
+
+}
+.mod-para{
+    font-size: 17px;
 }
 .height-navBar{
   height: 50px;

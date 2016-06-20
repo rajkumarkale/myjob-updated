@@ -14,9 +14,16 @@ angular.module('com.module.suspect').factory('suspectService', function ($http, 
       url: BASEURI + '/api/suspect/'+Id
     });
   };
+    var getNames = function (val) {
+    return $http({
+      method: 'GET',
+      url: BASEURI + '/api/users?name='+val
+    })
+  };
 
   return {
     getSuspects:getSuspects,
-    getSuspectById:getSuspectById
+    getSuspectById:getSuspectById,
+      getNames:getNames
   }
 });

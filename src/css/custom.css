@@ -1838,4 +1838,11 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 
 }
 /* end of dashboard UI comments */
-
+/* start of comments for dashboard UI */
+.nv-legend-symbol {
+  display: none !important;
+}
+.nv-legend-text{
+  display: none !important;
+}
+/*end of dashboard UI comments */

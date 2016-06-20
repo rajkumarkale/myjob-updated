@@ -206,7 +206,7 @@ angular.module('com.module.possibility')
             })
 
             var possibilityCreatePromise=possibilityCreateService.setPossibility(requestObject).success(function() {
-                
+
                 $state.go('app.viewPossibility');
                 toaster.pop('Success', 'POSSIBILITY Created Successfully.');
             }).error(function(err) {

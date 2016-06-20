@@ -35,3 +35,9 @@
 .td-text-color{
   color: #2277b1;
 }
+.left-inner-addon input {
+  padding-left: 12px !important;
+}
+.wrapper {
+  padding: 1px !important;
+}

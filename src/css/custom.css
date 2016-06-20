@@ -1025,13 +1025,19 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   color: #5d5e5c;
   background-color: #5d5e5c;
 }
-
+.mod-head{
+  padding: 10px !important;
+}
 .header-name{
   font-style: normal;
   font-size: 16px;
   color:#ffffff;
-  text-align: center;
+  text-align: left;
 
+
+}
+.mod-para{
+    font-size: 17px;
 }
 .height-navBar{
   height: 50px;

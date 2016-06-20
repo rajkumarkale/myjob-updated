@@ -44,8 +44,8 @@
     },
     "suspect":{
       "status" :{"data":[{"key":"COLD","displayText":"COLD"},{"key":"WARM","displayText":"WARM"},{"key":"HOT","displayText":"HOT"}],"selectedItem":""},
-      "contactType" :{"title":"Contact Type","data":[{"key":"PRIMARY","displayText":"Primary"},{"key":"ESCALATION","displayText":"Escalation"},{"key":"OTHERS","displayText":"Others"}],"selectedItem":""},
-      "supportArea" :{"title":"Support Area","data":[{"key":"BUSINESS","displayText":"Business"},{"key":"FINANCE","displayText":"Finance"},{"key":"INVOICE","displayText":"Invoice"}],"selectedItem":""}
+      "contactType" :{"data":[{"key":"PRIMARY","displayText":"Primary"},{"key":"ESCALATION","displayText":"Escalation"},{"key":"OTHERS","displayText":"Others"}],"selectedItem":""},
+      "supportArea" :{"data":[{"key":"BUSINESS","displayText":"Business"},{"key":"FINANCE","displayText":"Finance"},{"key":"INVOICE","displayText":"Invoice"}],"selectedItem":""}
     },
     "languages": {
       "en": "English"

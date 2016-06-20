@@ -2,7 +2,8 @@
   <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
 
   <button class="btn btn-primary edit-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"> Edit</button>
-  <button data-ng-click="onClose()" class="btn btn-primary cancel-button "> Close</button>
+  <button ng-if="createPossibility.current_status.status === 'MET'" ui-sref="app.viewPossibility" class="btn btn-primary cancel-button "> Close</button>
+  <button ng-if="createPossibility.current_status.status !== 'MET'" data-ng-click="onClose()" class="btn btn-primary cancel-button "> Close</button>
 </div>
 <div class="container col-md-12 pad-t-20" data-ng-class ="disableForm()"  data-cg-busy="{promise:myPromise,message:'Loading Possibilities'}">
 
@@ -227,7 +228,7 @@
   </div>
             </accordion-group>
 </accordion>
-  </div>
+  </div
   <div >
       <button type="button" class="btn btn-primary contacts-button "  data-ng-click="getNewPointofContact()"><i class="fa fa-plus"></i> Contacts</button>
     </div>
@@ -235,7 +236,8 @@
   <div class="col-md-6 form-custom-padding">
   </div>
   <div data-cg-busy="{promise:savePromise,message:'Updating Possibilities'}"></div>
-  <div data-cg-busy="{promise:createPromise,message:'Creating Possibilities'}" class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
+  <div data-cg-busy="{promise:createPromise,message:'Creating Possibilities'}"></div>
+  <div class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
     <div class="form-group text-center">
       <button ui-sref="app.viewPossibility" class="btn btn-primary data-button">Cancel</button>
       <button class="btn btn-primary data-button" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)" disabled="disabled">{{isNewPossibility?'Submit':'Update'}}</button>

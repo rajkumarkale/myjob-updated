@@ -25,7 +25,7 @@ angular.module('com.module.possibility').directive('customSelect',[function (){
   parent.removeClass('is-open').find('.placeholder').text($(this).text());
 });
    } }
-  }
+  };
 }]).filter('companyFilter', [function () {
     return function (clients, seletedItem) {
         if (!angular.isUndefined(clients) && !angular.isUndefined(seletedItem) && seletedItem.length > 0) {

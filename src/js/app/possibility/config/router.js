@@ -16,5 +16,5 @@ angular.module('com.module.possibility').config(['$stateProvider', function ($st
       params: {
         possibility: null
     }
-    })
+    });
 }]);

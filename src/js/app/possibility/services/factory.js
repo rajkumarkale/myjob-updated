@@ -39,18 +39,19 @@ var possibilityDetails = function (id) {
       url:BASEURI+'/api/possibility/update',
       data:data
     })
-  }
+  };
   var deleteDocument = function (id) {
     return $http({
       method: 'DELETE',
       url: BASEURI + '/api/document/delete/'+id
     })
-  }
+  };
   return {
     getLegalEntity:getLegalEntity,
     setPossibility:setPossibility,
     getPossibility:getPossibility,
     possibilityDetails:possibilityDetails,
-    updatePossibility:updatePossibility
+    updatePossibility:updatePossibility,
+    deleteDocument: deleteDocument
   }
 });

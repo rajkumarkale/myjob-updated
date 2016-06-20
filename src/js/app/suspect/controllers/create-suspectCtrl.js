@@ -86,6 +86,13 @@ angular.module('com.module.suspect')
       }
 
     };
+    $scope.editForm = function() {
+      if($scope.createPossibility.current_status.status !== "COLD"){
+        $scope.isEditable = true;
+
+      }
+
+    };
 
     $scope.contactType = appConfig.suspect.contactType;
     $scope.supportArea = appConfig.suspect.supportArea;

@@ -1,11 +1,28 @@
 angular.module('com.module.suspect')
 .controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService',function($scope,$state,toaster,$timeout,suspectService){
+    $scope.selectedItem = [];
 	$scope.data = {
 		    numPerPage: 10,
 		    searchKeywords: '',
 		    row: '',
 		    currentPage: 1
 		};
+    $scope.setSelectedClient = function (item) {
+        /*var id = this.company.id;*/
+        if (_.contains($scope.selectedItem, item)) {
+            $scope.selectedItem = _.without($scope.selectedItem, item);
+        } else {
+            $scope.selectedItem.push(item);
+        }
+        return false;
+    };
+
+    $scope.isChecked = function (item) {
+        if (_.contains($scope.selectedItem, item)) {
+            return 'glyphicon glyphicon-ok pull-right';
+        }
+        return false;
+    };
       $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
         $scope.searchView   = '';

@@ -40,7 +40,7 @@ angular.module('com.module.suspect')
                        return true;
                    }
               });
-              $scope.point_of_contacts[$index].contact_type=temp[0];
+              $scope.point_of_contacts[$index].contact_type.selectedItem=temp[0];
               $scope.point_of_contacts[$index].email_id=x.email_id;
               var temp1=$scope.support_array[$index]["data"].filter(function(obj){
                    if(obj.key==x.support_area){
@@ -60,7 +60,7 @@ angular.module('com.module.suspect')
       $scope.businessVertical = appConfig.possibility.businessVertical;
       $scope.customerType = appConfig.possibility.customerType;
       $scope.contactType = appConfig.possibility.contactType;
-      $scope.point_of_contacts =[{name:"",designation:"",phone:"",support_location:"",contact_type:"",isOpen:true}];
+      /*$scope.point_of_contacts =[{name:"",designation:"",phone:"",support_location:"",contact_type:"",isOpen:true}];*/
       $scope.point_of_contacts =[{name:"",designation:"",phone:"",email_id:"",contact_type:$scope.getCopy(appConfig.suspect.contactType),isOpen:true}];
         $scope.support_array=[appConfig.suspect.supportArea];
 
@@ -99,6 +99,10 @@ $scope.suspect={};
     $scope.cancel = function() {
       $state.go('app.suspect-view');
     };
+      $scope.submit=function(){
+          console.log($scope.point_of_contacts);
+                console.log($scope.support_array);
+      }
 
     /*$scope.createContact = function () {
       var modalInstance1 = $modal.open({

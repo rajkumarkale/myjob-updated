@@ -1,7 +1,6 @@
 angular.module('com.module.access')
   .service('AuthService',['$http', 'appConfig','$cookies', '$q', function ($http, appConfig,$cookies, $q) {
     'use strict';
-    var deferred = $q.defer();
     this.forgotPassword = function (data) {
       return $http({
         method: 'GET',

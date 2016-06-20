@@ -46,13 +46,4 @@ angular.module('com.module.access').config(['$stateProvider', function ($statePr
         title:'Forgot password'
       }
     });
-    /*.state('access.signout', {
-      url: '/sign-out',
-      controller: 'SignOutFormController',
-      templateUrl: 'js/app/access/views/sign-in.html',
-      data :{
-        title:'Sign out'
-      }
-    });*/
-
 }]);

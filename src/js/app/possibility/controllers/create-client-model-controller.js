@@ -9,7 +9,7 @@ angular.module('com.module.possibility').controller('createClientModalInstanceCt
     }).error(function (err) {
       $scope.authError = err.message;
       toaster.pop('Fail','Failed to Create Client.');
-    })
+    });
   };
   $scope.cancel = function(){
     $modalInstance.dismiss('cancel');

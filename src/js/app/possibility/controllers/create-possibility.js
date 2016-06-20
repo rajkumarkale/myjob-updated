@@ -59,8 +59,8 @@ angular.module('com.module.possibility')
         	var obj = {name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:appConfig.possibility.contactType,isOpen:true};
             $scope.point_of_contacts.map(function(obj){
                 obj.isOpen = false;
-            })
-        	 $scope.point_of_contacts.push(obj)
+            });
+        	 $scope.point_of_contacts.push(obj);
 
         };
         $scope.$watch('files', function() {
@@ -101,7 +101,7 @@ angular.module('com.module.possibility')
            };
             function asyncSave(possibilityObject) {
             return $q( function() {
-                
+
         		var status ={current_status_id:$scope.point_of_contacts[0]._id,status:$scope.status.selectedItem.key};
         		possibilityObject.employee_size = $scope.employeeSize.selectedItem.key;
             	possibilityObject.turnover = $scope.groupTurnover.selectedItem.key;
@@ -142,11 +142,11 @@ angular.module('com.module.possibility')
             }
             possibilityObject.point_of_contacts.push(requestPocObject);
 
-            })
+            });
         		delete possibilityObject._id;
         		delete possibilityObject.created_by;
          		delete possibilityObject.time_created;
-         		delete possibilityObject.freeze
+         		delete possibilityObject.freeze;
        			delete possibilityObject.address.time_updated;
        			delete possibilityObject.time_updated;
        			delete possibilityObject.address.user_id ;
@@ -158,15 +158,15 @@ angular.module('com.module.possibility')
                 $state.go('app.viewPossibility');
             }).error(function(err) {
                 $scope.authError = err.message;
-            })
-        	
+            });
+
         });
                       }
-           
-        
+
+
         $scope.isValid = function(val) {
             return (val && ($scope.businessVertical.selectedItem && $scope.employeeSize.selectedItem && $scope.groupTurnover.selectedItem &&
-                $scope.customerType.selectedItem))
+                $scope.customerType.selectedItem));
 
         };
 
@@ -207,7 +207,7 @@ angular.module('com.module.possibility')
             }
             requestObject.point_of_contacts.push(requestPocObject);
 
-            })
+            });
 
             var possibilityCreatePromise=possibilityCreateService.setPossibility(requestObject).success(function() {
 
@@ -215,14 +215,14 @@ angular.module('com.module.possibility')
                 toaster.pop('Success', 'POSSIBILITY Created Successfully.');
             }).error(function(err) {
                 $scope.authError = err.message;
-            })
-        })
-        };
+            });
+        });
+        }
         $scope.getLegalEntity = function(val) {
             possibilityCreateService.getLegalEntity(val).then(function() {
 
 
-            })
+            });
 
         };
         $scope.getSlectedItem = function(selectedItem, srcObj) {
@@ -252,7 +252,6 @@ angular.module('com.module.possibility')
                 return className;
             }
         };
-
         $scope.upload = function(files) {
             if (files && files.length) {
                 for (var i = 0; i < files.length; i++) {
@@ -264,9 +263,17 @@ angular.module('com.module.possibility')
                                 content: file
                             }
                         }).then(function(resp) {
-                            file.url = resp.data.url;
-                            file.documentType = angular.copy(appConfig.possibility.documentType);
-                            $scope.uploadFiles.push(file);
+                          file.url = resp.data.url;
+                          file.documentType = angular.copy(appConfig.possibility.documentType);
+                          $scope.uploadFiles.push(file);
+                          $scope.fileName=file.name;
+                          if (file.name.length > 7) {
+                          $scope.fileNamePart1 = file.name.substring(0, 12);
+                          $scope.fileNameLen = file.name.length - 7;
+                          $scope.fileNamePart2 = file.name.substring($scope.fileNameLen);
+                          $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
+                          console.log($scope.fileName);
+                        }
                         }, null, function(evt) {
 
                         });

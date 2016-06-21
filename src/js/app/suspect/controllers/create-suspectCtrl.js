@@ -89,6 +89,10 @@ angular.module('com.module.suspect')
             $scope.point_of_contacts[i].phone=Obj.phone;
             $scope.point_of_contacts[i].contact_type.selectedItem = $scope.getSelectedItem(Obj.contact_type,$scope.contactType);
             $scope.point_of_contacts[i].support_area.selectedItem = $scope.getSelectedItem(Obj.support_area,$scope.supportArea);
+            if($scope.point_of_contacts[i].contact_type.selectedItem.key === 'PRIMARY'){
+               $("#contact"+i+' .select ul')[1].remove(); 
+                $("#contact"+i+' .select .placeholder')[1].css('cursor','default !important');
+            }
             if(i>0){
                 $scope.createNewContactList();
             }
@@ -218,5 +222,8 @@ angular.module('com.module.suspect')
                 }
             });
             return returnObj;
-      }
+      };
+      $scope.removeFiles=function(index){
+              $scope.uploadFiles.splice(index,1); 
+          };
   }]);

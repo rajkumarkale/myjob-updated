@@ -218,13 +218,7 @@ angular.module('com.module.possibility')
             })
         })
         };
-        $scope.getLegalEntity = function(val) {
-            possibilityCreateService.getLegalEntity(val).then(function() {
-
-
-            })
-
-        };
+        
         $scope.getSlectedItem = function(selectedItem, srcObj) {
             var returnObj;
             angular.forEach(srcObj.data, function(obj) {

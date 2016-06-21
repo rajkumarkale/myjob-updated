@@ -20,10 +20,18 @@ angular.module('com.module.suspect').factory('suspectService', function ($http, 
       url: BASEURI + '/api/users?name='+val
     })
   };
+    var suspectUpdate = function (data) {
+    return $http({
+        method: 'PUT',
+        url: BASEURI + '/api/suspect/update',
+        data: data
+    });
+};
 
   return {
     getSuspects:getSuspects,
     getSuspectById:getSuspectById,
-      getNames:getNames
+      getNames:getNames,
+      suspectUpdate:suspectUpdate
   }
 });

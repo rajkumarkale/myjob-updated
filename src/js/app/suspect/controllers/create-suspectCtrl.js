@@ -2,7 +2,7 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-  .controller('createSuspectCtrl',['$scope','appConfig','$modal','$stateParams','suspectService','$http','$state',function($scope,appConfig,$modal,$stateParams,suspectService,$http,$state){
+  .controller('createSuspectCtrl',['$scope','appConfig','$modal','$stateParams','suspectService','$http','$state','Upload',function($scope,appConfig,$modal,$stateParams,suspectService,$http,$state,Upload){
       $scope.getCopy=function(obj){
           return angular.copy(obj);
       };
@@ -130,9 +130,49 @@ angular.module('com.module.suspect')
     $scope.cancel = function() {
       $state.go('app.suspect-view');
     };
+      
+        $scope.$watch('files', function() {
+            $scope.upload($scope.files);
+        });
+        $scope.$watch('file', function() {
+            if ($scope.file != null) {
+                $scope.files = [$scope.file];
+            }
+        });
+      $scope.uploadFiles =[];
+        $scope.upload = function(files) {
+            if (files && files.length) {
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
+                    if (!file.$error) {
+                        Upload.upload({
+                            url: appConfig.apiUrl+'/api/upload/file',
+                            data: {
+                                content: file
+                            }
+                        }).then(function(resp) {
+                          file.url = resp.data.url;
+                          file.documentType = angular.copy(appConfig.possibility.documentType);
+                          $scope.uploadFiles.push(file);
+                          $scope.fileName=file.name;
+                          if (file.name.length > 7) {
+                          $scope.fileNamePart1 = file.name.substring(0, 12);
+                          $scope.fileNameLen = file.name.length - 7;
+                          $scope.fileNamePart2 = file.name.substring($scope.fileNameLen);
+                          $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
+                          console.log($scope.fileName);
+                        }
+                        }, null, function(evt) {
+
+                        });
+                    }
+                }
+            }
+        };
     $scope.submit = function () {
     var procObj = {};
     var poc = [];
+    var files=[];
     $scope.point_of_contacts.map(function (pocObj) {
         var requestPocObject = {};
         requestPocObject._id = $scope.createPossibility.point_of_contacts[0]._id;
@@ -151,9 +191,19 @@ angular.module('com.module.suspect')
         current_status_id: $scope.createPossibility.current_status._id,
         status: $scope.status.selectedItem.key
     };
+        $scope.uploadFiles.map(function(obj){ 
+            var file = {};
+                file.url=obj.url;
+                file.type=obj.documentType.selectedItem.key;
+            files.push(file);
+        });
+        if(files.length>0){
+           procObj.document = files; 
+        }
+            
     procObj.point_of_contacts = poc;
-    //procObj.document = [];
     procObj.user_id = $scope.createPossibility.point_of_contacts[0].user_id;
+        console.log(procObj);
     $scope.myPromise = suspectService.suspectUpdate(procObj).then(function (response) {
         $state.go('app.suspect-view');
     });

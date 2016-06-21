@@ -156,9 +156,9 @@
           <p class="btn btn-raised warm-status m-n btn-sm" style="pointer-events: none;">{{possibility.status}}</p>
         </td>
         <td>
-          <button class="btn btn-raised  btn-info m-n btn-sm">Discussion</button>
+          <button class="btn btn-raised  btn-info m-n btn-sm" ui-sref="app.viewDiscussions">Discussion</button>
         </td>
-        
+
       </tr>
       <tr  data-ng-if="data.possibilities.length ===0">
         <td colspan="9">No Possibilities!</td>
@@ -185,7 +185,7 @@
 </div>
 </div>
 <script type="text/ng-template" id="mypopover.html">
-        
+
         <div class="form-group">
           <ul>
               <li ng-repeat="item in items=['NOT MET','MET','INACTIVE']"></li>

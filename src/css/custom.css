@@ -410,10 +410,10 @@ margin-left: 50px;}
 .remove{
   display: block;
   position: absolute;
-  width: 20px;
-  height: 20px;
-  top: -8px;
-  right: -5px;
+  width: 15px;
+  height: 15px;
+  top: -12px;
+  right: -12px;
   background: url(../img/icon_Delete_file.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;

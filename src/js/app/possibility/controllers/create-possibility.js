@@ -223,16 +223,12 @@ angular.module('com.module.possibility')
                 toaster.pop('Success', 'POSSIBILITY Created Successfully.');
             }).error(function(err) {
                 $scope.authError = err.message;
-            });
-        });
-        }
-        $scope.getLegalEntity = function(val) {
-            possibilityCreateService.getLegalEntity(val).then(function() {
 
-
-            });
-
+            })
+        })
         };
+        
+
         $scope.getSlectedItem = function(selectedItem, srcObj) {
             var returnObj;
             angular.forEach(srcObj.data, function(obj) {

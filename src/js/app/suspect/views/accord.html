@@ -243,7 +243,7 @@
             <accordion-group is-open="poc.isOpen" ng-repeat="poc in point_of_contacts">
               <accordion-heading >
           <span class="color-black ">
-          {{support_array[$index].selectedItem.displayText}} {{poc.contact_type.selectedItem.displayText}} Contact Person Details
+          {{poc.support_area.selectedItem.displayText}} {{poc.contact_type.selectedItem.displayText}} Contact Person Details
           <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}">
             </i>
             </span>
@@ -252,7 +252,9 @@
                 <div class="col-md-5 col-pad">
                   <div class=" form-group label-floating is-empty">
                     <label class="control-label">Contact Person Name</label>
-                    <input class="form-control" ng-model="asyncSelected"  typeahead="name for name in getNames($viewValue)"  type="text"  typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)" >
+
+                    <input class="form-control" ng-model="poc.name"  typeahead="name as name.name for name in getNames($viewValue)"  type="text"  typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)" >
+                        
 
                         <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
                 <div ng-show="noResults">
@@ -265,7 +267,7 @@
                   </div>
                   <div>
                     <label class="control-label">Support Area</label>
-                    <div class="form-group" custom-select data="support_array[$index]">
+                    <div class="form-group" custom-select data="poc.support_area">
                     </div>
                   </div>
 
@@ -290,7 +292,7 @@
         </div>
 
 
-        <div class="col-md-6">
+        <div class="col-md-6" ng-if="showRollOut">
           <h4 class="color-black">Roll out of a proposal</h4>
           <div class="form-group is-empty is-fileinput">
             <input type="file" id="inputFile4" multiple="">
@@ -311,7 +313,7 @@
           <a ui-sref="app.suspect-view">
             <button class="btn btn-primary data-button">Cancel</button>
           </a>
-          <button class="btn btn-primary data-button">Submit</button>
+          <button class="btn btn-primary data-button" data-ng-click="submit()">Submit</button>
         </div>
       </div>
     </div>

@@ -136,8 +136,8 @@
   <div class="col-md-2">
           <div class="previews">
             <img ng-src="{{f.url}}" class="preview-img">
-            <a  class="remove"></a>
-            <span style="word-wrap: break-word;">{{f.name?f.name:f.type}}</span>
+            <a  class="remove" ></a>
+            <span style="word-wrap: break-word;" tooltip="{{f.name}}">{{fileName}}</span>
             <!--<p class="text-in">VOTER CARD</p>-->
 
           </div>
@@ -228,7 +228,7 @@
   </div>
             </accordion-group>
 </accordion>
-  </div
+  </div>
   <div >
       <button type="button" class="btn btn-primary contacts-button "  data-ng-click="getNewPointofContact()"><i class="fa fa-plus"></i> Contacts</button>
     </div>

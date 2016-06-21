@@ -9,7 +9,6 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
     AuthService.logout().success(function (data){
       $cookieStore.remove('userData');
       $state.go('access.signin');
-      /*$cookies.token = '';*/
     }, function (error) {
       console.log(error);
     });

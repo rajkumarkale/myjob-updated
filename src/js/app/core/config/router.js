@@ -38,7 +38,7 @@ angular.module('app')
           data: {
             title: 'Configuration'
           }
-        })
+        });
 
 
     }

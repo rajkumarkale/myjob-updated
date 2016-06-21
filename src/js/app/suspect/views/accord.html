@@ -57,20 +57,12 @@
               </div>
               <div class="up-margin">
 
-                Files:
+
                 <ul>
                   <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
                     <img ng-src="{{f.url}}" class="thumb"></li>
                 </ul>
-                <ul>
-                  <div ng-repeat="f in uploadFiles" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-                    <img ng-src="{{f.url}}" class="thumb">
-                    <div  custom-select data="f.documentType" style="min-width: 40px !important;width:40px;">
-                    </div>
-                  </div>
 
-
-                </ul>
               </div>
 
             </div>
@@ -260,8 +252,10 @@
                 <div class="col-md-5 col-pad">
                   <div class=" form-group label-floating is-empty">
                     <label class="control-label">Contact Person Name</label>
+
                     <input class="form-control" ng-model="poc.name"  typeahead="name as name.name for name in getNames($viewValue)"  type="text"  typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)" >
                         
+
                         <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
                 <div ng-show="noResults">
                   <i class="glyphicon glyphicon-remove"></i> No Results Found

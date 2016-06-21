@@ -6,17 +6,19 @@ angular.module('com.module.suspect')
       $scope.getCopy=function(obj){
           return angular.copy(obj);
       };
-      
+
       $scope.getNames=function(val){
           return $http({
       method: 'GET',
       url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name='+val
     }).then(function(response){
+
               
               return response.data.users;/*.map(function(item){
         return item.name;
       });*/
           })
+
           /*suspectService.getNames(val).then(function(response){
               return response.data.users.map(function(item){
         return item.name;
@@ -41,7 +43,7 @@ angular.module('com.module.suspect')
       method: 'GET',
       url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name='+$item
     }).then(function(response){
-              
+
               var x=response.data.users[0].poc_details;
               $scope.point_of_contacts[$index].name=x.name;
               $scope.point_of_contacts[$index].phone=x.phone;
@@ -71,7 +73,7 @@ angular.module('com.module.suspect')
     $scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function(response) {
       console.log(response.data);
       $scope.createPossibility=response.data;
-$scope.suspect={};
+      $scope.suspect={};
       $scope.suspect=response.data.point_of_contacts[0];
       $scope.createPossibility.employee_size= $scope.getSelectedItem($scope.createPossibility.employee_size, $scope.employeeSize).displayText;
       $scope.createPossibility.turnover = $scope.getSelectedItem($scope.createPossibility.turnover, $scope.groupTurnover).displayText;
@@ -100,6 +102,13 @@ $scope.suspect={};
       }
 
     };
+    $scope.editForm = function() {
+      if($scope.createPossibility.current_status.status !== "COLD"){
+        $scope.isEditable = true;
+
+      }
+
+    };
 
     $scope.contactType = appConfig.suspect.contactType;
     $scope.supportArea = appConfig.suspect.supportArea;
@@ -117,7 +126,7 @@ $scope.suspect={};
       $scope.point_of_contacts.push(obj);
         //$scope.support_array.push($scope.getCopy(appConfig.suspect.supportArea));
     };
-      
+
     $scope.cancel = function() {
       $state.go('app.suspect-view');
     };
@@ -159,16 +168,5 @@ $scope.suspect={};
                 }
             });
             return returnObj;
-
-        };
-    /*$scope.createContact = function () {
-      var modalInstance1 = $modal.open({
-        templateUrl: 'js/app/suspect/views/add-contact.html',
-        backdrop: 'static',
-        controller: 'addContactCtrl',
-        size: ''
-      });
-      modalInstance1.result.then(function () {
-      });
-    };*/
+      }
   }]);

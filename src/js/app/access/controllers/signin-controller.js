@@ -70,14 +70,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
     });
 
   };
-  /*$scope.logout = function () {
-    AuthService.logout().then(function (response) {
-      $cookieStore.remove('userData');
-      $location.path('/access/signin');
-    }, function (error) {
-    });
-  };*/
-
+ 
     $scope.resetPassword = function(user){
       $scope.myPromise =  AuthService.reset({
         password: user.password,

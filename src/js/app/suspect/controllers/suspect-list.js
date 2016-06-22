@@ -43,7 +43,20 @@ angular.module('com.module.suspect')
 			$state.go('app.create-suspect-view',{suspect:suspect});
 
 		};
-
+$scope.statusColor=function(status){
+    switch (status) {
+    case "COLD":
+        return 'status-cold';
+            break;
+    case "WARM":
+        return 'status-warm';
+            break;
+    case "HOT":
+        return 'status-hot';
+            break;
+        default:
+    }
+}
 
   $scope.open = function($event,opened) {
     $event.preventDefault();

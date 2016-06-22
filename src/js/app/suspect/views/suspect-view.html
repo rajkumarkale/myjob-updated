@@ -203,7 +203,7 @@
         <td>{{suspect.pocs[0].designation}}</td>
         <td>{{suspect.pocs[0].phone}}</td>
         <td>
-          <p class="btn-raised warm-status m-n btn-sm">{{suspect.status}}</p>
+          <p class="btn-raised warm-status m-n btn-sm" ng-class="statusColor(suspect.status)">{{suspect.status}}</p>
         </td>
         <td>
           <button class="btn btn-raised  btn-info m-n btn-sm">Discussion</button>

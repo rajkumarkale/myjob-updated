@@ -2,7 +2,7 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-  .controller('createSuspectCtrl',['$scope','appConfig','$modal','$stateParams','suspectService','$http','$state','Upload',function($scope,appConfig,$modal,$stateParams,suspectService,$http,$state,Upload){
+  .controller('createSuspectCtrl',['$scope','appConfig','$modal','$stateParams','suspectService','$http','$state','Upload','$q',function($scope,appConfig,$modal,$stateParams,suspectService,$http,$state,Upload,$q){
       $scope.getCopy=function(obj){
           return angular.copy(obj);
       };
@@ -68,6 +68,9 @@ angular.module('com.module.suspect')
 
     };
     $scope.init();
+      $scope.contactType = appConfig.suspect.contactType;
+    $scope.supportArea = appConfig.suspect.supportArea;
+    $scope.status = appConfig.suspect.status;
       $scope.createPossibility={};
     $scope.title = "Client Details";
     $scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function(response) {
@@ -80,6 +83,7 @@ angular.module('com.module.suspect')
       $scope.createPossibility.vertical = $scope.getSelectedItem($scope.createPossibility.vertical, $scope.businessVertical).displayText;
       $scope.createPossibility.customer_type = $scope.getSelectedItem($scope.createPossibility.customer_type, $scope.customerType).displayText;
         /*$scope.createPossibility.POC =$scope.suspect;*/
+         $scope.status.selectedItem=$scope.getSelectedItem($scope.createPossibility.current_status.status, $scope.status);
         $scope.createPossibility.point_of_contacts.map(function (Obj) {
             var i=0;
             $("#contact"+i+' .is-empty').removeClass('is-empty');
@@ -114,9 +118,7 @@ angular.module('com.module.suspect')
 
     };
 
-    $scope.contactType = appConfig.suspect.contactType;
-    $scope.supportArea = appConfig.suspect.supportArea;
-    $scope.status = appConfig.suspect.status;
+    
       $scope.showRollOut=false;
     $scope.$watch('status.selectedItem',function(n,o){
         if(n.key==='HOT'){
@@ -173,7 +175,12 @@ angular.module('com.module.suspect')
                 }
             }
         };
-    $scope.submit = function () {
+      $scope.submit=function(bool){
+          if(bool){
+          $scope.submitPromise=asyncSubmit();}
+      }; 
+      function asyncSubmit(){
+    return $q(function () {
     var procObj = {};
     var poc = [];
     var files=[];
@@ -213,7 +220,8 @@ angular.module('com.module.suspect')
     });
     console.log($scope.point_of_contacts);
     console.log($scope.support_array);
-};
+});
+      }
       $scope.getSelectedItem = function(selectedItem, srcObj) {
             var returnObj;
             angular.forEach(srcObj.data, function(obj) {

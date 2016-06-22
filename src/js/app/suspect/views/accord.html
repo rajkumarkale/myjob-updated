@@ -1,8 +1,8 @@
 
 
-<div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
+<div class="text-right m-t-sm m-r-xs">
 
-  <button class="btn btn-primary contacts-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"> Edit</button>
+  <!--<button class="btn btn-primary contacts-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"> Edit</button>-->
   <button ui-sref="app.suspect-view" class="btn btn-primary contacts-button "> Cancel</button>
 </div>
 <div class="container col-md-12 pad-t-20"  data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
@@ -193,18 +193,18 @@
               </accordion-group>
             </accordion>
           </div>-->
-          <div >
+         <!-- <div >
             <button type="button" class="btn btn-primary contacts-button " data-ng-if="isNewPossibility" data-ng-click="getNewPointofContact()"><i class="fa fa-plus"></i> Contacts</button>
-          </div>
+          </div>-->
 
-          <div class="col-md-6 form-custom-padding">
-          </div>
-          <div data-cg-busy="{promise:createPromise,message:'Creating/Updating Possibilities'}" class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
+         <!-- <div class="col-md-6 form-custom-padding">
+          </div>-->
+          <!--<div data-cg-busy="{promise:createPromise,message:'Creating/Updating Possibilities'}" class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
     <div class="form-group text-center">
       <button ui-sref="app.viewPossibility" class="btn btn-primary data-button">Cancel</button>
       <button class="btn btn-primary data-button" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)" disabled="disabled">{{isNewPossibility?'Submit':'Update'}}</button>
     </div>
-  </div>
+  </div>-->
 
         </div>
 
@@ -351,12 +351,13 @@
           </div>-->
         </div>
       </div>
+      <div data-cg-busy="{promise:submitPromise,message:'Updating'}"></div>
       <div class="col-md-6 col-md-offset-5">
         <div class="form-group">
           <a ui-sref="app.suspect-view">
             <button class="btn btn-primary data-button">Cancel</button>
           </a>
-          <button class="btn btn-primary data-button" data-ng-click="submit()">Submit</button>
+          <button class="btn btn-primary data-button" data-ng-click="submit(true)">Submit</button>
         </div>
       </div>
     </div>

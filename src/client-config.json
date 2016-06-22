@@ -48,7 +48,7 @@
       "supportArea" :{"data":[{"key":"BUSINESS","displayText":"Business"},{"key":"FINANCE","displayText":"Finance"},{"key":"INVOICE","displayText":"Invoice"}],"selectedItem":""}
     },
     "discussion":{
-      "typeOfDiscussion" :{"data":[{"key":"Teliphonic","displayText":"Teliphonic"},{"key":"Email","displayText":"Email"},{"key":"Inperson","displayText":"Inperson"},{"key":"Chat","displayText":"Chat"}],"selectedItem":""}
+      "typeOfDiscussion" :{"data":[{"key":"Telephonic","displayText":"Telephonic"},{"key":"Email","displayText":"Email"},{"key":"Inperson","displayText":"Inperson"},{"key":"Chat","displayText":"Chat"}],"selectedItem":""}
       },
     "languages": {
       "en": "English"

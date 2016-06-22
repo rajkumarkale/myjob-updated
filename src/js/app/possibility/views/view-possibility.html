@@ -104,7 +104,7 @@
           <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
         </label> -->
         <label class="  checkBox-showall pull-left " ng-show="selectAll || checked1 ">
-          <span class="glyphicon glyphicon-trash " data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
+          <span class="fa fa-trash-o" data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
         </label>
         <label class="  checkBox-showall pull-right ">Show All
           <span class="caret checkBxDrop" data-toggle="dropdown"></span>
@@ -123,7 +123,7 @@
         <th class="table-th-heading">Contact Designation</th>
         <th class="table-th-heading">Contact Number</th>
         <th class="table-th-heading">Status<span class="btn-group status-drop" dropdown > <span class="glyphicon glyphicon-filter color-black " id="single-button" dropdown-toggle ng-disabled="disabled"></span>
-      <ul class="dropdown-menu" dropdown-menu>
+      <ul class="dropdown-menu mrg-dropdown" dropdown-menu>
         <li data-ng-repeat="item in ['NOT MET','MET','INACTIVE'] track by $index"> <a data-ng-click="setSelectedClient(item)">{{item}}<span data-ng-class="isChecked(item)"></span></a>
 
                     </li>

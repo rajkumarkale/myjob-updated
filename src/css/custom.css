@@ -868,7 +868,7 @@ color:white;
 .addDiscusHeading{
   background-color: #2277b1;
   color: white;
-  padding:24px;
+  padding:15px !important;
   left:10%;
 }
 .upward{
@@ -941,9 +941,6 @@ color:white;
   border-width: 1px;
   border-color: lightgrey;
   border-radius: 5px;
-}
-.centerBtn{
-  margin-left: 35%;
 }
 .default{
   background: lightslategray;
@@ -1696,7 +1693,7 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   border-radius: 5px;
 }
 .centerBtn{
-  margin-left: 25%;
+  margin-left: 35%;
 }
 .default{
   background: lightslategray;
@@ -1849,5 +1846,24 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 .status-drop{
   margin: 0px;
 }
+.mrg-dropdown{
+  margin-left: -150px;
+}
 
 /*end viewpossibility status filter*/
+/*add discussion popup*/
+.diss-radios-form{
+  margin-top: 57px;
+}
+.mrg-label{
+  margin-left: 50px;
+}
+.mrg-textarea{
+  margin-left: 50px;
+  border: 1px solid #ccc;
+  border-radius: 7px !important;
+  background-image: none;
+  overflow-y: scroll ;
+}
+/*end add discussion popup*/
+

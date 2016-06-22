@@ -27,7 +27,7 @@
         </form>
       </div>
     </div>
-  <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
+    <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary in the month of April 2016</div>
         <div class="panel-body">
@@ -72,123 +72,123 @@
       </div>
     </div>
 
-      <div class="row ">
-        <div class="col-lg-12 mrg-apply">
-          <div class="form-group pull-right">
-            <button class="btn btn-primary btn-raised btn-md poss-btn" ui-sref="app.createPossibility"><i
-              class="fa fa-plus poss-mrg"></i> New Possibility
-            </button>
-          </div>
+    <div class="row ">
+      <div class="col-lg-12 mrg-apply">
+        <div class="form-group pull-right">
+          <button class="btn btn-primary btn-raised btn-md poss-btn" ui-sref="app.createPossibility"><i
+            class="fa fa-plus poss-mrg"></i> New Possibility
+          </button>
         </div>
       </div>
+    </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-lg-12">
-        <h4 class="pull-left head">All Possiblities</h4>
+          <h4 class="pull-left head">All Possiblities</h4>
         <span class="pull-right search-box-width">
              <div class="input-group">
 
-                <input type="text" class="form-control btn-rounded back-color img-remove" placeholder="Search By Location,Company Name,Contact"
-                       aria-describedby="basic-addon3" ng-model="searchView">
-                <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
-              </div>
+               <input type="text" class="form-control btn-rounded back-color img-remove" placeholder="Search By Location,Company Name,Contact"
+                      aria-describedby="basic-addon3" ng-model="searchView">
+               <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
+             </div>
           </span>
+        </div>
       </div>
-</div>
-    <div class="panel-body del-pad">
-      <div class="row">
-        <label class=" dropdown checkBoxDrop pull-left ">
-          <input type="checkbox" class="checkBox" ng-model="selectAll">
-        </label>
-       <!--  <label class="checkBox-showall pull-left " ng-show="selectAll || checked1 ">
-          <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
-        </label> -->
-        <label class="  checkBox-showall pull-left " ng-show="selectAll || checked1 ">
-          <span class="fa fa-trash-o" data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
-        </label>
-        <label class="  checkBox-showall pull-right ">Show All
-          <span class="caret checkBxDrop" data-toggle="dropdown"></span>
-        </label>
+      <div class="panel-body del-pad">
+        <div class="row">
+          <label class=" dropdown checkBoxDrop pull-left ">
+            <input type="checkbox" class="checkBox" ng-model="selectAll">
+          </label>
+          <!--  <label class="checkBox-showall pull-left " ng-show="selectAll || checked1 ">
+             <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
+           </label> -->
+          <label class="  checkBox-showall pull-left " ng-show="selectAll || checked1 ">
+            <span class="fa fa-trash-o" data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
+          </label>
+          <label class="  checkBox-showall pull-right ">Show All
+            <span class="caret checkBxDrop" data-toggle="dropdown"></span>
+          </label>
+        </div>
       </div>
-    </div>
       <div class="table-topdiv">
-    <table class="table table-striped table-bod m-n ">
-      <thead class="table-head " >
-      <tr>
-        <th class="table-th-heading"></th>
-        <th  class="table-th-heading">Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black " ></span> </th>
-        <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
-        <th class="table-th-heading">Location <span ng-click="sortType = 'city'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
-        <th class="table-th-heading">Contact Person <span ng-click="sortType = 'pocs[0].name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
-        <th class="table-th-heading">Contact Designation</th>
-        <th class="table-th-heading">Contact Number</th>
-        <th class="table-th-heading">Status<span class="btn-group status-drop" dropdown > <span class="glyphicon glyphicon-filter color-black " id="single-button" dropdown-toggle ng-disabled="disabled"></span>
+        <table class="table table-striped table-bod m-n ">
+          <thead class="table-head " >
+          <tr>
+            <th class="table-th-heading"></th>
+            <th  class="table-th-heading">Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black " ></span> </th>
+            <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
+            <th class="table-th-heading">Location <span ng-click="sortType = 'city'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
+            <th class="table-th-heading">Contact Person <span ng-click="sortType = 'pocs[0].name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
+            <th class="table-th-heading">Contact Designation</th>
+            <th class="table-th-heading">Contact Number</th>
+            <th class="table-th-heading">Status<span class="btn-group status-drop" dropdown > <span class="glyphicon glyphicon-filter color-black " id="single-button" dropdown-toggle ng-disabled="disabled"></span>
       <ul class="dropdown-menu mrg-dropdown" dropdown-menu>
         <li data-ng-repeat="item in ['NOT MET','MET','INACTIVE'] track by $index"> <a data-ng-click="setSelectedClient(item)">{{item}}<span data-ng-class="isChecked(item)"></span></a>
 
-                    </li>
+        </li>
       </ul>
     </span></th>
-        <th class="table-th-heading">Discussions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr data-ng-repeat="possibility in data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem | filter:searchView" >
-        <td>
+            <th class="table-th-heading">Discussions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr data-ng-repeat="possibility in data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem | filter:searchView" >
+            <td>
 
-          <div class="chekbox">
-            <label>
-              <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
+              <div class="chekbox">
+                <label>
+                  <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
-            </label>
-          </div>
+                </label>
+              </div>
 
-        </td>
-        <td class="hand-cursor td-text-color" data-ng-click="openEditPossibility(possibility)">{{possibility.legal_name}}</td>
-        <td>{{possibility.client_unit_name}}</td>
-        <td>{{possibility.city}}</td>
-        <td>{{possibility.pocs[0].name}}</td>
-        <td>{{possibility.pocs[0].designation}}</td>
-        <td>{{possibility.pocs[0].phone}}</td>
-        <td>
-          <p class="btn btn-raised warm-status m-n btn-sm" style="pointer-events: none;">{{possibility.status}}</p>
-        </td>
-        <td>
-          <button class="btn btn-raised  btn-info m-n btn-sm">Discussion</button>
-        </td>
+            </td>
+            <td class="hand-cursor td-text-color" data-ng-click="openEditPossibility(possibility)">{{possibility.legal_name}}</td>
+            <td>{{possibility.client_unit_name}}</td>
+            <td>{{possibility.city}}</td>
+            <td>{{possibility.pocs[0].name}}</td>
+            <td>{{possibility.pocs[0].designation}}</td>
+            <td>{{possibility.pocs[0].phone}}</td>
+            <td>
+              <p class="btn btn-raised warm-status m-n btn-sm" style="pointer-events: none;">{{possibility.status}}</p>
+            </td>
+            <td>
+              <button class="btn btn-raised  btn-info m-n btn-sm" ui-sref="app.viewDiscussions">Discussion</button>
+            </td>
 
-      </tr>
-      <tr  data-ng-if="data.possibilities.length ===0">
-        <td colspan="9">No Possibilities!</td>
-        </tr>
+          </tr>
+          <tr  data-ng-if="data.possibilities.length ===0">
+            <td colspan="9">No Possibilities!</td>
+          </tr>
 
-      </tbody>
-    </table>
+          </tbody>
+        </table>
       </div>
-    <div class="row" data-ng-if="data.possibilities.length >10">
-      <div class="col-lg-12">
-        <pagination class="pagination-sm pull-right"
-                    page="data.currentPage"
-                    total-items="data.totalItems"
-                    ng-model="data.currentPage"
-                    ng-change="getPossibilities(data.currentPage,data.numPerPage)"
-                    max-size="4"
-                    items-per-page="data.numPerPage"
-                    rotate="false"
-                    boundary-links="false">
-        </pagination>
+      <div class="row" data-ng-if="data.possibilities.length >10">
+        <div class="col-lg-12">
+          <pagination class="pagination-sm pull-right"
+                      page="data.currentPage"
+                      total-items="data.totalItems"
+                      ng-model="data.currentPage"
+                      ng-change="getPossibilities(data.currentPage,data.numPerPage)"
+                      max-size="4"
+                      items-per-page="data.numPerPage"
+                      rotate="false"
+                      boundary-links="false">
+          </pagination>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</div>
 <script type="text/ng-template" id="mypopover.html">
 
-        <div class="form-group">
-          <ul>
-              <li ng-repeat="item in items=['NOT MET','MET','INACTIVE']"></li>
-          </ul>
-        </div>
-    </script>
+  <div class="form-group">
+    <ul>
+      <li ng-repeat="item in items=['NOT MET','MET','INACTIVE']"></li>
+    </ul>
+  </div>
+</script>

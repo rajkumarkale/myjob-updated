@@ -15,6 +15,7 @@ angular.module('com.module.possibility')
                 $scope.title = "Edit Possibility";
                 $scope.myPromise = possibilityCreateService.possibilityDetails($stateParams.possibility.client_unit_id).then(function(response) {
                     $scope.createPossibility = response.data;
+                    console.log(response.data);
                     $scope.client_unit_id = $scope.createPossibility.point_of_contacts[0].client_unit_id;
                     $scope.point_of_contacts = $scope.createPossibility.point_of_contacts;
                     $scope.createPossibility.freeze = $scope.createPossibility.client_freeze_details?true:false;
@@ -56,7 +57,7 @@ angular.module('com.module.possibility')
         };
         $scope.init($stateParams);
         $scope.getNewPointofContact =  function(){
-        	var obj = {name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:appConfig.possibility.contactType,isOpen:true};
+        	var obj =angular.copy( {name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:appConfig.possibility.contactType,isOpen:true});
             $scope.point_of_contacts.map(function(obj){
                 obj.isOpen = false;
             });
@@ -153,6 +154,7 @@ angular.module('com.module.possibility')
        			delete possibilityObject.documents;
        			delete possibilityObject.current_status;
                 delete possibilityObject.client_freeze_details;
+                delete possibilityObject.division;
 	       		possibilityCreateService.updatePossibility(possibilityObject).success(function() {
                 toaster.pop('success', 'POSSIBILITY Created Successfully.');
                 $state.go('app.viewPossibility');
@@ -208,23 +210,19 @@ angular.module('com.module.possibility')
             requestObject.point_of_contacts.push(requestPocObject);
 
             });
-
+              
             var possibilityCreatePromise=possibilityCreateService.setPossibility(requestObject).success(function() {
 
                 $state.go('app.viewPossibility');
                 toaster.pop('Success', 'POSSIBILITY Created Successfully.');
             }).error(function(err) {
                 $scope.authError = err.message;
-            });
-        });
-        }
-        $scope.getLegalEntity = function(val) {
-            possibilityCreateService.getLegalEntity(val).then(function() {
 
-
-            });
-
+            })
+        })
         };
+        
+
         $scope.getSlectedItem = function(selectedItem, srcObj) {
             var returnObj;
             angular.forEach(srcObj.data, function(obj) {
@@ -266,13 +264,15 @@ angular.module('com.module.possibility')
                           file.url = resp.data.url;
                           file.documentType = angular.copy(appConfig.possibility.documentType);
                           $scope.uploadFiles.push(file);
+
                           $scope.fileName=file.name;
-                          if (file.name.length > 7) {
-                          $scope.fileNamePart1 = file.name.substring(0, 12);
+
+                          if (file.name.length > 7 ) {
+                          $scope.fileNamePart1 = file.name.substring(0, 8);
                           $scope.fileNameLen = file.name.length - 7;
                           $scope.fileNamePart2 = file.name.substring($scope.fileNameLen);
                           $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
-                          console.log($scope.fileName);
+                          console.log($scope.fileName+' '+file.name);
                         }
                         }, null, function(evt) {
 
@@ -284,4 +284,16 @@ angular.module('com.module.possibility')
         $scope.toggleOpen = function(poc){
         	return poc.isOpen =!poc.isOpen;
         };
+      $scope.removeFiles=function(index){
+          if( $scope.isEditable !== true){
+             return $scope.uploadFiles.splice(index,1); 
+          }else{
+              var id=$scope.createPossibility.documents[index]._id;
+              possibilityCreateService.deleteDocument(id).then(function (response) {
+                     $scope.createPossibility.documents.splice(index,1); 
+              });
+          }
+        
+      }
+
     }]);

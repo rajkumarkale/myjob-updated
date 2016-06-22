@@ -2,9 +2,9 @@
  * Created by rkale on 5/20/2016.
  */
 angular.module('com.module.prospect')
-.controller('viewProspectCtrl',['$scope',function($scope){
-        $scope.sortType     = 'legal_name'; 
-        $scope.sortReverse  = false;  
+.controller('viewProspectCtrl',['$scope','prospectService',function($scope,prospectService){
+        $scope.sortType     = 'legal_name';
+        $scope.sortReverse  = false;
         $scope.searchView   = '';
   $scope.open = function($event,opened) {
     $event.preventDefault();
@@ -23,7 +23,20 @@ angular.module('com.module.prospect')
       $scope.opened1 = false;
     }
   };
-
+  $scope.data = {
+    numPerPage: 10,
+    searchKeywords: '',
+    row: '',
+    currentPage: 1
+  };
+  $scope.myPromise = prospectService.getProspects(1,1).then(function(response){
+    console.log(response);
+    $scope.data.prospects = response.data.prospects;
+    $scope.data.totalItems = response.data.count;
+    $scope.data.LOST=response.data.LOST;
+    $scope.data.WON=response.data.WON;
+    $scope.date = new Date();
+  });
 
 }]);
 

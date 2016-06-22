@@ -32,8 +32,8 @@
         <div class="panel-heading summary">Summary in the month of April 2016</div>
         <div class="panel-body pan-col">
           <div class=" ">
-            <div class=" detailsContentDiv-prosp">
-              <div class="listDetails list-details">
+            <div class=" ">
+              <div class="listDetails detailsContentDiv-prosp">
                 <div class="listDetailsContent">
                   <div class="col-md-3 lost-status-text">
                     <img src="img/icon_lost.png" alt="" class="center-block img-pad">
@@ -44,7 +44,7 @@
                   </div>
                 </div>
               </div>
-              <div class="listDetails list-details">
+              <div class="listDetails detailsContentDiv-prosp">
                 <div class="listDetailsContent">
                   <div class="col-md-3 won-img-class">
                     <img src="img/icon_won.png" alt="" class="center-block img-pad">
@@ -52,6 +52,28 @@
                   <div class="col-md-9 text-center color-divs">
                     <div class="won-status-text-color">WON</div>
                     <div class="met-num">{{data.WON}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="listDetails detailsContentDiv-prosp">
+                <div class="listDetailsContent">
+                  <div class="col-md-3 agr-img-class">
+                    <img src="img/icon_won.png" alt="" class="center-block img-pad">
+                  </div>
+                  <div class="col-md-9 text-center color-divs">
+                    <div class="agr-status-text-color">AGREEMENT ON CLOSURE</div>
+                    <div class="met-num">{{data.WORK_IN_PROGRESS}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="listDetails detailsContentDiv-prosp">
+                <div class="listDetailsContent">
+                  <div class="col-md-3 work-img-class">
+                    <img src="img/icon_won.png" alt="" class="center-block img-pad">
+                  </div>
+                  <div class="col-md-9 text-center color-divs">
+                    <div class="work-status-text-color">WORK IN PROGRESS</div>
+                    <div class="met-num">{{data.WORK_IN_PROGRESS}}</div>
                   </div>
                 </div>
               </div>
@@ -115,36 +137,7 @@
         </thead>
         <tbody>
 
-
-      <!--  <tr>
-          <td>
-            <div class="form-group mrg-formgrp">
-              <div class="chekbox">
-                <label>
-                  <input type="checkbox" ng-model="checked4" ng-checked="selectAll">
-                <span class="checkbox-material">
-                  <span class="check"></span>
-                </span>
-                </label>
-              </div>
-            </div>
-          </td>
-          <td class="hand-cursor" ui-sref="app.create-prospect">Anthony Sanchez</td>
-          <td>Paradigm Creatives</td>
-          <td>00000</td>
-          <td>{{date | date:'yyyy-MM-dd'}}</td>
-          <td>Lorem Ipsum</td>
-          <td>Govt.Staffing</td>
-          <td>
-            <p class="lost-status-text btn-sm  ">Lost</p>
-          </td>
-          <td>
-            <a ui-sref='app.viewDiscussions' class="auto">
-              <button type="button" class="btn btn-raised btn-info btn-sm newcall-mrg">Discussion</button>
-            </a>
-          </td>
-        </tr>-->
-       <!-- <tr data-ng-repeat="prospect in data.prospects | orderBy:sortType:sortReverse| filter:searchView"  >
+        <tr data-ng-repeat="prospect in data.prospects | orderBy:sortType:sortReverse| filter:searchView"  >
           <td>
 
             <div class="chekbox">
@@ -157,20 +150,20 @@
             </div>
 
           </td>
-          <td class="hand-cursor td-text-color">{{prospect.name}}</td>
-          <td>{{prospect.name}}</td>
-          <td>{{prospect.legal_name}}</td>
-          <td>0000000</td>
-          <td>{{date | date:'yyyy-MM-dd'}}</td>
+          <td class="hand-cursor td-text-color">{{prospect.legal_name}}</td>
           <td>{{prospect.client_unit_name}}</td>
-          <td>{{prospect.vertical}}</td>
+          <td>{{prospect.monthly_rate_topline}}</td>
+          <td>{{prospect.monthly_rate_bottomline}}</td>
+          <td>{{prospect.estimated_closure * 1000 |date}}</td>
+          <td>000000</td>
+          <td>000000</td>
           <td>
-            <p class="btn-raised warm-status m-n btn-sm">{{prospect.status}}</p>
+            <p class="btn-raised warm-status m-n btn-sm">{{prospect.status |}}</p>
           </td>
           <td>
             <button class="btn btn-raised  btn-info m-n btn-sm">Discussion</button>
           </td>
-        </tr>-->
+        </tr>
 
         </tbody>
       </table>

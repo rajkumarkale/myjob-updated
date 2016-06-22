@@ -692,8 +692,7 @@ margin-left: 50px;}
 
 }
  .detailsContentDiv-prosp{
-   width: 50%;
-   margin-left:25%;
+  width:24%;
  }
 
 .button-style{
@@ -772,7 +771,7 @@ color:white;
   margin-top: 14px;
   background-color: white;
   border-radius: 5px;
-  width: 96%;
+
 }
 
 .discussion-body {
@@ -1096,10 +1095,6 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 .detailsContentDiv {
   display: table;
   width: 100%;
-}
-.listDetails {
-  display: table-cell;
-  padding: 10px;
 }
 .orange {
   background: #f58207;
@@ -1706,7 +1701,7 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   position: relative;
   display: block;
   min-width: 325px;
-  color: #d2d2d2;
+  color: #555555;
   vertical-align: middle;
   text-align: left;
   -webkit-user-select: none;
@@ -1844,9 +1839,7 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 /*end of dashboard UI comments */
 
 /*viewpossibility status filter*/
-.status-drop{
-  margin: 0px;
-}
+
 .mrg-dropdown{
   margin-left: -150px;
 }
@@ -1867,4 +1860,43 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   overflow-y: scroll ;
 }
 /*end add discussion popup*/
+/* start of comments for discussion UI */
+.line2{border-top: 1px solid #8c8b8b;
+  margin-top: 50px;
+  margin-left: 49px;
+  margin-right: 47px;}
+
+.discussion-container{
+  margin-left: 46px;
+  margin-right: 47px;
+  border-radius: 9px !important;
+  border: 1px solid #cccccc;
+  padding: 9px !important;
+}
+.discussion-buton{
+  margin-right: 54px;
+  margin-bottom: -45px;
+  margin-top: -1px;
+}
+.summary-text{
+  padding-right: 36px;}
+
+.space-mrg{
+  margin-top: 8px;}
+/* end of comments for view discussion UI */
+/* start comments for view prospect UI top images */
+.agr-img-class{ background-color: #8c8c8c
+}
+.work-img-class{background-color: #af539b
+}
+.agr-status-text-color{color:#8c8c8c;font-weight: bold;white-space: nowrap}
+.work-status-text-color{color:#af539b;font-weight: bold;white-space: nowrap}
+/* end of comments for view prospect UI */
+
+/*views table margin*/
+.status-drop{
+  margin: 0px;
+}
+/*end views table margin*/
+
 

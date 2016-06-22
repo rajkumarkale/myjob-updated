@@ -29,13 +29,14 @@ angular.module('com.module.prospect')
     row: '',
     currentPage: 1
   };
-  $scope.myPromise = prospectService.getProspects(1,1).then(function(response){
+  $scope.myPromise = prospectService.getProspects(1,10).then(function(response){
     console.log(response);
     $scope.data.prospects = response.data.prospects;
     $scope.data.totalItems = response.data.count;
     $scope.data.LOST=response.data.LOST;
     $scope.data.WON=response.data.WON;
-    $scope.date = new Date();
+    $scope.data.WORK_IN_PROGRESS=response.data.WORK_IN_PROGRESS;
+    /*$scope.data.estimated_closure = response.data.estimated_closure;*/
   });
 
 }]);

@@ -63,7 +63,7 @@
   font-size: 20px;
   color: white;
 }
-.collapse-back:hover{
+.collapse-back:hover,.collapse-back:active,.collapse-back:focus,.collapse-back:visited{
   background-color: transparent !important;
 }
 .sales-mrg{
@@ -1845,3 +1845,9 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   display: none !important;
 }
 /*end of dashboard UI comments */
+/*viewpossibility status filter*/
+.status-drop{
+  margin: 0px;
+}
+
+/*end viewpossibility status filter*/

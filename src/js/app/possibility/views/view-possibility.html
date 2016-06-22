@@ -117,12 +117,12 @@
       <tr>
         <th class="table-th-heading"></th>
         <th  class="table-th-heading">Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black " ></span> </th>
-        <th>Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
+        <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
         <th class="table-th-heading">Location <span ng-click="sortType = 'city'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
         <th class="table-th-heading">Contact Person <span ng-click="sortType = 'pocs[0].name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
         <th class="table-th-heading">Contact Designation</th>
         <th class="table-th-heading">Contact Number</th>
-        <th class="table-th-heading">Status<span class="btn-group" dropdown > <span class="glyphicon glyphicon-filter color-black" id="single-button" dropdown-toggle ng-disabled="disabled"></span>
+        <th class="table-th-heading">Status<span class="btn-group status-drop" dropdown > <span class="glyphicon glyphicon-filter color-black " id="single-button" dropdown-toggle ng-disabled="disabled"></span>
       <ul class="dropdown-menu" dropdown-menu>
         <li data-ng-repeat="item in ['NOT MET','MET','INACTIVE'] track by $index"> <a data-ng-click="setSelectedClient(item)">{{item}}<span data-ng-class="isChecked(item)"></span></a>
 
@@ -158,7 +158,7 @@
         <td>
           <button class="btn btn-raised  btn-info m-n btn-sm">Discussion</button>
         </td>
-        
+
       </tr>
       <tr  data-ng-if="data.possibilities.length ===0">
         <td colspan="9">No Possibilities!</td>
@@ -185,7 +185,7 @@
 </div>
 </div>
 <script type="text/ng-template" id="mypopover.html">
-        
+
         <div class="form-group">
           <ul>
               <li ng-repeat="item in items=['NOT MET','MET','INACTIVE']"></li>

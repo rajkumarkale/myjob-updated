@@ -57,7 +57,7 @@ angular.module('com.module.possibility')
         };
         $scope.init($stateParams);
         $scope.getNewPointofContact =  function(){
-        	var obj = {name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:appConfig.possibility.contactType,isOpen:true};
+        	var obj =angular.copy( {name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:appConfig.possibility.contactType,isOpen:true});
             $scope.point_of_contacts.map(function(obj){
                 obj.isOpen = false;
             });
@@ -154,6 +154,7 @@ angular.module('com.module.possibility')
        			delete possibilityObject.documents;
        			delete possibilityObject.current_status;
                 delete possibilityObject.client_freeze_details;
+                delete possibilityObject.division;
 	       		possibilityCreateService.updatePossibility(possibilityObject).success(function() {
                 toaster.pop('success', 'POSSIBILITY Created Successfully.');
                 $state.go('app.viewPossibility');
@@ -209,14 +210,7 @@ angular.module('com.module.possibility')
             requestObject.point_of_contacts.push(requestPocObject);
 
             });
-              var deleteAttachment=possibilityCreateService.deleteDocument(id).success(function () {
-               /* $scope.delete=createPossibility.documents;
-                $scope.removeAttachmentFiles=function(id){
-                  return $scope.delete.splice(id,1);
-                }
-*/
-              });
-
+              
             var possibilityCreatePromise=possibilityCreateService.setPossibility(requestObject).success(function() {
 
                 $state.go('app.viewPossibility');
@@ -291,7 +285,15 @@ angular.module('com.module.possibility')
         	return poc.isOpen =!poc.isOpen;
         };
       $scope.removeFiles=function(index){
-        return $scope.uploadFiles.splice(index,1);
+          if( $scope.isEditable !== true){
+             return $scope.uploadFiles.splice(index,1); 
+          }else{
+              var id=$scope.createPossibility.documents[index]._id;
+              possibilityCreateService.deleteDocument(id).then(function (response) {
+                     $scope.createPossibility.documents.splice(index,1); 
+              });
+          }
+        
       }
 
     }]);

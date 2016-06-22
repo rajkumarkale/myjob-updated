@@ -3,8 +3,9 @@
  */
 
 angular.module('com.module.prospect')
-  .controller('ModalInstanceCtrl',function ($scope, $modalInstance)
+  .controller('ModalInstanceCtrl',function ($scope, $modalInstance,appConfig)
   {
+    $scope.status = appConfig.discussion.typeOfDiscussion;
     $scope.ok = function ()
     {
       $modalInstance.close();

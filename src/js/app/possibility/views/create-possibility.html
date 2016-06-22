@@ -137,7 +137,7 @@
 
           </div>
 
-          <div  class="preview-select" custom-select data="f.documentType">
+          <div  class="preview-select"><input class="form-control" style="margin-left: 50px" data-ng-model="f.type">
 
         </div>
 </div>
@@ -206,7 +206,7 @@
 </div>
 <div >
       <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-      <label class="control-label">Remote Location</label>
+      <label class="control-label">Location</label>
       <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="22">
 
     </div>
@@ -219,7 +219,11 @@
   <input class="form-control" numbers-only maxlength="15" data-ng-model="poc.phone" required  type="text" tabindex="16">
 
 </div>
+  <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
+    <label class="control-label">Contact Person Department</label>
+    <input data-ng-model="poc.designation" required class="form-control" type="text" tabindex="17">
 
+  </div>
 
 <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
 <label class="control-label">Email Id</label>

@@ -63,7 +63,7 @@
   font-size: 20px;
   color: white;
 }
-.collapse-back:hover{
+.collapse-back:hover,.collapse-back:active,.collapse-back:focus,.collapse-back:visited{
   background-color: transparent !important;
 }
 .sales-mrg{
@@ -410,10 +410,10 @@ margin-left: 50px;}
 .remove{
   display: block;
   position: absolute;
-  width: 20px;
-  height: 20px;
-  top: -8px;
-  right: -5px;
+  width: 15px;
+  height: 15px;
+  top: -12px;
+  right: -12px;
   background: url(../img/icon_Delete_file.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -1840,6 +1840,7 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
   display: none !important;
 }
 /*end of dashboard UI comments */
+
 /* start of comments for discussion UI */
 .line2{border-top: 1px solid #8c8b8b;
   margin-top: 50px;
@@ -1872,3 +1873,10 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 .agr-status-text-color{color:#8c8c8c;font-weight: bold;white-space: nowrap}
 .work-status-text-color{color:#af539b;font-weight: bold;white-space: nowrap}
 /* end of comments for view prospect UI */
+
+/*views table margin*/
+.status-drop{
+  margin: 0px;
+}
+/*end views table margin*/
+

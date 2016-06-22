@@ -12,7 +12,7 @@
       <accordion-heading>
         <span>{{title}}</span>
       </accordion-heading>
-      <form name="createPossibilityForm" data-ng-class ="disableForm()" >
+      <form name="createPossibilityForm">
 
         <div class="row">
           <div class="col-md-12 ">
@@ -105,8 +105,7 @@
               </div><br>
               <div data-ng-if="!isNewPossibility">
   <label class="control-label">Status</label>
-<div   custom-select data="status">
-</div>
+<input class="form-control" required data-ng-model="createPossibility.current_status.status" type="text">
 
 </div>
               <div class="form-group1 pull-right ">
@@ -292,9 +291,53 @@
         </div>
 
 
-        <div class="col-md-6" ng-if="showRollOut">
+        <div class="col-md-12" ng-if="showRollOut">
           <h4 class="color-black">Roll out of a proposal</h4>
-          <div class="form-group is-empty is-fileinput">
+          
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div ngf-drop ngf-select="upload($files,1)" ng-model="files" class="drop-box"
+         ngf-drag-over-class="'dragover'"  ngf-allow-dir="true" ngf-multiple="false"
+         accept="image/*"
+         >Drop PDF,DOC or IMAGE here or click to upload</div>
+    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+
+
+
+    </div>
+   <!-- <ul>
+      <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
+      <img ng-src="{{f.url}}" class="thumb"></li>
+    </ul>-->
+    <ul>
+      <div ng-repeat="f in uploadFiles" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
+      <!--<img ng-src="{{f.url}}" class="thumb">-->
+
+
+<div class="preview-div">
+  <div class="col-md-2">
+          <div class="previews">
+            <img ng-src="{{f.url}}" class="preview-img">
+            <a  class="remove" data-ng-click="removeFiles($index)"></a>
+            <span style="word-wrap: break-word;" tooltip="{{f.name}}">{{fileName}}</span>
+            <!--<p class="text-in">VOTER CARD</p>-->
+
+          </div>
+
+          <div  class="preview-select" custom-select data="f.documentType">
+
+        </div>
+</div>
+      </div>
+
+
+
+</div>
+
+    </ul>
+  </div>
+          <!--<div class="form-group is-empty is-fileinput">
             <input type="file" id="inputFile4" multiple="">
             <div class="input-group">
               <input type="text" readonly="" class="form-control" placeholder="No selected file">
@@ -305,7 +348,7 @@
                 </span>
             </div>
             <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
-          </div>
+          </div>-->
         </div>
       </div>
       <div class="col-md-6 col-md-offset-5">

@@ -26,9 +26,7 @@ angular.module('com.module.suspect')
           });*/
       };
       $scope.setdata=function($item, $model, $label,$event,$index){
-          /*console.log("hello");*/
-          /*console.log($item);*/
-          /*var ph=$("#contact"+$index).find('input').eq(2);*/
+          
           var x=$item.poc_details;
           if(x){
           $("#contact"+$index+' .is-empty').removeClass('is-empty');
@@ -39,21 +37,7 @@ angular.module('com.module.suspect')
               $scope.point_of_contacts[$index].contact_type.selectedItem = $scope.getSelectedItem(x.contact_type,$scope.contactType);
               $scope.point_of_contacts[$index].support_area.selectedItem = $scope.getSelectedItem(x.support_area,angular.copy(appConfig.suspect.supportArea));
              }
-         /* return $http({
-      method: 'GET',
-      url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name='+$item
-    }).then(function(response){
-
-              var x=response.data.users[0].poc_details;
-              $scope.point_of_contacts[$index].name=x.name;
-              $scope.point_of_contacts[$index].phone=x.phone;
-              $scope.point_of_contacts[$index].email_id=x.email_id;
-              $scope.point_of_contacts[$index].designation=x.designation;
-              $scope.point_of_contacts[$index].contact_type.selectedItem = $scope.getSelectedItem(x.contact_type,$scope.contactType);
-              $scope.point_of_contacts[$index].support_area.selectedItem = $scope.getSelectedItem(x.support_area,angular.copy(appConfig.suspect.supportArea));
-
-
-      });*/
+         
       };
     $scope.opening = true;
     $scope.init = function () {
@@ -94,7 +78,7 @@ angular.module('com.module.suspect')
             $scope.point_of_contacts[i].contact_type.selectedItem = $scope.getSelectedItem(Obj.contact_type,$scope.contactType);
             $scope.point_of_contacts[i].support_area.selectedItem = $scope.getSelectedItem(Obj.support_area,$scope.supportArea);
             if($scope.point_of_contacts[i].contact_type.selectedItem.key === 'PRIMARY'){
-               $("#contact"+i+' .select ul')[1].remove();
+               $("#contact"+i+' .select ul').remove();
                 $("#contact"+i+' .select .placeholder')[1].css('cursor','default !important');
             }
             if(i>0){

@@ -1916,3 +1916,16 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 .status-hot{
     background-color: #e60505 !important;
 }
+.status-lost{
+    background-color: #a948b8 !important;
+}
+.status-won{
+    background-color: #15b929 !important;
+}
+.status-AOC{
+    background-color: #8c8c8c !important;
+}
+.status-WIP{
+    background-color: #af539b !important;
+}
+

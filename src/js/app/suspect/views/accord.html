@@ -1,125 +1,123 @@
+<div class="text-right m-t-sm m-r-xs">
 
-
-<div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
-
-  <button class="btn btn-primary contacts-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"> Edit</button>
-  <button ui-sref="app.suspect-view" class="btn btn-primary contacts-button "> Cancel</button>
+    <!--<button class="btn btn-primary contacts-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"> Edit</button>-->
+    <button ui-sref="app.suspect-view" class="btn btn-primary contacts-button "> Cancel</button>
 </div>
-<div class="container col-md-12 pad-t-20"  data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
-  <accordion class="possibility-head">
-    <accordion-group>
+<div class="container col-md-12 pad-t-20" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
+    <accordion class="possibility-head">
+        <accordion-group>
 
-      <accordion-heading>
-        <span>{{title}}</span>
-      </accordion-heading>
-      <form name="createPossibilityForm">
+            <accordion-heading>
+                <span>{{title}}</span>
+            </accordion-heading>
+            <form name="createPossibilityForm" class="app-container-blur">
 
-        <div class="row">
-          <div class="col-md-12 ">
-            <div class="col-md-6 form-custom-padding">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <div class="col-md-6 form-custom-padding">
 
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Legal Entity</label>
-                <input  class="form-control" required data-ng-model="createPossibility.legal_name" type="text">
-              </div>
+                            <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                <label class="control-label">Legal Entity</label>
+                                <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text">
+                            </div>
 
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
+                            <!--<div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
                 <label class="control-label">Division Name</label>
                 <input class="form-control" required data-ng-model="createPossibility.division" type="text">
-              </div>
-              <div>
-                                        <label class="control-label">Bussiness Vertical</label>
+              </div>-->
+                            <div>
+                                <label class="control-label">Bussiness Vertical</label>
 
-                <input class="form-control"  data-ng-model="createPossibility.vertical" type="text" >
+                                <input class="form-control" data-ng-model="createPossibility.vertical" type="text">
 
-            </div>
-            <div>
-                   <label class="control-label">Employee Size of the Company</label>
-              <input class="form-control" required data-ng-model="createPossibility.employee_size" type="text">
-            </div>
-
-
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Address Line 1</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 "
-                       type="text">
-
-              </div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">City</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.city " type="text">
-
-              </div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Zipcode</label>
-                <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text">
-
-              </div>
-              <div class="up-margin">
+                            </div>
+                            <div>
+                                <label class="control-label">Employee Size of the Company</label>
+                                <input class="form-control" required data-ng-model="createPossibility.employee_size" type="text">
+                            </div>
 
 
-                <ul>
-                  <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-                    <img ng-src="{{f.url}}" class="thumb"></li>
-                </ul>
+                            <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                <label class="control-label">Address Line 1</label>
+                                <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 " type="text">
 
-              </div>
+                            </div>
+                            <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                <label class="control-label">City</label>
+                                <input class="form-control" required data-ng-model="createPossibility.address.city " type="text">
 
-            </div>
+                            </div>
+                            <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                <label class="control-label">Zipcode</label>
+                                <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text">
 
+                            </div>
+                            <div class="label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                <label class="control-label">Country</label>
+                                <input class="form-control" required data-ng-model="createPossibility.address.country" type="text">
 
-            <div class="col-md-6 form-custom-padding">
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Business Unit</label>
-                <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text">
-
-              </div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Website URL</label>
-                <input class="form-control" required data-ng-model="createPossibility.url" type="text">
-
-              </div>
-              <div>
-                   <label class="control-label">Group Turnover</label>
-                <input class="form-control"  data-ng-model="createPossibility.turnover" required type="text">
-
-</div>
-              <div>
-                   <label class="control-label">Type of Customer</label>
-                <input class="form-control"  data-ng-model="createPossibility.customer_type" type="text">
-
-</div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Address Line 2</label>
-                <input class="form-control"  data-ng-model="createPossibility.address.address_line_2" type="text">
-              </div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">State</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.state" type="text">
-
-              </div>
-              <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-                <label class="control-label">Country</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.country" type="text">
-
-              </div><br>
-              <div data-ng-if="!isNewPossibility">
-  <label class="control-label">Status</label>
-<input class="form-control" required data-ng-model="createPossibility.current_status.status" type="text">
-
-</div>
-              <div class="form-group1 pull-right ">
-  <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
-  <label   class=" first-class2 " >Freeze</label>
-</div>
-
-            </div>
-          </div>
+                            </div>
+                            <div class="up-margin">
 
 
+                                <ul>
+                                    <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
+                                        <img ng-src="{{f.url}}" class="thumb"></li>
+                                </ul>
+
+                            </div>
+
+                        </div>
 
 
-          <!--<div ng-repeat="poc in point_of_contacts" class="row col-md-12">
+                        <div class="col-md-6 form-custom-padding">
+                            <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                <label class="control-label">Business Unit</label>
+                                <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text">
+
+                            </div>
+                            <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                <label class="control-label">Website URL</label>
+                                <input class="form-control" required data-ng-model="createPossibility.url" type="text">
+
+                            </div>
+                            <div>
+                                <label class="control-label">Group Turnover</label>
+                                <input class="form-control" data-ng-model="createPossibility.turnover" required type="text">
+
+                            </div>
+                            <div>
+                                <label class="control-label">Type of Customer</label>
+                                <input class="form-control" data-ng-model="createPossibility.customer_type" type="text">
+
+                            </div>
+                            <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                <label class="control-label">Address Line 2</label>
+                                <input class="form-control" data-ng-model="createPossibility.address.address_line_2" type="text">
+                            </div>
+                            <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                <label class="control-label">State</label>
+                                <input class="form-control" required data-ng-model="createPossibility.address.state" type="text">
+
+                            </div>
+                            <br>
+                            <div data-ng-if="!isNewPossibility">
+                                <label class="control-label">Status</label>
+                                <input class="form-control" required data-ng-model="createPossibility.current_status.status" type="text">
+
+                            </div>
+                            <div class="form-group1 pull-right ">
+                                <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
+                                <label class=" first-class2 ">Freeze</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <!--<div ng-repeat="poc in point_of_contacts" class="row col-md-12">
             <accordion>
               <accordion-group is-open="poc.isOpen" >
                 <accordion-heading>
@@ -193,151 +191,148 @@
               </accordion-group>
             </accordion>
           </div>-->
-          <div >
+                    <!-- <div >
             <button type="button" class="btn btn-primary contacts-button " data-ng-if="isNewPossibility" data-ng-click="getNewPointofContact()"><i class="fa fa-plus"></i> Contacts</button>
-          </div>
+          </div>-->
 
-          <div class="col-md-6 form-custom-padding">
-          </div>
-          <div data-cg-busy="{promise:createPromise,message:'Creating/Updating Possibilities'}" class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
+                    <!-- <div class="col-md-6 form-custom-padding">
+          </div>-->
+                    <!--<div data-cg-busy="{promise:createPromise,message:'Creating/Updating Possibilities'}" class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
     <div class="form-group text-center">
       <button ui-sref="app.viewPossibility" class="btn btn-primary data-button">Cancel</button>
       <button class="btn btn-primary data-button" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)" disabled="disabled">{{isNewPossibility?'Submit':'Update'}}</button>
     </div>
-  </div>
+  </div>-->
 
-        </div>
+                </div>
 
-      </form>
-  </accordion-group>
-  </accordion>
+            </form>
+        </accordion-group>
+    </accordion>
 
 </div>
 
 
 <div class="container col-md-12">
-  <div class="panel panel-default second-panel up-margin ">
-    <div class="panel-title  panel-heading ">
-      Suspect
-    </div>
-    <div class="panel-body  ">
-      <div class="form-group pull-right mrg-formgrp mrg-top-apply">
-        <div class="col-md-8">
-          <div class="form-group">
-            <label class="control-label">Status</label>
-            <div   custom-select data="status"></div>
-            <div id="grad1-status"></div>
-          </div>
+    <div class="panel panel-default second-panel up-margin ">
+        <div class="panel-title  panel-heading ">
+            Suspect
         </div>
-      </div>
-      <hr class="line1">
-      <div class=" pull-right">
-        <a href="" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus"
-           ng-click="createNewContactList()"> Contact</a>
-      </div>
-      <div class="row ">
+        <div class="panel-body  ">
+            <div class="form-group pull-right mrg-formgrp mrg-top-apply">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label class="control-label">Status</label>
+                        <div custom-select data="status"></div>
+                        <div id="grad1-status"></div>
+                    </div>
+                </div>
+            </div>
+            <hr class="line1">
+            <div class=" pull-right">
+                <a href="" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus" ng-click="createNewContactList()"> Contact</a>
+            </div>
+            <div class="row ">
 
-        <div class="col-lg-10 ">
-          <accordion  close-others='opening'>
-            <accordion-group is-open="poc.isOpen" ng-repeat="poc in point_of_contacts">
-              <accordion-heading >
-          <span class="color-black ">
+                <div class="col-lg-10 ">
+                    <accordion close-others='opening'>
+                        <accordion-group is-open="poc.isOpen" ng-repeat="poc in point_of_contacts">
+                            <accordion-heading>
+                                <span class="color-black ">
           {{poc.support_area.selectedItem.displayText}} {{poc.contact_type.selectedItem.displayText}} Contact Person Details
           <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}">
             </i>
             </span>
-              </accordion-heading>
-              <div class="row" id="contact{{$index}}">
-                <div class="col-md-5 col-pad">
-                  <div class=" form-group label-floating is-empty">
-                    <label class="control-label">Contact Person Name</label>
+                            </accordion-heading>
+                            <div class="row" id="contact{{$index}}">
+                                <div class="col-md-5 col-pad">
+                                    <div class=" form-group label-floating is-empty">
+                                        <label class="control-label">Contact Person Name</label>
 
-                    <input class="form-control" ng-model="poc.name"  typeahead="name as name.name for name in getNames($viewValue)"  type="text"  typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)" >
-                        
+                                        <input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)">
 
-                        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
-                <div ng-show="noResults">
-                  <i class="glyphicon glyphicon-remove"></i> No Results Found
+
+                                        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
+                                        <div ng-show="noResults">
+                                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                                        </div>
+                                    </div>
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Phone Number</label>
+                                        <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
+                                    </div>
+                                    <div>
+                                        <label class="control-label">Support Area</label>
+                                        <div class="form-group" custom-select data="poc.support_area">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-5 col-md-offset-2">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Email ID</label>
+                                        <input class="form-control bord-remove" data-ng-model="poc.email_id" type="text">
+                                    </div>
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Designation</label>
+                                        <input class="form-control bord-remove" type="text" data-ng-model="poc.designation">
+                                    </div>
+                                    <div>
+                                        <label class="control-label">Contact type</label>
+                                        <div class="form-group" custom-select data="poc.contact_type"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </accordion-group>
+                    </accordion>
                 </div>
-                  </div>
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Phone Number</label>
-                    <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
-                  </div>
-                  <div>
-                    <label class="control-label">Support Area</label>
-                    <div class="form-group" custom-select data="poc.support_area">
-                    </div>
-                  </div>
 
 
-                </div>
-                <div class="col-md-5 col-md-offset-2">
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Email ID</label>
-                    <input class="form-control bord-remove" data-ng-model="poc.email_id" type="text" >
-                  </div>
-                  <div class="form-group label-floating is-empty">
-                   <label class="control-label">Designation</label>
-                    <input class="form-control bord-remove" type="text" data-ng-model="poc.designation" >
-                  </div>
-                  <div><label class="control-label">Contact type</label>
-                    <div class="form-group" custom-select data="poc.contact_type"></div>
-                  </div>
-                </div>
-              </div>
-            </accordion-group>
-          </accordion>
-        </div>
+                <div class="col-md-12" ng-if="showRollOut">
+                    <h4 class="color-black">Roll out of a proposal</h4>
 
-
-        <div class="col-md-12" ng-if="showRollOut">
-          <h4 class="color-black">Roll out of a proposal</h4>
-          
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
-    <div ngf-drop ngf-select="upload($files,1)" ng-model="files" class="drop-box"
-         ngf-drag-over-class="'dragover'"  ngf-allow-dir="true" ngf-multiple="false"
-         accept="image/*"
-         >Drop PDF,DOC or IMAGE here or click to upload</div>
-    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div ngf-drop ngf-select="upload($files,1)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-allow-dir="true" ngf-multiple="false" accept="image/*">Drop PDF,DOC or IMAGE here or click to upload</div>
+                            <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
 
 
 
 
-    </div>
-   <!-- <ul>
+                        </div>
+                        <!-- <ul>
       <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
       <img ng-src="{{f.url}}" class="thumb"></li>
     </ul>-->
-    <ul>
-      <div ng-repeat="f in uploadFiles" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
-      <!--<img ng-src="{{f.url}}" class="thumb">-->
+                        <ul>
+                            <div ng-repeat="f in uploadFiles" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
+                                <!--<img ng-src="{{f.url}}" class="thumb">-->
 
 
-<div class="preview-div">
-  <div class="col-md-2">
-          <div class="previews">
-            <img ng-src="{{f.url}}" class="preview-img">
-            <a  class="remove" data-ng-click="removeFiles($index)"></a>
-            <span style="word-wrap: break-word;" tooltip="{{f.name}}">{{fileName}}</span>
-            <!--<p class="text-in">VOTER CARD</p>-->
+                                <div class="preview-div">
+                                    <div class="col-md-2">
+                                        <div class="previews">
+                                            <img ng-src="{{f.url}}" class="preview-img">
+                                            <a class="remove" data-ng-click="removeFiles($index)"></a>
+                                            <span style="word-wrap: break-word;" tooltip="{{f.name}}">{{fileName}}</span>
+                                            <!--<p class="text-in">VOTER CARD</p>-->
 
-          </div>
+                                        </div>
 
-          <div  class="preview-select" custom-select data="f.documentType">
+                                        <div class="preview-select" custom-select data="f.documentType">
 
-        </div>
-</div>
-      </div>
+                                        </div>
+                                    </div>
+                                </div>
 
 
 
-</div>
+                            </div>
 
-    </ul>
-  </div>
-          <!--<div class="form-group is-empty is-fileinput">
+                        </ul>
+                    </div>
+                    <!--<div class="form-group is-empty is-fileinput">
             <input type="file" id="inputFile4" multiple="">
             <div class="input-group">
               <input type="text" readonly="" class="form-control" placeholder="No selected file">
@@ -349,18 +344,17 @@
             </div>
             <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
           </div>-->
+                </div>
+            </div>
+            <div data-cg-busy="{promise:submitPromise,message:'Updating'}"></div>
+            <div class="col-md-6 col-md-offset-5">
+                <div class="form-group">
+                    <a ui-sref="app.suspect-view">
+                        <button class="btn btn-primary data-button">Cancel</button>
+                    </a>
+                    <button class="btn btn-primary data-button" data-ng-click="submit(true)">Submit</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-6 col-md-offset-5">
-        <div class="form-group">
-          <a ui-sref="app.suspect-view">
-            <button class="btn btn-primary data-button">Cancel</button>
-          </a>
-          <button class="btn btn-primary data-button" data-ng-click="submit()">Submit</button>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
-
-

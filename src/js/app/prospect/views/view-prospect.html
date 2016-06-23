@@ -128,7 +128,13 @@
           </th>
           <th class="table-th-heading">Contact Name</th>
           <th class="table-th-heading">Contact Number</th>
-          <th class="table-th-heading">Status <span class="glyphicon glyphicon-filter color-black"></span></th>
+          <th class="table-th-heading">Status <span class="btn-group status-drop" dropdown > <span class="glyphicon glyphicon-filter color-black" id="single-button" dropdown-toggle ng-disabled="disabled"></span>
+      <ul class="dropdown-menu mrg-dropdown" dropdown-menu>
+        <li data-ng-repeat="item in ['LOST','WON','AGREEMENT ON CLOSURE','WORK IN PROGRESS'] track by $index"> <a data-ng-click="setSelectedClient(item)">{{item}}<span data-ng-class="isChecked(item)"></span></a>
+
+                    </li>
+      </ul>
+    </span></th>
           <th class="table-th-heading">Discussions</th>
 
 
@@ -137,7 +143,7 @@
         </thead>
         <tbody>
 
-        <tr data-ng-repeat="prospect in data.prospects | orderBy:sortType:sortReverse| filter:searchView"  >
+        <tr data-ng-repeat="prospect in data.prospects | orderBy:sortType:sortReverse |companyFilter:selectedItem| filter:searchView"  >
           <td>
 
             <div class="chekbox">
@@ -159,7 +165,7 @@
           <td>000000</td>
           <td>
 
-            <p class="btn-raised warm-status m-n btn-sm">{{prospect.status | spaceless | spaceless}}</p>
+            <p class="btn-raised warm-status m-n btn-sm" ng-class="statusColor(prospect.status)">{{prospect.status | spaceless | spaceless}}</p>
           </td>
           <td>
             <button class="btn btn-raised  btn-info m-n btn-sm">Discussion</button>

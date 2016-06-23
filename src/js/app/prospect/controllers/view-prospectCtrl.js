@@ -30,6 +30,40 @@ angular.module('com.module.prospect')
     row: '',
     currentPage: 1
   };
+    $scope.selectedItem = [];
+    $scope.setSelectedClient = function (item) {
+        /*var id = this.company.id;*/
+        if (_.contains($scope.selectedItem, item)) {
+            $scope.selectedItem = _.without($scope.selectedItem, item);
+        } else {
+            $scope.selectedItem.push(item);
+        }
+        return false;
+    };
+
+    $scope.isChecked = function (item) {
+        if (_.contains($scope.selectedItem, item)) {
+            return 'glyphicon glyphicon-ok pull-right';
+        }
+        return false;
+    };
+    $scope.statusColor=function(status){
+    switch (status) {
+    case "AGREEMENT_ON_CLOSURE":
+        return 'status-AOC';
+            break;
+    case "WORK_IN_PROGRESS":
+        return 'status-WIP';
+            break;
+    case "LOST":
+        return 'status-lost';
+            break;
+    case "WON":
+        return 'status-won';
+            break;
+        default:
+    }
+}
   $scope.myPromise = prospectService.getProspects(1,10).then(function(response){
     console.log(response);
     $scope.data.prospects = response.data.prospects;

@@ -153,7 +153,7 @@
         <td>{{possibility.pocs[0].designation}}</td>
         <td>{{possibility.pocs[0].phone}}</td>
         <td>
-          <p class="btn btn-raised warm-status m-n btn-sm" style="pointer-events: none;">{{possibility.status}}</p>
+          <p class="btn btn-raised warm-status m-n btn-sm" style="pointer-events: none;" ng-class="statusColor(possibility.status)">{{possibility.status}}</p>
         </td>
         <td>
           <button class="btn btn-raised  btn-info m-n btn-sm" ui-sref="app.viewDiscussions">Discussion</button>

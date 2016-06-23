@@ -183,7 +183,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr data-ng-repeat="suspect in data.suspects | orderBy:sortType:sortReverse |companyFilter:selectedItem | filter:searchView"  >
+          <tr data-ng-repeat="suspect in filteredRows= (data.suspects | orderBy:sortType:sortReverse |companyFilter:selectedItem) | filter:searchView"  >
         <td>
 
           <div class="chekbox">
@@ -209,6 +209,9 @@
           <button class="btn btn-raised  btn-info m-n btn-sm">Discussion</button>
         </td>
       </tr>
+         <tr  data-ng-if="filteredRows.length ===0">
+        <td colspan="8">No Possibilities!</td>
+        </tr>
           </tbody>
         </table>
       </div>

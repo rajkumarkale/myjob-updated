@@ -643,19 +643,14 @@
   color:white ;
 
 }
-
-
-.warm-status{
-  background-color:#e68405 !important; ;
+.warm-status {
+  background-color: #e68405 !important;;
   text-align: center;
   padding: 5px;
   width: 100% !important;
-  color:white;
+  color: white;
   border-radius: 7px;
 }
-
-
-
 .cold-status{
   background-color:#87d7f8 !important; ;
   text-align: center;
@@ -1899,4 +1894,34 @@
 }
 /*end views table margin*/
 
+.status-met{
+    background-color: #e68405 !important;
+}
+.status-notmet{
+    background-color: #8C8866 !important;
+}
+.status-inactive{
+    background-color: #A8A8A7 !important;
+}
+.status-cold{
+    background-color: #A8A8A7 !important;
+}
+.status-warm{
+    background-color: #E48204 !important;
+}
+.status-hot{
+    background-color: #e60505 !important;
+}
+.status-lost{
+    background-color: #a948b8 !important;
+}
+.status-won{
+    background-color: #15b929 !important;
+}
+.status-AOC{
+    background-color: #8c8c8c !important;
+}
+.status-WIP{
+    background-color: #af539b !important;
+}
 

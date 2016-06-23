@@ -43,7 +43,20 @@ angular.module('com.module.possibility')
 		$scope.openEditPossibility = function(possibility){
 				$state.go('app.createPossibility',{possibility:possibility});
 		};
-
+$scope.statusColor=function(status){
+    switch (status) {
+    case "MET":
+        return 'status-met';
+            break;
+    case "NOT MET":
+        return 'status-notmet';
+            break;
+    case "INACTIVE":
+        return 'status-inactive';
+            break;
+        default:
+    }
+}
   $scope.open = function($event,opened) {
     $event.preventDefault();
     $event.stopPropagation();

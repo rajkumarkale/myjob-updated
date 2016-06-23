@@ -2,7 +2,7 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-  .controller('createSuspectCtrl',['$scope','appConfig','$modal','$stateParams','suspectService','$http','$state','Upload',function($scope,appConfig,$modal,$stateParams,suspectService,$http,$state,Upload){
+  .controller('createSuspectCtrl',['$scope','appConfig','$modal','$stateParams','suspectService','$http','$state','Upload','$q',function($scope,appConfig,$modal,$stateParams,suspectService,$http,$state,Upload,$q){
       $scope.getCopy=function(obj){
           return angular.copy(obj);
       };
@@ -26,9 +26,7 @@ angular.module('com.module.suspect')
           });*/
       };
       $scope.setdata=function($item, $model, $label,$event,$index){
-          /*console.log("hello");*/
-          /*console.log($item);*/
-          /*var ph=$("#contact"+$index).find('input').eq(2);*/
+          
           var x=$item.poc_details;
           if(x){
           $("#contact"+$index+' .is-empty').removeClass('is-empty');
@@ -39,21 +37,7 @@ angular.module('com.module.suspect')
               $scope.point_of_contacts[$index].contact_type.selectedItem = $scope.getSelectedItem(x.contact_type,$scope.contactType);
               $scope.point_of_contacts[$index].support_area.selectedItem = $scope.getSelectedItem(x.support_area,angular.copy(appConfig.suspect.supportArea));
              }
-         /* return $http({
-      method: 'GET',
-      url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name='+$item
-    }).then(function(response){
-
-              var x=response.data.users[0].poc_details;
-              $scope.point_of_contacts[$index].name=x.name;
-              $scope.point_of_contacts[$index].phone=x.phone;
-              $scope.point_of_contacts[$index].email_id=x.email_id;
-              $scope.point_of_contacts[$index].designation=x.designation;
-              $scope.point_of_contacts[$index].contact_type.selectedItem = $scope.getSelectedItem(x.contact_type,$scope.contactType);
-              $scope.point_of_contacts[$index].support_area.selectedItem = $scope.getSelectedItem(x.support_area,angular.copy(appConfig.suspect.supportArea));
-
-
-      });*/
+         
       };
     $scope.opening = true;
     $scope.init = function () {
@@ -68,6 +52,9 @@ angular.module('com.module.suspect')
 
     };
     $scope.init();
+      $scope.contactType = appConfig.suspect.contactType;
+    $scope.supportArea = appConfig.suspect.supportArea;
+    $scope.status = appConfig.suspect.status;
       $scope.createPossibility={};
     $scope.title = "Client Details";
     $scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function(response) {
@@ -80,6 +67,7 @@ angular.module('com.module.suspect')
       $scope.createPossibility.vertical = $scope.getSelectedItem($scope.createPossibility.vertical, $scope.businessVertical).displayText;
       $scope.createPossibility.customer_type = $scope.getSelectedItem($scope.createPossibility.customer_type, $scope.customerType).displayText;
         /*$scope.createPossibility.POC =$scope.suspect;*/
+         $scope.status.selectedItem=$scope.getSelectedItem($scope.createPossibility.current_status.status, $scope.status);
         $scope.createPossibility.point_of_contacts.map(function (Obj) {
             var i=0;
             $("#contact"+i+' .is-empty').removeClass('is-empty');
@@ -90,7 +78,7 @@ angular.module('com.module.suspect')
             $scope.point_of_contacts[i].contact_type.selectedItem = $scope.getSelectedItem(Obj.contact_type,$scope.contactType);
             $scope.point_of_contacts[i].support_area.selectedItem = $scope.getSelectedItem(Obj.support_area,$scope.supportArea);
             if($scope.point_of_contacts[i].contact_type.selectedItem.key === 'PRIMARY'){
-               $("#contact"+i+' .select ul')[1].remove();
+               $("#contact"+i+' .select ul').remove();
                 $("#contact"+i+' .select .placeholder')[1].css('cursor','default !important');
             }
             if(i>0){
@@ -114,9 +102,7 @@ angular.module('com.module.suspect')
 
     };
 
-    $scope.contactType = appConfig.suspect.contactType;
-    $scope.supportArea = appConfig.suspect.supportArea;
-    $scope.status = appConfig.suspect.status;
+    
       $scope.showRollOut=false;
     $scope.$watch('status.selectedItem',function(n,o){
         if(n.key==='HOT'){
@@ -173,7 +159,12 @@ angular.module('com.module.suspect')
                 }
             }
         };
-    $scope.submit = function () {
+      $scope.submit=function(bool){
+          if(bool){
+          $scope.submitPromise=asyncSubmit();}
+      }; 
+      function asyncSubmit(){
+    return $q(function () {
     var procObj = {};
     var poc = [];
     var files=[];
@@ -213,7 +204,8 @@ angular.module('com.module.suspect')
     });
     console.log($scope.point_of_contacts);
     console.log($scope.support_array);
-};
+});
+      }
       $scope.getSelectedItem = function(selectedItem, srcObj) {
             var returnObj;
             angular.forEach(srcObj.data, function(obj) {

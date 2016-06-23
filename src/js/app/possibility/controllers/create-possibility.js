@@ -12,7 +12,7 @@ angular.module('com.module.possibility')
 
             $scope.uploadFiles= [];
             if ($stateParams.possibility) {
-                $scope.title = "Edit Possibility";
+                $scope.title = "Possibility";
                 $scope.myPromise = possibilityCreateService.possibilityDetails($stateParams.possibility.client_unit_id).then(function(response) {
                     $scope.createPossibility = response.data;
                     console.log(response.data);
@@ -96,9 +96,11 @@ angular.module('com.module.possibility')
         };
 
            $scope.save =function(possibilityObject) {
+               if(possibilityObject){
         	if($scope.isNewPossibility){
             $scope.createPromise=asyncProcessRequest(possibilityObject);}
         	else{$scope.savePromise=asyncSave(possibilityObject); }
+           }
            };
             function asyncSave(possibilityObject) {
             return $q( function() {
@@ -236,7 +238,7 @@ angular.module('com.module.possibility')
         $scope.editForm = function() {
         	if($scope.createPossibility.current_status.status !== "MET"){
         		            $scope.isEditable = true;
-
+                            $scope.title="Edit Possibility";
         	}
 
         };

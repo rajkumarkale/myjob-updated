@@ -187,13 +187,13 @@
           </span></accordion-heading>
   <div class="col-md-6 form-custom-padding">
     <div  class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-    <label class="control-label">Contact Person Name</label>
+    <label class="control-label"> Name</label>
     <input class="form-control" required data-ng-model="poc.name" type="text" tabindex="15">
 
   </div>
 
   <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-  <label class="control-label">Contact Person Designation</label>
+  <label class="control-label">Designation</label>
   <input data-ng-model="poc.designation" required class="form-control" type="text" tabindex="17">
 
 </div>
@@ -205,31 +205,31 @@
   <input type="checkbox" ng-model="poc.local" class="check" tabindex="20">
   <label class="location">Local</label>
 </div>
-<div >
-      <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-      <label class="control-label">Location</label>
-      <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="22">
-
-    </div>
+    <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
+      <label class="control-label">Email Id</label>
+      <input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="22">
     </div>
 
 </div>
 <div class="col-md-6 form-custom-padding">
   <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-  <label class="control-label">Contact Person Phone Number</label>
+  <label class="control-label"> Phone Number</label>
   <input class="form-control" numbers-only maxlength="15" data-ng-model="poc.phone" required  type="text" tabindex="16">
 
 </div>
   <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-    <label class="control-label">Contact Person Department</label>
-    <input data-ng-model="poc.designation" required class="form-control" type="text" tabindex="17">
+    <label class="control-label"> Department</label>
+    <input data-ng-model="poc.designation" required class="form-control" type="text" tabindex="18">
 
   </div>
+  <div >
+    <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
+      <label class="control-label">Location</label>
+      <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="21">
 
-<div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-<label class="control-label">Email Id</label>
-<input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="18">
-</div>
+    </div>
+  </div>
+
   <div ng-if="poc.contact_type ==='PRIMARY'" >
     <div class="form-group label-floating " >
       <label class="control-label">Contact Type</label>
@@ -239,7 +239,7 @@
   </div>
   <div ng-if="poc.contact_type !=='PRIMARY'" class=" form-group ">
     <label class="control-label contactdrop-col">Contact Type</label>
-    <div  custom-select data="poc.contact_type" tabindex="21">
+    <div  custom-select data="poc.contact_type" tabindex="23">
 
     </div>
   </div>

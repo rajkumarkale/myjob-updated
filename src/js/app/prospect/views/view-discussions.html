@@ -1,41 +1,24 @@
-<div class="maincol-apply">
 
+  <div class="container col-md-12 all-dateinputs">
 
-  <div class="container all-dateinputs">
-   <div class="panel-body">
-     <div class="row distance">
-     <div class="pull-right">
-          <button ng-click="openAddDiscussions()" class="btn btn-raised btn-primary glyphicon glyphicon-plus btn-lg">  New Call </button>
-      </div>
-    </div>
-    <div class="row distance">
-      <span class="pull-right search-box-width">
-           <div class="input-group">
-                <input type="text" class="form-control btn-rounded back-color img-remove" placeholder="Search By Location,Company Name,Contact"
-                       aria-describedby="basic-addon3">
-                <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
-              </div>
-          </span>
-    </div>
-
-  <div class="row distance">
-    </label>
-    <label class="  checkBox-showall pull-right ">Show All
-      <span class="caret checkBxDrop" data-toggle="dropdown"></span>
-    </label>
-  </div>
-   </div>
-    <div class="panel panel-primary ">
+    <div class="panel panel-primary " style="padding-bottom: 20px">
       <div class=" panel-heading summary">
 
-        <div class="panel-title">Discussions</div>
+        <div class="panel-title ">Discussions</div>
       </div>
-    </div>
-    <div class="container-custom">
+      <div class="row distance discussion-buton">
+        <div class="pull-right">
+          <button ng-click="openAddDiscussions()" class="btn btn-raised btn-info glyphicon glyphicon-plus "> </button>
+        </div>
+      </div>
+      <hr class="line2">
+
+
+    <div class="container-custom panel panel-default discussion-container " >
       <div class="container ">
         <div class="discussion-body">
           <div class="row ">
-            <div class="col-lg-9 ">
+            <div class="col-lg-8 ">
               <table>
                 <tr>
                   <td>
@@ -71,7 +54,8 @@
               </table>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-2 space-mrg" >
+
               <table>
                 <tr>
                   <td>
@@ -94,7 +78,7 @@
             </div>
 
           </div>
-          <div class=" col-lg-11 left-align">
+          <div class=" col-lg-11 left-align summary-text" >
             <p class="summary-details">
               <span class="summary-head ">Summary: </span>&nbsp;
               Lorem Ipsum is ply dummy text of the printing and typesetting industry.
@@ -102,15 +86,18 @@
               when an unknown printer took a galley of type and scrambled it to make a type specimen book
             </p>
           </div>
+
         </div>
 
       </div>
+
     </div>
-    <div class="container-custom">
+
+    <div class="container-custom panel panel-default discussion-container" >
       <div class="container ">
         <div class="discussion-body">
           <div class="row ">
-            <div class="col-lg-9 ">
+            <div class="col-lg-8 ">
               <table>
                 <tr>
                   <td>
@@ -146,15 +133,16 @@
               </table>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-2 ">
+
               <table>
                 <tr>
                   <td>
-                    <label class="date-venue">
-                      20-04-2016,12:PM
-                    </label>
-                  </td>
-                </tr>
+                    <label class="date-venue">20-04-2016,12:PM
+
+            </label>
+            </td>
+            </tr>
                 <tr>
                   <td>
                     <label class="date-venue">
@@ -165,199 +153,34 @@
                     </label>
                   </td>
                 </tr>
-              </table>
-            </div>
+            </table>
 
           </div>
-          <div class=" col-lg-11 left-align">
-            <p class="summary-details">
-              <span class="summary-head ">Summary: </span>&nbsp;
-              Lorem Ipsum is ply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book
-            </p>
-          <span>
+
+        </div>
+        <div class=" col-lg-11 left-align summary-text">
+          <p class="summary-details">
+            <span class="summary-head ">Summary: </span>&nbsp;
+            Lorem Ipsum is ply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book
+          </p>
           <div>
             <div class="attachment">
-                1 Attachment
-              </div>
+              1 Attachment
+            </div>
             <div class="attach-image">
               <img src="#" class="attach-image-detail"/>
               resume.png
             </div>
           </div>
-            </span>
-          </div>
-
         </div>
-
-      </div>
-
-    </div>
-    <div class="container-custom">
-      <div class="container ">
-        <div class="discussion-body">
-          <div class="row ">
-            <div class="col-lg-9 ">
-              <table>
-                <tr>
-                  <td>
-                    <label class="contact-person">
-                      Contact Person:
-                    </label>
-                    <label class="person-name">
-                      <h4>Rober Martin </h4>
-                    </label>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <label class="type-of-call">
-                      Type Of Call:
-                    </label>
-                    <label class="call-follow">
-                      Follow Up
-                    </label>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <label class="type-of-call">
-                      Type Of Discussion:
-                    </label>
-                    <label class="call-follow">
-                      Email
-                    </label>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <div class="col-lg-3">
-              <table>
-                <tr>
-                  <td>
-                    <label class="date-venue">
-                      20-04-2016,12:PM
-                    </label>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <label class="date-venue">
-                      Venue:
-                    </label>
-                    <label class="location-name">
-                      Hyderabad
-                    </label>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-          </div>
-          <div class=" col-lg-11 left-align">
-            <p class="summary-details">
-              <span class="summary-head ">Summary: </span>&nbsp;
-              Lorem Ipsum is ply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="container-custom">
-      <div class="container ">
-        <div class="discussion-body">
-          <div class="row ">
-            <div class="col-lg-9 ">
-              <table>
-                <tr>
-                  <td>
-                    <label class="contact-person">
-                     Contact Person:
-                    </label>
-                    <label class="person-name">
-                      <h4>Rober Martin </h4>
-                    </label>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <label class="type-of-call">
-                      Type Of Call:
-                    </label>
-                    <label class="call-follow">
-                      Follow Up
-                    </label>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <label class="type-of-call">
-                      Type Of Discussion:
-                    </label>
-                    <label class="call-follow">
-                      Email
-                    </label>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <div class="col-lg-3">
-              <table>
-                <tr>
-                  <td>
-                    <label class="date-venue">
-                      20-04-2016,12:PM
-                    </label>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <label class="date-venue">
-                      Venue:
-                    </label>
-                    <label class="location-name">
-                      Hyderabad
-                    </label>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-          </div>
-          <div class=" col-lg-11 left-align">
-            <p class="summary-details">
-              <span class="summary-head ">Summary: </span>&nbsp;
-              Lorem Ipsum is ply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book
-            </p>
-          <span>
-          <div>
-            <div class="attachment">
-                1 Attachment
-              </div>
-            <div class="attach-image">
-              <img src="#" class="attach-image-detail"/>
-              resume.png
-            </div>
-          </div>
-            </span>
-          </div>
-
-        </div>
-
       </div>
 
     </div>
 
-  </div>
+    </div>
 
-</div>
+
+
+

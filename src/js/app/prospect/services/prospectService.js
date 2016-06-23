@@ -11,7 +11,16 @@ angular.module('com.module.prospect').factory('prospectService', function ($http
       url: BASEURI + '/api/prospect/'+currentPage+'/'+numPerPage
     });
   };
+
+  var getDiscussion=function(id){
+    return $http({
+      method:'GET',
+      url:BASEURI + '/api/discussions?client_unit_id= '+ id
+    });
+  };
+
   return {
-    getProspects:getProspects
+    getProspects:getProspects,
+    getDiscussion:getDiscussion
   }
 });

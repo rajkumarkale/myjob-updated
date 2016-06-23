@@ -47,6 +47,9 @@
       "contactType" :{"data":[{"key":"PRIMARY","displayText":"Primary"},{"key":"ESCALATION","displayText":"Escalation"},{"key":"OTHERS","displayText":"Others"}],"selectedItem":""},
       "supportArea" :{"data":[{"key":"BUSINESS","displayText":"Business"},{"key":"FINANCE","displayText":"Finance"},{"key":"INVOICE","displayText":"Invoice"}],"selectedItem":""}
     },
+    "discussion":{
+      "typeOfDiscussion" :{"data":[{"key":"Telephonic","displayText":"Telephonic"},{"key":"Email","displayText":"Email"},{"key":"Inperson","displayText":"Inperson"},{"key":"Chat","displayText":"Chat"}],"selectedItem":""}
+      },
     "languages": {
       "en": "English"
     },

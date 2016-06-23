@@ -3,6 +3,7 @@
  */
 angular.module('com.module.prospect')
 .controller('viewProspectCtrl',['$scope','prospectService',function($scope,prospectService){
+
         $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
         $scope.searchView   = '';
@@ -29,14 +30,20 @@ angular.module('com.module.prospect')
     row: '',
     currentPage: 1
   };
-  $scope.myPromise = prospectService.getProspects(1,1).then(function(response){
+  $scope.myPromise = prospectService.getProspects(1,10).then(function(response){
     console.log(response);
     $scope.data.prospects = response.data.prospects;
     $scope.data.totalItems = response.data.count;
     $scope.data.LOST=response.data.LOST;
     $scope.data.WON=response.data.WON;
-    $scope.date = new Date();
+    $scope.data.PROGRESS=response.data.WORK_IN_PROGRESS;
+    /*$scope.data.estimated_closure = response.data.estimated_closure;*/
   });
 
-}]);
+}])
+  .filter('spaceless',function(){
+  return function(status){
+    return  status.replace('_',' ');
+  }
+});
 

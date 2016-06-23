@@ -13,7 +13,7 @@ angular.module('com.module.suspect')
       url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name='+val
     }).then(function(response){
 
-              
+
               return response.data.users;/*.map(function(item){
         return item.name;
       });*/
@@ -51,8 +51,8 @@ angular.module('com.module.suspect')
               $scope.point_of_contacts[$index].designation=x.designation;
               $scope.point_of_contacts[$index].contact_type.selectedItem = $scope.getSelectedItem(x.contact_type,$scope.contactType);
               $scope.point_of_contacts[$index].support_area.selectedItem = $scope.getSelectedItem(x.support_area,angular.copy(appConfig.suspect.supportArea));
-              
-              
+
+
       });*/
       };
     $scope.opening = true;
@@ -90,13 +90,13 @@ angular.module('com.module.suspect')
             $scope.point_of_contacts[i].contact_type.selectedItem = $scope.getSelectedItem(Obj.contact_type,$scope.contactType);
             $scope.point_of_contacts[i].support_area.selectedItem = $scope.getSelectedItem(Obj.support_area,$scope.supportArea);
             if($scope.point_of_contacts[i].contact_type.selectedItem.key === 'PRIMARY'){
-               $("#contact"+i+' .select ul')[1].remove(); 
+               $("#contact"+i+' .select ul')[1].remove();
                 $("#contact"+i+' .select .placeholder')[1].css('cursor','default !important');
             }
             if(i>0){
                 $scope.createNewContactList();
             }
-            i=i+1;    
+            i=i+1;
         });
     });
     $scope.disableForm = function() {
@@ -124,7 +124,7 @@ angular.module('com.module.suspect')
         }else{
             $scope.showRollOut=false;
         }
-    }) ; 
+    }) ;
     $scope.createNewContactList = function(){
       var obj = {name:"",designation:"",phone:"",email_id:"",contact_type:$scope.getCopy(appConfig.suspect.contactType),isOpen:true,support_area:angular.copy(appConfig.suspect.supportArea)};
       $scope.point_of_contacts.push(obj);
@@ -134,7 +134,7 @@ angular.module('com.module.suspect')
     $scope.cancel = function() {
       $state.go('app.suspect-view');
     };
-      
+
         $scope.$watch('files', function() {
             $scope.upload($scope.files);
         });
@@ -195,16 +195,16 @@ angular.module('com.module.suspect')
         current_status_id: $scope.createPossibility.current_status._id,
         status: $scope.status.selectedItem.key
     };
-        $scope.uploadFiles.map(function(obj){ 
+        $scope.uploadFiles.map(function(obj){
             var file = {};
                 file.url=obj.url;
                 file.type=obj.documentType.selectedItem.key;
             files.push(file);
         });
         if(files.length>0){
-           procObj.document = files; 
+           procObj.document = files;
         }
-            
+
     procObj.point_of_contacts = poc;
     procObj.user_id = $scope.createPossibility.point_of_contacts[0].user_id;
         console.log(procObj);
@@ -224,6 +224,6 @@ angular.module('com.module.suspect')
             return returnObj;
       };
       $scope.removeFiles=function(index){
-              $scope.uploadFiles.splice(index,1); 
+              $scope.uploadFiles.splice(index,1);
           };
   }]);

@@ -23,15 +23,8 @@
               <label class="control-label">Legal Entity</label>
               <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text" tabindex="1">
             </div>
-
-
-              <!--<div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-              <label class="control-label">Division Name</label>
-              <input class="form-control" required data-ng-model="createPossibility.division" type="text" tabindex="3">
-            </div>-->
-
-                          <div>
-                                        <label class="control-label dropdown-col">Bussiness Vertical</label>
+ <div>
+      <label class="control-label dropdown-col">Bussiness Vertical</label>
 
             <div custom-select data="businessVertical" tabindex="5"></div>
             </div>
@@ -39,19 +32,15 @@
                    <label class="control-label dropdown-col">Employee Size of the Company</label>
             <div  custom-select data="employeeSize" tabindex="7"></div>
             </div>
+                <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
+                  <label class="control-label">Website URL</label>
+                  <input class="form-control" required data-ng-model="createPossibility.url" type="text" tabindex="4">
 
-
-            <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-            <label class="control-label">Address Line 1</label>
-            <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 "
-                   type="text" tabindex="9">
-
-          </div>
-          <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-          <label class="control-label">City</label>
-          <input class="form-control" required data-ng-model="createPossibility.address.city " type="text" tabindex="11">
-
-      </div>
+                </div>
+                <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
+                  <label class="control-label">Address Line 2</label>
+                  <input class="form-control"  data-ng-model="createPossibility.address.address_line_2" type="text" tabindex="10">
+                </div>
       <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
       <label class="control-label">Zipcode</label>
       <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text" tabindex="13">
@@ -67,37 +56,36 @@
     <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text" tabindex="2">
 
   </div>
-  <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-  <label class="control-label">Website URL</label>
-  <input class="form-control" required data-ng-model="createPossibility.url" type="text" tabindex="4">
 
-</div>
+    <div>
+      <label class="control-label dropdown-col">Type of Customer</label>
+      <div  custom-select data="customerType" tabindex="8">
+      </div>
+
+    </div>
 <div>
                    <label class="control-label dropdown-col">Group Turnover</label>
 <div  custom-select data="groupTurnover" tabindex="6">
 </div>
 
 </div>
-<div>
-                   <label class="control-label dropdown-col">Type of Customer</label>
-<div  custom-select data="customerType" tabindex="8">
-</div>
+    <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
+      <label class="control-label">Address Line 1</label>
+      <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 "
+             type="text" tabindex="9">
 
-</div>
-<div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-<label class="control-label">Address Line 2</label>
-<input class="form-control"  data-ng-model="createPossibility.address.address_line_2" type="text" tabindex="10">
-</div>
+    </div>
 <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
 <label class="control-label">State</label>
 <input class="form-control" required data-ng-model="createPossibility.address.state" type="text" tabindex="12">
 
 </div>
-<div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
-  <label class="control-label">Country</label>
-  <input class="form-control" required data-ng-model="createPossibility.address.country" type="text" tabindex="14">
+    <div class="form-group label-floating " data-ng-class ="{'is-empty':isNewPossibility}">
+      <label class="control-label">City</label>
+      <input class="form-control" required data-ng-model="createPossibility.address.city " type="text" tabindex="11">
 
-</div><br>
+    </div>
+<br>
 <div data-ng-if="!isNewPossibility">
   <label class="control-label">Status</label>
 <div   custom-select data="status">
@@ -117,7 +105,7 @@
     <div ngf-drop ngf-select ng-model="files" class="drop-box"
          ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
          accept="image/*,application/pdf"
-         ngf-pattern="'image/*,application/pdf'">Drop PDF's or IMAGE's here or click to upload</div>
+         ngf-pattern="'image/*,application/pdf'">Drop Files Here</div>
     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
 
 
@@ -143,8 +131,6 @@
         </div>
 </div>
       </div>
-
-
 
 </div>
 
@@ -176,12 +162,14 @@
   </ul>
   </div>
 </div>
+          <hr class="line-upload">
+          <h4 class="contact">Contact Details</h4>
 <div  ng-repeat="poc in point_of_contacts" class="row col-md-12 up-margin">
 <accordion>
             <accordion-group is-open="poc.isOpen" >
               <accordion-heading>
             <span  class="color-black">
-            {{$index+1}}) Business Contact
+            {{$index+1}}) Primary Contact Person For Business
             <i class="pull-right glyphicon"
                ng-class="{'glyphicon-minus': poc.isOpen, 'glyphicon-plus': !poc.isOpen}"></i>
           </span></accordion-heading>
@@ -243,13 +231,8 @@
 
     </div>
   </div>
-
-
 </div>
-
   <div>
-
-
   </div>
             </accordion-group>
 </accordion>
@@ -257,6 +240,70 @@
   <div >
       <button type="button" class="btn btn-primary contacts-button "  data-ng-click="getNewPointofContact()"><i class="fa fa-plus"></i> Contacts</button>
     </div>
+          <hr class="line-upload">
+          <h4 class="contact">Discussion</h4>
+          <div >
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col-md-6 form-custom-padding">
+                  <div class="form-group label-floating is-empty">
+                    <label for="i1" class="control-label">Contact Person</label>
+                    <input type="text" class="form-control" id="i1">
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group col-md-9">
+                      <input type="text" class="form-control"  placeholder="Date">
+                <span class="input-group-addon" id="basic-addon2">
+            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div  custom-select data="typeOfDiscussion" ></div>
+                  </div>
+
+                </div>
+
+                <div class="col-md-6 form-custom-padding">
+                  <div class="form-group label-floating is-empty">
+                    <label for="i7" class="control-label">Venue</label>
+                    <input type="text" class="form-control" id="i7">
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group col-md-9">
+                      <input type="time" class="form-control"  placeholder="Time">
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+
+              <div class="col-md-10 upward">
+                <label for="textArea" class=" mrg-label "><h3>Discussion Summary</h3></label>
+                <textarea class="form-control mrg-textarea" rows="3" id="textArea"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 form-custom-padding">
+                <div class="form-group is-empty is-fileinput">
+                  <input type="file" id="inputFile4" multiple="">
+                  <div class="input-group">
+                    <input type="text" readonly="" class="form-control" placeholder="No selected file">
+                <span class="input-group-btn input-group-sm">
+                  <button type="button" class="btn warm-status btn-sm">
+                    <i class="fa fa-paperclip">&nbsp;&nbsp;&nbsp;Attach File</i>
+                  </button>
+                </span>
+                  </div>
+                  <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
+                </div>
+              </div>
+            </div>
+           </div>
+
 
   <div class="col-md-6 form-custom-padding">
   </div>
@@ -264,16 +311,14 @@
   <div data-cg-busy="{promise:createPromise,message:'Creating Possibilities'}"></div>
   <div class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
     <div class="form-group text-center">
-      <button ui-sref="app.viewPossibility" class="btn btn-primary data-button">Cancel</button>
-      <button class="btn btn-primary data-button" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)" disabled="disabled">{{isNewPossibility?'Submit':'Update'}}</button>
+      <button ui-sref="app.viewPossibility" class="btn btn-deafult data-button-cancel">Cancel</button>
+      <button class="btn btn-primary data-button data-button-sub" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)" disabled="disabled">{{isNewPossibility?'Submit':'Update'}}</button>
     </div>
   </div>
-
-</div>
-
 </form>
 </div>
+
 </div>
 </div>
 </div>
-</div>
+

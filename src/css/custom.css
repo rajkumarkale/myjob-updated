@@ -317,12 +317,14 @@ margin-left: 50px;}
 
 .drop-box {
     background: #F8F8F8;
-    border: 5px dashed #DDD;
+    border: 2px dashed #DDD;
     width: 95%;
-    height: 150px;
+    height: 190px;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 75px;
     margin: 10px;
+  font-size: 25px !important;
+  color:#A9A9A9;
 }
 .dragover {
     border: 5px dashed blue;
@@ -1850,6 +1852,8 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 .mrg-label{
   margin-left: 50px;
+  margin-top: 30px;
+  color: #737373;
 }
 .mrg-textarea{
   margin-left: 50px;
@@ -1928,4 +1932,11 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 .status-WIP{
     background-color: #af539b !important;
 }
-
+/* start comments for Create possibility UI */
+.line-upload{    width: 100%;
+  border-top: 2px solid #8c8b8b;
+  margin-top: 50px;}
+.contact{font-size: 22px;
+  padding-left: 21px;
+color:#049ad9 !important;}
+/* end of comments for create possibility UI */

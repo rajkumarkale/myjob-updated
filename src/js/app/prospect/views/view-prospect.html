@@ -119,7 +119,7 @@
           <thead class="table-head">
         <tr>
           <th class="table-th-heading"></th>
-          <th class="table-th-heading"> Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black " ></span> </th>
+          <th class="table-th-heading" > Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black " ></span> </th>
           <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse" class="glyphicon glyphicon-sort color-black" ></span></th>
           <th class="table-th-heading" >Annual Number</th>
           <th class="table-th-heading" >Annual Revenue</th>
@@ -157,7 +157,7 @@
 
 
             </td>
-            <td class="hand-cursor td-text-color">{{prospect.legal_name}}</td>
+            <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">{{prospect.legal_name}}</td>
             <td>{{prospect.client_unit_name}}</td>
             <td>{{prospect.monthly_rate_topline}}</td>
             <td>{{prospect.monthly_rate_bottomline}}</td>

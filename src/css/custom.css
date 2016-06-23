@@ -1924,4 +1924,74 @@
 .status-WIP{
     background-color: #af539b !important;
 }
-
+/*create prospect agreement*/
+.up-marginagr{
+  margin-top: 60px;
+}
+.skill .panel-heading{
+  background-color:#A3939D !important;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.position .panel-heading{
+  background-color:#72C3E1 !important;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.cv .panel-heading{
+  background-color:#85ABB8 !important;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.cv-listed .panel-heading{
+  background-color:#A1AAAF !important;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.interviews .panel-heading{
+  background-color:#71625F !important;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.offers .panel-heading{
+  background-color:#A28B62 !important;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.joinees .panel-heading{
+  background-color:#B57F7F !important;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.reneges .panel-heading{
+  background-color:#A16C80 !important;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.attrition .panel-heading{
+  background-color:#9BA6BC !important;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.balance .panel-heading{
+  background-color:#6284A0 !important;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.numbers-data{
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+/*end create prospect agreement*/

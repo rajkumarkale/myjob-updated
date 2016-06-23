@@ -3,6 +3,7 @@
  */
 angular.module('com.module.prospect')
 .controller('viewProspectCtrl',['$scope','prospectService',function($scope,prospectService){
+
         $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
         $scope.searchView   = '';
@@ -35,9 +36,14 @@ angular.module('com.module.prospect')
     $scope.data.totalItems = response.data.count;
     $scope.data.LOST=response.data.LOST;
     $scope.data.WON=response.data.WON;
-    $scope.data.WORK_IN_PROGRESS=response.data.WORK_IN_PROGRESS;
+    $scope.data.PROGRESS=response.data.WORK_IN_PROGRESS;
     /*$scope.data.estimated_closure = response.data.estimated_closure;*/
   });
 
-}]);
+}])
+  .filter('spaceless',function(){
+  return function(status){
+    return  status.replace('_',' ');
+  }
+});
 

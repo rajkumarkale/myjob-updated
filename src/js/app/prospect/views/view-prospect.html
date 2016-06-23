@@ -27,7 +27,7 @@
         </form>
       </div>
     </div>
-    <div class="container col-md-12 pad-t-20 maincol-apply">
+    <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Loading prospects'}">
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary in the month of April 2016</div>
         <div class="panel-body pan-col">
@@ -58,7 +58,7 @@
               <div class="listDetails detailsContentDiv-prosp">
                 <div class="listDetailsContent">
                   <div class="col-md-3 agr-img-class">
-                    <img src="img/icon_won.png" alt="" class="center-block img-pad">
+                    <img src="img/icon_agreement on closure.png" alt="" class="center-block img-pad">
                   </div>
                   <div class="col-md-9 text-center color-divs">
                     <div class="agr-status-text-color">AGREEMENT ON CLOSURE</div>
@@ -69,7 +69,7 @@
               <div class="listDetails detailsContentDiv-prosp">
                 <div class="listDetailsContent">
                   <div class="col-md-3 work-img-class">
-                    <img src="img/icon_won.png" alt="" class="center-block img-pad">
+                    <img src="img/icon_warm.png" alt="" class="center-block img-pad">
                   </div>
                   <div class="col-md-9 text-center color-divs">
                     <div class="work-status-text-color">WORK IN PROGRESS</div>
@@ -155,15 +155,14 @@
                 </label>
               </div>
 
-
-            </td>
-            <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">{{prospect.legal_name}}</td>
-            <td>{{prospect.client_unit_name}}</td>
-            <td>{{prospect.monthly_rate_topline}}</td>
-            <td>{{prospect.monthly_rate_bottomline}}</td>
-            <td>{{prospect.estimated_closure * 1000 |date}}</td>
-            <td>000000</td>
-            <td>000000</td>
+          </td>
+          <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">{{prospect.legal_name}}</td>
+          <td>{{prospect.client_unit_name}}</td>
+          <td>{{prospect.annual_rate_no}}</td>
+          <td>{{prospect.annual_rate_topline}}</td>
+          <td>{{prospect.estimated_closure * 1000 |date}}</td>
+          <td>000000</td>
+          <td>000000</td>
           <td>
             <p class="btn-raised warm-status m-n btn-sm" ng-class="statusColor(prospect.status)">{{prospect.status | spaceless | spaceless}}</p>
           </td>

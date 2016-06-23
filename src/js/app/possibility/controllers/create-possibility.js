@@ -9,6 +9,7 @@ angular.module('com.module.possibility')
             $scope.customerType = appConfig.possibility.customerType;
             $scope.contactType = appConfig.possibility.contactType;
             $scope.status = appConfig.possibility.status;
+            $scope.typeOfDiscussion = appConfig.discussion.typeOfDiscussion;
 
             $scope.uploadFiles= [];
             if ($stateParams.possibility) {

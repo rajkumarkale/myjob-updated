@@ -316,13 +316,16 @@
   font-weight: normal;}
 
 .drop-box {
-  background: #F8F8F8;
-  border: 5px dashed #DDD;
-  width: 95%;
-  height: 150px;
-  text-align: center;
-  padding-top: 25px;
-  margin: 10px;
+
+    background: #F8F8F8;
+    border: 2px dashed #DDD;
+    width: 95%;
+    height: 190px;
+    text-align: center;
+    padding-top: 75px;
+    margin: 10px;
+  font-size: 25px !important;
+  color:#A9A9A9;
 }
 .dragover {
   border: 5px dashed blue;
@@ -1846,6 +1849,8 @@
 }
 .mrg-label{
   margin-left: 50px;
+  margin-top: 30px;
+  color: #737373;
 }
 .mrg-textarea{
   margin-left: 50px;
@@ -1924,6 +1929,7 @@
 .status-WIP{
     background-color: #af539b !important;
 }
+<<<<<<< HEAD
 /*create prospect agreement*/
 .up-marginagr{
   margin-top: 60px;
@@ -1995,3 +2001,14 @@
   font-size: 18px;
 }
 /*end create prospect agreement*/
+
+/* start comments for Create possibility UI */
+.line-upload{
+  width: 100%;
+  border-top: 2px solid #8c8b8b;
+  margin-top: 50px;}
+.contact{font-size: 22px;
+  padding-left: 21px;
+color:#049ad9 !important;}
+/* end of comments for create possibility UI */
+

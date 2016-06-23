@@ -1,6 +1,7 @@
 angular.module('com.module.suspect')
 .controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService',function($scope,$state,toaster,$timeout,suspectService){
     $scope.selectedItem = [];
+    $scope.filteredRows=[];
 	$scope.data = {
 		    numPerPage: 10,
 		    searchKeywords: '',

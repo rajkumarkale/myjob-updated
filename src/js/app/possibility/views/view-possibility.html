@@ -133,7 +133,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr data-ng-repeat="possibility in data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem | filter:searchView" >
+      <tr data-ng-repeat="possibility in filteredRows= (data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem) | filter:searchView" >
         <td>
 
           <div class="chekbox">
@@ -156,18 +156,18 @@
           <p class="btn btn-raised warm-status m-n btn-sm" style="pointer-events: none;" ng-class="statusColor(possibility.status)">{{possibility.status}}</p>
         </td>
         <td>
-          <button class="btn btn-raised  btn-info m-n btn-sm" ui-sref="app.viewDiscussions">Discussion</button>
+          <button class="btn btn-raised  btn-info m-n btn-sm" data-ng-click="openDiscussions(possibility)">Discussion</button>
         </td>
 
       </tr>
-      <tr  data-ng-if="data.possibilities.length ===0">
+      <tr  data-ng-if="filteredRows.length ===0">
         <td colspan="9">No Possibilities!</td>
         </tr>
 
       </tbody>
     </table>
       </div>
-    <div class="row" data-ng-if="data.possibilities.length >10">
+    <!--<div class="row" data-ng-if="filteredRows.length >'10'">-->
       <div class="col-lg-12">
         <pagination class="pagination-sm pull-right"
                     page="data.currentPage"
@@ -180,7 +180,7 @@
                     boundary-links="false">
         </pagination>
       </div>
-    </div>
+   <!-- </div>-->
   </div>
 </div>
 </div>

@@ -31,6 +31,7 @@ angular.module('com.module.prospect')
     currentPage: 1
   };
     $scope.selectedItem = [];
+    $scope.filteredRows=[];
     $scope.setSelectedClient = function (item) {
         /*var id = this.company.id;*/
         if (_.contains($scope.selectedItem, item)) {

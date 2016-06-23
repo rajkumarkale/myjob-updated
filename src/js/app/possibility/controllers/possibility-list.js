@@ -1,6 +1,7 @@
 angular.module('com.module.possibility')
 .controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies){
     $scope.selectedItem = [];
+    $scope.filteredRows=[];
     $scope.sortType     = 'legal_name'; 
     $scope.sortReverse  = false;  
     $scope.searchView   = ''; 
@@ -33,6 +34,7 @@ angular.module('com.module.possibility')
 				toaster.pop('success', 'POSSIBILITY Created Successfully.');
 			}, 1000);
 			$scope.data.possibilities = response.data.possibilities;
+            //console.log($scope.data.possibilities);
 			$scope.data.totalItems = response.data.count;
 			$scope.data.met=response.data.met;
 			$scope.data.notMet=response.data.not_met;
@@ -42,6 +44,9 @@ angular.module('com.module.possibility')
 		$scope.getPossibilities($scope.data.currentPage,$scope.data.numPerPage);
 		$scope.openEditPossibility = function(possibility){
 				$state.go('app.createPossibility',{possibility:possibility});
+		};
+    $scope.openDiscussions = function(possibility){
+				$state.go('app.viewDiscussions',{possibility:possibility});
 		};
 $scope.statusColor=function(status){
     switch (status) {

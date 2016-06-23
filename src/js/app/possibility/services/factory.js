@@ -46,6 +46,19 @@ var possibilityDetails = function (id) {
       url: BASEURI + '/api/document/delete/'+id
     });
   };
+    var getDiscussions = function (c_id,s_id,count,page,dis_by) {
+    return $http({
+      method: 'GET',
+      url: BASEURI + '/api/discussions?client_unit_id ='+c_id+'client_status_id ='+s_id+'count='+count+'page='+page+'disussed_by='+dis_by
+    });
+  };
+    var getDiscussions = function (data) {
+    return $http({
+      method: 'POST',
+      url: BASEURI + '/api/discussion/create',
+        data:data
+    });
+  };
   return {
     getLegalEntity:getLegalEntity,
     setPossibility:setPossibility,

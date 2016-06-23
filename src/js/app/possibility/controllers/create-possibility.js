@@ -51,13 +51,13 @@ angular.module('com.module.possibility')
 
                 $scope.title = "New Possibility";
                 $scope.createPossibility = {};
-                $scope.point_of_contacts =[{name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:"PRIMARY",isOpen:true}];
+                $scope.point_of_contacts =[{name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:"PRIMARY",isOpen:true,department:""}];
 
             }
         };
         $scope.init($stateParams);
         $scope.getNewPointofContact =  function(){
-        	var obj =angular.copy( {name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:appConfig.possibility.contactType,isOpen:true});
+        	var obj =angular.copy( {name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:appConfig.possibility.contactType,isOpen:true,department:""});
             $scope.point_of_contacts.map(function(obj){
                 obj.isOpen = false;
             });
@@ -129,6 +129,7 @@ angular.module('com.module.possibility')
             	requestPocObject.name = pocObj.name;
             	requestPocObject.phone = pocObj.phone;
             	requestPocObject.designation = pocObj.designation;
+                requestPocObject.department =pocObj.department;
             	requestPocObject.email_id = pocObj.email_id;
             	requestPocObject.support_location = pocObj.support_location;
             	requestPocObject.user_id =pocObj.user_id;
@@ -198,6 +199,7 @@ angular.module('com.module.possibility')
             	requestPocObject.phone = pocObj.phone;
             	requestPocObject.designation = pocObj.designation;
             	requestPocObject.email_id = pocObj.email_id;
+                requestPocObject.department =pocObj.department;
             	requestPocObject.support_location = pocObj.support_location;
             	requestPocObject.contact_type =pocObj.contact_type.selectedItem?pocObj.contact_type.selectedItem.key:pocObj.contact_type;
             	if (pocObj.remote && pocObj.local) {

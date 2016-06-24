@@ -48,7 +48,7 @@
       "supportArea" :{"data":[{"key":"BUSINESS","displayText":"Business"},{"key":"FINANCE","displayText":"Finance"},{"key":"INVOICE","displayText":"Invoice"}],"selectedItem":""}
     },
     "discussion":{
-      "typeOfDiscussion" :{"data":[{"key":"Telephonic","displayText":"Telephonic"},{"key":"Email","displayText":"Email"},{"key":"Inperson","displayText":"Inperson"},{"key":"Chat","displayText":"Chat"}],"selectedItem":""}
+      "typeOfDiscussion" :{"data":[{"key":"CALL","displayText":"CALL"},{"key":"MAIL","displayText":"MAIL"},{"key":"MEET","displayText":"MEET"},{"key":"CHAT","displayText":"CHAT"}],"selectedItem":""}
       },
     "prospect":{
       "typeOfBusiness" :{"data":[{"key":"Business Vertical","displayText":"Business Vertical"},{"key":"IT Staffing","displayText":"IT Staffing"},{"key":"General Staffing","displayText":"General Staffing"},{"key":"Government Staffing","displayText":"Government Staffing"}],"selectedItem":""}

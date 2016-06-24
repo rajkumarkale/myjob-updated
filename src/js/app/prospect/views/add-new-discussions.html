@@ -1,5 +1,5 @@
 <div class="">
-  <form>
+  <form name="newDiscussionForm" novalidate>
     <div class="addDiscusHeading modal-header ">
       <h3 class="modal-title "> Add Discussions</h3></div>
     <div class="modal-body ng-binding ng-scope ">
@@ -8,11 +8,11 @@
           <div class="col-md-6 form-custom-padding">
             <div class="form-group label-floating is-empty">
               <label for="i1" class="control-label">Contact Person</label>
-              <input type="text" class="form-control" id="i1">
+              <input type="text" class="form-control" id="i1" ng-model="discussion.name" required>
             </div>
             <div class="form-group">
               <div class="input-group col-md-9">
-                <input type="text" class="form-control"  placeholder="Date">
+                <input type="text" class="form-control"  placeholder="Date" ng-model="discussion.date" required>
                 <span class="input-group-addon" id="basic-addon2">
             <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
               </div>
@@ -26,24 +26,24 @@
           <div class="col-md-6 form-custom-padding">
             <div class="form-group label-floating is-empty">
               <label for="i7" class="control-label">Venue</label>
-              <input type="text" class="form-control" id="i7">
+              <input type="text" class="form-control" id="i7" ng-model="discussion.venue" required>
             </div>
             <div class="form-group">
               <div class="input-group col-md-9">
-                <input type="time" class="form-control"  placeholder="Time">
+                <input type="time" class="form-control"  placeholder="Time" ng-model="discussion.time" required>
 
               </div>
             </div>
             <div class="form-group diss-radios-form">
               <div class="radio radio-primary">
                 <label>
-                  <input type="radio" name="call" id="optionsRadios1" value="option1" checked="">
-                  <span class="circle"></span>
-                  <span class="check"></span>
+                  <input type="radio" name="call" id="optionsRadios1" value="FRESH" checked="true" ng-model="discussion.calltype">
+                  <span class="circle" ></span>
+                  <span class="check" ></span>
                   Fresh Call
                 </label>
                 <label>
-                  <input type="radio" value="option2" name="call">
+                  <input type="radio" value="FOLLOW_UP" name="call" ng-model="discussion.calltype">
                   <span class="circle"></span>
                   <span class="check"></span>
                   Follow Up Call
@@ -58,7 +58,7 @@
 
           <div class="col-md-11 upward">
             <label for="textArea" class=" mrg-label"><h4>Discussion Summary</h4></label>
-            <textarea class="form-control mrg-textarea" rows="3" id="textArea"></textarea>
+            <textarea class="form-control mrg-textarea" rows="3" id="textArea" ng-model="discussion.summary" required></textarea>
           </div>
       </div>
        <div class="row">
@@ -77,18 +77,12 @@
            </div>
          </div>
        </div>
-      <div class="centerBtn">
-        <a href="javascript:void(0)" class="btn btn-raised btn-default" ng-click="ok()">Cancel</a>&nbsp;
-        <a href="javascript:void(0)" class="btn btn-raised btn-info" ng-click="cancel()">Submit</a>
+      <div class="centerBtn" data-cg-busy="{promise:discussionPromise,message:'Creating Discussions'}">
+        <a href="javascript:void(0)" class="btn btn-raised btn-default" ng-click="cancel()">Cancel</a>&nbsp;
+        <a href="javascript:void(0)" ng-disabled='newDiscussionForm.$invalid' class="btn btn-raised btn-info" ng-click="ok(discussion)">Submit</a>
       </div>
 
-
-
-
-
-
       </div>
-
   </form>
 </div>
 

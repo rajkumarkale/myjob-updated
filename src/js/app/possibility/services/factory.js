@@ -46,13 +46,13 @@ var possibilityDetails = function (id) {
       url: BASEURI + '/api/document/delete/'+id
     });
   };
-    var getDiscussions = function (c_id,s_id,count,page,dis_by) {
+    var getDiscussions = function (obj) {
     return $http({
       method: 'GET',
-      url: BASEURI + '/api/discussions?client_unit_id ='+c_id+'client_status_id ='+s_id+'count='+count+'page='+page+'disussed_by='+dis_by
+      url: BASEURI + '/api/discussions?client_unit_id='+obj.client_unit_id+'&client_status_id='+obj.client_status_id+'&count='+obj.count+'&page='+obj.page+'&disussed_by='+obj.disussed_by
     });
   };
-    var getDiscussions = function (data) {
+    var createDiscussion = function (data) {
     return $http({
       method: 'POST',
       url: BASEURI + '/api/discussion/create',
@@ -66,6 +66,8 @@ var possibilityDetails = function (id) {
     possibilityDetails:possibilityDetails,
     updatePossibility:updatePossibility,
     deleteDocument:deleteDocument,
-    createClient:createClient
+    createClient:createClient,
+     getDiscussions:getDiscussions,
+      createDiscussion:createDiscussion
   };
 });

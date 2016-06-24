@@ -1,5 +1,5 @@
 angular.module('com.module.possibility')
-.controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies){
+.controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies','discussionService',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies,discussionService){
     $scope.selectedItem = [];
 
     $scope.filteredRows=[];
@@ -47,7 +47,8 @@ angular.module('com.module.possibility')
 				$state.go('app.createPossibility',{possibility:possibility});
 		};
     $scope.openDiscussions = function(possibility){
-				$state.go('app.viewDiscussions',{possibility:possibility});
+                discussionService.setData(possibility);
+				$state.go('app.viewDiscussions');
 		};
 $scope.statusColor=function(status){
     switch (status) {

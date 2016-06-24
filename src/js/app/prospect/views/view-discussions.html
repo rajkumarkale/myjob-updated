@@ -13,7 +13,7 @@
       </div>
       <hr class="line2">
 
-
+<!--
     <div class="container-custom panel panel-default discussion-container " >
       <div class="container ">
         <div class="discussion-body">
@@ -91,9 +91,9 @@
 
       </div>
 
-    </div>
-
-    <div class="container-custom panel panel-default discussion-container" >
+    </div>-->
+<div  data-cg-busy="{promise:getDiscussionPromise,message:'Retrieving Discussions'}"></div>
+    <div class="container-custom panel panel-default discussion-container" ng-repeat="discussion in discussions">
       <div class="container ">
         <div class="discussion-body">
           <div class="row ">
@@ -105,7 +105,7 @@
                       Contact Person:
                     </label>
                     <label class="person-name">
-                      <h4>Rober Martin </h4>
+                      <h4>{{discussion.name}} </h4>
                     </label>
                   </td>
                 </tr>
@@ -115,7 +115,7 @@
                       Type Of Call:
                     </label>
                     <label class="call-follow">
-                      Follow Up
+                      {{discussion.type}}
                     </label>
                   </td>
                 </tr>
@@ -126,7 +126,7 @@
                       Type Of Discussion:
                     </label>
                     <label class="call-follow">
-                      Email
+                      {{discussion.mode}}
                     </label>
                   </td>
                 </tr>
@@ -138,7 +138,7 @@
               <table>
                 <tr>
                   <td>
-                    <label class="date-venue">20-04-2016,12:PM
+                    <label class="date-venue">{{discussion.date}}
 
             </label>
             </td>
@@ -149,7 +149,7 @@
                       Venue:
                     </label>
                     <label class="location-name">
-                      Hyderabad
+                      {{discussion.venue}}
                     </label>
                   </td>
                 </tr>
@@ -161,11 +161,9 @@
         <div class=" col-lg-11 left-align summary-text">
           <p class="summary-details">
             <span class="summary-head ">Summary: </span>&nbsp;
-            Lorem Ipsum is ply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book
+            {{discussion.text}}
           </p>
-          <div>
+          <!--<div>
             <div class="attachment">
               1 Attachment
             </div>
@@ -173,7 +171,7 @@
               <img src="#" class="attach-image-detail"/>
               resume.png
             </div>
-          </div>
+          </div>-->
         </div>
       </div>
 

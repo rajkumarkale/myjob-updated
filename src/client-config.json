@@ -50,6 +50,9 @@
     "discussion":{
       "typeOfDiscussion" :{"data":[{"key":"CALL","displayText":"CALL"},{"key":"MAIL","displayText":"MAIL"},{"key":"MEET","displayText":"MEET"},{"key":"CHAT","displayText":"CHAT"}],"selectedItem":""}
       },
+    "prospect":{
+      "typeOfBusiness" :{"data":[{"key":"Business Vertical","displayText":"Business Vertical"},{"key":"IT Staffing","displayText":"IT Staffing"},{"key":"General Staffing","displayText":"General Staffing"},{"key":"Government Staffing","displayText":"Government Staffing"}],"selectedItem":""}
+    },
     "languages": {
       "en": "English"
     },

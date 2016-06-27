@@ -2,7 +2,7 @@ angular.module('com.module.prospect')
 .controller('viewDiscussionCtrl',['$scope','possibilityCreateService','discussionService','$cookies','$modal',function($scope,possibilityCreateService,discussionService,$cookies,$modal){
     $scope.data=discussionService.getData();
     $scope.userId=JSON.parse($cookies.userData).userDetails.roles.account.id;
-   
+
     var queryParameters = {client_unit_id:$scope.data.client_unit_id , client_status_id: $scope.data.client_status, count: 1, page:10, disussed_by:$scope.userId };
     $scope.getDiscussionPromise =possibilityCreateService.getDiscussions(queryParameters).then(function(response){
         $scope.discussions=response.data;
@@ -15,8 +15,8 @@ angular.module('com.module.prospect')
       controller: 'ModalInstanceCtrl',
       size: 'lg'
     });
-    modalInstance.result.then(function () {
-        
+    modalInstance.result.then(function (data) {
+      $scope.discussions.push(data);
     });
   };
     }]);

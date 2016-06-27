@@ -4,6 +4,7 @@
 
 angular.module('com.module.prospect')
     .controller('ModalInstanceCtrl', function ($scope, $modalInstance, appConfig, possibilityCreateService, discussionService,$cookies,$state,Upload) {
+
         $scope.status = appConfig.discussion.typeOfDiscussion;
         $scope.data = discussionService.getData();
         $scope.userId = JSON.parse($cookies.userData).userDetails._id;
@@ -60,8 +61,8 @@ angular.module('com.module.prospect')
          /*$scope.discussionPromise= possibilityCreateService.createDiscussion(reqData).success(function (response) {
                 toaster.pop('Success', 'Created Client successfully.');
                 console.log(response);
-                $modalInstance.close();
-                $state.reload();
+                $modalInstance.close(response);
+               
             }).error(function (err) {
                 $scope.authError = err.message;
                 toaster.pop('Fail', 'Failed to Create Client.');

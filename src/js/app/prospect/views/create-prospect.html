@@ -28,7 +28,9 @@
               <label class="control-label">Quantum of Business Bottomline</label>
               <input class="form-control" type="text">
             </div>
-            <div class="form-group" custom-select data="businessVertical"></div>
+            <div class="form-group">
+              <input custom-select data="values" placeholder="Business Vertical" />
+            </div>
           </div>
           <div class="col-md-6 form-custom-padding">
             <div class="form-group label-floating is-empty">
@@ -60,4 +62,218 @@
       </div>
     </div>
   </div>
+  <div class="panel panel-default second-panel up-margin">
+   <div class="panel-heading">
+      Agreement on Closure
+   </div>
+    <div class="panel-body">
+      <div>
+        <div class="pull-right">
+          <form id="form" name="form" class="form-inline" novalidate>
+            <label for="startDate" class="labels-dates poss-mrg">From</label>
+            <div class="input-group">
+              <a ng-click="open($event,'opened1')">
+                <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
+                       datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
+                       datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
+            <span class="input-group-btn" id="basic-addon1">
+            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
+              </a>
+            </div>
+            <label for="endDate" class="labels-dates poss-mrg ">To</label>
+            <div class="input-group">
+              <a ng-click="open($event,'opened2')">
+                <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
+                       datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
+                       datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
+            <span class="input-group-addon" id="basic-addon2">
+            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
+              </a>
+            </div>
+            <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="panel panel-default second-panel up-marginagr">
+        <div class="panel-heading">
+          Summary in the month of Jan 2016 to May 2016
+        </div>
+        <div class="panel-body">
+          <div class="col-md-3">
+            <div class="panel panel-default skill">
+              <div class="panel-heading">
+                SKILL
+              </div>
+              <div class="panel-body numbers-data">
+                000
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default position">
+              <div class="panel-heading">
+                NO OF POSITIONS
+              </div>
+              <div class="panel-body numbers-data">
+                000
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default cv">
+              <div class="panel-heading">
+                NO OF CV'S SENT
+              </div>
+              <div class="panel-body numbers-data">
+                000
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default cv-listed">
+              <div class="panel-heading">
+                NO OF CV'S SHORTLISTED
+              </div>
+              <div class="panel-body numbers-data">
+                000
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default interviews">
+              <div class="panel-heading">
+                NO OF INTERVIEWS
+              </div>
+              <div class="panel-body numbers-data">
+                000
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default offers">
+              <div class="panel-heading">
+                NO OF OFFERS
+              </div>
+              <div class="panel-body numbers-data">
+                000
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default joinees">
+              <div class="panel-heading">
+                NO OF JOINEES
+              </div>
+              <div class="panel-body numbers-data">
+                000
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default reneges">
+              <div class="panel-heading">
+                NO OF RENEGES
+              </div>
+              <div class="panel-body numbers-data">
+                000
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default attrition">
+              <div class="panel-heading">
+                NO OF ATTRITION
+              </div>
+              <div class="panel-body numbers-data">
+                000
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="panel panel-default balance">
+              <div class="panel-heading">
+                NO OF BALANCE POSITIONS
+              </div>
+              <div class="panel-body numbers-data">
+                000
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-6 form-custom-padding">
+              <div class="form-group label-floating is-empty">
+                <label class="control-label">Min No of Demands to be closed</label>
+                <input class="form-control" type="text">
+              </div>
+              <button class="btn btn-primary data-button"><i class="fa fa-plus"></i>&nbsp;&nbsp;Requirement</button>
+            </div>
+            <div class="col-md-6 form-custom-padding">
+              <div class="form-group label-floating is-empty">
+                <label class="control-label">Min No of Rquirements to be closed</label>
+                <input class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default second-panel up-margin">
+    <div class="panel-heading">
+      Add New Requirement
+    </div>
+    <div class="panel-body">
+      <div class="col-md-12">
+        <div class="col-md-6 form-custom-padding">
+          <div class="form-group label-floating is-empty">
+            <label class="control-label">Skill</label>
+            <input class="form-control" type="text">
+          </div>
+          <div class="form-group label-floating is-empty">
+            <label class="control-label">Location</label>
+            <input class="form-control" type="text">
+          </div>
+          <div class="form-group label-floating is-empty">
+            <label class="control-label">Pay Rate</label>
+            <input class="form-control" type="text">
+          </div>
+          <div class="form-group label-floating is-empty">
+            <label class="control-label">JD</label>
+            <input class="form-control" type="text">
+          </div>
+          <div class="form-group label-floating is-empty">
+            <label class="control-label">Shift</label>
+            <input class="form-control" type="text">
+          </div>
+        </div>
+        <div class="col-md-6 form-custom-padding">
+          <div class="form-group label-floating is-empty">
+            <label class="control-label">Experience</label>
+            <input class="form-control" type="text">
+          </div>
+          <div class="form-group label-floating is-empty">
+            <label class="control-label">No of Positions</label>
+            <input class="form-control" type="text">
+          </div>
+          <div class="form-group label-floating is-empty">
+            <label class="control-label">Bill Rate</label>
+            <input class="form-control" type="text">
+          </div>
+          <div class="form-group label-floating is-empty">
+            <label class="control-label">Source of Requirment</label>
+            <input class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-md-offset-5">
+        <div class="form-group">
+          <a ui-sref="app.viewProspect">
+            <button class="btn btn-primary data-button" >Cancel</button>
+          </a>
+          <button class="btn btn-primary data-button">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

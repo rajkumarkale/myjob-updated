@@ -9,6 +9,7 @@ angular.module('com.module.possibility')
             $scope.customerType = appConfig.possibility.customerType;
             $scope.contactType = appConfig.possibility.contactType;
             $scope.status = appConfig.possibility.status;
+            $scope.typeOfDiscussion = appConfig.discussion.typeOfDiscussion;
 
             $scope.uploadFiles= [];
             if ($stateParams.possibility) {
@@ -214,7 +215,7 @@ angular.module('com.module.possibility')
             requestObject.point_of_contacts.push(requestPocObject);
 
             });
-              
+
             var possibilityCreatePromise=possibilityCreateService.setPossibility(requestObject).success(function() {
 
                 $state.go('app.viewPossibility');
@@ -225,7 +226,7 @@ angular.module('com.module.possibility')
             })
         })
         };
-        
+
 
         $scope.getSlectedItem = function(selectedItem, srcObj) {
             var returnObj;
@@ -291,14 +292,14 @@ angular.module('com.module.possibility')
         };
       $scope.removeFiles=function(index){
           if( $scope.isEditable !== true){
-             return $scope.uploadFiles.splice(index,1); 
+             return $scope.uploadFiles.splice(index,1);
           }else{
               var id=$scope.createPossibility.documents[index]._id;
               possibilityCreateService.deleteDocument(id).then(function (response) {
-                     $scope.createPossibility.documents.splice(index,1); 
+                     $scope.createPossibility.documents.splice(index,1);
               });
           }
-        
+
       }
 
     }]);

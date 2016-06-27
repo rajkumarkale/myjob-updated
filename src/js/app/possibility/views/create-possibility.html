@@ -119,13 +119,15 @@
          accept="image/*,application/pdf"
          ngf-pattern="'image/*,application/pdf'">Drop PDF's or IMAGE's here or click to upload</div>
     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-
+<div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
 
 
 
     </div>
 
     <ul>
+     
+     
       <div ng-repeat="f in createPossibility.documents" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
 
 

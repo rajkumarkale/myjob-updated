@@ -254,12 +254,13 @@ angular.module('com.module.possibility')
                 return className;
             }
         };
+        $scope.uploadPromise;
         $scope.upload = function(files) {
             if (files && files.length) {
                 for (var i = 0; i < files.length; i++) {
                     var file = files[i];
                     if (!file.$error) {
-                        Upload.upload({
+                       $scope.uploadPromise= Upload.upload({
                             url: appConfig.apiUrl+'/api/upload/file',
                             data: {
                                 content: file

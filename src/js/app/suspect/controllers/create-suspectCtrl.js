@@ -135,7 +135,7 @@ angular.module('com.module.suspect')
                 for (var i = 0; i < files.length; i++) {
                     var file = files[i];
                     if (!file.$error) {
-                        Upload.upload({
+                       $scope.uploadPromise= Upload.upload({
                             url: appConfig.apiUrl+'/api/upload/file',
                             data: {
                                 content: file

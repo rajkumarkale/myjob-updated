@@ -64,9 +64,9 @@
        <div class="row">
          <div class="col-md-6 form-custom-padding">
            <div class="form-group is-empty is-fileinput">
-             <input type="file" id="inputFile4" multiple="">
+             <input type="file" id="inputFile4" ngf-select="upload($files)" ng-model="files" ngf-multiple="true" >
              <div class="input-group">
-               <input type="text" readonly="" class="form-control" placeholder="No selected file">
+               <input type="text" readonly="" class="form-control" placeholder="No selected file" >
                 <span class="input-group-btn input-group-sm">
                   <button type="button" class="btn warm-status btn-sm">
                     <i class="material-icons">attach file</i>
@@ -77,6 +77,8 @@
            </div>
          </div>
        </div>
+       <!--<button ngf-select="upload($files)" multiple 
+            accept="image/*">Select Files</button>-->
       <div class="centerBtn" data-cg-busy="{promise:discussionPromise,message:'Creating Discussions'}">
         <a href="javascript:void(0)" class="btn btn-raised btn-default" ng-click="cancel()">Cancel</a>&nbsp;
         <a href="javascript:void(0)" ng-disabled='newDiscussionForm.$invalid' class="btn btn-raised btn-info" ng-click="ok(discussion)">Submit</a>

@@ -3,7 +3,7 @@
  */
 
 angular.module('com.module.prospect')
-    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, appConfig, possibilityCreateService, discussionService,$cookies,$state,Upload) {
+    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, appConfig, possibilityCreateService, discussionService,$cookies,$state,Upload,CoreService) {
 
         $scope.status = appConfig.discussion.typeOfDiscussion;
         $scope.data = discussionService.getData();
@@ -59,7 +59,7 @@ angular.module('com.module.prospect')
         };
             
          $scope.discussionPromise= possibilityCreateService.createDiscussion(reqData).success(function (response) {
-                toaster.pop('Success', 'Created Client successfully.');
+                CoreService.toastSuccess('Disscussions?', 'Created Discussion successfully.');
                 //console.log(response);
                 $modalInstance.close(response);
                
@@ -67,7 +67,6 @@ angular.module('com.module.prospect')
                 $scope.authError = err.message;
                 toaster.pop('Fail', 'Failed to Create Client.');
             });
-            $modalInstance.close();
         };
         $scope.cancel = function () {
             $modalInstance.dismiss();

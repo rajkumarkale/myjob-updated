@@ -32,6 +32,7 @@ angular.module('com.module.suspect')
 			$timeout(function() {
 				toaster.pop('success', 'POSSIBILITY Created Successfully.');
 			}, 1000);
+            console.log(response.data);
 			$scope.data.suspects = response.data.suspects;
 			$scope.data.totalItems = response.data.count;
 			$scope.data.COLD=response.data.COLD;

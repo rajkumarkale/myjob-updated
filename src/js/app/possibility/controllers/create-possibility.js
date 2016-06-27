@@ -124,6 +124,7 @@ angular.module('com.module.possibility')
                 	possibilityObject.urls.push(obj);
                 }
             }
+                 
         		$scope.point_of_contacts.map(function(pocObj){
             	var requestPocObject ={};
             	requestPocObject._id = pocObj._id;
@@ -194,6 +195,8 @@ angular.module('com.module.possibility')
                 	requestObject.urls.push(obj);
                 }
             }
+                requestObject.discussion.mode=$scope.typeOfDiscussion.selectedItem.key;
+                requestObject.discussion.discussed_by=JSON.parse($cookies.userData).userDetails._id;
             $scope.point_of_contacts.map(function(pocObj){
             	var requestPocObject ={};
             	requestPocObject.name = pocObj.name;

@@ -2012,3 +2012,6 @@
 color:#049ad9 !important;}
 /* end of comments for create possibility UI */
 
+.plus .panel-heading a:after{
+    content: '' !important;
+}

@@ -58,15 +58,15 @@ angular.module('com.module.prospect')
                 type:$scope.discussion.calltype
         };
             
-         /*$scope.discussionPromise= possibilityCreateService.createDiscussion(reqData).success(function (response) {
+         $scope.discussionPromise= possibilityCreateService.createDiscussion(reqData).success(function (response) {
                 toaster.pop('Success', 'Created Client successfully.');
-                console.log(response);
+                //console.log(response);
                 $modalInstance.close(response);
                
             }).error(function (err) {
                 $scope.authError = err.message;
                 toaster.pop('Fail', 'Failed to Create Client.');
-            });*/
+            });
             $modalInstance.close();
         };
         $scope.cancel = function () {

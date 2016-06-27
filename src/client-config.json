@@ -51,8 +51,10 @@
       "typeOfDiscussion" :{"data":[{"key":"CALL","displayText":"CALL"},{"key":"MAIL","displayText":"MAIL"},{"key":"MEET","displayText":"MEET"},{"key":"CHAT","displayText":"CHAT"}],"selectedItem":""}
       },
     "prospect":{
-      "typeOfBusiness" :{"data":[{"key":"Business Vertical","displayText":"Business Vertical"},{"key":"IT Staffing","displayText":"IT Staffing"},{"key":"General Staffing","displayText":"General Staffing"},{"key":"Government Staffing","displayText":"Government Staffing"}],"selectedItem":""}
+      "typeOfBusiness" :{"data":[{"key":"Business Vertical","displayText":"Business Vertical"},{"key":"IT Staffing","displayText":"IT Staffing"},{"key":"General Staffing","displayText":"General Staffing"},{"key":"Government Staffing","displayText":"Government Staffing"}],"selectedItem":""},
+      "status":{"data":[{"key":"Agreement_On_Closure","displayText":"Agreement On Closure"},{"key":"LOST","displayText":"LOST"},{"key":"WON","displayText":"WON"},{"key":"Work In Progress","displayText":"Work In Progress"}]}
     },
+
     "languages": {
       "en": "English"
     },

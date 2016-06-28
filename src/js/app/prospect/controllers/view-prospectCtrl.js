@@ -2,7 +2,7 @@
  * Created by rkale on 5/20/2016.
  */
 angular.module('com.module.prospect')
-.controller('viewProspectCtrl',['$scope','prospectService',function($scope,prospectService){
+.controller('viewProspectCtrl',['$scope','$modal','prospectService',function($scope,$modal,prospectService){
 
         $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
@@ -64,7 +64,7 @@ angular.module('com.module.prospect')
             break;
         default:
     }
-}
+};
   $scope.myPromise = prospectService.getProspects(1,10).then(function(response){
     console.log(response);
     $scope.data.prospects = response.data.prospects;
@@ -74,11 +74,28 @@ angular.module('com.module.prospect')
     $scope.data.PROGRESS=response.data.WORK_IN_PROGRESS;
     /*$scope.data.estimated_closure = response.data.estimated_closure;*/
   });
+  $scope.openShare = function (tpl) {
+    var tpl=tpl;
+    var modalInstance = $modal.open({
+      templateUrl: function () {
+
+        return 'js/app/prospect/views/'+tpl+'.html'
+
+      },
+      backdrop: 'static',
+      controller: 'shareCtrl',
+      size: 'md'
+    });
+    modalInstance.result.then(function () {
+    });
+  };
 
 }])
   .filter('spaceless',function(){
   return function(status){
     return  status.replace('_',' ');
   }
+
+
 });
 

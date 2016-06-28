@@ -133,7 +133,7 @@
         <div class="panel-body">
           <div class="row">
             <h4 class="pull-left head">All Suspects</h4>
-      <span class="pull-right search-box-width">
+      <!--<span class="pull-right search-box-width">
 
              <div class="input-group">
                 <input type="text" class="form-control btn-rounded back-color img-remove"
@@ -141,27 +141,27 @@
                        aria-describedby="basic-addon3" ng-model="searchView">
                 <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
               </div>
-          </span>
+          </span>-->
           </div>
-          <div class="row mrg-top">
-            <label class=" dropdown checkBoxDrop pull-left ">
+          <div class="row mrg-top row-height">
+            <label class=" dropdown check-share-transfer pull-left ">
               <input type="checkbox" class="checkBox" ng-model="selectAll">
             </label>
-            <label class="checkBox-showall pull-left "
-                   ng-show="selectAll || checked1 || checked2 || checked3 || checked4 || checked5 ">
-              <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
+            <label class="share-transfer pull-left  hand-cursor"
+                   ng-show="selectAll+ || checked1 || checked2 || checked3 || checked4 || checked5 ">
+              <span class="glyphicon glyphicon-share-alt" data-toggle="dropdown"></span>&nbsp;&nbsp;Share
             </label>
-            <label class="  checkBox-showall pull-left "
-                   ng-show="selectAll || checked1 || checked2 || checked3 || checked4">
-              <span class="fa fa-trash-o " data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
+            <label class="  share-transfer pull-left hand-cursor"
+                   ng-show="selectAll+ || checked1 || checked2 || checked3 || checked4">
+              <span class="glyphicon glyphicon-arrow-up " data-toggle="dropdown"></span>&nbsp;&nbsp;Tranfer
             </label>
-            <label class="  checkBox-showall pull-right ">Show All
-              <span class="caret checkBxDrop" data-toggle="dropdown"></span>
+            <label class="btn btn-raised btn-info btn-sm pull-right glyphicon glyphicon-plus add-button ">
+              <!--<span class="caret checkBxDrop" data-toggle="dropdown"></span>-->
             </label>
           </div>
         </div>
       </div>
-      <div class="table-topdiv">
+      <div class="table-topdiv table-up-mrg">
         <table class="table table-striped table-bod m-n">
           <thead class="table-head">
           <tr>

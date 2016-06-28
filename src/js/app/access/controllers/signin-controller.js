@@ -36,9 +36,10 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
           $scope.myPromise =  AuthService.forgotPassword({
             'email': data
           }).then(function (response) {
-            toaster.pop(response, 'Reset Successful');
+            CoreService.toastSuccess('', 'Reset Successful');
             $scope.isCollapsed = false;
             $scope.authError = false;
+              $modalInstance.close();
           }, function (error) {
             $scope.authError = true;
             $scope.authError = error.error;
@@ -54,7 +55,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
     });
   };
 
-  $scope.changePassword = function (user) {
+  /*$scope.changePassword = function (user) {
     AuthService.changePassword({
       'email_id': user.email,
       'old_password': user.oldPassword,
@@ -70,7 +71,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
       $scope.authError = error.data.error;
     });
 
-  };
+  };*/
  
     $scope.resetPassword = function(user){
       $scope.myPromise =  AuthService.reset({

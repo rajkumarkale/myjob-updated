@@ -21,7 +21,9 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
       controller: 'changePasswordModalInstanceCtrl',
       size: 'md'
     });
-    modalInstance.result.then(function () {
+    modalInstance.result.then(function (response) {
+         CoreService.toastSuccess('','Password updated successfully.');
+        $state.go('access.signin');
     });
   };
     $scope.updateProfile = function(){

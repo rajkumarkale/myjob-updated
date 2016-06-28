@@ -2,7 +2,7 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams', 'suspectService', '$http', '$state', 'Upload', '$q', function ($scope, appConfig, $modal, $stateParams, suspectService, $http, $state, Upload, $q) {
+    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams', 'suspectService', '$http', '$state', 'Upload', '$q','CoreService', function ($scope, appConfig, $modal, $stateParams, suspectService, $http, $state, Upload, $q,CoreService) {
         $scope.status = {
             open: true
         };
@@ -220,6 +220,7 @@ angular.module('com.module.suspect')
                 procObj.user_id = $scope.createPossibility.point_of_contacts[0].user_id;
                 console.log(procObj);
                 $scope.myPromise = suspectService.suspectUpdate(procObj).then(function (response) {
+                    CoreService.toastSuccess('','SUSPECT Updated Successfully.');
                     $state.go('app.suspect-view');
                 });
                 console.log($scope.point_of_contacts);

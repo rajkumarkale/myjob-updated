@@ -1,5 +1,5 @@
 angular.module('com.module.possibility')
-    .controller('createPossibilityController', ['$scope', 'toaster', '$state','$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies','$q' , function($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies,$q) {
+    .controller('createPossibilityController', ['$scope', 'toaster', '$state','$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies','$q','CoreService' , function($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies,$q,CoreService) {
         $scope.init = function($stateParams) {
 
             $scope.isEditable = false;
@@ -161,7 +161,7 @@ angular.module('com.module.possibility')
                 delete possibilityObject.client_freeze_details;
                 delete possibilityObject.division;
 	       		possibilityCreateService.updatePossibility(possibilityObject).success(function() {
-                toaster.pop('success', 'POSSIBILITY Created Successfully.');
+                CoreService.toastSuccess('', 'POSSIBILITY Updated Successfully.');
                 $state.go('app.viewPossibility');
             }).error(function(err) {
                 $scope.authError = err.message;
@@ -222,7 +222,7 @@ angular.module('com.module.possibility')
             var possibilityCreatePromise=possibilityCreateService.setPossibility(requestObject).success(function() {
 
                 $state.go('app.viewPossibility');
-                toaster.pop('Success', 'POSSIBILITY Created Successfully.');
+                CoreService.toastSuccess('', 'POSSIBILITY Created Successfully.');
             }).error(function(err) {
                 $scope.authError = err.message;
 
@@ -295,10 +295,12 @@ angular.module('com.module.possibility')
         };
       $scope.removeFiles=function(index){
           if( $scope.isEditable !== true){
+              CoreService.toastSuccess('','File Removed Successfully');
              return $scope.uploadFiles.splice(index,1);
           }else{
               var id=$scope.createPossibility.documents[index]._id;
               possibilityCreateService.deleteDocument(id).then(function (response) {
+                  CoreService.toastSuccess('','File Removed Successfully');
                      $scope.createPossibility.documents.splice(index,1);
               });
           }

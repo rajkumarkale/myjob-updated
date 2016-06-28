@@ -2,7 +2,7 @@
  * Created by rkale on 5/20/2016.
  */
 angular.module('com.module.prospect')
-.controller('viewProspectCtrl',['$scope','prospectService',function($scope,prospectService){
+.controller('viewProspectCtrl',['$scope','prospectService','CoreService',function($scope,prospectService,CoreService){
 
         $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
@@ -67,6 +67,7 @@ angular.module('com.module.prospect')
 }
   $scope.myPromise = prospectService.getProspects(1,10).then(function(response){
     console.log(response);
+      CoreService.toastSuccess('','PROSPECTS Retrieved Successfully.');
     $scope.data.prospects = response.data.prospects;
     $scope.data.totalItems = response.data.count;
     $scope.data.LOST=response.data.LOST;

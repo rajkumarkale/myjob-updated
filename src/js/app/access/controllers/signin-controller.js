@@ -1,5 +1,5 @@
-angular.module('com.module.access').controller('SignInFormController',['$scope', '$location', 'toaster',  'AuthService', 'appConfig','authService','$state', '$stateParams', '$modal', '$cookies',
-  function ($scope, $location, toaster,  AuthService, appConfig,authService,$state, $stateParams, $modal,$cookies) {
+angular.module('com.module.access').controller('SignInFormController',['$scope', '$location', 'toaster',  'AuthService', 'appConfig','authService','$state', '$stateParams', '$modal', '$cookies','CoreService',
+  function ($scope, $location, toaster,  AuthService, appConfig,authService,$state, $stateParams, $modal,$cookies,CoreService) {
   'use strict';
   $scope.logIn = function (user) {
     $scope.myPromise = AuthService.login({
@@ -12,6 +12,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
         $scope.authError = response.data.message;
         return ;
       }
+       CoreService.toastSuccess('','Logged in Sucessfully');                                                                
       if ($scope.$prevState && $scope.$prevStateParams) {
         if(_.contains(['access.signin','access.signup','access.forgotpwd','access.signout'],$scope.$prevState)){
           $state.go($scope.app.loginRedirect);

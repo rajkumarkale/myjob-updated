@@ -1,5 +1,5 @@
 angular.module('com.module.suspect')
-.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService',function($scope,$state,toaster,$timeout,suspectService){
+.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService',function($scope,$state,toaster,$timeout,suspectService,CoreService){
     $scope.selectedItem = [];
     $scope.filteredRows=[];
 	$scope.data = {
@@ -29,9 +29,7 @@ angular.module('com.module.suspect')
         $scope.searchView   = '';
 		$scope.getSuspects = function(currentPage,numPerPage){
 		$scope.myPromise = suspectService.getSuspects(currentPage,numPerPage).then(function(response){
-			$timeout(function() {
-				toaster.pop('success', 'POSSIBILITY Created Successfully.');
-			}, 1000);
+				CoreService.toastSuccess('', 'SUSPECT Retrieved Successfully.');
             console.log(response.data);
 			$scope.data.suspects = response.data.suspects;
 			$scope.data.totalItems = response.data.count;

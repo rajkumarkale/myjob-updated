@@ -97,15 +97,14 @@
       <div class="row">
         <div class="panel-body">
           <label class=" dropdown checkBoxDrop pull-left ">
-            <input type="checkbox" class="checkBox" ng-model="selectAll">
+            <input type="checkbox" class="checkBox" ng-model="selectAllItems" ng-change="selectAll()">
             <!-- <span class="caret checkBxDrop" data-toggle="dropdown"></span>-->
           </label>
-          <label class="checkBox-showall pull-left " ng-show="selectAll || checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
+          <!--<label class="checkBox-showall pull-left " ng-show="selectAll || checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
           || checked8 || checked9 || checked10 || checked11">
             <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
-          </label>
-          <label class="  checkBox-showall pull-left " ng-show="selectAll || checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
-          || checked8 || checked9 || checked10 || checked11">
+          </label>-->
+          <label class="  checkBox-showall pull-left " ng-show="selectAllItems">
             <span class="fa fa-trash-o " data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
           </label>
           <label class="  checkBox-showall pull-right ">Show All
@@ -148,7 +147,7 @@
 
               <div class="chekbox">
                 <label>
-                  <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
+                  <input type="checkbox" ng-model="prospect.isChecked" ng-change="selectEntity()">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>

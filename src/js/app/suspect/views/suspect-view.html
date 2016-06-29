@@ -147,7 +147,7 @@
             <label class=" dropdown check-share-transfer pull-left ">
               <input type="checkbox" class="checkBox" ng-model="selectAllItems" ng-change="selectAll()">
             </label>
-            <label class="share-transfer pull-left  hand-cursor" ng-show="selectAllItems" >
+            <label class="share-transfer pull-left  hand-cursor" ng-show="selectAllItems" ng-click="openShare('share')" >
               <span class="glyphicon glyphicon-share-alt" data-toggle="dropdown"></span>&nbsp;&nbsp;Share
             </label>
             <label class="  share-transfer pull-left hand-cursor" ng-show="selectAllItems" ng-click="openShare('tansfer')">

@@ -1,5 +1,5 @@
 angular.module('com.module.suspect')
-.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService',function($scope,$state,toaster,$timeout,suspectService,CoreService){
+.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal){
     $scope.selectedItem = [];
     $scope.filteredRows=[];
 	$scope.data = {
@@ -84,5 +84,20 @@ $scope.statusColor=function(status){
       $scope.opened2 = true;
       $scope.opened1 = false;
     }
+  };
+  $scope.openShare = function (tpl) {
+    var tpl=tpl;
+    var modalInstance = $modal.open({
+      templateUrl: function () {
+
+        return 'js/app/prospect/views/'+tpl+'.html'
+
+      },
+      backdrop: 'static',
+      controller: 'suspectShareCtrl',
+      size: 'md'
+    });
+    modalInstance.result.then(function () {
+    });
   };
   }]);

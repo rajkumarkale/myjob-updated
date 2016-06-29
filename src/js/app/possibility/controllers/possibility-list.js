@@ -1,5 +1,5 @@
 angular.module('com.module.possibility')
-.controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies','discussionService',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies,discussionService){
+.controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies','discussionService','CoreService',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies,discussionService,CoreService){
     $scope.selectedItem = [];
 
     $scope.filteredRows=[];
@@ -22,6 +22,20 @@ angular.module('com.module.possibility')
         }
         return false;
     };
+    $scope.selectAll = function () {
+	            for (var i = 0; i < $scope.filteredRows.length; i++) {
+	                $scope.filteredRows[i].isChecked = $scope.selectAllItems;
+	            }
+	        };
+    $scope.selectEntity = function () {
+	            for (var i = 0; i < $scope.filteredRows.length; i++) {
+	                if ($scope.filteredRows[i].isChecked) {
+	                    $scope.selectAllItems = true;
+	                    return;
+	                }
+	            }
+	            $scope.selectAllItems = false;
+	        };
 	$scope.data = {
 		    numPerPage: 10,
 		    searchKeywords: '',
@@ -31,9 +45,7 @@ angular.module('com.module.possibility')
 
 		$scope.getPossibilities = function(currentPage,numPerPage){
 		$scope.myPromise = possibilityCreateService.getPossibility(currentPage,numPerPage).then(function(response){
-			$timeout(function() {
-				toaster.pop('success', 'POSSIBILITY Created Successfully.');
-			}, 1000);
+            CoreService.toastSuccess('', 'POSSIBILITY Retrieved Successfully.');
 			$scope.data.possibilities = response.data.possibilities;
             //console.log($scope.data.possibilities);
 			$scope.data.totalItems = response.data.count;

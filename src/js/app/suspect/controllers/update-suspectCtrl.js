@@ -2,30 +2,27 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams', 'suspectService', '$http', '$state', 'Upload', '$q', function ($scope, appConfig, $modal, $stateParams, suspectService, $http, $state, Upload, $q) {
+    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams', 'suspectService', '$http', '$state', 'Upload', '$q','CoreService', function ($scope, appConfig, $modal, $stateParams, suspectService, $http, $state, Upload, $q,CoreService) {
+        $scope.status = {
+            open: true
+        };
         $scope.getCopy = function (obj) {
             return angular.copy(obj);
         };
 
         $scope.getNames = function (val) {
             return $http({
-                method: 'GET',
-                url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name=' + val
-            }).then(function (response) {
-
-
-                return response.data.users;
-                /*.map(function(item){
-                        return item.name;
-                      });*/
-            })
-
-            /*suspectService.getNames(val).then(function(response){
-              return response.data.users.map(function(item){
-        return item.name;
-          });
+                    method: 'GET',
+                    url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name=' + val
+                }).then(function (response) {
+                    return response.data.users;
+                })
+                /*suspectService.getNames(val).then(function(response){
+              return response.data.users;
           });*/
         };
+
+
         $scope.setdata = function ($item, $model, $label, $event, $index) {
 
             var x = $item.poc_details;
@@ -75,7 +72,7 @@ angular.module('com.module.suspect')
                 $scope.createPossibility.employee_size = $scope.getSelectedItem($scope.createPossibility.employee_size, $scope.employeeSize).displayText;
                 $scope.createPossibility.turnover = $scope.getSelectedItem($scope.createPossibility.turnover, $scope.groupTurnover).displayText;
                 $scope.createPossibility.vertical = $scope.getSelectedItem($scope.createPossibility.vertical, $scope.businessVertical).displayText;
-                $scope.createPossibility.customer_type = $scope.getSelectedItem($scope.createPossibility.customer_type, $scope.customerType).displayText;
+                $scope.createPossibility.customer_type = $scope.getSelectedItem($scope.createPossibility.customer_type, $scope.customerType);
                 /*$scope.createPossibility.POC =$scope.suspect;*/
                 $scope.status.selectedItem = $scope.getSelectedItem($scope.createPossibility.current_status.status, $scope.status);
                 $scope.createPossibility.point_of_contacts.map(function (Obj) {
@@ -89,7 +86,7 @@ angular.module('com.module.suspect')
                     $scope.point_of_contacts[i].support_area.selectedItem = $scope.getSelectedItem(Obj.support_area, $scope.supportArea);
                     if ($scope.point_of_contacts[i].contact_type.selectedItem.key === 'PRIMARY') {
                         $("#contact" + i + ' .select ul').remove();
-                        $("#contact" + i + ' .select .placeholder')[1].css('cursor', 'default !important');
+                        /*$("#contact" + i + ' .select .placeholder')[1].css('cursor', 'default !important');*/
                     }
                     if (i > 0) {
                         $scope.createNewContactList();
@@ -97,7 +94,7 @@ angular.module('com.module.suspect')
                     i = i + 1;
                 });
             });
-        }else{
+        } else {
             $state.go('app.suspect-view');
         }
         $scope.disableForm = function () {
@@ -223,6 +220,7 @@ angular.module('com.module.suspect')
                 procObj.user_id = $scope.createPossibility.point_of_contacts[0].user_id;
                 console.log(procObj);
                 $scope.myPromise = suspectService.suspectUpdate(procObj).then(function (response) {
+                    CoreService.toastSuccess('','SUSPECT Updated Successfully.');
                     $state.go('app.suspect-view');
                 });
                 console.log($scope.point_of_contacts);

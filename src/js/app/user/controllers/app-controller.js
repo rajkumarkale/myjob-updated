@@ -1,5 +1,5 @@
-angular.module('com.module.user').controller('appController', ['$scope','$state','AuthService','$rootScope','$modal', 'user','$cookieStore',
-  function ($scope,$state,AuthService,$rootScope,$modal, user,$cookieStore) {
+angular.module('com.module.user').controller('appController', ['$scope','$state','AuthService','$rootScope','$modal', 'user','$cookieStore','CoreService',
+  function ($scope,$state,AuthService,$rootScope,$modal, user,$cookieStore,CoreService) {
   'use strict';
   $rootScope.user = user.data;
   $rootScope.isAdmin =  false;
@@ -8,6 +8,7 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
   $scope.logout = function (){
     AuthService.logout().success(function (data){
       $cookieStore.remove('userData');
+        CoreService.toastSuccess('','Logged out Successfully');
       $state.go('access.signin');
     }, function (error) {
       console.log(error);
@@ -20,7 +21,9 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
       controller: 'changePasswordModalInstanceCtrl',
       size: 'md'
     });
-    modalInstance.result.then(function () {
+    modalInstance.result.then(function (response) {
+         CoreService.toastSuccess('','Password updated successfully.');
+        $state.go('access.signin');
     });
   };
     $scope.updateProfile = function(){

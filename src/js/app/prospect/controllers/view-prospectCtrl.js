@@ -2,7 +2,8 @@
  * Created by rkale on 5/20/2016.
  */
 angular.module('com.module.prospect')
-.controller('viewProspectCtrl',['$scope','$modal','prospectService',function($scope,$modal,prospectService){
+
+.controller('viewProspectCtrl',['$scope','prospectService','CoreService','$modal',function($scope,prospectService,CoreService,$modal){
 
           $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
@@ -48,6 +49,20 @@ angular.module('com.module.prospect')
         }
         return false;
     };
+    $scope.selectAll = function () {
+	            for (var i = 0; i < $scope.filteredRows.length; i++) {
+	                $scope.filteredRows[i].isChecked = $scope.selectAllItems;
+	            }
+	        };
+    $scope.selectEntity = function () {
+	            for (var i = 0; i < $scope.filteredRows.length; i++) {
+	                if ($scope.filteredRows[i].isChecked) {
+	                    $scope.selectAllItems = true;
+	                    return;
+	                }
+	            }
+	            $scope.selectAllItems = false;
+	        };
     $scope.statusColor=function(status){
     switch (status) {
     case "AGREEMENT_ON_CLOSURE":
@@ -67,6 +82,7 @@ angular.module('com.module.prospect')
 };
   $scope.myPromise = prospectService.getProspects(1,10).then(function(response){
     console.log(response);
+      CoreService.toastSuccess('','PROSPECTS Retrieved Successfully.');
     $scope.data.prospects = response.data.prospects;
     $scope.data.totalItems = response.data.count;
     $scope.data.LOST=response.data.LOST;
@@ -90,7 +106,7 @@ angular.module('com.module.prospect')
     });
   };
 $scope.checkSelect={};
-    
+
 }])
   .filter('spaceless',function(){
   return function(status){

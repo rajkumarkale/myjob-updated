@@ -150,7 +150,7 @@
                         <h4 class="contact">Contact Details</h4>
 
                         <div ng-repeat="poc in point_of_contacts" class="row col-md-12 " style="margin-top: -5px;">
-                            <accordion>
+                            <accordion class="plus">
                                 <accordion-group is-open="poc.isOpen">
                                     <accordion-heading>
 
@@ -236,11 +236,11 @@
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating is-empty">
                                             <label for="i1" class="control-label">Contact Person</label>
-                                            <input type="text" class="form-control" id="i1">
+                                            <input type="text" class="form-control" id="i1" ng-model="createPossibility.discussion.name" required>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-md-9">
-                                                <input type="text" class="form-control" placeholder="Date">
+                                                <input type="text" class="form-control" placeholder="Date" ng-model="createPossibility.discussion.date" required>
                                                 <span class="input-group-addon" id="basic-addon2">
             <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
                                             </div>
@@ -254,11 +254,11 @@
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating is-empty">
                                             <label for="i7" class="control-label">Venue</label>
-                                            <input type="text" class="form-control" id="i7">
+                                            <input type="text" class="form-control" id="i7" ng-model="createPossibility.discussion.venue" required>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-md-9">
-                                                <input type="time" class="form-control" placeholder="Time">
+                                                <input type="time" class="form-control" placeholder="Time" ng-model="createPossibility.discussion.time" required>
 
                                             </div>
                                         </div>
@@ -272,7 +272,7 @@
                                 <div class="col-md-10 upward">
                                     <label for="textArea" class=" mrg-label ">
                                         <h3>Discussion Summary</h3></label>
-                                    <textarea class="form-control mrg-textarea" rows="3" id="textArea"></textarea>
+                                    <textarea class="form-control mrg-textarea" rows="3" id="textArea" ng-model="createPossibility.discussion.text" required></textarea>
                                 </div>
                             </div>
                             <div class="row">

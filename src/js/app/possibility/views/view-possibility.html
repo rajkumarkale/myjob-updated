@@ -100,12 +100,12 @@
       <div class="panel-body del-pad">
         <div class="row">
           <label class=" dropdown checkBoxDrop pull-left ">
-            <input type="checkbox" class="checkBox" ng-model="selectAll">
+            <input type="checkbox" class="checkBox" ng-model="selectAllItems" ng-change="selectAll()">
           </label>
           <!--  <label class="checkBox-showall pull-left " ng-show="selectAll || checked1 ">
              <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
            </label> -->
-          <label class="  checkBox-showall pull-left " ng-show="selectAll || checked1 ">
+          <label class="  checkBox-showall pull-left " ng-show="selectAllItems ">
             <span class="fa fa-trash-o" data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
           </label>
           <label class="  checkBox-showall pull-right ">Show All
@@ -140,7 +140,7 @@
 
               <div class="chekbox">
                 <label>
-                  <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
+                  <input type="checkbox" ng-model="possibility.isChecked" ng-change="selectEntity()">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>

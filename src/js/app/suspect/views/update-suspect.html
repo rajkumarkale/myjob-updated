@@ -2,10 +2,11 @@
     <button ui-sref="app.suspect-view" class="btn btn-primary contacts-button "> Cancel</button>
 </div>
 <div class="container col-md-12 pad-t-20" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
-    <accordion class="possibility-head">
-        <accordion-group>
+    <accordion class="plus possibility-head">
+        <accordion-group is-open="status.open">
             <accordion-heading>
-                <span>{{title}}</span>
+                <span>{{title}}</span><i class="pull-right glyphicon"
+               ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
             </accordion-heading>
             <form name="createPossibilityForm" class="app-container-blur">
                 <div class="row">
@@ -111,7 +112,7 @@
             </div>
             <div class="row ">
                 <div class="col-lg-10 ">
-                    <accordion close-others='opening'>
+                    <accordion close-others='opening' class="plus">
                         <accordion-group is-open="poc.isOpen" ng-repeat="poc in point_of_contacts">
                             <accordion-heading>
                                 <span class="color-black ">

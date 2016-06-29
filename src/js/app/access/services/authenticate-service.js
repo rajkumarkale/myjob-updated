@@ -3,8 +3,9 @@ angular.module('com.module.access')
     'use strict';
     this.forgotPassword = function (data) {
       return $http({
-        method: 'GET',
-        url: appConfig.apiUrl + '/user/password/reset/'+data.email
+        method: 'POST',
+        url: appConfig.apiUrl + '/api/login/forgot',
+        data:data
       });
     };
     this.login = function (data) {
@@ -14,12 +15,10 @@ angular.module('com.module.access')
         url: appConfig.apiUrl + '/api/login',
         data: data
       }).success(function (data) {
-        var now = new Date();
-        now.setDate(now.getDate()+1);
+        
        var user = {
          token: data.authHeader,
-         userDetails:data.user,
-         expires:now
+         userDetails:data.user
        };
        $cookies.userData = JSON.stringify(user);
        deferred.resolve(user);

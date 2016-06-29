@@ -133,10 +133,10 @@
             <label class=" dropdown check-share-transfer pull-left ">
               <input type="checkbox" class="checkBox" ng-model="selectAll">
             </label>
-            <label class="share-transfer pull-left  hand-cursor" ng-click="openShare('share')">
-              <span class="glyphicon glyphicon-share-alt" data-toggle="dropdown"></span>&nbsp;&nbsp;Share
+            <label class="share-transfer pull-left  hand-cursor" ng-show="selectAll " ng-click="openShare('share')">
+              <span class="glyphicon glyphicon-share-alt" data-toggle="dropdown" ></span>&nbsp;&nbsp;Share
             </label>
-            <label class="  share-transfer pull-left hand-cursor" ng-click="openShare('tansfer')">
+            <label class="  share-transfer pull-left hand-cursor" ng-show="selectAll" ng-click="openShare('tansfer')">
               <span class="glyphicon glyphicon-arrow-up " data-toggle="dropdown"></span>&nbsp;&nbsp;Tranfer
             </label>
             <label class="btn btn-raised btn-info btn-sm pull-right glyphicon glyphicon-plus add-button ">
@@ -180,7 +180,7 @@
 
               <div class="chekbox">
                 <label>
-                  <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
+                  <input type="checkbox" ng-model="s{{$index}}" ng-true-value="YES" ng-false-value="NO" ng-checked="selectAll">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>

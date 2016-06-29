@@ -4,7 +4,7 @@
 angular.module('com.module.prospect')
 .controller('viewProspectCtrl',['$scope','$modal','prospectService',function($scope,$modal,prospectService){
 
-        $scope.sortType     = 'legal_name';
+          $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
         $scope.searchView   = '';
   $scope.open = function($event,opened) {
@@ -89,7 +89,8 @@ angular.module('com.module.prospect')
     modalInstance.result.then(function () {
     });
   };
-
+$scope.checkSelect={};
+    
 }])
   .filter('spaceless',function(){
   return function(status){

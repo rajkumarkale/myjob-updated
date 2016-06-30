@@ -1,32 +1,6 @@
 <div class="maincol-apply">
   <div class="container all-dateinputs">
-    <div class="container">
-      <div class="pull-right">
-        <form id="form" name="form" class="form-inline" novalidate>
-          <label for="startDate" class="labels-dates poss-mrg">From</label>
-          <div class="input-group">
-            <a ng-click="open($event,'opened1')">
-              <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
-                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
-            <span class="input-group-btn" id="basic-addon1">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-            </a>
-          </div>
-          <label for="endDate" class="labels-dates poss-mrg">To</label>
-          <div class="input-group">
-            <a ng-click="open($event,'opened2')">
-              <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
-                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
-            <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-            </a>
-          </div>
-          <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
-        </form>
-      </div>
-    </div>
+
     <div class="container col-md-12 pad-t-20 maincol-apply">
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary for the year of April 2016 to March 2017</div>
@@ -34,33 +8,33 @@
           <div class="detailsContent">
             <div class="detailsContentDiv">
               <div class="listDetails">
-                <div class="listDetailsContent">
+                <div class="listDetailsContent bord-target">
                   <div class="col-md-3 target-header-color">
-                    <img src="img/target_icon.png" alt="" class="center-block img-pad"/>
+                    <img src="img/icon_target.png" alt="" class="center-block img-pad"/>
                   </div>
-                  <div class="col-md-9 text-center color-divs">
+                  <div class="col-md-5 text-center color-divs">
                     <div class="met-target">TARGET</div>
                     <div class="met-num">10</div>
                   </div>
                 </div>
               </div>
               <div class="listDetails">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 prospect-header-color">
-                    <img src="img/prospect_icon.png" alt="" class="center-block img-pad"/>
+                <div class="listDetailsContent bord-prospect">
+                  <div class="col-md-3 target-header-color ">
+                    <img src="img/icon_prospect.png" alt="" class="center-block img-pad"/>
                   </div>
-                  <div class="col-md-9 text-center color-divs">
+                  <div class="col-md-5 text-center color-divs">
                     <div class="met-prospect">PROSPECT</div>
                     <div class="metprospect-num">10</div>
                   </div>
                 </div>
               </div>
               <div class="listDetails">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 empanelment-header-color">
-                    <img src="img/empanelment_icon.png" alt="" class="center-block img-pad"/>
+                <div class="listDetailsContent bord-empanelment">
+                  <div class="col-md-3 target-header-color ">
+                    <img src="img/icon_empanelment.png" alt="" class="center-block img-pad"/>
                   </div>
-                  <div class="col-md-9 text-center color-divs">
+                  <div class="col-md-5 text-center color-divs">
                     <div class="empanel-col">EMPANELMENT</div>
                     <div class="met-num">10</div>
                   </div>
@@ -73,27 +47,23 @@
     </div>
   </div>
       <div class="panel graph-background">
+        <div class="pull-right overall-pad">
+          <form id="form" name="form" class="form-inline" novalidate>
+            <div>
+              <input type="text" class="form-control bord-given" aria-describedby="basic-addon1">
+             <div class="calendar-reset"><img src="img/calendar_icon.png" alt=""/></div>
+            </div>
+            <div class="second-dateinput">
+              <label  class="labels-dates poss-mrg">To</label>
+              <input type="text" class="form-control bord-given" aria-describedby="basic-addon1">
+              <div class="secondcalendar-reset"><img src="img/calendar_icon.png" alt=""/></div>
+            </div>
+
+            <button class="btn btn-primary btn-raised filter mrg-top refactor">Submit</button>
+          </form>
+        </div>
         <div class="form-group label-floating is-empty col-pad">
-          <div class="radio radio-primary">
-            <label>
-              <input type="radio" name="call" id="optionsRadios1" value="option1" checked="">
-              <span class="circle"></span>
-              <span class="check"></span>
-            Suspect
-            </label>
-            <label>
-              <input type="radio" value="option2" name="call">
-              <span class="circle"></span>
-              <span class="check"></span>
-             Prospect
-            </label>
-            <label>
-              <input type="radio" value="option2" name="call">
-              <span class="circle"></span>
-              <span class="check"></span>
-            Empanelment
-            </label>
-          </div>
+
         </div>
         <nvd3 class="graph"options="options" data="data"></nvd3>
       </div>

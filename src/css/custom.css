@@ -98,6 +98,7 @@
 /*Dashboard*/
 .target-header-color{
   background-color: #5499f6;
+  padding: 10px;
 }
 .prospect-header-color{
   background-color: #7f439b;
@@ -144,7 +145,7 @@
 }
 #basic-addon1 {
   padding-top: 1px;
-  background-color: transparent;
+ background-color: #e1e1e1;;
 }
 #basic-addon2 {
   padding-top: 1px;
@@ -492,6 +493,7 @@
 }
 .color-divs{
   background-color: white;
+  padding-right: 68px;
 }
 /*end suspect-view*/
 .navbar-custom{
@@ -1052,7 +1054,7 @@
 }*/
 /*Dashboard*/
 .target-header-color{
-  background-color: #5499f6;
+  background-color: white;
 }
 .prospect-header-color{
   background-color: #7f439b;
@@ -1092,7 +1094,7 @@
 }
 .detailsContentDiv {
   display: table;
-  width: 100%;
+  width: 102%;
 }
 .orange {
   background: #f58207;
@@ -1102,7 +1104,7 @@
 .listDetailsContent {
   border: 1px solid #eee;
   display: table;
-  width: 100%;
+  width: 69%;
   height: 70px;
 
 }
@@ -2015,3 +2017,59 @@ color:#049ad9 !important;}
 .plus .panel-heading a:after{
     content: '' !important;
 }
+
+.default-cursor{
+    cursor: default !important;
+}
+/*dashboard panel divs*/
+.bord-target{
+  border-bottom: 3px solid #5499f6;
+}
+.bord-prospect{
+  border-bottom: 3px solid #81479D;
+}
+.bord-empanelment{
+  border-bottom: 3px solid #6BC5BE;
+}
+/*end dashboard panel divs*/
+/*dates dashboard*/
+.bord-given{
+  border: 1px solid red;
+  background-image: none !important;
+  background-image: none !important;
+  background-image: none !important;
+  background-image: none !important;
+
+}
+.calendar-reset{
+  margin-top: -44px;
+  margin-left: 159px;
+  background-color: #F7F7F7;
+  width: 36px;
+  height: 35px;
+  text-align: center;
+  padding-top: 5px;
+}
+.secondcalendar-reset{
+  margin-top: -44px;
+  margin-left: 190px;
+  background-color: #F7F7F7;
+  width: 36px;
+  height: 35px;
+  text-align: center;
+  padding-top: 5px;
+}
+.second-dateinput{
+  margin-top: -37px;
+  margin-left: 209px;
+}
+.overall-pad{
+  padding-right: 10px;
+  padding-top: 10px;
+}
+.refactor{
+  margin-top: -50px;
+  margin-left: 465px;
+}
+/*end dates dashboard*/
+

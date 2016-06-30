@@ -26,15 +26,27 @@ angular.module('com.module.possibility')
 	            for (var i = 0; i < $scope.filteredRows.length; i++) {
 	                $scope.filteredRows[i].isChecked = $scope.selectAllItems;
 	            }
+        $scope.select();
 	        };
     $scope.selectEntity = function () {
+        $scope.select();
 	            for (var i = 0; i < $scope.filteredRows.length; i++) {
-	                if ($scope.filteredRows[i].isChecked) {
-	                    $scope.selectAllItems = true;
+	                if (!$scope.filteredRows[i].isChecked) {
+	                    $scope.selectAllItems = false;
 	                    return;
 	                }
 	            }
-	            $scope.selectAllItems = false;
+	            $scope.selectAllItems = true;
+	        };
+    $scope.select= function () {
+	            for (var i = 0; i < $scope.filteredRows.length; i++) {
+	                if ($scope.filteredRows[i].isChecked) {
+                        $scope.isShow= true;
+	                    return;
+	                }
+                    $scope.isShow= false;
+	            }
+	           
 	        };
 	$scope.data = {
 		    numPerPage: 10,

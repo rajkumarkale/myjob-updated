@@ -86,7 +86,7 @@ angular.module('com.module.suspect')
                     $scope.point_of_contacts[i].support_area.selectedItem = $scope.getSelectedItem(Obj.support_area, $scope.supportArea);
                     if ($scope.point_of_contacts[i].contact_type.selectedItem.key === 'PRIMARY') {
                         $("#contact" + i + ' .select ul').remove();
-                        /*$("#contact" + i + ' .select .placeholder')[1].css('cursor', 'default !important');*/
+                        $("#contact" + i + ' .select .placeholder').addClass('default-cursor');
                     }
                     if (i > 0) {
                         $scope.createNewContactList();

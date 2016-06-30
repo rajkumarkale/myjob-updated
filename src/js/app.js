@@ -23,7 +23,8 @@ angular.module('app', [
   'com.module.admin',
   'ui.sortable',
   'toaster',
-  'nvd3'
+  'nvd3',
+  'mgcrea.ngStrap'
 
 ]);
 

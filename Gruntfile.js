@@ -266,7 +266,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= app.app %>/img',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          src: ['**/*.{png,jpg,gif}'],
           dest: '<%= app.dist %>/img'
         }]
       }
@@ -395,7 +395,7 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
-
+grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve:' + target]);
@@ -424,7 +424,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+      'imagemin'
   ]);
 
   grunt.registerTask('default', [

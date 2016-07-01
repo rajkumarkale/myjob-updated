@@ -71,14 +71,14 @@
   margin-top: -15px;
 }
 .share-prospect{
-  margin-left: 27%;
+  margin-left: 12%;
 }
 
 
-.modal-dialog .mdl-center{
+/*.modal-dialog .mdl-center{
   width: 600px;
   margin: 60% auto;
-}
+}*/
 .checkBox-showall
 {
   width: 110px;
@@ -100,4 +100,15 @@
 }
 .date-pick-right-mrg{
   margin-right: -25px;
+}
+@media (min-width: 768px) {
+    .modal-sm {
+    width: 400px;
+  }
+}
+
+.share-button{
+  margin-left: 5%;
+  border-radius: 0px !important;
+  color: white !important;
 }

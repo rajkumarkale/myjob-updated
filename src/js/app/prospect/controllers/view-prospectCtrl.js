@@ -100,7 +100,7 @@ angular.module('com.module.prospect')
       },
       backdrop: 'static',
       controller: 'shareCtrl',
-      size: 'md'
+      size: 'sm'
     });
     modalInstance.result.then(function () {
     });

@@ -36,35 +36,35 @@
           <div class="detailsContent">
             <div class="detailsContentDiv">
               <div class="listDetails">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 orange">
-                    <img src="img/icon_met.png" alt="" class="center-block img-pad"/>
+                <div class="listDetailsContent bord-met">
+                  <div class="col-md-3 met-header-color">
+                    <img src="img/met_icon.png" alt="" class="center-block img-pad"/>
                   </div>
-                  <div class="col-md-9 text-center color-divs">
-                    <div class="met">MET</div>
-                    <div class="met-num">{{data.met}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="listDetails">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 greenmet">
-                    <img src="img/icon_not met.png" alt="" class="center-block img-pad"/>
-                  </div>
-                  <div class="col-md-9 text-center color-divs">
-                    <div class="not-met">NOT MET</div>
-                    <div class="met-num">{{data.notMet}}</div>
+                  <div class="col-md-5 text-center color-divs">
+                    <div class="met-met">MET</div>
+                    <div class="met-num">10</div>
                   </div>
                 </div>
               </div>
               <div class="listDetails">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 orangeactive">
-                    <img src="img/icon_inactive.png" alt="" class="center-block img-pad"/>
+                <div class="listDetailsContent bord-notmet">
+                  <div class="col-md-3 notmet-header-color ">
+                    <img src="img/notmet_icon.png" alt="" class="center-block img-pad"/>
                   </div>
-                  <div class="col-md-9 text-center color-divs">
-                    <div class="inactive">INACTIVE</div>
-                    <div class="met-num">{{data.inactive}}</div>
+                  <div class="col-md-5 text-center color-divs">
+                    <div class="met-notmet">NOT MET</div>
+                    <div class="met-num">10</div>
+                  </div>
+                </div>
+              </div>
+              <div class="listDetails">
+                <div class="listDetailsContent bord-inactive">
+                  <div class="col-md-3 inactive-header-color ">
+                    <img src="img/inactive_icon.png" alt="" class="center-block img-pad"/>
+                  </div>
+                  <div class="col-md-5 text-center color-divs">
+                    <div class="inactive-col">INACTIVE</div>
+                    <div class="met-num">10</div>
                   </div>
                 </div>
               </div>
@@ -90,18 +90,18 @@
 
           <div class="pull-right overall-pad date-pick-right-mrg">
             <form  name="form" class="form-inline" novalidate>
-              <div>
+              <div class="present">
                 <input type="text" class="form-control bord-given" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
                        datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true">
                 <div class="calendar-reset"><img src="img/calendar_icon.png" alt="" ng-click="open($event,'opened1')"/></div>
-              </div>
+
               <div class="second-dateinput">
                 <label  class="labels-dates poss-mrg">To</label>
                 <input type="text" class="form-control bord-given" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
                        datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true">
                 <div class="secondcalendar-reset"><img src="img/calendar_icon.png" alt="" ng-click="open($event,'opened2')"/></div>
               </div>
-
+              </div>
               <button class="btn btn-primary btn-raised filter mrg-top refactor">Submit</button>
             </form>
           </div>

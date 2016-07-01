@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <div class="col-md-6 form-custom-padding">
             <div class="form-group label-floating is-empty">
-              <label for="i1" class="control-label">Contact Person</label>
+              <label for="i1" class="control-label">Contact Person Name</label>
               <input type="text" class="form-control" id="i1" ng-model="discussion.name" required>
             </div>
             <div class="form-group">
@@ -18,6 +18,7 @@
               </div>
             </div>
           <div class="form-group">
+            <label class="control-label">Type of Discussion</label>
           <div  custom-select data="status" ></div>
           </div>
 
@@ -78,7 +79,7 @@
          </div>
        </div>
        <div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
-       <!--<button ngf-select="upload($files)" multiple 
+       <!--<button ngf-select="upload($files)" multiple
             accept="image/*">Select Files</button>-->
       <div class="centerBtn" data-cg-busy="{promise:discussionPromise,message:'Creating Discussions'}">
         <a href="javascript:void(0)" class="btn btn-raised btn-default" ng-click="cancel()">Cancel</a>&nbsp;

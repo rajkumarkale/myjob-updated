@@ -12,6 +12,16 @@
             </div>
             <div>
                 <div class="panel-body">
+                  <div class="form-group pull-right mrg-formgrp mrg-top-apply">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="control-label">Status</label>
+                        <div   custom-select data="status" class="select-poss"></div>
+                        <div id="grad1-status"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="line1">
                     <form name="createPossibilityForm">
 
                         <div class="row">
@@ -44,6 +54,11 @@
                                         <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text" tabindex="11">
 
                                     </div>
+                                  <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                    <label class="control-label">Country</label>
+                                    <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text" tabindex="11">
+
+                                  </div>
 
                                 </div>
 
@@ -89,10 +104,11 @@
                                         </div>
 
                                     </div>
-                                    <div class="form-group1 pull-right ">
-                                        <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
-                                        <label class=" first-class2 " tabindex="13">Freeze</label>
-                                    </div>
+                                  <div class="form-group pull-right">
+                                    <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
+                                    <label class=" first-class2 " tabindex="13">Freeze</label>
+                                  </div>
+
 
                                 </div>
                             </div>
@@ -161,13 +177,13 @@
           </span></accordion-heading>
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label"> Name</label>
+                                            <label class="control-label">Contact Person</label>
                                             <input class="form-control" required data-ng-model="poc.name" type="text" tabindex="15">
 
                                         </div>
 
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Designation</label>
+                                            <label class="control-label">Contact Person Designation</label>
                                             <input data-ng-model="poc.designation" required class="form-control" type="text" tabindex="17">
 
                                         </div>
@@ -179,34 +195,31 @@
                                             <input type="checkbox" ng-model="poc.local" class="check" tabindex="20">
                                             <label class="location">Local</label>
                                         </div>
+                                      <div>
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Email Id</label>
-                                            <input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="22">
+                                          <label class="control-label">Local Address</label>
+                                          <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="21">
+
                                         </div>
+                                      </div>
+
 
                                     </div>
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label"> Phone Number</label>
+                                            <label class="control-label">Contact Person Phone Number</label>
                                             <input class="form-control" numbers-only maxlength="15" data-ng-model="poc.phone" required type="text" tabindex="16">
 
                                         </div>
-                                        <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label"> Department</label>
-                                            <input data-ng-model="poc.deparment" required class="form-control" type="text" tabindex="18">
+                                      <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                        <label class="control-label">Email Id</label>
+                                        <input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="22">
+                                      </div>
 
-                                        </div>
-                                        <div>
-                                            <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                                <label class="control-label">Location</label>
-                                                <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="21">
-
-                                            </div>
-                                        </div>
 
                                         <div ng-if="poc.contact_type ==='PRIMARY'">
                                             <div class="form-group label-floating ">
-                                                <label class="control-label">Contact Type</label>
+                                                <label class="control-label">Point of Contact</label>
                                                 <input class="form-control" disabled data-ng-model="poc.contact_type" required type="text">
 
                                             </div>
@@ -235,17 +248,20 @@
                                 <div class="col-md-12">
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating is-empty">
-                                            <label for="i1" class="control-label">Contact Person</label>
+                                            <label for="i1" class="control-label">Contact Person Name</label>
                                             <input type="text" class="form-control" id="i1" ng-model="createPossibility.discussion.name" required>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-md-9">
-                                                <input type="text" class="form-control" placeholder="Date" ng-model="createPossibility.discussion.date" required>
+                                              <input type="text" class="form-control"  placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
+                                                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true">
+                                                <!--<input type="text" class="form-control" ng-model="createPossibility.discussion.date" required>-->
                                                 <span class="input-group-addon" id="basic-addon2">
             <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                          <label class="control-label">Type of Discussion</label>
                                             <div custom-select data="typeOfDiscussion"></div>
                                         </div>
 

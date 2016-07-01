@@ -1769,8 +1769,8 @@
 
 /* end of create possibility view */
 .first-class2{
-  color: #049ad9;
-
+  color: black !important;
+  font-weight: bold !important;
 }
 
 .form-custom-padding{
@@ -2049,6 +2049,7 @@ color:#049ad9 !important;}
   padding-top: 5px;
   border-left: 1px solid #ACACAC;
   opacity: 0.8;
+  cursor: pointer;
 }
 .secondcalendar-reset{
   margin-top: -44px;
@@ -2059,6 +2060,7 @@ color:#049ad9 !important;}
   padding-top: 5px;
   border-left: 1px solid #ACACAC;
   opacity: 0.8;
+  cursor: pointer;
 }
 .second-dateinput{
   margin-top: -37px;
@@ -2074,12 +2076,66 @@ color:#049ad9 !important;}
 }
 /*end dates dashboard*/
 
-/*list poss top buttons*/
-
+/*create poss top select*/
+.select-poss .select{
+  margin-top: 10px;
+  position: relative;
+  display: block;
+  min-width: 167px !important;
+  color: #555555;
+  vertical-align: middle;
+  text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  border-bottom: 1px solid #dfdfdf;
+}
 /*end list poss top buttons*/
 /* start comments for suspect create */
 .mrg-down{margin-top: -9px}
 .up-mrg{margin-top: -38px}
  .select .status-suspect{width:125px;}
 /* end of comments for suspect create UI */
-
+.present .dropdown-menu table > thead > tr > th .btn.btn-sm{
+  padding: 5px 8px !important;
+  font-size: 12px;
+}
+.present .dropdown-menu table > tbody > tr > td .btn.btn-sm{
+  padding: 5px 8px !important;
+  font-size: 12px;
+}
+/*list poss icons*/
+.met-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.notmet-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.inactive-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.met-met{
+  color: #00A000;
+}
+.met-notmet{
+  color: #F46463;
+  white-space: nowrap;
+}
+.inactive-col{
+  color: #B7B7B5;
+}
+.bord-met{
+  border-bottom: 3px solid #00A000;
+}
+.bord-notmet{
+  border-bottom: 3px solid #F46463;
+}
+.bord-inactive{
+  border-bottom: 3px solid #B7B7B5;
+}
+/*end list poss icons*/

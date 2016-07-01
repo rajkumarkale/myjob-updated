@@ -42,11 +42,11 @@ angular.module('com.module.possibility')
 	            for (var i = 0; i < $scope.filteredRows.length; i++) {
 	                if ($scope.filteredRows[i].isChecked) {
                         $scope.isShow= true;
-	                    return;
+	                    return;dateOptions
 	                }
                     $scope.isShow= false;
 	            }
-	           
+
 	        };
 	$scope.data = {
 		    numPerPage: 10,
@@ -87,7 +87,7 @@ $scope.statusColor=function(status){
             break;
         default:
     }
-}
+};
   $scope.open = function($event,opened) {
     $event.preventDefault();
     $event.stopPropagation();

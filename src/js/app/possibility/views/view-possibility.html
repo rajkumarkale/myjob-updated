@@ -87,14 +87,21 @@
       <div class="row">
         <div class="col-lg-12">
           <h4 class="pull-left head">All Possiblities</h4>
-        <span class="pull-right search-box-width">
-             <div class="input-group">
+          <div class="pull-right overall-pad">
+            <form  name="form" class="form-inline" novalidate>
+              <div>
+                <input type="text" class="form-control bord-given" aria-describedby="basic-addon1">
+                <div class="calendar-reset"><img src="img/calendar_icon.png" alt=""/></div>
+              </div>
+              <div class="second-dateinput">
+                <label  class="labels-dates poss-mrg">To</label>
+                <input type="text" class="form-control bord-given" aria-describedby="basic-addon1">
+                <div class="secondcalendar-reset"><img src="img/calendar_icon.png" alt=""/></div>
+              </div>
 
-               <input type="text" class="form-control btn-rounded back-color img-remove" placeholder="Search By Location,Company Name,Contact"
-                      aria-describedby="basic-addon3" ng-model="searchView">
-               <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
-             </div>
-          </span>
+              <button class="btn btn-primary btn-raised filter mrg-top refactor">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
       <div class="panel-body del-pad">

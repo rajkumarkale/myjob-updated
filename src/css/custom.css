@@ -129,7 +129,7 @@
   font-weight: bold;
 }
 .empanel-col{
-  color: #6BC5BE;
+  color: #50C471;
   font-weight: bold;
 }
 /*end of dashboard*/
@@ -176,7 +176,7 @@
   margin-right:29px ;
   font-size: 16px;
   text-transform:none !important;
-  border-radius: 4px !important;
+  border-radius: 6px !important;
 }
 .left-mrg{
   margin-right:25px ;
@@ -232,7 +232,7 @@
   font-weight: bold;
 }
 .summary {
-  text-align: center;
+  text-align: left;
   background-color: #2277b1 !important;
   font-size: 20px;
 }
@@ -720,8 +720,6 @@
 .checkBoxDrop{
   width: 26px;
   height: 30px;
-  color: white;
-  background-color: darkgrey;
   padding: 5px;
   margin-right: 10px;
 }
@@ -747,10 +745,11 @@
 {
   width: 110px;
   height: 30px;
-  color: white;
-  background-color: darkgrey;
+  color: #565656;
+  background-color: #F4F4F4;
   padding: 3px 5px 5px 16px;
   margin-right: 5px;
+  border: 1px solid #D9D9D9;
 }
 
 .panel-heading-custom {
@@ -1150,12 +1149,10 @@
 }
 .table-bod>tbody>tr>td {
   border-top: none;
-  white-space: nowrap;
   text-align: center;
 }
 .table-bod>thead>tr>th {
   padding:10px !important;
-  white-space: nowrap;
 }
 .table-bod>tbody tr:nth-child(odd) {
   background-color: #F3F3F3;
@@ -2028,35 +2025,40 @@ color:#049ad9 !important;}
   border-bottom: 3px solid #81479D;
 }
 .bord-empanelment{
-  border-bottom: 3px solid #6BC5BE;
+  border-bottom: 3px solid #50C471;
 }
 /*end dashboard panel divs*/
 /*dates dashboard*/
 .bord-given{
-  border: 1px solid red;
+  border: 2px solid #DADDDF !important;
   background-image: none !important;
   background-image: none !important;
   background-image: none !important;
   background-image: none !important;
+  border-color: #E1E1E1 !important;
+  background-color: white;
+
 
 }
 .calendar-reset{
   margin-top: -44px;
   margin-left: 159px;
-  background-color: #F7F7F7;
   width: 36px;
   height: 35px;
   text-align: center;
   padding-top: 5px;
+  border-left: 1px solid #ACACAC;
+  opacity: 0.8;
 }
 .secondcalendar-reset{
   margin-top: -44px;
   margin-left: 190px;
-  background-color: #F7F7F7;
   width: 36px;
   height: 35px;
   text-align: center;
   padding-top: 5px;
+  border-left: 1px solid #ACACAC;
+  opacity: 0.8;
 }
 .second-dateinput{
   margin-top: -37px;
@@ -2071,3 +2073,6 @@ color:#049ad9 !important;}
   margin-left: 465px;
 }
 /*end dates dashboard*/
+/*list poss top buttons*/
+
+/*end list poss top buttons*/

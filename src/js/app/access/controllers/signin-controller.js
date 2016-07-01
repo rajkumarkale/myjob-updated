@@ -24,7 +24,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
       }
     }, function (error) {
       $scope.authStatus = true;
-      $scope.authError = error.data.message;
+      $scope.authError = error.message;
     });
   };
   $scope.openModel = function(){

@@ -95,7 +95,7 @@ $scope.statusColor=function(status){
       },
       backdrop: 'static',
       controller: 'suspectShareCtrl',
-      size: 'md'
+      size: 'sm'
     });
     modalInstance.result.then(function () {
     });

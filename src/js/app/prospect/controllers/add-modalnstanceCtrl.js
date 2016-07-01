@@ -9,7 +9,7 @@ angular.module('com.module.prospect')
         $scope.data = discussionService.getData();
         $scope.userId = JSON.parse($cookies.userData).userDetails._id;
         $scope.discussion = {};
-    
+
     $scope.uploadFiles=[];
             $scope.$watch('files', function() {
             $scope.upload($scope.files);
@@ -45,7 +45,7 @@ angular.module('com.module.prospect')
                 }
             }
         };
-        
+
         $scope.ok = function (discussion) {
             console.log(discussion);
             var reqData = {
@@ -57,12 +57,12 @@ angular.module('com.module.prospect')
                 venue:$scope.discussion.venue,
                 type:$scope.discussion.calltype
         };
-            
+
          $scope.discussionPromise= possibilityCreateService.createDiscussion(reqData).success(function (response) {
                 CoreService.toastSuccess('Disscussions?', 'Created Discussion successfully.');
                 //console.log(response);
                 $modalInstance.close(response);
-               
+
             }).error(function (err) {
                 $scope.authError = err.message;
                 toaster.pop('Fail', 'Failed to Create Client.');

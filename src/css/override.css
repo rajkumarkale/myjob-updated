@@ -52,6 +52,7 @@
   border-width: 1px !important;
   border-style: solid;
   border-color: #dad7d7 !important;
+
 }
 .row-height{
   background-color: white;
@@ -60,7 +61,6 @@
 
 .check-share-transfer{
   padding: 5px;
-  margin-right: 10px;
   margin-top: 2px;
 }
 .add-button{
@@ -71,11 +71,44 @@
   margin-top: -15px;
 }
 .share-prospect{
-  margin-left: 27%;
+  margin-left: 12%;
 }
 
 
-.modal-dialog .mdl-center{
+/*.modal-dialog .mdl-center{
   width: 600px;
   margin: 60% auto;
+}*/
+.checkBox-showall
+{
+  width: 110px;
+  height: 30px;
+  color: white;
+  background-color: darkgrey;
+  padding: 3px 5px 5px 16px;
+  margin-right: 5px;
+
+}
+.check-box-poss{
+  margin: 5px 20px 0px 10px !important;
+}
+.checkbox-poss{
+  width: 15px;
+  height: 25px;
+  color: white;
+  border-radius: 3px;
+}
+.date-pick-right-mrg{
+  margin-right: -35px;
+}
+@media (min-width: 768px) {
+    .modal-sm {
+    width: 400px;
+  }
+}
+
+.share-button{
+  margin-left: 5%;
+  border-radius: 0px !important;
+  color: white !important;
 }

@@ -42,7 +42,7 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
-     
+
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -424,7 +424,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'imagemin'
   ]);
 
   grunt.registerTask('default', [

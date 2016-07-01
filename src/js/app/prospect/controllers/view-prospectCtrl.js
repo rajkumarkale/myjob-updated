@@ -2,9 +2,10 @@
  * Created by rkale on 5/20/2016.
  */
 angular.module('com.module.prospect')
-.controller('viewProspectCtrl',['$scope','prospectService','CoreService',function($scope,prospectService,CoreService){
 
-        $scope.sortType     = 'legal_name';
+.controller('viewProspectCtrl',['$scope','prospectService','CoreService','$modal',function($scope,prospectService,CoreService,$modal){
+
+          $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
         $scope.searchView   = '';
   $scope.open = function($event,opened) {
@@ -78,7 +79,7 @@ angular.module('com.module.prospect')
             break;
         default:
     }
-}
+};
   $scope.myPromise = prospectService.getProspects(1,10).then(function(response){
     console.log(response);
       CoreService.toastSuccess('','PROSPECTS Retrieved Successfully.');
@@ -89,11 +90,29 @@ angular.module('com.module.prospect')
     $scope.data.PROGRESS=response.data.WORK_IN_PROGRESS;
     /*$scope.data.estimated_closure = response.data.estimated_closure;*/
   });
+  $scope.openShare = function (tpl) {
+    var tpl=tpl;
+    var modalInstance = $modal.open({
+      templateUrl: function () {
+
+        return 'js/app/prospect/views/'+tpl+'.html'
+
+      },
+      backdrop: 'static',
+      controller: 'shareCtrl',
+      size: 'md'
+    });
+    modalInstance.result.then(function () {
+    });
+  };
+$scope.checkSelect={};
 
 }])
   .filter('spaceless',function(){
   return function(status){
     return  status.replace('_',' ');
   }
+
+
 });
 

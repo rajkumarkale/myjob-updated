@@ -2015,3 +2015,8 @@ color:#049ad9 !important;}
 .plus .panel-heading a:after{
     content: '' !important;
 }
+/* start comments for suspect create */
+.mrg-down{margin-top: -9px}
+.up-mrg{margin-top: -38px}
+ .select .status-suspect{width:125px;}
+/* end of comments for suspect create UI */

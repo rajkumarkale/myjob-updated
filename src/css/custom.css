@@ -2014,7 +2014,6 @@ color:#049ad9 !important;}
 .plus .panel-heading a:after{
     content: '' !important;
 }
-
 .default-cursor{
     cursor: default !important;
 }
@@ -2078,3 +2077,9 @@ color:#049ad9 !important;}
 /*list poss top buttons*/
 
 /*end list poss top buttons*/
+/* start comments for suspect create */
+.mrg-down{margin-top: -9px}
+.up-mrg{margin-top: -38px}
+ .select .status-suspect{width:125px;}
+/* end of comments for suspect create UI */
+

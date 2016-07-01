@@ -62,7 +62,7 @@ angular.module('com.module.suspect')
         $scope.supportArea = appConfig.suspect.supportArea;
         $scope.status = appConfig.suspect.status;
         $scope.createPossibility = {};
-        $scope.title = "Client Details";
+        $scope.title = "Client Information";
         if ($stateParams.suspect) {
             $scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function (response) {
                 console.log(response.data);

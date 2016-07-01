@@ -91,25 +91,22 @@
 </div>
 
 
-<div class="container col-md-12">
+<div class="container col-md-12 up-mrg">
     <div class="panel panel-default second-panel up-margin ">
         <div class="panel-title  panel-heading ">
             Suspect
         </div>
         <div class="panel-body  ">
             <div class="form-group pull-right mrg-formgrp mrg-top-apply">
-                <div class="col-md-8">
-                    <div class="form-group">
-                        <label class="control-label">Status</label>
-                        <div custom-select data="status"></div>
+                <div class="col-md-8 ">
+                    <div class="form-group ">
+                        <label class="control-label ">Status</label>
+                        <div custom-select data="status" ></div>
                         <div id="grad1-status"></div>
                     </div>
                 </div>
             </div>
             <hr class="line1">
-            <div class=" pull-right">
-                <a href="" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus" ng-click="createNewContactList()"> Contact</a>
-            </div>
             <div class="row ">
                 <div class="col-lg-10 ">
                     <accordion close-others='opening' class="plus">
@@ -202,6 +199,9 @@
                 </div>
             </div>
             <div data-cg-busy="{promise:submitPromise,message:'Updating'}"></div>
+          <div class=" pull-left">
+            <a href="" class="btn btn-primary contacts-button" ng-click="createNewContactList()"> <i class="fa fa-plus"></i> Contacts</a>
+          </div>
             <div class="col-md-6 col-md-offset-5">
                 <div class="form-group">
                     <a ui-sref="app.suspect-view">

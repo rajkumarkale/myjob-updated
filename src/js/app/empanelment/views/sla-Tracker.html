@@ -77,7 +77,7 @@
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
-              <label class="control-label">Address Line 1:</label>
+              <label class="control-label">Address 1</label>
               <input class="form-control" class="focusedInput1" type="text" required="required">
             </div>
           </div>
@@ -99,7 +99,7 @@
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
-              <label class="control-label">Addresss Line 2:</label>
+              <label class="control-label">Addresss 2</label>
               <input class="form-control" class="focusedInput1" type="text" required="required">
             </div>
           </div>
@@ -279,7 +279,7 @@
     </div>
     <div class="form-group1 ">
       <label class="first-class1 col-pad1 ">BGV</label>&nbsp;
-      <input type="radio" name="yes" class="check">
+      <input type="radio" name="yes" class="check" checked>
       <label class="remote ">YES</label>
       <input type="radio" name="yes" class="check ">
       <label class="location ">NO</label>
@@ -287,22 +287,26 @@
 
     <div class="col-md-12 ">
       <div class="col-md-4 form-group col-pad-post  ">
-        <select id="s1" class="form-control" placeholder="">
+       <div class="form-group">
+                                <label class="control-label">OB</label>
+                                <div custom-select data="OB"></div>
+                            </div>
+        <!--<select id="s1" class="form-control" placeholder="">
           <option value="Teliphonic">Post OB</option>
           <option value="Teliphonic">Pre OB</option>
-        </select>
+        </select>-->
       </div>
     </div>
     <br><br>
     <div class="form-group1 col-pad">
       <label class="contacts">Insurence</label>
-      <input type="radio" name="insurence" class="check">
+      <input type="radio" name="insurence" class="check" checked>
       <label class="remote">Applicable</label>
       <input type="radio" name="insurence" class="check">
       <label class="location">Not Applicable</label>
     </div>
     <div class="form-group1 col-pad">
-      <input type="radio" name="family" class="check">
+      <input type="radio" name="family" class="check" checked>
       <label class="remote">Family Floater</label>
       <input type="radio" name="family" class="check">
       <label class="location">Individual Policy</label>
@@ -310,7 +314,7 @@
     </div>
     <br>
     <div class="form-group1 col-pad">
-      <input type="checkbox" class="check">
+      <input type="checkbox" class="check" checked>
       <label class=" first-class1">GPA</label>
     </div>
     <br>

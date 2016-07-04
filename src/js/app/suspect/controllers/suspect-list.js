@@ -43,7 +43,7 @@ angular.module('com.module.suspect')
         $scope.searchView   = '';
 		$scope.getSuspects = function(currentPage,numPerPage){
 		$scope.myPromise = suspectService.getSuspects(currentPage,numPerPage).then(function(response){
-				CoreService.toastSuccess('', 'SUSPECT Retrieved Successfully.');
+				/*CoreService.toastSuccess('', 'SUSPECT Retrieved Successfully.');*/
             console.log(response.data);
 			$scope.data.suspects = response.data.suspects;
 			$scope.data.totalItems = response.data.count;

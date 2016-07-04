@@ -54,7 +54,6 @@
       "typeOfBusiness" :{"data":[{"key":"Business Vertical","displayText":"Business Vertical"},{"key":"IT Staffing","displayText":"IT Staffing"},{"key":"General Staffing","displayText":"General Staffing"},{"key":"Government Staffing","displayText":"Government Staffing"}],"selectedItem":""},
       "status_prospect":{"data":[{"key":"Agreement_On_Closure","displayText":"Agreement On Closure"},{"key":"LOST","displayText":"LOST"},{"key":"WON","displayText":"WON"},{"key":"Work In Progress","displayText":"Work In Progress"}]}
     },
-
     "languages": {
       "en": "English"
     },
@@ -63,7 +62,9 @@
       "forgotPassword": true
     },
     "empanelment": {
-
+        "pricingMode" :{"data":[{"key":"Fixed Fee","displayText":"Fixed Fee"},{"key":"Fixed % Margin","displayText":"Fixed % Margin"},{"key":"Fixed Rate Card","displayText":"Fixed Rate Card"},{"key":"Case to Case Basis","displayText":"Case to Case Basis"},{"key":"Hourly Rate","displayText":"Hourly  Rate"}],"selectedItem":""},
+       "creditTerm":{"data":[{"key":"Collect & Pay","displayText":"Collect & Pay"},{"key":"Upfront","displayText":"Upfront"}],"selectedItem":""},
+        "OB":{"data":[{"key":"Post OB","displayText":"Post OB"},{"key":"Pre OB","displayText":"Pre OB"}],"selectedItem":""}
   }
   }
 }

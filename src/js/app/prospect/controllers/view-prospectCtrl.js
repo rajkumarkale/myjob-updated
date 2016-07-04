@@ -82,7 +82,7 @@ angular.module('com.module.prospect')
 };
   $scope.myPromise = prospectService.getProspects(1,10).then(function(response){
     console.log(response);
-      CoreService.toastSuccess('','PROSPECTS Retrieved Successfully.');
+      /*CoreService.toastSuccess('','PROSPECTS Retrieved Successfully.');*/
     $scope.data.prospects = response.data.prospects;
     $scope.data.totalItems = response.data.count;
     $scope.data.LOST=response.data.LOST;

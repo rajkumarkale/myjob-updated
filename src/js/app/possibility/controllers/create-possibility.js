@@ -305,6 +305,11 @@ angular.module('com.module.possibility')
               });
           }
 
-      }
+      };
+        $scope.open = function($event,opened) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    $scope.opened1 = !$scope.opened1;
+        };
 
     }]);

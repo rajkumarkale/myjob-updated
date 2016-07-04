@@ -88,10 +88,12 @@ $scope.statusColor=function(status){
         default:
     }
 };
+    
   $scope.open = function($event,opened) {
     $event.preventDefault();
     $event.stopPropagation();
-
+      
+    
     $scope.openCal=opened;
 
     if($scope.openCal==='opened1')

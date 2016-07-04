@@ -25,7 +25,9 @@ angular.module('app', [
   'toaster',
   'nvd3'
 
-]);
+]).config(function (datepickerConfig) {
+      datepickerConfig.showWeeks = false;
+    });
 
 angular.element(document).ready(function () {
   jQuery.get('/client-config.json?'+new Date().getTime(), function (data) {

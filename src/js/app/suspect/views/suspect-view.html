@@ -1,32 +1,5 @@
 <div class="maincol-apply">
   <div class="container  all-dateinputs">
-    <!--<div class="container">
-      <div class="pull-right">
-        <form id="form" name="form" class="form-inline" novalidate>
-          <label for="startDate" class="labels-dates poss-mrg">From</label>
-          <div class="input-group">
-            <a ng-click="open($event,'opened1')">
-              <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
-                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
-            <span class="input-group-btn" id="basic-addon1">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-            </a>
-          </div>
-          <label for="endDate" class="labels-dates poss-mrg">To</label>
-          <div class="input-group">
-            <a ng-click="open($event,'opened2')">
-              <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
-                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
-            <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-            </a>
-          </div>
-          <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
-        </form>
-      </div>
-    </div>-->
     <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Loading Suspects'}">
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary for the month of April 2016</div>
@@ -135,28 +108,21 @@
             <h4 class="pull-left head">All Suspects</h4>
             <div class="pull-right overall-pad date-pick-right-mrg">
               <form  name="form" class="form-inline" novalidate>
-                <div>
-                  <input type="text" class="form-control bord-given" aria-describedby="basic-addon1">
-                  <div class="calendar-reset"><img src="img/calendar_icon.png" alt=""/></div>
+                <div class="present">
+                  <input type="text" class="form-control bord-given" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1"
+                         show-button-bar="false" ng-required="true">
+                  <div class="calendar-reset"><img src="img/calendar_icon.png" ng-click="open($event,'opened1')" alt=""/></div>
                 </div>
-                <div class="second-dateinput">
+                <div class="second-dateinput present">
                   <label  class="labels-dates poss-mrg">To</label>
-                  <input type="text" class="form-control bord-given" aria-describedby="basic-addon1">
-                  <div class="secondcalendar-reset"><img src="img/calendar_icon.png" alt=""/></div>
+                  <input type="text" class="form-control bord-given" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2"
+                         show-button-bar="false" ng-required="true">
+                  <div class="secondcalendar-reset"><img src="img/calendar_icon.png" ng-click="open($event,'opened2')" alt=""/></div>
                 </div>
 
                 <button class="btn btn-primary btn-raised filter mrg-top refactor">Submit</button>
               </form>
             </div>
-      <!--<span class="pull-right search-box-width">
-
-             <div class="input-group">
-                <input type="text" class="form-control btn-rounded back-color img-remove"
-                       placeholder="Search By Location,Company Name,Contact"
-                       aria-describedby="basic-addon3" ng-model="searchView">
-                <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
-              </div>
-          </span>-->
           </div>
           <div class="row mrg-top row-height">
             <label class=" dropdown check-share-transfer pull-left ">
@@ -169,9 +135,7 @@
               <span class="glyphicon glyphicon-arrow-up " data-toggle="dropdown"></span>&nbsp;&nbsp;Tranfer
 
             </label>
-            <label class="btn btn-raised btn-info btn-sm pull-right glyphicon glyphicon-plus add-button ">
-              <!--<span class="caret checkBxDrop" data-toggle="dropdown"></span>-->
-            </label>
+
           </div>
         </div>
       </div>

@@ -2143,3 +2143,9 @@ color:#049ad9 !important;}
     border-color: red !important;
 }
 .centerButton{margin-left: 38%}
+.forgot-cancel{ margin-right:44px;
+font-size: 16px;
+color: #616574;}
+.forgot-ok{color: #03a9f4;
+  margin-right: 28px;
+  font-size: 15px}

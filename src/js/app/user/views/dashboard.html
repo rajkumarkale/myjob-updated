@@ -10,7 +10,7 @@
               <div class="listDetails">
                 <div class="listDetailsContent bord-target">
                   <div class="col-md-3 target-header-color">
-                    <img src="img/target_icon.png" alt="" class="center-block img-pad"/>
+                    <img src="img/target_icon.png" alt="" class="center-block img-pad" />
                   </div>
                   <div class="col-md-5 text-center color-divs">
                     <div class="met-target">TARGET</div>
@@ -49,14 +49,16 @@
       <div class="panel graph-background">
         <div class="pull-right overall-pad">
           <form id="form" name="form" class="form-inline" novalidate>
-            <div>
-              <input type="text" class="form-control bord-given" aria-describedby="basic-addon1">
-             <div class="calendar-reset"><img src="img/calendar_icon.png" alt=""/></div>
+            <div class="present">
+              <input type="text" class="form-control bord-given" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1"
+                     show-button-bar="false" ng-required="true">
+             <div class="calendar-reset"><img src="img/calendar_icon.png" alt="" ng-click="open($event,'opened1')" /></div>
             </div>
-            <div class="second-dateinput">
+            <div class="second-dateinput present ">
               <label  class="labels-dates poss-mrg">To</label>
-              <input type="text" class="form-control bord-given" aria-describedby="basic-addon1">
-              <div class="secondcalendar-reset"><img src="img/calendar_icon.png" alt=""/></div>
+              <input type="text" class="form-control bord-given" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2"
+                     show-button-bar="false" ng-required="true">
+              <div class="secondcalendar-reset"><img src="img/calendar_icon.png" ng-click="open($event,'opened2')" alt=""/></div>
             </div>
 
             <button class="btn btn-primary btn-raised filter mrg-top refactor">Submit</button>

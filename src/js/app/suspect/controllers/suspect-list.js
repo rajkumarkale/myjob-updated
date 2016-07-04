@@ -90,7 +90,7 @@ $scope.statusColor=function(status){
     var modalInstance = $modal.open({
       templateUrl: function () {
 
-        return 'js/app/prospect/views/'+tpl+'.html'
+        return 'js/app/suspect/views/'+tpl+'.html'
 
       },
       backdrop: 'static',

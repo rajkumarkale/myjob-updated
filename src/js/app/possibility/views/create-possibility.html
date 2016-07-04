@@ -1,6 +1,6 @@
 <div>
     <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
-        <button class="btn btn-primary edit-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"> Edit</button>
+        <button class="btn btn-primary edit-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"><i class="fa fa-pencil"></i> Edit</button>
         <button ng-if="createPossibility.current_status.status === 'MET'" ui-sref="app.viewPossibility" class="btn btn-primary cancel-button "> Close</button>
         <button ng-if="createPossibility.current_status.status !== 'MET'" data-ng-click="onClose()" class="btn btn-primary cancel-button "> Close</button>
     </div>
@@ -46,7 +46,7 @@
 
                                     </div>
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Address Line 2</label>
+                                        <label class="control-label">Address 2</label>
                                         <input class="form-control" data-ng-model="createPossibility.address.address_line_2" type="text" tabindex="9">
                                     </div>
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
@@ -83,7 +83,7 @@
 
                                     </div>
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Address Line 1</label>
+                                        <label class="control-label">Address 1</label>
                                         <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 " type="text" tabindex="8">
 
                                     </div>
@@ -196,7 +196,7 @@
                                             <label class="location">Local</label>
                                         </div>
                                       <div>
-                                        <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                        <div class="form-group label-floating localadd-mrg" data-ng-class="{'is-empty':isNewPossibility}">
                                           <label class="control-label">Local Address</label>
                                           <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="21">
 
@@ -215,7 +215,10 @@
                                         <label class="control-label">Email Id</label>
                                         <input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="22">
                                       </div>
-
+                                      <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                        <label class="control-label">Department</label>
+                                        <input required  class="form-control" type="text" >
+                                      </div>
 
                                         <div ng-if="poc.contact_type ==='PRIMARY'">
                                             <div class="form-group label-floating ">

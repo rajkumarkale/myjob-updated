@@ -2112,6 +2112,7 @@ color:#049ad9 !important;}
 .present .ng-invalid-parse{
     border-color: red !important;
 }
+<<<<<<< HEAD
 /*suspect view list icons*/
 .suspect-shareicon{
   color: #7A7A7A;
@@ -2177,3 +2178,11 @@ color:#049ad9 !important;}
   margin-top: 44px;
 }
 /*end create poss local address mrg*/
+.centerButton{margin-left: 38%}
+.forgot-cancel{ margin-right:44px;
+font-size: 16px;
+color: #616574;}
+.forgot-ok{color: #03a9f4;
+  margin-right: 28px;
+  font-size: 15px}
+

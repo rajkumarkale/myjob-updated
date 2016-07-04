@@ -6,10 +6,12 @@
   background-size: cover;
 }
 .sign-button:hover{
-  background-color:#23b7e5 !important;
+  background-color:#00ADEF  !important;
 }
 .sign-button{
-  background-color:#23b7e5 !important;
+  background-color:#00ADEF  !important;
+  width: 257px;
+  margin-left: 27px;
 }
 .hand-cursor{
   cursor: pointer;
@@ -96,16 +98,6 @@
    content: url('../img/left_nav_home_icon.png');
 }*/
 /*Dashboard*/
-.target-header-color{
-  background-color: #5499f6;
-  padding: 10px;
-}
-.prospect-header-color{
-  background-color: #7f439b;
-}
-.empanelment-header-color {
-  background-color: #6dc7be;
-}
 .notification-icon{
   color:white;
   font-size:18px;
@@ -115,22 +107,6 @@
   margin-top: 10px;;
   width: 20px;
   height: 20px;
-}
-.met-target{
-  color:#5398F6;
-  font-weight: bold;
-}
-.met-prospect{
-  color:#81479D;
-  font-weight: bold;
-}
-.metprospect-num{
-  color:#81479D;
-  font-weight: bold;
-}
-.empanel-col{
-  color: #50C471;
-  font-weight: bold;
 }
 /*end of dashboard*/
 
@@ -650,11 +626,9 @@
 }
 .warm-status {
   background-color: #e68405 !important;;
-  text-align: center;
-  padding: 5px;
+  text-align: center !important;
   width: 100% !important;
-  color: white;
-  border-radius: 7px;
+  color: white !important;
 }
 .cold-status{
   background-color:#87d7f8 !important; ;
@@ -1054,12 +1028,15 @@
 /*Dashboard*/
 .target-header-color{
   background-color: white;
+  padding: 10px;
 }
 .prospect-header-color{
   background-color: #7f439b;
+  padding: 10px;
 }
 .empanelment-header-color {
   background-color: #6dc7be;
+  padding: 10px;
 }
 .notification-icon{
   color:white;
@@ -1448,13 +1425,6 @@
   color:white !important;;
 }
 
-.warm-status{
-  background-color:#e68405 !important; ;
-  text-align: center;
-  padding: 5px;
-  width: 80px;
-  color:white !important;;
-}
 .warm-status-pos{
   background-color:#e68405 !important; ;
   color:white !important;;
@@ -1899,22 +1869,22 @@
 /*end views table margin*/
 
 .status-met{
-    background-color: #e68405 !important;
+    background-color: #50C471 !important;
 }
 .status-notmet{
-    background-color: #8C8866 !important;
+    background-color: #F46262 !important;
 }
 .status-inactive{
-    background-color: #A8A8A7 !important;
+    background-color: #B7B7B4 !important;
 }
 .status-cold{
-    background-color: #A8A8A7 !important;
+    background-color: #B7B7B5 !important;
 }
 .status-warm{
-    background-color: #E48204 !important;
+    background-color: #F26161 !important;
 }
 .status-hot{
-    background-color: #e60505 !important;
+    background-color: #50C472 !important;
 }
 .status-lost{
     background-color: #a948b8 !important;
@@ -2120,28 +2090,94 @@ color:#049ad9 !important;}
   padding: 10px;
 }
 .met-met{
-  color: #00A000;
+  color: #50C471;
 }
 .met-notmet{
-  color: #F46463;
+  color: #F46262;
   white-space: nowrap;
 }
 .inactive-col{
-  color: #B7B7B5;
+  color: #B7B7B4;
 }
 .bord-met{
-  border-bottom: 3px solid #00A000;
+  border-bottom: 3px solid #50C471;
 }
 .bord-notmet{
-  border-bottom: 3px solid #F46463;
+  border-bottom: 3px solid #F46262;
 }
 .bord-inactive{
-  border-bottom: 3px solid #B7B7B5;
+  border-bottom: 3px solid #B7B7B4;
 }
 /*end list poss icons*/
 .present .ng-invalid-parse{
     border-color: red !important;
 }
+<<<<<<< HEAD
+/*suspect view list icons*/
+.suspect-shareicon{
+  color: #7A7A7A;
+}
+.suspect-arrowicon{
+  color: #7A7A7A;
+}
+.share-transfer{
+  color: #7A7A7A;
+}
+/*end suspect view list icons*/
+/*icons top view suspect*/
+.hot-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.warm-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.cold-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.met-hot{
+  color: #50C472;
+}
+.met-warm{
+  color:#F26161;
+}
+.cold-col{
+  color: #B7B7B5;
+}
+.bord-hot{
+  border-bottom: 3px solid #50C472;
+}
+.bord-warm{
+  border-bottom: 3px solid #F26161;
+}
+.bord-cold{
+  border-bottom: 3px solid #B7B7B5;
+}
+/*end icons top view suspect*/
+/*create suspect status dropdown*/
+.select-suspect .select{
+  margin-top: 10px;
+  position: relative;
+  display: block;
+  min-width: 167px !important;
+  color: #555555;
+  vertical-align: middle;
+  text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  border-bottom: 1px solid #dfdfdf;
+}
+/*end create suspect status dropdown*/
+/*create poss local address mrg*/
+.localadd-mrg{
+  margin-top: 44px;
+}
+/*end create poss local address mrg*/
 .centerButton{margin-left: 38%}
 .forgot-cancel{ margin-right:44px;
 font-size: 16px;
@@ -2149,3 +2185,4 @@ color: #616574;}
 .forgot-ok{color: #03a9f4;
   margin-right: 28px;
   font-size: 15px}
+

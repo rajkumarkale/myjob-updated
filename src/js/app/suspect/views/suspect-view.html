@@ -5,39 +5,39 @@
         <div class="panel-heading summary">Summary for the month of April 2016</div>
         <div class="panel-body pan-col">
           <div class="">
-            <div class="detailsContentDiv detailsContentDiv-new">
-              <div class="listDetails list-details">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 hot-color-suspect">
-                    <img src="img/icon_hot.png" alt="" class="center-block img-pad"/>
-                  </div>
-
-                  <div class="col-md-9 text-center color-divs">
-                    <div class="hot">HOT</div>
-                    <div class="met-num">{{data.HOT}}</div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="listDetails list-details">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 orangemet">
-                    <img src="img/icon_warm.png" alt="" class="center-block img-pad"/>
-                  </div>
-                  <div class="col-md-9 text-center color-divs">
-                    <div class="notmet">WARM</div>
-                    <div class="met-num">{{data.WARM}}</div>
+            <div class="detailsContent">
+              <div class="detailsContentDiv">
+                <div class="listDetails">
+                  <div class="listDetailsContent bord-hot">
+                    <div class="col-md-3 hot-header-color">
+                      <img src="img/Hot_icon.png" alt="" class="center-block img-pad"/>
+                    </div>
+                    <div class="col-md-5 text-center color-divs">
+                      <div class="met-hot">HOT</div>
+                      <div class="met-num">{{data.met}}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="listDetails list-details">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 orangeactive">
-                    <img src="img/icon_cold.png" alt="" class="center-block img-pad"/>
+                <div class="listDetails">
+                  <div class="listDetailsContent bord-warm">
+                    <div class="col-md-3 warm-header-color ">
+                      <img src="img/warm_icon.png" alt="" class="center-block img-pad"/>
+                    </div>
+                    <div class="col-md-5 text-center color-divs">
+                      <div class="met-warm">WARM</div>
+                      <div class="met-num">{{data.notMet}}</div>
+                    </div>
                   </div>
-                  <div class="col-md-9 text-center color-divs">
-                    <div class="cold">COLD</div>
-                    <div class="met-num">{{data.COLD}}</div>
+                </div>
+                <div class="listDetails">
+                  <div class="listDetailsContent bord-cold">
+                    <div class="col-md-3 cold-header-color ">
+                      <img src="img/cold_icon.png" alt="" class="center-block img-pad"/>
+                    </div>
+                    <div class="col-md-5 text-center color-divs">
+                      <div class="cold-col">COLD</div>
+                      <div class="met-num">{{data.inactive}}</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -129,10 +129,10 @@
               <input type="checkbox" class="checkBox check-box-poss" ng-model="selectAllItems" ng-change="selectAll()">
             </label>
             <label class="share-transfer pull-left  hand-cursor" ng-show="selectAllItems" ng-click="openShare('share')" >
-              <span class="glyphicon glyphicon-share-alt" data-toggle="dropdown"></span>&nbsp;&nbsp;Share
+              <i class="fa fa-share suspect-shareicon" data-toggle="dropdown"></i>&nbsp;&nbsp;Share
             </label>
             <label class="  share-transfer pull-left hand-cursor" ng-show="selectAllItems" ng-click="openShare('tansfer')">
-              <span class="glyphicon glyphicon-arrow-up " data-toggle="dropdown"></span>&nbsp;&nbsp;Tranfer
+              <i class="fa fa-long-arrow-up suspect-arrowicon" data-toggle="dropdown"></i>&nbsp;&nbsp;Tranfer
 
             </label>
 

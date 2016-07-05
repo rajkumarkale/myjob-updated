@@ -1,6 +1,6 @@
 <div>
     <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
-        <button class="btn btn-primary edit-button" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"><i class="fa fa-pencil"></i> Edit</button>
+        <button class="btn btn-primary edit-button mrg-edit" data-ng-if="(createPossibility.current_status.status === 'NOT_MET'||createPossibility.current_status.status==='INACTIVE')" data-ng-click="editForm();"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
         <button ng-if="createPossibility.current_status.status === 'MET'" ui-sref="app.viewPossibility" class="btn btn-primary cancel-button "> Close</button>
     </div>
 
@@ -241,7 +241,7 @@
                             </accordion>
                         </div>
                         <div>
-                            <button type="button" class="btn btn-primary contacts-button " data-ng-click="getNewPointofContact()"><i class="fa fa-plus"></i> Contacts</button>
+                            <button type="button" class="btn btn-primary contacts-button mrg-contacts" data-ng-click="getNewPointofContact()"><i class="fa fa-plus"></i> Contacts</button>
                         </div>
                         <hr class="line-upload">
                         <h4 class="contact">Discussion</h4>
@@ -304,7 +304,7 @@
                   </button>
                 </span>
                                         </div>
-                                        <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
+                                        <span class="material-input control-label">Supported formats PDF, DOC, PPT.</span>
                                     </div>
                                 </div>
                             </div>

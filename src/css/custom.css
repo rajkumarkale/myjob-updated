@@ -348,16 +348,14 @@
 .mrg-apply{
   margin-top: -35px;
 }
-.table-topdiv{
-  overflow-x: scroll;
-}
 
 .edit-button{
-  background-color: #049ad9 !important;color: white !important;padding-left: 20px;
-  padding-right: 20px;
+  background-color: #049ad9 !important;color: white !important;padding-left: 17px;
+  padding-right: 19px;
   padding-top: 5px;
   padding-bottom: 5px;border-radius: 0px;
   text-transform: none;
+  font-size: 18px;
 }
 .cancel-button{
   background-color: #049ad9 !important;color: white !important;padding-left: 10px;
@@ -392,8 +390,8 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  top: -12px;
-  right: -12px;
+  top: -8px;
+  right: -7px;
   background: url(../img/icon_Delete_file.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -767,7 +765,7 @@
 .contact-person{
   font-weight: normal !important;
   font-size: 18px;
-  color: #000000 !important;
+  color:#9f9c9c !important;
 }
 .person-name{
 
@@ -2088,13 +2086,16 @@ color:#049ad9 !important;}
 }
 .met-met{
   color: #50C471;
+  font-weight: bold;
 }
 .met-notmet{
   color: #F46262;
   white-space: nowrap;
+  font-weight: bold;
 }
 .inactive-col{
   color: #B7B7B4;
+  font-weight: bold;
 }
 .bord-met{
   border-bottom: 3px solid #50C471;
@@ -2135,12 +2136,15 @@ color:#049ad9 !important;}
 }
 .met-hot{
   color: #50C472;
+  font-weight: bold;
 }
 .met-warm{
   color:#F26161;
+  font-weight: bold;
 }
 .cold-col{
   color: #B7B7B5;
+  font-weight: bold;
 }
 .bord-hot{
   border-bottom: 3px solid #50C472;
@@ -2174,6 +2178,7 @@ color:#049ad9 !important;}
   margin-top: 44px;
 }
 /*end create poss local address mrg*/
+/*forgot password modal*/
 .centerButton{margin-left: 38%}
 .forgot-cancel{ margin-right:44px;
 font-size: 16px;
@@ -2181,4 +2186,114 @@ color: #616574;}
 .forgot-ok{color: #03a9f4;
   margin-right: 28px;
   font-size: 15px}
+/*end forgot password modal*/
+/*dashboard icons text*/
+.met-target{
+  color: #5398F5;
+  font-weight: bold;
+}
+.met-prospect{
+  color: #9C5BBA;
+  font-weight: bold;
+}
+.empanel-col{
+  color:#50C471;
+  font-weight:bold;
+}
+/*dashboard icons text*/
+/*prospect icons */
+.won-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.lost-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.closure-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.progress-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.met-won{
+  color: #50C471;
+}
+.met-lost{
+  color: #F46F6F;
+}
+.met-closure{
+  color: #F09C43;
+}
+.met-progress{
+  color: #bababa;
+}
+.bord-won{
+  border-bottom: 3px solid #50C471;
+}
+.bord-lost{
+  border-bottom: 3px solid #F46F6F;
+}
+.bord-closure{
+  border-bottom: 3px solid #F09C43;
+}
+.bord-progress{
+  border-bottom: 3px solid #bababa;
+}
+/*end prospect icons*/
+/*edit poss update button*/
+.updateposs-button{background-color: #049ad9 !important;color: white !important;border-radius: 0px;}
+/*end edit poss update button*/
+/*prospect view*/
+.padd-remove{
+  padding: 0px;
+}
+/*end prospect view*/
+/*agreement on closure create prospect*/
+.select-prospect .select{
+  margin-top: 10px;
+  position: relative;
+  display: block;
+  min-width: 190px !important;
+  color: #555555;
+  vertical-align: middle;
+  text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  border-bottom: 1px solid #dfdfdf;
+}
+/*end agreement on closure create prospect*/
+/*panels topmrg in create prospect*/
+.panelmrgs-prospect{
+  margin-top: -20px;
+}
 
+/*end panels topmrg in create prospect*/
+/*edit in create poss*/
+.mrg-edit{
+  margin-right: 18px;
+}
+.pencilicon-mrg{
+  margin-right: 5px;
+}
+/*end edit in create poss*/
+/*contacts btn in create poss*/
+.mrg-contacts{
+  margin-left: 63px;
+}
+/*end contacts btn in create poss*/
+/*contacts btn in create suspect*/
+.mrgs-contact{
+  margin-left: 20px;
+}
+/*end contacts btn in create suspect*/
+/*all tables arrows col*/
+.ticks-col{
+  color: #747474;
+}
+/*end all tables arrows col*/

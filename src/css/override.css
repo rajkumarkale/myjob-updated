@@ -112,3 +112,16 @@
   border-radius: 0px !important;
   color: white !important;
 }
+.table-bod>tbody>tr>td:nth-child(1) {
+  color: #2277b1;
+}
+.first-contact{color: #03a9f4 ;}
+.second-contact{margin-right: 6%;}
+.data-SLA-save
+{
+  background-color: #FF9C00 !important;color: white !important;
+  width: 120px;
+  border-radius: 0px;
+  padding: 10px 24px;
+}
+.line1{border-top: 1px solid #8c8b8b;margin-top: 105px;}

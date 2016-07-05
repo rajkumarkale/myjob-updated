@@ -1,6 +1,4 @@
-<div class="text-right m-t-sm m-r-xs">
-    <button ui-sref="app.suspect-view" class="btn btn-primary contacts-button "> Cancel</button>
-</div>
+
 <div class="container col-md-12 pad-t-20" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
     <accordion class="plus possibility-head">
         <accordion-group is-open="status.open">
@@ -164,7 +162,7 @@
                     </accordion>
                 </div>
 
-              <div class="row">
+              <div class="row" ng-if="showRollOut">
                 <div class="col-md-6 form-custom-padding">
                   <h4 class="color-black">Roll out of a proposal</h4>
                   <div class="form-group is-empty is-fileinput">
@@ -186,12 +184,12 @@
             </div>
             <div data-cg-busy="{promise:submitPromise,message:'Updating'}"></div>
           <div class=" pull-left">
-            <a href="" class="btn btn-primary contacts-button" ng-click="createNewContactList()"> <i class="fa fa-plus"></i> Contacts</a>
+            <a href="" class="btn btn-primary contacts-button mrgs-contact" ng-click="createNewContactList()"> <i class="fa fa-plus"></i> Contacts</a>
           </div>
             <div class="col-md-6 col-md-offset-5">
                 <div class="form-group">
                     <a ui-sref="app.suspect-view">
-                        <button class="btn btn-primary data-button">Cancel</button>
+                        <button class="btn btn-primary data-button-cancel">Cancel</button>
                     </a>
                     <button class="btn btn-primary data-button" data-ng-click="submit(true)">Submit</button>
                 </div>

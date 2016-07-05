@@ -274,13 +274,13 @@
 <div class="container col-md-12 mrg-down">
   <div class="panel panel-default second-panel ">
     <div class="panel-heading">
-      Prospect
+      Business Opportunities
     </div>
     <div class="panel-body">
       <div class="form-group pull-right">
         <div class="col-md-8">
           <div class="form-group mrg-formgrp">
-            <input  custom-select data="status_prospect" class="form-control bord-remove" type="text" placeholder="Status">
+            <input  custom-select data="status_prospect" class="form-control bord-remove select-prospect" type="text" placeholder="Status">
             <div id="grad1-status"></div>
           </div>
         </div>
@@ -298,7 +298,7 @@
               <input class="form-control" type="text">
             </div>
             <div class="form-group label-floating is-empty">
-              <label class="control-label">Quantum of Business Bottomline</label>
+              <label class="control-label">Annual Business Bottomline</label>
               <input class="form-control" type="text">
             </div>
             <div class="form-group">
@@ -311,63 +311,52 @@
               <input class="form-control" type="text">
             </div>
             <div class="form-group label-floating is-empty">
-              <label class="control-label">Quantum of Business Topline</label>
+              <label class="control-label">Annual Business Topline</label>
               <input class="form-control" type="text">
             </div>
             <div class="form-group label-floating is-empty">
               <label class="control-label">Expected Date of Closure</label>
               <input class="form-control" type="text">
             </div>
-
+            <div class="form-group label-floating is-empty">
+              <label class="control-label">Reason of Loss</label>
+              <input class="form-control" type="text">
+            </div>
           </div>
         </div>
 
 
       </div>
 
-      <div class="col-md-6 col-md-offset-5">
-        <div class="form-group">
-          <a ui-sref="app.viewProspect">
-          <button class="btn btn-primary data-button" >Cancel</button>
-          </a>
-          <button class="btn btn-primary data-button">Submit</button>
-        </div>
-      </div>
     </div>
   </div>
-  <div class="panel panel-default second-panel up-margin"  ng-if="displayagreement">
+  <div class="panel panel-default second-panel panelmrgs-prospect"  ng-if="displayagreement">
    <div class="panel-heading">
      {{title}}
    </div>
     <div class="panel-body">
       <div>
-        <div class="pull-right">
-          <form id="form" name="form" class="form-inline" novalidate>
-            <label for="startDate" class="labels-dates poss-mrg">From</label>
-            <div class="input-group">
-              <a ng-click="open($event,'opened1')">
-                <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                       datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
-                       datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
-            <span class="input-group-btn" id="basic-addon1">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-              </a>
-            </div>
-            <label for="endDate" class="labels-dates poss-mrg ">To</label>
-            <div class="input-group">
-              <a ng-click="open($event,'opened2')">
-                <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                       datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
-                       datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
-            <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-              </a>
-            </div>
-            <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
-          </form>
+        <div class="row">
+          <div class="pull-right overall-pad date-pick-right-mrg">
+            <form  name="form" class="form-inline" novalidate>
+              <div class="present">
+                <input type="text" class="form-control bord-given" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1"
+                       show-button-bar="false" ng-required="true">
+                <div class="calendar-reset"><img src="img/calendar_icon.png" ng-click="open($event,'opened1')" alt=""/></div>
+              </div>
+              <div class="second-dateinput present">
+                <label  class="labels-dates poss-mrg">To</label>
+                <input type="text" class="form-control bord-given" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2"
+                       show-button-bar="false" ng-required="true">
+                <div class="secondcalendar-reset"><img src="img/calendar_icon.png" ng-click="open($event,'opened2')" alt=""/></div>
+              </div>
+
+              <button class="btn btn-primary btn-raised filter mrg-top refactor">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
-      <div class="panel panel-default second-panel up-marginagr">
+      <div class="panel panel-default second-panel ">
         <div class="panel-heading">
           Summary in the month of Jan 2016 to May 2016
         </div>
@@ -491,7 +480,7 @@
       </div>
     </div>
   </div>
-  <div class="panel panel-default second-panel up-margin" ng-if="Requirement" >
+  <div class="panel panel-default second-panel panelmrgs-prospect" ng-if="Requirement" >
 
     <div class="panel-heading">
       {{titlereq}}
@@ -544,7 +533,7 @@
       <div class="col-md-6 col-md-offset-5">
         <div class="form-group">
           <a >
-            <button class="btn btn-primary data-button" ng-click="requirement('close')">Cancel</button>
+            <button class="btn btn-primary data-button-cancel" ng-click="requirement('close')">Cancel</button>
           </a>
           <button class="btn btn-primary data-button">Submit</button>
         </div>

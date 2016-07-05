@@ -5,33 +5,67 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
   function ($scope, AuthService,$state) {
     'use strict';
     $scope.chartSeries = [
-
-      {"name": "Target", "data": [5, 4, 3.5, 3, 4,5,4.5,9,5,9,5,3],color:'#81479D',connectNulls: true},
-      {"name": "Prospect", "data":[3, 2, 2, 3, 5,5,9,2,3,4,6,7], color:'#5398F6',connectNulls: true},
-      {"name": "Empanelment", "data": [2, 4, 3, 8, 5,6,7,6.5,8,8.5,9,8],color:'#50C471',connectNulls: true}
+      {"name": "Target", "data":[1, 2, 4, 3, 3.5,6.5,4.5,4.5,5,7,8,7], fillOpacity: 0.5, color:'#5398F6',align: 'left',connectNulls: true,
+        lineWidth: 0,
+        marker: {
+          lineWidth:0,
+          radius: 0
+        }},
+      {"name": "Prospect", "data": [4,4.5, 3, 2.8, 7, 6.5,5,6,5,4,2,1],fillOpacity: 0.5,color:'#81479D',align: 'left',connectNulls: true,
+        lineWidth: 0,
+        marker: {
+          lineWidth:0,
+          radius: 0
+        }},
+      {"name": "Empanelment", "data": [1, 2, 3, 3.5, 4,5,6,7.5,8,3.5,4,5],fillOpacity: 0.5,color:'#50C471',align: 'left',connectNulls: true,
+        lineWidth: 0,
+        marker: {
+          lineWidth:2,
+          radius: 0
+        }}
     ];
     $scope.chartConfig = {
       options: {
         chart: {
-          type: 'areaspline'
-        }, xAxis: {
+          type: 'areaspline',
+          height:500,
+          zoomType: 'x',
+          panning: true,
+          panKey: 'shift'
+        },
+        xAxis: {
+          crosshair: {width:1,color:'black',dashStyle: 'dash',zIndex:5},
           categories:  ['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March']
+        },
+        yAxis:{
+          gridLineColor: 'white',
+          lineColor: 'lightgray',
+          lineWidth: 1,
+          tickColor: 'lightgray',
+          tickWidth: 1,
+          offset: -10,
+          tickInterval: 1,
+          title: {
+            text: ''
+          }
         },
         plotOptions: {
           series: {
-            stacking: ''
-          },
-          area: {
+            stacking: '',
             marker: {
-              radius: 0
-            },
-            lineWidth:10,
-            states: {
-              hover: {
-                lineWidth:2
+              fillColor: 'black',
+              states: {
+                hover: {
+                  radiusPlus: 1,
+                  lineWidthPlus: 2
+                }
               }
             },
-            threshold: null
+            states: {
+              hover: {
+                lineWidthPlus: 2
+              }
+            }
           }
         }
       },

@@ -9,5 +9,5 @@ angular.module('com.module.suspect')
     $scope.cancel=function () {
       $modalInstance.dismiss();
     }
-    
+
   });

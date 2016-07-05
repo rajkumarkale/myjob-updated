@@ -14,7 +14,7 @@
                     </div>
                     <div class="col-md-5 text-center color-divs">
                       <div class="met-hot">HOT</div>
-                      <div class="met-num">{{data.met}}</div>
+                      <div class="met-num">{{data.HOT}}</div>
                     </div>
                   </div>
                 </div>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-md-5 text-center color-divs">
                       <div class="met-warm">WARM</div>
-                      <div class="met-num">{{data.notMet}}</div>
+                      <div class="met-num">{{data.WARM}}</div>
                     </div>
                   </div>
                 </div>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-md-5 text-center color-divs">
                       <div class="cold-col">COLD</div>
-                      <div class="met-num">{{data.inactive}}</div>
+                      <div class="met-num">{{data.COLD}}</div>
                     </div>
                   </div>
                 </div>
@@ -128,12 +128,11 @@
             <label class=" dropdown check-share-transfer pull-left ">
               <input type="checkbox" class="checkBox check-box-poss" ng-model="selectAllItems" ng-change="selectAll()">
             </label>
-            <label class="share-transfer pull-left  hand-cursor" ng-show="selectAllItems" ng-click="openShare('share')" >
+            <label class="share-transfer pull-left  hand-cursor" ng-show="isShow" ng-click="openShare('share')" >
               <i class="fa fa-share suspect-shareicon" data-toggle="dropdown"></i>&nbsp;&nbsp;Share
             </label>
-            <label class="  share-transfer pull-left hand-cursor" ng-show="selectAllItems" ng-click="openShare('tansfer')">
+    <label class="  share-transfer pull-left hand-cursor" ng-show="isShow" ng-click="openShare('tansfer')">
               <i class="fa fa-long-arrow-up suspect-arrowicon" data-toggle="dropdown"></i>&nbsp;&nbsp;Transfer
-
             </label>
 
           </div>
@@ -184,7 +183,7 @@
           <p class="btn-raised warm-status m-n btn-sm" ng-class="statusColor(suspect.status)">{{suspect.status}}</p>
         </td>
         <td>
-          <button class="btn btn-raised  btn-info m-n btn-sm">Discussion</button>
+          <button class="btn btn-raised  btn-info m-n btn-sm" data-ng-click="openDiscussions(suspect)">Discussion</button>
         </td>
       </tr>
          <tr  data-ng-if="filteredRows.length ===0">

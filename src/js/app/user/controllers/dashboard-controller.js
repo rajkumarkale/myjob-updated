@@ -51,6 +51,17 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
         },
         plotOptions: {
           series: {
+            events: {
+              legendItemClick: function () {
+
+                var visibility = this.visible ? 'visible' : 'hidden';
+
+                if (!confirm('The series Data is currently' +
+                    visibility + '. Do you want to change that?')) {
+                  return false;
+                }
+              }
+            },
             stacking: '',
             marker: {
               fillColor: 'black',

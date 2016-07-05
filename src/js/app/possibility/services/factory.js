@@ -21,6 +21,12 @@ angular.module('com.module.possibility').factory('possibilityCreateService', fun
       data:data
     });
   };
+  var getPossibilityByRange = function (currentPage,numPerPage,start,end) {
+    return $http({
+      method: 'GET',
+      url: BASEURI + '/api/possibility?page='+currentPage+'&count='+numPerPage+'&start='+start+'&end='+end
+    });
+  };
   var getPossibility = function (currentPage,numPerPage,start,end) {
     return $http({
       method: 'GET',
@@ -68,6 +74,7 @@ var possibilityDetails = function (id) {
     deleteDocument:deleteDocument,
     createClient:createClient,
      getDiscussions:getDiscussions,
-      createDiscussion:createDiscussion
+      createDiscussion:createDiscussion,
+      getPossibilityByRange:getPossibilityByRange
   };
 });

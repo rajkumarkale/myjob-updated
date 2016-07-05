@@ -124,4 +124,13 @@
   border-radius: 0px;
   padding: 10px 24px;
 }
+/* start of comments for SLA Tracker UI */
 .line1{border-top: 1px solid #8c8b8b;margin-top: 105px;}
+.mrg-reset{margin-top: 26px}
+.mrg-reset-head{margin: 0px;
+  font-weight:bold;}
+.BGV-text{padding: 4px 45px;}
+.insurence-text{    margin-top: -17px;
+  margin-left: 10px}
+.in-pad{padding-top: 14px;}
+/* end of comments for SLA Tracker UI */

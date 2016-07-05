@@ -54,6 +54,8 @@ angular.module('com.module.possibility')
 		    row: '',
 		    currentPage: 1
 		};
+    $scope.startDate=0;
+    $scope.endDate=0;
 
 		$scope.getPossibilities = function(currentPage,numPerPage){
 		$scope.myPromise = possibilityCreateService.getPossibility(currentPage,numPerPage).then(function(response){

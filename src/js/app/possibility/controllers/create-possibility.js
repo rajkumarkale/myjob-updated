@@ -1,5 +1,5 @@
 angular.module('com.module.possibility')
-    .controller('createPossibilityController', ['$scope', 'toaster', '$state','$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies','$q','CoreService' , function($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies,$q,CoreService) {
+    .controller('createPossibilityController', ['$scope', 'toaster', '$state','$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies','$q','CoreService','$filter','$timeout' , function($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies,$q,CoreService,$filter,$timeout) {
         $scope.init = function($stateParams) {
 
             $scope.isEditable = false;
@@ -52,8 +52,16 @@ angular.module('com.module.possibility')
 
                 $scope.title = "New Possibility";
                 $scope.createPossibility = {};
+                $scope.createPossibility.discussion={};
+                $scope.discussion={};
+                 $scope.status.selectedItem={"key":"NOT_MET","displayText":"NOT MET"};
                 $scope.point_of_contacts =[{name:"",designation:"",remote:"",local:"",phone:"",support_location:"",email_id:"",contact_type:"PRIMARY",isOpen:true,department:""}];
-
+                $timeout(function(){
+                   
+                   $('#stat .select ul').remove();
+                        $('#stat .select .placeholder').addClass('default-cursor'); 
+                },1000);
+                
             }
         };
         $scope.init($stateParams);
@@ -197,6 +205,15 @@ angular.module('com.module.possibility')
             }
                 requestObject.discussion.mode=$scope.typeOfDiscussion.selectedItem.key;
                 requestObject.discussion.discussed_by=JSON.parse($cookies.userData).userDetails._id;
+                requestObject.discussion.contact_person=$scope.discussion.name;
+                var time=$filter('date')($scope.discussion.time, 'HH:mm:ss'); 
+                var date=$filter('date')($scope.discussion.date, 'dd/MM/yyyy');
+                var dtstring=date+' '+time;
+                var timestamp= Math.round(new Date(dtstring).getTime()/1000);        
+                requestObject.discussion.time_of_discussion=timestamp;
+                requestObject.discussion.venue=$scope.discussion.venue;
+                requestObject.discussion.text=$scope.discussion.text;
+                
             $scope.point_of_contacts.map(function(pocObj){
             	var requestPocObject ={};
             	requestPocObject.name = pocObj.name;
@@ -218,7 +235,7 @@ angular.module('com.module.possibility')
             requestObject.point_of_contacts.push(requestPocObject);
 
             });
-
+console.log(requestObject);
             var possibilityCreatePromise=possibilityCreateService.setPossibility(requestObject).success(function() {
 
                 $state.go('app.viewPossibility');

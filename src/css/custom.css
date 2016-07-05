@@ -664,7 +664,7 @@
   color:white !important;;
 }
 .won-status-text{
-  background-color: green;
+  background-color: #50c471;
   text-align: center;
   padding: 3px 10px;
   font-size: 14px;
@@ -1164,7 +1164,7 @@
   background-color: white;
   color: #2277b1;
 }
-.table-bod>tbody>tr>td:nth-child(2) {
+.table-bod>tbody>tr>td:nth-child(1) {
   color: #2277b1;
 }
 .main-panel>.panel-heading{

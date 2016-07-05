@@ -6,12 +6,10 @@
   background-size: cover;
 }
 .sign-button:hover{
-  background-color:#00ADEF  !important;
+  background-color:#23b7e5 !important;
 }
 .sign-button{
-  background-color:#00ADEF  !important;
-  width: 257px;
-  margin-left: 27px;
+  background-color:#23b7e5 !important;
 }
 .hand-cursor{
   cursor: pointer;
@@ -98,6 +96,16 @@
    content: url('../img/left_nav_home_icon.png');
 }*/
 /*Dashboard*/
+.target-header-color{
+  background-color: #5499f6;
+  padding: 10px;
+}
+.prospect-header-color{
+  background-color: #7f439b;
+}
+.empanelment-header-color {
+  background-color: #6dc7be;
+}
 .notification-icon{
   color:white;
   font-size:18px;
@@ -107,6 +115,22 @@
   margin-top: 10px;;
   width: 20px;
   height: 20px;
+}
+.met-target{
+  color:#5398F6;
+  font-weight: bold;
+}
+.met-prospect{
+  color:#81479D;
+  font-weight: bold;
+}
+.metprospect-num{
+  color:#81479D;
+  font-weight: bold;
+}
+.empanel-col{
+  color: #50C471;
+  font-weight: bold;
 }
 /*end of dashboard*/
 
@@ -282,7 +306,7 @@
   padding-right: 24px;
   padding-top: 10px;
   padding-bottom: 10px;}
-.line1{border-top: 1px solid #8c8b8b;margin-top: 105px;}
+.line1{border-top: 1px solid #8c8b8b;margin-top: 75px;}
 
 .label-col{color: #DEDEDE !important;}
 .form-control:focus{box-shadow: none;}
@@ -624,9 +648,11 @@
 }
 .warm-status {
   background-color: #e68405 !important;;
-  text-align: center !important;
+  text-align: center;
+  padding: 5px;
   width: 100% !important;
-  color: white !important;
+  color: white;
+  border-radius: 7px;
 }
 .cold-status{
   background-color:#87d7f8 !important; ;
@@ -636,7 +662,7 @@
   color:white !important;;
 }
 .won-status-text{
-  background-color: green;
+  background-color: #50c471;
   text-align: center;
   padding: 3px 10px;
   font-size: 14px;
@@ -1026,15 +1052,12 @@
 /*Dashboard*/
 .target-header-color{
   background-color: white;
-  padding: 10px;
 }
 .prospect-header-color{
   background-color: #7f439b;
-  padding: 10px;
 }
 .empanelment-header-color {
   background-color: #6dc7be;
-  padding: 10px;
 }
 .notification-icon{
   color:white;
@@ -1139,7 +1162,7 @@
   background-color: white;
   color: #2277b1;
 }
-.table-bod>tbody>tr>td:nth-child(2) {
+.table-bod>tbody>tr>td:nth-child(1) {
   color: #2277b1;
 }
 .main-panel>.panel-heading{
@@ -1423,6 +1446,13 @@
   color:white !important;;
 }
 
+.warm-status{
+  background-color:#e68405 !important; ;
+  text-align: center;
+  padding: 5px;
+  width: 80px;
+  color:white !important;;
+}
 .warm-status-pos{
   background-color:#e68405 !important; ;
   color:white !important;;
@@ -1750,7 +1780,7 @@
 .app-container-blur {
   position: relative;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 
@@ -1867,22 +1897,22 @@
 /*end views table margin*/
 
 .status-met{
-    background-color: #50C471 !important;
+    background-color: #e68405 !important;
 }
 .status-notmet{
-    background-color: #F46262 !important;
+    background-color: #8C8866 !important;
 }
 .status-inactive{
-    background-color: #B7B7B4 !important;
+    background-color: #A8A8A7 !important;
 }
 .status-cold{
-    background-color: #B7B7B5 !important;
+    background-color: #A8A8A7 !important;
 }
 .status-warm{
-    background-color: #F26161 !important;
+    background-color: #E48204 !important;
 }
 .status-hot{
-    background-color: #50C472 !important;
+    background-color: #e60505 !important;
 }
 .status-lost{
     background-color: #a948b8 !important;
@@ -2085,11 +2115,11 @@ color:#049ad9 !important;}
   padding: 10px;
 }
 .met-met{
-  color: #50C471;
   font-weight: bold;
+  color: #00A000;
 }
 .met-notmet{
-  color: #F46262;
+  color: #F46463;
   white-space: nowrap;
   font-weight: bold;
 }
@@ -2098,13 +2128,13 @@ color:#049ad9 !important;}
   font-weight: bold;
 }
 .bord-met{
-  border-bottom: 3px solid #50C471;
+  border-bottom: 3px solid #00A000;
 }
 .bord-notmet{
-  border-bottom: 3px solid #F46262;
+  border-bottom: 3px solid #F46463;
 }
 .bord-inactive{
-  border-bottom: 3px solid #B7B7B4;
+  border-bottom: 3px solid #B7B7B5;
 }
 /*end list poss icons*/
 .present .ng-invalid-parse{
@@ -2297,3 +2327,5 @@ color: #616574;}
   color: #747474;
 }
 /*end all tables arrows col*/
+.mrg-top {margin-top: -19px;  }
+

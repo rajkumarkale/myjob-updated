@@ -100,6 +100,7 @@
 }
 .date-pick-right-mrg{
   margin-right: -35px;
+  margin-bottom: 10px;
 }
 @media (min-width: 768px) {
     .modal-sm {
@@ -114,3 +115,25 @@
   background-color: #049ad9 !important;
 }
 
+.table-bod>tbody>tr>td:nth-child(1) {
+  color: #2277b1;
+}
+.first-contact{color: #03a9f4 ;}
+.second-contact{margin-right: 6%;}
+.data-SLA-save
+{
+  background-color: #FF9C00 !important;color: white !important;
+  width: 120px;
+  border-radius: 0px;
+  padding: 10px 24px;
+}
+/* start of comments for SLA Tracker UI */
+.line1{border-top: 1px solid #8c8b8b;margin-top: 105px;}
+.mrg-reset{margin-top: 26px}
+.mrg-reset-head{margin: 0px;
+  font-weight:bold;}
+.BGV-text{padding: 4px 45px;}
+.insurence-text{    margin-top: -17px;
+  margin-left: 10px}
+.in-pad{padding-top: 14px;}
+/* end of comments for SLA Tracker UI */

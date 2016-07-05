@@ -2,8 +2,11 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.empanelment')
-  .controller('viewEmpanelmentCtrl',['$scope',function($scope){
-
+  .controller('viewEmpanelmentCtrl',['$scope','discussionService','$state',function($scope,discussionService,$state){
+      $scope.openDiscussions = function(possibility){
+                discussionService.setData(possibility);
+				$state.go('app.viewDiscussions');
+		};
     $scope.open = function($event,opened) {
       $event.preventDefault();
       $event.stopPropagation();

@@ -1,5 +1,5 @@
 angular.module('com.module.suspect')
-.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal){
+.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal','discussionService',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal,discussionService){
     $scope.selectedItem = [];
     $scope.filteredRows=[];
 	$scope.data = {
@@ -68,6 +68,10 @@ angular.module('com.module.suspect')
 		$scope.openEditSuspect = function(suspect){
 			$state.go('app.create-suspect-view',{suspect:suspect});
 
+		};
+    $scope.openDiscussions = function(suspect){
+                discussionService.setData(suspect);
+				$state.go('app.viewDiscussions');
 		};
 $scope.statusColor=function(status){
     switch (status) {

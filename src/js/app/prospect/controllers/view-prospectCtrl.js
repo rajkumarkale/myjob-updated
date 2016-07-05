@@ -3,7 +3,7 @@
  */
 angular.module('com.module.prospect')
 
-.controller('viewProspectCtrl',['$scope','prospectService','CoreService','$modal',function($scope,prospectService,CoreService,$modal){
+.controller('viewProspectCtrl',['$scope','prospectService','CoreService','$modal','discussionService','$state',function($scope,prospectService,CoreService,$modal,discussionService,$state){
 
           $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
@@ -81,13 +81,13 @@ angular.module('com.module.prospect')
         return 'status-AOC';
             break;
     case "WORK_IN_PROGRESS":
-        return 'status-WIP';
+        return 'status-inactive';
             break;
     case "LOST":
-        return 'status-lost';
+        return 'status-notmet';
             break;
     case "WON":
-        return 'status-won';
+        return 'status-met';
             break;
         default:
     }
@@ -102,6 +102,10 @@ angular.module('com.module.prospect')
     $scope.data.PROGRESS=response.data.WORK_IN_PROGRESS;
     /*$scope.data.estimated_closure = response.data.estimated_closure;*/
   });
+    $scope.openDiscussions = function(prospect){
+                discussionService.setData(prospect);
+				$state.go('app.viewDiscussions');
+		};
   $scope.openShare = function (tpl) {
     var tpl=tpl;
     var modalInstance = $modal.open({

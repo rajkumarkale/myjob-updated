@@ -183,7 +183,7 @@
           <p class="btn-raised warm-status m-n btn-sm" ng-class="statusColor(suspect.status)">{{suspect.status}}</p>
         </td>
         <td>
-          <button class="btn btn-raised  btn-info m-n btn-sm">Discussion</button>
+          <button class="btn btn-raised  btn-info m-n btn-sm" data-ng-click="openDiscussions(suspect)">Discussion</button>
         </td>
       </tr>
          <tr  data-ng-if="filteredRows.length ===0">

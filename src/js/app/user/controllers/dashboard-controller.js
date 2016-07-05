@@ -6,9 +6,24 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
     'use strict';
     $scope.chartSeries = [
 
-      {"name": "Target", "data": [5, 4, 3.5, 3, 4,5,4.5,9,5,9,5,3],color:'#81479D',connectNulls: true},
-      {"name": "Prospect", "data":[3, 2, 2, 3, 5,5,9,2,3,4,6,7], color:'#5398F6',connectNulls: true},
-      {"name": "Empanelment", "data": [2, 4, 3, 8, 5,6,7,6.5,8,8.5,9,8],color:'#50C471',connectNulls: true}
+      {"name": "Target", "data": [4.9, 5, 4.5, 3, 4,5,4.5,9,5,9,5,3],color:'#81479D',connectNulls: true,
+        lineWidth: 2,
+        marker: {
+          lineWidth:2,
+          radius: 0
+        }},
+      {"name": "Prospect", "data":[3, 2, 2, 3, 5,5,9,2,3,4,6,7], color:'#5398F6',connectNulls: true,
+        lineWidth: 2,
+        marker: {
+          lineWidth:2,
+          radius: 0
+        }},
+      {"name": "Empanelment", "data": [2, 4, 3, 8, 5,6,7,6.5,8,8.5,9,8],color:'#50C471',connectNulls: true,
+        lineWidth: 2,
+        marker: {
+          lineWidth:2,
+          radius: 0
+        }}
     ];
     $scope.chartConfig = {
       options: {
@@ -19,19 +34,20 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
         },
         plotOptions: {
           series: {
-            stacking: ''
-          },
-          area: {
+            stacking: '',
             marker: {
-              radius: 0
-            },
-            lineWidth:10,
-            states: {
-              hover: {
-                lineWidth:2
+              states: {
+                hover: {
+                  radiusPlus: 1,
+                  lineWidthPlus: 1
+                }
               }
             },
-            threshold: null
+            states: {
+              hover: {
+                lineWidthPlus: 2
+              }
+            }
           }
         }
       },

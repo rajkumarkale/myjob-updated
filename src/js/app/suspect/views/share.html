@@ -1,0 +1,36 @@
+<div class="mdl-center">
+<div class="addDiscusHeading modal-header ">
+  <h4 class="modal-title "> Share Suspect</h4></div>
+  <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="form-group label-floating is-empty col-pad">
+          <label for="i7" class="control-label">Name</label>
+          <input type="text" class="form-control" id="i7" ng-model="share" required>
+        </div>
+          <div class="form-group">
+            <div class="radio radio-primary">
+              <label class="color-black">Privileges:</label>
+              <label class="color-black">
+                <input type="radio" name="privilege" id="optionsRadios1" value="edit" ng-checked="true" ng-model="edit">
+                <span class="circle" ></span>
+                <span class="check" ></span>
+                Edit
+              </label>
+              <label class="color-black">
+                <input type="radio" value="view" name="privilege" ng-model="discussion.calltype">
+                <span class="circle"></span>
+                <span class="check"></span>
+                View
+              </label>
+            </div>
+          </div>
+          <div class="share-prospect">
+            <button class="share-button btn btn-default btn-raised " ng-click="cancel()">Cancel</button>
+            <button class="btn btn-primary btn-raised share-button">Share</button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>

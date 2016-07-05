@@ -30,49 +30,49 @@
     <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Loading prospects'}">
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary for the month of April 2016</div>
-        <div class="panel-body pan-col">
-          <div class=" ">
-            <div class=" ">
-              <div class="listDetails detailsContentDiv-prosp">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 lost-status-text">
-                    <img src="img/icon_lost.png" alt="" class="center-block img-pad">
+        <div class="panel-body" style="margin-left:-94px;">
+          <div class="detailsContent">
+            <div class="detailsContentDiv">
+              <div class="listDetails">
+                <div class="listDetailsContent bord-met">
+                  <div class="col-md-3 met-header-color">
+                    <img src="img/won_icon.png" alt="" class="center-block img-pad"/>
                   </div>
-                  <div class="col-md-9 text-center color-divs">
-                    <div class="lost-status-text-color">LOST</div>
-                    <div class="met-num">{{data.LOST}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="listDetails detailsContentDiv-prosp">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 won-img-class">
-                    <img src="img/icon_won.png" alt="" class="center-block img-pad">
-                  </div>
-                  <div class="col-md-9 text-center color-divs">
-                    <div class="won-status-text-color">WON</div>
+                  <div class="col-md-5 text-center color-divs">
+                    <div class="met-met">WON</div>
                     <div class="met-num">{{data.WON}}</div>
                   </div>
                 </div>
               </div>
-              <div class="listDetails detailsContentDiv-prosp">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 agr-img-class">
-                    <img src="img/icon_agreement on closure.png" alt="" class="center-block img-pad">
+              <div class="listDetails">
+                <div class="listDetailsContent bord-notmet">
+                  <div class="col-md-3 met-header-color">
+                    <img src="img/lost_icon.png" alt="" class="center-block img-pad"/>
                   </div>
-                  <div class="col-md-9 text-center color-divs">
-                    <div class="agr-status-text-color">AGREEMENT ON CLOSURE</div>
-                    <div class="met-num">{{data.PROGRESS}}</div>
+                  <div class="col-md-5 text-center color-divs">
+                    <div class="met-met">LOST</div>
+                    <div class="met-num">{{data.LOST}}</div>
                   </div>
                 </div>
               </div>
-              <div class="listDetails detailsContentDiv-prosp">
-                <div class="listDetailsContent">
-                  <div class="col-md-3 work-img-class">
-                    <img src="img/icon_warm.png" alt="" class="center-block img-pad">
+              <div class="listDetails">
+                <div class="listDetailsContent bord-met">
+                  <div class="col-md-3 met-header-color">
+                    <img src="img/closure_icon.png" alt="" class="center-block img-pad"/>
                   </div>
-                  <div class="col-md-9 text-center color-divs">
-                    <div class="work-status-text-color">WORK IN PROGRESS</div>
+                  <div class="col-md-5 text-center color-divs">
+                    <div class="met-met">AGREEMENT ON CLOSURE</div>
+                    <div class="met-num">5</div>
+                  </div>
+                </div>
+              </div>
+              <div class="listDetails">
+                <div class="listDetailsContent bord-inactive">
+                  <div class="col-md-3 met-header-color">
+                    <img src="img/work_in_progress_icon.png" alt="" class="center-block img-pad"/>
+                  </div>
+                  <div class="col-md-5 text-center color-divs">
+                    <div class="met-met">WORK IN PORGRESS</div>
                     <div class="met-num">{{data.PROGRESS}}</div>
                   </div>
                 </div>
@@ -111,11 +111,12 @@
             <label class=" dropdown check-share-transfer pull-left ">
               <input type="checkbox" class="checkBox check-box-poss" ng-model="selectAllItems" ng-change="selectAll()">
             </label>
-            <label class="share-transfer pull-left  hand-cursor" ng-show="selectAllItems" ng-click="openShare('share')">
+            <label class="share-transfer pull-left  hand-cursor" ng-show="isShow" ng-click="openShare('share')">
               <span class="glyphicon glyphicon-share-alt" data-toggle="dropdown" ></span>&nbsp;&nbsp;Share
             </label>
-            <label class="  share-transfer pull-left hand-cursor" ng-show="selectAllItems" ng-click="openShare('tansfer')">
-              <span class="glyphicon glyphicon-arrow-up " data-toggle="dropdown"></span>&nbsp;&nbsp;Tranfer
+
+            <label class="  share-transfer pull-left hand-cursor" ng-show="isShow" ng-click="openShare('tansfer')">
+              <span class="glyphicon glyphicon-arrow-up " data-toggle="dropdown"></span>&nbsp;&nbsp;Transfer
             </label>
 
           </div>
@@ -176,7 +177,7 @@
             <p class="btn-raised warm-status m-n btn-sm" ng-class="statusColor(prospect.status)">{{prospect.status | spaceless | spaceless}}</p>
           </td>
           <td>
-            <button class="btn btn-raised  btn-info m-n btn-sm" ui-sref="app.viewDiscussions">Discussion</button>
+            <button class="btn btn-raised  btn-info m-n btn-sm" data-ng-click="openDiscussions(prospect)">Discussion</button>
           </td>
         </tr>
         <tr  data-ng-if="filteredRows.length ===0">

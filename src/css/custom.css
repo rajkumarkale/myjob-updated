@@ -1925,9 +1925,6 @@
 .status-AOC{
     background-color: #8c8c8c !important;
 }
-.status-WIP{
-    background-color: #af539b !important;
-}
 
 /*create prospect agreement*/
 .up-marginagr{
@@ -2142,6 +2139,72 @@ color:#049ad9 !important;}
 .present .ng-invalid-parse{
     border-color: red !important;
 }
+/*suspect view list icons*/
+.suspect-shareicon{
+  color: #7A7A7A;
+}
+.suspect-arrowicon{
+  color: #7A7A7A;
+}
+.share-transfer{
+  color: #7A7A7A;
+}
+/*end suspect view list icons*/
+/*icons top view suspect*/
+.hot-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.warm-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.cold-header-color{
+  background-color: white;
+  padding: 10px;
+}
+.met-hot{
+  color: #50C472;
+}
+.met-warm{
+  color:#F26161;
+}
+.cold-col{
+  color: #B7B7B5;
+}
+.bord-hot{
+  border-bottom: 3px solid #50C472;
+}
+.bord-warm{
+  border-bottom: 3px solid #F26161;
+}
+.bord-cold{
+  border-bottom: 3px solid #B7B7B5;
+}
+/*end icons top view suspect*/
+/*create suspect status dropdown*/
+.select-suspect .select{
+  margin-top: 10px;
+  position: relative;
+  display: block;
+  min-width: 167px !important;
+  color: #555555;
+  vertical-align: middle;
+  text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  border-bottom: 1px solid #dfdfdf;
+}
+/*end create suspect status dropdown*/
+/*create poss local address mrg*/
+.localadd-mrg{
+  margin-top: 44px;
+}
+/*end create poss local address mrg*/
+
 .centerButton{margin-left: 38%}
 .forgot-cancel{ margin-right:44px;
 font-size: 16px;

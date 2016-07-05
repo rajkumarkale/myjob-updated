@@ -1,5 +1,5 @@
 angular.module('com.module.suspect')
-.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal){
+.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal','discussionService',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal,discussionService){
     $scope.selectedItem = [];
     $scope.filteredRows=[];
 	$scope.data = {
@@ -28,15 +28,27 @@ angular.module('com.module.suspect')
 	            for (var i = 0; i < $scope.filteredRows.length; i++) {
 	                $scope.filteredRows[i].isChecked = $scope.selectAllItems;
 	            }
+        $scope.select();
 	        };
     $scope.selectEntity = function () {
+        $scope.select();
 	            for (var i = 0; i < $scope.filteredRows.length; i++) {
-	                if ($scope.filteredRows[i].isChecked) {
-	                    $scope.selectAllItems = true;
+	                if (!$scope.filteredRows[i].isChecked) {
+	                    $scope.selectAllItems = false;
 	                    return;
 	                }
 	            }
-	            $scope.selectAllItems = false;
+	            $scope.selectAllItems = true;
+	        };
+    $scope.select= function () {
+	            for (var i = 0; i < $scope.filteredRows.length; i++) {
+	                if ($scope.filteredRows[i].isChecked) {
+                        $scope.isShow= true;
+	                    return;dateOptions
+	                }
+                    $scope.isShow= false;
+	            }
+
 	        };
       $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
@@ -56,6 +68,10 @@ angular.module('com.module.suspect')
 		$scope.openEditSuspect = function(suspect){
 			$state.go('app.create-suspect-view',{suspect:suspect});
 
+		};
+    $scope.openDiscussions = function(suspect){
+                discussionService.setData(suspect);
+				$state.go('app.viewDiscussions');
 		};
 $scope.statusColor=function(status){
     switch (status) {
@@ -90,7 +106,7 @@ $scope.statusColor=function(status){
     var modalInstance = $modal.open({
       templateUrl: function () {
 
-        return 'js/app/prospect/views/'+tpl+'.html'
+        return 'js/app/suspect/views/'+tpl+'.html'
 
       },
       backdrop: 'static',

@@ -1,5 +1,5 @@
 angular.module('com.module.possibility')
-.controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies','discussionService','CoreService',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies,discussionService,CoreService){
+.controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies','discussionService','CoreService','$filter',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies,discussionService,CoreService,$filter){
     $scope.selectedItem = [];
 
     $scope.filteredRows=[];
@@ -54,7 +54,7 @@ angular.module('com.module.possibility')
 		    row: '',
 		    currentPage: 1
 		};
-
+    
 		$scope.getPossibilities = function(currentPage,numPerPage){
 		$scope.myPromise = possibilityCreateService.getPossibility(currentPage,numPerPage).then(function(response){
             /*CoreService.toastSuccess('', 'POSSIBILITY Retrieved Successfully.');*/
@@ -66,6 +66,21 @@ angular.module('com.module.possibility')
 			$scope.data.inactive=response.data.inactive;
 		});
 		};
+    $scope.getPossibilityByRange=function(currentPage,numPerPage){
+        console.log($scope.start);
+        console.log($scope.end);
+        var date1=Math.round(new Date($filter('date')($scope.start, 'dd/MM/yyyy')).getTime()/1000);             
+        var date2=Math.round(new Date($filter('date')($scope.end, 'dd/MM/yyyy')).getTime()/1000);         
+          $scope.myPromise = possibilityCreateService.getPossibilityByRange(currentPage,numPerPage,date1,date2).then(function(response){
+            /*CoreService.toastSuccess('', 'POSSIBILITY Retrieved Successfully.');*/
+			$scope.data.possibilities = response.data.possibilities;
+            //console.log($scope.data.possibilities);
+			$scope.data.totalItems = response.data.count;
+			$scope.data.met=response.data.met;
+			$scope.data.notMet=response.data.not_met;
+			$scope.data.inactive=response.data.inactive;
+		});      
+    };
 		$scope.getPossibilities($scope.data.currentPage,$scope.data.numPerPage);
 		$scope.openEditPossibility = function(possibility){
 				$state.go('app.createPossibility',{possibility:possibility});

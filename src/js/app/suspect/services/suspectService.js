@@ -5,7 +5,13 @@ angular.module('com.module.suspect').factory('suspectService', function ($http, 
   var getSuspects = function (currentPage,numPerPage) {
     return $http({
       method: 'GET',
-      url: BASEURI + '/api/suspect/'+currentPage+'/'+numPerPage
+      url: BASEURI + '/api/suspect?page='+currentPage+'&count='+numPerPage
+    });
+  };
+  var getSuspectsByRange = function (currentPage,numPerPage,start,end) {
+    return $http({
+      method: 'GET',
+      url: BASEURI + '/api/suspect?page='+currentPage+'&count='+numPerPage+'&start='+start+'&end='+end
     });
   };
   var getSuspectById = function (Id) {
@@ -32,6 +38,7 @@ angular.module('com.module.suspect').factory('suspectService', function ($http, 
     getSuspects:getSuspects,
     getSuspectById:getSuspectById,
       getNames:getNames,
-      suspectUpdate:suspectUpdate
+      suspectUpdate:suspectUpdate,
+      getSuspectsByRange:getSuspectsByRange
   }
 });

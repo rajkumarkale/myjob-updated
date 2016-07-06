@@ -82,6 +82,18 @@ angular.module('com.module.possibility')
 		});      
     };
 		$scope.getPossibilities($scope.data.currentPage,$scope.data.numPerPage);
+    $scope.deletePossibility=function(){
+        var id=[];
+        for (var i = 0; i < $scope.filteredRows.length; i++) {
+	                if ($scope.filteredRows[i].isChecked) {
+	                    id.push($scope.filteredRows[i].client_unit_id);
+	                }
+	            }
+        
+        $scope.myPromise =possibilityCreateService.deletePossibilities(id[0]).then(function(response){
+                        console.log(response);  
+        });  
+    };
 		$scope.openEditPossibility = function(possibility){
 				$state.go('app.createPossibility',{possibility:possibility});
 		};

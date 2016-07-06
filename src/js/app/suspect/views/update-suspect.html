@@ -105,8 +105,8 @@
               </div>
             </div>
             <hr class="line1">
-            <div class="row ">
-                <div class="col-lg-10 ">
+            <div >
+                <div class="row col-md-12 ">
                     <accordion close-others='opening' class="plus">
                         <accordion-group is-open="poc.isOpen" ng-repeat="poc in point_of_contacts">
                             <accordion-heading>
@@ -119,7 +119,7 @@
                             <div class="row" id="contact{{$index}}">
                                 <div class="col-md-5 col-pad">
                                     <div class=" form-group label-floating is-empty">
-                                        <label class="control-label">Contact Person Name</label>
+                                        <label class="control-label"> Name</label>
                                         <input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)">
                                         <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
                                         <div ng-show="noResults">
@@ -130,7 +130,7 @@
                                         <label class="control-label">Phone Number</label>
                                         <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
                                     </div>
-                                    <div>
+                                    <div class="form-group">
                                         <label class="control-label">Support Area</label>
                                         <div class="form-group" custom-select data="poc.support_area">
                                         </div>
@@ -152,7 +152,7 @@
                                         <label class="control-label">Designation</label>
                                         <input class="form-control bord-remove" type="text" data-ng-model="poc.designation">
                                     </div>
-                                    <div>
+                                  <div class="form-group">
                                         <label class="control-label">Contact type</label>
                                         <div class="form-group" custom-select data="poc.contact_type"></div>
                                     </div>
@@ -163,7 +163,7 @@
                 </div>
 
               <div class="row" ng-if="showRollOut">
-                <div class="col-md-6 form-custom-padding">
+                <div class="col-md-6 form-custom-padding rollout-mrg">
                   <h4 class="color-black">Roll out of a proposal</h4>
                   <div class="form-group is-empty is-fileinput">
                     <input type="file" id="inputFile4" multiple="">

@@ -93,7 +93,7 @@ angular.module('com.module.possibility')
 
         $scope.init($stateParams);
         $scope.$watch('isEditable',function(){
-            
+
         });
 
         $scope.getNewPointofContact = function () {
@@ -264,7 +264,7 @@ angular.module('com.module.possibility')
                 requestObject.discussion.venue = $scope.discussion.venue;
                 requestObject.discussion.text = $scope.discussion.text;
                 if($scope.uploadFile.length>0){
-                    requestObject.discussion.documents=[$scope.uploadFile[0][0].url];         
+                    requestObject.discussion.documents=[$scope.uploadFile[0][0].url];
                 }
 
                 $scope.point_of_contacts.map(function (pocObj) {
@@ -360,7 +360,7 @@ angular.module('com.module.possibility')
                 }
             }
         };
-       
+
         $scope.uploads = function(file) {
             $scope.uploadFile=[];
             if (file && file.length) {

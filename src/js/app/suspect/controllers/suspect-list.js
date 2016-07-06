@@ -1,5 +1,5 @@
 angular.module('com.module.suspect')
-.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal','discussionService',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal,discussionService){
+.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal','discussionService','$filter',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal,discussionService,$filter){
     $scope.selectedItem = [];
     $scope.filteredRows=[];
 	$scope.data = {
@@ -64,6 +64,20 @@ angular.module('com.module.suspect')
 			$scope.data.WARM=response.data.WARM;
 		});
 		};
+    $scope.getSuspectsByRange=function(currentPage,numPerPage){
+        var st=$filter('date')($scope.start, 'MM/dd/yyyy');
+        var date1=Math.round(new Date(st).getTime()/1000); 
+        var ed=$filter('date')($scope.end, 'MM/dd/yyyy');
+        var date2=Math.round(new Date(ed).getTime()/1000);         
+          $scope.myPromise = suspectService.getSuspectsByRange(currentPage,numPerPage,date1,date2).then(function(response){
+            console.log(response.data);  
+            $scope.data.suspects = response.data.suspects;
+			$scope.data.totalItems = response.data.count;
+			$scope.data.COLD=response.data.COLD;
+			$scope.data.HOT=response.data.HOT;
+			$scope.data.WARM=response.data.WARM;
+		});      
+    };
 		$scope.getSuspects($scope.data.currentPage,$scope.data.numPerPage);
 		$scope.openEditSuspect = function(suspect){
 			$state.go('app.create-suspect-view',{suspect:suspect});

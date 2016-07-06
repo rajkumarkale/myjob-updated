@@ -362,6 +362,7 @@
                                 </div>
                             </div>
                             <div class="row">
+                              <div data-cg-busy="{promise:uploads,message:'Uploading Files'}"></div>
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group is-empty is-fileinput">
                                         <input type="file" id="inputFile4" ngf-select="uploads($file)" ng-model="file" ngf-multiple="true" >
@@ -370,10 +371,15 @@
                                             <span class="input-group-btn input-group-sm">
                    <button type="button" class="btn warm-status btn-sm" class='app-container-blur'>
                     <i class="fa fa-paperclip">&nbsp;&nbsp;&nbsp;Attach File</i>
+
                   </button>
+
                 </span>
+
                                         </div>
+
                                         <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
+
                                     </div>
                                 </div>
                             </div>
@@ -386,7 +392,7 @@
                         <div class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
                             <div class="form-group text-center">
                                 <button ui-sref="app.viewPossibility" class="btn btn-deafult data-button-cancel">Cancel</button>
-                                <button class="btn btn-primary data-button data-button-sub" data-ng-disabled="isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)">{{isNewPossibility?'Submit':'Update'}}</button>
+                                <button class="btn btn-primary data-button data-button-sub" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)">{{isNewPossibility?'Submit':'Update'}}</button>
                             </div>
                         </div>
                     </form>

@@ -113,8 +113,13 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-10 col-md-offset-1">
+                                <div class="col-md-10 col-md-offset-1" ng-if="isEditable">
                                     <div ngf-drop ngf-select ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">Drop Files Here</div>
+                                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                                    <div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
+                                </div>
+                                <div class="col-md-10 col-md-offset-1" ng-if="isNewPossibility">
+                                    <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">Drop Files Here</div>
                                     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
                                     <div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
                                 </div>
@@ -249,7 +254,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="col-md-6 form-custom-padding">
-                                        <div class="form-group label-floating is-empty">
+                                        <div id='dname' class="form-group label-floating is-empty">
                                             <label for="i1" class="control-label">Contact Person Name</label>
                                             <input type="text" class="form-control" id="i1" ng-model="discussion.name" required>
                                         </div>
@@ -269,13 +274,13 @@
                                     </div>
 
                                     <div class="col-md-6 form-custom-padding">
-                                        <div class="form-group label-floating is-empty">
+                                        <div id='dvenue' class="form-group label-floating is-empty">
                                             <label for="i7" class="control-label">Venue</label>
                                             <input type="text" class="form-control" id="i7" ng-model="discussion.venue" required>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-md-9">
-                                                <input type="time" class="form-control" placeholder="Time" ng-model="discussion.time" required>
+                                                <input type="time" class="form-control" id='myTime' placeholder="Time" ng-model="discussion.time" required>
 
                                             </div>
                                         </div>
@@ -292,22 +297,22 @@
                                     <textarea class="form-control mrg-textarea" rows="3" id="textArea" ng-model="discussion.text" required></textarea>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6 form-custom-padding">
-                                    <div class="form-group is-empty is-fileinput">
-                                        <input type="file" id="inputFile4" multiple="">
-                                        <div class="input-group">
-                                            <input type="text" readonly="" class="form-control" placeholder="No selected file">
-                                            <span class="input-group-btn input-group-sm">
-                  <button type="button" class="btn warm-status btn-sm">
+                           <div class="row">
+         <div class="col-md-6 form-custom-padding">
+           <div class="form-group is-empty is-fileinput">
+             <input type="file" id="inputFile4" ngf-select="uploads($file)" ng-model="file" ngf-multiple="true" >
+             <div class="input-group">
+               <input type="text" readonly="" class="form-control" placeholder="No selected file" >
+                <span class="input-group-btn input-group-sm">
+                   <button type="button" class="btn warm-status btn-sm">
                     <i class="fa fa-paperclip">&nbsp;&nbsp;&nbsp;Attach File</i>
                   </button>
                 </span>
-                                        </div>
-                                        <span class="material-input control-label">Supported formats PDF, DOC, PPT.</span>
-                                    </div>
-                                </div>
-                            </div>
+             </div>
+             <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
+           </div>
+         </div>
+       </div>
                         </div>
 
 

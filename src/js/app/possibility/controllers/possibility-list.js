@@ -67,10 +67,10 @@ angular.module('com.module.possibility')
 		});
 		};
     $scope.getPossibilityByRange=function(currentPage,numPerPage){
-        console.log($scope.start);
-        console.log($scope.end);
-        var date1=Math.round(new Date($filter('date')($scope.start, 'dd/MM/yyyy')).getTime()/1000);             
-        var date2=Math.round(new Date($filter('date')($scope.end, 'dd/MM/yyyy')).getTime()/1000);         
+        var st=$filter('date')($scope.start, 'MM/dd/yyyy');
+        var date1=Math.round(new Date(st).getTime()/1000); 
+        var ed=$filter('date')($scope.end, 'MM/dd/yyyy');
+        var date2=Math.round(new Date(ed).getTime()/1000);         
           $scope.myPromise = possibilityCreateService.getPossibilityByRange(currentPage,numPerPage,date1,date2).then(function(response){
             /*CoreService.toastSuccess('', 'POSSIBILITY Retrieved Successfully.');*/
 			$scope.data.possibilities = response.data.possibilities;

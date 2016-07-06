@@ -143,3 +143,26 @@ div > div > svg > text {visibility: hidden;}
 .no-resize{
   resize: none;
 }
+
+.update-profil-heading{
+  width:800px;
+  background-color: white;
+}
+.update-profil-body{
+  height: 60px;
+  width: 800px;
+  background-color: #2277b1;
+  margin-left: 0px;
+  margin-top: -15px;
+  padding-top: 17px;
+  padding-left: 24px;
+  color: white;
+}
+
+.update-prfl-input{    width: 95%;
+  margin-left: 75px;
+}
+
+.update-prfl-input2{
+  margin-left: 23px;
+}

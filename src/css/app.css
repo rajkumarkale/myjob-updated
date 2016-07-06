@@ -551,7 +551,7 @@ pre {
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
   color: #141719;
-  background-color: #edf1f2 !important;
+  background-color: #edf1f2;
   background-image: none;
   filter: none;
 }

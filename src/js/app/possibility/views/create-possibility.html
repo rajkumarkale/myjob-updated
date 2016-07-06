@@ -11,17 +11,17 @@
             </div>
             <div>
                 <div class="panel-body">
-                  <div class="form-group pull-right mrg-formgrp mrg-top-apply">
-                    <div class="col-md-6">
-                      <div id="stat" class="form-group">
-                        <label class="control-label">Status</label>
-                        <div  custom-select data="status" class="select-poss"></div>
-                        <!--<div id="grad1-status"></div>-->
-                      </div>
+                    <div class="form-group pull-right mrg-formgrp mrg-top-apply">
+                        <div class="col-md-6">
+                            <div id="stat" class="form-group">
+                                <label class="control-label">Status</label>
+                                <div custom-select data="status" class="select-poss"></div>
+                                <!--<div id="grad1-status"></div>-->
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <hr class="line1">
-                    <form name="createPossibilityForm">
+                    <hr class="line1">
+                    <form name="createPossibilityForm" novalidate>
 
                         <div class="row">
                             <div class="col-md-12 ">
@@ -53,11 +53,11 @@
                                         <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text" tabindex="11">
 
                                     </div>
-                                  <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                    <label class="control-label">Country</label>
-                                    <input class="form-control" required  data-ng-model="createPossibility.address.country" type="text" tabindex="11">
+                                    <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                        <label class="control-label">Country</label>
+                                        <input class="form-control" required data-ng-model="createPossibility.address.country" type="text" tabindex="11">
 
-                                  </div>
+                                    </div>
 
                                 </div>
 
@@ -107,6 +107,7 @@
                                     <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
                                     <label class=" first-class2 " tabindex="13">Freeze</label>
                                   </div>
+
 
 
                                 </div>
@@ -199,13 +200,13 @@
                                             <input type="checkbox" ng-model="poc.local" class="check" tabindex="20">
                                             <label class="location">Local</label>
                                         </div>
-                                      <div>
-                                        <div class="form-group label-floating localadd-mrg" data-ng-class="{'is-empty':isNewPossibility}">
-                                          <label class="control-label">Local Address</label>
-                                          <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="21">
+                                        <div>
+                                            <div class="form-group label-floating localadd-mrg" data-ng-class="{'is-empty':isNewPossibility}">
+                                                <label class="control-label">Local Address</label>
+                                                <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="21">
 
+                                            </div>
                                         </div>
-                                      </div>
 
 
                                     </div>
@@ -215,14 +216,14 @@
                                             <input class="form-control" numbers-only maxlength="15" data-ng-model="poc.phone" required type="text" tabindex="16">
 
                                         </div>
-                                      <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Email Id</label>
-                                        <input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="22">
-                                      </div>
-                                      <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Department</label>
-                                        <input required data-ng-model="poc.department" class="form-control" type="text" >
-                                      </div>
+                                        <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                            <label class="control-label">Email Id</label>
+                                            <input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="22">
+                                        </div>
+                                        <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                            <label class="control-label">Department</label>
+                                            <input required data-ng-model="poc.department" class="form-control" type="text">
+                                        </div>
 
                                         <div ng-if="poc.contact_type ==='PRIMARY'">
                                             <div class="form-group label-floating ">
@@ -250,25 +251,25 @@
                         </div>
                         <hr class="line-upload">
                         <h4 class="contact">Discussion</h4>
-                        <div>
+
+                        <div ng-class="{'app-container-blur':!isNewPossibility}">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="col-md-6 form-custom-padding">
                                         <div id='dname' class="form-group label-floating is-empty">
-                                            <label for="i1" class="control-label">Name</label>
-                                            <input type="text" class="form-control" id="i1" ng-model="discussion.name" required>
+                                            <label for="i1" class="control-label">Contact Person Name</label>
+                                            <input type="text" class="form-control" id="i1" ng-model="discussion.name" required >
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-md-9 present">
-                                              <input type="text"  class="form-control hand-cursor"  placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="discussion.date" is-open="opened1"
-                                                     show-button-bar="false" ng-required="true" ng-click="open($event,'opened')" readonly>
+                                                <input type="text" class="form-control hand-cursor" placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="discussion.date" is-open="opened1" show-button-bar="false" ng-required="true" ng-click="open($event,'opened')" readonly>
                                                 <span class="input-group-addon" id="basic-addon2">
             <img src="img/calendar_icon.png" class="calendar-img " alt="" /></span>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                          <label class="control-label">Mode of Discussion</label>
-                                            <div custom-select data="typeOfDiscussion"></div>
+                                            <label class="control-label">Mode of Discussion</label>
+                                            <div custom-select data="typeOfDiscussion" ></div>
                                         </div>
 
                                     </div>
@@ -276,11 +277,11 @@
                                     <div class="col-md-6 form-custom-padding">
                                         <div id='dvenue' class="form-group label-floating is-empty">
                                             <label for="i7" class="control-label">Venue</label>
-                                            <input type="text" class="form-control" id="i7" ng-model="discussion.venue" required>
+                                            <input type="text" class="form-control" id="i7" ng-model="discussion.venue" required >
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-md-9">
-                                                <input type="time" class="form-control" id='myTime' placeholder="Time" ng-model="discussion.time" required>
+                                                <input type="time" class="form-control" id='myTime' placeholder="Time" ng-model="discussion.time" required >
 
                                             </div>
                                         </div>
@@ -294,27 +295,26 @@
                                 <div class="col-md-10 upward">
                                     <label for="textArea" class=" mrg-label ">
                                         <h3>Discussion Summary</h3></label>
-                                    <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea"  ng-model="discussion.text" required></textarea>
+                                    <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea" ng-model="discussion.text" required ></textarea>
                                 </div>
                             </div>
-                           <div class="row">
-         <div class="col-md-6 form-custom-padding rollout-mrg">
-           <div class="form-group is-empty is-fileinput">
-             <input type="file" id="inputFile4" ngf-select="uploads($file)" ng-model="file" ngf-multiple="true" >
-             <div class="input-group">
-               <input type="text" readonly="" class="form-control" placeholder="No selected file" >
-                <span class="input-group-btn input-group-sm">
-                   <button type="button" class="btn attach-status btn-sm">
+                            <div class="row">
+                                <div class="col-md-6 form-custom-padding">
+                                    <div class="form-group is-empty is-fileinput">
+                                        <input type="file" id="inputFile4" ngf-select="uploads($file)" ng-model="file" ngf-multiple="true" >
+                                        <div class="input-group">
+                                            <input type="text" readonly="" class="form-control" placeholder="No selected file" >
+                                            <span class="input-group-btn input-group-sm">
+                   <button type="button" class="btn warm-status btn-sm" class='app-container-blur'>
                     <i class="fa fa-paperclip">&nbsp;&nbsp;&nbsp;Attach File</i>
                   </button>
                 </span>
-             </div>
-             <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
-           </div>
-         </div>
-       </div>
+                                        </div>
+                                        <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
 
                         <div class="col-md-6 form-custom-padding">
                         </div>
@@ -323,7 +323,7 @@
                         <div class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
                             <div class="form-group text-center">
                                 <button ui-sref="app.viewPossibility" class="btn btn-deafult data-button-cancel">Cancel</button>
-                                <button class="btn btn-primary data-button data-button-sub" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)" disabled="disabled">{{isNewPossibility?'Submit':'Update'}}</button>
+                                <button class="btn btn-primary data-button data-button-sub" data-ng-disabled="isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)">{{isNewPossibility?'Submit':'Update'}}</button>
                             </div>
                         </div>
                     </form>

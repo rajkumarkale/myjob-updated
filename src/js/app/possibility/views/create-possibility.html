@@ -299,6 +299,7 @@
                                 </div>
                             </div>
                             <div class="row">
+                              <div data-cg-busy="{promise:uploads,message:'Uploading Files'}"></div>
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group is-empty is-fileinput">
                                         <input type="file" id="inputFile4" ngf-select="uploads($file)" ng-model="file" ngf-multiple="true" >
@@ -307,10 +308,15 @@
                                             <span class="input-group-btn input-group-sm">
                    <button type="button" class="btn warm-status btn-sm" class='app-container-blur'>
                     <i class="fa fa-paperclip">&nbsp;&nbsp;&nbsp;Attach File</i>
+
                   </button>
+
                 </span>
+
                                         </div>
+
                                         <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
+
                                     </div>
                                 </div>
                             </div>
@@ -333,3 +339,4 @@
         </div>
     </div>
 </div>
+

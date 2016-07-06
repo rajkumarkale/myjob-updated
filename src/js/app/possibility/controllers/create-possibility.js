@@ -68,7 +68,6 @@ angular.module('com.module.possibility')
                 $scope.title = "New Possibility";
                 $scope.createPossibility = {};
                 $scope.createPossibility.discussion = {};
-
                 $scope.status.selectedItem = {
                     "key": "NOT_MET",
                     "displayText": "NOT MET"
@@ -93,6 +92,9 @@ angular.module('com.module.possibility')
         };
 
         $scope.init($stateParams);
+        $scope.$watch('isEditable',function(){
+            
+        });
 
         $scope.getNewPointofContact = function () {
             var obj = angular.copy({
@@ -215,6 +217,7 @@ angular.module('com.module.possibility')
                 delete possibilityObject.current_status;
                 delete possibilityObject.client_freeze_details;
                 delete possibilityObject.division;
+                delete possibilityObject.discussion;
                 possibilityCreateService.updatePossibility(possibilityObject).success(function () {
                     CoreService.toastSuccess('', 'POSSIBILITY Updated Successfully.');
                     $state.go('app.viewPossibility');

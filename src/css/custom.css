@@ -2096,10 +2096,12 @@ color:#049ad9 !important;}
 .present .dropdown-menu table > thead > tr > th .btn.btn-sm{
   padding: 0px 7px !important;
   font-size: 12px;
+  background-color: white;
 }
 .present .dropdown-menu table > tbody > tr > td .btn.btn-sm{
   padding: 0px 7px !important;
   font-size: 12px;
+  background-color: white;
 }
 /*list poss icons*/
 .met-header-color{

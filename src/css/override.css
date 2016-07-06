@@ -137,3 +137,9 @@
   margin-left: 10px}
 .in-pad{padding-top: 14px;}
 /* end of comments for SLA Tracker UI */
+
+div > div > svg > text {visibility: hidden;}
+
+.no-resize{
+  resize: none;
+}

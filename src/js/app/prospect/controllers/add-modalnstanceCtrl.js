@@ -71,4 +71,9 @@ angular.module('com.module.prospect')
         $scope.cancel = function () {
             $modalInstance.dismiss();
         };
+      $scope.open = function($event,opened) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened1 = !$scope.opened1;
+      };
     });

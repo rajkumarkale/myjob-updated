@@ -12,8 +12,8 @@
             </div>
             <div class="form-group">
               <div class="input-group col-md-9 present">
-                <input type="text" class="form-control hand-cursor"  placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1"
-                       show-button-bar="false" ng-required="true" ng-click="open($event,'opened')">
+                <input type="text"  class="form-control hand-cursor"  placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="discussion.date" is-open="opened1"
+                       show-button-bar="false" ng-required="true" ng-click="open($event,'opened')" readonly>
                                                 <span class="input-group-addon" id="basic-addon2">
             <img src="img/calendar_icon.png" class="calendar-img " alt="" /></span>
               </div>
@@ -60,7 +60,7 @@
 
           <div class="col-md-11 upward">
             <label for="textArea" class=" mrg-label"><h4>Discussion Summary</h4></label>
-            <textarea class="form-control mrg-textarea" rows="3" id="textArea" ng-model="discussion.summary" required></textarea>
+            <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea" ng-model="discussion.summary" required></textarea>
           </div>
       </div>
        <div class="row">

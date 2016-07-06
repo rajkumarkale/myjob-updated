@@ -54,9 +54,9 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
             events: {
               legendItemClick: function () {
 
-                var visibility = this.visible ? 'visible' : 'hidden';
+                var visibility = this.visible ? 'VISIBLE' : 'HIDDEN';
 
-                if (!confirm('The series Data is currently' +
+                if (!confirm('The series Data is currently ' +
                     visibility + '. Do you want to change that?')) {
                   return false;
                 }

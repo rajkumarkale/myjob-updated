@@ -323,7 +323,7 @@
                         <div class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
                             <div class="form-group text-center">
                                 <button ui-sref="app.viewPossibility" class="btn btn-deafult data-button-cancel">Cancel</button>
-                                <button class="btn btn-primary data-button data-button-sub" data-ng-disabled="isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)">{{isNewPossibility?'Submit':'Update'}}</button>
+                                <button class="btn btn-primary data-button data-button-sub" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)">{{isNewPossibility?'Submit':'Update'}}</button>
                             </div>
                         </div>
                     </form>

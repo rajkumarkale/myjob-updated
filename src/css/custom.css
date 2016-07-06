@@ -2329,3 +2329,22 @@ color: #616574;}
 /*end all tables arrows col*/
 .mrg-top {margin-top: -19px;  }
 
+/* start of comments for search bar */
+.search-bar{
+  width: 87%;
+  height: 18px;
+  margin-top: 14px;
+  margin-left: 13px;
+}
+.search-bar ::-webkit-input-placeholder{font-size: 12px !important;}
+.search-input{width: 100%;
+  height: 28px;}
+.search-bar .form-control{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;"
+}
+.form-group .control-label{color:#8c8c8c;}
+/*.form-group .form-control {background-image: -webkit-linear-gradient(#009688, #009688), -webkit-linear-gradient(#8c8c8c, #8c8c8c);}*/
+/* end of comments for search bar */

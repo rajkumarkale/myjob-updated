@@ -21,9 +21,9 @@
                         </div>
                     </div>
                     <hr class="line1">
-                    <form name="createPossibilityForm" novalidate>
-
-                        <div class="row">
+                    <form name="createPossibilityForm"  novalidate>
+  <div id="noEdit">
+                        <div class="row ">
                             <div class="col-md-12 ">
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
@@ -97,12 +97,12 @@
 
                                     </div>
                                     <br>
-                                    <div data-ng-if="!isNewPossibility">
+                                   <!-- <div data-ng-if="!isNewPossibility">
                                         <label class="control-label">Status</label>
                                         <div custom-select data="status">
                                         </div>
 
-                                    </div>
+                                    </div>-->
                                   <div class="form-group pull-right freeze-mrg">
                                     <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
                                     <label class=" first-class2 " tabindex="13">Freeze</label>
@@ -170,7 +170,7 @@
                         <hr class="line-upload">
                         <h4 class="contact">Contact Details</h4>
 
-                        <div ng-repeat="poc in point_of_contacts" class="row col-md-12 " style="margin-top: -5px;">
+                        <div ng-repeat="poc in point_of_contacts" class="row col-md-12 noEdit" style="margin-top: -5px;">
                             <accordion class="plus">
                                 <accordion-group is-open="poc.isOpen">
                                     <accordion-heading>
@@ -253,7 +253,7 @@
                         <h4 class="contact">Discussion</h4>
 
                         <div ng-class="{'app-container-blur':!isNewPossibility}">
-                            <div class="row">
+                            <div class="row noEdit">
                                 <div class="col-md-12">
                                     <div class="col-md-6 form-custom-padding">
                                         <div id='dname' class="form-group label-floating is-empty">
@@ -327,7 +327,7 @@
                                 </div>
                             </div>
                         </div>
-
+  </div>
                         <div class="col-md-6 form-custom-padding">
                         </div>
                         <div data-cg-busy="{promise:savePromise,message:'Updating Possibilities'}"></div>

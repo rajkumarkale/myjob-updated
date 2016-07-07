@@ -90,15 +90,16 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
       size: {}
     };
 
-    $scope.reflow = function () {
+ /*   $scope.reflow = function () {
       $scope.$broadcast('highchartsng.reflow');
-    };
+    };*/
       $scope.getDashboardCount=function(){
           dashBoardService.getDashboardCount().then(function(response){
               console.log(response);
           });
-      }
+      };
       $scope.getDashboardCount();
+
 $scope.open = function($event,opened) {
       $event.preventDefault();
       $event.stopPropagation();

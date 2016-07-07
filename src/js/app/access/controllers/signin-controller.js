@@ -6,7 +6,6 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
       password: user.password,
       email_id : user.email_id
     }).then(function (response) {
-      console.log(response);
       if(response.message){
         $scope.authStatus = true;
         $scope.authError = response.data.message;

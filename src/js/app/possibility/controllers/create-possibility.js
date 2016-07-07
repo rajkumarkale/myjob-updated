@@ -1,7 +1,6 @@
 angular.module('com.module.possibility')
     .controller('createPossibilityController', ['$scope', 'toaster', '$state', '$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies', '$q', 'CoreService', '$filter', '$timeout', function ($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies, $q, CoreService, $filter, $timeout) {
         $scope.init = function ($stateParams) {
-console.log($state.current.name);
             $scope.isEditable = false;
             $scope.employeeSize = appConfig.possibility.employeeSize;
             $scope.groupTurnover = appConfig.possibility.groupTurnover;
@@ -148,6 +147,7 @@ console.log($state.current.name);
         };
 
         $scope.save = function (possibilityObject) {
+          document.getElementById('noEdit').style.pointerEvents = 'none';
             if (possibilityObject) {
                 if ($scope.isNewPossibility) {
                     $scope.createPromise = asyncProcessRequest(possibilityObject);
@@ -161,7 +161,7 @@ console.log($state.current.name);
             return $q(function () {
 
                 var status = {
-                    current_status_id: $scope.point_of_contacts[0]._id,
+                    current_status_id: possibilityObject.current_status._id,
                     status: $scope.status.selectedItem.key
                 };
                 possibilityObject.employee_size = $scope.employeeSize.selectedItem.key;

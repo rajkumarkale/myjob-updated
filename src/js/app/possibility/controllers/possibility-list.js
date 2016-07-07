@@ -1,11 +1,9 @@
 angular.module('com.module.possibility')
-.controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies','discussionService','CoreService','$filter',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies,discussionService,CoreService,$filter){
+.controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies','discussionService','CoreService','$filter','$rootScope',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies,discussionService,CoreService,$filter,$rootScope){
     $scope.selectedItem = [];
-
     $scope.filteredRows=[];
     $scope.sortType     = 'legal_name';
     $scope.sortReverse  = false;
-    $scope.searchView   = '';
     $scope.setSelectedClient = function (item) {
         /*var id = this.company.id;*/
         if (_.contains($scope.selectedItem, item)) {

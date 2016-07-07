@@ -151,7 +151,7 @@
           </thead>
           <tbody>
 
-        <tr data-ng-repeat="prospect in filteredRows=(data.prospects | orderBy:sortType:sortReverse |companyFilter:selectedItem)| filter:searchView"  >
+        <tr data-ng-repeat="prospect in filteredRows=(data.prospects | orderBy:sortType:sortReverse |companyFilter:selectedItem)| filter:$root.searchView"  >
           <td>
 
               <div class="chekbox">

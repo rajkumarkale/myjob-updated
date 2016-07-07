@@ -109,7 +109,7 @@
 
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1" ng-if="isEditable">
-                                    <div ngf-drop ngf-select ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">Drop Files Here</div>
+                                    <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">Drop Files Here</div>
                                     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
                                     <div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
                                 </div>
@@ -191,9 +191,9 @@
                                             <label class="contacts">Contacts Provides</label>
 
 
-                                            <input type="checkbox" ng-model="poc.remote" class="check remote-check" tabindex="19" id="input-confidencial">
+                                            <input type="checkbox" ng-model="poc.remote" class="check remote-check" tabindex="19" id="input-confidencial" ng-required="!poc.local">
                                             <label class="remote" for="input-confidencial">Remote</label>
-                                            <input type="checkbox" ng-model="poc.local" class="check local-check" tabindex="20" id="input-confidencial1" ng-checked='true'>
+                                            <input type="checkbox" ng-model="poc.local" class="check local-check" tabindex="20" id="input-confidencial1" ng-required="!poc.remote">
                                             <label class="location" for="input-confidencial1">Local</label>
                                         </div>
                                         <div>

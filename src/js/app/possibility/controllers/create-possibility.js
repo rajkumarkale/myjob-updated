@@ -426,5 +426,6 @@ angular.module('com.module.possibility')
             $event.stopPropagation();
             $scope.opened1 = !$scope.opened1;
         };
+        
 
     }]);

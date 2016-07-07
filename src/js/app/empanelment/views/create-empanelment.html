@@ -93,11 +93,11 @@
         <span>Contact Details</span><i class="pull-right glyphicon"
                                       ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}"></i>
       </accordion-heading>
-      <div class="form-group pull-right mrg-formgrp mrg-top-apply app-container-blur" >
+      <div class="form-group pull-right app-container-blur" >
         <div class="col-md-8">
           <div class="form-group">
-            <label >Status</label>
-            <div custom-select data="status"></div>
+
+            <div custom-select data="status"  style="margin: -15px;margin-top: -5px"></div>
           </div>
         </div>
       </div>
@@ -106,8 +106,8 @@
 
         <div class="col-lg-10 ">
           <accordion  >
-            <accordion-group is-open="poc.isOpening" >
-              <accordion-heading >
+            <accordion-group is-open="poc.isOpening"  >
+              <accordion-heading  >
           <span >
            Contact Person Details
           <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.isOpening, ' glyphicon-plus': !poc.isOpening}">
@@ -168,7 +168,7 @@
 
         <div class="form-group pull-right">
           <div class="col-md-8">
-            <div class="form-group mrg-formgrp">
+            <div class="form-group " style="margin: -15px;">
               <input  custom-select data="status_prospect"  type="text" placeholder="Status">
 
             </div>

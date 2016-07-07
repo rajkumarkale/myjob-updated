@@ -203,12 +203,12 @@
   <accordion class="plus possibility-head">
     <accordion-group is-open="poc.isOpen" >
       <accordion-heading>
-        <span>Client Details</span><i class="pull-right glyphicon"
+        <span>Contact Details</span><i class="pull-right glyphicon"
                                       ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}"></i>
       </accordion-heading>
-      <div class="form-group pull-right mrg-formgrp mrg-top-apply app-container-blur" >
+      <div class="form-group pull-right mrg-suspect mrg-top-apply app-container-blur" >
         <div class="col-md-8">
-          <div class="form-group">
+          <div class="form-group ">
             <label class="control-label">Status</label>
             <div   custom-select data="status" class="select-suspect"></div>
 
@@ -324,10 +324,16 @@
               <label class="control-label">Reason of Loss</label>
               <input class="form-control" type="text">
             </div>
+
+
           </div>
         </div>
-
-
+         <br>
+        <div class=" col-md-offset-5" ng-hide="displayagreement">
+          <a ui-sref="app.viewProspect" class="auto">
+            <button class="btn btn-raised  data-button-cancel ">Cancel</button>&nbsp;&nbsp;</a>
+          <button class="btn btn-primary data-button-sub">Submit</button>
+        </div>
       </div>
 
     </div>

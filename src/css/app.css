@@ -2053,6 +2053,7 @@ fieldset[disabled] .btn-black.active {
   padding-right: 15px;
   padding-left: 15px;
   border-radius: 50px;
+  padding-bottom: 5px !important;
 }
 
 .btn-bg-color {

@@ -69,6 +69,9 @@ angular.module('com.module.suspect')
                 $scope.createPossibility = response.data;
                 $scope.suspect = {};
                 $scope.suspect = response.data.point_of_contacts[0];
+                $scope.support_type_local=false;
+                $scope.support_type_remote=false;
+                $scope.suspect_support_type=$scope.suspect.support_type;
                 $scope.createPossibility.employee_size = $scope.getSelectedItem($scope.createPossibility.employee_size, $scope.employeeSize).displayText;
                 $scope.createPossibility.turnover = $scope.getSelectedItem($scope.createPossibility.turnover, $scope.groupTurnover).displayText;
                 $scope.createPossibility.vertical = $scope.getSelectedItem($scope.createPossibility.vertical, $scope.businessVertical).displayText;
@@ -239,4 +242,24 @@ angular.module('com.module.suspect')
         $scope.removeFiles = function (index) {
             $scope.uploadFiles.splice(index, 1);
         };
+
+
+
+
+
+
+
+      $scope.$watch('suspect_support_type',function(n,o){
+        if(n==='LOCAL') {
+          $scope.support_type_local=true;
+        }
+        else if(n==='REMOTE'){
+          $scope.support_type_remote=true;
+        }
+        else if(n==='BOTH')
+        {
+          $scope.support_type_remote = true;
+          $scope.support_type_local=true;
+        }
+      }) ;
   }]);

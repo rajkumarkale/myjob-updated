@@ -3,11 +3,10 @@
  */
 angular.module('com.module.prospect')
 
-.controller('viewProspectCtrl',['$scope','prospectService','CoreService','$modal','discussionService','$state',function($scope,prospectService,CoreService,$modal,discussionService,$state){
+.controller('viewProspectCtrl',['$scope','prospectService','CoreService','$modal','discussionService','$state','$rootScope',function($scope,prospectService,CoreService,$modal,discussionService,$state,$rootScope){
 
           $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
-        $scope.searchView   = '';
   $scope.open = function($event,opened) {
     $event.preventDefault();
     $event.stopPropagation();

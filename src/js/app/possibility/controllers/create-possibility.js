@@ -51,7 +51,7 @@ console.log($state.current.name);
                     $scope.discussion.name = $scope.createPossibility.discussion.contact_person;
                     $scope.discussion.venue = $scope.createPossibility.discussion.venue;
                     $scope.discussion.text = $scope.createPossibility.discussion.text;
-                    var time = $filter('date')($scope.createPossibility.discussion.time_of_discussion * 1000, 'HH:mm:ss');
+                    var time = $filter('date')($scope.createPossibility.discussion.time_of_discussion * 1000, 'HH:mm a');
                     var date = $filter('date')($scope.createPossibility.discussion.time_of_discussion * 1000, 'MM/dd/yyyy');
                     $scope.discussion.date = date;
                     $timeout(function () {

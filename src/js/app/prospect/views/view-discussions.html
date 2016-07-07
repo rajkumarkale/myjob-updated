@@ -105,7 +105,7 @@
                       Contact Person:
                     </label>
                     <label class="person-name">
-                      <h4>{{discussion.name}} </h4>
+                      <h4>{{discussion.contact_person | uppercase}} </h4>
                     </label>
                   </td>
                 </tr>
@@ -115,7 +115,7 @@
                       Type of Call:
                     </label>
                     <label class="call-follow">
-                      {{discussion.type | spaceless }}
+                      {{discussion.type}}
                     </label>
                   </td>
                 </tr>
@@ -136,7 +136,7 @@
                       Logged by:
                     </label>
                     <label class="call-follow">
-                      {{discussion.mode}}
+                      {{}}
                     </label>
                   </td>
                 </tr>
@@ -148,7 +148,7 @@
               <table>
                 <tr>
                   <td>
-                    <label class="date-venue">{{discussion.date}}
+                    <label class="date-venue">{{discussion.time_of_discussion | date:'dd/MM/yyyy, hh:mm a'}}
 
             </label>
             </td>
@@ -159,7 +159,7 @@
                       Venue:
                     </label>
                     <label class="location-name">
-                      {{discussion.venue}}
+                      {{discussion.venue | uppercase}}
                     </label>
                   </td>
                 </tr>
@@ -173,15 +173,14 @@
             <span class="summary-head ">Summary: </span>&nbsp;
             {{discussion.text}}
           </p>
-          <!--<div>
+          <div ng-if="discussion.documents[0]">
             <div class="attachment">
               1 Attachment
             </div>
             <div class="attach-image">
-              <img src="#" class="attach-image-detail"/>
-              resume.png
+              <img ng-src="{{discussion.documents[0]}}" class="attach-image-detail"/>
             </div>
-          </div>-->
+          </div>
         </div>
       </div>
 

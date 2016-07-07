@@ -30,8 +30,8 @@
     <div class="input-group search-bar">
 
       <input type="text" class="form-control btn-rounded  back-color img-remove search-input"  placeholder="Search By Location,Company Name,Contact"
-             aria-describedby="basic-addon3" ng-model="searchView">
-      <span class="input-group-addon back-color-search" id="basic-addon3" ><i class="fa fa-search"></i></span>
+             aria-describedby="basic-addon3" ng-model="$root.searchView">
+      <span class="input-group-addon back-color-search" id="basic-addon3"><i class="fa fa-search"></i></span>
     </div>
   </div>-
   <!-- / buttons -->
@@ -88,7 +88,7 @@
       </a>
       <!-- dropdown -->
       <ul class="dropdown-menu animated fadeInRight w list-menu">
-        <li >
+        <li class="list-update">
           <a ng-click="updateProfile()" >Update Profile</a>
         </li>
         <li class="divider"></li>

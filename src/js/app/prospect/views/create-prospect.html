@@ -210,8 +210,8 @@
         <div class="col-md-8">
           <div class="form-group">
             <label class="control-label">Status</label>
-            <div   custom-select data="status"></div>
-            <div id="grad1-status"></div>
+            <div   custom-select data="status" class="select-suspect"></div>
+
           </div>
         </div>
       </div>
@@ -231,7 +231,7 @@
               <div class="row app-container-blur">
                 <div class="col-md-5 col-pad">
                   <div class=" form-group label-floating is-empty">
-                    <label class="control-label">Contact Person Name</label>
+                    <label class="control-label">Name</label>
                     <input class="form-control bord-remove" data-ng-model="poc.name" type="text">
                   </div>
                   <div class="form-group label-floating is-empty">
@@ -280,9 +280,11 @@
       <div class="form-group pull-right">
         <div class="col-md-8">
           <div class="form-group mrg-formgrp">
-            <input  custom-select data="status_prospect" class="form-control bord-remove select-prospect" type="text" placeholder="Status">
-            <div id="grad1-status"></div>
+            <label class="control-label">Status</label>
+            <div   custom-select data="status_prospect" class="status-prospect"></div>
+
           </div>
+
         </div>
       </div>
       <hr class="line1">
@@ -301,7 +303,7 @@
               <label class="control-label">Annual Business Bottomline</label>
               <input class="form-control" type="text">
             </div>
-            <div class="form-group">
+            <div class="form-group businessprospect-mrg">
               <input custom-select data="values" placeholder="Business Vertical" />
             </div>
           </div>

@@ -10,6 +10,8 @@
 }
 .sign-button{
   background-color:#23b7e5 !important;
+  width: 257px;
+  margin-left: 27px;
 }
 .hand-cursor{
   cursor: pointer;
@@ -81,6 +83,11 @@
 }
 .list-menu li > a{
   padding: 2px 15px !important;
+
+}
+.list-menu li > a:hover{
+ color:#333 !important;
+  background-color: transparent !important;
 
 }
 /*.list-pad > li > a:hover,.list-pad > li > a:focus{
@@ -293,12 +300,14 @@
   vertical-align: -36%;
 }
 .contacts-button{
-  background-color: #049ad9 !important;color: white !important;padding-left: 10px;
+  background-color: #049ad9 !important;
+  color: white !important;
+  padding-left: 10px;
   padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;border-radius: 0px;
-  text-transform: none;
-  margin-left: 50px;}
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 0px;
+  text-transform: none;}
 .update-button{background-color: #049ad9 !important;color: white !important;border-radius: 0px;}
 .data-button{background-color: #049ad9 !important;color: white !important;margin-left: 10px;
   border-radius: 0px;
@@ -645,14 +654,6 @@
   width: 80px !important;
   color:white ;
 
-}
-.warm-status {
-  background-color: #e68405 !important;;
-  text-align: center;
-  padding: 5px;
-  width: 100% !important;
-  color: white;
-  border-radius: 7px;
 }
 .cold-status{
   background-color:#87d7f8 !important; ;
@@ -1450,8 +1451,8 @@
   background-color:#e68405 !important; ;
   text-align: center;
   padding: 5px;
-  width: 80px;
-  color:white !important;;
+  width: 100% !important;
+  color:white !important;
 }
 .warm-status-pos{
   background-color:#e68405 !important; ;
@@ -2096,10 +2097,12 @@ color:#049ad9 !important;}
 .present .dropdown-menu table > thead > tr > th .btn.btn-sm{
   padding: 0px 7px !important;
   font-size: 12px;
+  background-color: white;
 }
 .present .dropdown-menu table > tbody > tr > td .btn.btn-sm{
   padding: 0px 7px !important;
   font-size: 12px;
+  background-color: white;
 }
 /*list poss icons*/
 .met-header-color{
@@ -2211,11 +2214,13 @@ color:#049ad9 !important;}
 /*forgot password modal*/
 .centerButton{margin-left: 38%}
 .forgot-cancel{ margin-right:44px;
-font-size: 16px;
-color: #616574;}
-.forgot-ok{color: #03a9f4;
+font-size: 17px;
+color: #AEAEAE;}
+.forgot-cancel:hover{color: #AEAEAE;}
+.forgot-ok{color: #61C9F4;
   margin-right: 28px;
-  font-size: 15px}
+  font-size: 17px}
+.forgot-ok:hover{color:#61C9F4; }
 /*end forgot password modal*/
 /*dashboard icons text*/
 .met-target{
@@ -2278,7 +2283,7 @@ color: #616574;}
 /*end edit poss update button*/
 /*prospect view*/
 .padd-remove{
-  padding: 0px;
+  padding: 5px;
 }
 /*end prospect view*/
 /*agreement on closure create prospect*/
@@ -2315,11 +2320,12 @@ color: #616574;}
 /*contacts btn in create poss*/
 .mrg-contacts{
   margin-left: 63px;
+  margin-top: -36px;
 }
 /*end contacts btn in create poss*/
 /*contacts btn in create suspect*/
 .mrgs-contact{
-  margin-left: 20px;
+  margin-left: 40px;
 }
 /*end contacts btn in create suspect*/
 /*all tables arrows col*/
@@ -2328,7 +2334,84 @@ color: #616574;}
 }
 /*end all tables arrows col*/
 .mrg-top {margin-top: -19px;  }
+/*create poss contact type*/
+.mrg-contacttype{
+  margin-top: 15px;
+}
+.freeze-mrg{
+  margin-right: 75px;
+}
+/*end create poss contact type*/
+/*suspect update panel border remove*/
+.plus .panel-default{
+  border: 0px !important;
+  box-shadow: none !important;
+}
+/*suspect update panel border remove*/
+/*suspect update rollout margin*/
+.rollout-mrg{
+  margin-left: 20px;
+}
+/*end suspect update rollout margin*/
+/*select prospect*/
+.status-prospect .select{
+  margin-top: 10px;
+  position: relative;
+  display: block;
+  min-width: 125px !important;
+  color: #555555;
+  vertical-align: middle;
+  text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  border-bottom:1px solid #dfdfdf
+}
+/*end select prospect*/
+/*prospect business vertical dropdown*/
+.businessprospect-mrg {
+  margin-top: 54px;
+}
+/*end prospect business vertical dropdown*/
+/*modal for share and transfer*/
+.mdl-center{
+  margin-top: 332px !important;
+}
+/*end modal for share and transfer*/
+/*moz styles for datepicker*/
+@-moz-document url-prefix() {
+  .calendar-reset {
+    margin-left: 146px;
+  }
+  .secondcalendar-reset{
+    margin-left: 146px;
+  }
+}
+/*attach button create poss*/
+.attach-status{
+  background-color:#FF9C00 !important;
+  text-align: center;
+  width: 100% !important;
+  color:white !important;
+}
 
+/*end attach button create poss*/
+/*forgot pass modal*/
+.forgot-modal{
+  margin-top: 208px;
+}
+.forgot-text{
+  color: #545454;
+  font-weight:bold;
+}
+/*end forgot pass modal*/
+/*view poss delete image*/
+.delete-mrg{
+  margin-top:-3px;
+}
+/*end view poss delete image*/
 /* start of comments for search bar */
 .search-bar{
   width: 87%;

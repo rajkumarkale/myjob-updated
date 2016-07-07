@@ -3,7 +3,7 @@
  */
 
 angular.module('com.module.prospect')
-    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, appConfig, possibilityCreateService, discussionService,$cookies,$state,Upload,CoreService) {
+    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, appConfig, possibilityCreateService, discussionService,$cookies,$state,Upload,CoreService,$filter) {
 
         $scope.status = appConfig.discussion.typeOfDiscussion;
         $scope.data = discussionService.getData();
@@ -55,9 +55,18 @@ angular.module('com.module.prospect')
             client_status_id: $scope.data.client_status,
             discussed_by: $scope.userId,
                 venue:$scope.discussion.venue,
-                type:$scope.discussion.calltype
+                contact_person:discussion.name
+                
         };
-
+            var time = $filter('date')($scope.discussion.time, 'HH:mm:ss');
+                var date = $filter('date')($scope.discussion.date, 'MM/dd/yyyy');
+                var dtstring = date + ' ' + time;
+                var timestamp = Math.round(new Date(dtstring).getTime() / 1000);
+            reqData.time_of_discussion=timestamp;
+            if($scope.uploadFiles.length>0){
+                reqData.documents=[$scope.uploadFiles[0].url];
+                
+            }
          $scope.discussionPromise= possibilityCreateService.createDiscussion(reqData).success(function (response) {
                 CoreService.toastSuccess('Disscussions?', 'Created Discussion successfully.');
                 //console.log(response);
@@ -71,4 +80,9 @@ angular.module('com.module.prospect')
         $scope.cancel = function () {
             $modalInstance.dismiss();
         };
+      $scope.open = function($event,opened) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened1 = !$scope.opened1;
+      };
     });

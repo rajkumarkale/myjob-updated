@@ -1,8 +1,7 @@
 /**
  * Created by revathi bandi on 5/11/2016.
  */
-angular.module('com.module.user').controller('dashboardController', ['$scope','AuthService','$state',
-  function ($scope, AuthService,$state) {
+angular.module('com.module.user').controller('dashboardController', ['$scope','AuthService','$state','dashBoardService',  function ($scope, AuthService,$state,dashBoardService) {
     'use strict';
     $scope.chartSeries = [
       {"name": "Target", "data":[1, 2, 4, 3, 3.5,6.5,4.5,4.5,5,7,8,7], fillOpacity: 0.5, color:'#5398F6',align: 'left',connectNulls: true,
@@ -51,6 +50,17 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
         },
         plotOptions: {
           series: {
+            events: {
+              legendItemClick: function () {
+
+                var visibility = this.visible ? 'VISIBLE' : 'HIDDEN';
+
+                if (!confirm('The series Data is currently ' +
+                    visibility + '. Do you want to change that?')) {
+                  return false;
+                }
+              }
+            },
             stacking: '',
             marker: {
               fillColor: 'black',
@@ -83,6 +93,12 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
     $scope.reflow = function () {
       $scope.$broadcast('highchartsng.reflow');
     };
+      $scope.getDashboardCount=function(){
+          dashBoardService.getDashboardCount().then(function(response){
+              console.log(response);
+          });
+      }
+      $scope.getDashboardCount();
 $scope.open = function($event,opened) {
       $event.preventDefault();
       $event.stopPropagation();

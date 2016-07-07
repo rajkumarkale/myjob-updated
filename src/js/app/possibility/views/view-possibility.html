@@ -117,8 +117,8 @@
           <!--  <label class="checkBox-showall pull-left " ng-show="selectAll || checked1 ">
              <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
            </label> -->
-          <label class="share-transfer pull-left  hand-cursor" ng-show="isShow">
-            <span class="fa fa-trash-o" data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
+          <label class="share-transfer pull-left  hand-cursor" ng-show="isShow" ng-click="deletePossibility()">
+            <span data-toggle="dropdown"><img src="img/delete_icon.png" class="delete-mrg"></span>&nbsp;&nbsp;Delete
           </label>
          <!-- <label class="  checkBox-showall pull-left " ng-show="selectAllItems ">
             <span class="fa fa-trash-o" data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
@@ -150,7 +150,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr data-ng-repeat="possibility in filteredRows= (data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem) | filter:searchView" >
+      <tr data-ng-repeat="possibility in filteredRows= (data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem) | filter:$root.searchView" >
         <td>
 
               <div class="chekbox">

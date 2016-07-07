@@ -1,7 +1,9 @@
 angular.module('com.module.suspect')
-.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal','discussionService','$filter',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal,discussionService,$filter){
+.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal','discussionService','$filter','$rootScope',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal,discussionService,$filter,$rootScope){
     $scope.selectedItem = [];
     $scope.filteredRows=[];
+    $scope.sortType     = 'legal_name';
+    $scope.sortReverse  = false;
 	$scope.data = {
 		    numPerPage: 10,
 		    searchKeywords: '',

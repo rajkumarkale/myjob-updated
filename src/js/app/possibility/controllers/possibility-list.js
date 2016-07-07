@@ -1,11 +1,9 @@
 angular.module('com.module.possibility')
-.controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies','discussionService','CoreService','$filter',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies,discussionService,CoreService,$filter){
+.controller('possibilityListController',['$scope','$state','toaster','$timeout','possibilityCreateService','$cookies','discussionService','CoreService','$filter','$rootScope',function($scope,$state,toaster,$timeout,possibilityCreateService,$cookies,discussionService,CoreService,$filter,$rootScope){
     $scope.selectedItem = [];
-
     $scope.filteredRows=[];
     $scope.sortType     = 'legal_name';
     $scope.sortReverse  = false;
-    $scope.searchView   = '';
     $scope.setSelectedClient = function (item) {
         /*var id = this.company.id;*/
         if (_.contains($scope.selectedItem, item)) {
@@ -82,6 +80,18 @@ angular.module('com.module.possibility')
 		});      
     };
 		$scope.getPossibilities($scope.data.currentPage,$scope.data.numPerPage);
+    $scope.deletePossibility=function(){
+        var id=[];
+        for (var i = 0; i < $scope.filteredRows.length; i++) {
+	                if ($scope.filteredRows[i].isChecked) {
+	                    id.push($scope.filteredRows[i].client_unit_id);
+	                }
+	            }
+        
+        $scope.myPromise =possibilityCreateService.deletePossibilities(id[0]).then(function(response){
+                        console.log(response);  
+        });  
+    };
 		$scope.openEditPossibility = function(possibility){
 				$state.go('app.createPossibility',{possibility:possibility});
 		};

@@ -29,7 +29,9 @@ angular.module('app', [
 
 ]).config(function (datepickerConfig) {
       datepickerConfig.showWeeks = false;
-    });
+    }).run(function ($rootScope) {
+    $rootScope.searchView='';
+});
 
 angular.element(document).ready(function () {
   jQuery.get('/client-config.json?'+new Date().getTime(), function (data) {

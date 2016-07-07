@@ -135,12 +135,19 @@
                                         <div class="form-group" custom-select data="poc.support_area">
                                         </div>
                                     </div>
-                                  <div class="up-margin"  >
-                                    <label class=" contacts">Contact Provides</label>
-                                    <input type="checkbox" class="check"><label class="color-black">Remote</label><input type="checkbox" class="check"><label class="color-black">Local</label></label>
-
-
+                                  <div class="form-group">
+                                    <label class="contacts">Contacts Provides</label>
+                                    <input type="checkbox" ng-model="poc.remote" class="check remote-check" tabindex="19" id="input-confidencial">
+                                    <label class="remote" for="input-confidencial">Remote</label>
+                                    <input type="checkbox" ng-model="poc.local" class="check local-check" tabindex="20" id="input-confidencial1">
+                                    <label class="location" for="input-confidencial1">Local</label>
                                   </div>
+                                 <!-- <div class="up-margin"  >
+                                    <label class=" contacts">Contact Provides</label>
+                                    <input type="checkbox" class="check remote-check" id="input-confidencial"><label for="input-confidencial" class="color-black">Remote</label><input type="checkbox" class="check local-check"><label class="color-black">Local</label></label>
+
+
+                                  </div>-->
 
                                 </div>
                                 <div class="col-md-5 col-md-offset-2">

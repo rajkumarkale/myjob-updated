@@ -1,7 +1,7 @@
 angular.module('com.module.possibility')
     .controller('createPossibilityController', ['$scope', 'toaster', '$state', '$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies', '$q', 'CoreService', '$filter', '$timeout', function ($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies, $q, CoreService, $filter, $timeout) {
         $scope.init = function ($stateParams) {
-
+console.log($state.current.name);
             $scope.isEditable = false;
             $scope.employeeSize = appConfig.possibility.employeeSize;
             $scope.groupTurnover = appConfig.possibility.groupTurnover;

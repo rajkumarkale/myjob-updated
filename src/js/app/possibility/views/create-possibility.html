@@ -294,12 +294,12 @@
 
                                 <div class="col-md-10 upward">
                                     <label for="textArea" class=" mrg-label ">
-                                        <h3>Discussion Summary</h3></label>
+                                        <h3>Discussion Summary </h3></label>
                                     <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea" ng-model="discussion.text" required ></textarea>
                                 </div>
                             </div>
                             <div class="row">
-                              <div data-cg-busy="{promise:uploads,message:'Uploading Files'}"></div>
+                             <!-- <div data-cg-busy="{promise:uploads,message:'Uploading Files'}"></div>-->
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group is-empty is-fileinput">
                                         <input type="file" id="inputFile4" ngf-select="uploads($file)" ng-model="file" ngf-multiple="true" >
@@ -339,4 +339,5 @@
         </div>
     </div>
 </div>
+
 

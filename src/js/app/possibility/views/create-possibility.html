@@ -98,7 +98,7 @@
                                     </div>
                                     <br>
                                   <div class="form-group pull-right freeze-mrg">
-                                    <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
+                                    <input data-ng-model="createPossibility.freeze" type="checkbox" class="check freeze-check">
                                     <label class=" first-class2 " tabindex="13">Freeze</label>
                                   </div>
 
@@ -189,10 +189,10 @@
 
                                         <div class="form-group">
                                             <label class="contacts">Contacts Provides</label>
-                                            <input type="checkbox" ng-model="poc.remote" class="check" tabindex="19">
-                                            <label class="remote">Remote</label>
-                                            <input type="checkbox" ng-model="poc.local" class="check" tabindex="20" ng-checked='true'>
-                                            <label class="location">Local</label>
+                                 <input type="checkbox" ng-model="poc.remote" class="check remote-check" tabindex="19" id="input-confidencial">
+                                            <label class="remote" for="input-confidencial">Remote</label>
+                                            <input type="checkbox" ng-model="poc.local" class="check local-check" ng-checked='true' tabindex="20" id="input-confidencial1">
+                                            <label class="location" for="input-confidencial1">Local</label>
                                         </div>
                                         <div>
                                             <div class="form-group label-floating localadd-mrg" data-ng-class="{'is-empty':isNewPossibility}">

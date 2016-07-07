@@ -135,15 +135,19 @@
                                         <div class="form-group" custom-select data="poc.support_area">
                                         </div>
                                     </div>
-                                  <div class="up-margin"  >
-                                    <label class=" contacts">Contact Provides</label>
-                                    <input type="checkbox" class="check" data-ng-checked="support_type_remote"><label class="color-black">Remote</label>
-                                    <input type="checkbox" class="check" ng-checked="support_type_local"><label class="color-black">Local</label></label>
+                                  <div class="form-group">
+                                    <label class="contacts">Contacts Provides</label>
+                                    <input type="checkbox" ng-model="poc.remote" class="check remote-check" data-ng-checked="support_type_remote" tabindex="19" id="input-confidencial">
+                                    <label class="remote" for="input-confidencial">Remote</label>
+                                    <input type="checkbox" ng-model="poc.local" class="check local-check" ng-checked="support_type_local" tabindex="20" id="input-confidencial1">
+                                    <label class="location" for="input-confidencial1">Local</label>
                                   </div>
-                                  <div>
+                               <div class="up-margin"  >
+
                                     <div class="form-group label-floating localadd-mrg" >
                                       <label class="control-label">Location</label>
                                       <input required data-ng-model="suspect.support_location" class="form-control" type="text" tabindex="21">
+
 
                                     </div>
                                   </div>

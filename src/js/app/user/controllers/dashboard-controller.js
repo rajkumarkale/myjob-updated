@@ -1,7 +1,7 @@
 /**
  * Created by revathi bandi on 5/11/2016.
  */
-angular.module('com.module.user').controller('dashboardController', ['$scope','AuthService','$state','dashBoardService',  function ($scope, AuthService,$state,dashBoardService) {
+angular.module('com.module.user').controller('dashboardController', ['$scope','AuthService','$state','dashBoardService','$cookies',  function ($scope, AuthService,$state,dashBoardService,$cookies) {
     'use strict';
     $scope.chartSeries = [
       {"name": "Target", "data":[1, 2, 4, 3, 3.5,6.5,4.5,4.5,5,7,8,7], fillOpacity: 0.5, color:'#5398F6',align: 'left',connectNulls: true,
@@ -93,12 +93,13 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
     $scope.reflow = function () {
       $scope.$broadcast('highchartsng.reflow');
     };
-      $scope.getDashboardCount=function(){
-          dashBoardService.getDashboardCount().then(function(response){
+    $scope.userId = JSON.parse($cookies.userData).userDetails._id;
+      $scope.getDashboardCount=function(id){
+          dashBoardService.getDashboardCount(id).then(function(response){
               console.log(response);
           });
       }
-      $scope.getDashboardCount();
+      $scope.getDashboardCount($scope.userId);
 $scope.open = function($event,opened) {
       $event.preventDefault();
       $event.stopPropagation();

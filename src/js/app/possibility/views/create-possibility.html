@@ -197,12 +197,12 @@
                                             <label class="contacts">Contacts Provides</label>
                                             <input type="checkbox" ng-model="poc.remote" class="check" tabindex="19">
                                             <label class="remote">Remote</label>
-                                            <input type="checkbox" ng-model="poc.local" class="check" tabindex="20">
+                                            <input type="checkbox" ng-model="poc.local" class="check" tabindex="20" ng-checked='true'>
                                             <label class="location">Local</label>
                                         </div>
                                         <div>
                                             <div class="form-group label-floating localadd-mrg" data-ng-class="{'is-empty':isNewPossibility}">
-                                                <label class="control-label">Local Address</label>
+                                                <label class="control-label">Location</label>
                                                 <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="21">
 
                                             </div>

@@ -27,10 +27,11 @@ angular.module('com.module.possibility').factory('possibilityCreateService', fun
       url: BASEURI + '/api/possibility?page='+currentPage+'&count='+numPerPage+'&start='+start+'&end='+end
     });
   };
-    var deletePossibilities = function (id) {
+    var deletePossibilities = function (clientUnitIds) {
     return $http({
-      method: 'DELETE',
-      url: BASEURI + '/api/possibility/'+id
+      method: 'POST',
+      url: BASEURI + '/api/possibility/',
+        data:clientUnitIds
     });
   };
   var getPossibility = function (currentPage,numPerPage,start,end) {

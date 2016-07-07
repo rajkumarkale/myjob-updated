@@ -10,8 +10,9 @@ angular.module('com.module.possibility')
             $scope.contactType = appConfig.possibility.contactType;
             $scope.status = appConfig.possibility.status;
             $scope.typeOfDiscussion = appConfig.discussion.typeOfDiscussion;
+            
             $scope.discussion = {};
-
+            $scope.documentTypes;
             $scope.uploadFiles = [];
              $scope.uploadFile=[];
             if ($stateParams.possibility) {
@@ -230,8 +231,19 @@ angular.module('com.module.possibility')
 
 
         $scope.isValid = function (val) {
-            return (val && ($scope.businessVertical.selectedItem && $scope.employeeSize.selectedItem && $scope.groupTurnover.selectedItem &&
+            var c1;
+            var c2=true;
+            c1= (val && ($scope.businessVertical.selectedItem && $scope.employeeSize.selectedItem && $scope.groupTurnover.selectedItem &&
                 $scope.customerType.selectedItem));
+            if ($scope.uploadFiles && $scope.uploadFiles.length) {
+                    for (var i = 0; i < $scope.uploadFiles.length; i++) {
+                        
+                        if(!$scope.uploadFiles[i].documentType.selectedItem.key){
+                            c2=false;
+                        } 
+                    }
+                }
+            return (c1 && c2);
 
         };
 

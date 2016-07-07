@@ -68,7 +68,8 @@ angular.module('com.module.possibility')
         var st=$filter('date')($scope.start, 'MM/dd/yyyy');
         var date1=Math.round(new Date(st).getTime()/1000); 
         var ed=$filter('date')($scope.end, 'MM/dd/yyyy');
-        var date2=Math.round(new Date(ed).getTime()/1000);         
+        var date2=Math.round(new Date(ed).getTime()/1000);    
+        if(date1<date2){
           $scope.myPromise = possibilityCreateService.getPossibilityByRange(currentPage,numPerPage,date1,date2).then(function(response){
             /*CoreService.toastSuccess('', 'POSSIBILITY Retrieved Successfully.');*/
 			$scope.data.possibilities = response.data.possibilities;
@@ -77,18 +78,21 @@ angular.module('com.module.possibility')
 			$scope.data.met=response.data.met;
 			$scope.data.notMet=response.data.not_met;
 			$scope.data.inactive=response.data.inactive;
-		});      
+		}); 
+        }else{
+            CoreService.toastError('', 'Satrt date should be less than end date.');
+        }
     };
 		$scope.getPossibilities($scope.data.currentPage,$scope.data.numPerPage);
     $scope.deletePossibility=function(){
-        var id=[];
+        var clientUnitIds=[];
         for (var i = 0; i < $scope.filteredRows.length; i++) {
 	                if ($scope.filteredRows[i].isChecked) {
-	                    id.push($scope.filteredRows[i].client_unit_id);
+	                    id.push({clientUnitId:$scope.filteredRows[i].client_unit_id});
 	                }
 	            }
         
-        $scope.myPromise =possibilityCreateService.deletePossibilities(id[0]).then(function(response){
+        $scope.myPromise =possibilityCreateService.deletePossibilities(clientUnitIds).then(function(response){
                         console.log(response);  
         });  
     };

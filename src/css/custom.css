@@ -299,6 +299,59 @@
   height: 20px;
   vertical-align: -36%;
 }
+.remote-check:checked + label:after{
+  background-color: #0399D7;
+  color: white;
+  content: '\2714';
+  font-size: 10px;
+  left: 143px;
+  padding: 3px 8px 2px 2px;
+  position: absolute;
+  top: 4px;
+  border-radius: 2px;
+}
+.local-check:checked + label:after{
+  background-color: #0399D7;
+  color: white;
+  content: '\2714';
+  font-size: 10px;
+  left: 243px;
+  padding: 3px 8px 2px 2px;
+  position: absolute;
+  top:4px;
+  border-radius: 2px;
+}
+/*.possview-check:checked + label:after{
+  background-color: #0399D7;
+  color: white;
+  content: '\2714';
+  font-size: 10px;
+  left: 290px;
+  padding: 3px 8px 2px 2px;
+  position: absolute;
+  top:1024px;
+}*/
+.gpa-check:checked + label:after{
+  background-color: #0399D7;
+  color: white;
+  content: '\2714';
+  font-size: 10px;
+  left: 287px;
+  padding: 3px 8px 2px 2px;
+  position: absolute;
+  top: 1628px; border-radius: 2px;
+
+}
+/*.freeze-check:checked + label:after{
+  background-color: #0399D7;
+  color: white;
+  content: '\2714';
+  font-size: 10px;
+  left: 287px;
+  padding: 3px 8px 2px 2px;
+  position: absolute;
+  top: 1628px; border-radius: 2px;
+}*/
 .contacts-button{
   background-color: #049ad9 !important;
   color: white !important;
@@ -2350,7 +2403,7 @@ color: #AEAEAE;}
 /*suspect update panel border remove*/
 /*suspect update rollout margin*/
 .rollout-mrg{
-  margin-left: 20px;
+  margin-left: 10px;
 }
 /*end suspect update rollout margin*/
 /*select prospect*/

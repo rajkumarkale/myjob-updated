@@ -93,7 +93,7 @@
 
     </div>-->
 <div  data-cg-busy="{promise:getDiscussionPromise,message:'Retrieving Discussions'}"></div>
-    <div class="container-custom panel panel-default discussion-container" ng-repeat="discussion in discussions track by $index">
+    <div class="container-custom panel panel-default discussion-container" ng-repeat="discussion in discussions track by $index | orderBy:sortType:reverse">
       <div class="container ">
         <div class="discussion-body">
           <div class="row ">
@@ -136,7 +136,7 @@
                       Logged by:
                     </label>
                     <label class="call-follow">
-                      {{}}
+                      {{discussion.loggedBy}}
                     </label>
                   </td>
                 </tr>
@@ -148,7 +148,7 @@
               <table>
                 <tr>
                   <td>
-                    <label class="date-venue">{{discussion.time_of_discussion | date:'dd/MM/yyyy, hh:mm a'}}
+                    <label class="date-venue">{{discussion.time_of_discussion*1000 | date:'dd/MM/yyyy, hh:mm a'}}
 
             </label>
             </td>

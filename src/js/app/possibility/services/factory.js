@@ -62,7 +62,7 @@ var possibilityDetails = function (id) {
     var getDiscussions = function (obj) {
     return $http({
       method: 'GET',
-      url: BASEURI + '/api/discussions?client_unit_id='+obj.client_unit_id+'&client_status_id='+obj.client_status_id+'&count='+obj.count+'&page='+obj.page+'&disussed_by='+obj.disussed_by
+      url: BASEURI + '/api/discussions?client_unit_id='+obj.client_unit_id+'&client_status_id='+obj.client_status_id+'&count='+obj.count+'&page='+obj.page+'&discussed_by='+obj.discussed_by
     });
   };
     var createDiscussion = function (data) {

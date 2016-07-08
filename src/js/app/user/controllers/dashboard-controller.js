@@ -95,6 +95,9 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
       $scope.getDashboardCount=function(id){
           dashBoardService.getDashboardCount(id).then(function(response){
               console.log(response);
+              $scope.target=response.data.dashboardCount[0].count;
+               $scope.prospect=response.data.dashboardCount[1].count;
+                  $scope.empanelment=response.data.dashboardCount[2].count;
           });
       };
       $scope.getDashboardCount($scope.userId);

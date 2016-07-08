@@ -61,25 +61,25 @@ angular.module('com.module.suspect')
             console.log(response.data);
 			$scope.data.suspects = response.data.suspects;
 			$scope.data.totalItems = response.data.count;
-			$scope.data.COLD=response.data.COLD;
-			$scope.data.HOT=response.data.HOT;
-			$scope.data.WARM=response.data.WARM;
+			$scope.data.COLD=response.data.cold;
+			$scope.data.HOT=response.data.hot;
+			$scope.data.WARM=response.data.warm;
 		});
 		};
     $scope.getSuspectsByRange=function(currentPage,numPerPage){
         var st=$filter('date')($scope.start, 'MM/dd/yyyy');
-        var date1=Math.round(new Date(st).getTime()/1000); 
+        var date1=Math.round(new Date(st).getTime()/1000);
         var ed=$filter('date')($scope.end, 'MM/dd/yyyy');
-        var date2=Math.round(new Date(ed).getTime()/1000); 
+        var date2=Math.round(new Date(ed).getTime()/1000);
         if(date1<date2){
           $scope.myPromise = suspectService.getSuspectsByRange(currentPage,numPerPage,date1,date2).then(function(response){
-            console.log(response.data);  
+            console.log(response.data);
             $scope.data.suspects = response.data.suspects;
 			$scope.data.totalItems = response.data.count;
 			$scope.data.COLD=response.data.COLD;
 			$scope.data.HOT=response.data.HOT;
 			$scope.data.WARM=response.data.WARM;
-		}); 
+		});
             }else{
             CoreService.toastError('', 'Satrt date should be less than end date.');
             }

@@ -3,6 +3,7 @@
  */
 angular.module('com.module.suspect')
     .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams', 'suspectService', '$http', '$state', 'Upload', '$q','CoreService', function ($scope, appConfig, $modal, $stateParams, suspectService, $http, $state, Upload, $q,CoreService) {
+       $scope.met_status='MET';
         $scope.status = {
             open: true
         };
@@ -75,9 +76,9 @@ angular.module('com.module.suspect')
                 $scope.createPossibility.employee_size = $scope.getSelectedItem($scope.createPossibility.employee_size, $scope.employeeSize).displayText;
                 $scope.createPossibility.turnover = $scope.getSelectedItem($scope.createPossibility.turnover, $scope.groupTurnover).displayText;
                 $scope.createPossibility.vertical = $scope.getSelectedItem($scope.createPossibility.vertical, $scope.businessVertical).displayText;
-                $scope.createPossibility.customer_type = $scope.getSelectedItem($scope.createPossibility.customer_type, $scope.customerType);
+                $scope.createPossibility.customer_type = $scope.getSelectedItem($scope.createPossibility.customer_type, $scope.customerType).displayText;
                 /*$scope.createPossibility.POC =$scope.suspect;*/
-                $scope.status.selectedItem = $scope.getSelectedItem($scope.createPossibility.current_status.status, $scope.status);
+                $scope.status.selectedItem = $scope.getSelectedItem($scope.createPossibility.current_status.status, $scope.status).displayText;
                 $scope.createPossibility.point_of_contacts.map(function (Obj) {
                     var i = 0;
                     $("#contact" + i + ' .is-empty').removeClass('is-empty');
@@ -227,7 +228,7 @@ angular.module('com.module.suspect')
                     $state.go('app.suspect-view');
                 });
                 console.log($scope.point_of_contacts);
-                console.log($scope.support_array);
+                /*console.log($scope.support_array);*/
             });
         }
         $scope.getSelectedItem = function (selectedItem, srcObj) {

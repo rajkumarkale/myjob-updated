@@ -2380,7 +2380,7 @@ color: #AEAEAE;}
 /*end contacts btn in create poss*/
 /*contacts btn in create suspect*/
 .mrgs-contact{
-  margin-left: 40px;
+  margin-left: 55px;
 }
 /*end contacts btn in create suspect*/
 /*all tables arrows col*/
@@ -2505,32 +2505,5 @@ background-color: #03a9f4;color:#ffffff}
 margin-right: 16px;}
 /*end of comments for create suspect */
 /* comments for image blocks in view prospect */
-.one{
 
-  width: 16% !important;
-
-
-}
-
-.mini-box{
-  min-height: 95px;
-  padding: 0px;
-  background-color: wheat;
-}
-.mini-box .btn-icon, .mini-box .btn-icon-lined {
-  margin: 0 15px 0 0;
-  font-size: 32px;
-}
-.btn-icon-lg-alt {
-  height: 70px;
-  width: 70px;
-}
-.mini-box .box-info {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: -6px;
-}
-.mini-box .box-info p {
-  margin: 0;
-}
 /*end of comments for view prospect */

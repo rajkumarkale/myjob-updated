@@ -117,7 +117,8 @@
             </span>
                             </accordion-heading>
                             <div class="row" id="contact{{$index}}">
-                                <div class="col-md-5 col-pad">
+                              <div class="col-md-12">
+                                <div class="col-md-6 col-pad">
                                     <div class=" form-group label-floating is-empty">
                                         <label class="control-label"> Name</label>
                                         <input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)">
@@ -152,7 +153,7 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div class="col-md-5 col-md-offset-2">
+                                <div class="col-md-6 col-pad">
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label">Email ID</label>
                                         <input class="form-control bord-remove" data-ng-model="poc.email_id" type="text">
@@ -166,6 +167,7 @@
                                         <div class="form-group" custom-select data="poc.contact_type"></div>
                                     </div>
                                 </div>
+                              </div>
                             </div>
                         </accordion-group>
                     </accordion>

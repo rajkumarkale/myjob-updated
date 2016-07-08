@@ -147,6 +147,7 @@ div > div > svg > text {visibility: hidden;}
 .update-profil-heading{
   width:800px;
   background-color: white;
+  margin-top: 133px;
 }
 .update-profil-body{
   height: 60px;
@@ -166,3 +167,8 @@ div > div > svg > text {visibility: hidden;}
 .update-prfl-input2{
   margin-left: 23px;
 }
+/*modal for change pass*/
+.change-passwordmodal{
+  margin-top: 187px;
+}
+/*end modal for change pass*/

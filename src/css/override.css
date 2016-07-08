@@ -166,3 +166,32 @@ div > div > svg > text {visibility: hidden;}
 .update-prfl-input2{
   margin-left: 23px;
 }
+
+
+/* comments for dropdown triangle */
+.triangle {
+  width: 0;
+  height: 1px !important;
+  position: absolute;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+  top: -8px;
+  left: 50%;
+  margin-left: 65px;
+}
+.caret{
+  display: inline-block;
+  width: 10px;
+  height: 0px;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 6px dashed;
+  border-top: 4px solid \9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.welcome-textt{margin-top: 102px;margin-left: -41px}
+.p-txt{margin-left: -13px;}
+/* end of comments for header.html */
+

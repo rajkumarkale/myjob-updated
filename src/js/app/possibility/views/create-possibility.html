@@ -308,8 +308,8 @@
                                         <div class="input-group">
                                             <input type="text" readonly="" class="form-control" placeholder="No selected file" >
                                             <span class="input-group-btn input-group-sm">
-                   <button type="button" class="btn warm-status btn-sm" class='app-container-blur'>
-                    <i class="fa fa-paperclip">&nbsp;&nbsp;&nbsp;Attach File</i>
+                   <button type="button" class="btn warm-status btn-sm btn-text" class='app-container-blur'>
+                    <i class="fa fa-paperclip">&nbsp;&nbsp;Attach File</i>
 
                   </button>
 
@@ -317,7 +317,7 @@
 
                                         </div>
 
-                                        <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
+                                        <span class="material-input control-label ">Supported file format PDF,DOC,PPT.</span>
 
                                     </div>
                                 </div>
@@ -330,8 +330,8 @@
                         <div data-cg-busy="{promise:createPromise,message:'Creating Possibilities'}"></div>
                         <div class="col-md-12" data-ng-if="isEditable || isNewPossibility ">
                             <div class="form-group text-center">
-                                <button ui-sref="app.viewPossibility" class="btn btn-deafult data-button-cancel">Cancel</button>
-                                <button class="btn btn-primary data-button data-button-sub" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)">{{isNewPossibility?'Submit':'Update'}}</button>
+                                <button ui-sref="app.viewPossibility" class="btn btn-deafult data-button-cancel btn-text">Cancel</button>
+                                <button class="btn btn-primary data-button data-button-sub btn-text" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save(createPossibility)">{{isNewPossibility?'Submit':'Update'}}</button>
                             </div>
                         </div>
                     </form>

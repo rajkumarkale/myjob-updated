@@ -875,6 +875,7 @@ body {
   font-weight: 700;
   line-height: 50px;
   text-align: center;
+  padding-top: 13px;
 }
 
 .navbar-brand:hover {
@@ -4310,7 +4311,7 @@ a.text-#000000:hover {
 }
 
 .m-l-xs {
-  margin-left: 5px;
+  margin-left: -57px;
 }
 
 .m-l-sm {

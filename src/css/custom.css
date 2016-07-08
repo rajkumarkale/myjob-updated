@@ -51,8 +51,8 @@
 }
 
 .ecentric-logo{
-  margin-top: 6px !important;
-  margin-left: -9px !important;
+  margin-top: -6px !important;
+  margin-left: 53px !important;
 }
 .background-anchor:hover{
   background-color: #E2E7ED !important;
@@ -75,7 +75,7 @@
   margin-left: -25px !important;
 }
 .notification-mrg{
-  background-color: #AAAAAA !important;
+  background-color: #ff5722 !important;;
   padding: 3px 5px !important;
 }
 .caret{
@@ -299,7 +299,7 @@
   height: 20px;
   vertical-align: -36%;
 }
-.remote-check:checked + label:after{
+/*.remote-check:checked + label:after{
   background-color: #0399D7;
   color: white;
   content: '\2714';
@@ -309,8 +309,8 @@
   position: absolute;
   top: 4px;
   border-radius: 2px;
-}
-.local-check:checked + label:after{
+}*/
+/*.local-check:checked + label:after{
   background-color: #0399D7;
   color: white;
   content: '\2714';
@@ -320,7 +320,7 @@
   position: absolute;
   top:4px;
   border-radius: 2px;
-}
+}*/
 /*.possview-check:checked + label:after{
   background-color: #0399D7;
   color: white;
@@ -331,7 +331,7 @@
   position: absolute;
   top:1024px;
 }*/
-.gpa-check:checked + label:after{
+/*.gpa-check:checked + label:after{
   background-color: #0399D7;
   color: white;
   content: '\2714';
@@ -341,7 +341,7 @@
   position: absolute;
   top: 1628px; border-radius: 2px;
 
-}
+}*/
 /*.freeze-check:checked + label:after{
   background-color: #0399D7;
   color: white;
@@ -2506,4 +2506,35 @@ margin-right: 16px;}
 /*end of comments for create suspect */
 /* comments for image blocks in view prospect */
 
+  /*width: 16% !important;
+
+
+}*/
+
+.mini-box{
+  min-height: 95px;
+  padding: 0px;
+  background-color: wheat;
+}
+.mini-box .btn-icon, .mini-box .btn-icon-lined {
+  margin: 0 15px 0 0;
+  font-size: 32px;
+}
+.btn-icon-lg-alt {
+  height: 70px;
+  width: 70px;
+}
+.mini-box .box-info {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -6px;
+}
+.mini-box .box-info p {
+  margin: 0;
+}
+.button-txt{text-transform: none !important;
+  font-size: 14px !important;}
+.btn-text{text-transform: none !important;font-size: 17px !important;}
 /*end of comments for view prospect */
+
+

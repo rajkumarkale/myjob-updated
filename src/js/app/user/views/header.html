@@ -36,11 +36,11 @@
   </div>-
   <!-- / buttons -->
   <!-- nabar right -->
-  <ul class="nav navbar-nav navbar-right">
+  <ul class="nav navbar-nav navbar-right" >
     <li class="hidden-xs">
       <a ui-fullscreen></a>
     </li>
-    <li class="dropdown" dropdown>
+    <li class="dropdown drop" dropdown>
       <a href class="dropdown-toggle" dropdown-toggle>
         <i class="fa fa-bell fa-fw notification-icon"></i>
         <span class="visible-xs-inline">Notifications</span>
@@ -87,7 +87,9 @@
         <b class="caret"></b>
       </a>
       <!-- dropdown -->
-      <ul class="dropdown-menu animated fadeInRight w list-menu">
+
+      <ul class="dropdown-menu animated fadeInRight w list-menu" style="margin-right: 21px;" >
+        <div class="triangle"></div>
         <li class="list-update">
           <a ng-click="updateProfile()" >Update Profile</a>
         </li>
@@ -105,8 +107,6 @@
       <!-- / dropdown -->
     </li>
   </ul>
-
-
   <!-- / navbar right -->
   </ul>
 </div>

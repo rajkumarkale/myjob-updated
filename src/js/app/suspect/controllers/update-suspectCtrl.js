@@ -16,7 +16,7 @@ angular.module('com.module.suspect')
                     url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name=' + val
                 }).then(function (response) {
                     return response.data.users;
-                })
+                });
                 /*suspectService.getNames(val).then(function(response){
               return response.data.users;
           });*/

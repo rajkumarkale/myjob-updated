@@ -8,7 +8,7 @@ angular.module('com.module.prospect').factory('prospectService', function ($http
   var getProspects= function (currentPage,numPerPage) {
     return $http({
       method: 'GET',
-      url: BASEURI + '/api/prospect/'+currentPage+'/'+numPerPage
+      url: BASEURI + '/api/prospect?page='+currentPage+'&count='+numPerPage
     });
   };
 

@@ -31,7 +31,7 @@
                                         <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text" tabindex="1">
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label dropdown-col">Bussiness Vertical</label>
+                                        <label class="control-label dropdown-col">Business Vertical</label>
 
                                         <div custom-select data="businessVertical" tabindex="3"></div>
                                     </div>
@@ -48,16 +48,17 @@
                                         <label class="control-label">Address 2</label>
                                         <input class="form-control" data-ng-model="createPossibility.address.address_line_2" type="text" tabindex="9">
                                     </div>
-                                    <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Zip Code</label>
-                                        <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text" tabindex="11">
+                                  <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                    <label class="control-label">State</label>
+                                    <input class="form-control" required data-ng-model="createPossibility.address.state" type="text" tabindex="11">
 
-                                    </div>
-                                    <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Country</label>
-                                        <input class="form-control" required data-ng-model="createPossibility.address.country" type="text" tabindex="11">
+                                  </div>
 
-                                    </div>
+                                  <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                  <label class="control-label">Zip Code</label>
+                                  <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text" tabindex="13">
+
+                                </div>
 
                                 </div>
 
@@ -86,23 +87,24 @@
                                         <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 " type="text" tabindex="8">
 
                                     </div>
-                                    <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">State</label>
-                                        <input class="form-control" required data-ng-model="createPossibility.address.state" type="text" tabindex="10">
 
-                                    </div>
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                         <label class="control-label">City</label>
-                                        <input class="form-control" required data-ng-model="createPossibility.address.city " type="text" tabindex="12">
+                                        <input class="form-control" required data-ng-model="createPossibility.address.city " type="text" tabindex="10">
 
                                     </div>
+                                  <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                    <label class="control-label">Country</label>
+                                    <input class="form-control" required data-ng-model="createPossibility.address.country" type="text" tabindex="12">
+
+                                  </div>
                                     <br>
-                                  <div class="form-group pull-right freeze-mrg">
+                              <!--    <div class="form-group pull-right freeze-mrg">
                                     <input data-ng-model="createPossibility.freeze" type="checkbox" class="check freeze-check">
-                                    <label class=" first-class2 " tabindex="13">Freeze</label>
+                                    <label class=" first-class2 " tabindex="14">Freeze</label>
                                   </div>
 
-
+-->
 
                                 </div>
                             </div>
@@ -199,7 +201,7 @@
                                         <div>
                                             <div class="form-group label-floating localadd-mrg" data-ng-class="{'is-empty':isNewPossibility}">
                                                 <label class="control-label">Location</label>
-                                                <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="21">
+                                                <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="22">
 
                                             </div>
                                         </div>
@@ -214,11 +216,11 @@
                                         </div>
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                             <label class="control-label">Email Id</label>
-                                            <input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="22">
+                                            <input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="18">
                                         </div>
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                             <label class="control-label">Department</label>
-                                            <input required data-ng-model="poc.department" class="form-control" type="text">
+                                            <input required data-ng-model="poc.department" class="form-control" type="text" tabindex="21">
                                         </div>
 
                                         <div ng-if="poc.contact_type ==='PRIMARY'">
@@ -243,7 +245,7 @@
                             </accordion>
                         </div>
                         <div>
-                            <button type="button" class="btn btn-primary contacts-button mrg-contacts" data-ng-click="getNewPointofContact()"><i class="fa fa-plus"></i> Contacts</button>
+                            <button type="button" class="btn btn-primary contacts-button mrg-contacts" tabindex="24" data-ng-click="getNewPointofContact()"><i class="fa fa-plus"></i> Contacts</button>
                         </div>
                         <hr class="line-upload">
                         <h4 class="contact">Discussion</h4>
@@ -254,18 +256,18 @@
                                     <div class="col-md-6 form-custom-padding">
                                         <div id='dname' class="form-group label-floating is-empty">
                                             <label for="i1" class="control-label">Contact Person Name</label>
-                                            <input type="text" class="form-control" id="i1" ng-model="discussion.name" required >
+                                            <input type="text" class="form-control" id="i1" ng-model="discussion.name" required tabindex="25" >
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-md-9 present">
-                                                <input type="text" class="form-control hand-cursor" placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="discussion.date" is-open="opened1" show-button-bar="false" ng-required="true" ng-click="open($event,'opened')" readonly>
+                                                <input type="text" tabindex="27" class="form-control hand-cursor" placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="discussion.date" is-open="opened1" show-button-bar="false" ng-required="true" ng-click="open($event,'opened')" readonly>
                                                 <span class="input-group-addon" id="basic-addon2">
             <img src="img/calendar_icon.png" class="calendar-img " alt="" /></span>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Mode of Discussion</label>
-                                            <div custom-select data="typeOfDiscussion" ></div>
+                                            <div custom-select data="typeOfDiscussion"  tabindex="29"></div>
                                         </div>
 
                                     </div>
@@ -273,11 +275,11 @@
                                     <div class="col-md-6 form-custom-padding">
                                         <div id='dvenue' class="form-group label-floating is-empty">
                                             <label for="i7" class="control-label">Venue</label>
-                                            <input type="text" class="form-control" id="i7" ng-model="discussion.venue" required >
+                                            <input type="text" class="form-control" id="i7" ng-model="discussion.venue" required tabindex="26">
                                         </div>
                                         <div class="form-group" ng-if="isNewPossibility">
                                             <div class="input-group col-md-9">
-                                                <input type="time" class="form-control" id='myTime' placeholder="Time" ng-model="discussion.time"  >
+                                                <input type="time" class="form-control" id='myTime' placeholder="Time" ng-model="discussion.time"  tabindex="28">
 
                                             </div>
                                         </div>
@@ -297,14 +299,14 @@
                                 <div class="col-md-10 upward">
                                     <label for="textArea" class=" mrg-label ">
                                         <h3>Discussion Summary </h3></label>
-                                    <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea" ng-model="discussion.text" required ></textarea>
+                                    <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea" ng-model="discussion.text" required tabindex="30"></textarea>
                                 </div>
                             </div>
                             <div class="row">
                              <!-- <div data-cg-busy="{promise:uploads,message:'Uploading Files'}"></div>-->
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group is-empty is-fileinput">
-                                        <input type="file" id="inputFile4" ngf-select="uploads($file)" ng-model="file" ngf-multiple="true" >
+                                        <input type="file" id="inputFile4" ngf-select="uploads($file)" ng-model="file" ngf-multiple="true" tabindex="31" >
                                         <div class="input-group">
                                             <input type="text" readonly="" class="form-control" placeholder="No selected file" >
                                             <span class="input-group-btn input-group-sm">

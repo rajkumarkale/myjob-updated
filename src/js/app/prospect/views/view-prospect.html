@@ -174,7 +174,7 @@
               </form>
             </div>
           </div>
-          <div class="row mrg-top row-height">
+          <!---<div class="row mrg-top row-height">
             <label class=" dropdown check-share-transfer pull-left ">
               <input type="checkbox" class="checkBox check-box-poss" ng-model="selectAllItems" ng-change="selectAll()">
             </label>
@@ -186,7 +186,7 @@
               <i class="fa fa-long-arrow-up suspect-arrowicon" data-toggle="dropdown"></i>&nbsp;&nbsp;Transfer
             </label>
 
-          </div>
+          </div>--->
         </div>
       </div>
 
@@ -194,7 +194,6 @@
         <table class="table table-bod table-hover m-n">
           <thead class="table-head">
         <tr>
-          <th class="table-th-heading"></th>
           <th class="table-th-heading" > Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" ><img src="img/sort_icon.png"></span> </th>
           <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse"><img src="img/sort_icon.png"></span></th>
           <th class="table-th-heading" >Annual Number</th>
@@ -211,7 +210,8 @@
       </ul>
     </span></th>
           <th class="table-th-heading">Discussions</th>
-
+          <th class="table-th-heading">Share</th>
+          <th class="table-th-heading">Transfer</th>
 
 
           </tr>
@@ -220,7 +220,7 @@
           <tbody>
 
         <tr data-ng-repeat="prospect in filteredRows=(data.prospects | orderBy:sortType:sortReverse |companyFilter:selectedItem)| filter:$root.searchView"  >
-          <td>
+          <!--<td>
 
               <div class="chekbox">
                 <label>
@@ -232,7 +232,7 @@
                 </label>
               </div>
 
-          </td>
+          </td>--->
           <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">{{prospect.legal_name}}</td>
           <td>{{prospect.client_unit_name}}</td>
           <td>{{prospect.annual_rate_no}}</td>
@@ -245,6 +245,12 @@
           </td>
           <td>
             <button class="btn btn-raised  btn-info m-n btn-sm" data-ng-click="openDiscussions(prospect)">Discussion</button>
+          </td>
+          <td>
+            <span><i class="fa fa-share suspect-shareicon"></i> </span>
+          </td>
+          <td>
+            <span><i class="fa fa-long-arrow-up suspect-arrowicon"></i> </span>
           </td>
         </tr>
         <tr  data-ng-if="filteredRows.length ===0">

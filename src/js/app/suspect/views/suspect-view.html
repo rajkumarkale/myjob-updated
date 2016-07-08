@@ -125,7 +125,7 @@
               </form>
             </div>
           </div>
-          <div class="row mrg-top row-height">
+          <!--<div class="row mrg-top row-height">
             <label class=" dropdown check-share-transfer pull-left ">
               <input type="checkbox" class="checkBox check-box-poss" ng-model="selectAllItems" ng-change="selectAll()">
             </label>
@@ -136,14 +136,13 @@
               <i class="fa fa-long-arrow-up suspect-arrowicon" data-toggle="dropdown"></i>&nbsp;&nbsp;Transfer
             </label>
 
-          </div>
+          </div>--->
         </div>
       </div>
       <div class="table-topdiv table-up-mrg col-md-12">
         <table class="table table-bod m-n">
           <thead class="table-head">
           <tr>
-            <th class="table-th-heading"></th>
             <th class="table-th-heading">Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" ><img src="img/sort_icon.png"></span></th>
             <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse"><img src="img/sort_icon.png"></span></th>
             <th class="table-th-heading">Location <span ng-click="sortType = 'city'; sortReverse = !sortReverse"  ><img src="img/sort_icon.png"></span></th>
@@ -158,22 +157,12 @@
       </ul>
     </span></th>
             <th class="table-th-heading">Discussions</th>
+            <th class="table-th-heading">Share</th>
+            <th class="table-th-heading">Transfer</th>
           </tr>
           </thead>
           <tbody>
           <tr data-ng-repeat="suspect in filteredRows= (data.suspects | orderBy:sortType:sortReverse |companyFilter:selectedItem) | filter:$root.searchView"  >
-        <td>
-
-          <div class="chekbox">
-            <label>
-              <input type="checkbox" ng-model="suspect.isChecked" ng-change="selectEntity()">
-                <span class="checkbox-material">
-                  <span class="check"></span>
-                </span>
-            </label>
-          </div>
-
-        </td>
         <td class="hand-cursor td-text-color" ng-click="openEditSuspect(suspect)">{{suspect.legal_name}}</td>
         <td>{{suspect.client_unit_name}}</td>
         <td>{{suspect.city}}</td>
@@ -186,6 +175,12 @@
         <td>
           <button class="btn btn-raised  btn-info m-n btn-sm" data-ng-click="openDiscussions(suspect)">Discussion</button>
         </td>
+            <td>
+              <span><i class="fa fa-share suspect-shareicon"></i> </span>
+            </td>
+            <td>
+              <span><i class="fa fa-long-arrow-up suspect-arrowicon"></i> </span>
+            </td>
       </tr>
          <tr  data-ng-if="filteredRows.length ===0">
         <td colspan="8">No Suspects!</td>

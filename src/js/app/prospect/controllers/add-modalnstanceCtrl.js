@@ -55,7 +55,8 @@ angular.module('com.module.prospect')
             client_status_id: $scope.data.client_status,
             discussed_by: $scope.userId,
                 venue:$scope.discussion.venue,
-                contact_person:discussion.name
+                contact_person:discussion.name,
+                type:'FOLLOW_UP'
                 
         };
             var time = $filter('date')($scope.discussion.time, 'HH:mm:ss');

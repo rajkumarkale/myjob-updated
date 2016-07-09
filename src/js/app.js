@@ -31,6 +31,7 @@ angular.module('app', [
       datepickerConfig.showWeeks = false;
     }).run(function ($rootScope) {
     $rootScope.searchView='';
+    $rootScope.showSearch=true;
 });
 
 angular.element(document).ready(function () {

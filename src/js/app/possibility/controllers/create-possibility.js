@@ -219,6 +219,7 @@ angular.module('com.module.possibility')
                 delete possibilityObject.client_freeze_details;
                 delete possibilityObject.division;
                 delete possibilityObject.discussion;
+                delete possibilityObject.transferred_by;
                 possibilityCreateService.updatePossibility(possibilityObject).success(function () {
                     CoreService.toastSuccess('', 'POSSIBILITY Updated Successfully.');
                     $state.go('app.viewPossibility');
@@ -275,6 +276,7 @@ angular.module('com.module.possibility')
                 requestObject.discussion.time_of_discussion = timestamp;
                 requestObject.discussion.venue = $scope.discussion.venue;
                 requestObject.discussion.text = $scope.discussion.text;
+                /*requestObject.discussion.type='FRESH';*/
                 if($scope.uploadFile.length>0){
                     requestObject.discussion.documents=[$scope.uploadFile[0][0].url];
                 }
@@ -372,14 +374,14 @@ angular.module('com.module.possibility')
                 }
             }
         };
-
+        $scope.uploadsPromise;
         $scope.uploads = function(file) {
             $scope.uploadFile=[];
             if (file && file.length) {
                 for (var i = 0; i < file.length; i++) {
                     var _file = file[i];
                     if (!_file.$error) {
-                      $scope.uploads=  Upload.upload({
+                      $scope.uploadsPromise=  Upload.upload({
                             url: appConfig.apiUrl+'/api/upload/file',
                             data: {
                                 content: _file

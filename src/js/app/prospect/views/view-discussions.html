@@ -92,8 +92,8 @@
       </div>
 
     </div>-->
-<div  data-cg-busy="{promise:getDiscussionPromise,message:'Retrieving Discussions'}"></div>
-    <div class="container-custom panel panel-default discussion-container" ng-repeat="discussion in discussions track by $index | orderBy:sortType:reverse">
+<div  data-cg-busy="{promise:getDiscussionPromise,message:'Please Wait'}"></div>
+    <div class="container-custom panel panel-default discussion-container" ng-repeat="discussion in discussions | orderBy:sortType:reverse track by $index ">
       <div class="container ">
         <div class="discussion-body">
           <div class="row ">
@@ -115,7 +115,7 @@
                       Type of Call:
                     </label>
                     <label class="call-follow">
-                      {{discussion.type}}
+                      {{discussion.type | spaceless}}
                     </label>
                   </td>
                 </tr>
@@ -136,7 +136,7 @@
                       Logged by:
                     </label>
                     <label class="call-follow">
-                      {{discussion.loggedBy}}
+                      {{discussion.loggedBy| uppercase}}
                     </label>
                   </td>
                 </tr>

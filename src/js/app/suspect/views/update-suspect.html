@@ -72,7 +72,7 @@
                                 <input class="form-control" required data-ng-model="createPossibility.address.state" type="text">
                             </div>
                             <br>
-                            <div data-ng-if="!isNewPossibility">
+                            <div>
                                 <label class="control-label">Status</label>
                                 <input class="form-control" required data-ng-model="met_status" type="text">
                             </div>
@@ -87,10 +87,13 @@
         </accordion-group>
     </accordion>
 </div>
+<div class="text-right m-t-sm m-r-xs">
+        <button class="btn btn-primary edit-button mrg-edit" data-ng-click="editForm();"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
+    </div>
 
-
-<div class="container col-md-12 up-mrg">
+<div class="container col-md-12 up-mrg" ng-class="{'app-container-blur':!isEditable}">
     <div class="panel panel-default second-panel up-margin ">
+       <form name="updateSuspectForm" novalidate>
         <div class="panel-title  panel-heading ">
             Contact Details
         </div>
@@ -121,7 +124,7 @@
                                 <div class="col-md-6 col-pad">
                                     <div class=" form-group label-floating is-empty">
                                         <label class="control-label"> Name</label>
-                                        <input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)">
+                                        <input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)" required>
                                         <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
                                         <div ng-show="noResults">
                                             <i class="glyphicon glyphicon-remove"></i> No Results Found
@@ -129,40 +132,39 @@
                                     </div>
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label">Phone Number</label>
-                                        <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
+                                        <input class="form-control bord-remove" numbers-only maxlength="15" data-ng-model="poc.phone" type="text" required>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" ng-show="isEditable">
                                         <label class="control-label">Support Area</label>
                                         <div class="form-group" custom-select data="poc.support_area">
                                         </div>
                                     </div>
                                   <div class="form-group">
                                     <label class="contacts">Contacts Provides</label>
-                                    <input type="checkbox" ng-model="poc.remote" class="check remote-check" data-ng-checked="support_type_remote" tabindex="19" id="input-confidencial">
+                                    <input type="checkbox" ng-model="poc.remote" class="check remote-check"  tabindex="19" id="input-confidencial" ng-required="!poc.local">
                                     <label class="remote" for="input-confidencial">Remote</label>
-                                    <input type="checkbox" ng-model="poc.local" class="check local-check" ng-checked="support_type_local" tabindex="20" id="input-confidencial1">
+                                    <input type="checkbox" ng-model="poc.local" class="check local-check"  tabindex="20" id="input-confidencial1"
+                                    ng-required="!poc.remote">
                                     <label class="location" for="input-confidencial1">Local</label>
                                   </div>
                                <div class="up-margin"  >
 
                                     <div class="form-group label-floating localadd-mrg" >
                                       <label class="control-label">Location</label>
-                                      <input required data-ng-model="suspect.support_location" class="form-control" type="text" tabindex="21">
-
-
+                                      <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="21" required>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-6 col-pad">
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label">Email ID</label>
-                                        <input class="form-control bord-remove" data-ng-model="poc.email_id" type="text">
+                                        <input class="form-control bord-remove" data-ng-model="poc.email_id" type="text" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' required>
                                     </div>
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label">Designation</label>
-                                        <input class="form-control bord-remove" type="text" data-ng-model="poc.designation">
+                                        <input class="form-control bord-remove" type="text" data-ng-model="poc.designation" required>
                                     </div>
-                                  <div class="form-group">
+                                  <div class="form-group" ng-show="isEditable">
                                         <label class="control-label">Contact type</label>
                                         <div class="form-group" custom-select data="poc.contact_type"></div>
                                     </div>
@@ -202,9 +204,9 @@
                     <a ui-sref="app.suspect-view">
                         <button class="btn btn-primary data-button-cancel btn-text">Cancel</button>
                     </a>
-                    <button class="btn btn-primary data-button btn-text" data-ng-click="submit(true)">Submit</button>
+                    <button class="btn btn-primary data-button btn-text" data-ng-disabled="!isValid(updateSuspectForm.$valid)" data-ng-click="submit(true)">Submit</button>
                 </div>
             </div>
         </div>
-    </div>
+    </form></div>
 </div>

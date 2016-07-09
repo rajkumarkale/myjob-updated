@@ -1,8 +1,8 @@
 <div class="maincol-apply">
 
-    <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Loading Suspects'}">
+    <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Please Wait'}">
       <div class="panel panel-primary pan-col">
-        <div class="panel-heading summary">Summary for the month of April 2016</div>
+        <div class="panel-heading summary">Summary for the month of {{sumStartDate | date:'MMMM yyyy '}}{{sumEndDate}}</div>
         <div class="panel-body pan-col">
           <div class="">
             <div class="detailsContent">
@@ -175,11 +175,11 @@
         <td>
           <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(suspect)">Discussion</button>
         </td>
-            <td>
-              <span><i class="fa fa-share suspect-shareicon"></i> </span>
+            <td> 
+              <span ng-click="openShare('share')"><i class="fa fa-share suspect-shareicon"></i> </span>
             </td>
             <td>
-              <span><i class="fa fa-long-arrow-up suspect-arrowicon"></i> </span>
+              <span ng-click="openShare('tansfer')"><i class="fa fa-long-arrow-up suspect-arrowicon"></i> </span>
             </td>
       </tr>
          <tr  data-ng-if="filteredRows.length ===0">

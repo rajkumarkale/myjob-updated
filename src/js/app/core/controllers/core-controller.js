@@ -20,6 +20,11 @@ angular.module('app')
       $rootScope.$on('$stateChangeStart',  function (event, toState, toParams, fromState, fromParams) {
         $rootScope.$prevState = toState.name;
         $rootScope.$prevStateParams = toParams;
+          if(toState.name==='app.dashboard'|| toState.name==='app.viewDiscussions'){
+              $rootScope.showSearch=false;
+          }else{
+              $rootScope.showSearch=true;
+          }
       });
 
       $scope.$on('$stateChangeSuccess', function (event, toState,toParams,from,fromParams) {

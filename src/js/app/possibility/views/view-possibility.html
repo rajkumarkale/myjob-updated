@@ -26,11 +26,11 @@
         </form>
       </div>
     </div>-->
-    <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
+    <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Please Wait'}">
 
 
       <div class="panel panel-primary pan-col">
-        <div class="panel-heading summary">Summary for the month of April 2016</div>
+        <div class="panel-heading summary">Summary for the month of {{sumStartDate | date:'MMMM yyyy '}}{{sumEndDate}}</div>
         <div class="panel-body">
           <div class="detailsContent">
             <div class="detailsContentDiv">
@@ -155,7 +155,7 @@
 
               <div class="chekbox">
                 <label>
-                  <input type="checkbox" class="poss" ng-model="possibility.isChecked" ng-change="selectEntity()">
+                  <input type="checkbox" class="poss" ng-model="possibility.isChecked" ng-change="selectEntity()" ng-disabled="{{possibility.status==='MET'}}">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>

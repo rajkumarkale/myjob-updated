@@ -113,12 +113,12 @@
                                 <div class="col-md-10 col-md-offset-1" ng-if="isEditable">
                                     <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">Drop Files Here</div>
                                     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-                                    <div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
+                                    <div data-cg-busy="{promise:uploadPromise,message:'Plese Wait'}"></div>
                                 </div>
                                 <div class="col-md-10 col-md-offset-1" ng-if="isNewPossibility">
                                     <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">Drop Files Here</div>
                                     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-                                    <div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
+                                    <div data-cg-busy="{promise:uploadPromise,message:'Plese Wait'}"></div>
                                 </div>
                                 <ul>
                                     <div ng-repeat="f in createPossibility.documents" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
@@ -153,7 +153,7 @@
                                                     <!--<p class="text-in">VOTER CARD</p>-->
 
                                                 </div>
-
+                                                <label class="control-label dropdown-col">File Type</label>
                                                 <div class="preview-select" custom-select data="f.documentType">
 
                                                 </div>
@@ -303,7 +303,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                             <!-- <div data-cg-busy="{promise:uploads,message:'Uploading Files'}"></div>-->
+                              <div data-cg-busy="{promise:uploadsPromise,message:'Plese Wait'}"></div>
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group is-empty is-fileinput">
                                         <input type="file" id="inputFile4" ngf-select="uploads($file)" ng-model="file" ngf-multiple="true" tabindex="31" >

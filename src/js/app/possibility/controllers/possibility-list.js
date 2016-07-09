@@ -57,19 +57,25 @@ angular.module('com.module.possibility')
 		$scope.myPromise = possibilityCreateService.getPossibility(currentPage,numPerPage).then(function(response){
             /*CoreService.toastSuccess('', 'POSSIBILITY Retrieved Successfully.');*/
 			$scope.data.possibilities = response.data.possibilities;
-            //console.log($scope.data.possibilities);
+            console.log($scope.data.possibilities);
 			$scope.data.totalItems = response.data.count;
 			$scope.data.met=response.data.met;
 			$scope.data.notMet=response.data.not_met;
 			$scope.data.inactive=response.data.inactive;
 		});
 		};
+    
+    $scope.sumStartDate=new Date();
+    $scope.sumEndDate;
     $scope.getPossibilityByRange=function(currentPage,numPerPage){
+        
         var st=$filter('date')($scope.start, 'MM/dd/yyyy');
         var date1=Math.round(new Date(st).getTime()/1000);
         var ed=$filter('date')($scope.end, 'MM/dd/yyyy');
         var date2=Math.round(new Date(ed).getTime()/1000);
         if(date1<date2){
+            $scope.sumStartDate=$scope.start;
+            $scope.sumEndDate=$filter('date')($scope.end, 'to MMMM yyyy');
           $scope.myPromise = possibilityCreateService.getPossibilityByRange(currentPage,numPerPage,date1,date2).then(function(response){
             /*CoreService.toastSuccess('', 'POSSIBILITY Retrieved Successfully.');*/
 			$scope.data.possibilities = response.data.possibilities;

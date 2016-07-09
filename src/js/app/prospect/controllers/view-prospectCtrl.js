@@ -125,7 +125,9 @@ $scope.checkSelect={};
 }])
   .filter('spaceless',function(){
   return function(status){
+      if(status){
     return  status.replace('_',' ');
+      }
   }
 
 

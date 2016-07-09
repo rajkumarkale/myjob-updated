@@ -26,7 +26,7 @@ angular.module('com.module.suspect')
         }
         return false;
     };
-    $scope.selectAll = function () {
+    /*$scope.selectAll = function () {
 	            for (var i = 0; i < $scope.filteredRows.length; i++) {
 	                $scope.filteredRows[i].isChecked = $scope.selectAllItems;
 	            }
@@ -51,7 +51,7 @@ angular.module('com.module.suspect')
                     $scope.isShow= false;
 	            }
 
-	        };
+	        };*/
       $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
         $scope.searchView   = '';
@@ -66,12 +66,16 @@ angular.module('com.module.suspect')
 			$scope.data.WARM=response.data.warm;
 		});
 		};
+    $scope.sumStartDate=new Date();
+    $scope.sumEndDate;
     $scope.getSuspectsByRange=function(currentPage,numPerPage){
         var st=$filter('date')($scope.start, 'MM/dd/yyyy');
         var date1=Math.round(new Date(st).getTime()/1000);
         var ed=$filter('date')($scope.end, 'MM/dd/yyyy');
         var date2=Math.round(new Date(ed).getTime()/1000);
         if(date1<date2){
+            $scope.sumStartDate=$scope.start;
+            $scope.sumEndDate=$filter('date')($scope.end, 'to MMMM yyyy');
           $scope.myPromise = suspectService.getSuspectsByRange(currentPage,numPerPage,date1,date2).then(function(response){
             console.log(response.data);
             $scope.data.suspects = response.data.suspects;

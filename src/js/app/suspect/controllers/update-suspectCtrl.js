@@ -53,12 +53,14 @@ angular.module('com.module.suspect')
                 email_id: "",
                 contact_type: $scope.getCopy(appConfig.suspect.contactType),
                 isOpen: true,
-                support_area: angular.copy(appConfig.suspect.supportArea)
+                support_area: angular.copy(appConfig.suspect.supportArea),
+                support_location:''
             }];
             //$scope.support_array=[appConfig.suspect.supportArea];
 
         };
         $scope.init();
+        $scope.isEditable=false;
         $scope.contactType = appConfig.suspect.contactType;
         $scope.supportArea = appConfig.suspect.supportArea;
         $scope.status = appConfig.suspect.status;
@@ -70,15 +72,15 @@ angular.module('com.module.suspect')
                 $scope.createPossibility = response.data;
                 $scope.suspect = {};
                 $scope.suspect = response.data.point_of_contacts[0];
-                $scope.support_type_local=false;
-                $scope.support_type_remote=false;
-                $scope.suspect_support_type=$scope.suspect.support_type;
+               // $scope.support_type_local=false;
+                //$scope.support_type_remote=false;
+                //$scope.suspect_support_type=$scope.suspect.support_type;
                 $scope.createPossibility.employee_size = $scope.getSelectedItem($scope.createPossibility.employee_size, $scope.employeeSize).displayText;
                 $scope.createPossibility.turnover = $scope.getSelectedItem($scope.createPossibility.turnover, $scope.groupTurnover).displayText;
                 $scope.createPossibility.vertical = $scope.getSelectedItem($scope.createPossibility.vertical, $scope.businessVertical).displayText;
                 $scope.createPossibility.customer_type = $scope.getSelectedItem($scope.createPossibility.customer_type, $scope.customerType).displayText;
                 /*$scope.createPossibility.POC =$scope.suspect;*/
-                $scope.status.selectedItem = $scope.getSelectedItem($scope.createPossibility.current_status.status, $scope.status).displayText;
+                $scope.status.selectedItem = $scope.getSelectedItem($scope.createPossibility.current_status.status, $scope.status);
                 $scope.createPossibility.point_of_contacts.map(function (Obj) {
                     var i = 0;
                     $("#contact" + i + ' .is-empty').removeClass('is-empty');
@@ -92,6 +94,17 @@ angular.module('com.module.suspect')
                         $("#contact" + i + ' .select ul').remove();
                         $("#contact" + i + ' .select .placeholder').addClass('default-cursor');
                     }
+                    if(Obj.support_type==='LOCAL') {
+          $scope.point_of_contacts[i].local=true;
+        }
+        else if(Obj.support_type==='REMOTE'){
+          $scope.point_of_contacts[i].remote=true;
+        }
+        else if(Obj.support_type==='BOTH'){
+          $scope.point_of_contacts[i].local = true;
+          $scope.point_of_contacts[i].remote=true;
+        }
+                    $scope.point_of_contacts[i].support_location=Obj.support_location;
                     if (i > 0) {
                         $scope.createNewContactList();
                     }
@@ -133,7 +146,8 @@ angular.module('com.module.suspect')
                 email_id: "",
                 contact_type: $scope.getCopy(appConfig.suspect.contactType),
                 isOpen: true,
-                support_area: angular.copy(appConfig.suspect.supportArea)
+                support_area: angular.copy(appConfig.suspect.supportArea),
+                support_location:''
             };
             $scope.point_of_contacts.push(obj);
             //$scope.support_array.push($scope.getCopy(appConfig.suspect.supportArea));
@@ -244,23 +258,33 @@ angular.module('com.module.suspect')
             $scope.uploadFiles.splice(index, 1);
         };
 
+$scope.editForm = function () {
+                $scope.isEditable = true;
+        };
+        $scope.isValid = function (val) {
+            var c1=true; 
+            if ($scope.point_of_contacts.length>0) {
+                    for (var i = 0; i < $scope.point_of_contacts.length; i++) {
+                        if(!($scope.point_of_contacts[i].contact_type.selectedItem && $scope.point_of_contacts[i].support_area.selectedItem)){
+                            c1=false;
+                            break;
+                        }
+                    }
+                }
+            return (val && c1);
 
-
-
-
-
-
-      $scope.$watch('suspect_support_type',function(n,o){
+        };
+      /*$scope.$watch('suspect_support_type',function(n,o){
         if(n==='LOCAL') {
-          $scope.support_type_local=true;
+          $scope.poc.local=true;
         }
         else if(n==='REMOTE'){
-          $scope.support_type_remote=true;
+          $scope.poc.remote=true;
         }
         else if(n==='BOTH')
         {
-          $scope.support_type_remote = true;
-          $scope.support_type_local=true;
+          $scope.poc.local = true;
+          $scope.poc.remote=true;
         }
-      }) ;
+      }) ;*/
   }]);

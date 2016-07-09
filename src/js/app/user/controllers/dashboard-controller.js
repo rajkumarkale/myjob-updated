@@ -1,7 +1,7 @@
 /**
  * Created by revathi bandi on 5/11/2016.
  */
-angular.module('com.module.user').controller('dashboardController', ['$scope','AuthService','$state','dashBoardService','$cookies',  function ($scope, AuthService,$state,dashBoardService,$cookies) {
+angular.module('com.module.user').controller('dashboardController', ['$scope','AuthService','$state','dashBoardService','$cookies','$filter','CoreService',  function ($scope, AuthService,$state,dashBoardService,$cookies,$filter,CoreService) {
     'use strict';
     $scope.chartSeries = [
       {"name": "Target", "data":[1, 2, 4, 3, 3.5,6.5,4.5,4.5,5,7,8,7],legendIndex: 1, fillOpacity: 0.5, color:'#5398F6',align: 'left',connectNulls: true,
@@ -88,11 +88,34 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
       loading: false,
       size: {}
     };
+$scope.sumStartDate=new Date();
+    $scope.sumEndDate=new Date().setFullYear(new Date().getFullYear()+1);
+$scope.getDashboardByRange=function(){
+        var st=$filter('date')($scope.start, 'MM/dd/yyyy');
+        var date1=Math.round(new Date(st).getTime()/1000);
+        var ed=$filter('date')($scope.end, 'MM/dd/yyyy');
+        var date2=Math.round(new Date(ed).getTime()/1000);
+        if(date1<date2){
+            console.log('processing');
+            /*$scope.sumStartDate=$scope.start;
+            $scope.sumEndDate=$filter('date')($scope.end, 'to MMMM yyyy');*/
+          /*$scope.myPromise = possibilityCreateService.getPossibilityByRange(currentPage,numPerPage,date1,date2).then(function(response){
+            CoreService.toastSuccess('', 'POSSIBILITY Retrieved Successfully.');
+			$scope.data.possibilities = response.data.possibilities;
+            console.log($scope.data.possibilities);
+			$scope.data.totalItems = response.data.count;
+			$scope.data.met=response.data.met;
+			$scope.data.notMet=response.data.not_met;
+			$scope.data.inactive=response.data.inactive;
 
-
+		});*/
+        }else{
+            CoreService.toastError('', 'Satrt date should be less than end date.');
+        }
+    };
     $scope.userId = JSON.parse($cookies.userData).userDetails._id;
       $scope.getDashboardCount=function(id){
-          dashBoardService.getDashboardCount(id).then(function(response){
+        $scope.myPromise =  dashBoardService.getDashboardCount(id).then(function(response){
               console.log(response);
               $scope.target=response.data.dashboardCount[0].count;
                $scope.prospect=response.data.dashboardCount[1].count;

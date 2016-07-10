@@ -176,10 +176,10 @@
           <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(suspect)">Discussion</button>
         </td>
             <td> 
-              <span ng-click="openShare('share')"><i class="fa fa-share suspect-shareicon"></i> </span>
+              <span ng-click="openShare('share',suspect)"><i class="fa fa-share suspect-shareicon"></i> </span>
             </td>
             <td>
-              <span ng-click="openShare('tansfer')"><i class="fa fa-long-arrow-up suspect-arrowicon"></i> </span>
+              <span ng-click="openShare('tansfer',suspect)"><i class="fa fa-long-arrow-up suspect-arrowicon"></i> </span>
             </td>
       </tr>
          <tr  data-ng-if="filteredRows.length ===0">

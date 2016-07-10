@@ -5,17 +5,27 @@
   <div class="modal-body">
     <div class="row">
       <div class="col-md-12">
-        <div><label class="control-label">Name</label>
+        <!--<div><label class="control-label">Name</label>
           <div class="form-group" custom-select data="contactType"></div>
-        </div>
-        <!--<div class="form-group label-floating is-empty col-pad">
-          <label for="i7" class="control-label">Name</label>
-          <input type="text" class="form-control" id="i7" ng-model="share" required>
+          <input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)" required>
+                                        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
+                                        <div ng-show="noResults">
+                                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                                        </div>
         </div>-->
+        <div class="form-group label-floating is-empty col-pad">
+          <label for="i7" class="control-label">Name</label>
+          <input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)" required>
+                                        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
+                                        <div ng-show="noResults">
+                                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                                        </div>
+        </div>
+        </div>
 
         <div class="share-prospect">
           <button class="data-button-cancel btn btn-primary  " ng-click="cancel()">Cancel</button>
-          <button class="btn btn-primary btn-raised share-button">Transfer</button>
+          <button class="btn btn-primary btn-raised share-button" ng-click="ok()">Transfer</button>
         </div>
       </div>
     </div>

@@ -125,7 +125,7 @@ $scope.statusColor=function(status){
       $scope.opened1 = false;
     }
   };
-  $scope.openShare = function (tpl) {
+  $scope.openShare = function (tpl,suspect) {
     var tpl=tpl;
     var modalInstance = $modal.open({
       templateUrl: function () {
@@ -135,9 +135,15 @@ $scope.statusColor=function(status){
       },
       backdrop: 'static',
       controller: 'suspectShareCtrl',
-      size: 'sm'
+      size: 'sm',
+        resolve: {
+         clinetId: function () {
+           return suspect.client_unit_id;
+         }
+       }
     });
-    modalInstance.result.then(function () {
+    modalInstance.result.then(function (response) {
+        $state.reload('app.suspect-view');
     });
   };
   }]);

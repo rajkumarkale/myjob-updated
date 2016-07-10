@@ -33,12 +33,20 @@ angular.module('com.module.suspect').factory('suspectService', function ($http, 
         data: data
     });
 };
+    var transfer = function (data,uid) {
+    return $http({
+        method: 'POST',
+        url: BASEURI + '/api/client/transfer/'+uid,
+        data: data
+    });
+};
 
   return {
     getSuspects:getSuspects,
     getSuspectById:getSuspectById,
       getNames:getNames,
       suspectUpdate:suspectUpdate,
-      getSuspectsByRange:getSuspectsByRange
+      getSuspectsByRange:getSuspectsByRange,
+      transfer:transfer
   }
 });

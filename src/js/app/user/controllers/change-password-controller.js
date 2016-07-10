@@ -2,11 +2,12 @@ angular.module('com.module.user').controller('changePasswordModalInstanceCtrl', 
   function ($scope,$modalInstance, AuthService,CoreService,$state) {
   'use strict';
   $scope.changePassword = function (formData) {
-    AuthService.changePassword(formData).success(function (response) {
+    AuthService.changePassword(formData).then(function (response) {
       $modalInstance.close(response);
-    }).error(function (err) {
+    },function (err) {
       $scope.authError = err.message;
-      toaster.pop('Fail','Password updating failed.');
+        $modalInstance.close();
+      CoreService.toastError('','Password updating failed.');
     });
   };
   $scope.cancel = function(){

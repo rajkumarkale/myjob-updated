@@ -89,9 +89,11 @@
     <button class="btn btn-primary edit-button mrg-edit" data-ng-click="editForm()"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
 </div>
 
+
 <div class="container col-md-12 up-mrg" ng-class="{'app-container-blur':!isEditable}">
+  <form name="updateSuspectForm" novalidate>
     <div class="panel panel-default second-panel up-margin ">
-        <form name="updateSuspectForm" novalidate>
+
             <div class="panel-title  panel-heading ">
                 Contact Details
             </div>
@@ -111,7 +113,7 @@
                         <accordion close-others='opening' class="plus">
                             <accordion-group is-open="poc.isOpen" ng-repeat="poc in point_of_contacts">
                                 <accordion-heading>
-                                    <span class="color-black ">
+                                    <span class="color-black buss-font">
           {{$index+1}}) {{poc.support_area.selectedItem.displayText}} {{poc.contact_type.selectedItem.displayText}} Contact Person Details
           <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}">
             </i>
@@ -188,8 +190,9 @@
                     <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
                   </div>
                 </div>-->
-                       
+
                         <div class="col-md-6 form-custom-padding rollout-mrg" ng-if="isEditable">
+                          <h4 class="color-black">Roll out of a proposal</h4>
                             <div class="form-group is-empty is-fileinput">
                                 <input type="file" id="inputFile4" ngf-select="upload($files)" ng-model="files" ngf-multiple="true" tabindex="31">
                                 <div class="input-group">

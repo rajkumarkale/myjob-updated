@@ -2385,7 +2385,7 @@ color: #AEAEAE;}
 /*end contacts btn in create poss*/
 /*contacts btn in create suspect*/
 .mrgs-contact{
-  margin-left: 55px;
+  margin-left: 62px;
 }
 /*end contacts btn in create suspect*/
 /*all tables arrows col*/
@@ -2410,7 +2410,7 @@ color: #AEAEAE;}
 /*suspect update panel border remove*/
 /*suspect update rollout margin*/
 .rollout-mrg{
-  margin-left: 10px;
+  margin-left: 28px;
 }
 /*end suspect update rollout margin*/
 /*select prospect*/
@@ -2653,3 +2653,15 @@ margin-right: 16px;}
   border-bottom:3px solid #bababa;
 }
 /*end view prospect icons*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+  background-color: #FFFFFF !important;
+  color: #555 !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #555555 !important;
+}
+.buss-font{
+  font-size: 18px !important;
+}

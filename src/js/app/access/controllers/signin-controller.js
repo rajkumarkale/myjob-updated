@@ -8,10 +8,10 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
     }).then(function (response) {
       if(response.message){
         $scope.authStatus = true;
-        $scope.authError = response.data.message;
+        $scope.authError ='Invalid Email Id or Password';
         return ;
       }
-       CoreService.toastSuccess('','Logged in Sucessfully');
+       /*CoreService.toastSuccess('','Logged in Sucessfully');*/
       if ($scope.$prevState && $scope.$prevStateParams) {
         if(_.contains(['access.signin','access.signup','access.forgotpwd','access.signout'],$scope.$prevState)){
           $state.go($scope.app.loginRedirect);
@@ -23,7 +23,7 @@ angular.module('com.module.access').controller('SignInFormController',['$scope',
       }
     }, function (error) {
       $scope.authStatus = true;
-      $scope.authError = error.message;
+      $scope.authError = 'Invalid Email Id or Password';
     });
   };
   $scope.openModel = function(){

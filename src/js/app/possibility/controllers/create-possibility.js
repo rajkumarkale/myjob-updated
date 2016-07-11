@@ -412,12 +412,12 @@ angular.module('com.module.possibility')
         };
         $scope.removeFiles = function (index) {
             if ($scope.isEditable !== true) {
-                CoreService.toastSuccess('', 'File Removed Successfully');
+               /* CoreService.toastSuccess('', 'File Removed Successfully');*/
                 return $scope.uploadFiles.splice(index, 1);
             } else {
                 var id = $scope.createPossibility.documents[index]._id;
                 possibilityCreateService.deleteDocument(id).then(function (response) {
-                    CoreService.toastSuccess('', 'File Removed Successfully');
+                    /*CoreService.toastSuccess('', 'File Removed Successfully');*/
                     $scope.createPossibility.documents.splice(index, 1);
                 });
             }

@@ -7,7 +7,7 @@ angular.module('com.module.user').controller('changePasswordModalInstanceCtrl', 
     },function (err) {
       $scope.authError = err.message;
         $modalInstance.dismiss();
-      CoreService.toastError('','Password updating failed.');
+      CoreService.toastSuccess('','Password updating failed.');
     });
   };
   $scope.cancel = function(){

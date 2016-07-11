@@ -22,7 +22,7 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
       size: 'md'
     });
     modalInstance.result.then(function (response) {
-         CoreService.toastSuccess('','Password updated successfully.');
+         /*CoreService.toastSuccess('','Password updated successfully.');*/
         $state.go('access.signin');
     });
   };

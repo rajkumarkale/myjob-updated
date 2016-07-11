@@ -39,7 +39,7 @@
                             </div>
                             <div class="up-margin">
                                 <ul>
-                                    <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
+                                    <li ng-repeat="f in createPossibility.possibility_documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
                                         <img ng-src="{{f.url}}" class="thumb"></li>
                                 </ul>
                             </div>
@@ -216,7 +216,7 @@
                                                     <!--<p class="text-in">VOTER CARD</p>-->
 
                                                 </div>
-                                                <label class="control-label dropdown-col">Document Type</label>
+                                                <label class="control-label ">Document Type</label>
                                                 <div class="preview-select" custom-select data="f.documentType">
 
                                                 </div>
@@ -231,7 +231,7 @@
                             </div>
                     </div>
                 </div>
-                <div data-cg-busy="{promise:uploadPromise,message:'Plese Wait'}"></div>
+                <div data-cg-busy="{promise:uploadPromise,message:'Please Wait'}"></div>
                 <div data-cg-busy="{promise:submitPromise,message:'Please Wait'}"></div>
                 <div class=" pull-left">
                     <a href="" class="btn btn-primary contacts-button mrgs-contact" ng-click="createNewContactList()"> <i class="fa fa-plus"></i> Contacts</a>

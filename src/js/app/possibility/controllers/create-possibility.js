@@ -221,7 +221,7 @@ angular.module('com.module.possibility')
                 delete possibilityObject.discussion;
                 delete possibilityObject.transferred_by;
                 possibilityCreateService.updatePossibility(possibilityObject).success(function () {
-                    CoreService.toastSuccess('', 'POSSIBILITY Updated Successfully.');
+                   /* CoreService.toastSuccess('', 'POSSIBILITY Updated Successfully.');*/
                     $state.go('app.viewPossibility');
                 }).error(function (err) {
                     $scope.authError = err.message;
@@ -306,7 +306,7 @@ angular.module('com.module.possibility')
                 var possibilityCreatePromise = possibilityCreateService.setPossibility(requestObject).success(function () {
 
                     $state.go('app.viewPossibility');
-                    CoreService.toastSuccess('', 'POSSIBILITY Created Successfully.');
+                    /*CoreService.toastSuccess('', 'POSSIBILITY Created Successfully.');*/
                 }).error(function (err) {
                     $scope.authError = err.message;
 

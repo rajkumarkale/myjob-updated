@@ -22,7 +22,9 @@ angular.module('com.module.possibility')
     };
     $scope.selectAll = function () {
 	            for (var i = 0; i < $scope.filteredRows.length; i++) {
+                    if($scope.filteredRows[i].status!=='MET'){
 	                $scope.filteredRows[i].isChecked = $scope.selectAllItems;
+                        }
 	            }
         $scope.select();
 	        };
@@ -40,7 +42,7 @@ angular.module('com.module.possibility')
 	            for (var i = 0; i < $scope.filteredRows.length; i++) {
 	                if ($scope.filteredRows[i].isChecked) {
                         $scope.isShow= true;
-	                    return;dateOptions
+	                    return;
 	                }
                     $scope.isShow= false;
 	            }

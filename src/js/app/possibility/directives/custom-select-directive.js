@@ -7,9 +7,14 @@ angular.module('com.module.possibility').directive('customSelect',[function (){
     replace:true,
    link:function(s){
     {
+        angular.element(document).click(function(){
+  var parent = angular.element('.select');
+            parent.removeClass('is-open');
+});
      s.dataList=s.data;
      /*s.dataList.selectedItem = s.dataList.data[0];*/
-     angular.element('.select').off('click').on('click', '.placeholder', function() {
+     angular.element('.select').off('click').on('click', '.placeholder', function(e) {
+         e.stopPropagation();
   var parent = angular.element(this).closest('.select');
          s.$watch('dataList.selectedItem',function(n,o){
              s.dataList.selectedItem =n;

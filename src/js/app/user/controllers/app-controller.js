@@ -8,7 +8,7 @@ angular.module('com.module.user').controller('appController', ['$scope','$state'
   $scope.logout = function (){
     AuthService.logout().success(function (data){
       $cookieStore.remove('userData');
-        CoreService.toastSuccess('','Logged out Successfully');
+        /*CoreService.toastSuccess('','Logged out Successfully');*/
       $state.go('access.signin');
     }, function (error) {
       console.log(error);

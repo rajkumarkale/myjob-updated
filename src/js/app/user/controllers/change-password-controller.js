@@ -6,7 +6,7 @@ angular.module('com.module.user').controller('changePasswordModalInstanceCtrl', 
       $modalInstance.close(response);
     },function (err) {
       $scope.authError = err.message;
-        $modalInstance.close();
+        $modalInstance.dismiss();
       CoreService.toastError('','Password updating failed.');
     });
   };

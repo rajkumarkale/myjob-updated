@@ -5,40 +5,46 @@
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary for the year of April{{sumStartDate | date:' yyyy'}} to March{{sumEndDate | date:' yyyy'}}</div>
         <div class="panel-body">
-          <div class="detailsContent">
-            <div class="detailsContentDiv">
-              <div class="listDetails">
-                <div class="listDetailsContent bord-target">
-                  <div class="col-md-3 target-header-color">
-                    <img src="img/target_icon.png" alt="" class="center-block img-pad" />
-                  </div>
-                  <div class="col-md-5 text-center color-divs">
-                    <div class="met-target">TARGET</div>
-                    <div class="met-num">{{target}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="listDetails">
-                <div class="listDetailsContent bord-prospect">
-                  <div class="col-md-3 target-header-color ">
-                    <img src="img/prospect_icon.png" alt="" class="center-block img-pad"/>
-                  </div>
-                  <div class="col-md-5 text-center color-divs">
-                    <div class="met-prospect">PROSPECT</div>
-                    <div class="metprospect-num">{{prospect}}</div>
+          <div class="row">
+            <div class="initialicons-div">
+              <div class="secondicons-div">
+                <div class="target-div">
+                  <div class="panel mini-box target-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src="img/target_icon.png" class="target">
+                </span>
+                    <div class="box-info">
+                      <p class="met-target">TARGET</p>
+                      <p class="size-h2 met-num">10</p>
+
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="listDetails">
-                <div class="listDetailsContent bord-empanelment">
-                  <div class="col-md-3 target-header-color ">
-                    <img src="img/empanelment_icon.png" alt="" class="center-block img-pad"/>
-                  </div>
-                  <div class="col-md-5 text-center color-divs">
-                    <div class="empanel-col">EMPANELMENT</div>
-                    <div class="met-num">{{empanelment}}</div>
+                <div class="target-div">
+                  <div class="panel mini-box prospect-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src="img/prospect_icon.png" class="prospect">
+                </span>
+                    <div class="box-info">
+                      <p class="met-prospect">PROSPECT</p>
+                      <p class="size-h2 met-num">10</p>
+
+                    </div>
                   </div>
                 </div>
+                <div class="target-div">
+                  <div class="panel mini-box empanel-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src='img/Empanelment_icon.png' class="empanel">
+                </span>
+                    <div class="box-info">
+                      <p class="met-empanel">EMPANELMENT</p>
+                      <p class="size-h2 met-num" >10</p>
+
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>

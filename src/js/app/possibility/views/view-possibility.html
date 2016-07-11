@@ -32,40 +32,46 @@
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary for the month of {{sumStartDate | date:'MMMM yyyy '}}{{sumEndDate}}</div>
         <div class="panel-body">
-          <div class="detailsContent">
-            <div class="detailsContentDiv">
-              <div class="listDetails">
-                <div class="listDetailsContent bord-met">
-                  <div class="col-md-3 met-header-color">
-                    <img src="img/met_icon.png" alt="" class="center-block img-pad"/>
-                  </div>
-                  <div class="col-md-5 text-center color-divs">
-                    <div class="met-met">MET</div>
-                    <div class="met-num">{{data.met}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="listDetails">
-                <div class="listDetailsContent bord-notmet">
-                  <div class="col-md-3 notmet-header-color ">
-                    <img src="img/notmet_icon.png" alt="" class="center-block img-pad"/>
-                  </div>
-                  <div class="col-md-5 text-center color-divs">
-                    <div class="met-notmet">NOT MET</div>
-                    <div class="met-num">{{data.notMet}}</div>
+          <div class="row">
+            <div class="initialicons-div">
+              <div class="secondicons-div">
+                <div class="target-div">
+                  <div class="panel mini-box met-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src="img/met_icon.png" class="target">
+                </span>
+                    <div class="box-info">
+                      <div class="met-met">MET</div>
+                      <div class="met-num">{{data.met}}</div>
+
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="listDetails">
-                <div class="listDetailsContent bord-inactive">
-                  <div class="col-md-3 inactive-header-color ">
-                    <img src="img/inactive_icon.png" alt="" class="center-block img-pad"/>
-                  </div>
-                  <div class="col-md-5 text-center color-divs">
-                    <div class="inactive-col">INACTIVE</div>
-                    <div class="met-num">{{data.inactive}}</div>
+                <div class="target-div">
+                  <div class="panel mini-box notmet-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src="img/notmet_icon.png" class="prospect">
+                </span>
+                    <div class="box-info">
+                      <div class="met-notmet">NOT MET</div>
+                      <div class="met-num">{{data.notMet}}</div>
+
+                    </div>
                   </div>
                 </div>
+                <div class="target-div">
+                  <div class="panel mini-box inactive-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src='img/inactive_icon.png' class="empanel">
+                </span>
+                    <div class="box-info">
+                      <div class="inactive-col">INACTIVE</div>
+                      <div class="met-num">{{data.inactive}}</div>
+
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>

@@ -29,50 +29,56 @@
     <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Loading prospects'}">
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary for the month of April 2016</div>
-        <div class="panel-body" style="margin-left:-94px;">
-          <div class="detailsContent">
-            <div class="detailsContentDiv">
-              <div class="listDetails">
-                <div class="listDetailsContent bord-won">
-                  <div class="col-md-3 won-header-color">
-                    <img src="img/won_icon.png" alt="" class="center-block img-pad"/>
-                  </div>
-                  <div class="col-md-5 text-center color-divs">
-                    <div class="met-won">WON</div>
-                    <div class="met-num">{{data.WON}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="listDetails">
-                <div class="listDetailsContent bord-lost">
-                  <div class="col-md-3 lost-header-color">
-                    <img src="img/lost_icon.png" alt="" class="center-block img-pad"/>
-                  </div>
-                  <div class="col-md-5 text-center color-divs">
-                    <div class="met-lost">LOST</div>
-                    <div class="met-num">{{data.LOST}}</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="initialicons-div">
+              <div class="prospecticons-div">
+                <div class="target-div">
+                  <div class="panel mini-box won-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src="img/Hot_icon.png" class="target">
+                </span>
+                    <div class="box-info">
+                      <div class="met-won">WON</div>
+                      <div class="met-num">{{data.WON}}</div>
+
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="listDetails">
-                <div class="listDetailsContent bord-closure">
-                  <div class="col-md-3 closure-header-color">
-                    <img src="img/closure_icon.png" alt="" class="center-block img-pad"/>
-                  </div>
-                  <div class="col-md-5 text-center color-divs">
-                    <div class="met-closure">AGREEMENT ON CLOSURE</div>
-                    <div class="met-num">5</div>
+                <div class="target-div">
+                  <div class="panel mini-box lost-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src="img/warm_icon.png" class="prospect">
+                </span>
+                    <div class="box-info">
+                      <div class="met-lost">LOST</div>
+                      <div class="met-num">{{data.LOST}}</div>
+
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="listDetails">
-                <div class="listDetailsContent bord-progress">
-                  <div class="col-md-3 progress-header-color">
-                    <img src="img/work_in_progress_icon.png" alt="" class="center-block img-pad"/>
+                <div class="target-div">
+                  <div class="panel mini-box closure-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src='img/cold_icon.png' class="empanel">
+                </span>
+                    <div class="box-info">
+                      <div class="met-closure">AGREEMENT <br> ON CLOSURE</div>
+                      <div class="met-num">5</div>
+
+                    </div>
                   </div>
-                  <div class="col-md-5 text-center color-divs">
-                    <div class="met-progress">WORK IN PORGRESS</div>
-                    <div class="met-num">{{data.PROGRESS}}</div>
+                </div>
+                <div class="target-div">
+                  <div class="panel mini-box progress-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src='img/cold_icon.png' class="empanel">
+                </span>
+                    <div class="box-info">
+                      <div class="met-progress">WORK <br> IN PROGRESS</div>
+                      <div class="met-num">{{data.PROGRESS}}</div>
+
+                    </div>
                   </div>
                 </div>
               </div>

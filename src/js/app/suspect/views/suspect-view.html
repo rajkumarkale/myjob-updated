@@ -4,42 +4,46 @@
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary for the month of {{sumStartDate | date:'MMMM yyyy '}}{{sumEndDate}}</div>
         <div class="panel-body pan-col">
-          <div class="">
-            <div class="detailsContent">
-              <div class="detailsContentDiv">
-                <div class="listDetails">
-                  <div class="listDetailsContent bord-hot">
-                    <div class="col-md-3 hot-header-color">
-                      <img src="img/Hot_icon.png" alt="" class="center-block img-pad"/>
-                    </div>
-                    <div class="col-md-5 text-center color-divs">
+          <div class="row">
+            <div class="initialicons-div">
+              <div class="secondicons-div">
+                <div class="target-div">
+                  <div class="panel mini-box hot-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src="img/Hot_icon.png" class="target">
+                </span>
+                    <div class="box-info">
                       <div class="met-hot">HOT</div>
                       <div class="met-num">{{data.HOT}}</div>
+
                     </div>
                   </div>
                 </div>
-                <div class="listDetails">
-                  <div class="listDetailsContent bord-warm">
-                    <div class="col-md-3 warm-header-color ">
-                      <img src="img/warm_icon.png" alt="" class="center-block img-pad"/>
-                    </div>
-                    <div class="col-md-5 text-center color-divs">
+                <div class="target-div">
+                  <div class="panel mini-box warm-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src="img/warm_icon.png" class="prospect">
+                </span>
+                    <div class="box-info">
                       <div class="met-warm">WARM</div>
                       <div class="met-num">{{data.WARM}}</div>
+
                     </div>
                   </div>
                 </div>
-                <div class="listDetails">
-                  <div class="listDetailsContent bord-cold">
-                    <div class="col-md-3 cold-header-color ">
-                      <img src="img/cold_icon.png" alt="" class="center-block img-pad"/>
-                    </div>
-                    <div class="col-md-5 text-center color-divs">
-                      <div class="cold-col">COLD</div>
+                <div class="target-div">
+                  <div class="panel mini-box cold-bord">
+                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
+                    <img src='img/cold_icon.png' class="empanel">
+                </span>
+                    <div class="box-info">
+                      <div class="cold-col">INACTIVE</div>
                       <div class="met-num">{{data.COLD}}</div>
+
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -175,7 +179,7 @@
         <td>
           <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(suspect)">Discussion</button>
         </td>
-            <td> 
+            <td>
               <span ng-click="openShare('share',suspect)"><i class="fa fa-share suspect-shareicon"></i> </span>
             </td>
             <td>

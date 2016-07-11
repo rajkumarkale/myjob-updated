@@ -453,6 +453,7 @@
 }
 .dropdown-col{
   color: #009688;
+  font-size: 16px !important;
 }
 .contactdrop-col{
   color: #009688 !important;
@@ -542,8 +543,8 @@
   white-space: nowrap;
 }
 .mrg-formgrp{
-  margin: -15px;
-  width: 182px;
+  margin: 22px;
+  /*width: 182px;*/
 }
 .mrg-top-apply{
   margin-top: -30px;
@@ -2093,7 +2094,7 @@ color:#049ad9 !important;}
 }
 .calendar-reset{
   margin-top: -44px;
-  margin-left: 159px;
+  margin-left: 160px;
   width: 36px;
   height: 35px;
   text-align: center;
@@ -2104,7 +2105,7 @@ color:#049ad9 !important;}
 }
 .secondcalendar-reset{
   margin-top: -44px;
-  margin-left: 190px;
+  margin-left: 191px;
   width: 36px;
   height: 35px;
   text-align: center;
@@ -2310,15 +2311,19 @@ color: #AEAEAE;}
 }
 .met-won{
   color: #50C471;
+  font-weight: bold;
 }
 .met-lost{
   color: #F46F6F;
+  font-weight: bold;
 }
 .met-closure{
   color: #F09C43;
+  font-weight: bold;
 }
 .met-progress{
   color: #bababa;
+  font-weight: bold;
 }
 .bord-won{
   border-bottom: 3px solid #50C471;
@@ -2515,6 +2520,7 @@ margin-right: 16px;}
   min-height: 95px;
   padding: 0px;
   background-color: wheat;
+  margin-bottom: 0px !important;
 }
 .mini-box .btn-icon, .mini-box .btn-icon-lined {
   margin: 0 15px 0 0;
@@ -2536,5 +2542,114 @@ margin-right: 16px;}
   font-size: 14px !important;}
 .btn-text{text-transform: none !important;font-size: 17px !important;}
 /*end of comments for view prospect */
+.form-group .input-group input::-webkit-input-placeholder{
+  color: #8c8c8c !important;
+}
+/*icons for dashboard*/
+.initialicons-div{
+  text-align: center;
+}
+.size-h2{
+  margin-top: 10px;
+  margin-left: 28px;
+}
+.target{
+  margin-top: 10px;
+  margin-left: -35px;
+}
+.prospect{
+  margin-top: 10px;
+  margin-left: -13px;
+}
+.empanel{
+  margin-top: 10px;
+  margin-left: 0px;
+}
+.secondicons-div{
+  width: 63%;
+  margin: auto;
+}
+.target-div{
 
+  width: 213px !important;
+  margin: 10px;
+  float: left;
+  padding-right: 10px;
+}
 
+.mini-box{
+  min-height: 95px;
+  padding: 0px;
+  background-color: white;
+}
+.mini-box .btn-icon, .mini-box .btn-icon-lined {
+  margin: 0 15px 0 0;
+  font-size: 32px;
+}
+.btn-icon-lg-alt {
+  height: 70px;
+  width: 70px;
+}
+.mini-box .box-info {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -6px;
+}
+.mini-box .box-info p {
+  margin: 0;
+}
+.target-bord{
+  border-bottom: 3px solid #5398F5;
+}
+.prospect-bord{
+  border-bottom: 3px solid #9C5BBA;
+}
+.empanel-bord{
+  border-bottom: 3px solid #50C471;
+}
+
+.met-empanel{
+  color: #50C471;
+  font-weight:bold;
+}
+/*end icons for dashboard*/
+/*icons for view poss*/
+.met-bord{
+  border-bottom: 3px solid #50C471;
+}
+.notmet-bord{
+  border-bottom: 3px solid #F46463;
+}
+.inactive-bord{
+  border-bottom: 3px solid #B7B7B4;
+}
+/*end icons for view poss*/
+/*icons for suspect view*/
+.hot-bord{
+  border-bottom:3px solid #50C472;
+}
+.warm-bord{
+  border-bottom:3px solid #F26161;
+}
+.cold-bord{
+  border-bottom:3px solid #B7B7B5;
+}
+/*end icons for suspect view*/
+/*view prospect icons*/
+.prospecticons-div{
+  width: 84%;
+  margin: auto;
+}
+.won-bord{
+  border-bottom:3px solid #50C471;
+}
+.lost-bord{
+  border-bottom:3px solid #F46F6F;
+}
+.closure-bord{
+  border-bottom:3px solid #F09C43;
+}
+.progress-bord{
+  border-bottom:3px solid #bababa;
+}
+/*end view prospect icons*/

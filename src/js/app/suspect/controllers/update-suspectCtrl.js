@@ -121,13 +121,13 @@ angular.module('com.module.suspect')
             }
 
         };
-        $scope.editForm = function () {
-            if ($scope.createPossibility.current_status.status !== "COLD") {
+        /*$scope.editForm = function () {
+            if ($scope.createPossibility.isProspect !== true) {
                 $scope.isEditable = true;
 
             }
 
-        };
+        };*/
 
 
         $scope.showRollOut = false;
@@ -165,8 +165,10 @@ angular.module('com.module.suspect')
                 $scope.files = [$scope.file];
             }
         });
+        $scope.uploadPromise;
         $scope.uploadFiles = [];
         $scope.upload = function (files) {
+            $scope.uploadFiles = [];
             if (files && files.length) {
                 for (var i = 0; i < files.length; i++) {
                     var file = files[i];
@@ -238,10 +240,11 @@ angular.module('com.module.suspect')
                 procObj.user_id = $scope.createPossibility.point_of_contacts[0].user_id;
                 console.log(procObj);
                 $scope.myPromise = suspectService.suspectUpdate(procObj).then(function (response) {
-                    CoreService.toastSuccess('','SUSPECT Updated Successfully.');
+                    /*CoreService.toastSuccess('','SUSPECT Updated Successfully.');*/
+                    console.log(response.data);
                     $state.go('app.suspect-view');
                 });
-                console.log($scope.point_of_contacts);
+                //console.log($scope.point_of_contacts);
                 /*console.log($scope.support_array);*/
             });
         }
@@ -259,7 +262,9 @@ angular.module('com.module.suspect')
         };
 
 $scope.editForm = function () {
+    if ($scope.createPossibility.isProspect !== true) {
                 $scope.isEditable = true;
+    }
         };
         $scope.isValid = function (val) {
             var c1=true; 

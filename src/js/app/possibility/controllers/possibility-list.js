@@ -61,9 +61,9 @@ angular.module('com.module.possibility')
 			$scope.data.possibilities = response.data.possibilities;
             console.log($scope.data.possibilities);
 			$scope.data.totalItems = response.data.count;
-			$scope.data.met=response.data.met;
-			$scope.data.notMet=response.data.not_met;
-			$scope.data.inactive=response.data.inactive;
+			$scope.data.met=response.data.met?response.data.met:0;
+			$scope.data.notMet=response.data.not_met?response.data.not_met:0;
+			$scope.data.inactive=response.data.inactive?response.data.inactive:0;
 		});
 		};
     
@@ -83,9 +83,9 @@ angular.module('com.module.possibility')
 			$scope.data.possibilities = response.data.possibilities;
             //console.log($scope.data.possibilities);
 			$scope.data.totalItems = response.data.count;
-			$scope.data.met=response.data.met;
-			$scope.data.notMet=response.data.not_met;
-			$scope.data.inactive=response.data.inactive;
+			$scope.data.met=response.data.met?response.data.met:0;
+			$scope.data.notMet=response.data.not_met?response.data.not_met:0;
+			$scope.data.inactive=response.data.inactive?response.data.inactive:0;
 
 		});
         }else{

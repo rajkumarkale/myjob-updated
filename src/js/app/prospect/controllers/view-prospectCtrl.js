@@ -94,11 +94,11 @@ angular.module('com.module.prospect')
   $scope.myPromise = prospectService.getProspects(1,10).then(function(response){
     console.log(response);
       /*CoreService.toastSuccess('','PROSPECTS Retrieved Successfully.');*/
-    $scope.data.prospects = response.data.prospects;
+    $scope.data.prospects = response.data.prospects?response.data.prospects:0;
     $scope.data.totalItems = response.data.count;
-    $scope.data.LOST=response.data.LOST;
-    $scope.data.WON=response.data.WON;
-    $scope.data.PROGRESS=response.data.WORK_IN_PROGRESS;
+    $scope.data.LOST=response.data.LOST?response.data.LOST:0;
+    $scope.data.WON=response.data.WON?response.data.WON:0;
+    $scope.data.PROGRESS=response.data.WORK_IN_PROGRESS?response.data.WORK_IN_PROGRESS:0;
     /*$scope.data.estimated_closure = response.data.estimated_closure;*/
   });
     $scope.openDiscussions = function(prospect){

@@ -61,9 +61,9 @@ angular.module('com.module.suspect')
             console.log(response.data);
 			$scope.data.suspects = response.data.suspects;
 			$scope.data.totalItems = response.data.count;
-			$scope.data.COLD=response.data.cold;
-			$scope.data.HOT=response.data.hot;
-			$scope.data.WARM=response.data.warm;
+			$scope.data.COLD=response.data.cold?response.data.cold:0;
+			$scope.data.HOT=response.data.hot?response.data.hot:0;
+			$scope.data.WARM=response.data.warm?response.data.warm:0;
 		});
 		};
     $scope.sumStartDate=new Date();
@@ -80,9 +80,9 @@ angular.module('com.module.suspect')
             console.log(response.data);
             $scope.data.suspects = response.data.suspects;
 			$scope.data.totalItems = response.data.count;
-			$scope.data.COLD=response.data.COLD;
-			$scope.data.HOT=response.data.HOT;
-			$scope.data.WARM=response.data.WARM;
+			$scope.data.COLD=response.data.COLD?response.data.COLD:0;
+			$scope.data.HOT=response.data.HOT?response.data.HOT:0;
+			$scope.data.WARM=response.data.WARM?response.data.WARM:0;
 		});
             }else{
             CoreService.toastError('', 'Satrt date should be less than end date.');

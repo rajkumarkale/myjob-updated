@@ -69,13 +69,14 @@ angular.module('com.module.prospect')
                 
             }
          $scope.discussionPromise= possibilityCreateService.createDiscussion(reqData).success(function (response) {
-                CoreService.toastSuccess('Disscussions?', 'Created Discussion successfully.');
+                /*CoreService.toastSuccess('Disscussions?', 'Created Discussion successfully.');*/
                 //console.log(response);
                 $modalInstance.close(response);
 
             }).error(function (err) {
                 $scope.authError = err.message;
-                toaster.pop('Fail', 'Failed to Create Client.');
+             $modalInstance.dismiss();
+                CoreService.toastSuccess('Fail?', 'Failed to Create Discussions.');
             });
         };
         $scope.cancel = function () {

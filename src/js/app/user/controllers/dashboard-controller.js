@@ -117,9 +117,9 @@ $scope.getDashboardByRange=function(){
       $scope.getDashboardCount=function(id){
         $scope.myPromise =  dashBoardService.getDashboardCount(id).then(function(response){
               console.log(response);
-              $scope.target=response.data.dashboardCount[0].count;
-               $scope.prospect=response.data.dashboardCount[1].count;
-                  $scope.empanelment=response.data.dashboardCount[2].count;
+              $scope.target=response.data.dashboardCount[0].count?response.data.dashboardCount[0].count:0;
+               $scope.prospect=response.data.dashboardCount[1].count?response.data.dashboardCount[1].count:0;
+                  $scope.empanelment=response.data.dashboardCount[2].count?response.data.dashboardCount[2].count:0;
           });
       };
       $scope.getDashboardCount($scope.userId);

@@ -4,7 +4,7 @@
         <button ng-if="createPossibility.current_status.status === 'MET'" ui-sref="app.viewPossibility" class="btn btn-primary cancel-button "> Close</button>
     </div>
 
-    <div class="container col-md-12 pad-t-20" data-ng-class="disableForm()" data-cg-busy="{promise:myPromise,message:'Loading Possibilities'}">
+    <div class="container col-md-12 pad-t-20" data-ng-class="disableForm()" data-cg-busy="{promise:myPromise,message:'Please Wait'}">
         <div class="panel panel-primary second-panel">
             <div class="panel-heading">
                 <span>{{title}}</span>
@@ -304,7 +304,7 @@
                                     <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea" ng-model="discussion.text" required tabindex="30"></textarea>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" ng-if="isNewPossibility">
                               <div data-cg-busy="{promise:uploadsPromise,message:'Plese Wait'}"></div>
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group is-empty is-fileinput">
@@ -325,6 +325,12 @@
 
                                     </div>
                                 </div>
+                            </div>
+                            <div class="up-margin" ng-if="!isNewPossibility">
+                                <ul>
+                                    <li ng-repeat="f in createPossibility.discussion.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
+                                        <img ng-src="{{f.url}}" class="thumb"></li>
+                                </ul>
                             </div>
                         </div>
   </div>

@@ -1,4 +1,4 @@
-<div class="container col-md-12 pad-t-20" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
+<div class="container col-md-12 pad-t-20" data-cg-busy="{promise:myPromise,message:'Please Wait'}">
     <accordion class="plus possibility-head">
         <accordion-group is-open="status.open">
             <accordion-heading>
@@ -226,6 +226,12 @@
                                     <div class="up-margin" ng-if="!isEditable">
                                 <ul>
                                     <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
+                                        <img ng-src="{{f.url}}" class="thumb"></li>
+                                </ul>
+                            </div>
+                            <div class="up-margin" ng-if="!isEditable">
+                                <ul>
+                                    <li ng-repeat="f in createPossibility.suspect_documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
                                         <img ng-src="{{f.url}}" class="thumb"></li>
                                 </ul>
                             </div>

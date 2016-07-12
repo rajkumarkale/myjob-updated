@@ -3,7 +3,8 @@
  */
 angular.module('com.module.suspect')
   .controller('suspectShareCtrl',function ($scope,$modalInstance,$http,clinetId,$cookies,suspectService) {
-    $scope.data;
+    $scope.data = '';
+    $scope.uId = '';
     $scope.userId = JSON.parse($cookies.userData).userDetails._id;
     $scope.getNames = function (val) {
             return $http({
@@ -14,14 +15,14 @@ angular.module('com.module.suspect')
                 });
     };
     $scope.setTransferdata = function ($item, $model, $label, $event, $index) {
-        $scope.uId=$item.roles.account.id;
-        
+        $scope.uId=$item._id;
+
     };
     $scope.setShareData = function ($item, $model, $label, $event, $index) {
-        
-        $scope.uId=$item.roles.account.id;
+
+        $scope.uId=$item._id;
     };
-    
+
   $scope.transfer=function () {
       suspectService.transfer(clinetId,$scope.uId).then(function(response){
           console.log(response);

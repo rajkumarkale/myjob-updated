@@ -221,7 +221,7 @@ angular.module('com.module.suspect')
                     poc.push(requestPocObject);
                 });
 
-                procObj.client_unit_id = $scope.createPossibility.client_id;
+                procObj.client_unit_id = $scope.createPossibility._id;
                 procObj.status = {
                     current_status_id: $scope.createPossibility.current_status._id,
                     status: $scope.status.selectedItem.key

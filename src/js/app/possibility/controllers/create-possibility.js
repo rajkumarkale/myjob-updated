@@ -68,6 +68,10 @@ angular.module('com.module.possibility')
                 $scope.title = "New Possibility";
                 $scope.createPossibility = {};
                 $scope.createPossibility.discussion = {};
+                $scope.employeeSize.selectedItem ='';
+                $scope.groupTurnover.selectedItem='';
+                $scope.businessVertical.selectedItem='';
+                $scope.customerType.selectedItem='';
                 $scope.status.selectedItem = {
                     "key": "NOT_MET",
                     "displayText": "NOT MET"

@@ -2,7 +2,7 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams', 'suspectService', '$http', '$state', 'Upload', '$q','CoreService', function ($scope, appConfig, $modal, $stateParams, suspectService, $http, $state, Upload, $q,CoreService) {
+    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams', 'suspectService', '$http', '$state', 'Upload', '$q','CoreService','$cookies', function ($scope, appConfig, $modal, $stateParams, suspectService, $http, $state, Upload, $q,CoreService,$cookies) {
        $scope.met_status='MET';
         $scope.status = {
             open: true
@@ -29,12 +29,26 @@ angular.module('com.module.suspect')
             var x = $item.poc_details;
             if (x) {
                 $("#contact" + $index + ' .is-empty').removeClass('is-empty');
+                $scope.point_of_contacts[$index]._id=x._id;
+                $scope.point_of_contacts[$index].user_id=x.user_id;
                 $scope.point_of_contacts[$index].name = x.name;
                 $scope.point_of_contacts[$index].phone = x.phone;
                 $scope.point_of_contacts[$index].email_id = x.email_id;
                 $scope.point_of_contacts[$index].designation = x.designation;
                 $scope.point_of_contacts[$index].contact_type.selectedItem = $scope.getSelectedItem(x.contact_type, $scope.contactType);
                 $scope.point_of_contacts[$index].support_area.selectedItem = $scope.getSelectedItem(x.support_area, angular.copy(appConfig.suspect.supportArea));
+                $scope.point_of_contacts[$index].support_location=x.support_location;
+                if(x.support_type==='LOCAL') {
+          $scope.point_of_contacts[$index].local=true;
+        }
+        else if(x.support_type==='REMOTE'){
+          $scope.point_of_contacts[$index].remote=true;
+        }
+        else if(x.support_type==='BOTH'){
+          $scope.point_of_contacts[$index].local = true;
+          $scope.point_of_contacts[$index].remote=true;
+        }
+                //$scope.point_of_contacts[$index].support_type=x.support_type;
             }
 
         };
@@ -54,7 +68,8 @@ angular.module('com.module.suspect')
                 contact_type: $scope.getCopy(appConfig.suspect.contactType),
                 isOpen: true,
                 support_area: angular.copy(appConfig.suspect.supportArea),
-                support_location:''
+                support_location:'',
+                support_type:''
             }];
             //$scope.support_array=[appConfig.suspect.supportArea];
 
@@ -202,7 +217,7 @@ angular.module('com.module.suspect')
                 $scope.submitPromise = asyncSubmit();
             }
         };
-
+//Update Suspect
         function asyncSubmit() {
             return $q(function () {
                 var procObj = {};
@@ -210,9 +225,13 @@ angular.module('com.module.suspect')
                 var files = [];
                 $scope.point_of_contacts.map(function (pocObj) {
                     var requestPocObject = {};
-                    requestPocObject._id = $scope.createPossibility.point_of_contacts[0]._id;
+                    if(pocObj._id){
+                    requestPocObject._id = pocObj._id;
+                        }
                     requestPocObject.contact_type = pocObj.contact_type.selectedItem ? pocObj.contact_type.selectedItem.key : null;
-                    requestPocObject.user_id = $scope.createPossibility.point_of_contacts[0].user_id;
+                    if(pocObj.user_id){
+                    requestPocObject.user_id = pocObj.user_id;
+                        }
                     requestPocObject.name = pocObj.name;
                     requestPocObject.email_id = pocObj.email_id;
                     requestPocObject.support_area = pocObj.support_area.selectedItem ? pocObj.support_area.selectedItem.key : null;
@@ -237,7 +256,7 @@ angular.module('com.module.suspect')
                 }
 
                 procObj.point_of_contacts = poc;
-                procObj.user_id = $scope.createPossibility.point_of_contacts[0].user_id;
+                procObj.user_id = JSON.parse($cookies.userData).userDetails._id;
                 console.log(procObj);
                 $scope.myPromise = suspectService.suspectUpdate(procObj).then(function (response) {
                     /*CoreService.toastSuccess('','SUSPECT Updated Successfully.');*/

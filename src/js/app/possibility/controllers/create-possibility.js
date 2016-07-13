@@ -150,7 +150,7 @@ angular.module('com.module.possibility')
                 modalInstance.result.then(function () {});
             }
         };
-
+//On clicking Update or Save button
         $scope.save = function (possibilityObject) {
           document.getElementById('noEdit').style.pointerEvents = 'none';
             if (possibilityObject) {
@@ -161,7 +161,7 @@ angular.module('com.module.possibility')
                 }
             }
         };
-
+//Updating Existing Possibility
         function asyncSave(possibilityObject) {
             return $q(function () {
 
@@ -175,7 +175,7 @@ angular.module('com.module.possibility')
                 possibilityObject.customer_type = $scope.customerType.selectedItem.key;
                 possibilityObject.client_unit_id = $scope.client_unit_id;
                 possibilityObject.status = status;
-                possibilityObject.user_id = $scope.point_of_contacts[0].user_id;
+                possibilityObject.user_id =JSON.parse($cookies.userData).userDetails._id ;
                 possibilityObject.point_of_contacts = [];
                 possibilityObject.urls = [];
                 if ($scope.uploadFiles && $scope.uploadFiles.length) {
@@ -189,14 +189,18 @@ angular.module('com.module.possibility')
 
                 $scope.point_of_contacts.map(function (pocObj) {
                     var requestPocObject = {};
+                    if(pocObj._id){
                     requestPocObject._id = pocObj._id;
+                        }
                     requestPocObject.name = pocObj.name;
                     requestPocObject.phone = pocObj.phone;
                     requestPocObject.designation = pocObj.designation;
                     requestPocObject.department = pocObj.department;
                     requestPocObject.email_id = pocObj.email_id;
                     requestPocObject.support_location = pocObj.support_location;
+                    if(pocObj.user_id){
                     requestPocObject.user_id = pocObj.user_id;
+                        }
                     requestPocObject.contact_type = pocObj.contact_type.selectedItem ? pocObj.contact_type.selectedItem.key : pocObj.contact_type;
 
                     if (pocObj.remote && pocObj.local) {
@@ -211,7 +215,7 @@ angular.module('com.module.possibility')
                     possibilityObject.point_of_contacts.push(requestPocObject);
 
                 });
-                delete possibilityObject._id;
+                //delete possibilityObject._id;
                 delete possibilityObject.created_by;
                 delete possibilityObject.time_created;
                 delete possibilityObject.freeze;
@@ -252,10 +256,10 @@ angular.module('com.module.possibility')
 
         };
 
-
+//Creating new possibility
         function asyncProcessRequest(requestObject) {
             return $q(function () {
-                requestObject.user_id = JSON.parse($cookies.userData).userDetails.roles.account.id;
+                requestObject.user_id = JSON.parse($cookies.userData).userDetails._id;
                 requestObject.employee_size = $scope.employeeSize.selectedItem.key;
                 requestObject.turnover = $scope.groupTurnover.selectedItem.key;
                 requestObject.vertical = $scope.businessVertical.selectedItem.key;

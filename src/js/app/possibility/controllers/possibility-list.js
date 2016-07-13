@@ -48,6 +48,17 @@ angular.module('com.module.possibility')
 	            }
 
 	        };
+    $scope.showAllCheckBox=function(){
+        var check=false;
+        if($scope.filteredRows){
+        for (var i = 0; i < $scope.filteredRows.length; i++) {
+            if($scope.filteredRows[i].status!=='MET'){
+            check= true;
+        }
+    }
+        }
+        return check;
+    };
 	$scope.data = {
 		    numPerPage: 10,
 		    searchKeywords: '',

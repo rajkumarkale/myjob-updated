@@ -1,16 +1,17 @@
 <br><br>
 <div class=" container col-lg-12">
-  <div >
-    <h4 class="pull-left head">All Employees</h4>
+  <div class="team" style="margin-left: 13px;
+    margin-bottom: 23px;">
+    <h4 class="pull-left head">My Team</h4>
   </div>
   <div class="table-topdiv">
     <table class="table table-bod table table-hover m-n">
       <thead class="table-head">
       <tr>
         <!--<th class="table-th-heading"></th>-->
-        <th class="col-lg-2  table-th-heading">Name<span ><img src="img/sort_icon.png"></span>
+        <th class="col-lg-2  table-th-heading">Name  <span ><img src="img/sort_icon.png"></span>
         </th>
-        <th class="col-lg-1 table-th-heading">Role<span ><img src="img/sort_icon.png"></span>
+        <th class="col-lg-1 table-th-heading">Role  <span ><img src="img/sort_icon.png"></span>
         </th>
         <th class="col-lg-2 table-th-heading">Target <span><img src="img/sort_icon.png"></span></th>
         <th class="col-lg-3 table-th-heading">Edit</th>
@@ -21,7 +22,7 @@
       <tr >
         <td class="hand-cursor" ui-sref="app.createEmpanelment">Robert Martin</td>
         <td class="col-lg-3">Paradigm Creatives</td>
-        <td class="cell-gap">12</td>
+        <td class="cell-gap"><div class="box">12</div></td>
 
         <td class="dashboard-td"><button  class="btn btn-primary edit-dashboard mrg-edit glyphicon glyphicon-pencil"></button></td>
         <td></td>
@@ -29,7 +30,7 @@
       <tr >
         <td class="hand-cursor" ui-sref="app.createEmpanelment">Robert Martin</td>
         <td class="col-lg-3">Paradigm Creatives</td>
-        <td class="cell-gap">12</td>
+        <td class="cell-gap"><div class="box">12</div></td>
 
         <td class="dashboard-td"><button  class="btn btn-primary edit-dashboard mrg-edit glyphicon glyphicon-pencil"></button></td>
         <td></td>
@@ -37,24 +38,61 @@
       <tr >
         <td class="hand-cursor" ui-sref="app.createEmpanelment">Robert Martin</td>
         <td class="col-lg-3">Paradigm Creatives</td>
-        <td class="cell-gap">12</td>
+        <td class="cell-gap"><div class="box">12</div></td>
+
+        <td class="dashboard-td"><button  class="btn btn-primary edit-dashboard mrg-edit glyphicon glyphicon-pencil"></button></td>
+        <td></td>
+      </tr>
+      <tr >
+        <td class="hand-cursor" ui-sref="app.createEmpanelment">Robert Martin</td>
+        <td class="col-lg-3">Paradigm Creatives</td>
+        <td class="cell-gap"><div class="box">12</div></td>
+
+        <td class="dashboard-td"><button  class="btn btn-primary edit-dashboard mrg-edit glyphicon glyphicon-pencil"></button></td>
+        <td></td>
+      </tr>
+      <tr >
+        <td class="hand-cursor" ui-sref="app.createEmpanelment">Robert Martin</td>
+        <td class="col-lg-3">Paradigm Creatives</td>
+        <td class="cell-gap"><div class="box">12</div></td>
+
+        <td class="dashboard-td"><button  class="btn btn-primary edit-dashboard mrg-edit glyphicon glyphicon-pencil"></button></td>
+        <td></td>
+      </tr>
+      <tr >
+        <td class="hand-cursor" ui-sref="app.createEmpanelment">Robert Martin</td>
+        <td class="col-lg-3">Paradigm Creatives</td>
+        <td class="cell-gap"><div class="box">12</div></td>
 
         <td class="dashboard-td"><button  class="btn btn-primary edit-dashboard mrg-edit glyphicon glyphicon-pencil"></button></td>
         <td></td>
       </tr>
       </tbody>
     </table>
+    <div class=" pull-right">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link">1</a></li>
+        <li class="page-item"><a class="page-link" >2</a></li>
+        <li class="page-item"><a class="page-link">3</a></li>
+        <li class="page-item"><a class="page-link">4</a></li>
+        <li class="page-item"><a class="page-link" >5</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+
+    </div>
   </div>
 
 </div>
 
-<pagination class="pagination-sm pull-right"
-            page="data.currentPage"
-            total-items="data.totalItems"
-            ng-model="data.currentPage"
-            ng-change="getPossibilities(data.currentPage,data.numPerPage)"
-            max-size="4"
-            items-per-page="data.numPerPage"
-            rotate="false"
-            boundary-links="false">
-</pagination>
+

@@ -87,7 +87,7 @@
 
 }
 .list-menu li > a:hover{
- color:#333 !important;
+  color:#333 !important;
   background-color: transparent !important;
 
 }
@@ -153,7 +153,7 @@
 }
 #basic-addon1 {
   padding-top: 1px;
- background-color: #e1e1e1;;
+  background-color: #e1e1e1;;
 }
 #basic-addon2 {
   padding-top: 1px;
@@ -381,13 +381,13 @@
 
 .drop-box {
 
-    background: #F8F8F8;
-    border: 2px dashed #DDD;
-    width: 95%;
-    height: 190px;
-    text-align: center;
-    padding-top: 75px;
-    margin: 10px;
+  background: #F8F8F8;
+  border: 2px dashed #DDD;
+  width: 95%;
+  height: 190px;
+  text-align: center;
+  padding-top: 75px;
+  margin: 10px;
   font-size: 25px !important;
   color:#A9A9A9;
 }
@@ -1955,31 +1955,31 @@
 /*end views table margin*/
 
 .status-met{
-    background-color: #e68405 !important;
+  background-color: #e68405 !important;
 }
 .status-notmet{
-    background-color: #F46262 !important;
+  background-color: #F46262 !important;
 }
 .status-inactive{
-    background-color: #A8A8A7 !important;
+  background-color: #A8A8A7 !important;
 }
 .status-cold{
-    background-color: #A8A8A7 !important;
+  background-color: #A8A8A7 !important;
 }
 .status-warm{
-    background-color: #E48204 !important;
+  background-color: #E48204 !important;
 }
 .status-hot{
-    background-color: #e60505 !important;
+  background-color: #e60505 !important;
 }
 .status-lost{
-    background-color: #a948b8 !important;
+  background-color: #a948b8 !important;
 }
 .status-won{
-    background-color: #15b929 !important;
+  background-color: #15b929 !important;
 }
 .status-AOC{
-    background-color: #8c8c8c !important;
+  background-color: #8c8c8c !important;
 }
 
 /*create prospect agreement*/
@@ -2061,14 +2061,14 @@
   margin-top: 50px;}
 .contact{font-size: 22px;
   padding-left: 21px;
-color:#049ad9 !important;}
+  color:#049ad9 !important;}
 /* end of comments for create possibility UI */
 
 .plus .panel-heading a:after{
-    content: '' !important;
+  content: '' !important;
 }
 .default-cursor{
-    cursor: default !important;
+  cursor: default !important;
 }
 /*dashboard panel divs*/
 .bord-target{
@@ -2149,7 +2149,7 @@ color:#049ad9 !important;}
 /* start comments for suspect create */
 .mrg-down{margin-top: -9px}
 .up-mrg{margin-top: -38px}
- .select .status-suspect{width:125px;}
+.select .status-suspect{width:125px;}
 /* end of comments for suspect create UI */
 .present .dropdown-menu table > thead > tr > th .btn.btn-sm{
   padding: 0px 7px !important;
@@ -2198,7 +2198,7 @@ color:#049ad9 !important;}
 }
 /*end list poss icons*/
 .present .ng-invalid-parse{
-    border-color: red !important;
+  border-color: red !important;
 }
 /*suspect view list icons*/
 .suspect-shareicon{
@@ -2271,8 +2271,8 @@ color:#049ad9 !important;}
 /*forgot password modal*/
 .centerButton{margin-left: 38%}
 .forgot-cancel{ margin-right:44px;
-font-size: 17px;
-color: #AEAEAE;}
+  font-size: 17px;
+  color: #AEAEAE;}
 .forgot-cancel:hover{color: #AEAEAE;}
 .forgot-ok{color: #61C9F4;
   margin-right: 28px;
@@ -2470,7 +2470,7 @@ color: #AEAEAE;}
 }
 .forgot-text{
   color: #545454;
-  font-weight:normal;
+  font-weight:bold;
 }
 /*end forgot pass modal*/
 /*view poss delete image*/
@@ -2506,13 +2506,13 @@ color: #AEAEAE;}
 .plus-fa{padding: 9px 18px;
   font-size: 10px;
   border-radius: 5px !important;
-background-color: #03a9f4;color:#ffffff}
+  background-color: #03a9f4;color:#ffffff}
 .add-button{margin-top: 3px;
-margin-right: 16px;}
+  margin-right: 16px;}
 /*end of comments for create suspect */
 /* comments for image blocks in view prospect */
 
-  /*width: 16% !important;
+/*width: 16% !important;
 
 
 }*/
@@ -2666,3 +2666,15 @@ input:-webkit-autofill:focus {
 .buss-font{
   font-size: 18px !important;
 }
+/* comments for dashboard ui */
+.edit-dashboard{background-color: #049ad9 !important;
+  color: white !important;
+  padding-left: 12px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 1px;
+  border-radius: 0px;
+  text-transform: none;
+  font-size: 15px;}
+.dashboard-td{padding: 0px !important;margin: 0px !important;}
+/*end of comments for dashboard ui */

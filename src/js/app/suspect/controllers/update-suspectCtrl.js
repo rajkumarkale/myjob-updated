@@ -96,9 +96,12 @@ angular.module('com.module.suspect')
                 $scope.createPossibility.customer_type = $scope.getSelectedItem($scope.createPossibility.customer_type, $scope.customerType).displayText;
                 /*$scope.createPossibility.POC =$scope.suspect;*/
                 $scope.status.selectedItem = $scope.getSelectedItem($scope.createPossibility.current_status.status, $scope.status);
+                /*$scope.point_of_contacts=$scope.createPossibility.point_of_contacts;*/
                 $scope.createPossibility.point_of_contacts.map(function (Obj) {
                     var i = 0;
                     $("#contact" + i + ' .is-empty').removeClass('is-empty');
+                    $scope.point_of_contacts[i]._id=Obj._id;
+                    $scope.point_of_contacts[i].user_id=Obj.user_id;
                     $scope.point_of_contacts[i].name = Obj.name;
                     $scope.point_of_contacts[i].email_id = Obj.email_id;
                     $scope.point_of_contacts[i].designation = Obj.designation;
@@ -237,6 +240,15 @@ angular.module('com.module.suspect')
                     requestPocObject.support_area = pocObj.support_area.selectedItem ? pocObj.support_area.selectedItem.key : null;
                     requestPocObject.designation = pocObj.designation;
                     requestPocObject.phone = pocObj.phone;
+                    
+                    /*if(pocObj.local===true && pocObj.remote===true){
+                        requestPocObject.support_type='BOTH';
+                    }else if(pocObj.local===true) {
+          requestPocObject.support_type='LOCAL';
+        }else if(pocObj.remote===true){
+          requestPocObject.support_type='REMOTE';
+        }
+                    requestPocObject.support_location=pocObj.support_location;*/
                     poc.push(requestPocObject);
                 });
 

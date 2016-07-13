@@ -237,12 +237,12 @@
                             </div>
                     </div>
                 </div>
+                <div></div>
                 <div data-cg-busy="{promise:uploadPromise,message:'Please Wait'}"></div>
-                <div data-cg-busy="{promise:submitPromise,message:'Please Wait'}"></div>
                 <div class=" pull-left">
                     <a href="" class="btn btn-primary contacts-button mrgs-contact" ng-click="createNewContactList()"> <i class="fa fa-plus"></i> Contacts</a>
                 </div>
-                <div class="col-md-6 col-md-offset-5">
+                <div class="col-md-6 col-md-offset-5" data-cg-busy="{promise:submitPromise,message:'Please Wait'}">
                     <div class="form-group">
                         <a ui-sref="app.suspect-view">
                             <button class="btn btn-primary data-button-cancel btn-text">Cancel</button>
@@ -251,6 +251,6 @@
                     </div>
                 </div>
             </div>
+            </div>
         </form>
-    </div>
 </div>

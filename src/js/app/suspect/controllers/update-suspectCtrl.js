@@ -241,14 +241,14 @@ angular.module('com.module.suspect')
                     requestPocObject.designation = pocObj.designation;
                     requestPocObject.phone = pocObj.phone;
                     
-                    /*if(pocObj.local===true && pocObj.remote===true){
+                    if(pocObj.local===true && pocObj.remote===true){
                         requestPocObject.support_type='BOTH';
                     }else if(pocObj.local===true) {
           requestPocObject.support_type='LOCAL';
         }else if(pocObj.remote===true){
           requestPocObject.support_type='REMOTE';
         }
-                    requestPocObject.support_location=pocObj.support_location;*/
+                    requestPocObject.support_location=pocObj.support_location;
                     poc.push(requestPocObject);
                 });
 

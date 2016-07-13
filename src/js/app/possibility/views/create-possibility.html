@@ -28,7 +28,7 @@
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                         <label class="control-label">Legal Entity</label>
-                                        <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text" tabindex="1">
+                                        <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text" tabindex="1" alpha-num>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label dropdown-col">Business Vertical</label>
@@ -50,7 +50,7 @@
                                     </div>
                                   <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                     <label class="control-label">State</label>
-                                    <input class="form-control" required data-ng-model="createPossibility.address.state" type="text" tabindex="11">
+                                    <input class="form-control" required data-ng-model="createPossibility.address.state" type="text" tabindex="11" alphabets-only>
 
                                   </div>
 
@@ -66,7 +66,7 @@
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                         <label class="control-label">Business Unit</label>
-                                        <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text" tabindex="2">
+                                        <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text" tabindex="2" alpha-num>
 
                                     </div>
 
@@ -90,12 +90,12 @@
 
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                         <label class="control-label">City</label>
-                                        <input class="form-control" required data-ng-model="createPossibility.address.city " type="text" tabindex="10">
+                                        <input class="form-control" required data-ng-model="createPossibility.address.city " type="text" tabindex="10" alphabets-only>
 
                                     </div>
                                   <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                     <label class="control-label">Country</label>
-                                    <input class="form-control" required data-ng-model="createPossibility.address.country" type="text" tabindex="12">
+                                    <input class="form-control" required data-ng-model="createPossibility.address.country" type="text" tabindex="12" alphabets-only>
 
                                   </div>
                                     <br>
@@ -181,13 +181,13 @@
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                             <label class="control-label">Name</label>
-                                            <input class="form-control" required data-ng-model="poc.name" type="text" tabindex="15">
+                                            <input class="form-control" required data-ng-model="poc.name" type="text" tabindex="15" alphabets-only>
 
                                         </div>
 
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                             <label class="control-label">Designation</label>
-                                            <input data-ng-model="poc.designation" required class="form-control" type="text" tabindex="17">
+                                            <input data-ng-model="poc.designation" required class="form-control" type="text" tabindex="17" alphabets-only>
 
                                         </div>
 
@@ -203,7 +203,7 @@
                                         <div>
                                             <div class="form-group label-floating localadd-mrg" data-ng-class="{'is-empty':isNewPossibility}">
                                                 <label class="control-label">Location</label>
-                                                <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="22">
+                                                <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="22" alphabets-only>
 
                                             </div>
                                         </div>
@@ -222,7 +222,7 @@
                                         </div>
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                             <label class="control-label">Department</label>
-                                            <input required data-ng-model="poc.department" class="form-control" type="text" tabindex="21">
+                                            <input required data-ng-model="poc.department" class="form-control" type="text" tabindex="21" alphabets-only>
                                         </div>
 
                                         <div ng-if="poc.contact_type ==='PRIMARY'">
@@ -258,7 +258,7 @@
                                     <div class="col-md-6 form-custom-padding">
                                         <div id='dname' class="form-group label-floating is-empty">
                                             <label for="i1" class="control-label">Contact Person Name</label>
-                                            <input type="text" class="form-control" id="i1" ng-model="discussion.name" required tabindex="25" >
+                                            <input type="text" class="form-control" id="i1" ng-model="discussion.name" required tabindex="25" alphabets-only>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-md-9 present">
@@ -277,7 +277,7 @@
                                     <div class="col-md-6 form-custom-padding">
                                         <div id='dvenue' class="form-group label-floating is-empty">
                                             <label for="i7" class="control-label">Venue</label>
-                                            <input type="text" class="form-control" id="i7" ng-model="discussion.venue" required tabindex="26" ng-pattern="/^[a-z\d\-_\s]+$/i">
+                                            <input type="text" class="form-control" id="i7" ng-model="discussion.venue" required tabindex="26" ng-pattern="/^[a-z\d\-_\s]+$/i" alpha-num>
                                         </div>
                                         <div class="form-group" ng-if="isNewPossibility">
                                             <div class="input-group col-md-9">
@@ -308,7 +308,7 @@
                                     <div class="form-group is-empty is-fileinput">
                                         <input type="file" id="inputFile4" ngf-select="uploads($file)" ng-model="file" ngf-multiple="true" tabindex="31" >
                                         <div class="input-group">
-                                            <input type="text" readonly="" class="form-control" placeholder="No selected file" >
+                                            <input type="text" readonly="" id="inputText" class="form-control" placeholder="No selected file" >
                                             <span class="input-group-btn input-group-sm">
                    <button type="button" class="btn warm-status btn-sm btn-text" class='app-container-blur'>
                     <i class="fa fa-paperclip">&nbsp;&nbsp;Attach File</i>
@@ -327,7 +327,7 @@
                             <div class="up-margin" ng-if="!isNewPossibility">
                                 <ul>
                                     <li ng-repeat="f in createPossibility.discussion.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-                                        <img ng-src="{{f.url}}" class="thumb"></li>
+                                        <img ng-src="{{f.url}}" class="thumb"> {{f.type}}</li>
                                 </ul>
                             </div>
                         </div>

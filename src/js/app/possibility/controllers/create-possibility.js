@@ -215,7 +215,7 @@ angular.module('com.module.possibility')
                     possibilityObject.point_of_contacts.push(requestPocObject);
 
                 });
-                //delete possibilityObject._id;
+                delete possibilityObject._id;
                 delete possibilityObject.created_by;
                 delete possibilityObject.time_created;
                 delete possibilityObject.freeze;

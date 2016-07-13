@@ -376,36 +376,42 @@ angular.module('com.module.possibility')
         };
         $scope.uploadsPromise;
         $scope.uploads = function(file) {
-            $scope.uploadFile=[];
+          $scope.uploadFile = [];
+          $scope.fileNameLen = file.name.length-3;
+          $scope.fileFormat = file.name.substring($scope.fileNameLen);
+          if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx'){
             if (file && file.length) {
-                for (var i = 0; i < file.length; i++) {
-                    var _file = file[i];
-                    if (!_file.$error) {
-                      $scope.uploadsPromise=  Upload.upload({
-                            url: appConfig.apiUrl+'/api/upload/file',
-                            data: {
-                                content: _file
-                            }
-                        }).then(function(resp) {
-                          _file.url = resp.data.url;
-                          _file.documentType = angular.copy(appConfig.possibility.documentType);
-                          $scope.uploadFile.push(file);
+            for (var i = 0; i < file.length; i++) {
+              var _file = file[i];
+              if (!_file.$error) {
+                $scope.uploadsPromise = Upload.upload({
+                  url: appConfig.apiUrl + '/api/upload/file',
+                  data: {
+                    content: _file
+                  }
+                }).then(function (resp) {
+                  _file.url = resp.data.url;
+                  _file.documentType = angular.copy(appConfig.possibility.documentType);
+                    $scope.uploadFile.push(file);
+                    $scope.fileName = _file.name;
+                  /*if (file.name.length > 7 ) {
+                   $scope.fileNamePart1 = file.name.substring(0, 8);
+                   $scope.fileNameLen = file.name.length - 7;
+                   $scope.fileNamePart2 = file.name.substring($scope.fileNameLen);
+                   $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
+                   console.log($scope.fileName+' '+file.name);
+                   }*/
+                }, null, function (evt) {
 
-                          $scope.fileName=_file.name;
+                });
+              }
+            }}
+          }
+      else{
+            alert("please select supported file format only eg: pdf,docx,pptx");
+            document.getElementById("inputText").value = "";
 
-                          /*if (file.name.length > 7 ) {
-                          $scope.fileNamePart1 = file.name.substring(0, 8);
-                          $scope.fileNameLen = file.name.length - 7;
-                          $scope.fileNamePart2 = file.name.substring($scope.fileNameLen);
-                          $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
-                          console.log($scope.fileName+' '+file.name);
-                        }*/
-                        }, null, function(evt) {
-
-                        });
-                    }
-                }
-            }
+          }
         };
         $scope.toggleOpen = function (poc) {
             return poc.isOpen = !poc.isOpen;
@@ -428,6 +434,6 @@ angular.module('com.module.possibility')
             $event.stopPropagation();
             $scope.opened1 = !$scope.opened1;
         };
-        
+
 
     }]);

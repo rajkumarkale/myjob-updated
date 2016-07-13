@@ -308,7 +308,7 @@
                                     <div class="form-group is-empty is-fileinput">
                                         <input type="file" id="inputFile4" ngf-select="uploads($file)" ng-model="file" ngf-multiple="true" tabindex="31" >
                                         <div class="input-group">
-                                            <input type="text" readonly="" class="form-control" placeholder="No selected file" >
+                                            <input type="text" readonly="" id="inputText" class="form-control" placeholder="No selected file" >
                                             <span class="input-group-btn input-group-sm">
                    <button type="button" class="btn warm-status btn-sm btn-text" class='app-container-blur'>
                     <i class="fa fa-paperclip">&nbsp;&nbsp;Attach File</i>
@@ -327,7 +327,7 @@
                             <div class="up-margin" ng-if="!isNewPossibility">
                                 <ul>
                                     <li ng-repeat="f in createPossibility.discussion.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-                                        <img ng-src="{{f.url}}" class="thumb"></li>
+                                        <img ng-src="{{f.url}}" class="thumb"> {{f.type}}</li>
                                 </ul>
                             </div>
                         </div>

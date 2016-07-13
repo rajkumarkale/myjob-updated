@@ -12,6 +12,7 @@
   background-color:#23b7e5 !important;
   width: 257px;
   margin-left: 27px;
+  text-transform: none !important;
 }
 .hand-cursor{
   cursor: pointer;
@@ -2469,7 +2470,7 @@ color: #AEAEAE;}
 }
 .forgot-text{
   color: #545454;
-  font-weight:bold;
+  font-weight:normal;
 }
 /*end forgot pass modal*/
 /*view poss delete image*/

@@ -304,7 +304,7 @@ angular.module('com.module.suspect')
         };
 
 $scope.editForm = function () {
-    if ($scope.createPossibility.isProspect !== true || $scope.accessType==='VIEW') {
+    if ($scope.createPossibility.isProspect !== true && $scope.accessType!=='view') {
                 $scope.isEditable = true;
     }
         };

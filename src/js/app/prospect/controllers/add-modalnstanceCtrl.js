@@ -48,10 +48,9 @@ angular.module('com.module.prospect')
                   }
                 }
               }
-              else{
-                CoreService.toastError('ERROR', 'please select supported file format only eg: pdf,docx,pptx');
+              else{  
+                CoreService.toastError('', 'please select supported file format only eg: pdf,docx,pptx');
                 document.getElementById("inputText").value = "";
-
               }
         };
 
@@ -85,7 +84,7 @@ angular.module('com.module.prospect')
             }).error(function (err) {
                 $scope.authError = err.message;
              $modalInstance.dismiss();
-                CoreService.toastSuccess('Fail?', 'Failed to Create Discussions.');
+                /*CoreService.toastSuccess('Fail?', 'Failed to Create Discussions.');*/
             });
         };
         $scope.cancel = function () {

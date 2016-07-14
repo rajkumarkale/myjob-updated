@@ -3,7 +3,8 @@
  */
 angular.module('com.module.suspect')
   .controller('suspectShareCtrl',function ($scope,$modalInstance,$http,clinetId,$cookies,suspectService) {
-    $scope.data;
+    $scope.data = '';
+    $scope.uId = '';
     $scope.userId = JSON.parse($cookies.userData).userDetails._id;
     $scope.getNames = function (val) {
             return $http({
@@ -13,12 +14,32 @@ angular.module('com.module.suspect')
                     return response.data.users;
                 });
     };
-    $scope.setdata = function ($item, $model, $label, $event, $index) {
-        $scope.data={email:$item.email_id,clientUnitIds:[{clientUnitId:clinetId}]}
-        //console.log($scope.data);
+    $scope.setTransferdata = function ($item, $model, $label, $event, $index) {
+        $scope.uId=$item._id;
+
     };
-  $scope.ok=function () {
-      suspectService.transfer($scope.data,$scope.userId).then(function(response){
+    $scope.setShareData = function ($item, $model, $label, $event, $index) {
+
+        $scope.uId=$item._id;
+    };
+
+  $scope.transfer=function () {
+      suspectService.transfer(clinetId,$scope.uId).then(function(response){
+          console.log(response);
+          $modalInstance.close(response);
+      });
+    };
+    $scope.prev={
+        name:'edit'
+    };
+    $scope.share=function () {
+        if($scope.prev.name==='edit'){
+        $scope.privilage='edit';
+    }else{
+        $scope.privilage='view';
+    }
+        $scope.data={access_type :$scope.privilage,userIds:[{userId:$scope.uId}]}
+      suspectService.share($scope.data,clinetId).then(function(response){
           console.log(response);
           $modalInstance.close(response);
       });

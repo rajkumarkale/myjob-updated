@@ -68,6 +68,11 @@ angular.module('com.module.possibility')
                 $scope.title = "New Possibility";
                 $scope.createPossibility = {};
                 $scope.createPossibility.discussion = {};
+                $scope.discussion.time='08:00';
+                $scope.employeeSize.selectedItem ='';
+                $scope.groupTurnover.selectedItem='';
+                $scope.businessVertical.selectedItem='';
+                $scope.customerType.selectedItem='';
                 $scope.status.selectedItem = {
                     "key": "NOT_MET",
                     "displayText": "NOT MET"
@@ -146,7 +151,7 @@ angular.module('com.module.possibility')
                 modalInstance.result.then(function () {});
             }
         };
-
+//On clicking Update or Save button
         $scope.save = function (possibilityObject) {
           document.getElementById('noEdit').style.pointerEvents = 'none';
             if (possibilityObject) {
@@ -157,7 +162,7 @@ angular.module('com.module.possibility')
                 }
             }
         };
-
+//Updating Existing Possibility
         function asyncSave(possibilityObject) {
             return $q(function () {
 
@@ -171,7 +176,7 @@ angular.module('com.module.possibility')
                 possibilityObject.customer_type = $scope.customerType.selectedItem.key;
                 possibilityObject.client_unit_id = $scope.client_unit_id;
                 possibilityObject.status = status;
-                possibilityObject.user_id = $scope.point_of_contacts[0].user_id;
+                possibilityObject.user_id =JSON.parse($cookies.userData).userDetails._id ;
                 possibilityObject.point_of_contacts = [];
                 possibilityObject.urls = [];
                 if ($scope.uploadFiles && $scope.uploadFiles.length) {
@@ -185,14 +190,18 @@ angular.module('com.module.possibility')
 
                 $scope.point_of_contacts.map(function (pocObj) {
                     var requestPocObject = {};
+                    if(pocObj._id){
                     requestPocObject._id = pocObj._id;
+                        }
                     requestPocObject.name = pocObj.name;
                     requestPocObject.phone = pocObj.phone;
                     requestPocObject.designation = pocObj.designation;
                     requestPocObject.department = pocObj.department;
                     requestPocObject.email_id = pocObj.email_id;
                     requestPocObject.support_location = pocObj.support_location;
+                    if(pocObj.user_id){
                     requestPocObject.user_id = pocObj.user_id;
+                        }
                     requestPocObject.contact_type = pocObj.contact_type.selectedItem ? pocObj.contact_type.selectedItem.key : pocObj.contact_type;
 
                     if (pocObj.remote && pocObj.local) {
@@ -248,10 +257,10 @@ angular.module('com.module.possibility')
 
         };
 
-
+//Creating new possibility
         function asyncProcessRequest(requestObject) {
             return $q(function () {
-                requestObject.user_id = JSON.parse($cookies.userData).userDetails.roles.account.id;
+                requestObject.user_id = JSON.parse($cookies.userData).userDetails._id;
                 requestObject.employee_size = $scope.employeeSize.selectedItem.key;
                 requestObject.turnover = $scope.groupTurnover.selectedItem.key;
                 requestObject.vertical = $scope.businessVertical.selectedItem.key;
@@ -374,39 +383,39 @@ angular.module('com.module.possibility')
                 }
             }
         };
-        $scope.uploadsPromise;
-        $scope.uploads = function(file) {
-            $scope.uploadFile=[];
-            if (file && file.length) {
-                for (var i = 0; i < file.length; i++) {
-                    var _file = file[i];
-                    if (!_file.$error) {
-                      $scope.uploadsPromise=  Upload.upload({
-                            url: appConfig.apiUrl+'/api/upload/file',
-                            data: {
-                                content: _file
-                            }
-                        }).then(function(resp) {
-                          _file.url = resp.data.url;
-                          _file.documentType = angular.copy(appConfig.possibility.documentType);
-                          $scope.uploadFile.push(file);
+       $scope.uploadsPromise;
+       $scope.uploads = function(file) {
+         $scope.discusfile=[file];
+       $scope.uploadFile = [];
+       $scope.fileNameLen = file.name.length-3;
+       $scope.fileFormat = file.name.substring($scope.fileNameLen);
+       if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx'){
+       if ($scope.discusfile && $scope.discusfile.length) {
+       for (var i = 0; i < $scope.discusfile.length; i++) {
+       var _file = $scope.discusfile[0];
+       if (!_file.$error) {
+       $scope.uploadsPromise = Upload.upload({
+       url: appConfig.apiUrl + '/api/upload/file',
+       data: {
+       content: _file
+       }
+       }).then(function (resp) {
+       _file.url = resp.data.url;
+       _file.documentType = angular.copy(appConfig.possibility.documentType);
+       $scope.uploadFile.push($scope.discusfile);
+       $scope.fileName = _file.name;
+       }, null, function (evt) {
 
-                          $scope.fileName=_file.name;
+       });
+       }
+       }}
+       }
+       else{
+         CoreService.toastError('', 'please select supported file format only eg: pdf,docx,pptx');
+       document.getElementById("inputText").value = "";
 
-                          /*if (file.name.length > 7 ) {
-                          $scope.fileNamePart1 = file.name.substring(0, 8);
-                          $scope.fileNameLen = file.name.length - 7;
-                          $scope.fileNamePart2 = file.name.substring($scope.fileNameLen);
-                          $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
-                          console.log($scope.fileName+' '+file.name);
-                        }*/
-                        }, null, function(evt) {
-
-                        });
-                    }
-                }
-            }
-        };
+       }
+       };
         $scope.toggleOpen = function (poc) {
             return poc.isOpen = !poc.isOpen;
         };

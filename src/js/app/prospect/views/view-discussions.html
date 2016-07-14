@@ -136,7 +136,7 @@
                       Logged by:
                     </label>
                     <label class="call-follow">
-                      {{discussion.loggedBy| uppercase}}
+                      {{discussion.logged_by| uppercase}}
                     </label>
                   </td>
                 </tr>
@@ -178,7 +178,7 @@
               1 Attachment
             </div>
             <div class="attach-image">
-              <img ng-src="{{discussion.documents[0]}}" class="attach-image-detail"/>
+              <a><img src="img/Attach-icon.png" class="attach-image-detail" ng-click="download(discussion.documents[0])"/></a>
             </div>
           </div>
         </div>

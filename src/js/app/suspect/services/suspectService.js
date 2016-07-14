@@ -33,10 +33,16 @@ angular.module('com.module.suspect').factory('suspectService', function ($http, 
         data: data
     });
 };
-    var transfer = function (data,uid) {
+    var transfer = function (cid,uid) {
+    return $http({
+        method: 'GET',
+        url: BASEURI + '/api/client/transfer/'+cid+'/'+uid
+    });
+};
+    var share = function (data,cid) {
     return $http({
         method: 'POST',
-        url: BASEURI + '/api/client/transfer/'+uid,
+        url: BASEURI + '/api/client/share/'+cid,
         data: data
     });
 };
@@ -47,6 +53,7 @@ angular.module('com.module.suspect').factory('suspectService', function ($http, 
       getNames:getNames,
       suspectUpdate:suspectUpdate,
       getSuspectsByRange:getSuspectsByRange,
-      transfer:transfer
+      transfer:transfer,
+      share:share
   }
 });

@@ -9,6 +9,11 @@ angular.module('com.module.prospect')
         $scope.discussions=response.data;
         console.log(response.data);
     });
+    $scope.download=function(url){
+        var filename = url.substring(url.lastIndexOf('/')+1);
+        console.log(filename);
+        window.open(url);
+    }
     $scope.openAddDiscussions = function () {
     var modalInstance = $modal.open({
       templateUrl: 'js/app/prospect/views/add-new-discussions.html',

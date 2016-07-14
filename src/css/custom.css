@@ -1955,7 +1955,7 @@
 /*end views table margin*/
 
 .status-met{
-  background-color: #e68405 !important;
+  background-color: #30a04a !important;
 }
 .status-notmet{
   background-color: #F46262 !important;
@@ -1967,10 +1967,10 @@
   background-color: #A8A8A7 !important;
 }
 .status-warm{
-  background-color: #E48204 !important;
+  background-color: #F26161 !important;
 }
 .status-hot{
-  background-color: #e60505 !important;
+  background-color: #50C472 !important;
 }
 .status-lost{
   background-color: #a948b8 !important;

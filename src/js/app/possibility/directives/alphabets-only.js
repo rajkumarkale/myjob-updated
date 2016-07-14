@@ -1,9 +1,6 @@
 /**
  * Created by rkale on 7/13/2016.
  */
-/**
- * Created by rkale on 7/13/2016.
- */
 angular.module('com.module.possibility')
   .directive('alphabetsOnly', function(toaster,CoreService) {
     return {

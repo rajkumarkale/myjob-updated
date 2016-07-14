@@ -146,4 +146,21 @@ $scope.statusColor=function(status){
         $state.reload('app.suspect-view');
     });
   };
+    $scope.showShare=function(suspect){
+        var show=false;
+        if(suspect.access_type==='FULL'){
+            show= true;
+        }else if(suspect.access_type=='edit'){
+            show= true;
+        }
+            return show;   
+    };
+    $scope.showTransfer=function(suspect){
+        var show=false;
+        if(suspect.access_type==='FULL'){
+            show= true;
+        }
+            return show;   
+    }
+    
   }]);

@@ -14,7 +14,7 @@ angular.module('com.module.suspect')
         $scope.getNames = function (val) {
             return $http({
                     method: 'GET',
-                    url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name=' + val
+                    url: 'http://myjobs-node-server-dev.herokuapp.com'+'/api/users?name='+val
                 }).then(function (response) {
                     return response.data.users;
                 });
@@ -81,7 +81,9 @@ angular.module('com.module.suspect')
         $scope.status = appConfig.suspect.status;
         $scope.createPossibility = {};
         $scope.title = "Client Information";
+        
         if ($stateParams.suspect) {
+            $scope.accessType=$stateParams.suspect.access_type;
             $scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function (response) {
                 console.log(response.data);
                 $scope.createPossibility = response.data;
@@ -187,33 +189,42 @@ angular.module('com.module.suspect')
         $scope.uploadFiles = [];
         $scope.upload = function (files) {
             $scope.uploadFiles = [];
+          $scope.fileNameLen = files[0].name.length-3;
+          $scope.fileFormat = files[0].name.substring($scope.fileNameLen);
+          if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx') {
             if (files && files.length) {
-                for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
-                    if (!file.$error) {
-                        $scope.uploadPromise = Upload.upload({
-                            url: appConfig.apiUrl + '/api/upload/file',
-                            data: {
-                                content: file
-                            }
-                        }).then(function (resp) {
-                            file.url = resp.data.url;
-                            file.documentType = angular.copy(appConfig.possibility.documentType);
-                            $scope.uploadFiles.push(file);
-                            $scope.fileName = file.name;
-                            if (file.name.length > 7) {
-                                $scope.fileNamePart1 = file.name.substring(0, 12);
-                                $scope.fileNameLen = file.name.length - 7;
-                                $scope.fileNamePart2 = file.name.substring($scope.fileNameLen);
-                                $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
-                                console.log($scope.fileName);
-                            }
-                        }, null, function (evt) {
-
-                        });
+              for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                if (!file.$error) {
+                  $scope.uploadPromise = Upload.upload({
+                    url: appConfig.apiUrl + '/api/upload/file',
+                    data: {
+                      content: file
                     }
+                  }).then(function (resp) {
+                    file.url = resp.data.url;
+                    file.documentType = angular.copy(appConfig.possibility.documentType);
+                    $scope.uploadFiles.push(file);
+                    $scope.fileName = file.name;
+                    if (file.name.length > 7) {
+                      $scope.fileNamePart1 = file.name.substring(0, 12);
+                      $scope.fileNameLen = file.name.length - 7;
+                      $scope.fileNamePart2 = file.name.substring($scope.fileNameLen);
+                      $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
+                      console.log($scope.fileName);
+                    }
+                  }, null, function (evt) {
+
+                  });
                 }
+              }
             }
+            }
+          else{
+            CoreService.toastError('ERROR', 'please select supported file format only eg: pdf,docx,pptx');
+            document.getElementById("inputText").value = "";
+
+          }
         };
         $scope.submit = function (bool) {
             if (bool) {
@@ -240,7 +251,7 @@ angular.module('com.module.suspect')
                     requestPocObject.support_area = pocObj.support_area.selectedItem ? pocObj.support_area.selectedItem.key : null;
                     requestPocObject.designation = pocObj.designation;
                     requestPocObject.phone = pocObj.phone;
-                    
+
                     if(pocObj.local===true && pocObj.remote===true){
                         requestPocObject.support_type='BOTH';
                     }else if(pocObj.local===true) {
@@ -293,12 +304,12 @@ angular.module('com.module.suspect')
         };
 
 $scope.editForm = function () {
-    if ($scope.createPossibility.isProspect !== true) {
+    if ($scope.createPossibility.isProspect !== true && $scope.accessType!=='view') {
                 $scope.isEditable = true;
     }
         };
         $scope.isValid = function (val) {
-            var c1=true; 
+            var c1=true;
             if ($scope.point_of_contacts.length>0) {
                     for (var i = 0; i < $scope.point_of_contacts.length; i++) {
                         if(!($scope.point_of_contacts[i].contact_type.selectedItem && $scope.point_of_contacts[i].support_area.selectedItem)){

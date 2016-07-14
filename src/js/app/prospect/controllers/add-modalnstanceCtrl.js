@@ -49,7 +49,7 @@ angular.module('com.module.prospect')
                 }
               }
               else{
-                CoreService.toastError('ERROR', 'please select supported file format only eg: pdf,docx,pptx');
+                CoreService.alertInfo('ERROR', 'please select supported file format only eg: pdf,docx,pptx');
                 document.getElementById("inputText").value = "";
 
               }

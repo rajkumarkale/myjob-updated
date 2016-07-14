@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div>
-                    <hr class="line1">
+                    <hr class="hr-line">
                     <form name="createPossibilityForm" id="possibility" novalidate>
   <div id="noEdit">
                         <div class="row ">
@@ -44,8 +44,8 @@
                                     </div>
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                         <label class="control-label">Website URL<span class="required-field">*</span></label>
-                                        <input class="form-control" required data-ng-model="createPossibility.url" type="text" tabindex="7">
-
+                                        <input  class="form-control" required data-ng-model="createPossibility.url" type="text" tabindex="7" ng-pattern='/^(www)[a-zA-Z0-9-\.]+\.[a-z]{2,4}/'>
+<span ng-show=""></span>
                                     </div>
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                         <label class="control-label">Address 2</label>
@@ -114,7 +114,7 @@
 
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1" ng-if="isEditable">
-                                    <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" >Drop Files Here</div>
+                                    <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true"  >Drop Files Here</div>
                                     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
                                     <div data-cg-busy="{promise:uploadPromise,message:'Please Wait'}"></div>
                                 </div>
@@ -216,7 +216,7 @@
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                             <label class="control-label">Phone Number<span class="required-field">*</span></label>
-                                            <input class="form-control" numbers-only maxlength="15" data-ng-model="poc.phone" required type="text" tabindex="16">
+                                            <input class="form-control" numbers-only minlength="10" maxlength="15" data-ng-model="poc.phone" required type="text" tabindex="16">
 
                                         </div>
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
@@ -225,7 +225,7 @@
                                         </div>
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                             <label class="control-label">Department<span class="required-field">*</span></label>
-                                            <input required data-ng-model="poc.department" class="form-control" type="text" tabindex="21" alphabets-only>
+                                            <input required data-ng-model="poc.department" class="form-control" type="text" tabindex="21" alpha-num>
                                         </div>
 
                                         <div ng-if="poc.contact_type ==='PRIMARY'">
@@ -301,7 +301,7 @@
                                 <div class="col-md-10 upward">
                                     <label for="textArea" class=" mrg-label ">
                                         <h3>Discussion Summary <span class="required-field">*</span></h3></label>
-                                    <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea" ng-model="discussion.text" required tabindex="30"></textarea>
+                                    <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea" ng-model="discussion.text" required tabindex="30" alphnum-dot></textarea>
                                 </div>
                             </div>
                             <div class="row" ng-if="isNewPossibility">

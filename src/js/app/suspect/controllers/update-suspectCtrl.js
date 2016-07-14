@@ -191,7 +191,7 @@ angular.module('com.module.suspect')
             $scope.uploadFiles = [];
           $scope.fileNameLen = files[0].name.length-3;
           $scope.fileFormat = files[0].name.substring($scope.fileNameLen);
-          if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx') {
+          if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx' || $scope.fileFormat=='jpg' || $scope.fileFormat=='png' || $scope.fileFormat=='peg') {
             if (files && files.length) {
               for (var i = 0; i < files.length; i++) {
                 var file = files[i];

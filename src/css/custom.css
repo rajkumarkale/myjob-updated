@@ -2682,3 +2682,9 @@ input:-webkit-autofill:focus {
   height: 22px;
   margin-left: 53px;}
     /*end of comments for dashboard ui */
+.xyz.ng-valid{
+  color:white;
+  background-color: red;
+  border-radius: 3px;
+  font-size: 12px;
+}

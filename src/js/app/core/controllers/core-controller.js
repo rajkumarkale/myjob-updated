@@ -20,7 +20,7 @@ angular.module('app')
       $rootScope.$on('$stateChangeStart',  function (event, toState, toParams, fromState, fromParams) {
         $rootScope.$prevState = toState.name;
         $rootScope.$prevStateParams = toParams;
-          if(toState.name==='app.dashboard'|| toState.name==='app.viewDiscussions'){
+          if(toState.name==='app.dashboard'|| toState.name==='app.viewDiscussions' ||toState.name==='app.createPossibility' || toState.name==='app.create-suspect-view' || toState.name==='app.create-prospect' || toState.name==='app.createEmpanelment' || toState.name==='app.slaTracker' || toState.name==='app.slaTracker-step2'){
               $rootScope.showSearch=false;
           }else{
               $rootScope.showSearch=true;

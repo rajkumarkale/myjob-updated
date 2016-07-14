@@ -2,7 +2,7 @@
  * Created by rkale on 7/13/2016.
  */
 angular.module('com.module.possibility')
-.directive('alphaNum', function(toaster,CoreService) {
+.directive('alphaNum', function(CoreService) {
   return {
     require: 'ngModel',
     link: function(scope, element, attr, ngModelCtrl) {

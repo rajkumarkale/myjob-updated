@@ -1838,7 +1838,7 @@
 .app-container-blur {
   position: relative;
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 
@@ -2684,20 +2684,6 @@ input:-webkit-autofill:focus {
   height: 22px;
   margin-left: 53px;}
     /*end of comments for dashboard ui */
-.xyz{
-  color:green;
-  background-color: yellow;
-  border-radius: 3px;
-  font-size: 12px;
-}
+.cross-contact{    margin-left: 750px !important;}
 
 /*end of comments for dashboard ui */
-.susername.ng-valid {
-  background-color: yellow;
-}
-.susername.ng-dirty.ng-invalid-required {
-  background-color: red;
-}
-.susername.ng-dirty.ng-invalid-minlength {
-  background-color: lightpink;
-}

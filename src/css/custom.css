@@ -2406,7 +2406,7 @@
 /*suspect update panel border remove*/
 .plus .panel-default{
   border: 0px !important;
-  box-shadow: none !important;
+
 }
 /*suspect update panel border remove*/
 /*suspect update rollout margin*/
@@ -2684,12 +2684,20 @@ input:-webkit-autofill:focus {
   height: 22px;
   margin-left: 53px;}
     /*end of comments for dashboard ui */
-.xyz.ng-valid{
-  color:white;
-  background-color: red;
+.xyz{
+  color:green;
+  background-color: yellow;
   border-radius: 3px;
   font-size: 12px;
 }
 
 /*end of comments for dashboard ui */
-
+.susername.ng-valid {
+  background-color: yellow;
+}
+.susername.ng-dirty.ng-invalid-required {
+  background-color: red;
+}
+.susername.ng-dirty.ng-invalid-minlength {
+  background-color: lightpink;
+}

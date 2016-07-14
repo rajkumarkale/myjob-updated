@@ -172,9 +172,14 @@
                                 </div>
                             </accordion-group>
                         </accordion>
+                      <div class=" pull-left">
+                        <a href="" class="btn btn-primary contacts-button mrgs-contact" ng-click="createNewContactList()"> <i class="fa fa-plus"></i> Contacts</a>
+                      </div>
                     </div>
+<br><br>
 
                     <div class="row" ng-if="showRollOut">
+
                         <!--<div class="col-md-6 form-custom-padding rollout-mrg">
                   <h4 class="color-black">Roll out of a proposal</h4>
                   <div class="form-group is-empty is-fileinput">
@@ -239,9 +244,7 @@
                 </div>
                 <div></div>
                 <div data-cg-busy="{promise:uploadPromise,message:'Please Wait'}"></div>
-                <div class=" pull-left">
-                    <a href="" class="btn btn-primary contacts-button mrgs-contact" ng-click="createNewContactList()"> <i class="fa fa-plus"></i> Contacts</a>
-                </div>
+
                 <div class="col-md-6 col-md-offset-5" data-cg-busy="{promise:submitPromise,message:'Please Wait'}">
                     <div class="form-group">
                         <a ui-sref="app.suspect-view">

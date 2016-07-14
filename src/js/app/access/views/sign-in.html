@@ -23,15 +23,15 @@
             {{ authError }}
           </div>
           <div class="">
-        <div class="form-group left-inner-addon label-floating " data-ng-class="{'is-empty':signinForm.$pristine}" >
-              <label class="control-label" >Email Id</label>
+        <div class="form-group left-inner-addon  "  >
+              <label  >Email Id</label>
               <input type="email" name="email" class="form-control bord-remove"
                      data-ng-model="user.email_id" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im'
                      required>
 
             </div>
-            <div class="form-group left-inner-addon label-floating " data-ng-class="{'is-empty':signinForm.$pristine}">
-              <label class="control-label">Password</label>
+            <div class="form-group left-inner-addon  " >
+              <label >Password</label>
               <input type="password" name="password" ng-minlength="6"
                      class="form-control bord-remove"
                      data-ng-model="user.password" ng-maxlength="18" required>

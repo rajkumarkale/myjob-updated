@@ -68,6 +68,7 @@ angular.module('com.module.possibility')
                 $scope.title = "New Possibility";
                 $scope.createPossibility = {};
                 $scope.createPossibility.discussion = {};
+                $scope.discussion.time='08:00';
                 $scope.employeeSize.selectedItem ='';
                 $scope.groupTurnover.selectedItem='';
                 $scope.businessVertical.selectedItem='';
@@ -436,6 +437,6 @@ angular.module('com.module.possibility')
             $event.stopPropagation();
             $scope.opened1 = !$scope.opened1;
         };
-
+        
 
     }]);

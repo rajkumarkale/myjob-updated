@@ -113,12 +113,12 @@
                                 <div class="col-md-10 col-md-offset-1" ng-if="isEditable">
                                     <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">Drop Files Here</div>
                                     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-                                    <div data-cg-busy="{promise:uploadPromise,message:'Plese Wait'}"></div>
+                                    <div data-cg-busy="{promise:uploadPromise,message:'Please Wait'}"></div>
                                 </div>
                                 <div class="col-md-10 col-md-offset-1" ng-if="isNewPossibility">
                                     <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">Drop Files Here</div>
                                     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-                                    <div data-cg-busy="{promise:uploadPromise,message:'Plese Wait'}"></div>
+                                    <div data-cg-busy="{promise:uploadPromise,message:'Please Wait'}"></div>
                                 </div>
                                 <ul>
                                     <div ng-repeat="f in createPossibility.documents" style="font:smaller"> {{f.$error}} {{f.$errorParam}}

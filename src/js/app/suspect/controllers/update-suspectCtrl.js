@@ -14,7 +14,7 @@ angular.module('com.module.suspect')
         $scope.getNames = function (val) {
             return $http({
                     method: 'GET',
-                    url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name=' + val
+                    url: 'http://myjobs-node-server-dev.herokuapp.com'+'/api/users?name='+val
                 }).then(function (response) {
                     return response.data.users;
                 });
@@ -81,7 +81,9 @@ angular.module('com.module.suspect')
         $scope.status = appConfig.suspect.status;
         $scope.createPossibility = {};
         $scope.title = "Client Information";
+        
         if ($stateParams.suspect) {
+            $scope.accessType=$stateParams.suspect.access_type;
             $scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function (response) {
                 console.log(response.data);
                 $scope.createPossibility = response.data;
@@ -302,7 +304,7 @@ angular.module('com.module.suspect')
         };
 
 $scope.editForm = function () {
-    if ($scope.createPossibility.isProspect !== true) {
+    if ($scope.createPossibility.isProspect !== true || $scope.accessType==='VIEW') {
                 $scope.isEditable = true;
     }
         };

@@ -201,3 +201,6 @@ div > div > svg > text {visibility: hidden;}
 /* end of comments for header.html */
 
 
+.required-field{
+  color: red;
+}

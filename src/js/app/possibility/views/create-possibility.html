@@ -27,20 +27,20 @@
                             <div class="col-md-12 ">
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Legal Entity</label>
+                                        <label class="control-label">Legal Entity<span class="required-field">*</span></label>
                                         <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text" tabindex="1" alpha-num>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label dropdown-col">Business Vertical</label>
+                                        <label class="control-label dropdown-col">Business Vertical<span class="required-field">*</span></label>
 
                                         <div custom-select data="businessVertical" tabindex="3"></div>
                                     </div>
                                   <div class="form-group">
-                                        <label class="control-label dropdown-col">Employee Size of the Company</label>
+                                        <label class="control-label dropdown-col">Employee Size of the Company<span class="required-field">*</span></label>
                                         <div custom-select data="employeeSize" tabindex="5"></div>
                                     </div>
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Website URL</label>
+                                        <label class="control-label">Website URL<span class="required-field">*</span></label>
                                         <input class="form-control" required data-ng-model="createPossibility.url" type="text" tabindex="7">
 
                                     </div>
@@ -49,13 +49,13 @@
                                         <input class="form-control" data-ng-model="createPossibility.address.address_line_2" type="text" tabindex="9">
                                     </div>
                                   <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                    <label class="control-label">State</label>
+                                    <label class="control-label">State<span class="required-field">*</span></label>
                                     <input class="form-control" required data-ng-model="createPossibility.address.state" type="text" tabindex="11" alphabets-only>
 
                                   </div>
 
                                   <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                  <label class="control-label">Zip Code</label>
+                                  <label class="control-label">Zip Code<span class="required-field">*</span></label>
                                   <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text" tabindex="13">
 
                                 </div>
@@ -65,36 +65,36 @@
 
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Business Unit</label>
+                                        <label class="control-label">Business Unit<span class="required-field">*</span></label>
                                         <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text" tabindex="2" alpha-num>
 
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label dropdown-col">Type of Customer</label>
+                                        <label class="control-label dropdown-col">Type of Customer<span class="required-field">*</span></label>
                                         <div custom-select data="customerType" tabindex="4">
                                         </div>
 
                                     </div>
                                   <div class="form-group">
-                                        <label class="control-label dropdown-col">Group Turnover</label>
+                                        <label class="control-label dropdown-col">Group Turnover<span class="required-field">*</span></label>
                                         <div custom-select data="groupTurnover" tabindex="6">
                                         </div>
 
                                     </div>
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Address 1</label>
+                                        <label class="control-label">Address 1<span class="required-field">*</span></label>
                                         <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 " type="text" tabindex="8">
 
                                     </div>
 
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">City</label>
+                                        <label class="control-label">City<span class="required-field">*</span></label>
                                         <input class="form-control" required data-ng-model="createPossibility.address.city " type="text" tabindex="10" alphabets-only>
 
                                     </div>
                                   <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                    <label class="control-label">Country</label>
+                                    <label class="control-label">Country<span class="required-field">*</span></label>
                                     <input class="form-control" required data-ng-model="createPossibility.address.country" type="text" tabindex="12" alphabets-only>
 
                                   </div>
@@ -111,12 +111,12 @@
 
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1" ng-if="isEditable">
-                                    <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">Drop Files Here</div>
+                                    <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" >Drop Files Here</div>
                                     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
                                     <div data-cg-busy="{promise:uploadPromise,message:'Please Wait'}"></div>
                                 </div>
                                 <div class="col-md-10 col-md-offset-1" ng-if="isNewPossibility">
-                                    <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">Drop Files Here</div>
+                                    <div ngf-drop ngf-select="upload($files)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" >Drop Files Here</div>
                                     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
                                     <div data-cg-busy="{promise:uploadPromise,message:'Please Wait'}"></div>
                                 </div>
@@ -148,7 +148,7 @@
                                             <div class="col-md-2">
                                                 <div class="previews">
                                                     <img ng-src="{{f.url}}" class="preview-img">
-                                                    <a class="remove" data-ng-click="removeFiles(index)"></a>
+                                                    <a class="remove" data-ng-click="removeFiles($index)"></a>
                                                     <span tooltip="{{f.name}}">{{::fileName}}</span>
                                                     <!--<p class="text-in">VOTER CARD</p>-->
 
@@ -180,19 +180,19 @@
           </span></accordion-heading>
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Name</label>
+                                            <label class="control-label">Name<span class="required-field">*</span></label>
                                             <input class="form-control" required data-ng-model="poc.name" type="text" tabindex="15" alphabets-only>
 
                                         </div>
 
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Designation</label>
+                                            <label class="control-label">Designation<span class="required-field">*</span></label>
                                             <input data-ng-model="poc.designation" required class="form-control" type="text" tabindex="17" alphabets-only>
 
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="contacts">Contacts Provides</label>
+                                            <label class="contacts">Contacts Provides<span class="required-field">*</span></label>
 
 
                                             <input type="checkbox" ng-model="poc.remote" class="check remote-check" tabindex="19" id="input-confidencial" ng-required="!poc.local">
@@ -202,7 +202,7 @@
                                         </div>
                                         <div>
                                             <div class="form-group label-floating localadd-mrg" data-ng-class="{'is-empty':isNewPossibility}">
-                                                <label class="control-label">Location</label>
+                                                <label class="control-label">Location<span class="required-field">*</span></label>
                                                 <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="22" alphabets-only>
 
                                             </div>
@@ -212,22 +212,22 @@
                                     </div>
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Phone Number</label>
+                                            <label class="control-label">Phone Number<span class="required-field">*</span></label>
                                             <input class="form-control" numbers-only maxlength="15" data-ng-model="poc.phone" required type="text" tabindex="16">
 
                                         </div>
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Email Id</label>
+                                            <label class="control-label">Email Id<span class="required-field">*</span></label>
                                             <input required data-ng-model="poc.email_id" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="18">
                                         </div>
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Department</label>
+                                            <label class="control-label">Department<span class="required-field">*</span></label>
                                             <input required data-ng-model="poc.department" class="form-control" type="text" tabindex="21" alphabets-only>
                                         </div>
 
                                         <div ng-if="poc.contact_type ==='PRIMARY'">
                                             <div class="form-group label-floating ">
-                                                <label class="control-label">Type of Contact</label>
+                                                <label class="control-label">Type of Contact<span class="required-field">*</span></label>
                                                 <input class="form-control" disabled data-ng-model="poc.contact_type" required type="text">
 
                                             </div>
@@ -257,7 +257,7 @@
                                 <div class="col-md-12">
                                     <div class="col-md-6 form-custom-padding">
                                         <div id='dname' class="form-group label-floating is-empty">
-                                            <label for="i1" class="control-label">Contact Person Name</label>
+                                            <label for="i1" class="control-label">Contact Person Name<span class="required-field">*</span></label>
                                             <input type="text" class="form-control" id="i1" ng-model="discussion.name" required tabindex="25" alphabets-only>
                                         </div>
                                         <div class="form-group">
@@ -268,7 +268,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label">Mode of Discussion</label>
+                                            <label class="control-label">Mode of Discussion<span class="required-field">*</span></label>
                                             <div custom-select data="typeOfDiscussion"  tabindex="29"></div>
                                         </div>
 
@@ -276,7 +276,7 @@
 
                                     <div class="col-md-6 form-custom-padding">
                                         <div id='dvenue' class="form-group label-floating is-empty">
-                                            <label for="i7" class="control-label">Venue</label>
+                                            <label for="i7" class="control-label">Venue<span class="required-field">*</span></label>
                                             <input type="text" class="form-control" id="i7" ng-model="discussion.venue" required tabindex="26" ng-pattern="/^[a-z\d\-_\s]+$/i" alpha-num>
                                         </div>
                                         <div class="form-group" ng-if="isNewPossibility">
@@ -297,7 +297,7 @@
                             <div class="row">
                                 <div class="col-md-10 upward">
                                     <label for="textArea" class=" mrg-label ">
-                                        <h3>Discussion Summary </h3></label>
+                                        <h3>Discussion Summary <span class="required-field">*</span></h3></label>
                                     <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea" ng-model="discussion.text" required tabindex="30"></textarea>
                                 </div>
                             </div>

@@ -26,9 +26,9 @@
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
               <label class="control-label">Client Name</label>
-              <input class="form-control" name="n1" ng-model="n1" required="required" type="text" minlength="3"
-                     maxlength="20" ng-required="usrform.n1.$error">
-              <span ng-show="usrform.n1.$invalid && usrform.n1.$dirty  ">please enter valid text</span>
+              <input class="form-control " name="n1" ng-model="n1" required="required" type="text" minlength="3"
+                     maxlength="30" ng-required="usrform.n1.$error" alpha-num>
+
             </div>
           </div>
           <div class="col-md-1"></div>
@@ -36,7 +36,7 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label">Fixed Fee</label>
               <input class="form-control" numbers-only name="n2" required="required" ng-model="n2" type="text"
-                     minlength="3" maxlength="20" ng-required="usrform.n2.$error">
+                     minlength="3" maxlength="30" ng-required="usrform.n2.$error">
               <span ng-show="usrform.n2.$invalid && usrform.n2.$dirty  ">please enter valid text</span>
             </div>
           </div>
@@ -53,7 +53,7 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label">Corporate office:</label>
               <input class="form-control" name="n3" ng-model="n3" required="required" type="text" minlength="3"
-                     maxlength="20" ng-required="usrform.n3.$error">
+                     maxlength="30" ng-required="usrform.n3.$error" alpha-num>
               <span ng-show="usrform.n3.$invalid && usrform.n3.$dirty  ">please enter valid text</span>
             </div>
           </div>
@@ -62,7 +62,7 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label">Reuimbersment Service Fee</label>
               <input class="form-control" name="n4" required="required" ng-model="n4" type="text" minlength="3"
-                     maxlength="20" ng-required="usrform.n4.$error">
+                     maxlength="20" ng-required="usrform.n4.$error" numbers-only>
               <span ng-show="usrform.n4.$invalid && usrform.n4.$dirty  ">please enter valid text</span>
             </div>
           </div>
@@ -107,7 +107,7 @@
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label">Absorption Fee & Clauses</label>
-              <input class="form-control" class="focusedInput1" type="text" required="required">
+              <input class="form-control" class="focusedInput1" type="text" required="required" alpha-num>
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
               <label class="control-label">Contact Number:</label>
-              <input class="form-control" class="focusedInput1" required="required">
+              <input class="form-control" class="focusedInput1" required="required" numbers-only>
             </div>
           </div>
           <div class="col-md-1"></div>
@@ -159,7 +159,7 @@
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label">Time Sheet Remainder</label>
-              <input class="form-control" name="n2" type="text" required="required">
+              <input class="form-control" name="n2" type="text" required="required" alpha-num>
             </div>
           </div>
         </div>
@@ -196,14 +196,14 @@
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
               <label class="control-label">Agreement Termission Notice</label>
-              <input class="form-control" class="focusedInput1" type="text" required>
+              <input class="form-control" class="focusedInput1" type="text" required alpha-num>
             </div>
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label">Payroll input upload Date</label>
-              <input class="form-control" class="focusedInput1" type="text" required>
+              <input class="form-control" class="focusedInput1" type="text" required alpha-num>
             </div>
           </div>
         </div>

@@ -76,6 +76,7 @@ angular.module('com.module.possibility')
                 $scope.status.selectedItem = {
                     "key": "NOT_MET",
                     "displayText": "NOT MET"
+                  
                 };
                 $scope.point_of_contacts = [{
                     name: "",

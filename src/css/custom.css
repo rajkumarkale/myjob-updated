@@ -1838,7 +1838,7 @@
 .app-container-blur {
   position: relative;
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 
@@ -2406,7 +2406,7 @@
 /*suspect update panel border remove*/
 .plus .panel-default{
   border: 0px !important;
-  box-shadow: none !important;
+
 }
 /*suspect update panel border remove*/
 /*suspect update rollout margin*/
@@ -2677,4 +2677,13 @@ input:-webkit-autofill:focus {
   text-transform: none;
   font-size: 15px;}
 .dashboard-td{padding: 0px !important;margin: 0px !important;}
+
+.box{color: #049ad9;
+  background-color: #ccc;
+  width: 50px;
+  height: 22px;
+  margin-left: 53px;}
+    /*end of comments for dashboard ui */
+.cross-contact{    margin-left: 750px !important;}
+
 /*end of comments for dashboard ui */

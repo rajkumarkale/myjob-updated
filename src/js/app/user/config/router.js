@@ -35,5 +35,13 @@ angular.module('com.module.user').config(['$stateProvider', function ($stateProv
           return  AuthService.getCountries();
         }]
       }
+    })
+    .state('app.boardadmin', {
+      url: '/dashboard-admin',
+      templateUrl: 'js/app/user/views/admin-dashboard.html',
+      controller:'dashboard',
+      data :{
+        title:'Dashboard'
+      }
     });
 }]);

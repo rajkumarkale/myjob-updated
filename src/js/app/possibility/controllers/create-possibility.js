@@ -421,10 +421,18 @@ angular.module('com.module.possibility')
             return poc.isOpen = !poc.isOpen;
         };
         $scope.removeFiles = function (index) {
-            if ($scope.isEditable !== true) {
+            if ($scope.isEditable === true) {
                /* CoreService.toastSuccess('', 'File Removed Successfully');*/
                 return $scope.uploadFiles.splice(index, 1);
-            } else {
+            } /*else {
+                var id = $scope.createPossibility.documents[index]._id;
+                possibilityCreateService.deleteDocument(id).then(function (response) {
+                    CoreService.toastSuccess('', 'File Removed Successfully');
+                    $scope.createPossibility.documents.splice(index, 1);
+                });*/
+            };
+        $scope.removeFilesDB = function (index) {
+           if ($scope.isEditable === true) {
                 var id = $scope.createPossibility.documents[index]._id;
                 possibilityCreateService.deleteDocument(id).then(function (response) {
                     /*CoreService.toastSuccess('', 'File Removed Successfully');*/
@@ -438,6 +446,8 @@ angular.module('com.module.possibility')
             $event.stopPropagation();
             $scope.opened1 = !$scope.opened1;
         };
-
+        $scope.removeContact=function(index){
+            $scope.point_of_contacts.splice(index, 1);
+        };
 
     }]);

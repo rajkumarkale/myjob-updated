@@ -200,4 +200,11 @@ div > div > svg > text {visibility: hidden;}
 .p-txt{margin-left: -13px;}
 /* end of comments for header.html */
 
-
+.required-field{
+  color: red;
+}
+.hr-line{
+  border-top: 1px solid #8c8b8b;
+  margin-top: 105px;
+  width: 100% !important;
+}

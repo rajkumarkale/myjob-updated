@@ -2,7 +2,7 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams', 'suspectService', '$http', '$state', 'Upload', '$q','CoreService', function ($scope, appConfig, $modal, $stateParams, suspectService, $http, $state, Upload, $q,CoreService) {
+    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams', 'suspectService', '$http', '$state', 'Upload', '$q','CoreService','$cookies', function ($scope, appConfig, $modal, $stateParams, suspectService, $http, $state, Upload, $q,CoreService,$cookies) {
        $scope.met_status='MET';
         $scope.status = {
             open: true
@@ -14,7 +14,7 @@ angular.module('com.module.suspect')
         $scope.getNames = function (val) {
             return $http({
                     method: 'GET',
-                    url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name=' + val
+                    url: 'http://myjobs-node-server-dev.herokuapp.com'+'/api/users?name='+val
                 }).then(function (response) {
                     return response.data.users;
                 });
@@ -29,12 +29,26 @@ angular.module('com.module.suspect')
             var x = $item.poc_details;
             if (x) {
                 $("#contact" + $index + ' .is-empty').removeClass('is-empty');
+                $scope.point_of_contacts[$index]._id=x._id;
+                $scope.point_of_contacts[$index].user_id=x.user_id;
                 $scope.point_of_contacts[$index].name = x.name;
                 $scope.point_of_contacts[$index].phone = x.phone;
                 $scope.point_of_contacts[$index].email_id = x.email_id;
                 $scope.point_of_contacts[$index].designation = x.designation;
                 $scope.point_of_contacts[$index].contact_type.selectedItem = $scope.getSelectedItem(x.contact_type, $scope.contactType);
                 $scope.point_of_contacts[$index].support_area.selectedItem = $scope.getSelectedItem(x.support_area, angular.copy(appConfig.suspect.supportArea));
+                $scope.point_of_contacts[$index].support_location=x.support_location;
+                if(x.support_type==='LOCAL') {
+          $scope.point_of_contacts[$index].local=true;
+        }
+        else if(x.support_type==='REMOTE'){
+          $scope.point_of_contacts[$index].remote=true;
+        }
+        else if(x.support_type==='BOTH'){
+          $scope.point_of_contacts[$index].local = true;
+          $scope.point_of_contacts[$index].remote=true;
+        }
+                //$scope.point_of_contacts[$index].support_type=x.support_type;
             }
 
         };
@@ -54,7 +68,8 @@ angular.module('com.module.suspect')
                 contact_type: $scope.getCopy(appConfig.suspect.contactType),
                 isOpen: true,
                 support_area: angular.copy(appConfig.suspect.supportArea),
-                support_location:''
+                support_location:'',
+                support_type:''
             }];
             //$scope.support_array=[appConfig.suspect.supportArea];
 
@@ -66,7 +81,9 @@ angular.module('com.module.suspect')
         $scope.status = appConfig.suspect.status;
         $scope.createPossibility = {};
         $scope.title = "Client Information";
+        
         if ($stateParams.suspect) {
+            $scope.accessType=$stateParams.suspect.access_type;
             $scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function (response) {
                 console.log(response.data);
                 $scope.createPossibility = response.data;
@@ -81,9 +98,12 @@ angular.module('com.module.suspect')
                 $scope.createPossibility.customer_type = $scope.getSelectedItem($scope.createPossibility.customer_type, $scope.customerType).displayText;
                 /*$scope.createPossibility.POC =$scope.suspect;*/
                 $scope.status.selectedItem = $scope.getSelectedItem($scope.createPossibility.current_status.status, $scope.status);
+                /*$scope.point_of_contacts=$scope.createPossibility.point_of_contacts;*/
                 $scope.createPossibility.point_of_contacts.map(function (Obj) {
                     var i = 0;
                     $("#contact" + i + ' .is-empty').removeClass('is-empty');
+                    $scope.point_of_contacts[i]._id=Obj._id;
+                    $scope.point_of_contacts[i].user_id=Obj.user_id;
                     $scope.point_of_contacts[i].name = Obj.name;
                     $scope.point_of_contacts[i].email_id = Obj.email_id;
                     $scope.point_of_contacts[i].designation = Obj.designation;
@@ -169,40 +189,49 @@ angular.module('com.module.suspect')
         $scope.uploadFiles = [];
         $scope.upload = function (files) {
             $scope.uploadFiles = [];
+          $scope.fileNameLen = files[0].name.length-3;
+          $scope.fileFormat = files[0].name.substring($scope.fileNameLen);
+          if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx' || $scope.fileFormat=='jpg' || $scope.fileFormat=='png' || $scope.fileFormat=='peg') {
             if (files && files.length) {
-                for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
-                    if (!file.$error) {
-                        $scope.uploadPromise = Upload.upload({
-                            url: appConfig.apiUrl + '/api/upload/file',
-                            data: {
-                                content: file
-                            }
-                        }).then(function (resp) {
-                            file.url = resp.data.url;
-                            file.documentType = angular.copy(appConfig.possibility.documentType);
-                            $scope.uploadFiles.push(file);
-                            $scope.fileName = file.name;
-                            if (file.name.length > 7) {
-                                $scope.fileNamePart1 = file.name.substring(0, 12);
-                                $scope.fileNameLen = file.name.length - 7;
-                                $scope.fileNamePart2 = file.name.substring($scope.fileNameLen);
-                                $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
-                                console.log($scope.fileName);
-                            }
-                        }, null, function (evt) {
-
-                        });
+              for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                if (!file.$error) {
+                  $scope.uploadPromise = Upload.upload({
+                    url: appConfig.apiUrl + '/api/upload/file',
+                    data: {
+                      content: file
                     }
+                  }).then(function (resp) {
+                    file.url = resp.data.url;
+                    file.documentType = angular.copy(appConfig.possibility.documentType);
+                    $scope.uploadFiles.push(file);
+                    $scope.fileName = file.name;
+                    if (file.name.length > 7) {
+                      $scope.fileNamePart1 = file.name.substring(0, 12);
+                      $scope.fileNameLen = file.name.length - 7;
+                      $scope.fileNamePart2 = file.name.substring($scope.fileNameLen);
+                      $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
+                      console.log($scope.fileName);
+                    }
+                  }, null, function (evt) {
+
+                  });
                 }
+              }
             }
+            }
+          else{
+            CoreService.toastError('ERROR', 'please select supported file format only eg: pdf,docx,pptx');
+            document.getElementById("inputText").value = "";
+
+          }
         };
         $scope.submit = function (bool) {
             if (bool) {
                 $scope.submitPromise = asyncSubmit();
             }
         };
-
+//Update Suspect
         function asyncSubmit() {
             return $q(function () {
                 var procObj = {};
@@ -210,14 +239,27 @@ angular.module('com.module.suspect')
                 var files = [];
                 $scope.point_of_contacts.map(function (pocObj) {
                     var requestPocObject = {};
-                    requestPocObject._id = $scope.createPossibility.point_of_contacts[0]._id;
+                    if(pocObj._id){
+                    requestPocObject._id = pocObj._id;
+                        }
                     requestPocObject.contact_type = pocObj.contact_type.selectedItem ? pocObj.contact_type.selectedItem.key : null;
-                    requestPocObject.user_id = $scope.createPossibility.point_of_contacts[0].user_id;
+                    if(pocObj.user_id){
+                    requestPocObject.user_id = pocObj.user_id;
+                        }
                     requestPocObject.name = pocObj.name;
                     requestPocObject.email_id = pocObj.email_id;
                     requestPocObject.support_area = pocObj.support_area.selectedItem ? pocObj.support_area.selectedItem.key : null;
                     requestPocObject.designation = pocObj.designation;
                     requestPocObject.phone = pocObj.phone;
+
+                    if(pocObj.local===true && pocObj.remote===true){
+                        requestPocObject.support_type='BOTH';
+                    }else if(pocObj.local===true) {
+          requestPocObject.support_type='LOCAL';
+        }else if(pocObj.remote===true){
+          requestPocObject.support_type='REMOTE';
+        }
+                    requestPocObject.support_location=pocObj.support_location;
                     poc.push(requestPocObject);
                 });
 
@@ -237,7 +279,7 @@ angular.module('com.module.suspect')
                 }
 
                 procObj.point_of_contacts = poc;
-                procObj.user_id = $scope.createPossibility.point_of_contacts[0].user_id;
+                procObj.user_id = JSON.parse($cookies.userData).userDetails._id;
                 console.log(procObj);
                 $scope.myPromise = suspectService.suspectUpdate(procObj).then(function (response) {
                     /*CoreService.toastSuccess('','SUSPECT Updated Successfully.');*/
@@ -262,12 +304,12 @@ angular.module('com.module.suspect')
         };
 
 $scope.editForm = function () {
-    if ($scope.createPossibility.isProspect !== true) {
+    if ($scope.createPossibility.isProspect !== true && $scope.accessType!=='view') {
                 $scope.isEditable = true;
     }
         };
         $scope.isValid = function (val) {
-            var c1=true; 
+            var c1=true;
             if ($scope.point_of_contacts.length>0) {
                     for (var i = 0; i < $scope.point_of_contacts.length; i++) {
                         if(!($scope.point_of_contacts[i].contact_type.selectedItem && $scope.point_of_contacts[i].support_area.selectedItem)){
@@ -292,4 +334,7 @@ $scope.editForm = function () {
           $scope.poc.remote=true;
         }
       }) ;*/
+      $scope.removeContact=function(index){
+        $scope.point_of_contacts.splice(index, 1);
+      };
   }]);

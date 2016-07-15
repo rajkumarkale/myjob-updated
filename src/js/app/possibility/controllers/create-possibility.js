@@ -68,6 +68,7 @@ angular.module('com.module.possibility')
                 $scope.title = "New Possibility";
                 $scope.createPossibility = {};
                 $scope.createPossibility.discussion = {};
+                $scope.discussion.time='08:00';
                 $scope.employeeSize.selectedItem ='';
                 $scope.groupTurnover.selectedItem='';
                 $scope.businessVertical.selectedItem='';
@@ -75,6 +76,7 @@ angular.module('com.module.possibility')
                 $scope.status.selectedItem = {
                     "key": "NOT_MET",
                     "displayText": "NOT MET"
+
                 };
                 $scope.point_of_contacts = [{
                     name: "",
@@ -215,7 +217,7 @@ angular.module('com.module.possibility')
                     possibilityObject.point_of_contacts.push(requestPocObject);
 
                 });
-                //delete possibilityObject._id;
+                delete possibilityObject._id;
                 delete possibilityObject.created_by;
                 delete possibilityObject.time_created;
                 delete possibilityObject.freeze;
@@ -382,59 +384,62 @@ angular.module('com.module.possibility')
                 }
             }
         };
-        $scope.uploadsPromise;
-        $scope.uploads = function(file) {
-          $scope.uploadFile = [];
-          $scope.fileNameLen = file.name.length-3;
-          $scope.fileFormat = file.name.substring($scope.fileNameLen);
-          if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx'){
-            if (file && file.length) {
-            for (var i = 0; i < file.length; i++) {
-              var _file = file[i];
-              if (!_file.$error) {
-                $scope.uploadsPromise = Upload.upload({
-                  url: appConfig.apiUrl + '/api/upload/file',
-                  data: {
-                    content: _file
-                  }
-                }).then(function (resp) {
-                  _file.url = resp.data.url;
-                  _file.documentType = angular.copy(appConfig.possibility.documentType);
-                    $scope.uploadFile.push(file);
-                    $scope.fileName = _file.name;
-                  /*if (file.name.length > 7 ) {
-                   $scope.fileNamePart1 = file.name.substring(0, 8);
-                   $scope.fileNameLen = file.name.length - 7;
-                   $scope.fileNamePart2 = file.name.substring($scope.fileNameLen);
-                   $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
-                   console.log($scope.fileName+' '+file.name);
-                   }*/
-                }, null, function (evt) {
 
-                });
-              }
-            }}
-          }
-      else{
-            alert("please select supported file format only eg: pdf,docx,pptx");
-            document.getElementById("inputText").value = "";
+       $scope.uploadsPromise;
+       $scope.uploads = function(file) {
+         $scope.discusfile=[file];
+       $scope.uploadFile = [];
+       $scope.fileNameLen = file.name.length-3;
+       $scope.fileFormat = file.name.substring($scope.fileNameLen);
+       if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx'){
+       if ($scope.discusfile && $scope.discusfile.length) {
+       for (var i = 0; i < $scope.discusfile.length; i++) {
+       var _file = $scope.discusfile[0];
+       if (!_file.$error) {
+       $scope.uploadsPromise = Upload.upload({
+       url: appConfig.apiUrl + '/api/upload/file',
+       data: {
+       content: _file
+       }
+       }).then(function (resp) {
+       _file.url = resp.data.url;
+       _file.documentType = angular.copy(appConfig.possibility.documentType);
+       $scope.uploadFile.push($scope.discusfile);
+       $scope.fileName = _file.name;
+       }, null, function (evt) {
 
-          }
-        };
+       });
+       }
+       }}
+       }
+       else{
+         CoreService.toastError('', 'please select supported file format only eg: pdf,docx,pptx');
+       document.getElementById("inputText").value = "";
+
+       }
+       };
         $scope.toggleOpen = function (poc) {
             return poc.isOpen = !poc.isOpen;
         };
         $scope.removeFiles = function (index) {
-            if ($scope.isEditable !== true) {
+            /*if ($scope.isEditable === true) {*/
                /* CoreService.toastSuccess('', 'File Removed Successfully');*/
                 return $scope.uploadFiles.splice(index, 1);
-            } else {
+            /*} *//*else {
+                var id = $scope.createPossibility.documents[index]._id;
+                possibilityCreateService.deleteDocument(id).then(function (response) {
+                    CoreService.toastSuccess('', 'File Removed Successfully');
+                    $scope.createPossibility.documents.splice(index, 1);
+                });*/
+            };
+        $scope.removeFilesDB = function (index) {
+           /*if ($scope.isEditable === true) {*/
                 var id = $scope.createPossibility.documents[index]._id;
                 possibilityCreateService.deleteDocument(id).then(function (response) {
                     /*CoreService.toastSuccess('', 'File Removed Successfully');*/
                     $scope.createPossibility.documents.splice(index, 1);
                 });
-            }
+           /* }*/
 
         };
         $scope.open = function ($event, opened) {
@@ -442,6 +447,10 @@ angular.module('com.module.possibility')
             $event.stopPropagation();
             $scope.opened1 = !$scope.opened1;
         };
-
+        $scope.removeContact=function(index){
+          if(index==0)
+          { CoreService.toastError('', 'New Possibility should have primary contact'); }
+           else{ $scope.point_of_contacts.splice(index, 1);
+          }};
 
     }]);

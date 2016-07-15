@@ -2663,7 +2663,7 @@ input:-webkit-autofill:focus {
   -webkit-text-fill-color: #555555 !important;
 }
 .buss-font{
-  font-size: 18px !important;
+  font-size: 16px !important;
 }
 /* comments for dashboard ui */
 .edit-dashboard{background-color: #049ad9 !important;
@@ -2683,6 +2683,25 @@ input:-webkit-autofill:focus {
   height: 22px;
   margin-left: 53px;}
     /*end of comments for dashboard ui */
-.cross-contact{    margin-left: 750px !important;}
+.cross-contact{
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: -8px;
+  right: 8px;
+  background: url(../img/icon_Delete_file.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.cross-contact-suspect{ display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: -8px;
+  right: 8px;
+  background: url(../img/icon_Delete_file.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;}
 
 /*end of comments for dashboard ui */

@@ -334,4 +334,7 @@ $scope.editForm = function () {
           $scope.poc.remote=true;
         }
       }) ;*/
+      $scope.removeContact=function(index){
+        $scope.point_of_contacts.splice(index, 1);
+      };
   }]);

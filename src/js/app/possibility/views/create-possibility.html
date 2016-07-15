@@ -172,15 +172,18 @@
                         <h4 class="contact">Contact Details</h4>
 
                         <div ng-repeat="poc in point_of_contacts" class="row col-md-12 noEdit" style="margin-top: -5px;">
-                            <accordion class="plus">
+                          <span class=" hand-cursor cross-contact" ng-click="removeContact($index)">
+                          </span>
+                           <div>
+                             <accordion class="plus">
                                 <accordion-group is-open="poc.isOpen">
                                     <accordion-heading>
 
                                         <span class="color-black">
             {{$index+1}}) {{ poc.contact_type.selectedItem.displayText}} Contact Person for Business
             <i class="pull-right glyphicon"
-               ng-class="{'glyphicon-minus': poc.isOpen, 'glyphicon-plus': !poc.isOpen}"></i>
-          </span> <span class="color-black buss-font cross-contact" ng-click="removeContact($index)"><i class="  glyphicon glyphicon-remove "></i></span></accordion-heading>
+               ng-class="{'glyphicon glyphicon-chevron-down': poc.isOpen, 'glyphicon glyphicon-chevron-right': !poc.isOpen}"></i>
+          </span> </accordion-heading>
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                             <label class="control-label">Name<span class="required-field">*</span></label>
@@ -247,7 +250,7 @@
 
 
                                 </accordion-group>
-                            </accordion>
+                            </accordion></div>
                         </div>
                         <div>
                             <button type="button" class="btn btn-primary contacts-button mrg-contacts" tabindex="24" data-ng-click="getNewPointofContact()"><i class="fa fa-plus"></i> Contacts</button>

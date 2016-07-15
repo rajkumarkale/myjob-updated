@@ -13,7 +13,7 @@ angular.module('com.module.possibility')
             $scope.discussion = {};
             $scope.documentTypes;
             $scope.uploadFiles = [];
-             $scope.uploadFile=[];
+            $scope.uploadFile = [];
             if ($stateParams.possibility) {
                 $scope.title = "Possibility";
                 $scope.myPromise = possibilityCreateService.possibilityDetails($stateParams.possibility.client_unit_id).then(function (response) {
@@ -68,12 +68,11 @@ angular.module('com.module.possibility')
                 $scope.title = "New Possibility";
                 $scope.createPossibility = {};
                 $scope.createPossibility.discussion = {};
-                $scope.discussion.time='08:00';
-                $scope.employeeSize.selectedItem ='';
-                $scope.groupTurnover.selectedItem='';
-                $scope.businessVertical.selectedItem='';
-                $scope.customerType.selectedItem='';
-                $scope.typeOfDiscussion.selectedItem='';
+                $scope.discussion.time = new Date();
+                $scope.groupTurnover.selectedItem = '';
+                $scope.businessVertical.selectedItem = '';
+                $scope.customerType.selectedItem = '';
+                $scope.typeOfDiscussion.selectedItem = '';
                 $scope.status.selectedItem = {
                     "key": "NOT_MET",
                     "displayText": "NOT MET"
@@ -99,7 +98,7 @@ angular.module('com.module.possibility')
         };
 
         $scope.init($stateParams);
-        $scope.$watch('isEditable',function(){
+        $scope.$watch('isEditable', function () {
 
         });
 
@@ -153,10 +152,10 @@ angular.module('com.module.possibility')
                 modalInstance.result.then(function () {});
             }
         };
-        
-//On clicking Update or Save button
+
+        //On clicking Update or Save button
         $scope.save = function (possibilityObject) {
-          document.getElementById('noEdit').style.pointerEvents = 'none';
+            document.getElementById('noEdit').style.pointerEvents = 'none';
             if (possibilityObject) {
                 if ($scope.isNewPossibility) {
                     $scope.createPromise = asyncProcessRequest(possibilityObject);
@@ -165,8 +164,8 @@ angular.module('com.module.possibility')
                 }
             }
         };
-        
-//Updating Existing Possibility
+
+        //Updating Existing Possibility
         function asyncSave(possibilityObject) {
             return $q(function () {
 
@@ -180,7 +179,7 @@ angular.module('com.module.possibility')
                 possibilityObject.customer_type = $scope.customerType.selectedItem.key;
                 possibilityObject.client_unit_id = $scope.client_unit_id;
                 possibilityObject.status = status;
-                possibilityObject.user_id =JSON.parse($cookies.userData).userDetails._id ;
+                possibilityObject.user_id = JSON.parse($cookies.userData).userDetails._id;
                 possibilityObject.point_of_contacts = [];
                 possibilityObject.urls = [];
                 if ($scope.uploadFiles && $scope.uploadFiles.length) {
@@ -194,18 +193,18 @@ angular.module('com.module.possibility')
 
                 $scope.point_of_contacts.map(function (pocObj) {
                     var requestPocObject = {};
-                    if(pocObj._id){
-                    requestPocObject._id = pocObj._id;
-                        }
+                    if (pocObj._id) {
+                        requestPocObject._id = pocObj._id;
+                    }
                     requestPocObject.name = pocObj.name;
                     requestPocObject.phone = pocObj.phone;
                     requestPocObject.designation = pocObj.designation;
                     requestPocObject.department = pocObj.department;
                     requestPocObject.email_id = pocObj.email_id;
                     requestPocObject.support_location = pocObj.support_location;
-                    if(pocObj.user_id){
-                    requestPocObject.user_id = pocObj.user_id;
-                        }
+                    if (pocObj.user_id) {
+                        requestPocObject.user_id = pocObj.user_id;
+                    }
                     requestPocObject.contact_type = pocObj.contact_type.selectedItem ? pocObj.contact_type.selectedItem.key : pocObj.contact_type;
 
                     if (pocObj.remote && pocObj.local) {
@@ -234,7 +233,7 @@ angular.module('com.module.possibility')
                 delete possibilityObject.discussion;
                 delete possibilityObject.transferred_by;
                 possibilityCreateService.updatePossibility(possibilityObject).success(function () {
-                   /* CoreService.toastSuccess('', 'POSSIBILITY Updated Successfully.');*/
+                    /* CoreService.toastSuccess('', 'POSSIBILITY Updated Successfully.');*/
                     $state.go('app.viewPossibility');
                 }).error(function (err) {
                     $scope.authError = err.message;
@@ -246,22 +245,22 @@ angular.module('com.module.possibility')
 
         $scope.isValid = function (val) {
             var c1;
-            var c2=true;
-            c1= (val && ($scope.businessVertical.selectedItem && $scope.employeeSize.selectedItem && $scope.groupTurnover.selectedItem &&
+            var c2 = true;
+            c1 = (val && ($scope.businessVertical.selectedItem && $scope.employeeSize.selectedItem && $scope.groupTurnover.selectedItem &&
                 $scope.customerType.selectedItem));
             if ($scope.uploadFiles && $scope.uploadFiles.length) {
-                    for (var i = 0; i < $scope.uploadFiles.length; i++) {
+                for (var i = 0; i < $scope.uploadFiles.length; i++) {
 
-                        if(!$scope.uploadFiles[i].documentType.selectedItem.key){
-                            c2=false;
-                        }
+                    if (!$scope.uploadFiles[i].documentType.selectedItem.key) {
+                        c2 = false;
                     }
                 }
+            }
             return (c1 && c2);
 
         };
 
-//Creating new possibility
+        //Creating new possibility
         function asyncProcessRequest(requestObject) {
             return $q(function () {
                 requestObject.user_id = JSON.parse($cookies.userData).userDetails._id;
@@ -289,8 +288,8 @@ angular.module('com.module.possibility')
                 requestObject.discussion.time_of_discussion = timestamp;
                 requestObject.discussion.venue = $scope.discussion.venue;
                 requestObject.discussion.text = $scope.discussion.text;
-                if($scope.uploadFile.length>0){
-                    requestObject.discussion.documents=[$scope.uploadFile[0][0].url];
+                if ($scope.uploadFile.length > 0) {
+                    requestObject.discussion.documents = [$scope.uploadFile[0][0].url];
                 }
 
                 $scope.point_of_contacts.map(function (pocObj) {
@@ -307,8 +306,8 @@ angular.module('com.module.possibility')
                     } else if (pocObj.remote) {
                         requestPocObject.support_type = 'REMOTE';
                     } else {
-                       /* if (pocObj.local) {*/
-                            requestPocObject.support_type = 'LOCAL';
+                        /* if (pocObj.local) {*/
+                        requestPocObject.support_type = 'LOCAL';
                         /*}*/
                     }
                     requestObject.point_of_contacts.push(requestPocObject);
@@ -333,7 +332,7 @@ angular.module('com.module.possibility')
             return returnObj;
 
         };
-        
+
         $scope.editForm = function () {
             if ($scope.createPossibility.current_status.status !== "MET") {
                 $scope.isEditable = true;
@@ -345,14 +344,14 @@ angular.module('com.module.possibility')
         $scope.cancel = function () {
             $state.go('app.viewPossibility');
         };
-        
+
         $scope.disableForm = function () {
             if (!$scope.isEditable && !$scope.isNewPossibility) {
                 var className = 'app-container-blur';
                 return className;
             }
         };
-        
+
         $scope.uploadPromise;
         $scope.upload = function (files) {
             if (files && files.length) {
@@ -385,66 +384,67 @@ angular.module('com.module.possibility')
                 }
             }
         };
-        
-       $scope.uploadsPromise;
-       $scope.uploads = function(file) {
-         $scope.discusfile=[file];
-       $scope.uploadFile = [];
-       $scope.fileNameLen = file.name.length-3;
-       $scope.fileFormat = file.name.substring($scope.fileNameLen);
-       if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx'){
-       if ($scope.discusfile && $scope.discusfile.length) {
-       for (var i = 0; i < $scope.discusfile.length; i++) {
-       var _file = $scope.discusfile[0];
-       if (!_file.$error) {
-       $scope.uploadsPromise = Upload.upload({
-       url: appConfig.apiUrl + '/api/upload/file',
-       data: {
-       content: _file
-       }
-       }).then(function (resp) {
-       _file.url = resp.data.url;
-       _file.documentType = angular.copy(appConfig.possibility.documentType);
-       $scope.uploadFile.push($scope.discusfile);
-       $scope.fileName = _file.name;
-       }, null, function (evt) {
 
-       });
-       }
-       }}
-       }
-       else{
-         CoreService.toastError('', 'please select supported file format only eg: pdf,docx,pptx');
-       document.getElementById("inputText").value = "";
-       }
-       };
-        
+        $scope.uploadsPromise;
+        $scope.uploads = function (file) {
+            $scope.discusfile = [file];
+            $scope.uploadFile = [];
+            $scope.fileNameLen = file.name.length - 3;
+            $scope.fileFormat = file.name.substring($scope.fileNameLen);
+            if ($scope.fileFormat == 'pdf' || $scope.fileFormat == 'ocx' || $scope.fileFormat == 'ptx') {
+                if ($scope.discusfile && $scope.discusfile.length) {
+                    for (var i = 0; i < $scope.discusfile.length; i++) {
+                        var _file = $scope.discusfile[0];
+                        if (!_file.$error) {
+                            $scope.uploadsPromise = Upload.upload({
+                                url: appConfig.apiUrl + '/api/upload/file',
+                                data: {
+                                    content: _file
+                                }
+                            }).then(function (resp) {
+                                _file.url = resp.data.url;
+                                _file.documentType = angular.copy(appConfig.possibility.documentType);
+                                $scope.uploadFile.push($scope.discusfile);
+                                $scope.fileName = _file.name;
+                            }, null, function (evt) {
+
+                            });
+                        }
+                    }
+                }
+            } else {
+                CoreService.toastError('', 'please select supported file format only eg: pdf,docx,pptx');
+                document.getElementById("inputText").value = "";
+            }
+        };
+
         $scope.toggleOpen = function (poc) {
             return poc.isOpen = !poc.isOpen;
         };
-        
+
         $scope.removeFiles = function (index) {
-                return $scope.uploadFiles.splice(index, 1);
-            };
-        
-        $scope.removeFilesDB = function (index) {
-                var id = $scope.createPossibility.documents[index]._id;
-                possibilityCreateService.deleteDocument(id).then(function (response) {
-                    $scope.createPossibility.documents.splice(index, 1);
-                });
+            return $scope.uploadFiles.splice(index, 1);
         };
-        
+
+        $scope.removeFilesDB = function (index) {
+            var id = $scope.createPossibility.documents[index]._id;
+            possibilityCreateService.deleteDocument(id).then(function (response) {
+                $scope.createPossibility.documents.splice(index, 1);
+            });
+        };
+
         $scope.open = function ($event, opened) {
             $event.preventDefault();
             $event.stopPropagation();
             $scope.opened1 = !$scope.opened1;
         };
-        
-        $scope.removeContact=function(index){
-          if(index==0)
-          { CoreService.toastError('', 'New Possibility should have primary contact'); }
-           else{ $scope.point_of_contacts.splice(index, 1);
-          }
+
+        $scope.removeContact = function (index) {
+            if (index == 0) {
+                CoreService.toastError('', 'New Possibility should have primary contact');
+            } else {
+                $scope.point_of_contacts.splice(index, 1);
+            }
         };
         
     }]);

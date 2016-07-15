@@ -76,7 +76,7 @@ angular.module('com.module.possibility')
                 $scope.status.selectedItem = {
                     "key": "NOT_MET",
                     "displayText": "NOT MET"
-                  
+
                 };
                 $scope.point_of_contacts = [{
                     name: "",
@@ -447,7 +447,9 @@ angular.module('com.module.possibility')
             $scope.opened1 = !$scope.opened1;
         };
         $scope.removeContact=function(index){
-            $scope.point_of_contacts.splice(index, 1);
-        };
+          if(index==0)
+          { CoreService.toastError('', 'New Possibility should have primary contact'); }
+           else{ $scope.point_of_contacts.splice(index, 1);
+          }};
 
     }]);

@@ -73,6 +73,7 @@ angular.module('com.module.possibility')
                 $scope.groupTurnover.selectedItem='';
                 $scope.businessVertical.selectedItem='';
                 $scope.customerType.selectedItem='';
+                $scope.typeOfDiscussion.selectedItem='';
                 $scope.status.selectedItem = {
                     "key": "NOT_MET",
                     "displayText": "NOT MET"
@@ -152,6 +153,7 @@ angular.module('com.module.possibility')
                 modalInstance.result.then(function () {});
             }
         };
+        
 //On clicking Update or Save button
         $scope.save = function (possibilityObject) {
           document.getElementById('noEdit').style.pointerEvents = 'none';
@@ -163,6 +165,7 @@ angular.module('com.module.possibility')
                 }
             }
         };
+        
 //Updating Existing Possibility
         function asyncSave(possibilityObject) {
             return $q(function () {
@@ -286,7 +289,6 @@ angular.module('com.module.possibility')
                 requestObject.discussion.time_of_discussion = timestamp;
                 requestObject.discussion.venue = $scope.discussion.venue;
                 requestObject.discussion.text = $scope.discussion.text;
-                /*requestObject.discussion.type='FRESH';*/
                 if($scope.uploadFile.length>0){
                     requestObject.discussion.documents=[$scope.uploadFile[0][0].url];
                 }
@@ -314,16 +316,12 @@ angular.module('com.module.possibility')
                 });
                 console.log(requestObject);
                 var possibilityCreatePromise = possibilityCreateService.setPossibility(requestObject).success(function () {
-
                     $state.go('app.viewPossibility');
-                    /*CoreService.toastSuccess('', 'POSSIBILITY Created Successfully.');*/
                 }).error(function (err) {
                     $scope.authError = err.message;
-
                 })
             })
         };
-
 
         $scope.getSlectedItem = function (selectedItem, srcObj) {
             var returnObj;
@@ -335,6 +333,7 @@ angular.module('com.module.possibility')
             return returnObj;
 
         };
+        
         $scope.editForm = function () {
             if ($scope.createPossibility.current_status.status !== "MET") {
                 $scope.isEditable = true;
@@ -346,12 +345,14 @@ angular.module('com.module.possibility')
         $scope.cancel = function () {
             $state.go('app.viewPossibility');
         };
+        
         $scope.disableForm = function () {
             if (!$scope.isEditable && !$scope.isNewPossibility) {
                 var className = 'app-container-blur';
                 return className;
             }
         };
+        
         $scope.uploadPromise;
         $scope.upload = function (files) {
             if (files && files.length) {
@@ -384,6 +385,7 @@ angular.module('com.module.possibility')
                 }
             }
         };
+        
        $scope.uploadsPromise;
        $scope.uploads = function(file) {
          $scope.discusfile=[file];
@@ -414,42 +416,35 @@ angular.module('com.module.possibility')
        else{
          CoreService.toastError('', 'please select supported file format only eg: pdf,docx,pptx');
        document.getElementById("inputText").value = "";
-
        }
        };
+        
         $scope.toggleOpen = function (poc) {
             return poc.isOpen = !poc.isOpen;
         };
+        
         $scope.removeFiles = function (index) {
-            /*if ($scope.isEditable === true) {*/
-               /* CoreService.toastSuccess('', 'File Removed Successfully');*/
                 return $scope.uploadFiles.splice(index, 1);
-            /*} *//*else {
-                var id = $scope.createPossibility.documents[index]._id;
-                possibilityCreateService.deleteDocument(id).then(function (response) {
-                    CoreService.toastSuccess('', 'File Removed Successfully');
-                    $scope.createPossibility.documents.splice(index, 1);
-                });*/
             };
+        
         $scope.removeFilesDB = function (index) {
-           /*if ($scope.isEditable === true) {*/
                 var id = $scope.createPossibility.documents[index]._id;
                 possibilityCreateService.deleteDocument(id).then(function (response) {
-                    /*CoreService.toastSuccess('', 'File Removed Successfully');*/
                     $scope.createPossibility.documents.splice(index, 1);
                 });
-           /* }*/
-
         };
+        
         $scope.open = function ($event, opened) {
             $event.preventDefault();
             $event.stopPropagation();
             $scope.opened1 = !$scope.opened1;
         };
+        
         $scope.removeContact=function(index){
           if(index==0)
           { CoreService.toastError('', 'New Possibility should have primary contact'); }
            else{ $scope.point_of_contacts.splice(index, 1);
-          }};
-
+          }
+        };
+        
     }]);

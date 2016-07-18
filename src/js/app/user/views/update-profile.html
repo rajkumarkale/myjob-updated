@@ -7,13 +7,13 @@
         <div class="col-lg-5 ">
           <div class="form-group label-floating is-empty">
             <label for="i1" class="control-label">Name</label>
-            <input type="text" class="form-control" id="i1" alphabets-only>
+            <input type="text" class="form-control" id="i1" ng-model="name" alphabets-only>
           </div>
         </div>
         <div class="col-lg-5 update-prfl-input2 ">
           <div class="form-group label-floating is-empty">
             <label for="i1" class="control-label">Company Name</label>
-            <input type="text" class="form-control" id="i2" alpha-num>
+            <input type="text" ng-model="companyname" class="form-control" id="i2" alpha-num>
           </div>
         </div>
       </div>
@@ -21,14 +21,14 @@
       <div class="row">
         <div class="col-lg-5 ">
           <div class="form-group label-floating is-empty">
-            <label for="i1" class="control-label" alphabets-only>Designation</label>
-            <input type="email" class="form-control" id="i5">
+            <label for="i1" class="control-label"  >Designation</label>
+            <input type="email" class="form-control" id="i5" ng-model="designation" alphabets-only>
           </div>
         </div>
         <div class="col-lg-5 update-prfl-input2 ">
           <div class="form-group label-floating is-empty">
-            <label for="i1" class="control-label" alpha-num>Business Vertical</label>
-            <input type="text" class="form-control" id="i6">
+            <label for="i1" class="control-label" >Business Vertical</label>
+            <input type="text" class="form-control" id="i6" ng-model="businessvertical" alpha-num>
           </div>
         </div>
       </div>
@@ -41,8 +41,8 @@
         </div>
         <div class="col-lg-5 update-prfl-input2 ">
           <div class="form-group label-floating is-empty">
-            <label for="i1" class="control-label" alphabets-only>Location</label>
-            <input type="text" class="form-control" id="i4">
+            <label for="i1" class="control-label" >Location</label>
+            <input type="text" class="form-control" id="i4" ng-model="location" alphabets-only>
           </div>
         </div>
       </div>

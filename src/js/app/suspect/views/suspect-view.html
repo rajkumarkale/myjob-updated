@@ -184,10 +184,10 @@
               <td ><img src="img/discussion_icon.png" tooltip="Discussions" class="action-distance hand-cursor" data-ng-click="openDiscussions(suspect)"></td>
               <td >
                 <img src="img/share_icon.png" tooltip="Share" class="action-distance hand-cursor"  ng-click="openShare('share',suspect)" ng-show="showShare(suspect)">
-                <img src="img/share_hide.png" tooltip="Share" class="action-distance hand-cursor"   ng-show="showShare(!suspect)">
+                <img src="img/share_hide.png" tooltip="Share" class="action-distance hand-cursor"   ng-hide="showShare(suspect)">
               </td>
               <td ><img src="img/transfer_icon.png" tooltip="Transfer" class="action-distance hand-cursor" ng-click="openShare('tansfer',suspect)" ng-show="showTransfer(suspect)">
-                <img src="img/transfer_hide.png" tooltip="Transfer" class="action-distance hand-cursor"  ng-show="showTransfer(!suspect)">
+                <img src="img/transfer_hide.png" tooltip="Transfer" class="action-distance hand-cursor"  ng-hide="showTransfer(suspect)">
               </td>
               <td ><img src="img/revoke_icon.png" tooltip="Revoke" class="hand-cursor"></td>
             </tr>

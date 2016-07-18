@@ -77,11 +77,11 @@ angular.module('com.module.possibility')
 			$scope.data.inactive=response.data.inactive?response.data.inactive:0;
 		});
 		};
-    
+
     $scope.sumStartDate=new Date();
     $scope.sumEndDate;
     $scope.getPossibilityByRange=function(currentPage,numPerPage){
-        
+
         var st=$filter('date')($scope.start, 'MM/dd/yyyy');
         var date1=Math.round(new Date(st).getTime()/1000);
         var ed=$filter('date')($scope.end, 'MM/dd/yyyy');
@@ -100,7 +100,7 @@ angular.module('com.module.possibility')
 
 		});
         }else{
-            CoreService.toastError('', 'Satrt date should be less than end date.');
+            CoreService.toastError('', 'Start date should be less than end date.');
         }
     };/*{"clientUnitIds":
     [{"clientUnitId":"57639b7971216d0300fc6401"}]}*/

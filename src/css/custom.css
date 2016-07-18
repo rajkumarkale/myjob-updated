@@ -1963,13 +1963,24 @@
   background-color: #A8A8A7 !important;
 }
 .status-cold{
-  background-color: #A8A8A7 !important;
+  background-image:url("../img/status_icon_cold.png") !important;
+  background-repeat: no-repeat !important;
+  height: 12px;
+  width: 11px !important;
 }
 .status-warm{
-  background-color: #F26161 !important;
+
+  background-image:url("../img/status_icon_warm.png") !important;
+  background-repeat: no-repeat !important;
+  height: 12px;
+  width: 11px !important;
 }
 .status-hot{
-  background-color: #50C472 !important;
+
+  background-image:url("../img/status_icon_hot.png") !important;
+  background-repeat: no-repeat !important;
+  height: 12px;
+  width: 11px !important;
 }
 .status-lost{
   background-color: #a948b8 !important;
@@ -2224,15 +2235,15 @@
   padding: 10px;
 }
 .met-hot{
-  color: #50C472;
+  color: #F46262;
   font-weight: bold;
 }
 .met-warm{
-  color:#F26161;
+  color:#F09c44;
   font-weight: bold;
 }
 .cold-col{
-  color: #B7B7B5;
+  color: #5EC4F3;
   font-weight: bold;
 }
 .bord-hot{
@@ -2437,7 +2448,7 @@
 /*end prospect business vertical dropdown*/
 /*modal for share and transfer*/
 .mdl-center{
-  margin-top: 332px !important;
+  margin-top: 60% !important;
 }
 /*end modal for share and transfer*/
 /*moz styles for datepicker*/
@@ -2626,13 +2637,13 @@
 /*end icons for view poss*/
 /*icons for suspect view*/
 .hot-bord{
-  border-bottom:3px solid #50C472;
+  border-bottom:4px solid #F46262;
 }
 .warm-bord{
-  border-bottom:3px solid #F26161;
+  border-bottom:4px solid #F09c44;
 }
 .cold-bord{
-  border-bottom:3px solid #B7B7B5;
+  border-bottom:4px solid #5EC4F3 !important;
 }
 /*end icons for suspect view*/
 /*view prospect icons*/

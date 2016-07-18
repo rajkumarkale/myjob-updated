@@ -4,19 +4,19 @@
 angular.module('com.module.user').controller('dashboardController', ['$scope','AuthService','$state','dashBoardService','$cookies','$filter','CoreService',  function ($scope, AuthService,$state,dashBoardService,$cookies,$filter,CoreService) {
     'use strict';
     $scope.chartSeries = [
-      {"name": "Target", "data":[1, 2, 4, 3, 3.5,6.5,4.5,4.5,5,7,8,7],legendIndex: 1, fillOpacity: 0.5, color:'#5398F6',align: 'left',connectNulls: true,
+      {"name": "Target", "data":[1, 2, 4, 3, 4,6,5,4,5,7,8,7],legendIndex: 1, fillOpacity: 0.5, color:'#5398F6',align: 'left',connectNulls: true,
         lineWidth: 0,
         marker: {
           lineWidth:0,
           radius: 0
         }},
-      {"name": "Prospect", "data": [4,4.5, 3, 2.8, 7, 6.5,5,6,5,4,2,1],legendIndex: 2,fillOpacity: 0.5,color:'#81479D',align: 'left',connectNulls: true,
+      {"name": "Prospect", "data": [4,5, 3, 2, 7, 6,5,6,5,4,2,1],legendIndex: 2,fillOpacity: 0.5,color:'#81479D',align: 'left',connectNulls: true,
         lineWidth: 0,
         marker: {
           lineWidth:0,
           radius: 0
         }},
-      {"name": "Empanelment", "data": [1, 2, 3, 3.5, 4,5,6,7.5,8,3.5,4,5],legendIndex: 3,fillOpacity: 0.5,color:'#50C471',align: 'left',connectNulls: true,
+      {"name": "Empanelment", "data": [1, 2, 3, 3.5, 4,5,6,7,8,5,4,5],legendIndex: 3,fillOpacity: 0.5,color:'#50C471',align: 'left',connectNulls: true,
         lineWidth: 0,
         marker: {
           lineWidth:2,
@@ -51,13 +51,13 @@ angular.module('com.module.user').controller('dashboardController', ['$scope','A
         plotOptions: {
           series: {
             events: {
-              legendItemClick: function () {
-                var visibility = this.visible ? 'VISIBLE' : 'HIDDEN';
+              legendItemClick: function (sc) {
+                if(sc.target._i==0 && sc.target.visible==true )
+                {
+                  return false;}
+                else  {return true;}
 
-                if (!confirm('The series Data is currently ' +
-                    visibility + '. Do you want to change that?')) {
-                  return false;
-                }
+
               }
             },
             stacking: '',

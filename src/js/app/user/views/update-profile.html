@@ -2,18 +2,20 @@
 <div class="updateprofile-modal">
   <div class="update-profil-heading ">
     <h3 class="update-profil-body"> Update Profile</h3>
-    <form class="update-prfl-input">
+    <form class="update-prfl-input" name="update">
       <div class="row  ">
         <div class="col-lg-5 ">
           <div class="form-group label-floating is-empty">
-            <label for="i1" class="control-label">Name</label>
-            <input type="text" class="form-control" id="i1" ng-model="name" alphabets-only>
+            <label for="i1" class="control-label">Name<span class="required-field">*</span></label>
+            <input type="text" class="form-control" name="name" required id="i1" ng-model="name" alphabets-only >
+            <span class="error-msg" ng-show="update.name.$invalid && update.name.$dirty  ">Please enter name</span>
           </div>
         </div>
         <div class="col-lg-5 update-prfl-input2 ">
           <div class="form-group label-floating is-empty">
-            <label for="i1" class="control-label">Company Name</label>
-            <input type="text" ng-model="companyname" class="form-control" id="i2" alpha-num>
+            <label for="i1" class="control-label">Company Name<span class="required-field">*</span></label>
+            <input type="text" ng-model="companyname" name="company" class="form-control" required id="i2" alpha-num >
+            <span class="error-msg" ng-show="update.company.$invalid && update.company.$dirty  ">Please enter company name</span>
           </div>
         </div>
       </div>
@@ -21,28 +23,33 @@
       <div class="row">
         <div class="col-lg-5 ">
           <div class="form-group label-floating is-empty">
-            <label for="i1" class="control-label"  >Designation</label>
-            <input type="email" class="form-control" id="i5" ng-model="designation" alphabets-only>
+            <label for="i1" class="control-label"  >Designation<span class="required-field">*</span></label>
+            <input type="text" name="designation" class="form-control" id="i5" ng-model="designation" alphabets-only required>
+            <span class="error-msg" ng-show="update.designation.$invalid && update.designation.$dirty  ">Please enter Designation</span>
           </div>
         </div>
         <div class="col-lg-5 update-prfl-input2 ">
           <div class="form-group label-floating is-empty">
-            <label for="i1" class="control-label" >Business Vertical</label>
-            <input type="text" class="form-control" id="i6" ng-model="businessvertical" alpha-num>
+            <label for="i1" class="control-label" >Business Vertical<span class="required-field">*</span></label>
+            <input type="text" class="form-control" name="vertical" id="i6" ng-model="businessvertical" alpha-num required>
+            <span class="error-msg" ng-show="update.vertical.$invalid && update.vertical.$dirty  ">Please enter Business vertical</span>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-5 ">
           <div class="form-group label-floating is-empty">
-            <label for="i1" class="control-label">Email Id</label>
-            <input type="email" class="form-control" id="i3">
+            <label for="i1" class="control-label">Email Id<span class="required-field">*</span></label>
+            <input type="email" class="form-control" id="i3" name="email" required>
+            <span class="error-msg" ng-show="update.email.$invalid && update.email.$dirty  ">Please enter proper email id</span>
           </div>
         </div>
         <div class="col-lg-5 update-prfl-input2 ">
           <div class="form-group label-floating is-empty">
-            <label for="i1" class="control-label" >Location</label>
-            <input type="text" class="form-control" id="i4" ng-model="location" alphabets-only>
+            <label for="i1" class="control-label" >Location<span class="required-field">*</span></label>
+            <input type="text" class="form-control" name="location" id="i4" ng-model="location" alphabets-only required>
+            <span class="error-msg" ng-show="update.location.$invalid && update.location.$dirty  ">Please enter location name</span>
+
           </div>
         </div>
       </div>
@@ -50,18 +57,18 @@
         <div class="col-lg-5 ">
 
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Contact No.</label>
-            <input class="form-control" numbers-only name="n2" required="required" ng-model="n2" type="text"
-                   minlength="10" maxlength="12" ng-required="usrform.n2.$error">
-            <!--<span ng-show="usrform.n2.$invalid && usrform.n2.$dirty  ">please enter valid text</span>-->
+            <label class="control-label">Contact No.<span class="required-field">*</span></label>
+            <input class="form-control" numbers-only name="n2"  ng-model="n2" type="text"
+                   minlength="10" maxlength="15" ng-required="usrform.n2.$error" required>
+          <span class="error-msg" ng-show="update.n2.$invalid && update.n2.$dirty  ">Contact no. should be minimum 10</span>
           </div>
         </div>
         <div class="col-lg-5 update-prfl-input2">
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Zip Code</label>
-            <input class="form-control" numbers-only name="n2" required="required" ng-model="zipcode" type="text"
+            <label class="control-label">Zip Code<span class="required-field">*</span></label>
+            <input class="form-control" numbers-only name="n3" required ng-model="zipcode" type="text"
                    minlength="6" maxlength="6" ng-required="usrform.n2.$error">
-           <!-- <span ng-show="usrform.n2.$invalid && usrform.n2.$dirty  ">please enter valid text</span>-->
+          <span class="error-msg" ng-show="update.n3.$invalid && update.n3.$dirty  ">Zip code length shold be 6</span>
           </div>
         </div>
       </div>

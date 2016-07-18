@@ -194,6 +194,7 @@
       </div>
     <!--<div class="row" data-ng-if="filteredRows.length >'10'">-->
       <div class="col-lg-12">
+        <span data-ng-hide="filteredRows.length ===0">
         <pagination class="pagination-sm pull-right"
                     page="data.currentPage"
                     total-items="data.totalItems"
@@ -204,7 +205,7 @@
                     rotate="false"
                     boundary-links="false">
         </pagination>
-
+</span>
       </div>
    <!-- </div>-->
   </div>

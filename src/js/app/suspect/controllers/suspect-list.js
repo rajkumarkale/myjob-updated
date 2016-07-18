@@ -153,14 +153,14 @@ $scope.statusColor=function(status){
         }else if(suspect.access_type=='edit'){
             show= true;
         }
-            return show;   
+            return show;
     };
     $scope.showTransfer=function(suspect){
         var show=false;
         if(suspect.access_type==='FULL'){
             show= true;
         }
-            return show;   
+            return show;
     }
-    
+
   }]);

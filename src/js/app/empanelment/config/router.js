@@ -18,7 +18,7 @@ angular.module('com.module.empanelment')
     .state('app.slaTracker', {
       url: '/SLA-Tracker',
       templateUrl: 'js/app/empanelment/views/sla-Tracker.html',
-      controller:'empanelmentController'
+      controller:'sla-step1-controller'
     })
     .state('app.slaTracker-step2', {
       url: '/SLA-Tracker-step2',

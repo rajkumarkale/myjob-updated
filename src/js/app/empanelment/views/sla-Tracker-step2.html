@@ -2,6 +2,7 @@
 <div   class="panel main-content panel-primary" >
   <div class="pheading">
     <div class="panel-heading  "><h4 class="SLA-text"><strong>SLA Tracker Internal Process(Ver 1.0)</strong></h4></div></div>
+  <form name="SLAform" id="sla" novalidate>
   <div class="panel-body ">
     <div class="container">
     <div class="row">
@@ -19,51 +20,54 @@
 
     <div  class="col-md-12 ">
 
-      <form  name="usrform" novalidate id="usrform" class="bs-component ">
+
         <div class="container-fluid ">
           <div  class="col-md-5">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >TimeSheet/Attendence Cycle</label>
-              <input class="form-control" name="n1"  type="text" >
+              <label class="control-label" >TimeSheet/Attendence Cycle<span class="required-field">*</span></label>
+              <input class="form-control" name="timesheet" ng-model="timesheet" type="text"
+                     ng-required="SLAform.timesheet.$error">
 
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >TimeSheet and Payroll</label>
-              <input class="form-control" type="text">
+              <label class="control-label" >TimeSheet and Payroll<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="timepay" name="timepay "type="text"
+                     ng-required="SLAform.timepay.$error">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form name="usrform" novalidate class="bs-component">
+
         <div class="container-fluid">
           <div  class="col-md-5">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Timesheet/Atendence Collection Process</label>
-              <textarea class="form-control  bord-remove" name="n3"   type="text"
-              minlength="3" maxlength="20" ng-required="usrform.n3.$error" ></textarea>
+              <label class="control-label" >Timesheet/Atendence Collection Process<span class="required-field">*</span></label>
+              <textarea class="form-control  bord-remove" name="collection" ng-model="collection"   type="text"
+              minlength="3" maxlength="20" ng-required="SLAform.n3.$error" ></textarea>
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Salary Payout</label>
-              <input class="form-control" name="n4"  type="text" >
+              <label class="control-label" >Salary Payout<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="salary"  name="salary"  type="text"
+                     ng-required="SLAform.salary.$error" >
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
@@ -72,18 +76,19 @@
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Invoice Submission & Payment Followup</label>
-              <input class="form-control" class="focusedInput1" type="text" required>
+              <label class="control-label" >Invoice Submission & Payment Followup<span class="required-field">*</span></label>
+              <input class="form-control"  ng-model="submission" class="focusedInput1" type="text"
+                     ng-required="SLAform.submission.$error">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
@@ -91,18 +96,16 @@
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >PO</label>
-              <input class="form-control" class="focusedInput1" type="text">
+              <label class="control-label" >PO<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="po" class="focusedInput1" name="po" type="text"
+                     ng-required="SLAform.po.$error">
             </div>
           </div>
         </div>
 
-      </form>
-
     </div>
     <div class="col-md-12 ">
 
-      <form class="bs-component">
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
@@ -111,13 +114,14 @@
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Disputes & Resolutions</label>
-              <input class="form-control" type="text">
+              <label class="control-label" >Disputes & Resolutions<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="disputes" type="text" name="disputes"
+                     ng-required="SLAform.disputes.$error">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
   </div>
@@ -129,70 +133,74 @@
 
     <div  class="col-md-12 ">
 
-      <form  name="usrform" class="bs-component ">
+
         <div class="container-fluid ">
           <div  class="col-md-5 ">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Payroll Cycle</label>
-              <input class="form-control"  type="text">
+              <label class="control-label" >Payroll Cycle<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="cycle" name="cycle" type="text"
+                     ng-required="SLAform.cycle.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div  class="form-group label-floating is-empty">
-              <label class="control-label" >PO Process</label>
-              <input class="form-control" type="text">
+              <label class="control-label" >PO Process<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="process" name="process" type="text"
+                     ng-required="SLAform.process.$error">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form  class="bs-component">
+
         <div class="container-fluid ">
           <div  class="col-md-5">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Leaves</label>
-              <input class="form-control" type="text" >
+              <label class="control-label" >Leaves<span class="required-field">*</span></label>
+              <input class="form-control" type="text" ng-model="leaves" name="leaves" ng-required="SLAform.leaves.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Discounts</label>
-              <input class="form-control" type="text" >
+              <label class="control-label" >Discounts<span class="required-field">*</span></label>
+              <input class="form-control" type="text" ng-model="discounts"name="discounts" ng-required="SLAform.discounts.$error">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Billing & Invoice Process</label>
-              <input class="form-control" class="focusedInput1" type="text" required>
+              <label class="control-label" >Billing & Invoice Process<span class="required-field">*</span></label>
+              <input class="form-control" class="focusedInput1" type="text"
+                     ng-model="billing" name="billing" ng-required="SLAform.billing.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Billing Office Address & Contact Number</label>
-              <input class="form-control" class="focusedInput1" type="text" required>
+              <label class="control-label" >Billing Office Address & Contact Number<span class="required-field">*</span></label>
+              <input class="form-control" class="focusedInput1" type="text"
+                     ng-model="ofc" name="ofc" ng-required="SLAform.ofc.$error">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
@@ -201,13 +209,13 @@
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Shipping Office Address & Contact Number</label>
-              <input class="form-control" type="text">
+              <label class="control-label" >Shipping Office Address & Contact Number<span class="required-field">*</span></label>
+              <input class="form-control" type="text" ng-model="shipping" name="shipping" ng-required="SLAform.shipping.$error" >
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     </div>
@@ -218,7 +226,7 @@
 
     </div>
     <div  class="col-md-12 ">
-      <form  name="usrform" class="bs-component ">
+
         <div class="container-fluid ">
         <div  class="col-md-5 ">
          <h3 class="text-left first-contact" >1st Point of Contact</h3>
@@ -228,92 +236,97 @@
             <h3 class="text-left first-contact second-contact" >2nd Point of Contact</h3>
             </div>
         </div>
-      </form>
+
     </div>
 
     <div  class="col-md-12 ">
 
-      <form  name="usrform" class="bs-component ">
+
         <div class="container-fluid ">
           <div  class="col-md-5 ">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Name</label>
-              <input class="form-control"  type="text">
+              <label class="control-label" >Name<span class="required-field">*</span></label>
+              <input class="form-control"  type="text" ng-model="name1" name="name1" ng-required="SLAform.name1.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Name</label>
-              <input class="form-control" type="text">
+              <label class="control-label" >Name<span class="required-field">*</span></label>
+              <input class="form-control" type="text" ng-model="name2" name="name2" ng-required="SLAform.name2.$error">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form  class="bs-component">
+
         <div class="container-fluid ">
           <div  class="col-md-5">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Designation</label>
-              <input class="form-control" type="text" >
+              <label class="control-label" >Designation<span class="required-field">*</span></label>
+              <input class="form-control" type="text" ng-model="designation" name="designation" ng-required="SLAform.designation.$error" >
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Designation</label>
-              <input class="form-control" type="text" >
+              <label class="control-label" >Designation<span class="required-field">*</span></label>
+              <input class="form-control" type="text"
+                     ng-model="designation2" name="designation2" ng-required="SLAform.designation2.$error"/>
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
 
-    <div class="col-md-12 ">
+    <div class="col-md-12">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Contact Number</label>
-              <input class="form-control" type="text">
+              <label class="control-label" >Contact Number<span class="required-field">*</span></label>
+              <input class="form-control" type="text"
+                     ng-model="num1" name="num1" ng-required="SLAform.num1.$error">
             </div>
-          </div>  <div  class="col-md-1"></div>
+          </div>
+          <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Contact Number</label>
-              <input class="form-control" type="text">
+              <label class="control-label" >Contact Number<span class="required-field">*</span></label>
+              <input class="form-control" type="text"
+                     ng-model="num2" name="num2" ng-required="SLAform.num2.$error">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
-    <div class="col-md-12 ">
+    <div class="col-md-12">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Email ID</label>
-              <input class="form-control" class="focusedInput1" type="email" required="required">
+              <label class="control-label" >Email ID<span class="required-field">*</span></label>
+              <input class="form-control" class="focusedInput1" type="email" required="required"
+                     name="id1" ng-model="id1">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Email ID</label>
-              <input class="form-control" class="focusedInput1" type="email" required="required">
+              <label class="control-label" >Email ID<span class="required-field">*</span></label>
+              <input class="form-control" class="focusedInput1" type="email" name="id2" ng-model="id2" required="required">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
 
@@ -324,9 +337,10 @@
      <button  type="button" class="btn btn-raised data-button1 btn-text ">Cancel</button>&nbsp;&nbsp;
    </a>
     <button  class="btn btn-raised   data-SLA-save btn-text">Save</button>
-    <button type="button" class="btn btn-raised  data-button3 btn-text">Submit</button>
+    <button type="button" class="btn btn-raised  data-button3 btn-text" data-ng-disabled="SLAform.$invalid">Submit</button>
 
   </div>
+  </form>
 
   </div>
 

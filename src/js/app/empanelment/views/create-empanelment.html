@@ -96,7 +96,7 @@
       <div class="form-group pull-right app-container-blur" >
         <div class="col-md-8">
           <div class="form-group">
-
+<label>Status</label>
             <div custom-select data="status"  style="margin: -15px;margin-top: -5px"></div>
           </div>
         </div>
@@ -140,21 +140,7 @@
             </accordion-group>
           </accordion>
         </div>
-        <!-- <div class="col-md-6">
-           <h4 class="color-black">Roll out of a proposal</h4>
-           <div class="form-group is-empty is-fileinput">
-             <input type="file" id="inputFile4" multiple="">
-             <div class="input-group">
-               <input type="text" readonly="" class="form-control" placeholder="No selected file">
-                 <span class="input-group-btn input-group-sm">
-                   <button type="button" class="btn warm-status btn-sm glyphicon glyphicon-paperclip">
-                   <i class="material-icons">attach file</i>
-                   </button>
-                 </span>
-             </div>
-             <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
-           </div>
-         </div>-->
+
       </div>
 </div>
 <div class="container col-md-12 mrg-top panel-body ">
@@ -169,6 +155,7 @@
         <div class="form-group pull-right">
           <div class="col-md-8">
             <div class="form-group " style="margin: -15px;">
+              <label class="control-label dropdown-col">Status</label>
               <input  custom-select data="status_prospect"  type="text" placeholder="Status">
 
             </div>
@@ -191,6 +178,7 @@
                 <input class="form-control" type="text">
               </div>
               <div class="form-group">
+                <label class="control-label dropdown-col">Business Vertical</label>
                 <input custom-select data="values" placeholder="Business Vertical" />
               </div>
             </div>
@@ -224,75 +212,83 @@
         </div>
 
         <div class="panel-body">
-            <div class="form-group pull-right">
-                <button class="btn btn-primary SLA-button mrg-top btn-text" ui-sref="app.slaTracker">SLA Tracker</button>
+          <form name="empanelment" id="emp">
+            <div class="form-group pull-right" style="margin-top: -102px;">
+                <button class="btn btn-primary SLA-button  btn-text" ui-sref="app.slaTracker">SLA Tracker</button>
             </div>
 
             <hr class="line1 ">
 
             <div class="col-md-12 ">
 
-                <form name="usrform" novalidate id="usrform1" class="bs-component">
+
                     <div class="container-fluid">
                         <div class="col-md-5">
                             <div class="form-group">
-                                <label class="control-label">Pricing Mode</label>
+                                <label class="control-label">Pricing Mode<span class="required-field">*</span></label>
                                 <div custom-select data="pricingMode"></div>
                             </div>
                         </div>
                         <div class="col-md-1"></div>
                         <div class="col-md-5 col-pad">
                             <div class="form-group">
-                                <label class="control-label">Credit Term</label>
+                                <label class="control-label">Credit Term<span class="required-field">*</span></label>
                                 <div custom-select data="creditTerm"></div>
                             </div>
                         </div>
                     </div>
 
-                </form>
+
 
             </div>
 
             <div class="col-md-12 ">
 
-                <form name="usrform" novalidate id="usrform1" class="bs-component">
+
                     <div class="container-fluid">
                         <div class="col-md-5">
                             <div class="form-group label-floating is-empty">
-                                <label class="control-label">No Of credit Days</label>
-                                <input class="form-control" name="n1" type="text" minlength="3" maxlength="20" alpha-num>
+                                <label class="control-label">No Of credit Days<span class="required-field">*</span></label>
+                                <input class="form-control" ng-model="n1" name="n1" type="text" minlength="1" maxlength="20" numbers-only>
                             </div>
                         </div>
                         <div class="col-md-1"></div>
                         <div class="col-md-5 col-pad">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label">PayCycle Date</label>
-                                <input class="form-control" required="required" type="text" minlength="3" maxlength="20" alpha-num>
+                            <div class="form-group ">
+                              <div class="input-group col-md-9 present">
+                                <input type="text" class="form-control hand-cursor" placeholder="Pay Cycle Date" datepicker-popup="dd-MMMM-yyyy" ng-model="discussion.date" is-open="opened1" show-button-bar="false" ng-required="true" ng-click="open($event,'opened')" readonly>
+                                                <span class="input-group-addon required-field" id="basic-addon2">
+            <img src="img/calendar_icon.png" class="calendar-img " alt="" />*</span>
+                              </div>
+
                             </div>
                         </div>
                     </div>
 
-                </form>
+
 
             </div>
             <div class="col-md-12 ">
 
-                <form name="usrform" novalidate id="usrform" class="bs-component">
-                    <div class="container-fluid">
-                        <div class="col-md-5">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label">Bill Cycle Date</label>
-                                <input class="form-control" name="n1" type="text" minlength="3" maxlength="20" alpha-num>
-                            </div>
-                        </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-5 col-pad">
-                            <div class="form-group label-floating ">
-                            </div>
-                        </div>
-                    </div>
+                <div class="container-fluid">
+                  <div class="col-md-5 ">
+                    <div class="form-group ">
+                      <div class="input-group col-md-9 present">
+                        <input type="text" class="form-control hand-cursor" placeholder="Bill Cycle Date" datepicker-popup="dd-MMMM-yyyy" ng-model="discussion.date1" is-open="opened2" show-button-bar="false" ng-required="true" ng-click="opendate($event,'opened')" readonly>
+                                                <span class="input-group-addon required-field" id="basic-addon2">
+            <img src="img/calendar_icon.png" class="calendar-img " alt="" />*</span>
+                      </div>
 
-                </form>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-5 col-pad">
+                    <div class="form-group label-floating ">
+                    </div>
+                  </div>
+                </div>
+
+
 
             </div>
             <div class="col-md-12">
@@ -302,13 +298,14 @@
                             <input type="file" multiple="">
                             <div class="input-group">
                                 <input type="text" readonly="" class="form-control" placeholder="Pan Copy">
-                                <span class="input-group-btn input-group-sm">
+                                <span class="input-group-btn input-group-sm ">
                   <button type="button" class="btn warm-status">
                   <i class="material-icons">Browse</i>
                   </button>
                 </span>
                             </div>
-                            <span class="material-input control-label">Supported file format PDF,JPEG</span>
+                            <span class="material-input control-label ">Supported file format PDF,JPEG  </span>
+                          <span class="required-field">*</span>
                         </div>
                     </div>
                     <div class="col-md-1"></div>
@@ -324,6 +321,7 @@
                 </span>
                             </div>
                             <span class="material-input control-label">Supported file formar PDF,JPEG</span>
+                          <span class="required-field">*</span>
                         </div>
                     </div>
                 </div>
@@ -332,10 +330,10 @@
                 <div class="form-group">
                     <a ui-sref="app.viewEmpanelment" class="auto">
                         <button class="btn btn-raised  data-button-cancel btn-text">Cancel</button>&nbsp;&nbsp;</a>
-                    <button class="btn btn-primary data-button-sub btn-text">Submit</button>
+                    <button class="btn btn-primary data-button-sub btn-text" data-ng-disabled="empanelment.$invalid">Submit</button>
                 </div>
             </div>
-
+</form>
         </div>
 
     </div>

@@ -7,8 +7,20 @@ var app=angular.module('com.module.empanelment')
             $scope.pricingMode = appConfig.empanelment.pricingMode;
             $scope.creditTerm = appConfig.empanelment.creditTerm;
             $scope.OB=appConfig.empanelment.OB;
+
       };
     $scope.init();
+    $scope.open = function ($event, opened) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      $scope.opened1 = !$scope.opened1;
+    };
+    $scope.opendate = function ($event, opened) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      $scope.opened2 = !$scope.opened2;
+    };
+
   }]);
 
 

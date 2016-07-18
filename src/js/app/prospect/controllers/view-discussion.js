@@ -4,11 +4,12 @@ angular.module('com.module.prospect')
     $scope.userId=JSON.parse($cookies.userData).userDetails._id;
     $scope.sortType='time_of_discussion';
     $scope.reverse=true;
-    var queryParameters = {client_unit_id:$scope.data.client_unit_id , client_status_id: $scope.data.client_status, count: 1, page:10, discussed_by:$scope.userId };
+    $scope.discussions=$scope.data.discussions;
+    /*var queryParameters = {client_unit_id:$scope.data.client_unit_id , client_status_id: $scope.data.client_status, count: 1, page:10, discussed_by:$scope.userId };
     $scope.getDiscussionPromise =possibilityCreateService.getDiscussions(queryParameters).then(function(response){
         $scope.discussions=response.data;
         console.log(response.data);
-    });
+    });*/
     $scope.download=function(url){
         var filename = url.substring(url.lastIndexOf('/')+1);
         console.log(filename);

@@ -1,6 +1,6 @@
 angular.module('com.module.possibility').factory('possibilityCreateService', function ($http, appConfig) {
   'use strict';
-  var BASEURI = appConfig.apiUrl;
+  var BASEURI = 'http://172.16.1.103:8000';//appConfig.apiUrl;
   var createClient = function (data) {
     return $http({
       method: 'POST',
@@ -14,10 +14,10 @@ angular.module('com.module.possibility').factory('possibilityCreateService', fun
       url: BASEURI + '/api/clients?legal_name='+data
     });
   };
-  var setPossibility = function (data) {
+  var createSale = function (data) {
     return $http({
       method: 'POST',
-      url: BASEURI + '/api/possibility/create',
+      url: BASEURI + '/api/sale',
       data:data
     });
   };
@@ -74,7 +74,7 @@ var possibilityDetails = function (id) {
   };
   return {
     getLegalEntity:getLegalEntity,
-    setPossibility:setPossibility,
+    createSale:createSale,
     getPossibility:getPossibility,
     possibilityDetails:possibilityDetails,
     updatePossibility:updatePossibility,

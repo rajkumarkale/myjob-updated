@@ -167,14 +167,14 @@
           </thead>
           <tbody>
           <tr data-ng-repeat="suspect in filteredRows= (data.suspects | orderBy:sortType:sortReverse |companyFilter:selectedItem) | filter:$root.searchView"  >
-        <td class="hand-cursor td-text-color" ng-click="openEditSuspect(suspect)">{{suspect.legal_name}}</td>
-        <td>{{suspect.client_unit_name}}</td>
-        <td>{{suspect.city}}</td>
-        <td>{{suspect.pocs[0].name}}</td>
-        <td>{{suspect.pocs[0].designation}}</td>
-        <td>{{suspect.pocs[0].phone}}</td>
+        <td class="hand-cursor td-text-color" ng-click="openEditSuspect(suspect)">{{suspect.client.legalName}}</td>{{suspect}}
+        <td>{{suspect.client.unitName}}</td>
+        <td>{{suspect.client.location}}</td>
+        <td>{{suspect.getPrimaryContact().name}}</td>
+        <td>{{suspect.getPrimaryContact().designation}}</td>
+        <td>{{suspect.getPrimaryContact().phone}}</td>
         <td>
-          <p class="btn-raised warm-status m-n btn-sm " ng-class="statusColor(suspect.status)">{{suspect.status}}</p>
+          <p class="btn-raised warm-status m-n btn-sm " ng-class="statusColor(suspect.suspect)">{{suspect.suspect}}</p>
         </td>
         <td>
           <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(suspect)">Discussion</button>

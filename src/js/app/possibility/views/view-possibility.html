@@ -170,14 +170,14 @@
 
 
         </td>
-        <td class="hand-cursor td-text-color" data-ng-click="openEditPossibility(possibility)">{{possibility.legal_name}}</td>
-        <td>{{possibility.client_unit_name}}</td>
-        <td>{{possibility.city}}</td>
-        <td>{{possibility.pocs[0].name}}</td>
-        <td>{{possibility.pocs[0].designation}}</td>
-        <td>{{possibility.pocs[0].phone}}</td>
+        <td class="hand-cursor td-text-color" data-ng-click="openEditPossibility(possibility)">{{possibility.client.legalName}}</td>
+        <td>{{possibility.client.businessUnit}}</td>
+        <td>{{possibility.client.location}}</td>
+        <td>{{possibility.getPrimaryContact().name}}</td>
+        <td>{{possibility.getPrimaryContact().designation}}</td>
+        <td>{{possibility.getPrimaryContact().phone}}</td>
         <td>
-          <p class="btn btn-raised warm-status m-n btn-sm" style="pointer-events: none;" ng-class="statusColor(possibility.status)">{{possibility.status}}</p>
+          <p class="btn btn-raised warm-status m-n btn-sm" style="pointer-events: none;" ng-class="statusColor(possibility.possibility)">{{possibility.possibility |spaceless}}</p>
         </td>
         <td>
           <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(possibility)">Discussion</button>

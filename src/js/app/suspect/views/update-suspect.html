@@ -10,32 +10,32 @@
                         <div class="col-md-6 form-custom-padding">
                             <div class="form-group label-floating">
                                 <label class="control-label">Legal Entity</label>
-                                <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text">
+                                <input class="form-control" required data-ng-model="createPossibility.client.legalName" type="text">
                             </div>
                             <div>
                                 <label class="control-label">Bussiness Vertical</label>
 
-                                <input class="form-control" data-ng-model="createPossibility.vertical" type="text">
+                                <input class="form-control" data-ng-model="createPossibility.client.vertical" type="text">
                             </div>
                             <div>
                                 <label class="control-label">Employee Size of the Company</label>
-                                <input class="form-control" required data-ng-model="createPossibility.employee_size" type="text">
+                                <input class="form-control" required data-ng-model="createPossibility.client.employeeSize" type="text">
                             </div>
                             <div class="form-group label-floating ">
-                                <label class="control-label">Address Line 1</label>
-                                <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 " type="text">
+                                <label class="control-label">Address 1</label>
+                                <input class="form-control" required data-ng-model="createPossibility.client.addressList.address1" type="text">
                             </div>
                             <div class="form-group label-floating ">
                                 <label class="control-label">City</label>
-                                <input class="form-control" required data-ng-model="createPossibility.address.city " type="text">
+                                <input class="form-control" required data-ng-model="createPossibility.client.addressList.city " type="text">
                             </div>
                             <div class="form-group label-floating ">
                                 <label class="control-label">Zipcode</label>
-                                <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text">
+                                <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.client.addressList.pin" type="text">
                             </div>
                             <div class="label-floating ">
                                 <label class="control-label">Country</label>
-                                <input class="form-control" required data-ng-model="createPossibility.address.country" type="text">
+                                <input class="form-control" required data-ng-model="createPossibility.client.addressList.country" type="text">
                             </div>
                             <div class="up-margin">
                                 <ul>
@@ -47,27 +47,27 @@
                         <div class="col-md-6 form-custom-padding">
                             <div class="form-group label-floating ">
                                 <label class="control-label">Business Unit</label>
-                                <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text">
+                                <input class="form-control" required data-ng-model="createPossibility.client.unitName" type="text">
                             </div>
                             <div class="form-group label-floating ">
                                 <label class="control-label">Website URL</label>
-                                <input class="form-control" required data-ng-model="createPossibility.url" type="text">
+                                <input class="form-control" required data-ng-model="createPossibility.client.website" type="text">
                             </div>
                             <div>
                                 <label class="control-label">Group Turnover</label>
-                                <input class="form-control" data-ng-model="createPossibility.turnover" required type="text">
+                                <input class="form-control" data-ng-model="createPossibility.client.turnover" required type="text">
                             </div>
                             <div>
                                 <label class="control-label">Type of Customer</label>
-                                <input class="form-control" data-ng-model="createPossibility.customer_type" type="text">
+                                <input class="form-control" data-ng-model="createPossibility.client.customerType" type="text">
                             </div>
                             <div class="form-group label-floating ">
-                                <label class="control-label">Address Line 2</label>
-                                <input class="form-control" data-ng-model="createPossibility.address.address_line_2" type="text">
+                                <label class="control-label">Address 2</label>
+                                <input class="form-control" data-ng-model="createPossibility.client.addressList.address2" type="text">
                             </div>
                             <div class="form-group label-floating">
                                 <label class="control-label">State</label>
-                                <input class="form-control" required data-ng-model="createPossibility.address.state" type="text">
+                                <input class="form-control" required data-ng-model="createPossibility.client.addressList.state" type="text">
                             </div>
                             <br>
                             <div>
@@ -95,7 +95,7 @@
     <div class="panel panel-default second-panel up-margin ">
 
             <div class="panel-title  panel-heading ">
-                Contact Details
+                {{suspectTitle}}
             </div>
             <div class="panel-body  ">
                 <div class="form-group pull-right mrg-suspect mrg-top-apply">
@@ -136,7 +136,7 @@
                                             </div>
                                             <div class="form-group" ng-show="isEditable">
                                                 <label class="control-label">Support Area</label>
-                                                <div class="form-group" custom-select data="poc.support_area" tabindex="5">
+                                                <div class="form-group" custom-select data="poc.supportArea" tabindex="5">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -150,14 +150,14 @@
 
                                                 <div class="form-group label-floating localadd-mrg">
                                                     <label class="control-label">Location</label>
-                                                    <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="9" required alphabets-only>
+                                                    <input required data-ng-model="poc.supportLocation" class="form-control" type="text" tabindex="9" required alphabets-only>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-pad">
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label">Email ID</label>
-                                                <input class="form-control bord-remove" data-ng-model="poc.email_id" type="text" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' required tabindex="2">
+                                                <input class="form-control bord-remove" data-ng-model="poc.email" type="text" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' required tabindex="2">
                                             </div>
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label">Designation</label>
@@ -165,7 +165,7 @@
                                             </div>
                                             <div class="form-group" ng-show="isEditable">
                                                 <label class="control-label">Contact type</label>
-                                                <div class="form-group" custom-select data="poc.contact_type" tabindex="6"></div>
+                                                <div class="form-group" custom-select data="poc.contactType" tabindex="6"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -250,7 +250,7 @@
                         <a ui-sref="app.suspect-view">
                             <button class="btn btn-primary data-button-cancel btn-text">Cancel</button>
                         </a>
-                        <button class="btn btn-primary data-button btn-text" data-ng-disabled="!isValid(updateSuspectForm.$valid)" data-ng-click="submit(true)">Submit</button>
+                        <button class="btn btn-primary data-button btn-text" data-ng-disabled="!isValid(updateSuspectForm.$valid)" data-ng-click="submit(suspect)">Submit</button>
                     </div>
                 </div>
             </div>

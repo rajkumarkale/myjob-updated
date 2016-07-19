@@ -55,7 +55,6 @@
 
 }
 .row-height{
-  background-color: white;
   height: 35px
 }
 
@@ -226,3 +225,6 @@ div > div > svg > text {visibility: hidden;}
 .action-padding{
   padding-left: 45px !important;
 }
+
+.delete-color{
+color: #049ad9}

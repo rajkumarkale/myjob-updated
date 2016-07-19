@@ -19,8 +19,14 @@ angular.module('com.module.prospect')
     if(n.key==='Agreement_On_Closure'){
       $scope.title='Agreement on Closure';
       $scope.displayagreement=true;
-    }else{
+      $scope.status_lost=flase;
+    }else if(n.key==='LOST'){
+      $scope.status_lost=true;
+      $scope.displayagreement=false;
+      $scope.Requirement=false;}
+    else{
       $scope.displayagreement=false;
     }
   }) ;
+
   }]);

@@ -278,9 +278,10 @@
     </div>
     <div class="panel-body">
       <div class="form-group pull-right">
-        <div class="col-md-8">
-          <div class="form-group mrg-formgrp">
-            <label class="control-label">Status</label>
+        <div style="margin-top: -44px;
+    width: 198px;">
+          <div class="form-group ">
+            <label class="control-label ">Status</label>
             <div   custom-select data="status_prospect" class="status-prospect"></div>
 
           </div>
@@ -303,8 +304,9 @@
               <label class="control-label">Annual Business Bottomline</label>
               <input class="form-control" type="text">
             </div>
-            <div class="form-group businessprospect-mrg">
-              <input custom-select data="values" placeholder="Business Vertical" />
+            <div class="form-group ">
+              <label class="control-label">Business Vertical</label>
+              <input custom-select data="values"  />
             </div>
           </div>
           <div class="col-md-6 form-custom-padding">
@@ -320,7 +322,7 @@
               <label class="control-label">Expected Date of Closure</label>
               <input class="form-control" type="text">
             </div>
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating is-empty" ng-if="status_lost">
               <label class="control-label">Reason of Loss</label>
               <input class="form-control" type="text">
             </div>
@@ -471,10 +473,10 @@
           </div>
           <div class="col-md-12">
             <div class="col-md-6 form-custom-padding">
-              <div class="form-group label-floating is-empty">
+              <!--<div class="form-group label-floating is-empty">
                 <label class="control-label">Min No of Demands to be closed</label>
                 <input class="form-control" type="text">
-              </div>
+              </div>-->
               <button class="btn btn-primary data-button btn-text" ng-click="requirement()"><i class="fa fa-plus"  ></i>&nbsp;&nbsp;Requirement</button>
             </div>
             <div class="col-md-6 form-custom-padding">

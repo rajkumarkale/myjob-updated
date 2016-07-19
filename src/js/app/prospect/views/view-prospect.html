@@ -200,26 +200,16 @@
         <table class="table table-bod table-hover m-n">
           <thead class="table-head">
         <tr>
-          <th class="table-th-heading" > Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" ><img src="img/sorting_icon.png"></span> </th>
-          <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse"><img src="img/sorting_icon.png"></span></th>
+          <th></th>
+          <th class="table-th-heading" > Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" ><img src="img/sort_icon.png"></span> </th>
+          <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse"><img src="img/sort_icon.png"></span></th>
           <th class="table-th-heading" >Annual Number</th>
           <th class="table-th-heading" >Annual Revenue</th>
           <th class="table-th-heading">Exp.Closure Date
           </th>
           <th class="table-th-heading">Contact Name</th>
           <th class="table-th-heading">Contact Number</th>
-          <th class="table-th-heading">Status <span class="btn-group status-drop" dropdown > <span id="single-button" dropdown-toggle ng-disabled="disabled"><img src="img/filter_icon.png"></span>
-      <ul class="dropdown-menu mrg-dropdown" dropdown-menu>
-        <li data-ng-repeat="item in ['LOST','WON','AGREEMENT ON CLOSURE','WORK IN PROGRESS'] track by $index"> <a data-ng-click="setSelectedClient(item)">{{item}}<span data-ng-class="isChecked(item)"></span></a>
-
-                    </li>
-      </ul>
-    </span>
-          </th>
           <th class="table-th-heading">Actions</th>
-
-
-
           </tr>
 
           </thead>
@@ -259,6 +249,41 @@
             <span><i class="fa fa-long-arrow-up suspect-arrowicon"></i> </span>
           </td>
         </tr>
+      <!--  <tr>
+          <td>
+
+          </td>
+          <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">ssss</td>
+          <td>gggg</td>
+          <td>hhhhhhhhhh</td>
+          <td>pppppppp</td>
+          <td>vvvvvvvvvv</td>
+          <td>000000</td>
+          <td>000000</td>
+          <td class="action-padding">
+            <table>
+              <tr>
+                <td ><img src="img/discussion_icon.png" tooltip="Discussions" class="action-distance hand-cursor" data-ng-click="openDiscussions(suspect)"></td>
+                <td >
+                  <img src="img/share_icon.png" tooltip="Share" class="action-distance "  ng-click="openShare('share',suspect)" ng-show="showShare(suspect)" data-ng-class="{'hand-cursor':showShare(suspect)}">
+                  <img src="img/share_hide.png" tooltip="Share" class="action-distance "   ng-hide="showShare(suspect)">
+                </td>
+                <td ><img src="img/transfer_icon.png" tooltip="Transfer" class="action-distance " data-ng-class="{'hand-cursor':showTransfer(suspect)}" ng-click="openShare('tansfer',suspect)" ng-show="showTransfer(suspect)">
+                  <img src="img/transfer_hide.png" tooltip="Transfer" class="action-distance "  ng-hide="showTransfer(suspect)" >
+                </td>
+                <td ><img src="img/revoke_icon.png" tooltip="Revoke" class="hand-cursor"></td>
+              </tr>
+            </table>
+            &lt;!&ndash; <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(suspect)">Discussion</button>
+           </td>
+               <td>
+                 <span ng-click="openShare('share',suspect)" ng-show="showShare(suspect)"><i class="fa fa-share suspect-shareicon"></i> </span>
+               </td>
+               <td>
+                 <span ng-click="openShare('tansfer',suspect)" ng-show="showTransfer(suspect)"><i class="fa fa-long-arrow-up suspect-arrowicon"></i> </span>
+            &ndash;&gt;   </td>
+        </tr>-->
+
         <tr  data-ng-if="filteredRows.length ===0">
         <td colspan="11">No Prospects!</td>
         </tr>

@@ -148,10 +148,18 @@
           <thead class="table-head">
           <tr>
             <th></th>
-            <th class="table-th-heading">Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" ><img src="img/sort_icon.png"></span></th>
-            <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse"><img src="img/sort_icon.png"></span></th>
-            <th class="table-th-heading">Location <span ng-click="sortType = 'city'; sortReverse = !sortReverse"  ><img src="img/sort_icon.png"></span></th>
-            <th class="table-th-heading">Contact Person <span ng-click="sortType = 'pocs[0].name'; sortReverse = !sortReverse"><img src="img/sort_icon.png"></span></th>
+            <th class="table-th-heading">Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" ><img src="img/sort_icon.png" ng-show="!sortReverse">
+           <img src="img/sort_icon2.png" ng-show="sortReverse">
+           </span></th>
+            <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse"><img src="img/sort_icon.png" ng-show="!sortReverse">
+            <img src="img/sort_icon2.png" ng-show="sortReverse">
+            </span></th>
+            <th class="table-th-heading">Location <span ng-click="sortType = 'city'; sortReverse = !sortReverse"  ><img src="img/sort_icon.png" ng-show="!sortReverse">
+            <img src="img/sort_icon2.png" ng-show="sortReverse">
+            </span></th>
+            <th class="table-th-heading">Contact Person <span ng-click="sortType = 'pocs[0].name'; sortReverse = !sortReverse"><img src="img/sort_icon.png" ng-show="!sortReverse">
+            <img src="img/sort_icon2.png" ng-show="sortReverse">
+            </span></th>
             <th class="table-th-heading">Contact Designation</th>
             <th class="table-th-heading">Contact Number</th>
             <!--<th class="table-th-heading ">Status <span class="btn-group status-drop" dropdown > <span  id="single-button" dropdown-toggle ng-disabled="disabled"><img src="img/filter_icon.png"></span>
@@ -178,7 +186,7 @@
         <td>{{suspect.pocs[0].designation}}</td>
         <td>{{suspect.pocs[0].phone}}</td>
 
-        <td>
+        <td class="action-padding">
           <table>
             <tr>
               <td ><img src="img/discussion_icon.png" tooltip="Discussions" class="action-distance hand-cursor" data-ng-click="openDiscussions(suspect)"></td>

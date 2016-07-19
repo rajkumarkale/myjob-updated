@@ -222,3 +222,7 @@ div > div > svg > text {visibility: hidden;}
 .status-padding-symbol{
   margin-left: 20px !important;
 }
+
+.action-padding{
+  padding-left: 45px !important;
+}

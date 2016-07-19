@@ -208,3 +208,21 @@ div > div > svg > text {visibility: hidden;}
   margin-top: 105px;
   width: 100% !important;
 }
+.error-msg{
+  background-color: #f81212;
+  color: white;
+  border-radius: 3px;
+  padding: 4px;
+  font-size: 10px;}
+
+.action-distance{
+  margin-right: 15px !important;
+}
+
+.status-padding-symbol{
+  margin-left: 20px !important;
+}
+
+.action-padding{
+  padding-left: 45px !important;
+}

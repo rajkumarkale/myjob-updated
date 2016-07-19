@@ -265,7 +265,7 @@
         </tbody>
       </table>
      </div>
-
+<span data-ng-hide="filteredRows.length ===0">
       <pagination class="pagination-sm pull-right"
                   page="data.currentPage"
                   total-items="data.totalItems"
@@ -276,5 +276,6 @@
                   rotate="false"
                   boundary-links="false">
       </pagination>
+  </span>
     </div>
 </div>

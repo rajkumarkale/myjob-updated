@@ -219,17 +219,17 @@
       <div class="row ">
 
         <div class="col-lg-12 ">
-          <accordion  >
+          <accordion class="prospect-ac" >
             <accordion-group is-open="poc.isOpening" >
-              <accordion-heading >
-          <span >
+              <accordion-heading  >
+          <span class="color-black " style="font-weight: normal">
            Contact Person Details
-          <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.isOpening, ' glyphicon-plus': !poc.isOpening}">
+          <i class="pull-right glyphicon" ng-class="{' glyphicon glyphicon-chevron-down': poc.isOpening, ' glyphicon glyphicon-chevron-right': !poc.isOpening}">
             </i>
             </span>
               </accordion-heading>
               <div class="row app-container-blur">
-                <div class="col-md-5 col-pad">
+                <div class="col-md-6 col-pad">
                   <div class=" form-group label-floating is-empty">
                     <label class="control-label">Name</label>
                     <input class="form-control bord-remove" data-ng-model="poc.name" type="text">
@@ -241,13 +241,14 @@
 
 
                 </div>
-                <div class="col-md-5 col-md-offset-2">
+                <div class="col-md-5 ">
                   <div class="form-group label-floating is-empty">
                     <label class="control-label">Address</label>
                     <input class="form-control bord-remove" data-ng-model="poc.support_location" type="text">
                   </div>
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" data-ng-model="poc.designation" placeholder="Contact Person Designation">
+                  <div class="form-group label-floating is-empty">
+                    <label class="control-label">Contact Person Designation</label>
+                    <input class="form-control bord-remove" type="text" data-ng-model="poc.designation" >
                   </div>
                 </div>
               </div>
@@ -325,7 +326,7 @@
 
     </div>
   </div>
-  <div class="panel panel-default second-panel panelmrgs-prospect"  ng-if="displayagreement">
+  <div class="panel panel-default second-panel panelmrgs-prospect"  ng-show="displayagreement">
    <div class="panel-heading">
      {{title}}
    </div>

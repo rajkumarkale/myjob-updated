@@ -2721,3 +2721,11 @@ input:-webkit-autofill:focus {
   color: #ff5722 !important;
 }
 
+.possibility-head  .prospect-ac .panel-heading  {
+  color: #000;
+  background-color: #e1e1e1 !important;
+  padding: 4px;
+}
+/*.possibility-head  .prospect-ac .panel-heading accordion-heading {
+  color: #000;
+}*/

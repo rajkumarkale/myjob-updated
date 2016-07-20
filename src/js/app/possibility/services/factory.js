@@ -14,21 +14,26 @@ angular.module('com.module.possibility').factory('possibilityCreateService', fun
       url: BASEURI + '/api/clients?legal_name='+data
     });
   };
-  var setPossibility = function (data) {
+  var createSale = function (data) {
     return $http({
       method: 'POST',
-      url: BASEURI + '/api/possibility/create',
+      url: BASEURI + '/api/sale',
       data:data
     });
   };
   var getPossibilityByRange = function (currentPage,numPerPage,start,end) {
-    return $http({
+       var deferred= $q.defer();
+     $http({
       method: 'GET',
-      url: BASEURI + '/api/possibility?page='+currentPage+'&count='+numPerPage+'&start='+start+'&end='+end
+        params:{
+            start:start,
+            end:end
+        },
+      url: BASEURI + '/api/sale'
     });
   };
     var deletePossibilities = function (clientUnitIds) {
-    return $http({
+     return $http({
       method: 'POST',
       url: BASEURI + '/api/possibility/delete/all',
         data:clientUnitIds
@@ -49,7 +54,7 @@ var possibilityDetails = function (id) {
   var updatePossibility = function(data){
     return $http({
       method:'PUT',
-      url:BASEURI+'/api/possibility/update',
+      url:BASEURI+'/api/sale/'+data._id,
       data:data
     });
   };
@@ -65,16 +70,16 @@ var possibilityDetails = function (id) {
       url: BASEURI + '/api/discussions?client_unit_id='+obj.client_unit_id+'&client_status_id='+obj.client_status_id+'&count='+obj.count+'&page='+obj.page+'&discussed_by='+obj.discussed_by
     });
   };
-    var createDiscussion = function (data) {
+    var createDiscussion = function (data,id) {
     return $http({
       method: 'POST',
-      url: BASEURI + '/api/discussion/create',
+      url: BASEURI + '/api/sale/'+id+'/discussions',
         data:data
     });
   };
   return {
     getLegalEntity:getLegalEntity,
-    setPossibility:setPossibility,
+    createSale:createSale,
     getPossibility:getPossibility,
     possibilityDetails:possibilityDetails,
     updatePossibility:updatePossibility,

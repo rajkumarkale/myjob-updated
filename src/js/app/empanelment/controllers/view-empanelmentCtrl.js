@@ -2,7 +2,9 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.empanelment')
-  .controller('viewEmpanelmentCtrl',['$scope','discussionService','$state','$rootScope',function($scope,discussionService,$state,$rootScope){
+
+  .controller('viewEmpanelmentCtrl',['$scope','discussionService','$state','saleModuleService',function($scope,discussionService,$state,saleModuleService){
+      $scope.data={};
       $scope.openDiscussions = function(possibility){
                 discussionService.setData(possibility);
 				$state.go('app.viewDiscussions');
@@ -24,6 +26,11 @@ angular.module('com.module.empanelment')
         $scope.opened1 = false;
       }
     };
-    $scope.last='aaaaaaa';
-    console.log($scope.last+''+$rootScope);
+
+      saleModuleService.getDashboardData().then(function (response) {
+            var data = response.data;
+          console.log(data.empanelment.count);
+            $scope.data.count = data.empanelment.count ? data.empanelment.count : 0;
+            
+        });
     }]);

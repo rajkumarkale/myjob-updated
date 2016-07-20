@@ -38,14 +38,14 @@
       "groupTurnover":{"data":[{"key":"SMALL","displayText":"0-100Cr (SMALL)"}, {"key":"MEDIUM","displayText":"101Cr to 500Cr (MEDIUM)"}, {"key":"LARGE","displayText":"500Cr +   (LARGE)"}],"selectedItem":""},
       "businessVertical":{ "data":[{"key":"IT","displayText":"IT"}, {"key":"GENERAL","displayText":"GENERAL"},{"key": "GOVT","displayText":"GOVT"},{"key": "IT_STAFFING","displayText":"IT STAFFING"}, {"key":"GENERAL_STAFFING","displayText":"GENERAL STAFFING"},{"key": "GOVERNMENT_STAFFING","displayText":"GOVERNMENT STAFFING"}, {"key":"PERM_SEARCH","displayText":"PERM SEARCH"}, {"key":"RPO","displayText":"RPO"}],"selectedItem":""},
       "customerType":{"data":[{"key":"MNC","displayText":"MNC"}, {"key":"PVT_LTD","displayText":"PVT LTD"},{"key": "PUBLIC_LTD","displayText":"PUBLIC LTD"}, {"keÿ":"PROPRIETORSHIP","displayText":"PROPRIETORSHIP"}],"selectedItem":""},
-      "contactType" :{"data":[{"key":"ESCALATION","displayText":"Escalation"},{"key":"OTHER","displayText":"Other"}],"selectedItem":""},
+      "contactType" :{"data":[{"key":"ESCALATION","displayText":"ESCALATION"},{"key":"OTHER","displayText":"OTHER"}],"selectedItem":""},
       "status" :{"data":[{"key":"NOT_MET","displayText":"NOT MET"},{"key":"MET","displayText":"MET"},{"key":"INACTIVE","displayText":"INACTIVE"}],"selectedItem":""},
        "documentType" :{"data":[{"key":"PAN","displayText":"PAN"},{"key":"TAN","displayText":"TAN"},{"key":"AGREEMENT","displayText":"Agreement"},{"key":"PROPOSAL","displayText":"Proposal"},{"key":"VISITING_CARD","displayText":"Visiting Card"},{"key":"ADDRESS_PROOF","displayText":"Address Proof"},{"key":"OTHERS","displayText":"Others"}],"selectedItem":""}
     },
     "suspect":{
       "status" :{"data":[{"key":"COLD","displayText":"COLD"},{"key":"WARM","displayText":"WARM"},{"key":"HOT","displayText":"HOT"}],"selectedItem":""},
-      "contactType" :{"data":[{"key":"PRIMARY","displayText":"Primary"},{"key":"ESCALATION","displayText":"Escalation"},{"key":"OTHERS","displayText":"Others"}],"selectedItem":""},
-      "supportArea" :{"data":[{"key":"BUSINESS","displayText":"Business"},{"key":"FINANCE","displayText":"Finance"},{"key":"INVOICE","displayText":"Invoice"}],"selectedItem":""}
+      "contactType" :{"data":[{"key":"PRIMARY","displayText":"PRIMARY"},{"key":"ESCALATION","displayText":"ESCALATION"},{"key":"OTHER","displayText":"OTHER"}],"selectedItem":""},
+      "supportArea" :{"data":[{"key":"BUSINESS","displayText":"BUSINESS"},{"key":"FINANCE","displayText":"FINANCE"},{"key":"INVOICE","displayText":"INVOICE"}],"selectedItem":""}
     },
     "discussion":{
       "typeOfDiscussion" :{"data":[{"key":"CALL","displayText":"CALL"},{"key":"MAIL","displayText":"MAIL"},{"key":"MEET","displayText":"MEET"},{"key":"CHAT","displayText":"CHAT"}],"selectedItem":""}

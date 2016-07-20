@@ -1,31 +1,4 @@
 <div class="maincol-apply">
-   <!-- <div class="container">
-      <div class="pull-right">
-        <form id="form" name="form" class="form-inline" novalidate>
-          <label for="startDate" class="labels-dates poss-mrg">From</label>
-          <div class="input-group">
-            <a ng-click="open($event,'opened1')">
-              <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
-                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
-            <span class="input-group-btn" id="basic-addon1">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-            </a>
-          </div>
-          <label for="endDate" class="labels-dates poss-mrg ">To</label>
-          <div class="input-group">
-            <a ng-click="open($event,'opened2')">
-              <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
-                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
-            <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-            </a>
-          </div>
-          <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
-        </form>
-      </div>
-    </div>-->
     <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Loading prospects'}">
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary for the month of April 2016</div>
@@ -40,7 +13,7 @@
                 </span>
                     <div class="box-info">
                       <div class="met-won">WON</div>
-                      <div class="met-num">{{data.WON}}</div>
+                      <div class="met-num">{{data.won}}</div>
 
                     </div>
                   </div>
@@ -52,7 +25,7 @@
                 </span>
                     <div class="box-info">
                       <div class="met-lost">LOST</div>
-                      <div class="met-num">{{data.LOST}}</div>
+                      <div class="met-num">{{data.lost}}</div>
 
                     </div>
                   </div>
@@ -64,7 +37,7 @@
                 </span>
                     <div class="box-info">
                       <div class="met-closure">AGREEMENT <br> ON CLOSURE</div>
-                      <div class="met-num">0</div>
+                      <div class="met-num">{{data.agreementOnClosure}}</div>
 
                     </div>
                   </div>
@@ -76,7 +49,7 @@
                 </span>
                     <div class="box-info">
                       <div class="met-progress">WORK <br> IN PROGRESS</div>
-                      <div class="met-num">{{data.PROGRESS}}</div>
+                      <div class="met-num">{{data.workInProgress}}</div>
 
                     </div>
                   </div>
@@ -85,78 +58,8 @@
             </div>
           </div>
         </div>
-        <!--<div class="panel panel-default">
-          <div class="panel-body" >
-            <div class="row">
-              <div class="container" style="display: inline-flex;
-    width: 100%;">
-                <div class="one">
-                  <div class="panel mini-box">
-                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
-                    <img src="img/target_icon.png" style="margin-top: 10px;
-    margin-left: 10px;">
-                </span>
-                    <div class="box-info">
-                      <p class="text-muted">Amazing Films</p>
-                      <p class="size-h2" style="margin-top: 10px;
-    margin-left: 28px;">39</p>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="one">
-                  <div class="panel mini-box">
-                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
-                    <img src="img/target_icon.png" style="margin-top: 10px;
-    margin-left: 10px;">
-                </span>
-                    <div class="box-info">
-                      <p class="text-muted">Amazing Films</p>
-                      <p class="size-h2" style="margin-top: 10px;
-    margin-left: 28px;">39</p>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="one">
-                  <div class="panel mini-box">
-                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
-                    <img src="img/target_icon.png" style="margin-top: 10px;
-    margin-left: 10px;">
-                </span>
-                    <div class="box-info">
-                      <p class="text-muted">Amazing Films</p>
-                      <p class="size-h2" style="margin-top: 10px;
-    margin-left: 28px;">39</p>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="one">
-                  <div class="panel mini-box">
-                <span class="btn-icon btn-icon-round btn-icon-lg-alt">
-                    <img src="img/target_icon.png" style="margin-top: 10px;
-    margin-left: 10px;">
-                </span>
-                    <div class="box-info">
-                      <p class="text-muted">Amazing Films</p>
-                      <p class="size-h2" style="margin-top: 10px;
-    margin-left: 28px;">39</p>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-
-          </div>
-        </div>-->
       </div>
-
-
-      <div class="">
+  <div class="">
         <div class="row">
         </div>
         <div class="panel-body">
@@ -180,22 +83,8 @@
               </form>
             </div>
           </div>
-          <!---<div class="row mrg-top row-height">
-            <label class=" dropdown check-share-transfer pull-left ">
-              <input type="checkbox" class="checkBox check-box-poss" ng-model="selectAllItems" ng-change="selectAll()">
-            </label>
-            <label class="share-transfer pull-left  hand-cursor" ng-show="isShow" ng-click="openShare('share')">
-              <i class="fa fa-share suspect-shareicon" data-toggle="dropdown"></i>&nbsp;&nbsp;Share
-            </label>
-
-            <label class="  share-transfer pull-left hand-cursor" ng-show="isShow" ng-click="openShare('tansfer')">
-              <i class="fa fa-long-arrow-up suspect-arrowicon" data-toggle="dropdown"></i>&nbsp;&nbsp;Transfer
-            </label>
-
-          </div>--->
         </div>
       </div>
-
       <div class="table-topdiv table-up-mrg">
         <table class="table table-bod table-hover m-n">
           <thead class="table-head">
@@ -211,26 +100,11 @@
           <th class="table-th-heading">Contact Number</th>
           <th class="table-th-heading">Actions</th>
           </tr>
-
           </thead>
           <tbody>
-
         <tr data-ng-repeat="prospect in filteredRows=(data.prospects | orderBy:sortType:sortReverse |companyFilter:selectedItem)| filter:$root.searchView"  >
-          <!--<td>
-
-              <div class="chekbox">
-                <label>
-
-                  <input type="checkbox" ng-model="prospect.isChecked" ng-change="selectEntity()">
-                <span class="checkbox-material">
-                  <span class="check"></span>
-                </span>
-                </label>
-              </div>
-
-          </td>--->
-          <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">{{prospect.legal_name}}</td>
-          <td>{{prospect.client_unit_name}}</td>
+          <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">{{prospect.client.legalName}}</td>
+          <td>{{prospect.client.businessUnit}}</td>
           <td>{{prospect.annual_rate_no}}</td>
           <td>{{prospect.annual_rate_topline}}</td>
           <td>{{prospect.estimated_closure * 1000 |date}}</td>
@@ -283,6 +157,7 @@
                  <span ng-click="openShare('tansfer',suspect)" ng-show="showTransfer(suspect)"><i class="fa fa-long-arrow-up suspect-arrowicon"></i> </span>
             &ndash;&gt;   </td>
         </tr>-->
+
 
         <tr  data-ng-if="filteredRows.length ===0">
         <td colspan="11">No Prospects!</td>

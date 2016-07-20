@@ -3,7 +3,7 @@
  */
 angular.module('com.module.prospect')
 
-.controller('viewProspectCtrl',['$scope','prospectService','CoreService','$modal','discussionService','$state','$rootScope',function($scope,prospectService,CoreService,$modal,discussionService,$state,$rootScope){
+.controller('viewProspectCtrl',['$scope','prospectService','CoreService','$modal','discussionService','$state','$rootScope','saleModuleService',function($scope,prospectService,CoreService,$modal,discussionService,$state,$rootScope,saleModuleService){
 
           $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
@@ -91,16 +91,23 @@ angular.module('com.module.prospect')
         default:
     }
 };
-  $scope.myPromise = prospectService.getProspects(1,10).then(function(response){
-    console.log(response);
-      /*CoreService.toastSuccess('','PROSPECTS Retrieved Successfully.');*/
-    $scope.data.prospects = response.data.prospects?response.data.prospects:0;
-    $scope.data.totalItems = response.data.count;
-    $scope.data.LOST=response.data.LOST?response.data.LOST:0;
-    $scope.data.WON=response.data.WON?response.data.WON:0;
-    $scope.data.PROGRESS=response.data.WORK_IN_PROGRESS?response.data.WORK_IN_PROGRESS:0;
-    /*$scope.data.estimated_closure = response.data.estimated_closure;*/
-  });
+    saleModuleService.getDashboardData().then(function (response) {
+            console.log(response.data);
+            var data = response.data;
+            $scope.data.won = data.prospect.won ? data.prospect.won: 0;
+            $scope.data.lost = data.prospect.lost? data.prospect.lost: 0;
+            $scope.data.workInProgress = data.prospect.workInProgress ? data.prospect.workInProgress : 0;
+            $scope.data.agreementOnClosure = data.prospect.agreementOnClosure ? data.prospect.agreementOnClosure : 0;
+        });
+    $scope.myPromise = saleModuleService.getSalesData({stage:'PROSPECT'}).then(function (response) {
+                console.log("possible", response);
+                $scope.data.prospects = response;
+                $scope.data.totalItems = response.length;
+                /*$scope.data.WON= possibilityCreateServices.getStatusCount(response, 'prospect', 'WON');
+                $scope.data.LOST = possibilityCreateServices.getStatusCount(response, 'prospect', 'LOST');
+                $scope.data.PROGRESS = possibilityCreateServices.getStatusCount(response, 'prospect', 'WORK_IN_PROGRESS');
+            $scope.data.agreement_on_closure = possibilityCreateServices.getStatusCount(response, 'prospect', 'AGREEMENT_ON_CLOSURE');*/
+            });
     $scope.openDiscussions = function(prospect){
                 discussionService.setData(prospect);
 				$state.go('app.viewDiscussions');

@@ -1,34 +1,5 @@
 <div class="maincol-apply">
-   <!-- <div class="container">
-      <div class="pull-right">
-        <form id="form" name="form" class="form-inline" novalidate>
-          <label for="startDate" class="labels-dates poss-mrg">From</label>
-          <div class="input-group">
-            <a ng-click="open($event,'opened1')">
-              <input id="startDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1" min="minDate" max="'2015-06-22'"
-                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
-            <span class="input-group-btn" id="basic-addon1">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-            </a>
-          </div>
-          <label for="endDate" class="labels-dates poss-mrg">To</label>
-          <div class="input-group">
-            <a ng-click="open($event,'opened2')">
-              <input id="endDate" type="text" class="form-control" aria-describedby="basic-addon1"
-                     datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2" min="minDate" max="'2015-06-22'"
-                     datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"/>
-            <span class="input-group-addon" id="basic-addon2">
-            <img src="img/calendar_icon.png" class="calendar-img" alt=""/></span>
-            </a>
-          </div>
-          <button class="btn btn-primary btn-raised filter mrg-top">Submit</button>
-        </form>
-      </div>
-    </div>-->
     <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Please Wait'}">
-
-
       <div class="panel panel-primary pan-col">
         <div class="panel-heading summary">Summary for the month of {{sumStartDate | date:'MMMM yyyy '}}{{sumEndDate}}</div>
         <div class="panel-body">
@@ -43,7 +14,6 @@
                     <div class="box-info">
                       <div class="met-met">MET</div>
                       <div class="met-num">{{data.met}}</div>
-
                     </div>
                   </div>
                 </div>
@@ -55,7 +25,6 @@
                     <div class="box-info">
                       <div class="met-notmet">NOT MET</div>
                       <div class="met-num">{{data.notMet}}</div>
-
                     </div>
                   </div>
                 </div>
@@ -67,27 +36,15 @@
                     <div class="box-info">
                       <div class="inactive-col">INACTIVE</div>
                       <div class="met-num">{{data.inactive}}</div>
-
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!--<div class="row ">
-      <div class="col-lg-12 mrg-apply">
-        <div class="form-group pull-right">
-          <button class="btn btn-primary btn-raised btn-md poss-btn" ui-sref="app.createPossibility"><i
-            class="fa fa-plus poss-mrg"></i> New Possibility
-          </button>
-        </div>
-      </div>
-    </div>-->
     <div class="panel-body">
       <div class="row ">
         <div class="col-lg-12">
@@ -114,24 +71,8 @@
       </div>
       <div class="panel-body del-pad">
         <div class="row row-height">
-        <!--  <label class=" dropdown  pull-left ">
-            <input type="checkbox" class="checkbox-poss check-box-poss" ng-model="selectAllItems" ng-change="selectAll()" ng-show="showAllCheckBox()">
-          </label>-->
-
           <label class=" btn-raised hand-cursor pull-right glyphicon glyphicon-plus add-button plus-fa " ui-sref="app.createPossibility">
             </label>
-          <!--  <label class="checkBox-showall pull-left " ng-show="selectAll || checked1 ">
-             <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
-           </label> -->
-         <!-- <label class="share-transfer pull-left  hand-cursor" ng-show="isShow" ng-click="deletePossibility()">
-            <span data-toggle="dropdown"><img src="img/delete_icon.png" class="delete-mrg"></span>&nbsp;&nbsp;Delete
-          </label>-->
-         <!-- <label class="  checkBox-showall pull-left " ng-show="selectAllItems ">
-            <span class="fa fa-trash-o" data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
-          </label>-->
-          <!--<label class="  checkBox-showall pull-right ">Show All
-            <span class="caret checkBxDrop" data-toggle="dropdown"></span>
-          </label>-->
         </div>
       </div>
       <div class="table-topdiv table-up-mrg">
@@ -145,65 +86,38 @@
             <th class="table-th-heading">Contact Person <span ng-click="sortType = 'pocs[0].name'; sortReverse = !sortReverse"><img src="img/sort_icon.png"></span></th>
             <th class="table-th-heading">Contact Designation</th>
             <th class="table-th-heading">Contact Number</th>
-            <!--<th class="table-th-heading">Status <span class="btn-group status-drop" dropdown > <span  id="single-button" dropdown-toggle ng-disabled="disabled"><img src="img/filter_icon.png"></span>
-      <ul class="dropdown-menu mrg-dropdown" dropdown-menu>
-        <li data-ng-repeat="item in ['NOT MET','MET','INACTIVE'] track by $index"> <a data-ng-click="setSelectedClient(item)">{{item}}<span data-ng-class="isChecked(item)"></span></a>
-
-        </li>
-      </ul>
-    </span>
-            </th>-->
-
         <th class="table-th-heading">Actions</th>
       </tr>
       </thead>
       <tbody>
       <tr data-ng-repeat="possibility in filteredRows= (data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem) | filter:$root.searchView" >
         <td>
-          <p style="border-radius: 50%;color: transparent;" ng-class="statusColor(possibility.status)"> 0</p>
-             <!-- <div class="chekbox">
-                <label>
-                  <input type="checkbox" class="poss" ng-model="possibility.isChecked" ng-change="selectEntity()" ng-disabled="{{possibility.status==='MET'}}">
-                <span class="checkbox-material">
-                  <span class="check"></span>
-                </span>
-                </label>
-              </div>-->
+          <p style="border-radius: 50%;color: transparent;" ng-class="statusColor(possibility.possibility)"> 0</p>
           <p class=" " ng-class="statusColor(suspect.status)"></p>
         </td>
-        <td class="hand-cursor td-text-color" data-ng-click="openEditPossibility(possibility)">{{possibility.legal_name}}</td>
-        <td>{{possibility.client_unit_name}}</td>
-        <td>{{possibility.city}}</td>
-        <td>{{possibility.pocs[0].name}}</td>
-        <td>{{possibility.pocs[0].designation}}</td>
-        <td>{{possibility.pocs[0].phone}}</td>
-       <!-- <td>
-          <p class="btn btn-raised warm-status m-n btn-sm" style="pointer-events: none;" ng-class="statusColor(possibility.status)">{{possibility.status}}</p>
-        </td>-->
+        <td class="hand-cursor td-text-color" data-ng-click="openEditPossibility(possibility)">{{possibility.client.legalName}}</td>
+        <td>{{possibility.client.businessUnit}}</td>
+        <td>{{possibility.client.address.city}}</td>
+        <td>{{possibility.getPrimaryContact().name}}</td>
+        <td>{{possibility.getPrimaryContact().designation}}</td>
+        <td>{{possibility.getPrimaryContact().phone}}</td>
         <td class="action-padding">
-         <!-- <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(possibility)">Discussion</button>-->
           <table>
             <tr>
               <td ><img src="img/discussion_icon.png" tooltip="Discussions" class="action-distance hand-cursor" data-ng-click="openDiscussions(possibility)"></td>
               <td >
-                <span class="glyphicon glyphicon-trash delete-color hand-cursor" tooltip="Delete"  ng-disabled="{{possibility.status==='MET'}}" ng-click="deletePossibility()" ></span>
-                <!--<img src="img/delete_icon.png" tooltip="Delete" class=" hand-cursor" ng-disabled="{{possibility.status==='MET'}}" ng-click="deletePossibility()" >-->
+                <span class="glyphicon glyphicon-trash delete-color hand-cursor" tooltip="Delete"  ng-disabled="{{possibility.status==='MET'}}" ng-click="deletePossibility(possibility)" ></span>
               </td>
-
             </tr>
           </table>
         </td>
-
       </tr>
       <tr  data-ng-if="filteredRows.length ===0">
         <td colspan="9">No Possibilities!</td>
         </tr>
-
-
           </tbody>
         </table>
       </div>
-    <!--<div class="row" data-ng-if="filteredRows.length >'10'">-->
       <div class="col-lg-12">
         <span data-ng-hide="filteredRows.length ===0">
         <pagination class="pagination-sm pull-right"
@@ -218,7 +132,6 @@
         </pagination>
 </span>
       </div>
-   <!-- </div>-->
   </div>
 <script type="text/ng-template" id="mypopover.html">
 

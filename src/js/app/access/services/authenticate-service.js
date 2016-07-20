@@ -12,7 +12,7 @@ angular.module('com.module.access')
       var deferred = $q.defer();
       $http({
         method: 'POST',
-        url: appConfig.apiUrl + '/api/login',
+        url: 'http://172.16.1.103:8000/api/login',/*'http://172.16.1.103:8000/api/login'*/
         data: data
       }).success(function (data) {
         

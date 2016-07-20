@@ -86,9 +86,8 @@ angular.module('com.module.possibility')
         //On clicking Update or Save button
         $scope.save = function () {
             document.getElementById('noEdit').style.pointerEvents = 'none';
-
                 if ($scope.isNewPossibility) {
-                    $scope.createPromise = $scope.create();
+                    $scope.createPromise =$scope.create();
                     $state.go('app.viewPossibility');
                 } else {
                  $scope.update();

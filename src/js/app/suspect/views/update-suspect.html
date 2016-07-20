@@ -114,9 +114,11 @@
                 </div>
                 <hr class="line1">
                 <div>
-                    <div class="row col-md-12 ">
+                    <div class="row col-md-12 " ng-repeat="poc in saleObject.pointOfContacts">
+                      <span class=" hand-cursor cross-contact" ng-click="removeContact($index)">
+                          </span>
                         <accordion close-others='opening' class="plus">
-                            <accordion-group is-open="poc.isOpen" ng-repeat="poc in saleObject.pointOfContacts">
+                            <accordion-group is-open="poc.isOpen" >
                                 <accordion-heading>
                                     <span class="color-black buss-font">
           {{$index+1}}) {{poc.supportArea.selectedItem.displayText}} {{poc.contactType.selectedItem.displayText}} Contact Person Details
@@ -172,11 +174,11 @@
                                 </div>
                             </accordion-group>
                         </accordion>
-                      <div class=" pull-left">
-                        <a href="" class="btn btn-primary contacts-button mrgs-contact" ng-click="createNewContactList()"> <i class="fa fa-plus"></i> Contacts</a>
-                      </div>
+
                     </div>
-<br><br>
+<br><br><div class=" pull-left">
+                  <a href="" class="btn btn-primary contacts-button mrgs-contact" ng-click="createNewContactList()"> <i class="fa fa-plus"></i> Contacts</a>
+                </div>
                     <div class="row" ng-if="showRollOut">
                         <div class="col-md-6 form-custom-padding rollout-mrg" ng-if="isEditable">
                           <h4 class="color-black">Roll out of a proposal</h4>

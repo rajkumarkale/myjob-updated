@@ -5,7 +5,7 @@ angular.module('com.module.prospect')
   .controller('shareCtrl',function ($scope,$modalInstance) {
   $scope.ok=function () {
     $modalInstance.close();
-    }
+    };
     $scope.cancel=function () {
       $modalInstance.dismiss();
     }

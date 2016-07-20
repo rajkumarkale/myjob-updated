@@ -5,16 +5,11 @@ angular.module('com.module.prospect')
     $scope.sortType='timeOfDiscussion';
     $scope.reverse=true;
     $scope.discussions=$scope.data.discussions;
-    /*var queryParameters = {client_unit_id:$scope.data.client_unit_id , client_status_id: $scope.data.client_status, count: 1, page:10, discussed_by:$scope.userId };
-    $scope.getDiscussionPromise =possibilityCreateService.getDiscussions(queryParameters).then(function(response){
-        $scope.discussions=response.data;
-        console.log(response.data);
-    });*/
     $scope.download=function(url){
         var filename = url.substring(url.lastIndexOf('/')+1);
         console.log(filename);
         window.open(url);
-    }
+    };
     $scope.openAddDiscussions = function () {
     var modalInstance = $modal.open({
       templateUrl: 'js/app/prospect/views/add-new-discussions.html',

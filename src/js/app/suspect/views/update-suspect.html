@@ -145,13 +145,6 @@
                                                 <div class="form-group" custom-select data="supportArea" value="poc.supportArea" tabindex="5">
                                                 </div>
                                             </div>
-                                            <!--<div class="form-group">
-                                                <label class="contacts">Contacts Provides</label>
-                                                <input type="checkbox" ng-model="poc.remote" class="check remote-check" tabindex="7" id="input-confidencial" ng-required="!poc.local">
-                                                <label class="remote" for="input-confidencial">Remote</label>
-                                                <input type="checkbox" ng-model="poc.local" class="check local-check" tabindex="8" id="input-confidencial1" ng-required="!poc.remote">
-                                                <label class="location" for="input-confidencial1">Local</label>
-                                            </div>-->
                                             <multi-checkbox title="Support Type" options="contactOptions" value="poc.supportType"></multi-checkbox>
                                             <div class="up-margin">
 
@@ -184,25 +177,7 @@
                       </div>
                     </div>
 <br><br>
-
                     <div class="row" ng-if="showRollOut">
-
-                        <!--<div class="col-md-6 form-custom-padding rollout-mrg">
-                  <h4 class="color-black">Roll out of a proposal</h4>
-                  <div class="form-group is-empty is-fileinput">
-                    <input type="file" id="inputFile4" multiple="">
-                    <div class="input-group">
-                      <input type="text" readonly="" class="form-control" placeholder="No selected file">
-                                            <span class="input-group-btn input-group-sm">
-                  <button type="button" class="btn warm-status btn-sm btn-text">
-                    <i class="fa fa-paperclip">&nbsp;&nbsp;Attach File</i>
-                  </button>
-                </span>
-                    </div>
-                    <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
-                  </div>
-                </div>-->
-
                         <div class="col-md-6 form-custom-padding rollout-mrg" ng-if="isEditable">
                           <h4 class="color-black">Roll out of a proposal</h4>
                             <div class="form-group is-empty is-fileinput">

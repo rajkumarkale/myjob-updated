@@ -58,8 +58,6 @@ angular.module('com.module.prospect')
         };
 
         $scope.ok = function (discussion) {
-            //$scope.discussion.discussedBy== $scope.userId;
-               //$scope.discussion.type='FOLLOW_UP';
             var time = $filter('date')($scope.time, 'HH:mm:ss');
                 var date = $filter('date')($scope.date, 'MM/dd/yyyy');
                 var dtstring = date + ' ' + time;

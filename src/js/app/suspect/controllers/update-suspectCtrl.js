@@ -2,7 +2,7 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams','$http', '$state', 'Upload', '$q', 'CoreService', '$cookies', '$timeout','PointOfContactModel', function ($scope, appConfig, $modal, $stateParams, $http, $state, Upload, $q, CoreService, $cookies, $timeout,PointOfContactModel) {
+    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams','$http', '$state', 'Upload', '$q', 'CoreService', '$cookies', '$timeout','PointOfContactModel','saleModuleService', function ($scope, appConfig, $modal, $stateParams, $http, $state, Upload, $q, CoreService, $cookies, $timeout,PointOfContactModel,saleModuleService) {
         $scope.met_status = 'MET';
         $scope.status = {
             open: true
@@ -168,8 +168,17 @@ angular.module('com.module.suspect')
             }
             return (val && c1);
         };
-        $scope.removeContact = function (index) {
-            $scope.point_of_contacts.splice(index, 1);
-        };
+      $scope.removeContact = function (index) {
+        if (index == 0) {
+          CoreService.toastError('', 'Primary contact should have primary contact');
+        }
+        else {
+            var saleId=$scope.saleObject._id;
+            var pocId=$scope.saleObject.pointOfContacts[index]._id;
+            saleModuleService.deletePoc(saleId,pocId).then(function(response){
+              $scope.saleObject.pointOfContacts.splice(index, 1);
+            });
+          }
+      };
       console.log($scope.saleObject);
   }]);

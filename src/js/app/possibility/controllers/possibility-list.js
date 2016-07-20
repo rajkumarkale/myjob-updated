@@ -4,60 +4,13 @@ angular.module('com.module.possibility')
         $scope.filteredRows = [];
         $scope.sortType = 'legal_name';
         $scope.sortReverse = false;
-        $scope.setSelectedClient = function (item) {
-            if (_.contains($scope.selectedItem, item)) {
-                $scope.selectedItem = _.without($scope.selectedItem, item);
-            } else {
-                $scope.selectedItem.push(item);
-            }
-            return false;
-        };
 
-        $scope.isChecked = function (item) {
-            if (_.contains($scope.selectedItem, item)) {
-                return 'glyphicon glyphicon-ok pull-right';
-            }
-            return false;
-        };
-        $scope.selectAll = function () {
-            for (var i = 0; i < $scope.filteredRows.length; i++) {
-                if ($scope.filteredRows[i].status !== 'MET') {
-                    $scope.filteredRows[i].isChecked = $scope.selectAllItems;
-                }
-            }
-            $scope.select();
-        };
-        $scope.selectEntity = function () {
-            $scope.select();
-            for (var i = 0; i < $scope.filteredRows.length; i++) {
-                if (!$scope.filteredRows[i].isChecked) {
-                    $scope.selectAllItems = false;
-                    return;
-                }
-            }
-            $scope.selectAllItems = true;
-        };
-        $scope.select = function () {
-            for (var i = 0; i < $scope.filteredRows.length; i++) {
-                if ($scope.filteredRows[i].isChecked) {
-                    $scope.isShow = true;
-                    return;
-                }
-                $scope.isShow = false;
-            }
 
-        };
-        $scope.showAllCheckBox = function () {
-            var check = false;
-            if ($scope.filteredRows) {
-                for (var i = 0; i < $scope.filteredRows.length; i++) {
-                    if ($scope.filteredRows[i].status !== 'MET') {
-                        check = true;
-                    }
-                }
-            }
-            return check;
-        };
+
+
+
+
+
         $scope.data = {
             numPerPage: 10,
             searchKeywords: '',
@@ -98,19 +51,10 @@ angular.module('com.module.possibility')
             }
         };
         $scope.getPossibilities($scope.data.currentPage, $scope.data.numPerPage);
-        $scope.deletePossibility = function () {
-            var ids = [];
-            var id = {
-                clientUnitIds: ids
-            };
 
-            for (var i = 0; i < $scope.filteredRows.length; i++) {
-                if ($scope.filteredRows[i].isChecked) {
-                    ids.push({
-                        "clientUnitId": $scope.filteredRows[i].client_unit_id
-                    });
-                }
-            }
+        $scope.deletePossibility = function (saleObject) {
+          saleObject.possibility='INACTIVE';
+          $scope.myPromise=saleObject.update();
         };
         $scope.openEditPossibility = function (possibility) {
             console.log(possibility);

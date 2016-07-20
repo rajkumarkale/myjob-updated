@@ -90,15 +90,14 @@ angular.module('com.module.possibility')
                     $scope.createPromise = asyncCreate();
                     $state.go('app.viewPossibility');
                 } else {
-                    $scope.updatePromise = asyncUpdate();
-                    $state.go('app.viewPossibility');
+                 $scope.update();
+
                 }
 
         };
 
         //Updating Existing Possibility
-        function asyncUpdate() {
-            return $q(function () {
+      $scope.update= function () {
                 $scope.saleObject.documents = [];
                 if ($scope.uploadFiles && $scope.uploadFiles.length) {
                     for (var i = 0; i < $scope.uploadFiles.length; i++) {
@@ -108,9 +107,12 @@ angular.module('com.module.possibility')
                       $scope.saleObject.documents.push(obj);
                     }
                 }
-                 $scope.saleObject.update();
-            });
-        }
+
+                $scope.savePromise= $scope.saleObject.update().then(function(){
+                   $state.go('app.viewPossibility');
+                 })
+            };
+
 
 
         $scope.isValid = function (val) {
@@ -130,8 +132,9 @@ angular.module('com.module.possibility')
         };
 
         //Creating new possibility
-        function asyncCreate() {
-            return $q(function () {
+
+        $scope.create=function ()
+        {
                 $scope.saleObject.documents = [];
 
                 if ($scope.uploadFiles && $scope.uploadFiles.length) {
@@ -154,9 +157,11 @@ angular.module('com.module.possibility')
                     }];
                 }
 
-                $scope.saleObject.save();
-            });
-        };
+                $scope.createPromise=$scope.saleObject.save().then(function(){
+                  $state.go('app.viewPossibility');
+                });
+            };
+
 
 
 
@@ -254,9 +259,10 @@ angular.module('com.module.possibility')
         };
 
         $scope.removeFilesDB = function (index) {
-            var id = $scope.saleObject.documents[index]._id;
-            possibilityCreateService.deleteDocument(id).then(function (response) {
-                $scope.createPossibility.documents.splice(index, 1);
+            var documentId = $scope.saleObject.documents[index]._id;
+          var saleId=$scope.saleObject._id;
+          saleModuleService.deleteDocument(saleId,documentId).then(function (response) {
+            $scope.saleObject.documents.splice(index, 1);
             });
         };
 
@@ -270,8 +276,17 @@ angular.module('com.module.possibility')
             if (index == 0) {
                 CoreService.toastError('', 'New Possibility should have primary contact');
             } else {
+              if($scope.isNewPossibility){
                 $scope.saleObject.pointOfContacts.splice(index, 1);
-            }
+              }
+              else{
+                
+              var saleId=$scope.saleObject._id;
+              var pocId=$scope.saleObject.pointOfContacts[index]._id;
+              saleModuleService.deletePoc(saleId,pocId).then(function(response){
+                $scope.saleObject.pointOfContacts.splice(index, 1);
+              });
+            }}
         };
 
     }]);

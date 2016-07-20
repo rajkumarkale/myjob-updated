@@ -44,15 +44,11 @@ module.factory('SaleModel', function (ClientModel, DiscussionModel, PointOfConta
     };
     Sale.prototype.save=function(){
          var saleModuleService=$injector.get('saleModuleService');
-        saleModuleService.createSale(this).then(function(response){
-            console.log(response);
-        });
+       return saleModuleService.createSale(this);
     };
     Sale.prototype.update=function(){
          var saleModuleService=$injector.get('saleModuleService');
-        saleModuleService.updateSale(this).then(function(response){
-            console.log(response);
-        });
+        return saleModuleService.updateSale(this);
     };
     return Sale;
 });

@@ -10,14 +10,14 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
         }).then(function (sales) {
             var salesList = sales.data.map(function (sale) {
                 return new SaleModel(sale)
-            })
-            console.log("sales", salesList)
+            });
+            console.log("sales", salesList);
             deferred.resolve(salesList);
 
         }, function (err) {});
         return deferred.promise;
     };
-    
+
     var getSalesDataByRange = function (currentPage, numPerPage, start, end) {
         var deferred = $q.defer();
         $http({
@@ -31,13 +31,13 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
             var salesList = sales.data.map(function (sale) {
                 return new SaleModel(sale)
             });
-            console.log("sales", salesList)
+            console.log("sales", salesList);
             deferred.resolve(salesList);
 
         }, function (err) {});
         return deferred.promise;
     };
-    
+
     var createSale = function (data) {
         return $http({
             method: 'POST',
@@ -45,7 +45,7 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
             data: data
         });
     };
-    
+
     var updateSale = function (data) {
         return $http({
             method: 'PUT',
@@ -80,14 +80,28 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
             url: BASEURI + '/api/sale/' + id + '/transfer'
         });
     };
-    
+
     var getDashboardData = function () {
         return $http({
             method: 'GET',
             url: BASEURI + '/api/sale/stats'
         });
     };
-    
+  var deleteDocument=function(id,documentId){
+    return $http({
+      method:'DELETE',
+      url:BASEURI +'/api/sale/'+id+'/documents/'+documentId
+    })
+  };
+
+  var deletePoc=function(id,pocId){
+    return $http(
+      {
+        method: 'DELETE',
+        url:BASEURI+'/api/sale/'+id+'/poc/'+pocId
+      })
+  };
+
     return {
         getSalesData: getSalesData,
         getSalesDataByRange: getSalesDataByRange,
@@ -96,6 +110,8 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
         createDiscussion: createDiscussion,
         transfer:transfer,
         share:share,
-        getDashboardData:getDashboardData
+        getDashboardData:getDashboardData,
+        deleteDocument:deleteDocument,
+        deletePoc:deletePoc
     };
 });

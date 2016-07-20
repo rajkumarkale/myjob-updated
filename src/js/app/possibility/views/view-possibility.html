@@ -106,7 +106,7 @@
             <tr>
               <td ><img src="img/discussion_icon.png" tooltip="Discussions" class="action-distance hand-cursor" data-ng-click="openDiscussions(possibility)"></td>
               <td >
-                <span class="glyphicon glyphicon-trash delete-color hand-cursor" tooltip="Delete"  ng-disabled="{{possibility.status==='MET'}}" ng-click="deletePossibility()" ></span>
+                <span class="glyphicon glyphicon-trash delete-color hand-cursor" tooltip="Delete"  ng-disabled="{{possibility.status==='MET'}}" ng-click="deletePossibility(possibility)" ></span>
               </td>
             </tr>
           </table>

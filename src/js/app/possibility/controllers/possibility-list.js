@@ -1,5 +1,5 @@
 angular.module('com.module.possibility')
-    .controller('possibilityListController', ['$scope', '$state', 'toaster', '$timeout', 'possibilityCreateServices','possibilityCreateService' ,'$cookies', 'discussionService', 'CoreService', '$filter', '$rootScope', function ($scope, $state, toaster, $timeout, possibilityCreateServices,possibilityCreateService, $cookies, discussionService, CoreService, $filter, $rootScope) {
+    .controller('possibilityListController', ['$scope', '$state', 'toaster', '$timeout','$cookies', 'discussionService', 'CoreService', '$filter', '$rootScope', 'saleModuleService',function ($scope, $state, toaster, $timeout, $cookies, discussionService, CoreService, $filter, $rootScope,saleModuleService) {
         $scope.selectedItem = [];
         $scope.filteredRows = [];
         $scope.sortType = 'legal_name';
@@ -65,13 +65,13 @@ angular.module('com.module.possibility')
             currentPage: 1
         };
         $scope.getPossibilities = function (currentPage, numPerPage) {
-            $scope.myPromise = possibilityCreateServices.getSalesData().then(function (response) {
+            $scope.myPromise = saleModuleService.getSalesData().then(function (response) {
                 console.log("possible", response);
                 $scope.data.possibilities = response;
-                $scope.data.totalItems = response.length;
+                /*$scope.data.totalItems = response.length;
                 $scope.data.met = possibilityCreateServices.getStatusCount(response, 'possibility', 'MET');
                 $scope.data.notMet = possibilityCreateServices.getStatusCount(response, 'possibility', 'NOT_MET');
-                $scope.data.inactive = possibilityCreateServices.getStatusCount(response, 'possibility', 'INACTIVE');
+                $scope.data.inactive = possibilityCreateServices.getStatusCount(response, 'possibility', 'INACTIVE');*/
             });
             
         };
@@ -86,7 +86,7 @@ angular.module('com.module.possibility')
             if (date1 < date2) {
                 $scope.sumStartDate = $scope.start;
                 $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');
-                $scope.myPromise = possibilityCreateService.getPossibilityByRange(currentPage, numPerPage, date1, date2).then(function (response) {
+                $scope.myPromise = saleModuleService.getSalesDataByRange(currentPage, numPerPage, date1, date2).then(function (response) {
                     console.log("possible", response);
                 $scope.data.possibilities = response;
                 });

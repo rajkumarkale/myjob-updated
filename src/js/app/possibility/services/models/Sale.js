@@ -1,5 +1,5 @@
 var module = angular.module('com.module.possibility');
-module.factory('SaleModel', function (ClientModel, DiscussionModel, PointOfContactModel,possibilityCreateService) {
+module.factory('SaleModel', function (ClientModel, DiscussionModel, PointOfContactModel,$injector) {
     function Sale(modelData) {
         this._id = modelData._id;
         this.createdBY = modelData.createdBY;
@@ -32,25 +32,26 @@ module.factory('SaleModel', function (ClientModel, DiscussionModel, PointOfConta
         if (modelData && modelData.discussions) {
             this.discussions = modelData.discussions.map(function (contact) {
                 return new DiscussionModel(contact);
-            })
+            });
         }
-
-
     }
+    
     Sale.prototype.getPrimaryContact = function () {
         return this.pointOfContacts.filter(function (contact) {
             return contact.isPrimary();
         })[0] || {};
     };
     Sale.prototype.save=function(){
-        possibilityCreateService.createSale(this).then(function(response){
+         var saleModuleService=$injector.get('saleModuleService');
+        saleModuleService.createSale(this).then(function(response){
             console.log(response);
-        })
+        });
     };
     Sale.prototype.update=function(){
-        possibilityCreateService.updatePossibility(this).then(function(response){
+         var saleModuleService=$injector.get('saleModuleService');
+        saleModuleService.updateSale(this).then(function(response){
             console.log(response);
-        })
+        });
     };
     return Sale;
 });

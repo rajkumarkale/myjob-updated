@@ -1,6 +1,6 @@
 angular.module('com.module.possibility').factory('possibilityCreateService', function ($http, appConfig) {
   'use strict';
-  var BASEURI = 'http://172.16.1.103:8000';//appConfig.apiUrl;
+  var BASEURI = appConfig.apiUrl;
   var createClient = function (data) {
     return $http({
       method: 'POST',

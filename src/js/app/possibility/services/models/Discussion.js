@@ -1,6 +1,6 @@
 
 var module = angular.module('com.module.possibility');
-module.factory('DiscussionModel', function (possibilityCreateService) {
+module.factory('DiscussionModel', function ($injector) {
     function Discussion(modelData) {
     this.contactPerson = modelData.contactPerson;
     this.documents = modelData.documents;
@@ -12,9 +12,11 @@ module.factory('DiscussionModel', function (possibilityCreateService) {
     this.venue = modelData.venue;
 }
 Discussion.prototype.create = function (data,id) {
-    possibilityCreateService.createDiscussion(data,id).then(function(response){
+   var saleModuleService=$injector.get('saleModuleService');
+   // if (!saleModuleService) { saleModuleService = $injector.get('saleModuleService'); }
+    saleModuleService.createDiscussion(data,id).then(function(response){
         console.log(response);
-    })
+    });
 };
     return Discussion;
 })

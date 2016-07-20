@@ -1,5 +1,5 @@
 angular.module('com.module.possibility')
-    .controller('createPossibilityController', ['$scope', 'toaster', '$state', '$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies', '$q', 'CoreService', '$filter', '$timeout', 'SaleModel', 'PointOfContactModel', 'DiscussionModel', function ($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies, $q, CoreService, $filter, $timeout, SaleModel, PointOfContactModel, DiscussionModel) {
+    .controller('createPossibilityController', ['$scope', 'toaster', '$state', '$stateParams', 'FileUploader', 'Upload', '$modal', 'appConfig', '$cookies', '$q', 'CoreService', '$filter', '$timeout', 'SaleModel', 'PointOfContactModel', 'DiscussionModel','saleModuleService', function ($scope, toaster, $state, $stateParams, FileUploader,Upload, $modal, appConfig, $cookies, $q, CoreService, $filter, $timeout, SaleModel, PointOfContactModel, DiscussionModel,saleModuleService) {
         $scope.contactOptions = [{
             key: "REMOTE",
             label: "Remote"
@@ -25,7 +25,6 @@ angular.module('com.module.possibility')
             $scope.point_of_contacts = [];
             $scope.getNewPointofContact = function () {
                 var obj = new PointOfContact({});
-               // obj.contactType=$scope.contactType;
                 $scope.saleObject.pointOfContacts.push(obj);
             };
 
@@ -54,7 +53,6 @@ angular.module('com.module.possibility')
                 $scope.saleObject.pointOfContacts = [primaryContact];
                 $scope.freshDiscussion = new DiscussionModel({});
                 $scope.saleObject.discussions = [$scope.freshDiscussion];
-
                 $scope.discussion.time = new Date();
                 $scope.groupTurnover.selectedItem = '';
                 $scope.businessVertical.selectedItem = '';

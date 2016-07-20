@@ -1966,21 +1966,21 @@
   background-image:url("../img/status_icon_cold.png") !important;
   background-repeat: no-repeat !important;
   height: 12px;
-  width: 11px !important;
+  width: 12px !important;
 }
 .status-warm{
 
   background-image:url("../img/status_icon_warm.png") !important;
   background-repeat: no-repeat !important;
   height: 12px;
-  width: 11px !important;
+  width: 12px !important;
 }
 .status-hot{
 
   background-image:url("../img/status_icon_hot.png") !important;
   background-repeat: no-repeat !important;
   height: 12px;
-  width: 11px !important;
+  width: 12px !important;
 }
 .status-lost{
   background-color: #a948b8 !important;

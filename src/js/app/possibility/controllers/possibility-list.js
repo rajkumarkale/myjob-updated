@@ -64,14 +64,17 @@ angular.module('com.module.possibility')
             row: '',
             currentPage: 1
         };
+        saleModuleService.getDashboardData().then(function (response) {
+        console.log(response.data);
+        var data=response.data;
+        $scope.data.met = data.possibility.met ? data.possibility.met: 0;
+        $scope.data.notMet = data.possibility.notMet? data.possibility.notMet : 0;
+        $scope.data.inactive  = data.possibility.inActive ? data.possibility.inActive : 0;
+    });
         $scope.getPossibilities = function (currentPage, numPerPage) {
             $scope.myPromise = saleModuleService.getSalesData().then(function (response) {
                 console.log("possible", response);
                 $scope.data.possibilities = response;
-                /*$scope.data.totalItems = response.length;
-                $scope.data.met = possibilityCreateServices.getStatusCount(response, 'possibility', 'MET');
-                $scope.data.notMet = possibilityCreateServices.getStatusCount(response, 'possibility', 'NOT_MET');
-                $scope.data.inactive = possibilityCreateServices.getStatusCount(response, 'possibility', 'INACTIVE');*/
             });
             
         };

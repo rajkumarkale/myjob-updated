@@ -1,5 +1,5 @@
 angular.module('com.module.suspect')
-.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal','discussionService','$filter','$rootScope','possibilityCreateServices',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal,discussionService,$filter,$rootScope,possibilityCreateServices){
+.controller('suspectListController',['$scope','$state','toaster','$timeout','CoreService','$modal','discussionService','$filter','$rootScope','possibilityCreateServices',function($scope,$state,toaster,$timeout,CoreService,$modal,discussionService,$filter,$rootScope,possibilityCreateServices){
     $scope.selectedItem = [];
     $scope.filteredRows=[];
     $scope.sortType     = 'legal_name';

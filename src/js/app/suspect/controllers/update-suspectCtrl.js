@@ -137,7 +137,7 @@ angular.module('com.module.suspect')
                 $scope.uploadFiles.map(function (obj) {
                     var file = {};
                     file.url = obj.url;
-                    file.type = obj.documentType.selectedItem.key;
+                    file.type = obj.documentType;
                     files.push(file);
                 });
                 if (files.length > 0) {
@@ -152,10 +152,10 @@ angular.module('com.module.suspect')
         };
 
         $scope.editForm = function () {
-            if ($scope.saleObject.prospect && $scope.accessType !== 'view') {
-                $scope.isEditable = true;
-                $scope.suspectTitle='Edit Contact Details';
-            }
+             $scope.isEditable=$scope.saleObject.stage!='PROSPECT'? $scope.accessType=='view':false;
+               if($scope.isEditable){
+                   $scope.suspectTitle='Edit Contact Details';
+               }
         };
         $scope.isValid = function (val) {
             var c1 = true;

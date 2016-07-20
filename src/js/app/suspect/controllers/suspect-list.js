@@ -56,10 +56,14 @@ angular.module('com.module.suspect')
             if (date1 < date2) {
                 $scope.sumStartDate = $scope.start;
                 $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');
-                $scope.myPromise = saleModuleService.getSalesDataByRange(currentPage, numPerPage, date1, date2).then(function (response) {
-                    console.log(response.data);
-                    $scope.data.suspects = response.data.suspects;
-                    $scope.data.totalItems = response.data.count;
+                $scope.myPromise = saleModuleService.getSalesData({
+                    stage: 'SUSPECT',
+                    start: date1,
+                    end: date2
+                }).then(function (response) {
+                    console.log("suspects", response);
+                $scope.data.suspects = response;
+                $scope.data.totalItems = response.length;
                 });
             } else {
                 CoreService.toastError('', 'Satrt date should be less than end date.');
@@ -107,9 +111,7 @@ angular.module('com.module.suspect')
             var tpl = tpl;
             var modalInstance = $modal.open({
                 templateUrl: function () {
-
                     return 'js/app/suspect/views/' + tpl + '.html'
-
                 },
                 backdrop: 'static',
                 controller: 'suspectShareCtrl',

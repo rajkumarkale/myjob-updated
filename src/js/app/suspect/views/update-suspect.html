@@ -92,7 +92,7 @@
     </accordion>
 </div>
 <div class="text-right m-t-sm m-r-xs">
-    <button class="btn btn-primary edit-button mrg-edit" data-ng-click="editForm()"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
+    <button class="btn btn-primary edit-button mrg-edit" data-ng-show="editForm()"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
 </div>
 
 
@@ -230,9 +230,9 @@
                 <div class="col-md-6 col-md-offset-5" data-cg-busy="{promise:submitPromise,message:'Please Wait'}">
                     <div class="form-group">
                         <a ui-sref="app.suspect-view">
-                            <button class="btn btn-primary data-button-cancel btn-text hand-curser">Cancel</button>
+                            <button data-ng-show="editForm()" class="btn btn-primary data-button-cancel btn-text hand-curser">Cancel</button>
                         </a>
-                        <button class="btn btn-primary data-button btn-text" data-ng-disabled="!isValid(updateSuspectForm.$valid)" data-ng-click="submit()">Submit</button>
+                        <button data-ng-show="editForm()" class="btn btn-primary data-button btn-text" data-ng-disabled="!isValid(updateSuspectForm.$valid)" data-ng-click="submit()">Submit</button>
                     </div>
                 </div>
             </div>

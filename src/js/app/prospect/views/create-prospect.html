@@ -76,10 +76,6 @@
                 <label class="control-label">Status</label>
                 <input class="form-control" required data-ng-model="createPossibility.current_status.status" type="text">
               </div>
-              <div class="form-group1 pull-right ">
-                <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
-                <label class=" first-class2 ">Freeze</label>
-              </div>
             </div>
           </div>
         </div>
@@ -462,8 +458,8 @@
               <!--<div class="form-group label-floating is-empty">
                 <label class="control-label">Min No of Demands to be closed</label>
                 <input class="form-control" type="text">
-              </div>-->
-              <button class="btn btn-primary data-button btn-text" ng-click="openRequirement()"><i class="fa fa-plus"  ></i>&nbsp;&nbsp;Requirement</button>
+              </div>--><a ui-sref="app.Requirements">
+              <button class="btn btn-primary data-button btn-text" ><i class="fa fa-plus"  ></i>&nbsp;&nbsp;Requirement</button></a>
             </div>
             <div class="col-md-6 form-custom-padding">
               <div class="form-group label-floating is-empty">
@@ -476,20 +472,7 @@
       </div>
     </div>
   </div>
-  <h3   style="color:#049ad9" ng-if="displayagreement" >All Requirements</h3><br>
-  <!--<div class=" container col-md-12 panel panel-default second-panel " >
-    &lt;!&ndash;<div class="panel-body del-pad">
-      <div class="row row-height">
-        <label class=" dropdown  pull-left ">
-          <input type="checkbox" class="checkbox-poss check-box-poss"   >
-        </label>
-        <label class=" btn-raised hand-cursor pull-right glyphicon glyphicon-plus add-button plus-fa " >
-        </label>
-      </div>
-    </div>&ndash;&gt;
-
-
-  </div>-->
+  <h3   style="color:#049ad9" ng-if="displayagreement">All Requirements</h3><br>
   <table class=" table-topdiv table table-bod m-n " ng-if="displayagreement"  >
     <thead class="table-head " >
     <tr>

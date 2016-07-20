@@ -19,7 +19,7 @@ angular.module('com.module.prospect')
       $scope.status_lost=false;
     }
   }) ;
-  $scope.openRequirement = function () {
+ /* $scope.openRequirement = function () {
 
     var modalInstance = $modal.open({
 
@@ -40,7 +40,7 @@ angular.module('com.module.prospect')
     modalInstance.result.then(function (data) {
       $scope.discussions.push(data);
     });
-  };
+  };*/
   $scope.open = function($event,opened) {
     $event.preventDefault();
     $event.stopPropagation();

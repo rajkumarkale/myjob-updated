@@ -2,7 +2,7 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.empanelment')
-  .controller('viewEmpanelmentCtrl',['$scope','discussionService','$state',function($scope,discussionService,$state){
+  .controller('viewEmpanelmentCtrl',['$scope','discussionService','$state','$rootScope',function($scope,discussionService,$state,$rootScope){
       $scope.openDiscussions = function(possibility){
                 discussionService.setData(possibility);
 				$state.go('app.viewDiscussions');
@@ -24,4 +24,6 @@ angular.module('com.module.empanelment')
         $scope.opened1 = false;
       }
     };
+    $scope.last='aaaaaaa';
+    console.log($scope.last+''+$rootScope);
     }]);

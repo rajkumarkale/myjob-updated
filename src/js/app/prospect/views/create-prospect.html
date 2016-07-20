@@ -218,7 +218,7 @@
       <hr class="line1">
       <div class="row ">
 
-        <div class="col-lg-10 ">
+        <div class="col-lg-12 ">
           <accordion  >
             <accordion-group is-open="poc.isOpening" >
               <accordion-heading >
@@ -254,21 +254,6 @@
             </accordion-group>
           </accordion>
         </div>
-       <!-- <div class="col-md-6">
-          <h4 class="color-black">Roll out of a proposal</h4>
-          <div class="form-group is-empty is-fileinput">
-            <input type="file" id="inputFile4" multiple="">
-            <div class="input-group">
-              <input type="text" readonly="" class="form-control" placeholder="No selected file">
-                <span class="input-group-btn input-group-sm">
-                  <button type="button" class="btn warm-status btn-sm glyphicon glyphicon-paperclip">
-                  <i class="material-icons">attach file</i>
-                  </button>
-                </span>
-            </div>
-            <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
-          </div>
-        </div>-->
       </div>
 </div>
 <div class="container col-md-12 mrg-down">
@@ -477,11 +462,11 @@
                 <label class="control-label">Min No of Demands to be closed</label>
                 <input class="form-control" type="text">
               </div>-->
-              <button class="btn btn-primary data-button btn-text" ng-click="requirement()"><i class="fa fa-plus"  ></i>&nbsp;&nbsp;Requirement</button>
+              <button class="btn btn-primary data-button btn-text" ng-click="openRequirement()"><i class="fa fa-plus"  ></i>&nbsp;&nbsp;Requirement</button>
             </div>
             <div class="col-md-6 form-custom-padding">
               <div class="form-group label-floating is-empty">
-                <label class="control-label">Min No of Rquirements to be closed</label>
+                <label class="control-label">Min No of Requirements to be closed</label>
                 <input class="form-control" type="text">
               </div>
             </div>
@@ -490,65 +475,62 @@
       </div>
     </div>
   </div>
-  <div class="panel panel-default second-panel panelmrgs-prospect" ng-if="Requirement" >
-
-    <div class="panel-heading">
-      {{titlereq}}
-    </div>
-    <div class="panel-body">
-      <form name="Requirement">
-      <div class="col-md-12">
-        <div class="col-md-6 form-custom-padding">
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Skill</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Location</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Pay Rate</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">JD</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Shift</label>
-            <input class="form-control" type="text">
-          </div>
-        </div>
-        <div class="col-md-6 form-custom-padding">
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Experience</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">No of Positions</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Bill Rate</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Source of Requirment</label>
-            <input class="form-control" type="text">
-          </div>
-        </div>
+  <h3   style="color:#049ad9" ng-if="displayagreement" >All Requirements</h3><br>
+  <!--<div class=" container col-md-12 panel panel-default second-panel " >
+    &lt;!&ndash;<div class="panel-body del-pad">
+      <div class="row row-height">
+        <label class=" dropdown  pull-left ">
+          <input type="checkbox" class="checkbox-poss check-box-poss"   >
+        </label>
+        <label class=" btn-raised hand-cursor pull-right glyphicon glyphicon-plus add-button plus-fa " >
+        </label>
       </div>
-        </form>
-      <div class="col-md-6 col-md-offset-5">
-        <div class="form-group">
-          <a >
-            <button class="btn btn-primary data-button-cancel btn-text" ng-click="requirement('close')">Cancel</button>
-          </a>
-          <button class="btn btn-primary data-button btn-text">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
+    </div>&ndash;&gt;
 
+
+  </div>-->
+  <table class=" table-topdiv table table-bod m-n " ng-if="displayagreement"  >
+    <thead class="table-head " >
+    <tr>
+
+      <th class="table-th-heading"></th>
+      <th  class="table-th-heading">Req ID  <span ><img src="img/sort_icon.png"></span> </th>
+      <th class="table-th-heading">Client Name <span ><img src="img/sort_icon.png"></span></th>
+      <th class="table-th-heading">Positions <span ><img src="img/sort_icon.png"></span></th>
+      <th class="table-th-heading">SPOC <span ><img src="img/sort_icon.png"></span></th>
+      <th class="table-th-heading">Job Location</th>
+      <th class="table-th-heading">Added By</th>
+      <th class="table-th-heading">Prioritization</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr >
+      <td>
+
+        <div class="chekbox">
+          <label>
+            <input type="checkbox" class="poss">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+          </label>
+        </div>
+
+
+      </td>
+      <td >11W41ao532</td>
+      <td>lorem ipusum</td>
+      <td>5</td>
+      <td>lorem ipusum</td>
+      <td>Hyderabad</td>
+      <td>Delivery Manager</td>
+      <td>High</td>
+        </tr>
+    </tbody>
+  </table>
 </div>
+
+
+

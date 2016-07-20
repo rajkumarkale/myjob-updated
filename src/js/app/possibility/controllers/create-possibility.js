@@ -87,7 +87,8 @@ angular.module('com.module.possibility')
             document.getElementById('noEdit').style.pointerEvents = 'none';
 
                 if ($scope.isNewPossibility) {
-                    $scope.createPromise = asyncCreate();
+                    $scope.createPromise =$scope.create();
+
                     $state.go('app.viewPossibility');
                 } else {
                  $scope.update();
@@ -280,7 +281,7 @@ angular.module('com.module.possibility')
                 $scope.saleObject.pointOfContacts.splice(index, 1);
               }
               else{
-                
+
               var saleId=$scope.saleObject._id;
               var pocId=$scope.saleObject.pointOfContacts[index]._id;
               saleModuleService.deletePoc(saleId,pocId).then(function(response){

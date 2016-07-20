@@ -1,5 +1,5 @@
 angular.module('com.module.suspect')
-.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal','discussionService','$filter','$rootScope',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal,discussionService,$filter,$rootScope){
+.controller('suspectListController',['$scope','$state','toaster','$timeout','suspectService','CoreService','$modal','discussionService','$filter','$rootScope','possibilityCreateServices',function($scope,$state,toaster,$timeout,suspectService,CoreService,$modal,discussionService,$filter,$rootScope,possibilityCreateServices){
     $scope.selectedItem = [];
     $scope.filteredRows=[];
     $scope.sortType     = 'legal_name';
@@ -26,45 +26,18 @@ angular.module('com.module.suspect')
         }
         return false;
     };
-    /*$scope.selectAll = function () {
-	            for (var i = 0; i < $scope.filteredRows.length; i++) {
-	                $scope.filteredRows[i].isChecked = $scope.selectAllItems;
-	            }
-        $scope.select();
-	        };
-    $scope.selectEntity = function () {
-        $scope.select();
-	            for (var i = 0; i < $scope.filteredRows.length; i++) {
-	                if (!$scope.filteredRows[i].isChecked) {
-	                    $scope.selectAllItems = false;
-	                    return;
-	                }
-	            }
-	            $scope.selectAllItems = true;
-	        };
-    $scope.select= function () {
-	            for (var i = 0; i < $scope.filteredRows.length; i++) {
-	                if ($scope.filteredRows[i].isChecked) {
-                        $scope.isShow= true;
-	                    return;dateOptions
-	                }
-                    $scope.isShow= false;
-	            }
-
-	        };*/
       $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
         $scope.searchView   = '';
 		$scope.getSuspects = function(currentPage,numPerPage){
-		$scope.myPromise = suspectService.getSuspects(currentPage,numPerPage).then(function(response){
-				/*CoreService.toastSuccess('', 'SUSPECT Retrieved Successfully.');*/
-            console.log(response.data);
-			$scope.data.suspects = response.data.suspects;
-			$scope.data.totalItems = response.data.count;
-			$scope.data.COLD=response.data.cold?response.data.cold:0;
-			$scope.data.HOT=response.data.hot?response.data.hot:0;
-			$scope.data.WARM=response.data.warm?response.data.warm:0;
-		});
+            $scope.myPromise = possibilityCreateServices.getSalesData({stage:'SUSPECT'}).then(function (response) {
+                console.log("suspects", response);
+                $scope.data.suspects = response;
+                $scope.data.totalItems = response.length;
+                $scope.data.COLD = possibilityCreateServices.getStatusCount(response, 'suspect', 'COLD');
+                $scope.data.HOT = possibilityCreateServices.getStatusCount(response, 'suspect', 'HOT');
+                $scope.data.WARM = possibilityCreateServices.getStatusCount(response, 'suspect', 'WARM');
+            });
 		};
     $scope.sumStartDate=new Date();
     $scope.sumEndDate;

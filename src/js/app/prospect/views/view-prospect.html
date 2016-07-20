@@ -64,7 +64,7 @@
                 </span>
                     <div class="box-info">
                       <div class="met-closure">AGREEMENT <br> ON CLOSURE</div>
-                      <div class="met-num">0</div>
+                      <div class="met-num">{{data.agreement_on_closure}}</div>
 
                     </div>
                   </div>
@@ -229,8 +229,8 @@
               </div>
 
           </td>--->
-          <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">{{prospect.legal_name}}</td>
-          <td>{{prospect.client_unit_name}}</td>
+          <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">{{prospect.client.legalName}}</td>
+          <td>{{prospect.client.businessUnit}}</td>
           <td>{{prospect.annual_rate_no}}</td>
           <td>{{prospect.annual_rate_topline}}</td>
           <td>{{prospect.estimated_closure * 1000 |date}}</td>

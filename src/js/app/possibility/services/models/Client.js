@@ -7,7 +7,7 @@ function Client(modelData) {
     this.employeeSize = modelData.employeeSize;
     this.customerType = modelData.customerType;
     this.vertical = modelData.vertical;
-    this.address = {}
+    this.address = {};
     if (modelData.address) {
         this.address = {
             address1: modelData.address.address1,
@@ -23,4 +23,4 @@ function Client(modelData) {
 var module = angular.module('com.module.possibility');
 module.factory('ClientModel', function () {
     return Client;
-})
+});

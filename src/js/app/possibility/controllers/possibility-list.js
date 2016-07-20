@@ -73,7 +73,7 @@ angular.module('com.module.possibility')
                 $scope.data.notMet = possibilityCreateServices.getStatusCount(response, 'possibility', 'NOT_MET');
                 $scope.data.inactive = possibilityCreateServices.getStatusCount(response, 'possibility', 'INACTIVE');*/
             });
-            
+
         };
         $scope.sumStartDate = new Date();
         $scope.sumEndDate;
@@ -108,11 +108,6 @@ angular.module('com.module.possibility')
                     });
                 }
             }
-
-            $scope.myPromise = possibilityCreateService.deletePossibilities(id).then(function (response) {
-                console.log(response);
-                $state.reload('app.viewPossibility');
-            });
         };
         $scope.openEditPossibility = function (possibility) {
             console.log(possibility);

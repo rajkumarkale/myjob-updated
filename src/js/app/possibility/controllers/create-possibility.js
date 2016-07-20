@@ -24,7 +24,7 @@ angular.module('com.module.possibility')
 
             $scope.point_of_contacts = [];
             $scope.getNewPointofContact = function () {
-                var obj = new PointOfContact({});
+                var obj = new PointOfContactModel({});
                 $scope.saleObject.pointOfContacts.push(obj);
             };
 
@@ -88,10 +88,10 @@ angular.module('com.module.possibility')
 
                 if ($scope.isNewPossibility) {
                     $scope.createPromise = asyncCreate();
-                    /*$state.go('app.viewPossibility');*/
+                    $state.go('app.viewPossibility');
                 } else {
                     $scope.updatePromise = asyncUpdate();
-                   /* $state.go('app.viewPossibility');*/
+                    $state.go('app.viewPossibility');
                 }
 
         };
@@ -105,7 +105,7 @@ angular.module('com.module.possibility')
                         var obj = {};
                         obj.url = $scope.uploadFiles[i].url;
                         obj.type = $scope.uploadFiles[i].documentType;
-                        possibility.urls.push(obj);
+                      $scope.saleObject.documents.push(obj);
                     }
                 }
                  $scope.saleObject.update();
@@ -254,7 +254,7 @@ angular.module('com.module.possibility')
         };
 
         $scope.removeFilesDB = function (index) {
-            var id = $scope.createPossibility.documents[index]._id;
+            var id = $scope.saleObject.documents[index]._id;
             possibilityCreateService.deleteDocument(id).then(function (response) {
                 $scope.createPossibility.documents.splice(index, 1);
             });

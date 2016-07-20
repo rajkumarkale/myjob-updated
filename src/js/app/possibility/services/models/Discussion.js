@@ -19,4 +19,4 @@ Discussion.prototype.create = function (data,id) {
     });
 };
     return Discussion;
-})
+});

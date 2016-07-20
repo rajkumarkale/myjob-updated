@@ -64,7 +64,7 @@
 }
 .add-button{
   margin-top: 3px;
-  margin-right: 5px;
+  margin-right: 0px;
 }
 .table-up-mrg{
   margin-top: -15px;
@@ -98,7 +98,7 @@
   border-radius: 3px;
 }
 .date-pick-right-mrg{
-  margin-right: -35px;
+  margin-right: -39px;
   margin-bottom: 10px;
 }
 @media (min-width: 768px) {
@@ -228,3 +228,8 @@ div > div > svg > text {visibility: hidden;}
 
 .delete-color{
 color: #049ad9}
+
+.date-bottom-mrg{
+  margin-bottom: -25px !important;
+}
+

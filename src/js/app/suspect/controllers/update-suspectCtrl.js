@@ -175,9 +175,14 @@ angular.module('com.module.suspect')
         else {
             var saleId=$scope.saleObject._id;
             var pocId=$scope.saleObject.pointOfContacts[index]._id;
+          if($scope.saleObject.pointOfContacts[index]){
+            $scope.saleObject.pointOfContacts.splice(index, 1);
+          }
+          else{
             saleModuleService.deletePoc(saleId,pocId).then(function(response){
               $scope.saleObject.pointOfContacts.splice(index, 1);
             });
+          }
           }
       };
       console.log($scope.saleObject);

@@ -2,7 +2,7 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams', 'suspectService', '$http', '$state', 'Upload', '$q', 'CoreService', '$cookies', '$timeout', function ($scope, appConfig, $modal, $stateParams, suspectService, $http, $state, Upload, $q, CoreService, $cookies, $timeout) {
+    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams','$http', '$state', 'Upload', '$q', 'CoreService', '$cookies', '$timeout','PointOfContactModel', function ($scope, appConfig, $modal, $stateParams, $http, $state, Upload, $q, CoreService, $cookies, $timeout,PointOfContactModel) {
         $scope.met_status = 'MET';
         $scope.status = {
             open: true
@@ -41,7 +41,7 @@ angular.module('com.module.suspect')
         $scope.isEditable = false;
         $scope.title = "Client Information";
         $scope.createNewContactList = function () {
-            var obj = new PointOfContact({});
+            var obj = new PointOfContactModel({});
                 $scope.saleObject.pointOfContacts.push(obj);
         };
 
@@ -65,8 +65,8 @@ angular.module('com.module.suspect')
         };
         
         $scope.showRollOut = false;
-        $scope.$watch('status.selectedItem', function (n, o) {
-            if (n.key === 'HOT') {
+        $scope.$watch('saleObject.suspect', function (n, o) {
+            if (n=== 'HOT') {
                 $scope.showRollOut = true;
             } else {
                 $scope.showRollOut = false;

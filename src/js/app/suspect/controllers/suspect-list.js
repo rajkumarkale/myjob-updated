@@ -36,8 +36,8 @@ angular.module('com.module.suspect')
             $scope.data.hot = data.suspect.hot ? data.suspect.hot : 0;
             $scope.data.warm = data.suspect.warm ? data.suspect.warm : 0;
         });
-        /*$scope.getSuspects = function (currentPage, numPerPage) {
-            $scope.myPromise = possibilityCreateServices.getSalesData({
+        $scope.getSuspects = function (currentPage, numPerPage) {
+            $scope.myPromise = saleModuleService.getSalesData({
                 stage: 'SUSPECT'
             }).then(function (response) {
                 console.log("suspects", response);
@@ -45,7 +45,7 @@ angular.module('com.module.suspect')
                 $scope.data.totalItems = response.length;
 
             });
-        };*/
+        };
         $scope.sumStartDate = new Date();
         $scope.sumEndDate;
         $scope.getSuspectsByRange = function (currentPage, numPerPage) {
@@ -56,7 +56,7 @@ angular.module('com.module.suspect')
             if (date1 < date2) {
                 $scope.sumStartDate = $scope.start;
                 $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');
-                $scope.myPromise = suspectService.getSuspectsByRange(currentPage, numPerPage, date1, date2).then(function (response) {
+                $scope.myPromise = saleModuleService.getSalesDataByRange(currentPage, numPerPage, date1, date2).then(function (response) {
                     console.log(response.data);
                     $scope.data.suspects = response.data.suspects;
                     $scope.data.totalItems = response.data.count;
@@ -65,7 +65,7 @@ angular.module('com.module.suspect')
                 CoreService.toastError('', 'Satrt date should be less than end date.');
             }
         };
-        /*$scope.getSuspects($scope.data.currentPage, $scope.data.numPerPage);*/
+        $scope.getSuspects($scope.data.currentPage, $scope.data.numPerPage);
         $scope.openEditSuspect = function (suspect) {
             $state.go('app.create-suspect-view', {
                 suspect: suspect

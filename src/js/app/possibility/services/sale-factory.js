@@ -81,6 +81,13 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
         });
     };
     
+    var getDashboardData = function () {
+        return $http({
+            method: 'GET',
+            url: BASEURI + '/api/sale/stats'
+        });
+    };
+    
     return {
         getSalesData: getSalesData,
         getSalesDataByRange: getSalesDataByRange,
@@ -88,6 +95,7 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
         updateSale: updateSale,
         createDiscussion: createDiscussion,
         transfer:transfer,
-        share:share
+        share:share,
+        getDashboardData:getDashboardData
     };
 });

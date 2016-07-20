@@ -33,7 +33,7 @@ angular.module('com.module.suspect')
             $scope.contactType = appConfig.suspect.contactType;
             $scope.status = appConfig.suspect.status;
             $scope.supportArea = appConfig.suspect.supportArea;
-           
+
         };
 
         $scope.init();
@@ -63,7 +63,7 @@ angular.module('com.module.suspect')
             }
 
         };
-        
+
         $scope.showRollOut = false;
         $scope.$watch('saleObject.suspect', function (n, o) {
             if (n=== 'HOT') {
@@ -126,13 +126,9 @@ angular.module('com.module.suspect')
 
             }
         };
-        
-        $scope.submit = function () {
-                $scope.submitPromise = asyncSubmit();
-        };
+
         //Update Suspect
-        function asyncSubmit() {
-            return $q(function () {
+        $scope.submit=function () {
                 var files = [];
                 $scope.uploadFiles.map(function (obj) {
                     var file = {};
@@ -143,9 +139,12 @@ angular.module('com.module.suspect')
                 if (files.length > 0) {
                     $scope.saleObject.documents = files;
                 }
-                $scope.saleObject.update();
-            });
-        }
+          $scope.submitPromise= $scope.saleObject.update().then(function () {
+                  $state.go('app.suspect-view')
+
+                  }
+                );
+        };
 
         $scope.removeFiles = function (index) {
             $scope.uploadFiles.splice(index, 1);
@@ -172,4 +171,5 @@ angular.module('com.module.suspect')
         $scope.removeContact = function (index) {
             $scope.point_of_contacts.splice(index, 1);
         };
+      console.log($scope.saleObject);
   }]);

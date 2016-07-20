@@ -7,6 +7,7 @@ angular.module('com.module.possibility')
             key: "LOCAL",
             label: "Local"
         }];
+
             $scope.init = function ($stateParams) {
             $scope.isEditable = false;
             $scope.employeeSize = appConfig.possibility.employeeSize;
@@ -87,7 +88,7 @@ angular.module('com.module.possibility')
             document.getElementById('noEdit').style.pointerEvents = 'none';
 
                 if ($scope.isNewPossibility) {
-                    $scope.createPromise = asyncCreate();
+                    $scope.createPromise = $scope.create();
                     $state.go('app.viewPossibility');
                 } else {
                  $scope.update();
@@ -199,9 +200,11 @@ angular.module('com.module.possibility')
                             file.url = resp.data.url;
                             file.documentTypeOptions = angular.copy(appConfig.possibility.documentType);
                             $scope.uploadFiles.push(file);
-
+                          $scope.file_Name='';
                             $scope.fileName = file.name;
-
+                          for(var i=0;i<$scope.saleObject.documents.length;i++){
+                            $scope.file_Name=$scope.saleObject[i].url.substring($scope.saleObject[i].url.lastIndexOf('/')+1);
+                          }
                             if (file.name.length > 7) {
                                 $scope.fileNamePart1 = file.name.substring(0, 8);
                                 $scope.fileNameLen = file.name.length - 7;
@@ -280,7 +283,7 @@ angular.module('com.module.possibility')
                 $scope.saleObject.pointOfContacts.splice(index, 1);
               }
               else{
-                
+
               var saleId=$scope.saleObject._id;
               var pocId=$scope.saleObject.pointOfContacts[index]._id;
               saleModuleService.deletePoc(saleId,pocId).then(function(response){
@@ -289,4 +292,5 @@ angular.module('com.module.possibility')
             }}
         };
 
+console.log($scope.saleObject);
     }]);

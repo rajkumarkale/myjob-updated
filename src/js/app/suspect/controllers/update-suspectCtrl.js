@@ -7,21 +7,25 @@ angular.module('com.module.suspect')
         $scope.status = {
             open: true
         };
-        $scope.getCopy = function (obj) {
+        $scope.contactOptions = [{
+            key: "REMOTE",
+            label: "Remote"
+        }, {
+            key: "LOCAL",
+            label: "Local"
+        }];
+        /*$scope.getCopy = function (obj) {
             return angular.copy(obj);
         };
-
-        $scope.getNames = function (val) {
+*/
+        /*$scope.getNames = function (val) {
             return $http({
                 method: 'GET',
                 url: 'http://myjobs-node-server-dev.herokuapp.com' + '/api/users?name=' + val
             }).then(function (response) {
                 return response.data.users;
             });
-            /*suspectService.getNames(val).then(function(response){
-              return response.data.users;
-          });*/
-        };
+        };*/
 
         $scope.suspectTitle='Contact Details';
         $scope.setdata = function ($item, $model, $label, $event, $index) {
@@ -29,7 +33,7 @@ angular.module('com.module.suspect')
             var x = $item.poc_details;
             if (x) {
                 $("#contact" + $index + ' .is-empty').removeClass('is-empty');
-                $scope.point_of_contacts[$index]._id = x._id;
+                /*$scope.point_of_contacts[$index]._id = x._id;
                 $scope.point_of_contacts[$index].user_id = x.user_id;
                 $scope.point_of_contacts[$index].name = x.name;
                 $scope.point_of_contacts[$index].phone = x.phone;
@@ -45,7 +49,7 @@ angular.module('com.module.suspect')
                 } else if (x.support_type === 'BOTH') {
                     $scope.point_of_contacts[$index].local = true;
                     $scope.point_of_contacts[$index].remote = true;
-                }
+                }*/
                 //$scope.point_of_contacts[$index].support_type=x.support_type;
             }
 
@@ -58,11 +62,9 @@ angular.module('com.module.suspect')
             $scope.businessVertical = appConfig.possibility.businessVertical;
             $scope.customerType = appConfig.possibility.customerType;
             $scope.contactType = appConfig.suspect.contactType;
-            //$scope.supportArea = appConfig.suspect.supportArea;
             $scope.status = appConfig.suspect.status;
-            //$scope.contactType = appConfig.possibility.contactType;
             $scope.supportArea = appConfig.suspect.supportArea;
-            $scope.point_of_contacts = [{
+            /*$scope.point_of_contacts = [{
                 name: "",
                 designation: "",
                 phone: "",
@@ -72,16 +74,16 @@ angular.module('com.module.suspect')
                 supportArea: angular.copy(appConfig.suspect.supportArea),
                 supportLocation: '',
                 supportType: ''
-            }];
+            }];*/
         };
 
         $scope.init();
 
         $scope.isEditable = false;
 
-        $scope.createPossibility = {};
+        //$scope.createPossibility = {};
         $scope.title = "Client Information";
-        $scope.getSelectedItem = function (selectedItem, srcObj) {
+        /*$scope.getSelectedItem = function (selectedItem, srcObj) {
             var returnObj;
             angular.forEach(srcObj.data, function (obj) {
                 if (obj.displayText === selectedItem || obj.key === selectedItem) {
@@ -89,10 +91,10 @@ angular.module('com.module.suspect')
                 }
             });
             return returnObj;
-        };
+        };*/
 
         $scope.createNewContactList = function () {
-            var obj = {
+            /*var obj = {
                 name: "",
                 designation: "",
                 phone: "",
@@ -102,38 +104,37 @@ angular.module('com.module.suspect')
                 supportArea: angular.copy(appConfig.suspect.supportArea),
                 supportLocation: '',
                 supportType: ''
-            };
-            $scope.point_of_contacts.push(obj);
-            //$scope.support_array.push($scope.getCopy(appConfig.suspect.supportArea));
+            };*/
+            var obj = new PointOfContact({});
+                $scope.saleObject.pointOfContacts.push(obj);
         };
 
         if ($stateParams.suspect) {
             /*$scope.accessType=$stateParams.suspect.access_type;
             $scope.myPromise = suspectService.getSuspectById($stateParams.suspect.client_unit_id).then(function (response) {
                 console.log(response.data);*/
-            $scope.createPossibility = $stateParams.suspect;
-            $scope.suspect = $stateParams.suspect;
+            $scope.saleObject = $stateParams.suspect;
+            //$scope.suspect = $stateParams.suspect;
             // $scope.suspect = response.data.point_of_contacts[0];
             // $scope.support_type_local=false;
             //$scope.support_type_remote=false;
             //$scope.suspect_support_type=$scope.suspect.support_type;
-            $scope.createPossibility.employeeSize = $scope.getSelectedItem($scope.createPossibility.client.employeeSize, $scope.employeeSize).displayText;
+            /*$scope.createPossibility.employeeSize = $scope.getSelectedItem($scope.createPossibility.client.employeeSize, $scope.employeeSize).displayText;
             $scope.createPossibility.turnover = $scope.getSelectedItem($scope.createPossibility.client.turnover, $scope.groupTurnover).displayText;
             $scope.createPossibility.vertical = $scope.getSelectedItem($scope.createPossibility.client.vertical, $scope.businessVertical).displayText;
             $scope.createPossibility.customerType = $scope.getSelectedItem($scope.createPossibility.client.customerType, $scope.customerType).displayText;
-            /*$scope.createPossibility.POC =$scope.suspect;*/
-            $scope.status.selectedItem = $scope.getSelectedItem($scope.createPossibility.suspect, $scope.status);
+            $scope.status.selectedItem = $scope.getSelectedItem($scope.createPossibility.suspect, $scope.status);*/
             /*$scope.point_of_contacts=$scope.createPossibility.point_of_contacts;*/
-            $scope.createPossibility.pointOfContacts.map(function (Obj, i) {
-                if (i > 0) {
+            $scope.saleObject.pointOfContacts.map(function (Obj, i) {
+                /*if (i > 0) {
                     $scope.createNewContactList();
-                }
+                }*/
                 $timeout(function () {
                     $("#contact" + i + ' .is-empty').removeClass('is-empty');
                 }, 10);
                 /*$scope.point_of_contacts[i]._id=Obj._id;
                 $scope.point_of_contacts[i].user_id=Obj.user_id;*/
-                $scope.point_of_contacts[i].name = Obj.name;
+                /*$scope.point_of_contacts[i].name = Obj.name;
                 $scope.point_of_contacts[i].email = Obj.email;
                 $scope.point_of_contacts[i].designation = Obj.designation;
                 $scope.point_of_contacts[i].phone = Obj.phone;
@@ -154,7 +155,7 @@ angular.module('com.module.suspect')
                     $scope.point_of_contacts[i].local = true;
                     $scope.point_of_contacts[i].remote = true;
                 }
-                $scope.point_of_contacts[i].supportLocation = Obj.supportLocation;
+                $scope.point_of_contacts[i].supportLocation = Obj.supportLocation;*/
             });
         } else {
             $state.go('app.suspect-view');
@@ -167,15 +168,7 @@ angular.module('com.module.suspect')
             }
 
         };
-        /*$scope.editForm = function () {
-            if ($scope.createPossibility.isProspect !== true) {
-                $scope.isEditable = true;
-
-            }
-
-        };*/
-
-
+        
         $scope.showRollOut = false;
         $scope.$watch('status.selectedItem', function (n, o) {
             if (n.key === 'HOT') {
@@ -239,33 +232,31 @@ angular.module('com.module.suspect')
             }
         };
         
-        $scope.submit = function (suspect) {
-            if (suspect) {
-                $scope.submitPromise = asyncSubmit(suspect);
-            }
+        $scope.submit = function () {
+                $scope.submitPromise = asyncSubmit();
         };
         //Update Suspect
         function asyncSubmit() {
             return $q(function () {
-                var procObj = {};
-                suspect.pointOfContacts= [];
+               // var procObj = {};
+                //suspect.pointOfContacts= [];
                 var files = [];
-                $scope.point_of_contacts.map(function (pocObj) {
-                    var obj = {};
-                    if (pocObj._id) {
+              //  $scope.point_of_contacts.map(function (pocObj) {
+                   // var obj = {};
+                    /*if (pocObj._id) {
                         obj._id = pocObj._id;
-                    }
-                    obj.contactType = pocObj.contactType.selectedItem ? pocObj.contactType.selectedItem.key : null;
+                    }*/
+                    /*obj.contactType = pocObj.contactType.selectedItem ? pocObj.contactType.selectedItem.key : null;
                     if (pocObj.user_id) {
                         obj.user_id = pocObj.user_id;
-                    }
-                    obj.name = pocObj.name;
+                    }*/
+                    /*obj.name = pocObj.name;
                     obj.email = pocObj.email;
                     obj.supportArea = pocObj.supportArea.selectedItem ? pocObj.supportArea.selectedItem.key : null;
                     obj.designation = pocObj.designation;
-                    obj.phone = pocObj.phone;
+                    obj.phone = pocObj.phone;*/
 
-                    if (pocObj.local === true && pocObj.remote === true) {
+                    /*if (pocObj.local === true && pocObj.remote === true) {
                         obj.supportType = 'BOTH';
                     } else if (pocObj.local === true) {
                         obj.supportType = 'LOCAL';
@@ -273,9 +264,9 @@ angular.module('com.module.suspect')
                         obj.supportType = 'REMOTE';
                     }
                     requestPocObject.supportLocation = pocObj.supportLocation;
-                    suspect.pointOfContacts.push(obj);
-                });
-                suspect.suspect=$scope.status.selectedItem.key;
+                    suspect.pointOfContacts.push(obj);*/
+               // });
+                //suspect.suspect=$scope.status.selectedItem.key;
                 /*procObj.client_unit_id = $scope.createPossibility._id;
                 procObj.status = {
                     current_status_id: $scope.createPossibility.current_status._id,
@@ -288,17 +279,18 @@ angular.module('com.module.suspect')
                     files.push(file);
                 });
                 if (files.length > 0) {
-                    procObj.document = files;
+                    $scope.saleObject.documents = files;
                 }
                 //procObj.user_id = JSON.parse($cookies.userData).userDetails._id;
-                console.log(procObj);
-                $scope.myPromise = suspectService.suspectUpdate(procObj).then(function (response) {
-                    /*CoreService.toastSuccess('','SUSPECT Updated Successfully.');*/
+               // console.log(procObj);
+                /*$scope.myPromise = suspectService.suspectUpdate(procObj).then(function (response) {
+                    CoreService.toastSuccess('','SUSPECT Updated Successfully.');
                     console.log(response.data);
                     $state.go('app.suspect-view');
-                });
+                });*/
                 //console.log($scope.point_of_contacts);
                 /*console.log($scope.support_array);*/
+                $scope.saleObject.update();
             });
         }
 
@@ -307,16 +299,16 @@ angular.module('com.module.suspect')
         };
 
         $scope.editForm = function () {
-            if ($scope.createPossibility.isProspect !== true && $scope.accessType !== 'view') {
+            if ($scope.saleObject.prospect && $scope.accessType !== 'view') {
                 $scope.isEditable = true;
                 $scope.suspectTitle='Edit Contact Details';
             }
         };
         $scope.isValid = function (val) {
             var c1 = true;
-            if ($scope.point_of_contacts.length > 0) {
-                for (var i = 0; i < $scope.point_of_contacts.length; i++) {
-                    if (!($scope.point_of_contacts[i].contactType.selectedItem && $scope.point_of_contacts[i].supportArea.selectedItem)) {
+            if ($scope.saleObject.pointOfContacts.length > 0) {
+                for (var i = 0; i < $scope.saleObject.pointOfContacts.length; i++) {
+                    if (!($scope.saleObject.pointOfContacts[i].contactType && $scope.saleObject.pointOfContacts[i].supportArea)) {
                         c1 = false;
                         break;
                     }

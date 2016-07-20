@@ -1,11 +1,10 @@
 angular.module('com.module.possibility')
-    .controller('possibilityListController', ['$scope', '$state', 'toaster', '$timeout', 'possibilityCreateServices', '$cookies', 'discussionService', 'CoreService', '$filter', '$rootScope', function ($scope, $state, toaster, $timeout, possibilityCreateServices, $cookies, discussionService, CoreService, $filter, $rootScope) {
+    .controller('possibilityListController', ['$scope', '$state', 'toaster', '$timeout', 'possibilityCreateServices','possibilityCreateService' ,'$cookies', 'discussionService', 'CoreService', '$filter', '$rootScope', function ($scope, $state, toaster, $timeout, possibilityCreateServices,possibilityCreateService, $cookies, discussionService, CoreService, $filter, $rootScope) {
         $scope.selectedItem = [];
         $scope.filteredRows = [];
         $scope.sortType = 'legal_name';
         $scope.sortReverse = false;
         $scope.setSelectedClient = function (item) {
-            /*var id = this.company.id;*/
             if (_.contains($scope.selectedItem, item)) {
                 $scope.selectedItem = _.without($scope.selectedItem, item);
             } else {
@@ -82,20 +81,19 @@ angular.module('com.module.possibility')
         $scope.getPossibilityByRange = function (currentPage, numPerPage) {
 
             var st = $filter('date')($scope.start, 'MM/dd/yyyy');
-            var date1 = Math.round(new Date(st).getTime() / 1000);
+            var date1 = new Date(st).getTime();
             var ed = $filter('date')($scope.end, 'MM/dd/yyyy');
-            var date2 = Math.round(new Date(ed).getTime() / 1000);
+            var date2 = new Date(ed).getTime();
             if (date1 < date2) {
                 $scope.sumStartDate = $scope.start;
                 $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');
                 $scope.myPromise = possibilityCreateService.getPossibilityByRange(currentPage, numPerPage, date1, date2).then(function (response) {
-                    /*CoreService.toastSuccess('', 'POSSIBILITY Retrieved Successfully.');*/
-                    $scope.data.possibilities = response.data.possibilities;
-                    //console.log($scope.data.possibilities);
-                    $scope.data.totalItems = response.data.count;
-                    $scope.data.met = response.data.met ? response.data.met : 0;
-                    $scope.data.notMet = response.data.not_met ? response.data.not_met : 0;
-                    $scope.data.inactive = response.data.inactive ? response.data.inactive : 0;
+                    console.log("possible", response);
+                $scope.data.possibilities = response;
+                /*$scope.data.totalItems = response.length;
+                $scope.data.met = possibilityCreateServices.getStatusCount(response, 'possibility', 'MET');
+                $scope.data.notMet = possibilityCreateServices.getStatusCount(response, 'possibility', 'NOT_MET');
+                $scope.data.inactive = possibilityCreateServices.getStatusCount(response, 'possibility', 'INACTIVE');*/
 
                 });
             } else {

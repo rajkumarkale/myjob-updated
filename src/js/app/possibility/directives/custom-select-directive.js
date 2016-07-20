@@ -8,11 +8,13 @@ angular.module('com.module.possibility').directive('customSelect',[function (){
     templateUrl:'js/app/possibility/views/custom-select-template.html',
     replace:true,
    link:function(s){
+       
+       var options=angular.copy(s.data)
         angular.element(document).click(function(){
   var parent = angular.element('.select');
             parent.removeClass('is-open');
 });
-     s.dataList=s.data;
+     s.dataList=options;
        
         s.dataList.data.forEach(function(item){
             if(item.key==s.value){

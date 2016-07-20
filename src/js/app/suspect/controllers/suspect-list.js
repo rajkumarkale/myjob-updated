@@ -56,7 +56,7 @@ angular.module('com.module.suspect')
         $scope.sortReverse  = false;
         $scope.searchView   = '';
 		$scope.getSuspects = function(currentPage,numPerPage){
-            $scope.myPromise = possibilityCreateServices.getSalesData().then(function (response) {
+            $scope.myPromise = possibilityCreateServices.getSalesData({stage:'SUSPECT'}).then(function (response) {
                 console.log("suspects", response);
                 $scope.data.suspects = response;
                 $scope.data.totalItems = response.length;

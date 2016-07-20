@@ -1,8 +1,13 @@
 angular.module('com.module.possibility')
-    .controller('createPossibilityController', ['$scope', 'toaster', '$state', '$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies', '$q', 'CoreService', '$filter', '$timeout', 'SaleModel', 'PointOfContactModel','DiscussionModel', function ($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies, $q, CoreService, $filter, $timeout, SaleModel, PointOfContactModel,DiscussionModel) {
-        console.log("Sale Model,", SaleModel);
-        $scope.contactOptions=[{key:"REMOTE",label:"Remote"},{key:"LOCAL",label:"Local"}];
-        
+    .controller('createPossibilityController', ['$scope', 'toaster', '$state', '$stateParams', 'FileUploader', 'possibilityCreateService', 'Upload', '$modal', 'appConfig', '$cookies', '$q', 'CoreService', '$filter', '$timeout', 'SaleModel', 'PointOfContactModel', 'DiscussionModel', function ($scope, toaster, $state, $stateParams, FileUploader, possibilityCreateService, Upload, $modal, appConfig, $cookies, $q, CoreService, $filter, $timeout, SaleModel, PointOfContactModel, DiscussionModel) {
+        $scope.contactOptions = [{
+            key: "REMOTE",
+            label: "Remote"
+        }, {
+            key: "LOCAL",
+            label: "Local"
+        }];
+
 
         $scope.init = function ($stateParams) {
             $scope.isEditable = false;
@@ -20,22 +25,25 @@ angular.module('com.module.possibility')
             $scope.uploadFile = [];
 
             $scope.point_of_contacts = [];
-            $scope.getNewPointofContact = function () {  
+            $scope.getNewPointofContact = function () {
                 var obj = new PointOfContact({});
+               // obj.contactType=$scope.contactType;
                 $scope.saleObject.pointOfContacts.push(obj);
             };
 
             if ($stateParams.possibility) {
-                $scope.saleObject=$stateParams.possibility;
+                $scope.saleObject = $stateParams.possibility;
                 $scope.title = "Possibility";
-                $scope.freshDiscussion=$scope.saleObject.discussions[0];
-                
+                $scope.freshDiscussion = $scope.saleObject.discussions[0];
+                var time = $filter('date')($scope.freshDiscussion.timeOfDiscussion, 'HH:mm a');
+                var date = $filter('date')($scope.freshDiscussion.timeOfDiscussion, 'MM/dd/yyyy');
+                $scope.discussion.date=date;
                 $timeout(function () {
                     $("#dname").removeClass('is-empty');
                     $("#dvenue").removeClass('is-empty');
                     $('#myTime').val(time);
                 }, 1000);
-                
+
                 $scope.isNewPossibility = false;
 
             } else {
@@ -48,7 +56,7 @@ angular.module('com.module.possibility')
                 $scope.saleObject.pointOfContacts = [primaryContact];
                 $scope.freshDiscussion = new DiscussionModel({});
                 $scope.saleObject.discussions = [$scope.freshDiscussion];
-                
+
                 $scope.discussion.time = new Date();
                 $scope.groupTurnover.selectedItem = '';
                 $scope.businessVertical.selectedItem = '';
@@ -59,7 +67,7 @@ angular.module('com.module.possibility')
                     "displayText": "NOT MET"
 
                 };
-                
+
                 $timeout(function () {
                     $('#stat .select ul').remove();
                     $('#stat .select .placeholder').addClass('default-cursor');
@@ -79,35 +87,35 @@ angular.module('com.module.possibility')
             }*/
             $scope.uploads($scope.file);
         });
-        
-        
+
+
         //On clicking Update or Save button
         $scope.save = function () {
-            asyncCreate();
-            /*document.getElementById('noEdit').style.pointerEvents = 'none';
-            if (possibility) {
+            document.getElementById('noEdit').style.pointerEvents = 'none';
+            
                 if ($scope.isNewPossibility) {
-                    $scope.createPromise = asyncCreate(possibility);
+                    $scope.createPromise = asyncCreate();
+                    /*$state.go('app.viewPossibility');*/
                 } else {
-                    $scope.updatePromise = asyncUpdate(possibility);
+                    $scope.updatePromise = asyncUpdate();
+                   /* $state.go('app.viewPossibility');*/
                 }
-            }*/
+            
         };
 
         //Updating Existing Possibility
-        function asyncUpdate(possibility) {
+        function asyncUpdate() {
             return $q(function () {
-                possibility.user_id = JSON.parse($cookies.userData).userDetails._id;
-                
-                possibility.urls = [];
+                $scope.saleObject.documents = [];
                 if ($scope.uploadFiles && $scope.uploadFiles.length) {
                     for (var i = 0; i < $scope.uploadFiles.length; i++) {
                         var obj = {};
                         obj.url = $scope.uploadFiles[i].url;
-                        obj.type = $scope.uploadFiles[i].documentType.selectedItem.key;
+                        obj.type = $scope.uploadFiles[i].documentType;
                         possibility.urls.push(obj);
                     }
                 }
+                 $scope.saleObject.update();
             });
         }
 
@@ -115,12 +123,12 @@ angular.module('com.module.possibility')
         $scope.isValid = function (val) {
             var c1;
             var c2 = true;
-            c1 = (val && ($scope.businessVertical.selectedItem && $scope.employeeSize.selectedItem && $scope.groupTurnover.selectedItem &&
-                $scope.customerType.selectedItem));
+            c1 = (val && ($scope.saleObject.client.vertical && $scope.saleObject.client.employeeSize && $scope.saleObject.client.turnover &&
+                $scope.saleObject.client.customerType));
             if ($scope.uploadFiles && $scope.uploadFiles.length) {
                 for (var i = 0; i < $scope.uploadFiles.length; i++) {
 
-                    if (!$scope.uploadFiles[i].documentType.selectedItem.key) {
+                    if (!$scope.uploadFiles[i].documentType) {
                         c2 = false;
                     }
                 }
@@ -131,27 +139,28 @@ angular.module('com.module.possibility')
         //Creating new possibility
         function asyncCreate() {
             return $q(function () {
-                
                 $scope.saleObject.documents = [];
 
                 if ($scope.uploadFiles && $scope.uploadFiles.length) {
                     for (var i = 0; i < $scope.uploadFiles.length; i++) {
                         var obj = {};
                         obj.url = $scope.uploadFiles[i].url;
-                        obj.type = $scope.uploadFiles[i].documentType.selectedItem.key;
+                        obj.type = $scope.uploadFiles[i].documentType;
                         $scope.saleObject.documents.push(obj);
                     }
                 }
-                
+
                 var time = $filter('date')($scope.discussion.time, 'HH:mm:ss');
                 var date = $filter('date')($scope.discussion.date, 'MM/dd/yyyy');
                 var dtstring = date + ' ' + time;
                 var timestamp = new Date(dtstring).getTime();
                 $scope.freshDiscussion.timeOfDiscussion = timestamp;
                 if ($scope.uploadFile.length > 0) {
-                    $scope.freshDiscussion.documents = [{url:$scope.uploadFile[0][0].url}];
+                    $scope.freshDiscussion.documents = [{
+                        url: $scope.uploadFile[0][0].url
+                    }];
                 }
-                
+
                 $scope.saleObject.save();
             });
         };
@@ -190,7 +199,7 @@ angular.module('com.module.possibility')
                             }
                         }).then(function (resp) {
                             file.url = resp.data.url;
-                            file.documentType = angular.copy(appConfig.possibility.documentType);
+                            file.documentTypeOptions = angular.copy(appConfig.possibility.documentType);
                             $scope.uploadFiles.push(file);
 
                             $scope.fileName = file.name;
@@ -268,7 +277,7 @@ angular.module('com.module.possibility')
             if (index == 0) {
                 CoreService.toastError('', 'New Possibility should have primary contact');
             } else {
-                $scope.point_of_contacts.splice(index, 1);
+                $scope.saleObject.pointOfContacts.splice(index, 1);
             }
         };
 

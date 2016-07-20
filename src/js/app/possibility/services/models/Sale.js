@@ -1,8 +1,7 @@
 var module = angular.module('com.module.possibility');
 module.factory('SaleModel', function (ClientModel, DiscussionModel, PointOfContactModel,possibilityCreateService) {
     function Sale(modelData) {
-        this._id = modelData.id;
-        this.owner = modelData.owner;
+        this._id = modelData._id;
         this.createdBY = modelData.createdBY;
         this.transferedBy = modelData.transferedBy;
         this.possibility = modelData.possibility;

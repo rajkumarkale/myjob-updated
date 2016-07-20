@@ -167,9 +167,9 @@
           </thead>
           <tbody>
           <tr data-ng-repeat="suspect in filteredRows= (data.suspects | orderBy:sortType:sortReverse |companyFilter:selectedItem) | filter:$root.searchView"  >
-        <td class="hand-cursor td-text-color" ng-click="openEditSuspect(suspect)">{{suspect.client.legalName}}</td>{{suspect}}
-        <td>{{suspect.client.unitName}}</td>
-        <td>{{suspect.client.location}}</td>
+        <td class="hand-cursor td-text-color" ng-click="openEditSuspect(suspect)">{{suspect.client.legalName}}</td>
+        <td>{{suspect.client.businessUnit}}</td>
+        <td>{{suspect.client.address.city}}</td>
         <td>{{suspect.getPrimaryContact().name}}</td>
         <td>{{suspect.getPrimaryContact().designation}}</td>
         <td>{{suspect.getPrimaryContact().phone}}</td>

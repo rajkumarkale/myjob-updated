@@ -2,6 +2,7 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.empanelment')
+
   .controller('viewEmpanelmentCtrl',['$scope','discussionService','$state','saleModuleService',function($scope,discussionService,$state,saleModuleService){
       $scope.data={};
       $scope.openDiscussions = function(possibility){
@@ -25,6 +26,7 @@ angular.module('com.module.empanelment')
         $scope.opened1 = false;
       }
     };
+
       saleModuleService.getDashboardData().then(function (response) {
             var data = response.data;
           console.log(data.empanelment.count);

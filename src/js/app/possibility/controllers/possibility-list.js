@@ -76,7 +76,7 @@ angular.module('com.module.possibility')
                 console.log("possible", response);
                 $scope.data.possibilities = response;
             });
-            
+
         };
         $scope.sumStartDate = new Date();
         $scope.sumEndDate;
@@ -111,11 +111,6 @@ angular.module('com.module.possibility')
                     });
                 }
             }
-
-            $scope.myPromise = possibilityCreateService.deletePossibilities(id).then(function (response) {
-                console.log(response);
-                $state.reload('app.viewPossibility');
-            });
         };
         $scope.openEditPossibility = function (possibility) {
             console.log(possibility);

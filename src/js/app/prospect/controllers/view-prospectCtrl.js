@@ -110,6 +110,8 @@ angular.module('com.module.prospect')
                 status: status
             });
         };
+        $scope.sumStartDate = new Date();
+        $scope.sumEndDate;
         $scope.getProspectsByRange = function (currentPage, numPerPage) {
             var st = $filter('date')($scope.start, 'MM/dd/yyyy');
             var date1 = new Date(st).getTime();
@@ -128,7 +130,7 @@ angular.module('com.module.prospect')
                     $scope.data.totalItems = response.length;
                 });
             } else {
-                CoreService.toastError('', 'Satrt date should be less than end date.');
+                CoreService.toastError('', 'Satrt date should be less than End date.');
             }
         };
         $scope.openShare = function (tpl) {

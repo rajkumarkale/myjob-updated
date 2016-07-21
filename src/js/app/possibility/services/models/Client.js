@@ -5,8 +5,8 @@ function Client(modelData) {
     //this.revenue = modelData.revenue;
     this.turnover = modelData.turnover;
     this.employeeSize = modelData.employeeSize;
-    this.customerType = modelData.customerType;
     this.vertical = modelData.vertical;
+    this.customerType = modelData.customerType;
     this.address = {};
     if (modelData.address) {
         this.address = {

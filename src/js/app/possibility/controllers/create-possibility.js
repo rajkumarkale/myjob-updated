@@ -24,7 +24,7 @@ angular.module('com.module.possibility')
             $scope.uploadFiles = [];
             $scope.uploadFile = [];
 
-            $scope.point_of_contacts = [];
+           // $scope.point_of_contacts = [];
             $scope.getNewPointofContact = function () {
                 var obj = new PointOfContactModel({});
                 $scope.saleObject.pointOfContacts.push(obj);
@@ -59,6 +59,7 @@ angular.module('com.module.possibility')
                 $scope.groupTurnover.selectedItem = '';
                 $scope.businessVertical.selectedItem = '';
                 $scope.customerType.selectedItem = '';
+                $scope.employeeSize.selectedItem='';
                 $scope.typeOfDiscussion.selectedItem = '';
                 $scope.status.selectedItem = {
                     "key": "NOT_MET",

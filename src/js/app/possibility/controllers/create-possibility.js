@@ -15,6 +15,7 @@ angular.module('com.module.possibility')
             $scope.businessVertical = appConfig.possibility.businessVertical;
             $scope.customerType = appConfig.possibility.customerType;
             $scope.contactType = appConfig.possibility.contactType;
+            $scope.documentType = appConfig.possibility.documentType;
             $scope.status = appConfig.possibility.status;
             $scope.typeOfDiscussion = appConfig.discussion.typeOfDiscussion;
 
@@ -199,11 +200,7 @@ angular.module('com.module.possibility')
                             file.url = resp.data.url;
                             file.documentTypeOptions = angular.copy(appConfig.possibility.documentType);
                             $scope.uploadFiles.push(file);
-                          $scope.file_Name='';
                             $scope.fileName = file.name;
-                          for(var i=0;i<$scope.saleObject.documents.length;i++){
-                            $scope.file_Name=$scope.saleObject[i].url.substring($scope.saleObject[i].url.lastIndexOf('/')+1);
-                          }
                             if (file.name.length > 7) {
                                 $scope.fileNamePart1 = file.name.substring(0, 8);
                                 $scope.fileNameLen = file.name.length - 7;
@@ -291,5 +288,16 @@ angular.module('com.module.possibility')
             }}
         };
 
-console.log($scope.saleObject);
-    }]);
+    }])
+  .filter('nameFilter',function(){
+    return function(name){
+      if(name){
+        var name=name.substring(name.lastIndexOf('/')+1);
+       var  name=name.substring(0,10);
+        return  name;
+      }
+    }
+
+
+  });
+

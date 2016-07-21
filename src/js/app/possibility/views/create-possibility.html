@@ -129,14 +129,17 @@
                                         <div class="preview-div">
                                             <div class="col-md-2">
                                                 <div class="previews">
-                                                    <img ng-src="{{f.url}}" class="preview-img">
+                                                  <!--  <img ng-src="{{f.url}}" class="preview-img">-->
                                                     <a class="remove" data-ng-click="removeFilesDB($index)"></a>
-                                                    <span tooltip="{{f.name}}">{{::fileName}}</span>
+                                                    <span tooltip="{{f.name}}">{{f.url | nameFilter}}</span>
 
                                                 </div>
-
+                                              <div class="form-group">
+                                                <div class="preview-select" custom-select data="documentType" value="f.type">
+                                                </div>
+                                              </div>
                                                 <div class="preview-select">
-                                                    <input class="form-control" data-ng-model="f.type">
+
 
                                                 </div>
                                             </div>

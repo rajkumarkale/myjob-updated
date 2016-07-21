@@ -288,16 +288,5 @@ angular.module('com.module.possibility')
             }}
         };
 
-    }])
-  .filter('nameFilter',function(){
-    return function(name){
-      if(name){
-        var name=name.substring(name.lastIndexOf('/')+1);
-       var  name=name.substring(0,10);
-        return  name;
-      }
-    }
-
-
-  });
+    }]);
 

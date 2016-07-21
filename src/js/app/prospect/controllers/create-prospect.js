@@ -3,14 +3,14 @@ angular.module('com.module.prospect')
   $scope.values=appConfig.prospect.typeOfBusiness;
   $scope.status_prospect=appConfig.prospect.status_prospect;
   $scope.status=appConfig.suspect.status;
-  $scope.displayagreement=false;
+  $scope.displayagreement=true;
   $scope.status_lost=false;
-  $scope.$watch('status_prospect.selectedItem',function(n,o){
-    if(n.key==='Agreement_On_Closure'){
+  $scope.$watch('saleObject.prospect',function(n,o){
+    if(n==='Agreement_On_Closure'){
       $scope.title='Agreement on Closure';
       $scope.displayagreement=true;
       $scope.status_lost=false;
-    }else if(n.key==='LOST'){
+    }else if(n==='LOST'){
       $scope.status_lost=true;
       $scope.displayagreement=false;
       }

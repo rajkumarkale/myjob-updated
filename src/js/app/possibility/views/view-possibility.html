@@ -53,18 +53,20 @@
           <div class="pull-right overall-pad date-pick-right-mrg">
             <form  name="form" class="form-inline" novalidate>
               <div class="present">
-                <input type="text" class="form-control bord-given" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="start" is-open="opened1"
-                        show-button-bar="false" ng-required="true">
-                <div class="calendar-reset"><img src="img/calendar_icon.png" alt="" ng-click="open($event,'opened1')"/></div>
+                <div class="input-group col-md-4" style="margin-right: 10px">
 
-              <div class="second-dateinput">
-                <label  class="labels-dates poss-mrg">To</label>
-                <input type="text" class="form-control bord-given" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="end" is-open="opened2"
-                        show-button-bar="false" ng-required="true">
-                <div class="secondcalendar-reset"><img src="img/calendar_icon.png" alt="" ng-click="open($event,'opened2')"/></div>
+                  <input type="text" class="form-control bord-given " aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="start" is-open="opened1"
+                         show-button-bar="false" ng-required="true" style="padding-left: 6px">
+                  <span class="input-group-addon cal-img hand-cursor" ng-click="open($event,'opened1')"><img src="img/calendar_icon.png" alt=""  /></span>
+                </div>
+                <div class="input-group col-md-4" style="margin-right: 6px">
+
+                  <input type="text" class="form-control bord-given " aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="end" is-open="opened2"
+                         show-button-bar="false" ng-required="true" style="padding-left: 6px">
+                  <span class="input-group-addon cal-img hand-cursor" ng-click="open($event,'opened2')"><img src="img/calendar_icon.png" alt=""  /></span>
+                </div>
+                <button class="btn btn-primary btn-raised filter " data-ng-click="getPossibilityByRange(data.currentPage,data.numPerPage)">Go</button>
               </div>
-              </div>
-              <button class="btn btn-primary btn-raised filter  refactor" data-ng-click="getPossibilityByRange(data.currentPage,data.numPerPage)">Go</button>
             </form>
           </div>
         </div>

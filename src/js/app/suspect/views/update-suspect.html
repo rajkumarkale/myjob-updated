@@ -15,12 +15,10 @@
                             <div>
                                 <label class="control-label">Bussiness Vertical</label>
 
-                                <!--<input class="form-control" data-ng-model="createPossibility.client.vertical" type="text">-->
                                 <div custom-select data="businessVertical" value="saleObject.client.vertical"></div>
                             </div>
                             <div>
                                 <label class="control-label">Employee Size of the Company</label>
-                                <!--<input class="form-control" required data-ng-model="createPossibility.client.employeeSize" type="text">-->
                                 <div custom-select data="employeeSize" value="saleObject.client.employeeSize" tabindex="5"></div>
                             </div>
                             <div class="form-group label-floating ">
@@ -40,10 +38,6 @@
                                 <input class="form-control" required data-ng-model="saleObject.client.address.country" type="text">
                             </div>
                             <div class="up-margin">
-                                <ul>
-                                    <li ng-repeat="f in saleObject.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-                                        <img ng-src="{{f.url}}" class="thumb"></li>
-                                </ul>
                             </div>
                         </div>
                         <div class="col-md-6 form-custom-padding">
@@ -85,7 +79,28 @@
                                 <label class=" first-class2 ">Freeze</label>
                             </div>-->
                         </div>
+
                     </div>
+                  <ul>
+                    <div ng-repeat="f in saleObject.documents" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
+                      <div class="preview-div">
+                        <div class="col-md-2">
+                          <div class="previews">
+                            <span tooltip="{{f.name}}">{{f.url | nameFilter}}</span>
+
+                          </div>
+                          <div class="form-group">
+                            <input class="no-border" type="text" ng-model="f.type">
+                          </div>
+                        </div>
+                        <div class="preview-select">
+
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </ul>
                 </div>
             </form>
         </accordion-group>

@@ -190,7 +190,7 @@ angular.module('com.module.suspect')
       for(var i=0;i<$scope.saleObject.documents.length;i++)
       {
         if($scope.saleObject.documents[i].stage==='SUSPECT'){
-          $scope.rollOutFile.push($scope.saleObject.documents[i-1]);
+          $scope.rollOutFile.push($scope.saleObject.documents[i]);
         }
       }
       console.log($scope.saleObject);

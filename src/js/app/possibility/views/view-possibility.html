@@ -94,7 +94,7 @@
       <tbody>
       <tr data-ng-repeat="possibility in filteredRows= (data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem) | filter:$root.searchView" >
         <td>
-          <p style="border-radius: 50%;color: transparent;" ng-class="statusColor(possibility.possibility)"> 0</p>
+          <p style="border-radius: 50%;color: transparent;" ng-class="statusColor(possibility.possibility)"> </p>
           <p class=" " ng-class="statusColor(suspect.status)"></p>
         </td>
         <td class="hand-cursor td-text-color" data-ng-click="openEditPossibility(possibility)">{{possibility.client.legalName}}</td>

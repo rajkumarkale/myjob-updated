@@ -3,7 +3,7 @@ angular.module('com.module.prospect')
   $scope.values=appConfig.prospect.typeOfBusiness;
   $scope.status_prospect=appConfig.prospect.status_prospect;
   $scope.status=appConfig.suspect.status;
-  $scope.displayagreement=false;
+  $scope.displayagreement=true;
   $scope.status_lost=false;
   $scope.$watch('status_prospect.selectedItem',function(n,o){
     if(n.key==='Agreement_On_Closure'){

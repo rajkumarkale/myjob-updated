@@ -40,6 +40,16 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
             data: data
         });
     };
+    
+    var viewDiscussions = function (saleId,stage) {
+        return $http({
+            method: 'GET',
+            params:{
+                stage:stage
+            },
+            url: BASEURI + '/api/sale/' + saleId + '/discussions'
+        });
+    };
 
     var share = function (saleId, shareToId,permission) {
         return $http({
@@ -92,6 +102,7 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
         share:share,
         getDashboardData:getDashboardData,
         deleteDocument:deleteDocument,
-        deletePoc:deletePoc
+        deletePoc:deletePoc,
+        viewDiscussions:viewDiscussions
     };
 });

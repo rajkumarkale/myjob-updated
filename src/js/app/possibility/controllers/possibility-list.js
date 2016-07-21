@@ -59,9 +59,9 @@ angular.module('com.module.possibility')
                 possibility: possibility
             });
         };
-        $scope.openDiscussions = function (possibility) {
+        $scope.openDiscussions = function (possibility,status) {
             discussionService.setData(possibility);
-            $state.go('app.viewDiscussions');
+            $state.go('app.viewDiscussions',{status:status});
         };
         $scope.statusColor = function (status) {
             switch (status) {

@@ -104,9 +104,9 @@ angular.module('com.module.prospect')
                 $scope.data.prospects = response;
                 $scope.data.totalItems = response.length;
             });
-    $scope.openDiscussions = function(prospect){
+    $scope.openDiscussions = function(prospect,status){
                 discussionService.setData(prospect);
-				$state.go('app.viewDiscussions');
+				$state.go('app.viewDiscussions',{status:status});
 		};
     $scope.getProspectsByRange = function (currentPage, numPerPage) {
             var st = $filter('date')($scope.start, 'MM/dd/yyyy');

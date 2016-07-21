@@ -76,9 +76,9 @@ angular.module('com.module.suspect')
             });
 
         };
-        $scope.openDiscussions = function (suspect) {
+        $scope.openDiscussions = function (suspect,status) {
             discussionService.setData(suspect);
-            $state.go('app.viewDiscussions');
+            $state.go('app.viewDiscussions',{status:status});
         };
         $scope.statusColor = function (status) {
             switch (status) {

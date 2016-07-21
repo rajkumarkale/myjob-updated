@@ -1,10 +1,16 @@
 angular.module('com.module.prospect')
-.controller('viewDiscussionCtrl',['$scope','possibilityCreateService','discussionService','$cookies','$modal',function($scope,possibilityCreateService,discussionService,$cookies,$modal){
+.controller('viewDiscussionCtrl',['$scope','possibilityCreateService','discussionService','$cookies','$modal','$stateParams','saleModuleService',function($scope,possibilityCreateService,discussionService,$cookies,$modal,$stateParams,saleModuleService){
     $scope.data=discussionService.getData();
     $scope.userId=JSON.parse($cookies.userData).userDetails._id;
+    $scope.showAddButton=($stateParams.status===$scope.data.stage);
     $scope.sortType='timeOfDiscussion';
     $scope.reverse=true;
-    $scope.discussions=$scope.data.discussions;
+    
+    saleModuleService.viewDiscussions($scope.data._id,$stateParams.status).then(function(response){
+        $scope.discussions=response.data;
+    })
+    
+    
     $scope.download=function(url){
         var filename = url.substring(url.lastIndexOf('/')+1);
         console.log(filename);

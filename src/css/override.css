@@ -260,3 +260,11 @@ color: #049ad9}
   border: 0;
   background: white !important;
 }
+.age-select .select{min-width: 100% !important;}
+.p-0{padding: 0px;margin: -1px}
+.present .dropdown-menu table > tbody > tr > td .btn.btn-sm {color: #636363 !important;}
+.form-group .checkbox label, .form-group .radio label, .form-group  .age-text {
+  font-size: 12px !important; color:#5c5d5b;}
+.space-age{margin-top: 40px}
+.space-top{margin-top: 74px}
+.font-ind{font-size: 16px}

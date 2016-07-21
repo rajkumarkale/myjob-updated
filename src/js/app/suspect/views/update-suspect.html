@@ -91,9 +91,9 @@
         </accordion-group>
     </accordion>
 </div>
-<div class="text-right m-t-sm m-r-xs">
+<!--<div class="text-right m-t-sm m-r-xs">
     <button class="btn btn-primary edit-button mrg-edit" data-ng-show="editForm()"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
-</div>
+</div>-->
 
 
 <div class="container col-md-12 up-mrg" ng-class="{'app-container-blur':!isEditable}">
@@ -118,7 +118,7 @@
                       <span class=" hand-cursor cross-contact" ng-click="removeContact($index)">
                           </span>
                         <accordion close-others='opening' class="plus">
-                            <accordion-group is-open="poc.isOpen" >
+                            <accordion-group is-open="true" >
                                 <accordion-heading>
                                     <span class="color-black buss-font">
           {{$index+1}}) {{poc.supportArea.selectedItem.displayText}} {{poc.contactType.selectedItem.displayText}} Contact Person Details

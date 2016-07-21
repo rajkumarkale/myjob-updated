@@ -151,10 +151,11 @@ angular.module('com.module.suspect')
         };
 
         $scope.editForm = function () {
-             $scope.isEditable=$scope.saleObject.stage!='PROSPECT'? $scope.accessType=='VIEW':false;
+             $scope.isEditable=$scope.saleObject.stage!=='PROSPECT'? $scope.saleObject.permission!=='VIEW':false;
                if($scope.isEditable){
                    $scope.suspectTitle='Edit Contact Details';
                }
+            return $scope.isEditable;
         };
         $scope.isValid = function (val) {
             var c1 = true;

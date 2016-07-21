@@ -1,7 +1,10 @@
 <div>
     <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
-        <button class="btn btn-primary edit-button mrg-edit" data-ng-if="(saleObject.possibility === 'NOT_MET'||saleObject.possibility==='INACTIVE')" data-ng-click="editForm();"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
-        <button ng-if="saleObject.possibility === 'MET'" ui-sref="app.viewPossibility" class="btn btn-primary cancel-button "> Close</button>
+<div data-ng-if="isEditable || isNewPossibility ">
+      <button ng-if="saleObject.possibility === 'MET'"  ui-sref="app.viewPossibility" class="btn btn-deafult data-button-cancel btn-text">Cancel</button>
+      <button ng-if="saleObject.possibility === 'MET'" class="btn btn-primary data-button data-button-sub btn-text" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save()">Update</button>
+</div>    <button class="btn btn-primary edit-button mrg-edit" data-ng-if="(saleObject.possibility === 'NOT_MET'||saleObject.possibility==='INACTIVE')" data-ng-click="editForm();"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
+        <button ng-hide="isEditable || isNewPossibility" ng-if="saleObject.possibility === 'MET'" ui-sref="app.viewPossibility" class="btn btn-primary cancel-button data-button data-button-sub btn-text "> Close</button>
     </div>
 
     <div class="container col-md-12 pad-t-20" data-ng-class="disableForm()" data-cg-busy="{promise:myPromise,message:'Please Wait'}">
@@ -311,24 +314,43 @@
                                             <span class="input-group-btn input-group-sm">
                    <button type="button" class="btn warm-status btn-sm btn-text" class='app-container-blur'>
                     <i class="fa fa-paperclip">&nbsp;&nbsp;Attach File</i>
-
                   </button>
-
                 </span>
-
                                         </div>
-
                                         <span class="material-input control-label ">Supported file format PDF,DOC,PPT.</span>
-
                                     </div>
+                                   </div>
+                              <ul class="preview-file">
+                                <div ng-repeat="f in uploadFile" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
+                                  <div class="preview-div">
+                                    <div class="col-md-2">
+                                      <div class="previews">
+                                        <span tooltip="{{f.name}}">{{::fileName}}</span>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
+                              </ul>
                             </div>
-                            <div class="up-margin" ng-if="!isNewPossibility">
-                                <ul>
+
+                            <div class="up-margin" >
+                              <ul>
+                                <div ng-repeat="f in saleObject.discussions[0].documents" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
+                                  <div class="preview-div">
+                                    <div class="col-md-2">
+                                      <div class="previews">
+                                        <span tooltip="{{f.url | nameFilterTooltip}}">{{f.url | nameFilter}}</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </ul>
+                             <!--   <ul>
                                     <li ng-repeat="f in createPossibility.discussion.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
                                         <img ng-src="img/Attach-icon.png" class="thumb"> {{f.type}}</li>
-                                </ul>
+                                </ul>-->
                             </div>
+
                         </div>
   </div>
                         <div class="col-md-6 form-custom-padding">

@@ -47,12 +47,12 @@
     </div>
     <div class="panel-body">
       <div class="row ">
-        <div class="col-lg-12">
+        <div class="col-lg-12 date-bottom-mrg">
           <h4 class="pull-left head">All Possibilities</h4>
 
           <div class="pull-right overall-pad date-pick-right-mrg">
             <form  name="form" class="form-inline" novalidate>
-              <div class="present">
+              <div class="present date-rigght-mrg">
                 <div class="input-group col-md-4" style="margin-right: 10px">
 
                   <input type="text" class="form-control bord-given " aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="start" is-open="opened1"
@@ -77,7 +77,7 @@
             </label>
         </div>
       </div>
-      <div class="table-topdiv table-up-mrg">
+      <div class="table-topdiv">
         <table class="table table-bod m-n ">
           <thead class="table-head " >
           <tr>
@@ -94,7 +94,7 @@
       <tbody>
       <tr data-ng-repeat="possibility in filteredRows= (data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem) | filter:$root.searchView" >
         <td>
-          <p style="border-radius: 50%;color: transparent;" ng-class="statusColor(possibility.possibility)"> 0</p>
+          <p style="border-radius: 50%;color: transparent;" ng-class="statusColor(possibility.possibility)"> </p>
           <p class=" " ng-class="statusColor(suspect.status)"></p>
         </td>
         <td class="hand-cursor td-text-color" data-ng-click="openEditPossibility(possibility)">{{possibility.client.legalName}}</td>

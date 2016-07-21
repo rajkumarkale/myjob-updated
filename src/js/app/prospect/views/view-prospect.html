@@ -69,7 +69,7 @@
                     <h4 class="pull-left head">All Prospects</h4>
                     <div class="pull-right overall-pad date-pick-right-mrg">
                         <form name="form" class="form-inline" novalidate>
-                            <div class="present">
+                            <div class="present date-rigght-mrg">
                                 <div class="input-group col-md-4" style="margin-right: 10px">
 
                                     <input type="text" class="form-control bord-given " aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="start" is-open="opened1" show-button-bar="false" ng-required="true" style="padding-left: 6px">
@@ -120,10 +120,10 @@
                                     <td><img src="img/discussion_icon.png" tooltip="Discussions" class="action-distance hand-cursor" data-ng-click="openDiscussions(suspect)"></td>
                                     <td>
                                         <img src="img/share_icon.png" tooltip="Share" class="action-distance " ng-click="openShare('share',prospect)" ng-show="showShare(prospect)" data-ng-class="{'hand-cursor':showShare(prospect)}">
-                                        <img src="img/share_hide.png" tooltip="Share" class="action-distance " ng-hide="showShare(prospect)">
+                                        <img src="img/share_hide.png"  class="action-distance " ng-hide="showShare(prospect)">
                                     </td>
-                                    <td><img src="img/transfer_icon.png" tooltip="Transfer" class="action-distance " data-ng-class="{'hand-cursor':showTransfer(prospect)}" ng-click="openShare('tansfer',prospect)" ng-show="showTransfer(suspect)">
-                                        <img src="img/transfer_hide.png" tooltip="Transfer" class="action-distance " ng-hide="showTransfer(prospect)">
+                                    <td><img src="img/transfer_icon.png" tooltip="Transfer" class="action-distance " data-ng-class="{'hand-cursor':showTransfer(prospect)}" ng-click="openShare('tansfer',prospect)" ng-show="showTransfer(prospect)">
+                                        <img src="img/transfer_hide.png"  class="action-distance " ng-hide="showTransfer(prospect)">
                                     </td>
                                     <td><img src="img/revoke_icon.png" tooltip="Revoke" class="hand-cursor"></td>
                                 </tr>

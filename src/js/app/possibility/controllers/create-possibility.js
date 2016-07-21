@@ -237,6 +237,14 @@ angular.module('com.module.possibility')
                                 _file.documentType = angular.copy(appConfig.possibility.documentType);
                                 $scope.uploadFile.push($scope.discusfile);
                                 $scope.fileName = _file.name;
+                              if (_file.name.length > 7) {
+                                $scope.fileNamePart1 = _file.name.substring(0, 8);
+                                $scope.fileNameLen = _file.name.length - 7;
+                                $scope.fileNamePart2 = _file.name.substring($scope.fileNameLen);
+                                $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
+                                console.log($scope.fileName + ' ' + _file.name);
+                              }
+                              
                             }, null, function (evt) {
 
                             });

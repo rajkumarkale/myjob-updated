@@ -10,10 +10,10 @@
           <label  style="margin-top: 20px;
     color: green;
     margin-left: 20px;"><h4>Req ID Created 11W41A0532</h4></label>
-    <div class=" pull-right">
-      <div  class="form-group label-floating is-empty col-md-10">
-        <label class="control-label">Status</label>
-        <input class="form-control" type="text">
+    <div class=" pull-right col-md-2">
+      <div  class="form-group label-floating is-empty ">
+        Status
+        <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
       </div>
     </div></div>
     <hr style="width: 100%;
@@ -24,38 +24,37 @@
       <div class="col-md-12">
         <div class="col-md-5 col-pad">
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Name</label>
+            <label class="control-label">Name<span class="required-field">*</span></label>
             <input class="form-control" type="text" tabindex="1">
           </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Requirement Type</label>
-            <input class="form-control" type="text" tabindex="3">
+          <div class="form-group ">Requirement Type<span class="required-field">*</span>
+            <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
           </div>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Office Location</label>
-            <input class="form-control" type="text" tabindex="5">
+            Office Location<span class="required-field">*</span>
+            <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
           </div>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Applicable Consulting Fee</label>
+            <label class="control-label">Applicable Consulting Fee<span class="required-field">*</span></label>
             <input class="form-control" type="text" tabindex="7">
           </div>
         </div>
         <div class="col-md-5 col-md-offset-1">
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Manager</label>
+            <label class="control-label">Manager<span class="required-field">*</span></label>
             <input class="form-control" type="text" tabindex="2">
           </div>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Permanent Staffing</label>
-            <input class="form-control" type="text" tabindex="4">
+          Permanent Staffing<span class="required-field">*</span>
+            <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
           </div>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Practice</label>
+            <label class="control-label">Practice<span class="required-field">*</span></label>
             <input class="form-control" type="text" tabindex="6">
           </div>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Priority</label>
-            <input class="form-control" type="text" tabindex="8">
+           Priority<span class="required-field">*</span>
+            <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
           </div>
         </div>
       </div>
@@ -64,68 +63,84 @@
       <div class="col-md-12">
         <div class="col-md-5 col-pad">
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Job Title</label>
+            <label class="control-label">Job Title<span class="required-field">*</span></label>
             <input class="form-control" type="text" tabindex="1">
           </div>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Functional Area</label>
-            <input class="form-control" type="text" tabindex="3">
+           Functional Area<span class="required-field">*</span>
+            <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
           </div>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Qualification</label>
+            <label class="control-label">Qualification<span class="required-field">*</span></label>
             <input class="form-control" type="text" tabindex="5">
           </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Age Group</label>
-            <input class="form-control col-md-2" type="text" tabindex="">
+          <div class="form-group space-age">
+            <label class="col-md-2 p-0 age-text" >Age Group<span class="required-field">*</span></label>
+            <div class="col-md-10">
+              <div custom-select data="status_prospect" value="saleObject.prospect" class="col-md-6 age-select p-0" tabindex="23"></div>
+              <div custom-select data="status_prospect" value="saleObject.prospect" class="col-md-6 age-select " tabindex="23"></div>
+            </div>
+          </div>
+          <div class="form-group space-top">
+            <label class="col-md-2 p-0 age-text" >Experience<span class="required-field">*</span></label>
+            <div class="col-md-10">
+              <div custom-select data="status_prospect" value="saleObject.prospect" class="col-md-6 age-select p-0" tabindex="23"></div>
+              <div custom-select data="status_prospect" value="saleObject.prospect" class="col-md-6 age-select " tabindex="23"></div>
+            </div>
+          </div>
+          <div class="form-group space-top">
+            <label class="col-md-2 p-0 age-text" >CTC Range<span class="required-field">*</span></label>
+            <div class="col-md-10">
+              <div custom-select data="status_prospect" value="saleObject.prospect" class="col-md-6 age-select p-0" tabindex="23"></div>
+              <div custom-select data="status_prospect" value="saleObject.prospect" class="col-md-6 age-select " tabindex="23"></div>
+            </div>
+          </div>
+          <div class="form-group space-top">
+            <div class="font-ind">Industry<span class="required-field">*</span>
+              <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
+            </div>
           </div>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Experience</label>
+            <label class="control-label">No Poach Companies<span class="required-field">*</span></label>
             <input class="form-control col-md-2" type="text" tabindex="">
           </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">CTC Range</label>
-            <input class="form-control col-md-2" type="text" tabindex="">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Industry</label>
-            <input class="form-control col-md-2" type="text" tabindex="">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">No Poach Companies</label>
-            <input class="form-control col-md-2" type="text" tabindex="">
-          </div>
+
         </div>
         <div class="col-md-5 col-md-offset-1">
           <div class="form-group label-floating is-empty">
-            <label class="control-label">No Of Positions</label>
+            <label class="control-label">No Of Positions<span class="required-field">*</span></label>
             <input class="form-control" type="text" tabindex="2">
           </div>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Vacancy</label>
+            <label class="control-label">Vacancy<span class="required-field">*</span></label>
             <input class="form-control" type="text" tabindex="4">
           </div>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Job Location</label>
+            <label class="control-label">Job Location<span class="required-field">*</span></label>
             <input class="form-control" type="text" tabindex="6">
           </div>
+          <div class="form-group ">
+            <div class="font-ind">Primary Level<span class="required-field">*</span>
+              <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
+            </div>
+          </div>
+          <div class="form-group ">
+            <label class="col-md-2 p-0 age-text" >Relevent Experience<span class="required-field">*</span></label>
+            <div class="col-md-10">
+              <div custom-select data="status_prospect" value="saleObject.prospect" class="col-md-6 age-select p-0" tabindex="23"></div>
+              <div custom-select data="status_prospect" value="saleObject.prospect" class="col-md-6 age-select " tabindex="23"></div>
+            </div>
+          </div><br>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Primary Level</label>
+            <label class="control-label">Remarks<span class="required-field">*</span></label>
             <input class="form-control" type="text" tabindex="">
           </div>
           <div class="form-group label-floating is-empty">
-            <label class="control-label">Relevent Experience</label>
-            <input class="form-control" type="text" tabindex="">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Remarks</label>
-            <input class="form-control" type="text" tabindex="">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Target Employees</label>
+            <label class="control-label">Target Employees<span class="required-field">*</span></label>
             <input class="form-control" type="text" tabindex="8">
           </div>
         </div>
+
       </div>
       <div class="row">
         <div class="col-md-10 upward">

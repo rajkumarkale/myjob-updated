@@ -1953,13 +1953,27 @@
 /*end views table margin*/
 
 .status-met{
-  background-color: #30a04a !important;
+/*  background-color: #30a04a !important;*!*/
+
+  background-image:url("../img/met_icon_new.png") !important;
+  background-repeat: no-repeat !important;
+  height: 12px;
+  width: 12px !important;
 }
 .status-notmet{
-  background-color: #F46262 !important;
+ /* background-color: #F46262 !important;*/
+  background-image:url("../img/notmet_icon_new.png") !important;
+  background-repeat: no-repeat !important;
+  height: 12px;
+  width: 12px !important;
 }
 .status-inactive{
-  background-color: #A8A8A7 !important;
+  /*background-color: #A8A8A7 !important;*/
+  background-image:url("../img/inactive_icon_new.png") !important;
+  background-repeat: no-repeat !important;
+  height: 12px;
+  width: 12px !important;
+
 }
 .status-cold{
   background-image:url("../img/status_icon_cold.png") !important;
@@ -2131,7 +2145,7 @@
 .overall-pad{
   text-align: right;
   padding-right: 52px;
-  padding-top: 10px;
+
 }
 .refactor{
   margin-top: -50px;

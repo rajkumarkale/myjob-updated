@@ -99,7 +99,7 @@
     "bootstrap": "^3.3.6"
   },
 
-    "overrides": {
+  "overrides": {
     "bootstrap": {
       "main": [
         "less/bootstrap.less",

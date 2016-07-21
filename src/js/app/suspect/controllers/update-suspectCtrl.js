@@ -151,7 +151,7 @@ angular.module('com.module.suspect')
         };
 
         $scope.editForm = function () {
-             $scope.isEditable=$scope.saleObject.stage!='PROSPECT'? $scope.accessType=='view':false;
+             $scope.isEditable=$scope.saleObject.stage!='PROSPECT'? $scope.accessType=='VIEW':false;
                if($scope.isEditable){
                    $scope.suspectTitle='Edit Contact Details';
                }

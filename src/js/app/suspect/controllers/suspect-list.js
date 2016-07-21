@@ -118,7 +118,7 @@ angular.module('com.module.suspect')
                 size: 'sm',
                 resolve: {
                     clinetId: function () {
-                        return suspect.client_unit_id;
+                        return suspect._id;
                     }
                 }
             });
@@ -128,16 +128,16 @@ angular.module('com.module.suspect')
         };
         $scope.showShare = function (suspect) {
             var show = false;
-            if (suspect.access_type === 'FULL') {
+            if (suspect.permission === 'FULL') {
                 show = true;
-            } else if (suspect.access_type == 'edit') {
+            } else if (suspect.permission === 'EDIT') {
                 show = true;
             }
             return show;
         };
         $scope.showTransfer = function (suspect) {
             var show = false;
-            if (suspect.access_type === 'FULL') {
+            if (suspect.permission === 'FULL') {
                 show = true;
             }
             return show;

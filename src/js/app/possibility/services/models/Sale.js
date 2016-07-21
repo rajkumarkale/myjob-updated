@@ -13,6 +13,7 @@ module.factory('SaleModel', function (ClientModel, DiscussionModel, PointOfConta
         this.approvedBy = modelData.approvedBy;
         this.unfreezedBy = modelData.unfreezedBy;
         this.freezeDuration = modelData.freezeDuration;
+        this.permission=modelData.permission;
         this.documents=modelData.documents || [];
         if (modelData && modelData.roles) {
             this.roles = {

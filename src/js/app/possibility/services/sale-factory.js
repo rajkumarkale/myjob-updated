@@ -41,23 +41,24 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
         });
     };
 
-    var share = function (id, shareId) {
+    var share = function (saleId, shareToId,permission) {
         return $http({
             method: 'GET',
             params: {
-                shareId: shareId
+                shareToId: shareToId,
+                permission:permission
             },
-            url: BASEURI + '/api/sale/' + id + '/share'
+            url: BASEURI + '/api/sale/' + saleId + '/share'
         });
     };
 
-    var transfer = function (id, transferId) {
+    var transfer = function (saleId, transferToId) {
         return $http({
             method: 'GET',
             params: {
-                transferId: transferId
+                transferToId: transferToId
             },
-            url: BASEURI + '/api/sale/' + id + '/transfer'
+            url: BASEURI + '/api/sale/' + saleId + '/transfer'
         });
     };
 

@@ -79,6 +79,7 @@ angular.module('com.module.user').controller('dashboardController', ['$scope', '
             },
             plotOptions: {
                 series: {
+                 
                     events: {
                         legendItemClick: function (sc) {
                             if (sc.target._i == 0 && sc.target.visible == true) {

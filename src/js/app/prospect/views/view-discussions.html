@@ -9,7 +9,7 @@
           <button ng-click="openAddDiscussions()" ng-show="showAddButton" class="btn btn-raised btn-info glyphicon glyphicon-plus "> </button>
         </div>
       </div>
-      <hr class="line2" ng-show="showAddButton">
+      <hr class="line2">
 <div  data-cg-busy="{promise:getDiscussionPromise,message:'Please Wait'}"></div>
     <div class="container-custom panel panel-default discussion-container" ng-repeat="discussion in discussions | orderBy:sortType:reverse track by $index ">
       <div class="container ">

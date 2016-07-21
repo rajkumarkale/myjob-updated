@@ -57,6 +57,21 @@
              <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
            </div>
          </div>
+         <ul>
+           <div ng-repeat="f in uploadFiles" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
+             <div class="preview-div">
+               <div class="col-md-2">
+                 <div class="previews">
+                   <!--    <img ng-src="{{f.url}}" class="preview-img">-->
+                   <a class="remove" data-ng-click="removeFiles($index)"></a>
+                   <span tooltip="{{f.name}}">{{::fileName}}</span>
+                   <!--<p class="text-in">VOTER CARD</p>-->
+
+                 </div>
+               </div>
+             </div>
+           </div>
+         </ul>
        </div>
        <div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
       <div class="centerButton" data-cg-busy="{promise:discussionPromise,message:'Please Wait'}">

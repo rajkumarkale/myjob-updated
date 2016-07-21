@@ -1,10 +1,10 @@
 <div>
     <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
-
-      <button ng-if="saleObject.possibility === 'MET'" ui-sref="app.viewPossibility" class="btn btn-deafult data-button-cancel btn-text">Cancel</button>
+<div data-ng-if="isEditable || isNewPossibility ">
+      <button ng-if="saleObject.possibility === 'MET'"  ui-sref="app.viewPossibility" class="btn btn-deafult data-button-cancel btn-text">Cancel</button>
       <button ng-if="saleObject.possibility === 'MET'" class="btn btn-primary data-button data-button-sub btn-text" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save()">Update</button>
-        <button class="btn btn-primary edit-button mrg-edit" data-ng-if="(saleObject.possibility === 'NOT_MET'||saleObject.possibility==='INACTIVE')" data-ng-click="editForm();"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
-        <button ng-if="saleObject.possibility === 'MET'" ui-sref="app.viewPossibility" class="btn btn-primary cancel-button data-button data-button-sub btn-text "> Close</button>
+</div>    <button class="btn btn-primary edit-button mrg-edit" data-ng-if="(saleObject.possibility === 'NOT_MET'||saleObject.possibility==='INACTIVE')" data-ng-click="editForm();"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
+        <button ng-hide="isEditable || isNewPossibility" ng-if="saleObject.possibility === 'MET'" ui-sref="app.viewPossibility" class="btn btn-primary cancel-button data-button data-button-sub btn-text "> Close</button>
     </div>
 
     <div class="container col-md-12 pad-t-20" data-ng-class="disableForm()" data-cg-busy="{promise:myPromise,message:'Please Wait'}">

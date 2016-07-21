@@ -234,16 +234,22 @@ color: #049ad9}
   }
 
 }
-.monthtpl .btn, .input-group-btn .btn{
+/*.monthtpl .btn, .input-group-btn .btn{
 
   padding: 8px 7px;
   margin: 2px 1px;
-  font-size: 10px;}
-.yeartpl .btn, .input-group-btn .btn{
+  font-size: 10px;}*/
+.present .dropdown-menu table > tbody > tr > td .btn.btn-default {
+  padding: 8px 7px;
+  margin: 2px 1px;
+  font-size: 10px;
+}
+
+/*.yeartpl .btn, .input-group-btn .btn{
   padding: 8px 5px !important;
   margin: 4px 1px !important;
   font-size: 12px !important;
-  }
+  }*/
 .cal-img{
   border-top: 2px solid #DADDDF !important;
   border-right: 2px solid #DADDDF !important;
@@ -264,3 +270,11 @@ color: #049ad9}
 .preview-file{
   margin-top:21px !important;
 }
+.age-select .select{min-width: 100% !important;}
+.p-0{padding: 0px;margin: -1px}
+.present .dropdown-menu table > tbody > tr > td .btn.btn-sm {color: #636363 !important;}
+.form-group .checkbox label, .form-group .radio label, .form-group  .age-text {
+  font-size: 12px !important; color:#5c5d5b;}
+.space-age{margin-top: 40px}
+.space-top{margin-top: 74px}
+.font-ind{font-size: 16px}

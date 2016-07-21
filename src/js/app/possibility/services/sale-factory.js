@@ -40,7 +40,7 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
             data: data
         });
     };
-    
+
     var viewDiscussions = function (saleId,stage) {
         return $http({
             method: 'GET',

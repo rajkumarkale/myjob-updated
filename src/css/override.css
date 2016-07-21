@@ -255,6 +255,9 @@ color: #049ad9}
   background: white !important;
 }
 .date-bottom-mrg{
-  margin-bottom: -25px !important;
+  margin-bottom: -15px !important;
+}
+.date-rigght-mrg{
+  margin-right: -15px !important;
 }
 

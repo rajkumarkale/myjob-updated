@@ -55,7 +55,7 @@ angular.module('com.module.possibility')
                 $scope.saleObject.pointOfContacts = [primaryContact];
                 $scope.freshDiscussion = new DiscussionModel({});
                 $scope.saleObject.discussions = [$scope.freshDiscussion];
-                $scope.discussion.time = new Date();
+                $scope.discussion.time = '08:00';
                 $scope.groupTurnover.selectedItem = '';
                 $scope.businessVertical.selectedItem = '';
                 $scope.customerType.selectedItem = '';

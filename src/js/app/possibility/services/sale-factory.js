@@ -1,6 +1,6 @@
 angular.module('com.module.possibility').factory('saleModuleService', function ($http, appConfig, $q, SaleModel) {
     'use strict';
-    var BASEURI = appConfig.apiUrl;
+    var BASEURI = 'http://172.16.1.103:8000';/*appConfig.apiUrl;*/
     var getSalesData = function (params) {
         var deferred = $q.defer();
         $http({

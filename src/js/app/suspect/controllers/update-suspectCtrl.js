@@ -121,7 +121,7 @@ angular.module('com.module.suspect')
                     }
                 }
             } else {
-                CoreService.toastError('ERROR', 'please select supported file format only eg: pdf,docx,pptx');
+                CoreService.toastError('ERROR', 'Supported file formats are Docs,JPEG & PNG');
                 document.getElementById("inputText").value = "";
 
             }

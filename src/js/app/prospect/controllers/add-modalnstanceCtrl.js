@@ -18,7 +18,7 @@ angular.module('com.module.prospect')
             $scope.upload = function(files) {
               $scope.fileNameLen = files[0].name.length-3;
               $scope.fileFormat = files[0].name.substring($scope.fileNameLen);
-              if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx') {
+              if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx' || $scope.fileFormat=='png') {
                 if (files && files.length) {
                   for (var i = 0; i < files.length; i++) {
                     var file = files[i];
@@ -51,8 +51,7 @@ angular.module('com.module.prospect')
               }
 
               else{
-                CoreService.alertInfo('ERROR', 'please select supported file format only eg: pdf,docx,pptx');
-
+                CoreService.alertInfo('ERROR', 'Supported file formats are Docs & PNG');
                 document.getElementById("inputText").value = "";
               }
         };

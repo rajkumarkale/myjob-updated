@@ -222,7 +222,7 @@ angular.module('com.module.possibility')
             $scope.uploadFile = [];
             $scope.fileNameLen = file.name.length - 3;
             $scope.fileFormat = file.name.substring($scope.fileNameLen);
-            if ($scope.fileFormat == 'pdf' || $scope.fileFormat == 'ocx' || $scope.fileFormat == 'ptx') {
+            if ($scope.fileFormat == 'pdf' || $scope.fileFormat == 'ocx' || $scope.fileFormat == 'ptx' || $scope.fileFormat == 'png') {
                 if ($scope.discusfile && $scope.discusfile.length) {
                     for (var i = 0; i < $scope.discusfile.length; i++) {
                         var _file = $scope.discusfile[0];
@@ -244,7 +244,7 @@ angular.module('com.module.possibility')
                                 $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
                                 console.log($scope.fileName + ' ' + _file.name);
                               }
-                              
+
                             }, null, function (evt) {
 
                             });
@@ -252,7 +252,7 @@ angular.module('com.module.possibility')
                     }
                 }
             } else {
-                CoreService.toastError('', 'please select supported file format only eg: pdf,docx,pptx');
+                CoreService.toastError('', 'Supported file formats are Docs & PNG');
                 document.getElementById("inputText").value = "";
             }
         };

@@ -228,10 +228,20 @@
                                         </div>
                                     </div>
                                     <div class="up-margin" ng-if="!isEditable">
-                                <ul>
-                                    <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-                                        <img ng-src="{{f.url}}" class="thumb"></li>
-                                </ul>
+                                      <ul>
+                                        <div ng-repeat="f in rollOutFile" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
+                                          <div class="preview-div">
+                                            <div class="col-md-2">
+                                              <div class="previews">
+                                                <span tooltip="{{f.url | nameFilterTooltip}}">{{f.url | nameFilter}}</span>
+                                              </div>
+                                              <div class="form-group">
+                                                <input class="no-border" ng-model="f.type">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </ul>
                             </div>
                             <div class="up-margin" ng-if="!isEditable">
                                 <ul>

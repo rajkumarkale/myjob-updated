@@ -8,7 +8,7 @@ angular.module('com.module.prospect')
     
     saleModuleService.viewDiscussions($scope.data._id,$stateParams.status).then(function(response){
         $scope.discussions=response.data;
-    })
+    });
     
     
     $scope.download=function(url){

@@ -14,6 +14,6 @@ module.factory('PointOfContactModel', function () {
     }
     PointOfContact.prototype.isPrimary = function () {
         return this.contactType == "PRIMARY"
-    }
+    };
     return PointOfContact;
-})
+});

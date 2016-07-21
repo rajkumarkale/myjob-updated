@@ -67,7 +67,11 @@ angular.module('com.module.prospect')
                 $scope.discussion.documents=[{url:$scope.uploadFiles[0].url}];
 
             }
-            $scope.discussion.create($scope.discussion,$scope.data._id);
+          $scope.discussionPromise= $scope.discussion.create($scope.discussion,$scope.data._id).then(function (response) {
+              $modalInstance.close(response.data);
+              $state.go('app.viewDiscussions');
+            });
+
         };
         $scope.cancel = function () {
             $modalInstance.dismiss();

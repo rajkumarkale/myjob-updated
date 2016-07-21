@@ -2,7 +2,7 @@
  * Created by rkale on 5/27/2016.
  */
 angular.module('com.module.suspect')
-    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams','$http', '$state', 'Upload', '$q', 'CoreService', '$cookies', '$timeout','PointOfContactModel', function ($scope, appConfig, $modal, $stateParams, $http, $state, Upload, $q, CoreService, $cookies, $timeout,PointOfContactModel) {
+    .controller('updateSuspectCtrl', ['$scope', 'appConfig', '$modal', '$stateParams','$http', '$state', 'Upload', '$q', 'CoreService', '$cookies', '$timeout','PointOfContactModel','saleModuleService', function ($scope, appConfig, $modal, $stateParams, $http, $state, Upload, $q, CoreService, $cookies, $timeout,PointOfContactModel,saleModuleService) {
         $scope.met_status = 'MET';
         $scope.status = {
             open: true
@@ -33,7 +33,7 @@ angular.module('com.module.suspect')
             $scope.contactType = appConfig.suspect.contactType;
             $scope.status = appConfig.suspect.status;
             $scope.supportArea = appConfig.suspect.supportArea;
-           
+
         };
 
         $scope.init();
@@ -63,7 +63,7 @@ angular.module('com.module.suspect')
             }
 
         };
-        
+
         $scope.showRollOut = false;
         $scope.$watch('saleObject.suspect', function (n, o) {
             if (n=== 'HOT') {
@@ -126,36 +126,36 @@ angular.module('com.module.suspect')
 
             }
         };
-        
-        $scope.submit = function () {
-                $scope.submitPromise = asyncSubmit();
-        };
+
         //Update Suspect
-        function asyncSubmit() {
-            return $q(function () {
+        $scope.submit=function () {
                 var files = [];
                 $scope.uploadFiles.map(function (obj) {
                     var file = {};
                     file.url = obj.url;
-                    file.type = obj.documentType.selectedItem.key;
+                    file.type = obj.documentType;
                     files.push(file);
                 });
                 if (files.length > 0) {
                     $scope.saleObject.documents = files;
                 }
-                $scope.saleObject.update();
-            });
-        }
+          $scope.submitPromise= $scope.saleObject.update().then(function () {
+                  $state.go('app.suspect-view')
+
+                  }
+                );
+        };
 
         $scope.removeFiles = function (index) {
             $scope.uploadFiles.splice(index, 1);
         };
 
         $scope.editForm = function () {
-            if ($scope.saleObject.prospect && $scope.accessType !== 'view') {
-                $scope.isEditable = true;
-                $scope.suspectTitle='Edit Contact Details';
-            }
+             $scope.isEditable=$scope.saleObject.stage!=='PROSPECT'? $scope.saleObject.permission!=='VIEW':false;
+               if($scope.isEditable){
+                   $scope.suspectTitle='Edit Contact Details';
+               }
+            return $scope.isEditable;
         };
         $scope.isValid = function (val) {
             var c1 = true;
@@ -169,7 +169,22 @@ angular.module('com.module.suspect')
             }
             return (val && c1);
         };
-        $scope.removeContact = function (index) {
-            $scope.point_of_contacts.splice(index, 1);
-        };
+      $scope.removeContact = function (index) {
+        if (index == 0) {
+          CoreService.toastError('', 'Primary contact should have primary contact');
+        }
+        else {
+            var saleId=$scope.saleObject._id;
+            var pocId=$scope.saleObject.pointOfContacts[index]._id;
+          if($scope.saleObject.pointOfContacts[index]){
+            $scope.saleObject.pointOfContacts.splice(index, 1);
+          }
+          else{
+            saleModuleService.deletePoc(saleId,pocId).then(function(response){
+              $scope.saleObject.pointOfContacts.splice(index, 1);
+            });
+          }
+          }
+      };
+      console.log($scope.saleObject);
   }]);

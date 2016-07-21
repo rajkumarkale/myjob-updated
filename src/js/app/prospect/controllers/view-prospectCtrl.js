@@ -3,7 +3,7 @@
  */
 angular.module('com.module.prospect')
 
-.controller('viewProspectCtrl',['$scope','prospectService','CoreService','$modal','discussionService','$state','$rootScope','saleModuleService',function($scope,prospectService,CoreService,$modal,discussionService,$state,$rootScope,saleModuleService){
+.controller('viewProspectCtrl',['$scope','prospectService','CoreService','$modal','discussionService','$state','$rootScope','saleModuleService','$filter',function($scope,prospectService,CoreService,$modal,discussionService,$state,$rootScope,saleModuleService,$filter){
 
           $scope.sortType     = 'legal_name';
         $scope.sortReverse  = false;
@@ -103,15 +103,32 @@ angular.module('com.module.prospect')
                 console.log("possible", response);
                 $scope.data.prospects = response;
                 $scope.data.totalItems = response.length;
-                /*$scope.data.WON= possibilityCreateServices.getStatusCount(response, 'prospect', 'WON');
-                $scope.data.LOST = possibilityCreateServices.getStatusCount(response, 'prospect', 'LOST');
-                $scope.data.PROGRESS = possibilityCreateServices.getStatusCount(response, 'prospect', 'WORK_IN_PROGRESS');
-            $scope.data.agreement_on_closure = possibilityCreateServices.getStatusCount(response, 'prospect', 'AGREEMENT_ON_CLOSURE');*/
             });
-    $scope.openDiscussions = function(prospect){
+    $scope.openDiscussions = function(prospect,status){
                 discussionService.setData(prospect);
-				$state.go('app.viewDiscussions');
+				$state.go('app.viewDiscussions',{status:status});
 		};
+    $scope.getProspectsByRange = function (currentPage, numPerPage) {
+            var st = $filter('date')($scope.start, 'MM/dd/yyyy');
+            var date1 = Math.round(new Date(st).getTime() / 1000);
+            var ed = $filter('date')($scope.end, 'MM/dd/yyyy');
+            var date2 = Math.round(new Date(ed).getTime() / 1000);
+            if (date1 < date2) {
+                $scope.sumStartDate = $scope.start;
+                $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');
+                $scope.myPromise = saleModuleService.getSalesData({
+                    stage: 'PROSPECT',
+                    start: date1,
+                    end: date2
+                }).then(function (response) {
+                    console.log(response.data);
+                    $scope.data.prospects = response;
+                $scope.data.totalItems = response.length;
+                });
+            } else {
+                CoreService.toastError('', 'Satrt date should be less than end date.');
+            }
+        };
   $scope.openShare = function (tpl) {
     var tpl=tpl;
     var modalInstance = $modal.open({

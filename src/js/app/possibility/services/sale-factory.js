@@ -18,26 +18,6 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
         return deferred.promise;
     };
 
-    var getSalesDataByRange = function (currentPage, numPerPage, start, end) {
-        var deferred = $q.defer();
-        $http({
-            method: 'GET',
-            params: {
-                start: start,
-                end: end
-            },
-            url: BASEURI + '/api/sale'
-        }).then(function (sales) {
-            var salesList = sales.data.map(function (sale) {
-                return new SaleModel(sale)
-            });
-            console.log("sales", salesList);
-            deferred.resolve(salesList);
-
-        }, function (err) {});
-        return deferred.promise;
-    };
-
     var createSale = function (data) {
         return $http({
             method: 'POST',
@@ -60,24 +40,35 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
             data: data
         });
     };
-
-    var share = function (id, shareId) {
+    
+    var viewDiscussions = function (saleId,stage) {
         return $http({
             method: 'GET',
-            params: {
-                shareId: shareId
+            params:{
+                stage:stage
             },
-            url: BASEURI + '/api/sale/' + id + '/share'
+            url: BASEURI + '/api/sale/' + saleId + '/discussions'
         });
     };
 
-    var transfer = function (id, transferId) {
+    var share = function (saleId, shareToId,permission) {
         return $http({
             method: 'GET',
             params: {
-                transferId: transferId
+                shareToId: shareToId,
+                permission:permission
             },
-            url: BASEURI + '/api/sale/' + id + '/transfer'
+            url: BASEURI + '/api/sale/' + saleId + '/share'
+        });
+    };
+
+    var transfer = function (saleId, transferToId) {
+        return $http({
+            method: 'GET',
+            params: {
+                transferToId: transferToId
+            },
+            url: BASEURI + '/api/sale/' + saleId + '/transfer'
         });
     };
 
@@ -104,7 +95,6 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
 
     return {
         getSalesData: getSalesData,
-        getSalesDataByRange: getSalesDataByRange,
         createSale: createSale,
         updateSale: updateSale,
         createDiscussion: createDiscussion,
@@ -112,6 +102,7 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
         share:share,
         getDashboardData:getDashboardData,
         deleteDocument:deleteDocument,
-        deletePoc:deletePoc
+        deletePoc:deletePoc,
+        viewDiscussions:viewDiscussions
     };
 });

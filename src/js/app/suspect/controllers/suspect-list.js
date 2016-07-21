@@ -56,10 +56,14 @@ angular.module('com.module.suspect')
             if (date1 < date2) {
                 $scope.sumStartDate = $scope.start;
                 $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');
-                $scope.myPromise = saleModuleService.getSalesDataByRange(currentPage, numPerPage, date1, date2).then(function (response) {
-                    console.log(response.data);
-                    $scope.data.suspects = response.data.suspects;
-                    $scope.data.totalItems = response.data.count;
+                $scope.myPromise = saleModuleService.getSalesData({
+                    stage: 'SUSPECT',
+                    start: date1,
+                    end: date2
+                }).then(function (response) {
+                    console.log("suspects", response);
+                $scope.data.suspects = response;
+                $scope.data.totalItems = response.length;
                 });
             } else {
                 CoreService.toastError('', 'Satrt date should be less than end date.');
@@ -72,9 +76,9 @@ angular.module('com.module.suspect')
             });
 
         };
-        $scope.openDiscussions = function (suspect) {
+        $scope.openDiscussions = function (suspect,status) {
             discussionService.setData(suspect);
-            $state.go('app.viewDiscussions');
+            $state.go('app.viewDiscussions',{status:status});
         };
         $scope.statusColor = function (status) {
             switch (status) {
@@ -107,16 +111,14 @@ angular.module('com.module.suspect')
             var tpl = tpl;
             var modalInstance = $modal.open({
                 templateUrl: function () {
-
                     return 'js/app/suspect/views/' + tpl + '.html'
-
                 },
                 backdrop: 'static',
                 controller: 'suspectShareCtrl',
                 size: 'sm',
                 resolve: {
                     clinetId: function () {
-                        return suspect.client_unit_id;
+                        return suspect._id;
                     }
                 }
             });
@@ -126,16 +128,16 @@ angular.module('com.module.suspect')
         };
         $scope.showShare = function (suspect) {
             var show = false;
-            if (suspect.access_type === 'FULL') {
+            if (suspect.permission === 'FULL') {
                 show = true;
-            } else if (suspect.access_type == 'edit') {
+            } else if (suspect.permission === 'EDIT') {
                 show = true;
             }
             return show;
         };
         $scope.showTransfer = function (suspect) {
             var show = false;
-            if (suspect.access_type === 'FULL') {
+            if (suspect.permission === 'FULL') {
                 show = true;
             }
             return show;

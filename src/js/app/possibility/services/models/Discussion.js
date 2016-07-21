@@ -14,9 +14,7 @@ module.factory('DiscussionModel', function ($injector) {
 Discussion.prototype.create = function (data,id) {
    var saleModuleService=$injector.get('saleModuleService');
    // if (!saleModuleService) { saleModuleService = $injector.get('saleModuleService'); }
-    saleModuleService.createDiscussion(data,id).then(function(response){
-        console.log(response);
-    });
+    return saleModuleService.createDiscussion(data,id);
 };
     return Discussion;
 });

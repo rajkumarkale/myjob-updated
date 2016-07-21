@@ -15,12 +15,10 @@
                             <div>
                                 <label class="control-label">Bussiness Vertical</label>
 
-                                <!--<input class="form-control" data-ng-model="createPossibility.client.vertical" type="text">-->
                                 <div custom-select data="businessVertical" value="saleObject.client.vertical"></div>
                             </div>
                             <div>
                                 <label class="control-label">Employee Size of the Company</label>
-                                <!--<input class="form-control" required data-ng-model="createPossibility.client.employeeSize" type="text">-->
                                 <div custom-select data="employeeSize" value="saleObject.client.employeeSize" tabindex="5"></div>
                             </div>
                             <div class="form-group label-floating ">
@@ -40,10 +38,6 @@
                                 <input class="form-control" required data-ng-model="saleObject.client.address.country" type="text">
                             </div>
                             <div class="up-margin">
-                                <ul>
-                                    <li ng-repeat="f in saleObject.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-                                        <img ng-src="{{f.url}}" class="thumb"></li>
-                                </ul>
                             </div>
                         </div>
                         <div class="col-md-6 form-custom-padding">
@@ -85,15 +79,36 @@
                                 <label class=" first-class2 ">Freeze</label>
                             </div>-->
                         </div>
+
                     </div>
+                  <ul>
+                    <div ng-repeat="f in saleObject.documents" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
+                      <div class="preview-div">
+                        <div class="col-md-2">
+                          <div class="previews">
+                            <span tooltip="{{f.name}}">{{f.url | nameFilter}}</span>
+
+                          </div>
+                          <div class="form-group">
+                            <input class="no-border" type="text" ng-model="f.type">
+                          </div>
+                        </div>
+                        <div class="preview-select">
+
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </ul>
                 </div>
             </form>
         </accordion-group>
     </accordion>
 </div>
-<div class="text-right m-t-sm m-r-xs">
-    <button class="btn btn-primary edit-button mrg-edit" data-ng-click="editForm()"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
-</div>
+<!--<div class="text-right m-t-sm m-r-xs">
+    <button class="btn btn-primary edit-button mrg-edit" data-ng-show="editForm()"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
+</div>-->
 
 
 <div class="container col-md-12 up-mrg" ng-class="{'app-container-blur':!isEditable}">
@@ -118,7 +133,7 @@
                       <span class=" hand-cursor cross-contact" ng-click="removeContact($index)">
                           </span>
                         <accordion close-others='opening' class="plus">
-                            <accordion-group is-open="poc.isOpen" >
+                            <accordion-group is-open="true" >
                                 <accordion-heading>
                                     <span class="color-black buss-font">
           {{$index+1}}) {{poc.supportArea.selectedItem.displayText}} {{poc.contactType.selectedItem.displayText}} Contact Person Details
@@ -206,7 +221,7 @@
 
                                                 </div>
                                                 <label class="control-label ">Document Type</label>
-                                                <div class="preview-select" custom-select data="f.documentType">
+                                                <div class="preview-select" custom-select data="f.documentType" value="f.documentType">
 
                                                 </div>
                                             </div>
@@ -232,9 +247,9 @@
                 <div class="col-md-6 col-md-offset-5" data-cg-busy="{promise:submitPromise,message:'Please Wait'}">
                     <div class="form-group">
                         <a ui-sref="app.suspect-view">
-                            <button class="btn btn-primary data-button-cancel btn-text hand-curser">Cancel</button>
+                            <button data-ng-show="editForm()" class="btn btn-primary data-button-cancel btn-text hand-curser">Cancel</button>
                         </a>
-                        <button class="btn btn-primary data-button btn-text" data-ng-disabled="!isValid(updateSuspectForm.$valid)" data-ng-click="submit()">Submit</button>
+                        <button data-ng-show="editForm()" class="btn btn-primary data-button btn-text" data-ng-disabled="!isValid(updateSuspectForm.$valid)" data-ng-click="submit()">Submit</button>
                     </div>
                 </div>
             </div>

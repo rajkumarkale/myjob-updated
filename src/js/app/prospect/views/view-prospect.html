@@ -106,7 +106,10 @@
                 </thead>
                 <tbody>
                     <tr data-ng-repeat="prospect in filteredRows=(data.prospects | orderBy:sortType:sortReverse |companyFilter:selectedItem)| filter:$root.searchView">
-                        <th></th>
+                        <td>
+                          <p style="border-radius: 50%;color: transparent;" ng-class="statusColor(prospect.prospect)"> </p>
+                          <p class=" " ng-class="statusColor(suspect.status)"></p>
+                        </td>
                         <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">{{prospect.client.legalName}}</td>
                         <td>{{prospect.client.businessUnit}}</td>
                         <td>{{prospect.annual_rate_no?prospect.annual_rate_no:'--'}}</td>

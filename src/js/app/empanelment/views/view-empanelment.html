@@ -26,7 +26,7 @@
           <h4 class="pull-left head">All Empanelments</h4>
           <div class="pull-right overall-pad date-pick-right-mrg">
             <form  name="form" class="form-inline" novalidate>
-              <div class="present">
+              <div class="present date-rigght-mrg">
                 <div class="input-group col-md-4" style="margin-right: 10px">
 
                   <input type="text" class="form-control bord-given " aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="start" is-open="opened1"
@@ -46,30 +46,10 @@
           </div>
         </div>
       </div>
-      <!--<div class="panel-body">
-        <div class="row">
-          <label class=" dropdown checkBoxDrop pull-left ">
-            <input type="checkbox" class="checkBox" ng-model="selectAll">
-          </label>
-          <label class="checkBox-showall pull-left " ng-show="selectAll || checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
-          || checked8 || checked9 || checked10 || checked11">
-            <span class="glyphicon glyphicon-arrow-down " data-toggle="dropdown"></span>&nbsp;&nbsp;Archive
-          </label>
-
-          <label class="  checkBox-showall pull-left " ng-show="selectAll || checked1 || checked2 || checked3 || checked4 || checked5 || checked6 || checked7
-          || checked8 || checked9 || checked10 || checked11">
-            <span class="fa fa-trash-o " data-toggle="dropdown"></span>&nbsp;&nbsp;Delete
-          </label>
-          <label class="  checkBox-showall pull-right ">Show All
-            <span class="caret checkBxDrop" data-toggle="dropdown"></span>
-          </label>
-        </div>
-      </div>-->
       <div class="table-topdiv">
       <table class="table table-bod table table-hover m-n">
         <thead class="table-head">
         <tr>
-          <!--<th class="table-th-heading"></th>-->
           <th class="col-lg-2  table-th-heading">Legal Entity <span ><img src="img/sort_icon.png"></span>
           </th>
           <th class="col-lg-1 table-th-heading">Business Unit <span ><img src="img/sort_icon.png"></span>
@@ -78,25 +58,12 @@
           <th class="col-lg-3 table-th-heading">Agreement Start Date <span><img src="img/sort_icon.png"></span></th>
           <th class=" table-th-heading">Agreement Tenure</th>
           <th class="table-th-heading">Business Vertical</th>
-          <th class=" table-th-heading">Status <span ><img src="img/filter_icon.png"></span></th>
           <th class="table-th-heading " >Discussions</th>
 
         </tr>
         </thead>
         <tbody>
         <tr >
-          <!--<td>
-            <div class="form-group mrg-formgrp">
-              <div class="chekbox1">
-                <label>
-                  <input type="checkbox" ng-model="checked1" ng-checked="selectAll">
-                <span class="checkbox-material">
-                  <span class="check"></span>
-                </span>
-                </label>
-              </div>
-            </div>
-          </td>-->
           <td class="hand-cursor" ui-sref="app.createEmpanelment">Robert Martin</td>
           <td class="col-lg-3">Paradigm Creatives</td>
           <td class="cell-gap">Hyderabad</td>
@@ -104,26 +71,11 @@
           <td>Anthony Sanchez</td>
           <td>Lorem Ipsum</td>
           <td>0000000001</td>
-          <td>
-            <p class="won-status-text btn-sm ">Won</p>
-          </td>
-          <td>
+                   <td>
             <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(empanelment)">Discussion</button>
           </td>
         </tr>
         <tr>
-          <!--<td>
-            <div class="form-group mrg-formgrp">
-              <div class="chekbox2">
-                <label>
-                  <input type="checkbox" ng-model="checked2" ng-checked="selectAll">
-                <span class="checkbox-material">
-                  <span class="check"></span>
-                </span>
-                </label>
-              </div>
-            </div>
-          </td>-->
           <td class="hand-cursor" ui-sref="app.createEmpanelment">Ashton Murray</td>
           <td>Paradigm Creatives</td>
           <td>Bangalore</td>
@@ -131,71 +83,10 @@
           <td>Lorem Ipsum</td>
           <td>0000000000</td>
           <td>
-            <p class="won-status-text btn-sm ">Won</p>
-          </td>
-          <td>
             <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(empanelment)">Discussion</button>
           </td>
 
         </tr>
-        <!--<tr>
-          <td>
-            <div class="form-group mrg-formgrp">
-              <div class="chekbox3">
-                <label>
-                  <input type="checkbox" ng-model="checked3" ng-checked="selectAll">
-                <span class="checkbox-material">
-                  <span class="check"></span>
-                </span>
-                </label>
-              </div>
-            </div>
-          </td>
-          <td class="hand-cursor" ui-sref="app.createEmpanelment">Delores Polk</td>
-          <td>Paradigm Creatives</td>
-          <td>Delhi</td>
-          <td>Ashton Murray</td>
-          <td>Lorem Ipsum</td>
-          <td>0000000000</td>
-          <td>
-            <p class="won-status-text btn-sm ">Met</p>
-          </td>
-          <td>
-            <a ui-sref='app.viewDiscussions' class="auto">
-              <button type="button" class="btn btn-raised btn-info btn-sm newcall-mrg">Discussion</button>
-            </a>
-          </td>
-
-        </tr>-->
-        <!--<tr>
-          <td>
-            <div class="form-group mrg-formgrp">
-              <div class="chekbox6">
-                <label>
-                  <input type="checkbox" ng-model="checked6" ng-checked="selectAll">
-                <span class="checkbox-material">
-                  <span class="check"></span>
-                </span>
-                </label>
-              </div>
-            </div>
-          </td>
-          <td class="hand-cursor" ui-sref="app.createEmpanelment">James Maxwell</td>
-          <td>Paradigm Creatives</td>
-          <td>Pune</td>
-          <td>James</td>
-          <td>Lorem Ipsum</td>
-          <td>0000000000</td>
-          <td>
-            <p class="won-status-text btn-sm ">Met</p>
-          </td>
-          <td>
-            <a ui-sref='app.viewDiscussions' class="auto">
-              <button type="button" class="btn btn-raised btn-info btn-sm newcall-mrg">Discussion</button>
-            </a>
-          </td>
-
-        </tr>-->
         </tbody>
       </table>
         </div>

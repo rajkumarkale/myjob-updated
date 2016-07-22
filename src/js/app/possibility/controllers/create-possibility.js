@@ -24,7 +24,7 @@ angular.module('com.module.possibility')
             $scope.uploadFiles = [];
             $scope.uploadFile = [];
 
-            $scope.point_of_contacts = [];
+           // $scope.point_of_contacts = [];
             $scope.getNewPointofContact = function () {
                 var obj = new PointOfContactModel({});
                 $scope.saleObject.pointOfContacts.push(obj);
@@ -55,10 +55,11 @@ angular.module('com.module.possibility')
                 $scope.saleObject.pointOfContacts = [primaryContact];
                 $scope.freshDiscussion = new DiscussionModel({});
                 $scope.saleObject.discussions = [$scope.freshDiscussion];
-                $scope.discussion.time = new Date();
+                $scope.discussion.time = '08:00';
                 $scope.groupTurnover.selectedItem = '';
                 $scope.businessVertical.selectedItem = '';
                 $scope.customerType.selectedItem = '';
+                $scope.employeeSize.selectedItem='';
                 $scope.typeOfDiscussion.selectedItem = '';
                 $scope.status.selectedItem = {
                     "key": "NOT_MET",
@@ -71,6 +72,7 @@ angular.module('com.module.possibility')
                     $('#stat .select .placeholder').addClass('default-cursor');
                 }, 1000);
             }
+                $scope.saleObject.client.customerType='';
         };
 
         $scope.init($stateParams);
@@ -222,7 +224,7 @@ angular.module('com.module.possibility')
             $scope.uploadFile = [];
             $scope.fileNameLen = file.name.length - 3;
             $scope.fileFormat = file.name.substring($scope.fileNameLen);
-            if ($scope.fileFormat == 'pdf' || $scope.fileFormat == 'ocx' || $scope.fileFormat == 'ptx') {
+            if ($scope.fileFormat == 'pdf' || $scope.fileFormat == 'ocx' || $scope.fileFormat == 'ptx' || $scope.fileFormat == 'png') {
                 if ($scope.discusfile && $scope.discusfile.length) {
                     for (var i = 0; i < $scope.discusfile.length; i++) {
                         var _file = $scope.discusfile[0];
@@ -237,6 +239,14 @@ angular.module('com.module.possibility')
                                 _file.documentType = angular.copy(appConfig.possibility.documentType);
                                 $scope.uploadFile.push($scope.discusfile);
                                 $scope.fileName = _file.name;
+                              if (_file.name.length > 7) {
+                                $scope.fileNamePart1 = _file.name.substring(0, 8);
+                                $scope.fileNameLen = _file.name.length - 7;
+                                $scope.fileNamePart2 = _file.name.substring($scope.fileNameLen);
+                                $scope.fileName = $scope.fileNamePart1 + '...' + $scope.fileNamePart2
+                                console.log($scope.fileName + ' ' + _file.name);
+                              }
+
                             }, null, function (evt) {
 
                             });
@@ -244,7 +254,7 @@ angular.module('com.module.possibility')
                     }
                 }
             } else {
-                CoreService.toastError('', 'please select supported file format only eg: pdf,docx,pptx');
+                CoreService.toastError('', 'Supported file formats are Docs & PNG');
                 document.getElementById("inputText").value = "";
             }
         };

@@ -121,7 +121,7 @@ angular.module('com.module.suspect')
                     }
                 }
             } else {
-                CoreService.toastError('ERROR', 'please select supported file format only eg: pdf,docx,pptx');
+                CoreService.toastError('ERROR', 'Supported file formats are Docs,JPEG & PNG');
                 document.getElementById("inputText").value = "";
 
             }
@@ -186,5 +186,12 @@ angular.module('com.module.suspect')
           }
           }
       };
+      $scope.rollOutFile=[];
+      for(var i=0;i<$scope.saleObject.documents.length;i++)
+      {
+        if($scope.saleObject.documents[i].stage==='SUSPECT'){
+          $scope.rollOutFile.push($scope.saleObject.documents[i]);
+        }
+      }
       console.log($scope.saleObject);
   }]);

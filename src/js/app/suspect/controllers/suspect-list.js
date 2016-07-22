@@ -50,9 +50,9 @@ angular.module('com.module.suspect')
         $scope.sumEndDate;
         $scope.getSuspectsByRange = function (currentPage, numPerPage) {
             var st = $filter('date')($scope.start, 'MM/dd/yyyy');
-            var date1 = Math.round(new Date(st).getTime() / 1000);
+            var date1 = new Date(st).getTime();
             var ed = $filter('date')($scope.end, 'MM/dd/yyyy');
-            var date2 = Math.round(new Date(ed).getTime() / 1000);
+            var date2 = new Date(ed).getTime();
             if (date1 < date2) {
                 $scope.sumStartDate = $scope.start;
                 $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');

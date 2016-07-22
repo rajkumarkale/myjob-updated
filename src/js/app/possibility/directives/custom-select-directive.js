@@ -8,24 +8,24 @@ angular.module('com.module.possibility').directive('customSelect',[function (){
     templateUrl:'js/app/possibility/views/custom-select-template.html',
     replace:true,
    link:function(s){
-       
-       var options=angular.copy(s.data)
+
+       var options=angular.copy(s.data);
         angular.element(document).click(function(){
   var parent = angular.element('.select');
             parent.removeClass('is-open');
 });
      s.dataList=options;
-       
+
         s.dataList.data.forEach(function(item){
             if(item.key==s.value){
                 s.dataList.selectedItem=item;
             }
-        })
+        });
      /*s.dataList.selectedItem = s.dataList.data[0];*/
         s.onChange=function(data){
             s.dataList.selectedItem =data;
             s.value=data.key;
-        }
+        };
         /*s.open=false;
         s.isopen=function(){
             s.open= !s.open;

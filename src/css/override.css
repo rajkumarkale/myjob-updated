@@ -302,3 +302,7 @@ margin-top: -10px}
   text-transform: none;
   font-size: 14px;
   margin-top: -1px;}
+.select-scroll{
+  overflow-y: auto !important;
+  max-height: 180px !important;
+  width: 100% !important;}

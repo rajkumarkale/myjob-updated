@@ -22,7 +22,7 @@ angular.module('com.module.prospect').config(['$stateProvider', function ($state
   .state('app.Requirements', {
     url: '/view-Requirements',
     templateUrl: 'js/app/prospect/views/add-requirement.html',
-    controller:'prospectCreateController'
+    controller:'addRequirement'
   });
 
 }]);

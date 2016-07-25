@@ -49,7 +49,7 @@
                                         <input  class="form-control" required data-ng-model="saleObject.client.website" type="text" name="website" tabindex="7" ng-pattern='/^(www)[a-zA-Z0-9-\.]+\.[a-z]{2,4}/'>
 <span class="error-msg" ng-show="createPossibilityForm.website.$error.pattern">Format EX: www.yahoo.com</span>
                                     </div>
-                                    
+
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                         <label class="control-label">Address 2</label>
                                         <input class="form-control" data-ng-model="saleObject.client.address.address2" type="text" tabindex="9">
@@ -82,7 +82,7 @@
                                         </div>
 
                                     </div>
-                    
+
                                   <div class="form-group">
                                         <label class="control-label dropdown-col">Group Turnover<span class="required-field">*</span></label>
                                         <div custom-select data="groupTurnover" value="saleObject.client.turnover" tabindex="6">
@@ -267,7 +267,7 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-md-9 present">
-                                                <input type="text" tabindex="27" class="form-control hand-cursor" placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="discussion.date" is-open="opened1" show-button-bar="false" ng-required="true" ng-click="open($event,'opened')" readonly>
+                                                <input type="text" tabindex="27" class="form-control hand-cursor" placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="discussion.date" is-open="opened1" show-button-bar="false" datepicker-options="dateOptions" ng-required="true" ng-click="open($event,'opened')" readonly>
                                                 <span class="input-group-addon" id="basic-addon2">
             <img src="img/calendar_icon.png" class="calendar-img " alt="" /></span>
                                             </div>

@@ -4,6 +4,15 @@ angular.module('com.module.possibility')
         $scope.filteredRows = [];
         $scope.sortType = 'legal_name';
         $scope.sortReverse = false;
+      $scope.possibilityCsvdata =[];
+       $scope.getArray =function(){
+         return $scope.possibilityCsvdata;
+       };
+
+      $scope.getCSVHeader = function () {
+        var wordsHeaders = [];
+        wordsHeaders= ['legal']
+      };
 
         $scope.data = {
             numPerPage: 10,
@@ -22,6 +31,17 @@ angular.module('com.module.possibility')
             $scope.myPromise = saleModuleService.getSalesData().then(function (response) {
                 console.log("possible", response);
                 $scope.data.possibilities = response;
+               // var ecelData = {"LegalEntity":$scope.data.possibilities[0].client.legalName,"Business_Unit":,"Location":,"Contact_Person":,"Contact_Designation":,"Contact_Number":}
+              $scope.possibilityCsvdata.push($scope.data.possibilities[0].client);
+              console.log($scope.possibilityCsvdata);
+             /* for(var i=0; i<=$scope.data.possibilities;i++){
+
+                $scope.possibilityCsvdata.push({
+
+                  LegalEntity: response[i].client.legalName
+                })
+              }*/
+
             });
 
         };

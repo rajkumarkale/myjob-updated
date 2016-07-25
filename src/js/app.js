@@ -25,7 +25,8 @@ angular.module('app', [
   'toaster',
   'nvd3',
   'highcharts-ng',
-  'ui.select'
+  'ui.select',
+  'ngCsv'
 
 ]).config(function (datepickerConfig) {
       datepickerConfig.showWeeks = false;

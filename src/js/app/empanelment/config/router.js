@@ -13,7 +13,10 @@ angular.module('com.module.empanelment')
     .state('app.createEmpanelment', {
       url: '/create-empanelment',
       templateUrl: 'js/app/empanelment/views/create-empanelment.html',
-      controller:'empanelmentController'
+      controller:'empanelmentController',
+      params: {
+        empanelment: null
+    }
     })
     .state('app.slaTracker', {
       url: '/SLA-Tracker',

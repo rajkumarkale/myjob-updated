@@ -160,20 +160,21 @@ angular.module('com.module.suspect')
         $scope.isValid = function (val) {
             var c1 = true;
           var c2 = true;
-            if ($scope.saleObject.pointOfContacts.length > 0) {
+          if ($scope.uploadFiles.length==1) {
+
+              if ($scope.uploadFiles[0].documentType.selectedItem=="") {
+                c2 = false;
+              }
+
+          }
+          /*  if ($scope.saleObject.pointOfContacts.length > 0) {
                 for (var i = 0; i < $scope.saleObject.pointOfContacts.length; i++) {
                     if (!($scope.saleObject.pointOfContacts[i].contactType && $scope.saleObject.pointOfContacts[i].supportArea)) {
                         c1 = false;
                     }
-                  if ($scope.uploadFiles && $scope.uploadFiles.length) {
-                    for (var j = 0; j < $scope.uploadFiles.length; j++) {
-                      if (!$scope.uploadFiles[j].documentType) {
-                        c2 = false;
-                      }
-                    }
-                  }
+
                 }
-            }
+            }*/
 
             return (val && c1 && c2);
         };

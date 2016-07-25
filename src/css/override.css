@@ -294,5 +294,30 @@ color: #049ad9}
   margin-top: 50px;
   margin-left: -109px;
 }
-
+.tooltipp {
+  position: relative;
+  display: inline-block;
+}
+.tooltipp .tooltiptextt {
+  visibility: hidden;
+  width: 80px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 3px 2px 3px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+font-size: 11px !important;
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+.tooltipp:hover .tooltiptextt {
+  visibility: visible;
+  opacity: 1;
+}
 

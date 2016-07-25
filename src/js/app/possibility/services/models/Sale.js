@@ -14,6 +14,8 @@ module.factory('SaleModel', function (ClientModel, DiscussionModel, PointOfConta
         this.unfreezedBy = modelData.unfreezedBy;
         this.freezeDuration = modelData.freezeDuration;
         this.permission=modelData.permission;
+        this.reasonOfLoss=modelData.reasonOfLoss;
+        this.estimatedClosure=modelData.estimatedClosure;
         this.documents=modelData.documents || [];
         if (modelData && modelData.roles) {
             this.roles = {

@@ -108,9 +108,9 @@
                     <tr data-ng-repeat="prospect in filteredRows=(data.prospects | orderBy:sortType:sortReverse |companyFilter:selectedItem)| filter:$root.searchView">
                         <td>
                           <p style="border-radius: 50%;color: transparent;" ng-class="statusColor(prospect.prospect)"> </p>
-                          <p class=" " ng-class="statusColor(suspect.status)"></p>
+                          <!--<p class=" " ng-class="statusColor(suspect.status)"></p>-->
                         </td>
-                        <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">{{prospect.client.legalName}}</td>
+                        <td class="hand-cursor td-text-color" ng-click="openEditProspect(prospect)">{{prospect.client.legalName}}</td>
                         <td>{{prospect.client.businessUnit}}</td>
                         <td>{{prospect.annual_rate_no?prospect.annual_rate_no:'--'}}</td>
                         <td>{{prospect.annual_rate_topline?prospect.annual_rate_topline:'--'}}</td>

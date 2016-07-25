@@ -104,6 +104,12 @@ angular.module('com.module.prospect')
             $scope.data.prospects = response;
             $scope.data.totalItems = response.length;
         });
+        $scope.openEditProspect = function (prospect) {
+            $state.go('app.create-prospect', {
+                prospect: prospect
+            });
+
+        };
         $scope.openDiscussions = function (prospect, status) {
             discussionService.setData(prospect);
             $state.go('app.viewDiscussions', {

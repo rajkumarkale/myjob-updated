@@ -216,6 +216,7 @@ div > div > svg > text {visibility: hidden;}
 
 .action-distance{
   margin-right: 15px !important;
+
 }
 
 .status-padding-symbol{
@@ -281,4 +282,11 @@ color: #049ad9}
 .roll-out{
   margin-top: 50px;
   margin-left: -109px;
+}
+
+img[title]:hover{
+  content: attr(title);
+  background-color: black;
+
+
 }

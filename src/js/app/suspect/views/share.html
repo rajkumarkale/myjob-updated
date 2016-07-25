@@ -3,10 +3,11 @@
     <h4 class="modal-title "> Share Suspect</h4></div>
   <div class="modal-body">
     <div class="row">
+      <form name="share">
       <div class="col-md-12">
         <div class="form-group label-floating is-empty col-pad">
           <label for="i7" class="control-label">Name</label>
-          <input class="form-control" alphabets-only ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setShareData($item, $model, $label,$event,$index)" required>
+          <input name="name" class="form-control" alphabets-only ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setShareData($item, $model, $label,$event,$index)" required>
                                         <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
                                         <div ng-show="noResults">
                                             <i class="glyphicon glyphicon-remove"></i> No Results Found
@@ -31,9 +32,10 @@
         </div>
         <div class="share-prospect">
           <button class="data-button-cancel btn btn-primary  " ng-click="cancel()">Cancel</button>
-          <button class="btn btn-primary btn-raised share-button" data-ng-click="share()">Share</button>
+          <button class="btn btn-primary btn-raised share-button" data-ng-click="share()" data-ng-disabled="share.name.$invalid">Share</button>
         </div>
       </div>
+      </form>
     </div>
   </div>
 

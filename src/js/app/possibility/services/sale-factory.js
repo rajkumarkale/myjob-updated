@@ -95,6 +95,16 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
       })
   };
 
+  var getRequirement=function(id){
+    return $http(
+      {
+        method: 'GET',
+        url:BASEURI+'/api/sale/'+id+'/requirements'
+      })
+  };
+
+
+
     return {
         getSalesData: getSalesData,
         createSale: createSale,
@@ -105,6 +115,7 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
         getDashboardData:getDashboardData,
         deleteDocument:deleteDocument,
         deletePoc:deletePoc,
-        viewDiscussions:viewDiscussions
+        viewDiscussions:viewDiscussions,
+      getRequirement:getRequirement
     };
 });

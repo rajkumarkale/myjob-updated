@@ -7,6 +7,15 @@ angular.module('com.module.prospect')
 
         $scope.sortType = 'legal_name';
         $scope.sortReverse = false;
+        $scope.prospectCsvdata =[];
+        $scope.getArray =function(){
+        return $scope.prospectCsvdata;
+  };
+
+  $scope.getCSVHeader = function () {
+    var headerArr = ["LegalEntity","BusinessUnit","Annual Number","Annual Revenue","Exp.Closure Date","Contact Name","ContactNumber"];
+    return headerArr;
+  };
         $scope.open = function ($event, opened) {
             $event.preventDefault();
             $event.stopPropagation();

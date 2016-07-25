@@ -1,7 +1,8 @@
 angular.module('com.module.possibility')
-    .controller('possibilityListController', ['$scope', '$state', 'toaster', '$timeout', '$cookies', 'discussionService', 'CoreService', '$filter', '$rootScope', 'saleModuleService', function ($scope, $state, toaster, $timeout, $cookies, discussionService, CoreService, $filter, $rootScope, saleModuleService) {
+    .controller('possibilityListController', ['$scope', '$state', 'toaster', '$timeout', '$cookies', 'discussionService', 'CoreService', '$filter', '$rootScope', 'saleModuleService','SaleModel', function ($scope, $state, toaster, $timeout, $cookies, discussionService, CoreService, $filter, $rootScope, saleModuleService,SaleModel) {
         $scope.selectedItem = [];
         $scope.filteredRows = [];
+      $scope.clinetname=[];
         $scope.sortType = 'legal_name';
         $scope.sortReverse = false;
       $scope.possibilityCsvdata =[];
@@ -10,8 +11,8 @@ angular.module('com.module.possibility')
        };
 
       $scope.getCSVHeader = function () {
-        var wordsHeaders = [];
-        wordsHeaders= ['legal']
+        var headerArr = ["LegalEntity","BusinessUnit","Location","ContactPerson","ContactDesignation","ContactNumber"];
+        return headerArr;
       };
 
         $scope.data = {
@@ -31,20 +32,26 @@ angular.module('com.module.possibility')
             $scope.myPromise = saleModuleService.getSalesData().then(function (response) {
                 console.log("possible", response);
                 $scope.data.possibilities = response;
-               // var ecelData = {"LegalEntity":$scope.data.possibilities[0].client.legalName,"Business_Unit":,"Location":,"Contact_Person":,"Contact_Designation":,"Contact_Number":}
-              $scope.possibilityCsvdata.push($scope.data.possibilities[0].client);
-              console.log($scope.possibilityCsvdata);
-             /* for(var i=0; i<=$scope.data.possibilities;i++){
+if($scope.data.possibilities[i]) {
+  for (var i = 0; i <= $scope.data.possibilities.length; i++) {
+    var excelData = {
+      "LegalEntity": $scope.data.possibilities[i].client.legalName,
+      "Business_Unit": $scope.data.possibilities[i].client.businessUnit,
+      "Location": $scope.data.possibilities[i].client.address.city,
+      "contactPerson": $scope.data.possibilities[i].pointOfContacts[0].name,
+      "contactDesignation": $scope.data.possibilities[i].pointOfContacts[0].designation,
+      "contactNumber": $scope.data.possibilities[i].pointOfContacts[0].phone
+    };
+    $scope.possibilityCsvdata.push(excelData);
 
-                $scope.possibilityCsvdata.push({
+  }
+}
 
-                  LegalEntity: response[i].client.legalName
-                })
-              }*/
 
             });
 
         };
+      /*$scope.clinetname.push(SaleModel.possibility.getPrimaryContact().name);*/
         $scope.sumStartDate = new Date();
         $scope.sumEndDate;
         $scope.getPossibilityByRange = function (currentPage, numPerPage) {

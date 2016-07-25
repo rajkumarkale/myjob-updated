@@ -5,6 +5,15 @@ angular.module('com.module.empanelment')
 
   .controller('viewEmpanelmentCtrl',['$scope','discussionService','$state','saleModuleService',function($scope,discussionService,$state,saleModuleService){
       $scope.data={};
+    $scope.empanelmentCsvdata =[];
+    $scope.getArray =function(){
+      return $scope.empanelmentCsvdata;
+    };
+
+    $scope.getCSVHeader = function () {
+      var headerArr = ["LegalEntity","BusinessUnit","Commercial Model","Agreement Start Date","Agreement Tenure","Business Vertical"];
+      return headerArr;
+    };
       $scope.openDiscussions = function(possibility){
                 discussionService.setData(possibility);
 				$state.go('app.viewDiscussions');
@@ -31,6 +40,6 @@ angular.module('com.module.empanelment')
             var data = response.data;
           console.log(data.empanelment.count);
             $scope.data.count = data.empanelment.count ? data.empanelment.count : 0;
-            
+
         });
     }]);

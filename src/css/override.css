@@ -293,4 +293,12 @@ color: #049ad9}
   margin-top: 50px;
   margin-left: -109px;
 }
-
+.excel{width: 82px;
+  padding: 6px;
+  text-transform: none;
+  font-size: 14px;
+margin-top: -10px}
+.excel_pos{width: 82px; padding: 6px;
+  text-transform: none;
+  font-size: 14px;
+  margin-top: -1px;}

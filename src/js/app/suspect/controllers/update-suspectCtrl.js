@@ -159,15 +159,23 @@ angular.module('com.module.suspect')
         };
         $scope.isValid = function (val) {
             var c1 = true;
+          var c2 = true;
             if ($scope.saleObject.pointOfContacts.length > 0) {
                 for (var i = 0; i < $scope.saleObject.pointOfContacts.length; i++) {
                     if (!($scope.saleObject.pointOfContacts[i].contactType && $scope.saleObject.pointOfContacts[i].supportArea)) {
                         c1 = false;
-                        break;
                     }
+                  if ($scope.uploadFiles && $scope.uploadFiles.length) {
+                    for (var j = 0; j < $scope.uploadFiles.length; j++) {
+                      if (!$scope.uploadFiles[j].documentType) {
+                        c2 = false;
+                      }
+                    }
+                  }
                 }
             }
-            return (val && c1);
+
+            return (val && c1 && c2);
         };
       $scope.removeContact = function (index) {
         if (index == 0) {

@@ -207,7 +207,7 @@
                   </button>
                 </span>
                                 </div>
-                                <span class="material-input control-label ">Supported file format are DOC, JPEG $ PNG.</span>
+                                <span class="material-input control-label ">Supported file format are DOC, JPEG & PNG.</span>
                             </div>
                         </div>
                         <div ng-repeat="f in uploadFiles" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
@@ -220,9 +220,10 @@
                                                     <!--<p class="text-in">VOTER CARD</p>-->
 
                                                 </div>
+                                              <div class="form-group">
                                                 <label class="control-label ">Document Type</label>
                                                 <div class="preview-select" custom-select data="f.documentType" value="f.documentType">
-
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>

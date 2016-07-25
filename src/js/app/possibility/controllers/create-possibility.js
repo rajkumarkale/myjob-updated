@@ -71,8 +71,9 @@ angular.module('com.module.possibility')
                     $('#stat .select ul').remove();
                     $('#stat .select .placeholder').addClass('default-cursor');
                 }, 1000);
-            }
                 $scope.saleObject.client.customerType='';
+            }
+                
         };
 
         $scope.init($stateParams);

@@ -52,8 +52,54 @@
       },
     "prospect":{
       "typeOfBusiness" :{"data":[{"key":"Business Vertical","displayText":"Business Vertical"},{"key":"IT Staffing","displayText":"IT Staffing"},{"key":"General Staffing","displayText":"General Staffing"},{"key":"Government Staffing","displayText":"Government Staffing"}],"selectedItem":""},
-      "status_prospect":{"data":[{"key":"Agreement_On_Closure","displayText":"Agreement On Closure"},{"key":"LOST","displayText":"LOST"},{"key":"WON","displayText":"WON"},{"key":"Work In Progress","displayText":"Work In Progress"}]}
+      "status":{"data":[{"key":"AGREEMENT_ON_CLOSURE","displayText":"AGREEMENT ON CLOSURE"},{"key":"LOST","displayText":"LOST"},{"key":"WON","displayText":"WON"},{"key":"WORK_IN_PROGRESS","displayText":"WORK IN PROGRESS"}],"selectedItem":""}
     },
+      "requirementKeys":{
+          "status":[
+              {
+                  "key":"ACTIVE",
+                  "displayText":"Active"
+              },
+              {
+                  "key":"POSITION_ON_HOLD",
+                  "displayText":"Position on Hold"
+              },
+              {
+                  "key":"CLOSED_BY_OTHER_CONSULTANT",
+                  "displayText":"Closed by other Consultant"
+              },
+              {
+                  "key":"CLOSED_INTERNALLY",
+                  "displayText":"Closed internally"
+              },
+              {
+                  "key":"CLOSED_BY_US",
+                  "displayText":"Closed by Us"
+              }
+          ],
+          "requirementType":[
+              {
+                  "key":"PERMANANT_STAFFING",
+                  "displayText":"permanant staffing"
+              },              
+              {
+                  "key":"TEMP_STAFFING",
+                  "displayText":"temparaury staffing"
+              },
+              {
+                  "key":"PROFESSIONAL_STAFFING",
+                  "displayText":"professional staffing"
+              },
+              {
+                  "key":"GENERAL_STAFFING",
+                  "displayText":"general staffing"
+              },
+              {
+                  "key":"IT_STAFFING",
+                  "displayText":"It Staffing"
+              }
+          ]
+      },
     "languages": {
       "en": "English"
     },

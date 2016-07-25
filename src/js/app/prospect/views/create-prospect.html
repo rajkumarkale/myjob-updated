@@ -12,36 +12,36 @@
             <div class="col-md-6 form-custom-padding">
               <div class="form-group label-floating">
                 <label class="control-label">Legal Entity</label>
-                <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.legalName" type="text">
               </div>
               <div>
                 <label class="control-label">Bussiness Vertical</label>
 
-                <input class="form-control" data-ng-model="createPossibility.vertical" type="text">
+                <input class="form-control" data-ng-model="saleObject.client.vertical" type="text">
               </div>
               <div>
                 <label class="control-label">Employee Size of the Company</label>
-                <input class="form-control" required data-ng-model="createPossibility.employee_size" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.employeeSize" type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Address Line 1</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 " type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.address1 " type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">City</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.city " type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.city " type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Zipcode</label>
-                <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text">
+                <input class="form-control" required numbers-only maxlength="6" data-ng-model="saleObject.client.address.pin" type="text">
               </div>
               <div class="label-floating ">
                 <label class="control-label">Country</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.country" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.country" type="text">
               </div>
               <div class="up-margin">
                 <ul>
-                  <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
+                  <li ng-repeat="f in saleObject.client.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
                     <img ng-src="{{f.url}}" class="thumb"></li>
                 </ul>
               </div>
@@ -49,32 +49,32 @@
             <div class="col-md-6 form-custom-padding">
               <div class="form-group label-floating ">
                 <label class="control-label">Business Unit</label>
-                <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.businessUnit" type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Website URL</label>
-                <input class="form-control" required data-ng-model="createPossibility.url" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.website" type="text">
               </div>
               <div>
                 <label class="control-label">Group Turnover</label>
-                <input class="form-control" data-ng-model="createPossibility.turnover" required type="text">
+                <input class="form-control" data-ng-model="saleObject.client.turnover" required type="text">
               </div>
               <div>
                 <label class="control-label">Type of Customer</label>
-                <input class="form-control" data-ng-model="createPossibility.customer_type" type="text">
+                <input class="form-control" data-ng-model="saleObject.client.customerType" type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Address Line 2</label>
-                <input class="form-control" data-ng-model="createPossibility.address.address_line_2" type="text">
+                <input class="form-control" data-ng-model="saleObject.client.address.address2" type="text">
               </div>
               <div class="form-group label-floating">
                 <label class="control-label">State</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.state" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.state" type="text">
               </div>
               <br>
               <div data-ng-if="!isNewPossibility">
                 <label class="control-label">Status</label>
-                <input class="form-control" required data-ng-model="createPossibility.current_status.status" type="text">
+                <input class="form-control" required data-ng-model="saleObject.possibility" type="text">
               </div>
             </div>
           </div>
@@ -206,7 +206,7 @@
         <div class="col-md-8">
           <div class="form-group ">
             <label class="control-label">Status</label>
-            <div   custom-select data="status" class="select-suspect"></div>
+            <div   custom-select data="suspectStatus" value="saleObject.suspect" class="select-suspect"></div>
 
           </div>
         </div>
@@ -215,8 +215,8 @@
       <div class="row ">
 
         <div class="col-lg-12 ">
-          <accordion class="prospect-ac" >
-            <accordion-group is-open="poc.isOpening" >
+          <accordion class="prospect-ac" ng-repeat="poc in saleObject.pointOfContacts">
+            <accordion-group is-open="true" >
               <accordion-heading  >
           <span class="color-black " style="font-weight: normal">
            Contact Person Details
@@ -240,7 +240,7 @@
                 <div class="col-md-5 ">
                   <div class="form-group label-floating is-empty">
                     <label class="control-label">Address</label>
-                    <input class="form-control bord-remove" data-ng-model="poc.support_location" type="text">
+                    <input class="form-control bord-remove" data-ng-model="poc.supportLocation" type="text">
                   </div>
                   <div class="form-group label-floating is-empty">
                     <label class="control-label">Contact Person Designation</label>
@@ -264,7 +264,7 @@
     width: 198px;">
           <div class="form-group ">
             <label class="control-label ">Status</label>
-            <div   custom-select data="status_prospect" value="saleObject.prospect" class="status-prospect"></div>
+            <div   custom-select data="prospectStatus" value="saleObject.prospect" class="status-prospect"></div>
 
           </div>
 
@@ -276,47 +276,37 @@
           <div class="col-md-6 form-custom-padding">
             <div class="form-group label-floating is-empty">
               <label class="control-label">Client Name</label>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" ng-model="saleObject.client.clientName">
             </div>
             <div class="form-group label-floating is-empty">
               <label class="control-label">Business Potential Numbers</label>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" ng-model="saleObject.client.potentialNumbers">
             </div>
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating">
               <label class="control-label">Annual Business Bottomline</label>
-              <input class="form-control" type="text">
-            </div>
-            <div class="form-group ">
-              <label class="control-label">Business Vertical</label>
-              <div custom-select data="businessVertical" value="saleObject.client.vertical" tabindex="3"></div>
+              <input class="form-control" type="text" ng-model="saleObject.client.turnover">
             </div>
           </div>
           <div class="col-md-6 form-custom-padding">
             <div class="form-group label-floating is-empty">
-              <label class="control-label">Legal Entity</label>
-              <input class="form-control" type="text">
-            </div>
-            <div class="form-group label-floating is-empty">
               <label class="control-label">Annual Business Topline</label>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" ng-model="saleObject.client.revenue">
             </div>
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating">
               <label class="control-label">Expected Date of Closure</label>
-              <input class="form-control" type="text">
+              <input class="form-control" type="date" ng-model="date">
             </div>
             <div class="form-group label-floating is-empty" ng-if="status_lost">
               <label class="control-label">Reason of Loss</label>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" ng-model="saleObject.reasonOfLoss">
             </div>
-
-
-          </div>
+     </div>
         </div>
          <br>
         <div class=" col-md-offset-5" ng-hide="displayagreement">
           <a ui-sref="app.viewProspect" class="auto">
-            <button class="btn btn-raised  data-button-cancel btn-text">Cancel</button>&nbsp;&nbsp;</a>
-          <button class="btn btn-primary data-button-sub btn-text">Submit</button>
+            <button class="btn btn-raised  data-button-cancel btn-text" ng-click="cancel()">Cancel</button>&nbsp;&nbsp;</a>
+          <button class="btn btn-primary data-button-sub btn-text" ng-click="submit()">Submit</button>
         </div>
       </div>
 

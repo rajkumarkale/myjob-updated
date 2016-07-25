@@ -320,4 +320,16 @@ font-size: 11px !important;
   visibility: visible;
   opacity: 1;
 }
-
+.excel{width: 82px;
+  padding: 6px;
+  text-transform: none;
+  font-size: 14px;
+margin-top: -10px}
+.excel_pos{width: 82px; padding: 6px;
+  text-transform: none;
+  font-size: 14px;
+  margin-top: -1px;}
+.select-scroll{
+  overflow-y: auto !important;
+  max-height: 180px !important;
+  width: 100% !important;}

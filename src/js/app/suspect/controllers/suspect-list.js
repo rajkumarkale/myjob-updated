@@ -4,6 +4,15 @@ angular.module('com.module.suspect')
         $scope.filteredRows = [];
         $scope.sortType = 'legal_name';
         $scope.sortReverse = false;
+        $scope.suspectCsvdata =[];
+        $scope.getArray =function(){
+        return $scope.suspectCsvdata;
+      };
+
+      $scope.getCSVHeader = function () {
+        var headerArr = ["LegalEntity","BusinessUnit","Location","ContactPerson","ContactDesignation","ContactNumber"];
+        return headerArr;
+      };
         $scope.data = {
             numPerPage: 10,
             searchKeywords: '',
@@ -43,6 +52,18 @@ angular.module('com.module.suspect')
                 console.log("suspects", response);
                 $scope.data.suspects = response;
                 $scope.data.totalItems = response.length;
+              $scope.data.suspects = response;
+              for(var i=0; i<=$scope.data.suspects.length;i++){
+                var excelData = {"LegalEntity":$scope.data.suspects[i].client.legalName,
+                  "Business_Unit":$scope.data.suspects[i].client.businessUnit,
+                  "Location":$scope.data.suspects[i].client.address.city,
+                  "contactPerson":$scope.data.suspects[i].pointOfContacts[0].name,
+                  "contactDesignation":$scope.data.suspects[i].pointOfContacts[0].designation,
+                  "contactNumber":$scope.data.suspects[i].pointOfContacts[0].phone
+                };
+                $scope.suspectCsvdata.push(excelData);
+
+              }
 
             });
         };

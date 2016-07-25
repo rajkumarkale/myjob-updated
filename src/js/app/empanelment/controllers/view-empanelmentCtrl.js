@@ -5,6 +5,15 @@ angular.module('com.module.empanelment')
 
 .controller('viewEmpanelmentCtrl', ['$scope', 'discussionService', '$state', 'saleModuleService', '$filter', function ($scope, discussionService, $state, saleModuleService, $filter) {
     $scope.data = {};
+  $scope.empanelmentCsvdata =[];
+  $scope.getArray =function(){
+    return $scope.empanelmentCsvdata;
+  };
+
+  $scope.getCSVHeader = function () {
+    var headerArr = ["LegalEntity","BusinessUnit","Commercial Model","Agreement Start Date","Agreement Tenure","Business Vertical"];
+    return headerArr;
+  };
     $scope.openDiscussions = function (possibility) {
         discussionService.setData(possibility);
         $state.go('app.viewDiscussions');
@@ -15,18 +24,24 @@ angular.module('com.module.empanelment')
     $scope.open = function ($event, opened) {
         $event.preventDefault();
         $event.stopPropagation();
+      $scope.openDiscussions = function(possibility){
+                discussionService.setData(possibility);
+				$state.go('app.viewDiscussions');
+		};
+    $scope.open = function($event,opened) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      $scope.openCal = opened;
 
-        $scope.openCal = opened;
-
-        if ($scope.openCal === 'opened1') {
-            $scope.opened1 = true;
-            $scope.opened2 = false;
-        } else if ($scope.openCal === 'opened2') {
-            $scope.opened2 = true;
-            $scope.opened1 = false;
-        }
+      if ($scope.openCal === 'opened1') {
+        $scope.opened1 = true;
+        $scope.opened2 = false;
+      } else if ($scope.openCal === 'opened2') {
+        $scope.opened2 = true;
+        $scope.opened1 = false;
+      }
+    }
     };
-
     saleModuleService.getDashboardData().then(function (response) {
         var data = response.data;
         console.log(data.empanelment.count);
@@ -45,6 +60,7 @@ angular.module('com.module.empanelment')
         console.log(empanelment);
         $state.go('app.createEmpanelment', {
             empanelment: empanelment
+
         });
     };
     $scope.getEmpanelmentsByRange = function (currentPage, numPerPage) {
@@ -66,5 +82,6 @@ angular.module('com.module.empanelment')
         } else {
             CoreService.toastError('', 'Satrt date should be less than End date.');
         }
-    };
+    }
+
     }]);

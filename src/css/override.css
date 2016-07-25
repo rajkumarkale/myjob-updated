@@ -275,18 +275,24 @@ color: #049ad9}
 .p-0{padding: 0px;margin: -1px}
 .present .dropdown-menu table > tbody > tr > td .btn.btn-sm {color: #636363 !important;}
 .form-group .checkbox label, .form-group .radio label, .form-group  .age-text {
-  font-size: 12px !important; color:#5c5d5b;}
+  font-size: 16px !important; color:#8c8c8c;}
+.age-text{font-size: 16px !important; color:#8c8c8c;}
 .space-age{margin-top: 40px}
 .space-top{margin-top: 74px}
 .font-ind{font-size: 16px}
+
+.m-r .select{margin-right: -21px !important;}
+.p-bottom{padding-bottom: 33px;}
+.client-req{font-size: 19px;
+  color: #049ad9;
+  margin-left: 30px;}
+.p-r {padding-right: 0px !important;}
+.p-l-20{padding-left: 20px;}
+.m-t-20{margin-top: 20px}
+
 .roll-out{
   margin-top: 50px;
   margin-left: -109px;
 }
 
-img[title]:hover{
-  content: attr(title);
-  background-color: black;
 
-
-}

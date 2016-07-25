@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <hr class="hr-line">
-                    <form name="createPossibilityForm" id="possibility" novalidate>
+                    <form name="createPossibilityForm" id="possibility" novalidate class="form-validation">
   <div id="noEdit">
                         <div class="row ">
                             <div class="col-md-12 ">
@@ -46,9 +46,10 @@
                                     </div>
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                         <label class="control-label">Website URL<span class="required-field">*</span></label>
-                                        <input  class="form-control" required data-ng-model="saleObject.client.website" type="text" tabindex="7" ng-pattern='/^(www)[a-zA-Z0-9-\.]+\.[a-z]{2,4}/'>
-<span ng-show=""></span>
+                                        <input  class="form-control" required data-ng-model="saleObject.client.website" type="text" name="website" tabindex="7" ng-pattern='/^(www)[a-zA-Z0-9-\.]+\.[a-z]{2,4}/'>
+<span class="error-msg" ng-show="createPossibilityForm.website.$error.pattern">Format EX: www.yahoo.com</span>
                                     </div>
+                                    
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
                                         <label class="control-label">Address 2</label>
                                         <input class="form-control" data-ng-model="saleObject.client.address.address2" type="text" tabindex="9">
@@ -81,6 +82,7 @@
                                         </div>
 
                                     </div>
+                    
                                   <div class="form-group">
                                         <label class="control-label dropdown-col">Group Turnover<span class="required-field">*</span></label>
                                         <div custom-select data="groupTurnover" value="saleObject.client.turnover" tabindex="6">

@@ -1,7 +1,7 @@
 <div class="maincol-apply">
     <div class="container col-md-12 pad-t-20 maincol-apply" data-cg-busy="{promise:myPromise,message:'Loading prospects'}">
         <div class="panel panel-primary pan-col">
-            <div class="panel-heading summary">Summary for the month of April 2016</div>
+            <div class="panel-heading summary">Summary for the month of {{sumStartDate | date:'MMMM yyyy '}}{{sumEndDate}}</div>
             <div class="panel-body">
                 <div class="row">
                     <div class="initialicons-div">
@@ -81,7 +81,7 @@
                                     <span class="input-group-addon cal-img hand-cursor" ng-click="open($event,'opened2')"><img src="img/calendar_icon.png" alt=""  /></span>
                                 </div>
 
-                                <button class="btn btn-primary btn-raised filter ">Go</button>
+                                <button class="btn btn-primary btn-raised filter" ng-click="getProspectsByRange()" >Go</button>
                             </div>
                         </form>
                     </div>
@@ -112,9 +112,9 @@
                         </td>
                         <td class="hand-cursor td-text-color" ui-sref="app.create-prospect">{{prospect.client.legalName}}</td>
                         <td>{{prospect.client.businessUnit}}</td>
-                        <td>{{prospect.annual_rate_no}}</td>
-                        <td>{{prospect.annual_rate_topline}}</td>
-                        <td>{{prospect.estimated_closure |date}}</td>
+                        <td>{{prospect.annual_rate_no?prospect.annual_rate_no:'--'}}</td>
+                        <td>{{prospect.annual_rate_topline?prospect.annual_rate_topline:'--'}}</td>
+                        <td>{{prospect.estimated_closure?(prospect.estimated_closure|date):'--'}}</td>
                         <td>000000</td>
                         <td>000000</td>
                         <td class="action-padding">
@@ -128,7 +128,7 @@
                                     <td><img src="img/transfer_icon.png" tooltip="Transfer" class="action-distance " data-ng-class="{'hand-cursor':showTransfer(prospect)}" ng-click="openShare('tansfer',prospect)" ng-show="showTransfer(prospect)">
                                         <img src="img/transfer_hide.png"  class="action-distance " ng-hide="showTransfer(prospect)">
                                     </td>
-                                    <td><img src="img/revoke_icon.png" tooltip="Revoke" class="hand-cursor"></td>
+                                    <!--<td><img src="img/revoke_icon.png" tooltip="Revoke" class="hand-cursor"></td>-->
                                 </tr>
                             </table>
                         </td>

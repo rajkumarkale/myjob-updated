@@ -2,7 +2,7 @@
  * Created by revathi bandi on 5/11/2016.
  */
 var app=angular.module('com.module.empanelment')
-  .controller('empanelmentController',['$scope','$state','appConfig',function($scope,$state,appConfig){
+  .controller('empanelmentController',['$scope','$state','appConfig','$stateParams',function($scope,$state,appConfig,$stateParams){
       $scope.init = function($stateParams) {
             $scope.pricingMode = appConfig.empanelment.pricingMode;
             $scope.creditTerm = appConfig.empanelment.creditTerm;
@@ -10,6 +10,9 @@ var app=angular.module('com.module.empanelment')
 
       };
     $scope.init();
+      if($stateParams.empanelment){
+          $scope.saleObject=$stateParams.empanelment;
+      }
     $scope.open = function ($event, opened) {
       $event.preventDefault();
       $event.stopPropagation();

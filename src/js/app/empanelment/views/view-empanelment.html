@@ -2,7 +2,7 @@
   <div class="container all-dateinputs">
     <div class="container col-md-12 pad-t-20 maincol-apply">
       <div class="panel panel-primary pan-col">
-        <div class="panel-heading summary">Summary for the month of April 2016</div>
+        <div class="panel-heading summary">Summary for the month of {{sumStartDate | date:'MMMM yyyy '}}{{sumEndDate}}</div>
         <div class="panel-body">
           <div class="detailsContent">
             <div class="detailsContentDiv">
@@ -40,7 +40,7 @@
                   <span class="input-group-addon cal-img hand-cursor" ng-click="open($event,'opened2')"><img src="img/calendar_icon.png" alt=""  /></span>
                 </div>
 
-                <button class="btn btn-primary btn-raised filter ">Go</button>
+                <button class="btn btn-primary btn-raised filter" ng-click="getEmpanelmentsByRange()">Go</button>
               </div>
             </form>
           </div>
@@ -63,7 +63,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr >
+        <tr data-ng-repeat="empanelment in filteredRows= (data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem) | filter:$root.searchView">
           <td class="hand-cursor" ui-sref="app.createEmpanelment">Robert Martin</td>
           <td class="col-lg-3">Paradigm Creatives</td>
           <td class="cell-gap">Hyderabad</td>

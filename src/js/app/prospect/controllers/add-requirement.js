@@ -8,6 +8,7 @@ angular.module('com.module.prospect')
     $scope.status_prospect=appConfig.prospect.status_prospect;
     $scope.priority=appConfig.prospect.priority;
     $scope.requireStatus=appConfig.requirementKeys.requirementType;
+    $scope.industry=appConfig.requirementKeys.industry;
     $scope.ageData={
       data:[]
     };

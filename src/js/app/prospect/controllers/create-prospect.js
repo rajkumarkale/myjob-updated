@@ -65,9 +65,16 @@ angular.module('com.module.prospect')
             if ($scope.openCal === 'opened1') {
                 $scope.opened1 = true;
                 $scope.opened2 = false;
+              $scope.opened3 = false;
             } else if ($scope.openCal === 'opened2') {
                 $scope.opened2 = true;
                 $scope.opened1 = false;
+              $scope.opened3 = false;
+            }
+            else if ($scope.openCal === 'opened3') {
+              $scope.opened2 = false;
+              $scope.opened1 = false;
+              $scope.opened3 = true;
             }
         };
 

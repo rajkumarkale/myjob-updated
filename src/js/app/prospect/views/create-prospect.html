@@ -290,9 +290,12 @@
               <label class="control-label">Annual Business Topline</label>
               <input class="form-control" type="text" ng-model="saleObject.client.revenue">
             </div>
-            <div class="form-group label-floating">
+            <div class="form-group label-floating present">
               <label class="control-label">Expected Date of Closure</label>
-              <input class="form-control" type="date" ng-model="date">
+              <input class="form-control"  ng-model="exdate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
+                     show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>
+              <span class="hand-cursor" id="basic-addon2">
+            <img src="img/calendar_icon.png" class="cal-align " ng-click="open($event,'opened3')" alt="" /></span>
             </div>
             <div class="form-group label-floating is-empty" ng-if="status_lost">
               <label class="control-label">Reason of Loss</label>

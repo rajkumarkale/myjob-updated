@@ -398,6 +398,31 @@
           }
         ],
         "selectedItem": ""
+      },
+      "industry": {
+        "data": [
+          {
+            "key": "Accounting/Finance",
+            "displayText": "Accounting/Finance"
+          },
+          {
+            "key": "Admin/Secretarial",
+            "displayText": "Admin/Secretarial"
+          },
+          {
+            "key": "Advertising / PR / MR / Events",
+            "displayText": "Advertising / PR / MR / Events"
+          },
+          {
+            "key": "Agriculture / Dairy",
+            "displayText": "Agriculture / Dairy"
+          },
+          {
+            "key": "Airlines",
+            "displayText": "Airlines"
+          }
+        ],
+        "selectedItem": ""
       }
     },
     "languages": {

@@ -52,6 +52,7 @@
       },
     "prospect":{
       "typeOfBusiness" :{"data":[{"key":"Business Vertical","displayText":"Business Vertical"},{"key":"IT Staffing","displayText":"IT Staffing"},{"key":"General Staffing","displayText":"General Staffing"},{"key":"Government Staffing","displayText":"Government Staffing"}],"selectedItem":""},
+      "status":{"data":[{"key":"AGREEMENT_ON_CLOSURE","displayText":"AGREEMENT ON CLOSURE"},{"key":"LOST","displayText":"LOST"},{"key":"WON","displayText":"WON"},{"key":"WORK_IN_PROGRESS","displayText":"WORK IN PROGRESS"}],"selectedItem":""},
       "status_prospect":{"data":[{"key":"Agreement_On_Closure","displayText":"Agreement On Closure"},{"key":"LOST","displayText":"LOST"},{"key":"WON","displayText":"WON"},{"key":"Work In Progress","displayText":"Work In Progress"}],"selectedItem":""},
       "priority":{"data":[{"key":"CRITICAL","displayText":"CRITICAL"},{"key":"HIGH","displayText":"HIGH"},{"key":"LOW","displayText":"LOW"},{"key":"MEDIUM","displayText":"MEDIUM"}],"selectedItem":""}
     },

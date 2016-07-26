@@ -2,7 +2,8 @@
  * Created by revathi bandi on 5/11/2016.
  */
 var app=angular.module('com.module.empanelment')
-  .controller('empanelmentController',['$scope','$state','appConfig','$stateParams',function($scope,$state,appConfig,$stateParams){
+  .controller('empanelmentController',['$scope','$state','appConfig','$stateParams','pricingModel',function($scope,$state,appConfig,$stateParams,pricingModel){
+       $scope.pricingModel=new pricingModel({});
       $scope.init = function($stateParams) {
             $scope.pricingMode = appConfig.empanelment.pricingMode;
             $scope.creditTerm = appConfig.empanelment.creditTerm;
@@ -25,7 +26,7 @@ var app=angular.module('com.module.empanelment')
     };
 //sla tracker
       $scope.submitSLA=function(){
-          
+
       }
   }]);
 

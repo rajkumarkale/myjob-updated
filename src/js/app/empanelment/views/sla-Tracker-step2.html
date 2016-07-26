@@ -14,7 +14,7 @@
     </div></div>
     <div class="text-class" >All fields are mandatory</div>
     <div class="row client-text " >
-        <div class="col-md-6">TimeSheet/Atendence Related</div>
+        <div class="col-md-6">TimeSheet/Attendance Related</div>
         <div class="col-md-6">Activity Owners</div>
     </div>
 
@@ -24,8 +24,8 @@
         <div class="container-fluid ">
           <div  class="col-md-5">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >TimeSheet/Attendence Cycle<span class="required-field">*</span></label>
-              <input class="form-control" name="timesheet" ng-model="timesheet" type="text"
+              <label class="control-label" >TimeSheet/Attendance Cycle<span class="required-field">*</span></label>
+              <input class="form-control" name="timesheet" ng-model="SLATracker.timeSheetAttendanceRelated.attendanceCycle" type="text"
                      ng-required="SLAform.timesheet.$error">
 
             </div>
@@ -33,7 +33,7 @@
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >TimeSheet and Payroll<span class="required-field">*</span></label>
-              <input class="form-control" ng-model="timepay" name="timepay "type="text"
+              <input class="form-control" ng-model="SLATracker.activityOwner.timeSheeetAndPayroll" name="timepay "type="text"
                      ng-required="SLAform.timepay.$error">
             </div>
           </div>
@@ -48,15 +48,15 @@
         <div class="container-fluid">
           <div  class="col-md-5">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Timesheet/Atendence Collection Process<span class="required-field">*</span></label>
-              <textarea class="form-control  bord-remove" name="collection" ng-model="collection"   type="text"
+              <label class="control-label" >Timesheet/Attendance Collection Process<span class="required-field">*</span></label>
+              <textarea class="form-control  bord-remove" name="collection" ng-model="SLATracker.timeSheetAttendanceRelated.attendenceCollectionProcess"   type="text"
               minlength="3" maxlength="20" ng-required="SLAform.n3.$error" ></textarea>
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Salary Payout<span class="required-field">*</span></label>
-              <input class="form-control" ng-model="salary"  name="salary"  type="text"
+              <input class="form-control" ng-model="SLATracker.activityOwner.salaryPayout"  name="salary"  type="text"
                      ng-required="SLAform.salary.$error" >
             </div>
           </div>
@@ -77,7 +77,7 @@
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Invoice Submission & Payment Followup<span class="required-field">*</span></label>
-              <input class="form-control"  ng-model="submission" class="focusedInput1" type="text"
+              <input class="form-control"  ng-model="SLATracker.activityOwner.invoiceSubmissionAndPaymentFollowup" class="focusedInput1" type="text"
                      ng-required="SLAform.submission.$error">
             </div>
           </div>
@@ -97,7 +97,7 @@
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >PO<span class="required-field">*</span></label>
-              <input class="form-control" ng-model="po" class="focusedInput1" name="po" type="text"
+              <input class="form-control" ng-model="SLATracker.activityOwner.po" class="focusedInput1" name="po" type="text"
                      ng-required="SLAform.po.$error">
             </div>
           </div>
@@ -115,7 +115,7 @@
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Disputes & Resolutions<span class="required-field">*</span></label>
-              <input class="form-control" ng-model="disputes" type="text" name="disputes"
+              <input class="form-control" ng-model="SLATracker.activityOwner.disputesAndResolution" type="text" name="disputes"
                      ng-required="SLAform.disputes.$error">
             </div>
           </div>
@@ -138,14 +138,14 @@
           <div  class="col-md-5 ">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Payroll Cycle<span class="required-field">*</span></label>
-              <input class="form-control" ng-model="cycle" name="cycle" type="text"
+              <input class="form-control" ng-model="SLATracker.payrollAndInvoice.payrollCycle" name="cycle" type="text"
                      ng-required="SLAform.cycle.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div  class="form-group label-floating is-empty">
               <label class="control-label" >PO Process<span class="required-field">*</span></label>
-              <input class="form-control" ng-model="process" name="process" type="text"
+              <input class="form-control" ng-model="SLATracker.poAndInvoiceRelated.poProcess" name="process" type="text"
                      ng-required="SLAform.process.$error">
             </div>
           </div>
@@ -161,13 +161,13 @@
           <div  class="col-md-5">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Leaves<span class="required-field">*</span></label>
-              <input class="form-control" type="text" ng-model="leaves" name="leaves" ng-required="SLAform.leaves.$error">
+              <input class="form-control" type="text" ng-model="SLATracker.payrollAndInvoice.leaves" name="leaves" ng-required="SLAform.leaves.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Discounts<span class="required-field">*</span></label>
-              <input class="form-control" type="text" ng-model="discounts"name="discounts" ng-required="SLAform.discounts.$error">
+              <input class="form-control" type="text" ng-model="SLATracker.poAndInvoiceRelated.discounts"name="discounts" ng-required="SLAform.discounts.$error">
             </div>
           </div>
         </div>
@@ -183,14 +183,14 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Billing & Invoice Process<span class="required-field">*</span></label>
               <input class="form-control" class="focusedInput1" type="text"
-                     ng-model="billing" name="billing" ng-required="SLAform.billing.$error">
+                     ng-model="SLATracker.payrollAndInvoice.billingAndInvoiceProcess" name="billing" ng-required="SLAform.billing.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Billing Office Address & Contact Number<span class="required-field">*</span></label>
               <input class="form-control" class="focusedInput1" type="text"
-                     ng-model="ofc" name="ofc" ng-required="SLAform.ofc.$error">
+                     ng-model="SLATracker.poAndInvoiceRelated.billingOfficeAddress" name="ofc" ng-required="SLAform.ofc.$error">
             </div>
           </div>
         </div>
@@ -210,7 +210,7 @@
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Shipping Office Address & Contact Number<span class="required-field">*</span></label>
-              <input class="form-control" type="text" ng-model="shipping" name="shipping" ng-required="SLAform.shipping.$error" >
+              <input class="form-control" type="text" ng-model="SLATracker.poAndInvoiceRelated.shippingOfficeAdress" name="shipping" ng-required="SLAform.shipping.$error" >
             </div>
           </div>
         </div>
@@ -246,13 +246,13 @@
           <div  class="col-md-5 ">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Name<span class="required-field">*</span></label>
-              <input class="form-control"  type="text" ng-model="name1" name="name1" ng-required="SLAform.name1.$error">
+              <input class="form-control"  type="text" ng-model="SLATracker.clientEscalationMatrix[0].name" name="name1" ng-required="SLAform.name1.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Name<span class="required-field">*</span></label>
-              <input class="form-control" type="text" ng-model="name2" name="name2" ng-required="SLAform.name2.$error">
+              <input class="form-control" type="text" ng-model="SLATracker.clientEscalationMatrix[1].name" name="name2" ng-required="SLAform.name2.$error">
             </div>
           </div>
         </div>
@@ -267,14 +267,14 @@
           <div  class="col-md-5">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Designation<span class="required-field">*</span></label>
-              <input class="form-control" type="text" ng-model="designation" name="designation" ng-required="SLAform.designation.$error" >
+              <input class="form-control" type="text" ng-model="SLATracker.clientEscalationMatrix[0].designation" name="designation" ng-required="SLAform.designation.$error" >
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Designation<span class="required-field">*</span></label>
               <input class="form-control" type="text"
-                     ng-model="designation2" name="designation2" ng-required="SLAform.designation2.$error"/>
+                     ng-model="SLATracker.clientEscalationMatrix[1].designation" name="designation2" ng-required="SLAform.designation2.$error"/>
             </div>
           </div>
         </div>
@@ -291,7 +291,7 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Contact Number<span class="required-field">*</span></label>
               <input class="form-control" type="text"
-                     ng-model="num1" name="num1" ng-required="SLAform.num1.$error">
+                     ng-model="SLATracker.clientEscalationMatrix[0].phone" name="num1" ng-required="SLAform.num1.$error">
             </div>
           </div>
           <div  class="col-md-1"></div>
@@ -299,7 +299,7 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Contact Number<span class="required-field">*</span></label>
               <input class="form-control" type="text"
-                     ng-model="num2" name="num2" ng-required="SLAform.num2.$error">
+                     ng-model="SLATracker.clientEscalationMatrix[1].phone" name="num2" ng-required="SLAform.num2.$error">
             </div>
           </div>
         </div>
@@ -314,14 +314,14 @@
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Email ID<span class="required-field">*</span></label>
-              <input class="form-control" class="focusedInput1" type="email" required="required"
-                     name="id1" ng-model="id1">
+              <input class="form-control focusedInput1" type="email" required="required"
+                     name="id1" ng-model="SLATracker.clientEscalationMatrix[0].email">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Email ID<span class="required-field">*</span></label>
-              <input class="form-control" class="focusedInput1" type="email" name="id2" ng-model="id2" required="required">
+              <input class="form-control focusedInput1"  type="email" name="id2" ng-model="SLATracker.clientEscalationMatrix[1].email" required="required">
             </div>
           </div>
         </div>

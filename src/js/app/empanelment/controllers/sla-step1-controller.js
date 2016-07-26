@@ -13,25 +13,25 @@ angular.module('com.module.empanelment')
 
     if ($scope.openCal === 'opened1') {
       $scope.opened1 = true;
-      $scope.opened2 ,$scope.opened3 , $scope.opened4 , $scope.opened5= false;
-      
+      $scope.opened2= false;$scope.opened3= false;$scope.opened4= false; $scope.opened5= false;
+
     } else if ($scope.openCal === 'opened2') {
       $scope.opened2 = true;
-      $scope.opened1 ,$scope.opened3 , $scope.opened4 , $scope.opened5= false;
+      $scope.opened1= false; $scope.opened3= false;  $scope.opened4= false; $scope.opened5= false;
     }
     else if ($scope.openCal === 'opened3') {
       $scope.opened3 = true;
-      $scope.opened1 ,$scope.opened2 , $scope.opened4 , $scope.opened5= false; 
+      $scope.opened1= false;$scope.opened2= false; $scope.opened4= false;  $scope.opened5= false;
 
     }
     else if ($scope.openCal === 'opened4') {
       $scope.opened4 = true;
-      $scope.opened1 ,$scope.opened2 , $scope.opened3 , $scope.opened5= false;
+      $scope.opened1= false;$scope.opened2= false; $scope.opened3= false; $scope.opened5= false;
 
     }
     else if ($scope.openCal === 'opened5') {
       $scope.opened5 = true;
-      $scope.opened1 ,$scope.opened2 , $scope.opened4 , $scope.opened4= false;
+      $scope.opened1= false; $scope.opened2= false; $scope.opened4 = false; $scope.opened4= false;
 
     }
   };

@@ -4,9 +4,10 @@
 
 
 angular.module('com.module.prospect')
-  .controller('addRequirement',function ($scope,appConfig) {
+  .controller('addRequirement',function ($scope, $state, appConfig,saleModuleService, $modal, $stateParams, $filter) {
     $scope.status_prospect=appConfig.prospect.status_prospect;
     $scope.priority=appConfig.prospect.priority;
+    $scope.requireStatus=appConfig.requirementKeys.requirementType;
     $scope.ageData={
       data:[]
     };

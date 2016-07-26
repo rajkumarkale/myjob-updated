@@ -25,7 +25,7 @@ angular.module('com.module.prospect')
         }
         $scope.cancel = function () {
             $state.go('app.viewProspect');
-        }
+        };
         $scope.submit = function () {
                 console.log('submit clicked');
                 var timestamp = $scope.date.getTime();
@@ -33,7 +33,7 @@ angular.module('com.module.prospect')
                 $scope.savePromise = $scope.saleObject.update().then(function () {
                     $state.go('app.viewProspect');
                 });
-            }
+            };
             /* $scope.openRequirement = function () {
 
                var modalInstance = $modal.open({

@@ -8,6 +8,7 @@ angular.module('com.module.prospect')
       $scope.priority=appConfig.prospect.priority;
       $scope.requireStatus=appConfig.requirementKeys.requirementType;
       $scope.industry=appConfig.requirementKeys.industry;
+      $scope.showAddReq=false;
         $scope.$watch('saleObject.prospect', function (n, o) {
             if (n === 'AGREEMENT_ON_CLOSURE') {
                 $scope.title = 'Agreement on Closure';
@@ -205,6 +206,14 @@ angular.module('com.module.prospect')
       },{
         key:' IT Software - Mainframe',
         displayText:' IT Software - Mainframe'
-      })
+      });
+      $scope.openReq=function (val) {
+        if (val === 'true')
+          $scope.showAddReq = true;
 
+
+        else {
+          $scope.showAddReq = false;
+        }
+      }
   }]);

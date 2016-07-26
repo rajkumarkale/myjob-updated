@@ -1,14 +1,17 @@
 angular.module('com.module.prospect')
-    .controller('prospectCreateController', ['$scope', '$state', 'appConfig', '$modal', '$stateParams', '$filter', 'RequirementModel', function ($scope, $state, appConfig, $modal, $stateParams, $filter, RequirementModel) {
+    .controller('prospectCreateController', ['$scope', '$state', 'appConfig', '$modal', '$stateParams', '$filter', 'RequirementModel','saleModuleService', function ($scope, $state, appConfig, $modal, $stateParams, $filter, RequirementModel,saleModuleService) {
         $scope.values = appConfig.prospect.typeOfBusiness;
         $scope.prospectStatus = appConfig.prospect.status;
         $scope.suspectStatus = appConfig.suspect.status;
+        $scope.turnover = appConfig.possibility.groupTurnover;
         $scope.displayagreement = true;
         $scope.status_lost = false;
         $scope.priority = appConfig.prospect.priority;
         $scope.requireStatus = appConfig.requirementKeys.requirementType;
         $scope.industry = appConfig.requirementKeys.industry;
-        $scope.primaryLevel=appConfig.requirementKeys.primaryLevel;
+        $scope.primaryLevel = appConfig.requirementKeys.primaryLevel;
+        $scope.showAddReq = false;
+
         $scope.$watch('saleObject.prospect', function (n, o) {
             if (n === 'AGREEMENT_ON_CLOSURE') {
                 $scope.title = 'Agreement on Closure';
@@ -39,31 +42,38 @@ angular.module('com.module.prospect')
             });
         };
         $scope.submitRequirement = function () {
-                console.log($scope.requirement);
+            $scope.openReq('false');
+            console.log($scope.requirement);
+            saleModuleService.addRequirement($scope.saleObject._id,$scope.requirement).then(function(response){
+                console.log(response.data);
+            });
 
+        };
+        $scope.getRequirement=function(){
+            saleModuleService.getRequirements($scope.saleObject._id).then(function(response){
+                console.log(response.data);
+                $scope.requirements=response.data;
+                
+            });
+        };
+        $scope.getRequirement();
+        
+        $scope.getRequiremetsByRange=function(){
+            var st = $filter('date')($scope.start, 'MM/dd/yyyy');
+            var date1 = new Date(st).getTime();
+            var ed = $filter('date')($scope.end, 'MM/dd/yyyy');
+            var date2 = new Date(ed).getTime();
+            if (date1 < date2) {
+                /*$scope.sumStartDate = $scope.start;
+                $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');*/
+                $scope.myPromise = saleModuleService.getRequirements($scope.saleObject._id,date1,date2).then(function (response) {
+                    console.log(response.data);
+                    $scope.requirements=response.data;
+                });
+            } else {
+                CoreService.toastError('', 'Satrt date should be less than End date.');
             }
-            /* $scope.openRequirement = function () {
-
-               var modalInstance = $modal.open({
-
-                 templateUrl: 'js/app/prospect/views/add-requirement.html',
-                 backdrop: 'static',
-                 controller: function ($scope,$modalInstance) {
-                   $scope.titlereq='Add New Requirement';
-
-                  $scope.ok=function () {
-                    $modalInstance.close();
-                  }
-                   $scope.cancel=function(){
-                     $modalInstance.dismiss();
-                   }
-                 },
-                 size: 'md'
-               });
-               modalInstance.result.then(function (data) {
-                 $scope.discussions.push(data);
-               });
-             };*/
+        };
         $scope.open = function ($event, opened) {
             $event.preventDefault();
             $event.stopPropagation();
@@ -207,6 +217,15 @@ angular.module('com.module.prospect')
         }, {
             key: ' IT Software - Mainframe',
             displayText: ' IT Software - Mainframe'
-        })
+        });
 
+        $scope.openReq = function (val) {
+            if (val === 'true')
+                $scope.showAddReq = true;
+
+
+            else {
+                $scope.showAddReq = false;
+            }
+        }
   }]);

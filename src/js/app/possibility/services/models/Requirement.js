@@ -1,6 +1,7 @@
 var module = angular.module('com.module.possibility');
 module.factory('RequirementModel', function () {
     function Requirement(modelData) {
+        this._id=modelData._id;
         this.name = modelData.name;
         this.type =modelData.type;
         this.officeLocation=modelData.officeLocation;

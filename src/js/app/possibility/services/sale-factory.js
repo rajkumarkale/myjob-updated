@@ -1,7 +1,7 @@
 angular.module('com.module.possibility').factory('saleModuleService', function ($http, appConfig, $q, SaleModel) {
     'use strict';
 
-    var BASEURI = /*'http://172.16.1.103:8000';*/appConfig.apiUrl;
+    var BASEURI = 'http://172.16.1.103:8000';//appConfig.apiUrl;
 
     var getSalesData = function (params) {
         var deferred = $q.defer();
@@ -95,15 +95,26 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
       })
   };
 
-  var getRequirement=function(id){
+  var getRequirements=function(saleId,start,end){
     return $http(
       {
         method: 'GET',
-        url:BASEURI+'/api/sale/'+id+'/requirements'
+        url:BASEURI+'/api/sale/'+saleId+'/requirements',
+          params:{
+              start:start,
+              end:end
+          }
       })
   };
 
-
+var addRequirement=function(saleId, data){
+    return $http(
+      {
+        method: 'POST',
+        url:BASEURI+'/api/sale/'+saleId+'/requirements',
+          data:data
+      })
+  };
 
     return {
         getSalesData: getSalesData,
@@ -116,6 +127,7 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
         deleteDocument:deleteDocument,
         deletePoc:deletePoc,
         viewDiscussions:viewDiscussions,
-      getRequirement:getRequirement
+        getRequirements:getRequirements,
+        addRequirement:addRequirement
     };
 });

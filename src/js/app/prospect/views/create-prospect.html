@@ -169,7 +169,8 @@
             </div>
             <div class="form-group label-floating">
               <label class="control-label">Annual Business Bottomline</label>
-              <input class="form-control" type="text" ng-model="saleObject.client.turnover">
+              <!--<input class="form-control" type="text" ng-model="saleObject.client.turnover">-->
+              <div   custom-select data="turnover" value="saleObject.client.turnover" class="status-prospect"></div>
             </div>
           </div>
           <div class="col-md-6 form-custom-padding">
@@ -191,7 +192,7 @@
      </div>
         </div>
          <br>
-        <div class=" col-md-offset-5" ng-hide="displayagreement">
+        <div class=" col-md-offset-5">
           <a ui-sref="app.viewProspect" class="auto">
             <button class="btn btn-raised  data-button-cancel btn-text" ng-click="cancel()">Cancel</button>&nbsp;&nbsp;</a>
           <button class="btn btn-primary data-button-sub btn-text" ng-click="submit()">Submit</button>
@@ -200,7 +201,7 @@
 
     </div>
   </div>
-  <div class="panel panel-default second-panel panelmrgs-prospect" >
+  <div class="panel panel-default second-panel panelmrgs-prospect"  ng-show="displayagreement">
    <div class="panel-heading">
      Agreement on Closure
    </div>
@@ -223,7 +224,7 @@
                   <span class="input-group-addon cal-img hand-cursor" ng-click="open($event,'opened2')"><img src="img/calendar_icon.png" alt=""  /></span>
                 </div>
 
-                <button class="btn btn-primary btn-raised filter  ">Go</button>
+                <button class="btn btn-primary btn-raised filter" ng-click="getRequiremetsByRange()">Go</button>
               </div>
             </form>
           </div>
@@ -347,7 +348,7 @@
       </div><hr class="req-line">
       <h3   style="color:#049ad9" >All Requirements</h3><br>
       <div class="req-plus">
-        <label class=" btn-raised hand-cursor pull-right glyphicon glyphicon-plus add-button plus-fa " >
+        <label class=" btn-raised hand-cursor pull-right glyphicon glyphicon-plus add-button plus-fa " ng-click="openReq('true')">
         </label>
       </div>
       <table class=" table-topdiv table table-bod m-n "   >
@@ -361,13 +362,13 @@
           <th class="table-th-heading">SPOC <span ><img src="img/sort_icon.png"></span></th>
           <th class="table-th-heading">Job Location</th>
           <th class="table-th-heading">Added By</th>
-          <th class="table-th-heading">Prioritization</th>
+          <th class="table-th-heading">Priority</th>
 
 
         </tr>
         </thead>
         <tbody>
-        <tr >
+        <tr ng-repeat="requirement in requirements" >
           <td>
 
             <div class="chekbox">
@@ -381,17 +382,17 @@
 
 
           </td>
-          <td >11W41ao532</td>
-          <td>lorem ipusum</td>
-          <td>5</td>
-          <td>lorem ipusum</td>
-          <td>Hyderabad</td>
-          <td>Delivery Manager</td>
-          <td>High</td>
+          <td >{{requirement.name}}</td>
+          <td>{{requirement.numberOfPositions}}</td>
+          <td>{{requirement.spoc?requirement.spoc:'--'}}</td>
+          <td>{{requirement.name}}</td>
+          <td>{{requirement.jobLocation}}</td>
+          <td>{{requirement.addedBy?requirement.addedBy:'--'}}</td>
+          <td>{{requirement.priority}}</td>
         </tr>
         </tbody>
       </table>
-      <accordion class="plus col-md-12 re-accordian ">
+      <accordion class="plus col-md-12 re-accordian " ng-show="showAddReq">
         <accordion-group is-open="status.open">
           <accordion-heading>
             <span class="add-req"> Add Requirement</span><i class="pull-right glyphicon color-black" ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
@@ -432,7 +433,9 @@
                 </div>
                 <div class="form-group label-floating  age-text">
                   Priority<span class="required-field">*</span>
+
                   <div custom-select data="priority" value="requirement.priority" class=" age-select p-0" tabindex="23"></div>
+
                 </div>
               </div>
             </div>
@@ -446,7 +449,9 @@
                 </div>
                 <div class="form-group label-floating age-text">
                   Functional Area<span class="required-field">*</span>
+
                   <div custom-select data="functional_area" value="requirement.functionalArea" class=" age-select p-0" tabindex="23"></div>
+
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Qualification<span class="required-field">*</span></label>
@@ -463,20 +468,26 @@
                 <div class="form-group space-top">
                   <label class="col-md-3 p-0 age-text" >Experience<span class="required-field">*</span></label>
                   <div class="col-md-9 p-r">
+
                     <div custom-select data="Experience" value="requirement.experienceFrom" class="col-md-6 age-select p-0" tabindex="23"></div>
                     <div custom-select data="Experience" value="requirement.experienceTo" class="col-md-6 age-select p-r p-l-20" tabindex="23"></div>
+
                   </div>
                 </div>
                 <div class="form-group space-top">
                   <label class="col-md-3 p-0 age-text" >CTC Range<span class="required-field">*</span></label>
                   <div class="col-md-9 p-r">
+
                     <div custom-select data="CTC" value="requirement.ctcRangeFrom" class="col-md-6 age-select p-0" tabindex=""></div>
                     <div custom-select data="CTC" value="requirement.ctcRangeTo" class="col-md-6 age-select p-r p-l-20" tabindex=""></div>
+
                   </div>
                 </div>
                 <div class="form-group space-top">
                   <div class="font-ind age-text">Industry<span class="required-field">*</span>
+
                     <div custom-select data="industry" value="requirement.inydustry" class=" age-select p-0" tabindex=""></div>
+
                   </div>
                 </div>
                 <div class="form-group label-floating is-empty">
@@ -500,14 +511,18 @@
                 </div>
                 <div class="form-group ">
                   <div class="font-ind age-text">Primary Level<span class="required-field">*</span>
+
                     <div custom-select data="primaryLevel" value="requirement.primaryLevel" class=" age-select p-0" tabindex="23"></div>
+
                   </div>
                 </div>
                 <div class="form-group ">
                   <label class="col-md-3 p-0  age-text" >Relevent Experience<span class="required-field">*</span></label>
                   <div class="col-md-9 p-r m-t-20">
+
                     <div custom-select data="Experience" value="requirement.relevantExperienceFrom" class="col-md-6 age-select p-0" tabindex="23"></div>
                     <div custom-select data="Experience" value="requirement.relevantExperienceTo" class="col-md-6 age-select p-r p-l-20" tabindex="23"></div>
+
                   </div>
                 </div><br><br>
                 <div class="form-group label-floating is-empty">
@@ -533,7 +548,9 @@
                 <a ui-sref="app.create-prospect" >
                   <button class="btn btn-primary data-button-cancel btn-text"  >Cancel</button>
                 </a>
+
                 <button class="btn btn-primary data-button btn-text" ng-click="submitRequirement()" >Submit</button>
+
               </div>
             </div>
           </form>

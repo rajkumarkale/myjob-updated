@@ -37,6 +37,12 @@ module.factory('SaleModel', function (ClientModel, DiscussionModel, PointOfConta
                 return new DiscussionModel(contact);
             });
         }
+        /*this.requirements = [];
+        if (modelData && modelData.requirements) {
+            this.requirements = modelData.requirements.map(function (requirement) {
+                return new RequirementModel(requirement);
+            });
+        }*/
     }
 
 

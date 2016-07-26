@@ -23,7 +23,10 @@ var app=angular.module('com.module.empanelment')
       $event.stopPropagation();
       $scope.opened2 = !$scope.opened2;
     };
-
+//sla tracker
+      $scope.submitSLA=function(){
+          
+      }
   }]);
 
 

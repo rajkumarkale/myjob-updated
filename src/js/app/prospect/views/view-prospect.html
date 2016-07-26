@@ -89,8 +89,11 @@
             </div>
         </div>
         <div class="table-topdiv table-up-mrg">
-          <button class="btn btn-raised btn-info excel" type="button" ng-csv="getArray()" filename="prospect.csv" csv-header="getCSVHeader()" ng-if="filteredRows.length!=0">Export</button>
-
+          <div class="excel-row">
+          <button class="btn btn-raised btn-info excel" type="button" ng-csv="getArray()" filename="prospect.csv" csv-header="getCSVHeader()" ng-if="filteredRows.length!=0">
+            <img src="img/excel_upload_icon.png">
+          </button>
+</div>
           <table class="table table-bod table-hover m-n">
                 <thead class="table-head">
                     <tr>

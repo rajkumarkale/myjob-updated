@@ -53,6 +53,7 @@ angular.module('com.module.suspect')
                 $scope.data.suspects = response;
                 $scope.data.totalItems = response.length;
               $scope.data.suspects = response;
+              if($scope.data.suspects[0]){
               for(var i=0; i<=$scope.data.suspects.length;i++){
                 var excelData = {"LegalEntity":$scope.data.suspects[i].client.legalName,
                   "Business_Unit":$scope.data.suspects[i].client.businessUnit,
@@ -63,7 +64,7 @@ angular.module('com.module.suspect')
                 };
                 $scope.suspectCsvdata.push(excelData);
 
-              }
+              }}
 
             });
         };

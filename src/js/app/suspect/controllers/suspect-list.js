@@ -2,7 +2,7 @@ angular.module('com.module.suspect')
     .controller('suspectListController', ['$scope', '$state', 'toaster', '$timeout', 'CoreService', '$modal', 'discussionService', '$filter', '$rootScope', 'saleModuleService', function ($scope, $state, toaster, $timeout, CoreService, $modal, discussionService, $filter, $rootScope, saleModuleService) {
         $scope.selectedItem = [];
         $scope.filteredRows = [];
-        $scope.sortType = 'legal_name';
+        $scope.sortType = 'client.legalName';
         $scope.sortReverse = false;
         $scope.suspectCsvdata =[];
         $scope.getArray =function(){

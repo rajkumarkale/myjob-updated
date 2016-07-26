@@ -84,14 +84,14 @@
           <thead class="table-head " >
           <tr>
             <th class="table-th-heading"></th>
-            <th  class="table-th-heading">Legal Entity <span ng-click="sortType = 'legal_name'; sortReverse = !sortReverse" ><img src="img/sort_icon.png" ng-show="!sortReverse">
+            <th  class="table-th-heading">Legal Entity <span ng-click="sortType = 'client.legalName'; sortReverse = !sortReverse" ><img src="img/sort_icon.png" ng-show="!sortReverse">
               <img src="img/sort_icon2.png" ng-show="sortReverse"></span>
             </th>
-            <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client_unit_name'; sortReverse = !sortReverse"><img src="img/sort_icon.png" ng-show="!sortReverse">
+            <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client.businessUnit'; sortReverse = !sortReverse"><img src="img/sort_icon.png" ng-show="!sortReverse">
               <img src="img/sort_icon2.png" ng-show="sortReverse"></span></th>
-            <th class="table-th-heading">Location <span ng-click="sortType = 'city'; sortReverse = !sortReverse" ><img src="img/sort_icon.png" ng-show="!sortReverse">
+            <th class="table-th-heading">Location <span ng-click="sortType = 'client.address.city'; sortReverse = !sortReverse" ><img src="img/sort_icon.png" ng-show="!sortReverse">
               <img src="img/sort_icon2.png" ng-show="sortReverse"></span></th>
-            <th class="table-th-heading">Contact Person <span ng-click="sortType = 'pocs[0].name'; sortReverse = !sortReverse"><img src="img/sort_icon.png" ng-show="!sortReverse">
+            <th class="table-th-heading">Contact Person <span ng-click="sortType = 'getPrimaryContact().name'; sortReverse = !sortReverse"><img src="img/sort_icon.png" ng-show="!sortReverse">
               <img src="img/sort_icon2.png" ng-show="sortReverse"></span></th>
             <th class="table-th-heading">Contact Designation</th>
             <th class="table-th-heading">Contact Number</th>

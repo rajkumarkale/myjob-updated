@@ -64,7 +64,7 @@
 }
 .add-button{
   margin-top: 3px;
-  margin-right: 0px;
+  margin-right: 4px;
 }
 .table-up-mrg{
   margin-top: -15px;
@@ -320,15 +320,18 @@ font-size: 11px !important;
   visibility: visible;
   opacity: 1;
 }
-.excel{width: 82px;
-  padding: 6px;
+.excel{width: 47px;
+  padding: 4px;
   text-transform: none;
   font-size: 14px;
-margin-top: -10px}
-.excel_pos{width: 82px; padding: 6px;
+  margin-top: 5px;
+  margin-left: 1067px;}
+.excel_pos{    width: 47px;
+  padding: 4px;
   text-transform: none;
   font-size: 14px;
-  margin-top: -1px;}
+  margin-top: 5px;
+  margin-left: 1008px;}
 .select-scroll{
   overflow-y: auto !important;
   max-height: 180px !important;
@@ -351,3 +354,17 @@ margin-top: -10px}
   padding: 0px;}
 .status-pro{margin-top: -71px;
   width: 198px;}
+.excel-row{height: 38px;
+  background-color: white;
+  margin-bottom: 9px;
+  margin-top: 10px;}
+.excel-emp{width: 47px;
+  padding: 4px;
+  text-transform: none;
+  font-size: 14px;
+  margin-top: 0px;
+  margin-left: 1058px;}
+.gap{margin-bottom: 7px;}
+.gap-suspect{margin-bottom: -9px;}
+.gap-prospect{margin-bottom: -27px;}
+.all-pro{margin-top: -8px;}

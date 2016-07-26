@@ -28,80 +28,403 @@
       "asideDock": false,
       "container": false
     },
-    "possibility":{
-      "employeeSize":{
-        "title":"Employee Size of the Company",
-                       "data":[{"key":"SMALL","displayText":"0-100 (SMALL)"},
-                               {"key":"MEDIUM","displayText":"100 - 1000 (MEDIUM)"},
-                               {"key":"LARGE","displayText":"1000+ (LARGE)"}],
-                               "selectedItem":""},
-      "groupTurnover":{"data":[{"key":"SMALL","displayText":"0-100Cr (SMALL)"}, {"key":"MEDIUM","displayText":"101Cr to 500Cr (MEDIUM)"}, {"key":"LARGE","displayText":"500Cr +   (LARGE)"}],"selectedItem":""},
-      "businessVertical":{ "data":[{"key":"IT","displayText":"IT"}, {"key":"GENERAL","displayText":"GENERAL"},{"key": "GOVT","displayText":"GOVT"},{"key": "IT_STAFFING","displayText":"IT STAFFING"}, {"key":"GENERAL_STAFFING","displayText":"GENERAL STAFFING"},{"key": "GOVERNMENT_STAFFING","displayText":"GOVERNMENT STAFFING"}, {"key":"PERM_SEARCH","displayText":"PERM SEARCH"}, {"key":"RPO","displayText":"RPO"}],"selectedItem":""},
-      "customerType":{"data":[{"key":"MNC","displayText":"MNC"}, {"key":"PVT_LTD","displayText":"PVT LTD"},{"key": "PUBLIC_LTD","displayText":"PUBLIC LTD"}, {"keÿ":"PROPRIETORSHIP","displayText":"PROPRIETORSHIP"}],"selectedItem":""},
-      "contactType" :{"data":[{"key":"ESCALATION","displayText":"ESCALATION"},{"key":"OTHER","displayText":"OTHER"}],"selectedItem":""},
-      "status" :{"data":[{"key":"NOT_MET","displayText":"NOT MET"},{"key":"MET","displayText":"MET"},{"key":"INACTIVE","displayText":"INACTIVE"}],"selectedItem":""},
-       "documentType" :{"data":[{"key":"PAN","displayText":"PAN"},{"key":"TAN","displayText":"TAN"},{"key":"AGREEMENT","displayText":"Agreement"},{"key":"PROPOSAL","displayText":"Proposal"},{"key":"VISITING_CARD","displayText":"Visiting Card"},{"key":"ADDRESS_PROOF","displayText":"Address Proof"},{"key":"OTHERS","displayText":"Others"}],"selectedItem":""}
-    },
-    "suspect":{
-      "status" :{"data":[{"key":"COLD","displayText":"COLD"},{"key":"WARM","displayText":"WARM"},{"key":"HOT","displayText":"HOT"}],"selectedItem":""},
-      "contactType" :{"data":[{"key":"PRIMARY","displayText":"PRIMARY"},{"key":"ESCALATION","displayText":"ESCALATION"},{"key":"OTHER","displayText":"OTHER"}],"selectedItem":""},
-      "supportArea" :{"data":[{"key":"BUSINESS","displayText":"BUSINESS"},{"key":"FINANCE","displayText":"FINANCE"},{"key":"INVOICE","displayText":"INVOICE"}],"selectedItem":""}
-    },
-    "discussion":{
-      "typeOfDiscussion" :{"data":[{"key":"CALL","displayText":"CALL"},{"key":"MAIL","displayText":"MAIL"},{"key":"MEET","displayText":"MEET"},{"key":"CHAT","displayText":"CHAT"}],"selectedItem":""}
+    "possibility": {
+      "employeeSize": {
+        "title": "Employee Size of the Company",
+        "data": [
+          {
+            "key": "SMALL",
+            "displayText": "0-100 (SMALL)"
+          },
+          {
+            "key": "MEDIUM",
+            "displayText": "100 - 1000 (MEDIUM)"
+          },
+          {
+            "key": "LARGE",
+            "displayText": "1000+ (LARGE)"
+          }
+        ],
+        "selectedItem": ""
       },
-    "prospect":{
-      "typeOfBusiness" :{"data":[{"key":"Business Vertical","displayText":"Business Vertical"},{"key":"IT Staffing","displayText":"IT Staffing"},{"key":"General Staffing","displayText":"General Staffing"},{"key":"Government Staffing","displayText":"Government Staffing"}],"selectedItem":""},
-      "status":{"data":[{"key":"AGREEMENT_ON_CLOSURE","displayText":"AGREEMENT ON CLOSURE"},{"key":"LOST","displayText":"LOST"},{"key":"WON","displayText":"WON"},{"key":"WORK_IN_PROGRESS","displayText":"WORK IN PROGRESS"}],"selectedItem":""},
-      "status_prospect":{"data":[{"key":"Agreement_On_Closure","displayText":"Agreement On Closure"},{"key":"LOST","displayText":"LOST"},{"key":"WON","displayText":"WON"},{"key":"Work In Progress","displayText":"Work In Progress"}],"selectedItem":""},
-      "priority":{"data":[{"key":"CRITICAL","displayText":"CRITICAL"},{"key":"HIGH","displayText":"HIGH"},{"key":"LOW","displayText":"LOW"},{"key":"MEDIUM","displayText":"MEDIUM"}],"selectedItem":""}
-    },
-      "requirementKeys":{
-          "status":[
-              {
-                  "key":"ACTIVE",
-                  "displayText":"Active"
-              },
-              {
-                  "key":"POSITION_ON_HOLD",
-                  "displayText":"Position on Hold"
-              },
-              {
-                  "key":"CLOSED_BY_OTHER_CONSULTANT",
-                  "displayText":"Closed by other Consultant"
-              },
-              {
-                  "key":"CLOSED_INTERNALLY",
-                  "displayText":"Closed internally"
-              },
-              {
-                  "key":"CLOSED_BY_US",
-                  "displayText":"Closed by Us"
-              }
-          ],
-          "requirementType":[
-              {
-                  "key":"PERMANANT_STAFFING",
-                  "displayText":"permanant staffing"
-              },
-              {
-                  "key":"TEMP_STAFFING",
-                  "displayText":"temparaury staffing"
-              },
-              {
-                  "key":"PROFESSIONAL_STAFFING",
-                  "displayText":"professional staffing"
-              },
-              {
-                  "key":"GENERAL_STAFFING",
-                  "displayText":"general staffing"
-              },
-              {
-                  "key":"IT_STAFFING",
-                  "displayText":"It Staffing"
-              }
-          ]
+      "groupTurnover": {
+        "data": [
+          {
+            "key": "SMALL",
+            "displayText": "0-100Cr (SMALL)"
+          },
+          {
+            "key": "MEDIUM",
+            "displayText": "101Cr to 500Cr (MEDIUM)"
+          },
+          {
+            "key": "LARGE",
+            "displayText": "500Cr +   (LARGE)"
+          }
+        ],
+        "selectedItem": ""
       },
+      "businessVertical": {
+        "data": [
+          {
+            "key": "IT",
+            "displayText": "IT"
+          },
+          {
+            "key": "GENERAL",
+            "displayText": "GENERAL"
+          },
+          {
+            "key": "GOVT",
+            "displayText": "GOVT"
+          },
+          {
+            "key": "IT_STAFFING",
+            "displayText": "IT STAFFING"
+          },
+          {
+            "key": "GENERAL_STAFFING",
+            "displayText": "GENERAL STAFFING"
+          },
+          {
+            "key": "GOVERNMENT_STAFFING",
+            "displayText": "GOVERNMENT STAFFING"
+          },
+          {
+            "key": "PERM_SEARCH",
+            "displayText": "PERM SEARCH"
+          },
+          {
+            "key": "RPO",
+            "displayText": "RPO"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "customerType": {
+        "data": [
+          {
+            "key": "MNC",
+            "displayText": "MNC"
+          },
+          {
+            "key": "PVT_LTD",
+            "displayText": "PVT LTD"
+          },
+          {
+            "key": "PUBLIC_LTD",
+            "displayText": "PUBLIC LTD"
+          },
+          {
+            "keÿ": "PROPRIETORSHIP",
+            "displayText": "PROPRIETORSHIP"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "contactType": {
+        "data": [
+          {
+            "key": "ESCALATION",
+            "displayText": "ESCALATION"
+          },
+          {
+            "key": "OTHER",
+            "displayText": "OTHER"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "status": {
+        "data": [
+          {
+            "key": "NOT_MET",
+            "displayText": "NOT MET"
+          },
+          {
+            "key": "MET",
+            "displayText": "MET"
+          },
+          {
+            "key": "INACTIVE",
+            "displayText": "INACTIVE"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "documentType": {
+        "data": [
+          {
+            "key": "PAN",
+            "displayText": "PAN"
+          },
+          {
+            "key": "TAN",
+            "displayText": "TAN"
+          },
+          {
+            "key": "AGREEMENT",
+            "displayText": "Agreement"
+          },
+          {
+            "key": "PROPOSAL",
+            "displayText": "Proposal"
+          },
+          {
+            "key": "VISITING_CARD",
+            "displayText": "Visiting Card"
+          },
+          {
+            "key": "ADDRESS_PROOF",
+            "displayText": "Address Proof"
+          },
+          {
+            "key": "OTHERS",
+            "displayText": "Others"
+          }
+        ],
+        "selectedItem": ""
+      }
+    },
+    "suspect": {
+      "status": {
+        "data": [
+          {
+            "key": "COLD",
+            "displayText": "COLD"
+          },
+          {
+            "key": "WARM",
+            "displayText": "WARM"
+          },
+          {
+            "key": "HOT",
+            "displayText": "HOT"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "contactType": {
+        "data": [
+          {
+            "key": "PRIMARY",
+            "displayText": "PRIMARY"
+          },
+          {
+            "key": "ESCALATION",
+            "displayText": "ESCALATION"
+          },
+          {
+            "key": "OTHER",
+            "displayText": "OTHER"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "supportArea": {
+        "data": [
+          {
+            "key": "BUSINESS",
+            "displayText": "BUSINESS"
+          },
+          {
+            "key": "FINANCE",
+            "displayText": "FINANCE"
+          },
+          {
+            "key": "INVOICE",
+            "displayText": "INVOICE"
+          }
+        ],
+        "selectedItem": ""
+      }
+    },
+    "discussion": {
+      "typeOfDiscussion": {
+        "data": [
+          {
+            "key": "CALL",
+            "displayText": "CALL"
+          },
+          {
+            "key": "MAIL",
+            "displayText": "MAIL"
+          },
+          {
+            "key": "MEET",
+            "displayText": "MEET"
+          },
+          {
+            "key": "CHAT",
+            "displayText": "CHAT"
+          }
+        ],
+        "selectedItem": ""
+      }
+    },
+    "prospect": {
+      "typeOfBusiness": {
+        "data": [
+          {
+            "key": "Business Vertical",
+            "displayText": "Business Vertical"
+          },
+          {
+            "key": "IT Staffing",
+            "displayText": "IT Staffing"
+          },
+          {
+            "key": "General Staffing",
+            "displayText": "General Staffing"
+          },
+          {
+            "key": "Government Staffing",
+            "displayText": "Government Staffing"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "status": {
+        "data": [
+          {
+            "key": "AGREEMENT_ON_CLOSURE",
+            "displayText": "AGREEMENT ON CLOSURE"
+          },
+          {
+            "key": "LOST",
+            "displayText": "LOST"
+          },
+          {
+            "key": "WON",
+            "displayText": "WON"
+          },
+          {
+            "key": "WORK_IN_PROGRESS",
+            "displayText": "WORK IN PROGRESS"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "status_prospect": {
+        "data": [
+          {
+            "key": "Agreement_On_Closure",
+            "displayText": "Agreement On Closure"
+          },
+          {
+            "key": "LOST",
+            "displayText": "LOST"
+          },
+          {
+            "key": "WON",
+            "displayText": "WON"
+          },
+          {
+            "key": "Work In Progress",
+            "displayText": "Work In Progress"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "priority": {
+        "data": [
+          {
+            "key": "CRITICAL",
+            "displayText": "CRITICAL"
+          },
+          {
+            "key": "HIGH",
+            "displayText": "HIGH"
+          },
+          {
+            "key": "LOW",
+            "displayText": "LOW"
+          },
+          {
+            "key": "MEDIUM",
+            "displayText": "MEDIUM"
+          }
+        ],
+        "selectedItem": ""
+      }
+    },
+    "requirementKeys": {
+      "status": {
+        "data": [
+          {
+            "key": "ACTIVE",
+            "displayText": "Active"
+          },
+          {
+            "key": "POSITION_ON_HOLD",
+            "displayText": "Position on Hold"
+          },
+          {
+            "key": "CLOSED_BY_OTHER_CONSULTANT",
+            "displayText": "Closed by other Consultant"
+          },
+          {
+            "key": "CLOSED_INTERNALLY",
+            "displayText": "Closed internally"
+          },
+          {
+            "key": "CLOSED_BY_US",
+            "displayText": "Closed by Us"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "requirementType": {
+        "data": [
+          {
+            "key": "PERMANANT_STAFFING",
+            "displayText": "Permanant Staffing"
+          },
+          {
+            "key": "TEMP_STAFFING",
+            "displayText": "Temparaury Staffing"
+          },
+          {
+            "key": "PROFESSIONAL_STAFFING",
+            "displayText": "Professional Staffing"
+          },
+          {
+            "key": "GENERAL_STAFFING",
+            "displayText": "General Staffing"
+          },
+          {
+            "key": "IT_STAFFING",
+            "displayText": "It Staffing"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "industry": {
+        "data": [
+          {
+            "key": "Accounting/Finance",
+            "displayText": "Accounting/Finance"
+          },
+          {
+            "key": "Admin/Secretarial",
+            "displayText": "Admin/Secretarial"
+          },
+          {
+            "key": "Advertising / PR / MR / Events",
+            "displayText": "Advertising / PR / MR / Events"
+          },
+          {
+            "key": "Agriculture / Dairy",
+            "displayText": "Agriculture / Dairy"
+          },
+          {
+            "key": "Airlines",
+            "displayText": "Airlines"
+          }
+        ],
+        "selectedItem": ""
+      }
+    },
     "languages": {
       "en": "English"
     },
@@ -110,9 +433,57 @@
       "forgotPassword": true
     },
     "empanelment": {
-        "pricingMode" :{"data":[{"key":"Fixed Fee","displayText":"Fixed Fee"},{"key":"Fixed % Margin","displayText":"Fixed % Margin"},{"key":"Fixed Rate Card","displayText":"Fixed Rate Card"},{"key":"Case to Case Basis","displayText":"Case to Case Basis"},{"key":"Hourly Rate","displayText":"Hourly  Rate"}],"selectedItem":""},
-       "creditTerm":{"data":[{"key":"Collect & Pay","displayText":"Collect & Pay"},{"key":"Upfront","displayText":"Upfront"}],"selectedItem":""},
-        "OB":{"data":[{"key":"Post OB","displayText":"Post OB"},{"key":"Pre OB","displayText":"Pre OB"}],"selectedItem":""}
-  }
+      "pricingMode": {
+        "data": [
+          {
+            "key": "Fixed Fee",
+            "displayText": "Fixed Fee"
+          },
+          {
+            "key": "Fixed % Margin",
+            "displayText": "Fixed % Margin"
+          },
+          {
+            "key": "Fixed Rate Card",
+            "displayText": "Fixed Rate Card"
+          },
+          {
+            "key": "Case to Case Basis",
+            "displayText": "Case to Case Basis"
+          },
+          {
+            "key": "Hourly Rate",
+            "displayText": "Hourly  Rate"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "creditTerm": {
+        "data": [
+          {
+            "key": "Collect & Pay",
+            "displayText": "Collect & Pay"
+          },
+          {
+            "key": "Upfront",
+            "displayText": "Upfront"
+          }
+        ],
+        "selectedItem": ""
+      },
+      "OB": {
+        "data": [
+          {
+            "key": "Post OB",
+            "displayText": "Post OB"
+          },
+          {
+            "key": "Pre OB",
+            "displayText": "Pre OB"
+          }
+        ],
+        "selectedItem": ""
+      }
+    }
   }
 }

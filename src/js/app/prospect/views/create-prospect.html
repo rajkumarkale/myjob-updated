@@ -83,118 +83,6 @@
     </accordion-group>
   </accordion>
 </div>
-
-
-<!--<div class="container col-md-12">
-  <div class="panel panel-default second-panel up-margin ">
-    <div class="panel-title  panel-heading ">
-      Client Details
-    </div>
-    <div class="panel-body  ">
-      <div class="form-group pull-right mrg-formgrp mrg-top-apply">
-        <div class="col-md-8">
-          <div class="form-group">
-            <label class="control-label">Status</label>
-            <div custom-select data="status"></div>
-            <div id="grad1-status"></div>
-          </div>
-        </div>
-      </div>
-      <hr class="line1">
-      <div class=" pull-right">
-        <a href="" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus" ng-click="createNewContactList()"> Contact</a>
-      </div>
-      <div class="row ">
-        <div class="col-lg-10 ">
-          <accordion close-others='opening' class="plus">
-            <accordion-group is-open="poc.isOpen" >
-              <accordion-heading>
-                                <span class="color-black ">
-           Contact Person Details
-          <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}">
-            </i>
-            </span>
-              </accordion-heading>
-              <div class="row" >
-                <div class="col-md-5 col-pad">
-                  <div class=" form-group label-floating is-empty">
-                    <label class="control-label">Contact Person Name</label>
-                    <input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)">
-                    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
-                    <div ng-show="noResults">
-                      <i class="glyphicon glyphicon-remove"></i> No Results Found
-                    </div>
-                  </div>
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Phone Number</label>
-                    <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
-                  </div>
-                  <div>
-                    <label class="control-label">Support Area</label>
-                    <div class="form-group" custom-select data="poc.support_area">
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-5 col-md-offset-2">
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Email ID</label>
-                    <input class="form-control bord-remove" data-ng-model="poc.email_id" type="text">
-                  </div>
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Designation</label>
-                    <input class="form-control bord-remove" type="text" data-ng-model="poc.designation">
-                  </div>
-                  <div>
-                    <label class="control-label">Contact type</label>
-                    <div class="form-group" custom-select data="poc.contact_type"></div>
-                  </div>
-                </div>
-              </div>
-            </accordion-group>
-          </accordion>
-        </div>
-
-        <div class="col-md-12" ng-if="showRollOut">
-          <h4 class="color-black">Roll out of a proposal</h4>
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <div ngf-drop ngf-select="upload($files,1)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-allow-dir="true" ngf-multiple="false" accept="image/*">Drop PDF,DOC or IMAGE here or click to upload</div>
-              <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-              <div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
-            </div>
-            <ul>
-              <div ng-repeat="f in uploadFiles" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
-                &lt;!&ndash;<img ng-src="{{f.url}}" class="thumb">&ndash;&gt;
-                <div class="preview-div">
-                  <div class="col-md-2">
-                    <div class="previews">
-                      <img ng-src="{{f.url}}" class="preview-img">
-                      <a class="remove" data-ng-click="removeFiles($index)"></a>
-                      <span style="word-wrap: break-word;" tooltip="{{f.name}}">{{fileName}}</span>
-                      &lt;!&ndash;<p class="text-in">VOTER CARD</p>&ndash;&gt;
-                    </div>
-                    <div class="preview-select" custom-select data="f.documentType">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div data-cg-busy="{promise:submitPromise,message:'Updating'}"></div>
-      <div class="col-md-6 col-md-offset-5">
-        <div class="form-group">
-          <a ui-sref="app.suspect-view">
-            <button class="btn btn-primary data-button">Cancel</button>
-          </a>
-          <button class="btn btn-primary data-button" data-ng-click="submit(true)">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>-->
 <div class="container col-md-12 mrg-down ">
   <accordion class="plus possibility-head">
     <accordion-group is-open="poc.isOpen" >
@@ -264,9 +152,7 @@
           <div class="form-group ">
             <label class="control-label ">Status</label>
             <div   custom-select data="prospectStatus" value="saleObject.prospect" class="status-prospect"></div>
-
           </div>
-
         </div>
       </div>
       <hr class="line1">
@@ -291,9 +177,12 @@
               <label class="control-label">Annual Business Topline</label>
               <input class="form-control" type="text" ng-model="saleObject.client.revenue">
             </div>
-            <div class="form-group label-floating">
+            <div class="form-group label-floating present">
               <label class="control-label">Expected Date of Closure</label>
-              <input class="form-control" type="date" ng-model="date">
+              <input class="form-control"  ng-model="exdate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
+                     show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>
+              <span class="hand-cursor" id="basic-addon2">
+            <img src="img/calendar_icon.png" class="cal-align " ng-click="open($event,'opened3')" alt="" /></span>
             </div>
             <div class="form-group label-floating is-empty" ng-if="status_lost">
               <label class="control-label">Reason of Loss</label>
@@ -311,7 +200,7 @@
 
     </div>
   </div>
-  <div class="panel panel-default second-panel panelmrgs-prospect"  ng-show="displayagreement">
+  <div class="panel panel-default second-panel panelmrgs-prospect" >
    <div class="panel-heading">
      Agreement on Closure
    </div>
@@ -456,12 +345,12 @@
           </div>
         </div>
       </div><hr class="req-line">
-      <h3   style="color:#049ad9" ng-if="displayagreement">All Requirements</h3><br>
+      <h3   style="color:#049ad9" >All Requirements</h3><br>
       <div class="req-plus">
         <label class=" btn-raised hand-cursor pull-right glyphicon glyphicon-plus add-button plus-fa " >
         </label>
       </div>
-      <table class=" table-topdiv table table-bod m-n " ng-if="displayagreement"  >
+      <table class=" table-topdiv table table-bod m-n "   >
         <thead class="table-head " >
         <tr>
 

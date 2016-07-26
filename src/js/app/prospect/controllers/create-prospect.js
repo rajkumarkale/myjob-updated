@@ -5,7 +5,9 @@ angular.module('com.module.prospect')
         $scope.suspectStatus = appConfig.suspect.status;
         $scope.displayagreement = true;
         $scope.status_lost = false;
-        $scope.requireStatus=appConfig.prospect.requireStatus;
+      $scope.priority=appConfig.prospect.priority;
+      $scope.requireStatus=appConfig.requirementKeys.requirementType;
+      $scope.industry=appConfig.requirementKeys.industry;
         $scope.$watch('saleObject.prospect', function (n, o) {
             if (n === 'AGREEMENT_ON_CLOSURE') {
                 $scope.title = 'Agreement on Closure';
@@ -25,7 +27,7 @@ angular.module('com.module.prospect')
         }
         $scope.cancel = function () {
             $state.go('app.viewProspect');
-        }
+        };
         $scope.submit = function () {
                 console.log('submit clicked');
                 var timestamp = $scope.date.getTime();
@@ -33,7 +35,7 @@ angular.module('com.module.prospect')
                 $scope.savePromise = $scope.saleObject.update().then(function () {
                     $state.go('app.viewProspect');
                 });
-            }
+            };
             /* $scope.openRequirement = function () {
 
                var modalInstance = $modal.open({
@@ -65,13 +67,19 @@ angular.module('com.module.prospect')
             if ($scope.openCal === 'opened1') {
                 $scope.opened1 = true;
                 $scope.opened2 = false;
+              $scope.opened3 = false;
             } else if ($scope.openCal === 'opened2') {
                 $scope.opened2 = true;
                 $scope.opened1 = false;
+              $scope.opened3 = false;
+            }
+            else if ($scope.openCal === 'opened3') {
+              $scope.opened2 = false;
+              $scope.opened1 = false;
+              $scope.opened3 = true;
             }
         };
-      $scope.priority=appConfig.prospect.priority;
-      $scope.ageData={
+   $scope.ageData={
         data:[]
       };
       for(var i=19;i<71;i++)
@@ -198,5 +206,5 @@ angular.module('com.module.prospect')
         key:' IT Software - Mainframe',
         displayText:' IT Software - Mainframe'
       })
-    
+
   }]);

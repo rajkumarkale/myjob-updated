@@ -163,11 +163,12 @@
 
         <div class="container-fluid ">
           <div class="col-md-5 ">
-            <div class="form-group label-floating "
-                >
+            <div class="form-group label-floating present" >
               <label class="control-label">Agreement Start Date<span class="required-field">*</span></label>
-              <input ng-model="start" class="form-control" name="start" type="date"
-                     required>
+              <input class="form-control"  ng-model="agrremetStart" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened1"
+                     show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened1')" readonly>
+              <span class="hand-cursor" id="basic-addon2">
+            <img src="img/calendar_icon.png" class="cal-align " style="margin-left: 400px !important;" ng-click="open($event,'opened1')" alt="" /></span>
               <span class="error" ng-show="usrform.start.$invalid && usrform.start.$dirty">Please enter valid text </span>
 
             </div>
@@ -192,9 +193,12 @@
 
         <div class="container-fluid ">
           <div class="col-md-5">
-            <div class="form-group label-floating ">
+            <div class="form-group label-floating present">
               <label class="control-label">Agreement End Date<span class="required-field">*</span></label>
-              <input  ng-model="end" class="form-control" name="end" type="date"  required>
+              <input class="form-control"  ng-model="agreementEnd" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened2"
+                     show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened2')" readonly>
+              <span class="hand-cursor" id="basic-addon3">
+            <img src="img/calendar_icon.png" class="cal-align " style="margin-left: 400px !important;" ng-click="open($event,'opened2')" alt="" /></span>
               <span class="error" ng-show="usrform.end.$invalid && usrform.end.$dirty">Please enter valid text </span>
 
             </div>
@@ -227,10 +231,12 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating ">
+            <div class="form-group label-floating present">
               <label class="control-label">Payroll input upload Date<span class="required-field">*</span></label>
-              <input ng-model="payroll" name="payroll" class=" form-control focusedInput1" type="date"
-                     required>
+              <input class="form-control"  ng-model="piudate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
+                     show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>
+              <span class="hand-cursor" id="basic-addon4">
+            <img src="img/calendar_icon.png" class="cal-align " style="margin-left:350px !important;" ng-click="open($event,'opened3')" alt="" /></span>
               <span class="error" ng-show="usrform.payroll.$invalid && usrform.payroll.$dirty">Please enter valid text </span>
             </div>
           </div>
@@ -254,10 +260,12 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating ">
+            <div class="form-group label-floating present">
               <label class="control-label">Invoice Submission Date<span class="required-field">*</span></label>
-              <input ng-model="invoice" class=" form-control focusedInput1" type="date" name="invoice"
-                     required >
+              <input class="form-control"  ng-model="isd" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened4"
+                     show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened4')" readonly>
+              <span class="hand-cursor" id="basic-addon5>
+            <img src="img/calendar_icon.png" class="cal-align " style="margin-left:350px !important;" ng-click="open($event,'opened4')" alt="" /></span>
               <span class="error" ng-show="usrform.invoice.$invalid && usrform.invoice.$dirty">Please enter valid text </span>
             </div>
           </div>
@@ -280,10 +288,12 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating ">
+            <div class="form-group label-floating present">
               <label class="control-label">Payout Date<span class="required-field">*</span></label>
-              <input ng-model="payout" class="form-control" class="focusedInput1" name="payout" type="date"
-                     required>
+              <input class="form-control"  ng-model="pdate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened5"
+                     show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened5')" readonly>
+              <span class="hand-cursor" id="basic-addon6">
+            <img src="img/calendar_icon.png" class="cal-align " style="margin-left:350px !important;" ng-click="open($event,'opened5')" alt="" /></span>
               <span class="error" ng-show="usrform.payout.$invalid && usrform.payout.$dirty">Please enter valid text </span>
 
 
@@ -365,7 +375,7 @@
           <button type="button" class="btn btn-raised sla-cancel-button btn-text">Cancel</button>
         </a>
         <a ui-sref="app.slaTracker-step2" class="auto">
-          <button class="btn btn-primary data-button btn-text" data-ng-disabled="usrform.$invalid">Save & Continue</button>
+          <button class="btn btn-primary data-button btn-text" >Save & Continue</button>
         </a>
       </div>
     </form>

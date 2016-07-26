@@ -1,19 +1,19 @@
 angular.module('com.module.possibility')
-    .controller('possibilityListController', ['$scope', '$state', 'toaster', '$timeout', '$cookies', 'discussionService', 'CoreService', '$filter', '$rootScope', 'saleModuleService','SaleModel', function ($scope, $state, toaster, $timeout, $cookies, discussionService, CoreService, $filter, $rootScope, saleModuleService,SaleModel) {
+    .controller('possibilityListController', ['$scope', '$state', 'toaster', '$timeout', '$cookies', 'discussionService', 'CoreService', '$filter', '$rootScope', 'saleModuleService', 'SaleModel', function ($scope, $state, toaster, $timeout, $cookies, discussionService, CoreService, $filter, $rootScope, saleModuleService, SaleModel) {
         $scope.selectedItem = [];
         $scope.filteredRows = [];
-      $scope.clinetname=[];
-        $scope.sortType = 'legal_name';
+        $scope.clinetname = [];
+        $scope.sortType = 'legalName';
         $scope.sortReverse = false;
-      $scope.possibilityCsvdata =[];
-       $scope.getArray =function(){
-         return $scope.possibilityCsvdata;
-       };
+        $scope.possibilityCsvdata = [];
+        $scope.getArray = function () {
+            return $scope.possibilityCsvdata;
+        };
 
-      $scope.getCSVHeader = function () {
-        var headerArr = ["LegalEntity","BusinessUnit","Location","ContactPerson","ContactDesignation","ContactNumber"];
-        return headerArr;
-      };
+        $scope.getCSVHeader = function () {
+            var headerArr = ["LegalEntity", "BusinessUnit", "Location", "ContactPerson", "ContactDesignation", "ContactNumber"];
+            return headerArr;
+        };
 
         $scope.data = {
             numPerPage: 10,
@@ -32,26 +32,26 @@ angular.module('com.module.possibility')
             $scope.myPromise = saleModuleService.getSalesData().then(function (response) {
                 console.log("possible", response);
                 $scope.data.possibilities = response;
-if($scope.data.possibilities[0]) {
-  for (var i = 0; i <= $scope.data.possibilities.length; i++) {
-    var excelData = {
-      "LegalEntity": $scope.data.possibilities[i].client.legalName,
-      "Business_Unit": $scope.data.possibilities[i].client.businessUnit,
-      "Location": $scope.data.possibilities[i].client.address.city,
-      "contactPerson": $scope.data.possibilities[i].pointOfContacts[0].name,
-      "contactDesignation": $scope.data.possibilities[i].pointOfContacts[0].designation,
-      "contactNumber": $scope.data.possibilities[i].pointOfContacts[0].phone
-    };
-    $scope.possibilityCsvdata.push(excelData);
+                if ($scope.data.possibilities[0]) {
+                    for (var i = 0; i <= $scope.data.possibilities.length; i++) {
+                        var excelData = {
+                            "LegalEntity": $scope.data.possibilities[i].client.legalName,
+                            "Business_Unit": $scope.data.possibilities[i].client.businessUnit,
+                            "Location": $scope.data.possibilities[i].client.address.city,
+                            "contactPerson": $scope.data.possibilities[i].pointOfContacts[0].name,
+                            "contactDesignation": $scope.data.possibilities[i].pointOfContacts[0].designation,
+                            "contactNumber": $scope.data.possibilities[i].pointOfContacts[0].phone
+                        };
+                        $scope.possibilityCsvdata.push(excelData);
 
-  }
-}
+                    }
+                }
 
 
             });
 
         };
-      /*$scope.clinetname.push(SaleModel.possibility.getPrimaryContact().name);*/
+        /*$scope.clinetname.push(SaleModel.possibility.getPrimaryContact().name);*/
         $scope.sumStartDate = new Date();
         $scope.sumEndDate;
         $scope.getPossibilityByRange = function (currentPage, numPerPage) {
@@ -86,9 +86,11 @@ if($scope.data.possibilities[0]) {
                 possibility: possibility
             });
         };
-        $scope.openDiscussions = function (possibility,status) {
+        $scope.openDiscussions = function (possibility, status) {
             discussionService.setData(possibility);
-            $state.go('app.viewDiscussions',{status:status});
+            $state.go('app.viewDiscussions', {
+                status: status
+            });
         };
         $scope.statusColor = function (status) {
             switch (status) {

@@ -83,118 +83,6 @@
     </accordion-group>
   </accordion>
 </div>
-
-
-<!--<div class="container col-md-12">
-  <div class="panel panel-default second-panel up-margin ">
-    <div class="panel-title  panel-heading ">
-      Client Details
-    </div>
-    <div class="panel-body  ">
-      <div class="form-group pull-right mrg-formgrp mrg-top-apply">
-        <div class="col-md-8">
-          <div class="form-group">
-            <label class="control-label">Status</label>
-            <div custom-select data="status"></div>
-            <div id="grad1-status"></div>
-          </div>
-        </div>
-      </div>
-      <hr class="line1">
-      <div class=" pull-right">
-        <a href="" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus" ng-click="createNewContactList()"> Contact</a>
-      </div>
-      <div class="row ">
-        <div class="col-lg-10 ">
-          <accordion close-others='opening' class="plus">
-            <accordion-group is-open="poc.isOpen" >
-              <accordion-heading>
-                                <span class="color-black ">
-           Contact Person Details
-          <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}">
-            </i>
-            </span>
-              </accordion-heading>
-              <div class="row" >
-                <div class="col-md-5 col-pad">
-                  <div class=" form-group label-floating is-empty">
-                    <label class="control-label">Contact Person Name</label>
-                    <input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)">
-                    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
-                    <div ng-show="noResults">
-                      <i class="glyphicon glyphicon-remove"></i> No Results Found
-                    </div>
-                  </div>
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Phone Number</label>
-                    <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
-                  </div>
-                  <div>
-                    <label class="control-label">Support Area</label>
-                    <div class="form-group" custom-select data="poc.support_area">
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-5 col-md-offset-2">
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Email ID</label>
-                    <input class="form-control bord-remove" data-ng-model="poc.email_id" type="text">
-                  </div>
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Designation</label>
-                    <input class="form-control bord-remove" type="text" data-ng-model="poc.designation">
-                  </div>
-                  <div>
-                    <label class="control-label">Contact type</label>
-                    <div class="form-group" custom-select data="poc.contact_type"></div>
-                  </div>
-                </div>
-              </div>
-            </accordion-group>
-          </accordion>
-        </div>
-
-        <div class="col-md-12" ng-if="showRollOut">
-          <h4 class="color-black">Roll out of a proposal</h4>
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <div ngf-drop ngf-select="upload($files,1)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-allow-dir="true" ngf-multiple="false" accept="image/*">Drop PDF,DOC or IMAGE here or click to upload</div>
-              <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-              <div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
-            </div>
-            <ul>
-              <div ng-repeat="f in uploadFiles" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
-                &lt;!&ndash;<img ng-src="{{f.url}}" class="thumb">&ndash;&gt;
-                <div class="preview-div">
-                  <div class="col-md-2">
-                    <div class="previews">
-                      <img ng-src="{{f.url}}" class="preview-img">
-                      <a class="remove" data-ng-click="removeFiles($index)"></a>
-                      <span style="word-wrap: break-word;" tooltip="{{f.name}}">{{fileName}}</span>
-                      &lt;!&ndash;<p class="text-in">VOTER CARD</p>&ndash;&gt;
-                    </div>
-                    <div class="preview-select" custom-select data="f.documentType">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div data-cg-busy="{promise:submitPromise,message:'Updating'}"></div>
-      <div class="col-md-6 col-md-offset-5">
-        <div class="form-group">
-          <a ui-sref="app.suspect-view">
-            <button class="btn btn-primary data-button">Cancel</button>
-          </a>
-          <button class="btn btn-primary data-button" data-ng-click="submit(true)">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>-->
 <div class="container col-md-12 mrg-down ">
   <accordion class="plus possibility-head">
     <accordion-group is-open="poc.isOpen" >
@@ -260,8 +148,7 @@
     </div>
     <div class="panel-body">
       <div class="form-group pull-right">
-        <div style="margin-top: -44px;
-    width: 198px;">
+        <div class="status-pro">
           <div class="form-group ">
             <label class="control-label ">Status</label>
             <div   custom-select data="prospectStatus" value="saleObject.prospect" class="status-prospect"></div>
@@ -313,7 +200,7 @@
 
     </div>
   </div>
-  <div class="panel panel-default second-panel panelmrgs-prospect"  ng-show="displayagreement">
+  <div class="panel panel-default second-panel panelmrgs-prospect" >
    <div class="panel-heading">
      Agreement on Closure
    </div>
@@ -447,69 +334,221 @@
               </div>
             </div>
           </div>
-          <div class="col-md-12">
-            <div class="col-md-6 form-custom-padding">
-              <!--<div class="form-group label-floating is-empty">
-                <label class="control-label">Min No of Demands to be closed</label>
-                <input class="form-control" type="text">
-              </div>--><a ui-sref="app.Requirements">
-              <button class="btn btn-primary data-button btn-text" ><i class="fa fa-plus"  ></i>&nbsp;&nbsp;Requirement</button></a>
-            </div>
-            <div class="col-md-6 form-custom-padding">
-              <div class="form-group label-floating is-empty">
-                <label class="control-label">Min No of Requirements to be closed</label>
-                <input class="form-control" type="text">
-              </div>
-            </div>
+          </div>
+
+        </div>
+      <div class=" row ">
+        <div class="col-md-5 form-custom-padding">
+          <div class="form-group label-floating is-empty">
+            <label class="control-label">Min No of Requirements to be closed</label>
+            <input class="form-control" type="text">
           </div>
         </div>
+      </div><hr class="req-line">
+      <h3   style="color:#049ad9" >All Requirements</h3><br>
+      <div class="req-plus">
+        <label class=" btn-raised hand-cursor pull-right glyphicon glyphicon-plus add-button plus-fa " >
+        </label>
       </div>
-    </div>
-  </div>
-  <h3   style="color:#049ad9" ng-if="displayagreement">All Requirements</h3><br>
-  <div class="req-plus"></div>
-  <table class=" table-topdiv table table-bod m-n " ng-if="displayagreement"  >
-    <thead class="table-head " >
-    <tr>
+      <table class=" table-topdiv table table-bod m-n "   >
+        <thead class="table-head " >
+        <tr>
 
-      <th class="table-th-heading"></th>
-      <th  class="table-th-heading">Req ID  <span ><img src="img/sort_icon.png"></span> </th>
-      <th class="table-th-heading">Client Name <span ><img src="img/sort_icon.png"></span></th>
-      <th class="table-th-heading">Positions <span ><img src="img/sort_icon.png"></span></th>
-      <th class="table-th-heading">SPOC <span ><img src="img/sort_icon.png"></span></th>
-      <th class="table-th-heading">Job Location</th>
-      <th class="table-th-heading">Added By</th>
-      <th class="table-th-heading">Prioritization</th>
+          <th class="table-th-heading"></th>
+          <th  class="table-th-heading">Req ID  <span ><img src="img/sort_icon.png"></span> </th>
+          <th class="table-th-heading">Client Name <span ><img src="img/sort_icon.png"></span></th>
+          <th class="table-th-heading">Positions <span ><img src="img/sort_icon.png"></span></th>
+          <th class="table-th-heading">SPOC <span ><img src="img/sort_icon.png"></span></th>
+          <th class="table-th-heading">Job Location</th>
+          <th class="table-th-heading">Added By</th>
+          <th class="table-th-heading">Prioritization</th>
 
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr >
-      <td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr >
+          <td>
 
-        <div class="chekbox">
-          <label>
-            <input type="checkbox" class="poss">
+            <div class="chekbox">
+              <label>
+                <input type="checkbox" class="poss">
                 <span class="checkbox-material">
                   <span class="check"></span>
                 </span>
-          </label>
-        </div>
+              </label>
+            </div>
 
 
-      </td>
-      <td >11W41ao532</td>
-      <td>lorem ipusum</td>
-      <td>5</td>
-      <td>lorem ipusum</td>
-      <td>Hyderabad</td>
-      <td>Delivery Manager</td>
-      <td>High</td>
+          </td>
+          <td >11W41ao532</td>
+          <td>lorem ipusum</td>
+          <td>5</td>
+          <td>lorem ipusum</td>
+          <td>Hyderabad</td>
+          <td>Delivery Manager</td>
+          <td>High</td>
         </tr>
-    </tbody>
-  </table>
-</div>
+        </tbody>
+      </table>
+      <accordion class="plus col-md-12 re-accordian ">
+        <accordion-group is-open="status.open">
+          <accordion-heading>
+            <span class="add-req"> Add Requirement</span><i class="pull-right glyphicon color-black" ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
+          </accordion-heading>
+          <form name="Requirement">
+            <div class="col-md-12 p-bottom">
+              <h4 class="client-req">Client Details</h4>
+              <div class="col-md-5 col-pad">
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Name<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="1">
+                </div>
+
+                <div class="form-group ">Requirement Type<span class="required-field">*</span>
+                  <div custom-select data="requireStatus" value="" class=" age-select p-0" tabindex="23"></div>
+                </div>
+                <div class="form-group label-floating is-empty ">
+                  <label class="control-label">Office Location<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="">
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Applicable Consulting Fee<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="7">
+                </div>
+              </div>
+              <div class="col-md-5 col-md-offset-1">
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Manager<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="2">
+                </div>
+                <!--<div class="form-group label-floating  age-text">
+                Permanent Staffing<span class="required-field">*</span>
+                  <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
+                </div>-->
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Practice<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="6">
+                </div>
+                <div class="form-group label-floating  age-text">
+                  Priority<span class="required-field">*</span>
+                  <div custom-select data="priority" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
+                </div>
+              </div>
+            </div>
+            <hr style="width: 100%;
+    border-top: 2px solid #8c8b8b;">
+            <div class="col-md-12">
+              <div class="col-md-5 col-pad">
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Job Title<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="1">
+                </div>
+                <div class="form-group label-floating age-text">
+                  Functional Area<span class="required-field">*</span>
+                  <div custom-select data="functional_area" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Qualification<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="5">
+                </div>
+                <div class="form-group space-age">
+                  <label class="col-md-3 p-0 age-text" >Age Group<span class="required-field">*</span></label>
+
+                  <div class="col-md-9 p-r">
+                    <div custom-select data="ageData" value="age" class="col-md-6 age-select p-0" tabindex="15"></div>
+                    <div custom-select data="ageData" value="age" class="col-md-6 age-select p-r p-l-20" tabindex="23"></div>
+                  </div>
+                </div>
+                <div class="form-group space-top">
+                  <label class="col-md-3 p-0 age-text" >Experience<span class="required-field">*</span></label>
+                  <div class="col-md-9 p-r">
+                    <div custom-select data="Experience" value="saleObject.prospect" class="col-md-6 age-select p-0" tabindex="23"></div>
+                    <div custom-select data="Experience" value="saleObject.prospect" class="col-md-6 age-select p-r p-l-20" tabindex="23"></div>
+                  </div>
+                </div>
+                <div class="form-group space-top">
+                  <label class="col-md-3 p-0 age-text" >CTC Range<span class="required-field">*</span></label>
+                  <div class="col-md-9 p-r">
+                    <div custom-select data="CTC" value="saleObject.prospect" class="col-md-6 age-select p-0" tabindex=""></div>
+                    <div custom-select data="CTC" value="saleObject.prospect" class="col-md-6 age-select p-r p-l-20" tabindex=""></div>
+                  </div>
+                </div>
+                <div class="form-group space-top">
+                  <div class="font-ind age-text">Industry<span class="required-field">*</span>
+                    <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex=""></div>
+                  </div>
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">No Poach Companies<span class="required-field">*</span></label>
+                  <input class="form-control col-md-2" type="text" tabindex="">
+                </div>
+
+              </div>
+              <div class="col-md-5 col-md-offset-1">
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">No Of Positions<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="2">
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Vacancy<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="4">
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Job Location<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="6">
+                </div>
+                <div class="form-group ">
+                  <div class="font-ind age-text">Primary Level<span class="required-field">*</span>
+                    <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <label class="col-md-3 p-0  age-text" >Relevent Experience<span class="required-field">*</span></label>
+                  <div class="col-md-9 p-r m-t-20">
+                    <div custom-select data="Experience" value="saleObject.prospect" class="col-md-6 age-select p-0" tabindex="23"></div>
+                    <div custom-select data="Experience" value="saleObject.prospect" class="col-md-6 age-select p-r p-l-20" tabindex="23"></div>
+                  </div>
+                </div><br><br>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Remarks<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="">
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Target Employees<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="8">
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-10 upward">
+                <label for="textArea" class=" mrg-label ">
+                  <h3>Job Description<span class="required-field">*</span></h3></label>
+                <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea"   tabindex="30" ></textarea>
+              </div>
+            </div>
+            <div class="col-md-6 col-md-offset-4">
+              <div class="form-group ">
+                <a ui-sref="app.create-prospect" >
+                  <button class="btn btn-primary data-button-cancel btn-text"  >Cancel</button>
+                </a>
+                <button class="btn btn-primary data-button btn-text" >Submit</button>
+              </div>
+            </div>
+          </form>
+        </accordion-group>
+      </accordion>
+            </div>
+
+
+      </div>
+
+    </div>
+
+
+
+
 
 
 

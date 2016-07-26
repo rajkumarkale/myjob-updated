@@ -22,10 +22,10 @@ angular.module('com.module.prospect').config(['$stateProvider', function ($state
       templateUrl: 'js/app/prospect/views/view-discussions.html',
       controller:'viewDiscussionCtrl'
     })
-  .state('app.Requirements', {
+  /*.state('app.Requirements', {
     url: '/view-Requirements',
     templateUrl: 'js/app/prospect/views/add-requirement.html',
     controller:'addRequirement'
-  });
+  })*/;
 
 }]);

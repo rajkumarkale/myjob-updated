@@ -32,7 +32,7 @@ angular.module('com.module.possibility')
             $scope.myPromise = saleModuleService.getSalesData().then(function (response) {
                 console.log("possible", response);
                 $scope.data.possibilities = response;
-if($scope.data.possibilities[i]) {
+if($scope.data.possibilities[0]) {
   for (var i = 0; i <= $scope.data.possibilities.length; i++) {
     var excelData = {
       "LegalEntity": $scope.data.possibilities[i].client.legalName,

@@ -16,6 +16,9 @@ angular.module('com.module.prospect')
     var headerArr = ["LegalEntity","BusinessUnit","Annual Number","Annual Revenue","Exp.Closure Date","Contact Name","ContactNumber"];
     return headerArr;
   };
+
+
+
         $scope.open = function ($event, opened) {
             $event.preventDefault();
             $event.stopPropagation();
@@ -112,6 +115,14 @@ angular.module('com.module.prospect')
             console.log("possible", response);
             $scope.data.prospects = response;
             $scope.data.totalItems = response.length;
+          if($scope.data.prospects[0]){
+          for(var i=0; i<=$scope.data.prospects.length;i++){
+            var excelData = {"LegalEntity":$scope.data.prospects[i].client.legalName,
+              "Business_Unit":$scope.data.prospects[i].client.businessUnit
+            };
+            $scope.prospectCsvdata.push(excelData);
+
+          }}
         });
         $scope.openEditProspect = function (prospect) {
             $state.go('app.create-prospect', {

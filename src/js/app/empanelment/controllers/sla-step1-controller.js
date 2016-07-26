@@ -2,8 +2,9 @@
  * Created by kveena on 7/18/2016.
  */
 angular.module('com.module.empanelment')
-.controller('sla-step1-controller',['$scope','$state','appConfig','$rootScope',function($scope,$state,appConfig,$rootScope){
-
+.controller('sla-step1-controller',['$scope','$state','appConfig','$rootScope','SLATrackerModel',function($scope,$state,appConfig,$rootScope,SLATrackerModel){
+$scope.SLATracker=new SLATrackerModel({});
+  
     $scope.OB = appConfig.empanelment.OB;
   $scope.open = function ($event, opened) {
     $event.preventDefault();

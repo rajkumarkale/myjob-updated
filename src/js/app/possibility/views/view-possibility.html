@@ -71,11 +71,12 @@
           </div>
         </div>
       </div>
-      <div class="panel-body del-pad">
+      <div class="panel-body del-pad excel-row">
         <div class="row row-height">
           <label class=" btn-raised hand-cursor pull-right glyphicon glyphicon-plus add-button plus-fa " ui-sref="app.createPossibility">
             </label>
-          <button class="btn btn-raised btn-info excel_pos" type="button" ng-csv="getArray()" filename="possibility.csv" csv-header="getCSVHeader()" ng-if="filteredRows.length!=0">Export</button>
+          <button class="btn btn-raised btn-info excel_pos" type="button" ng-csv="getArray()" filename="possibility.csv" csv-header="getCSVHeader()" ng-if="filteredRows.length!=0">
+            <img src="img/excel_upload_icon.png"></button>
         </div>
       </div>
       <div class="table-topdiv">

@@ -79,7 +79,7 @@ angular.module('com.module.prospect')
                 console.log(response);
                 $state.go('app.viewProspect');
             });
-        }
+        };
         $scope.submitRequirement = function () {
             $scope.openReq('false');
             console.log($scope.requirement);

@@ -62,7 +62,7 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.commercials.reimbursementsServiceFee}">
               <label class="control-label"> Reimbursements Service Fee<span class="required-field">*</span></label>
               <input class="form-control" name="n4" required="required" ng-model="SLATracker.commercials.reimbursementsServiceFee" type="text"
                      maxlength="20"  numbers-only>
@@ -80,7 +80,7 @@
 
         <div class="container-fluid">
           <div class="col-md-5">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating " ng-class="{'is-empty':!saleObject.client.contactNumber}">
               <label class="control-label">Contact Number<span class="required-field">*</span></label>
               <input ng-model="contact" name="contact" class="focusedInput1 form-control" numbers-only minlength="10" maxlength="15"
                      required ng-model="saleObject.client.contactNumber">
@@ -89,7 +89,7 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.commercials.sourcingFee}">
               <label class="control-label">Sourcing Fee<span class="required-field">*</span></label>
               <input ng-model="SLATracker.commercials.sourcingFee"  class="form-control focusedInput1" name="sourcing" numbers-only type="text"  minlength="10" maxlength="20"
                      required>
@@ -112,7 +112,7 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating" ng-class="{'is-empty':!SLATracker.commercials.absorptionFee}">
               <label class="control-label">Absorption Fee & Clauses<span class="required-field">*</span></label>
               <input  ng-model="SLATracker.commercials.absorptionFee" name="absor" class=" form-control focusedInput1" type="text"
                        alpha-num required minlength="1">
@@ -175,7 +175,7 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.timeSheetReminder}">
               <label class="control-label">Time Sheet Remainder<span class="required-field">*</span></label>
               <input  ng-model="SLATracker.agreementAndImportantDates.timeSheetReminder" class="form-control" name="sheet" type="text"  alpha-num required>
               <span class="error" ng-show="usrform.sheet.$invalid && usrform.sheet.$dirty">Please enter valid text </span>
@@ -205,7 +205,7 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating " data-ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.timeSheetSubmissionCutoff}">
               <label class="control-label">Time Sheet Submission Cutoff<span class="required-field">*</span></label>
               <input ng-model="SLATracker.agreementAndImportantDates.timeSheetSubmissionCutoff" class="form-control" name="sub" type="text" alpha-num required>
               <span class="error" ng-show="usrform.sub.$invalid && usrform.sub.$dirty">Please enter valid text </span>
@@ -222,7 +222,7 @@
 
         <div class="container-fluid">
           <div class="col-md-5">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.agreementTerminationNotice}">
               <label class="control-label">Agreement Termination Notice<span class="required-field">*</span></label>
               <input ng-model="SLATracker.agreementAndImportantDates.agreementTerminationNotice" name="ter"  class="focusedInput1 form-control" type="text"  alpha-num
                      required>
@@ -250,7 +250,7 @@
 
         <div class="container-fluid">
           <div class="col-md-5">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.associateTerminationNotice}">
               <label class="control-label">Associate Termination Notice<span class="required-field">*</span></label>
               <input ng-model="SLATracker.agreementAndImportantDates.associateTerminationNotice"  name="notice" class=" form-control focusedInput1" type="text"
                      required >
@@ -279,7 +279,7 @@
 
         <div class="container-fluid">
           <div class="col-md-5">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating "  ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.paymentMode}">
               <label class="control-label">Payment Mode<span class="required-field">*</span></label>
               <input ng-model="SLATracker.agreementAndImportantDates.paymentMode" class="form-control" class="focusedInput1" type="text" ng-maxlength="25"
               name="payment" required >
@@ -310,7 +310,7 @@
 
         <div class="container-fluid">
           <div class="col-md-5">
-            <div class="form-group label-floating is-empty ">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.creditTerms}">
               <label class="control-label">Credit Terms<span class="required-field">*</span></label>
               <input ng-model="SLATracker.agreementAndImportantDates.creditTerms" class="form-control" class="focusedInput1" name="credit" type="text"
                      required>

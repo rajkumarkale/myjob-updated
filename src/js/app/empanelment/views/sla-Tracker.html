@@ -52,9 +52,9 @@
 
         <div class="container-fluid">
           <div class="col-md-5">
-            <div class="form-group label-floating">
+            <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.client.address.address1}">
               <label class="control-label">Corporate office Address<span class="required-field">*</span></label>
-              <input class="form-control" name="n3" ng-model="n3" required="required" type="text" minlength="6"
+              <input class="form-control" name="n3" required="required" type="text" minlength="6"
                      maxlength="30"  alpha-num ng-model="saleObject.client.address.address1">
               <span class="error" ng-show="usrform.n3.$invalid && usrform.n3.$dirty">Eg:Corp Off: B-84, Sector - 64, Noida </span>
 
@@ -82,7 +82,7 @@
           <div class="col-md-5">
             <div class="form-group label-floating " ng-class="{'is-empty':!saleObject.client.contactNumber}">
               <label class="control-label">Contact Number<span class="required-field">*</span></label>
-              <input ng-model="contact" name="contact" class="focusedInput1 form-control" numbers-only minlength="10" maxlength="15"
+              <input name="contact" class="focusedInput1 form-control" numbers-only minlength="10" maxlength="15"
                      required ng-model="saleObject.client.contactNumber">
               <span class="error" ng-show="usrform.contact.$invalid && usrform.contact.$dirty">Please enter valid text </span>
             </div>

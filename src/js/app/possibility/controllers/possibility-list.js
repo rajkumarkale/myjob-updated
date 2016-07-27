@@ -29,7 +29,9 @@ angular.module('com.module.possibility')
             $scope.data.inactive = data.possibility.inActive ? data.possibility.inActive : 0;
         });
         $scope.getPossibilities = function (currentPage, numPerPage) {
-            $scope.myPromise = saleModuleService.getSalesData().then(function (response) {
+            $scope.myPromise = saleModuleService.getSalesData({
+                stage:'POSSIBILITY'
+            }).then(function (response) {
                 console.log("possible", response);
                 $scope.data.possibilities = response;
                 if ($scope.data.possibilities[0]) {
@@ -64,6 +66,7 @@ angular.module('com.module.possibility')
                 $scope.sumStartDate = $scope.start;
                 $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');
                 $scope.myPromise = saleModuleService.getSalesData({
+                    stage:'POSSIBILITY',
                     start: date1,
                     end: date2
                 }).then(function (response) {

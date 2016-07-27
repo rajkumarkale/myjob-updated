@@ -180,14 +180,14 @@
               <label class="control-label">Annual Business Topline</label>
               <input class="form-control" type="text" tabindex="2" ng-model="saleObject.client.revenue">
             </div>
-            <div class="form-group label-floating present" ng-show="displeyclosure">
+            <div class="form-group label-floating present" >
               <label class="control-label">Expected Date of Closure</label>
               <input class="form-control"  ng-model="closureDate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
                      show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>
               <span class="hand-cursor" id="basic-addon2">
             <img src="img/calendar_icon.png" class="cal-align " ng-click="open($event,'opened3')" alt="" /></span>
             </div>
-            <div class="form-group label-floating is-empty" ng-if="status_lost">
+            <div class="form-group label-floating is-empty" ng-show="saleObject.prospect==='LOST'">
               <label class="control-label">Reason of Loss</label>
               <input class="form-control" type="text" ng-model="saleObject.reasonOfLoss">
             </div>
@@ -204,7 +204,7 @@
 
     </div>
   </div>
-  <div class="panel panel-default second-panel panelmrgs-prospect"  ng-show="displayagreement">
+  <div class="panel panel-default second-panel panelmrgs-prospect"  ng-show="saleObject.prospect==='AGREEMENT_ON_CLOSURE'">
    <div class="panel-heading">
      Agreement on Closure
    </div>

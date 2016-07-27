@@ -4,41 +4,13 @@ angular.module('com.module.prospect')
         $scope.prospectStatus = appConfig.prospect.status;
         $scope.suspectStatus = appConfig.suspect.status;
         $scope.turnover = appConfig.possibility.groupTurnover;
-        $scope.displayagreement = true;
-        $scope.status_lost = false;
         $scope.priority = appConfig.prospect.priority;
         $scope.requireStatus = appConfig.requirementKeys.requirementType;
         $scope.industry = appConfig.requirementKeys.industry;
         $scope.primaryLevel = appConfig.requirementKeys.primaryLevel;
         $scope.showAddReq = false;
-      $scope.lostDisable=false;
-/*
-$scope.blurLost=$stateParams.prospect.prospect;
-*/
-
-        $scope.$watch('saleObject.prospect', function (n, o) {
-            if (n === 'AGREEMENT_ON_CLOSURE') {
-                $scope.title = 'Agreement on Closure';
-                $scope.displeyclosure = true;
-                $scope.displayagreement = true;
-                $scope.status_lost = false;
-            } else if (n === 'LOST') {
-
-                $scope.status_lost = true;
-              $scope.lostDisable=true;
-                $scope.displayagreement = false;
-                $scope.displeyclosure = false;
-            } else if (n === 'WORK_IN_PROGRESS') {
-                $scope.displeyclosure = false;
-                /*$scope.status_lost = true;*/
-                $scope.displayagreement = false;
-            } else {
-                $scope.displayagreement = false;
-                $scope.status_lost = false;
-                $scope.displeyclosure = false;
-            }
-        });
-
+        $scope.lostDisable=false;
+        $scope.blurLost=false;
         if ($stateParams.prospect) {
             $scope.saleObject = $stateParams.prospect;
             var date = $filter('date')($scope.saleObject.estimatedClosure, 'MM/dd/yyyy');
@@ -92,6 +64,14 @@ $scope.blurLost=$stateParams.prospect.prospect;
             $scope.myPromise=saleModuleService.addRequirement($scope.saleObject._id, $scope.requirement).then(function (response) {
                 console.log(response.data);
                 $scope.requirements.push(response.data);
+              $scope.requirement={};
+              $scope.values.selectedItem = '';
+              $scope.prospectStatus .selectedItem = '';
+              $scope.suspectStatus.selectedItem = '';
+              $scope.priority .selectedItem = '';
+              $scope.requireStatus .selectedItem = '';
+              $scope.industry.selectedItem = '';
+              $scope.primaryLevel.selectedItem = '';
             });
 
         };
@@ -276,4 +256,9 @@ $scope.blurLost=$stateParams.prospect.prospect;
                 $scope.showAddReq = false;
             }
         }
+      $scope.$watch('$stateParams.prospect.prospect',function(k,v){
+        if(k==='LOST' || k==='WON'){
+          $scope.blurLost=true;
+        }
+      });
   }]);

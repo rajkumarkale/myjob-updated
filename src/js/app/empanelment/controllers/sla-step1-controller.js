@@ -20,11 +20,11 @@ angular.module('com.module.empanelment')
 
         $scope.submitSLA = function () {
 
+            $scope.saleObject.SLATracker=$scope.SLATracker;
 
-
-            /*$scope.savePromise= $scope.saleObject.update().then(function(){
+            $scope.savePromise= $scope.saleObject.update().then(function(){
                    $state.go('app.viewEmpanelment');
-                 });*/
+                 });
         };
         
         $scope.OB = appConfig.empanelment.OB;

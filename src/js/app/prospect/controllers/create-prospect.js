@@ -255,7 +255,7 @@ angular.module('com.module.prospect')
             else {
                 $scope.showAddReq = false;
             }
-        }
+        };
       $scope.$watch('$stateParams.prospect.prospect',function(k,v){
         if(k==='LOST' || k==='WON'){
           $scope.blurLost=true;

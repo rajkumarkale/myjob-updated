@@ -93,7 +93,7 @@
         <span>Contact Details</span><i class="pull-right glyphicon"
                                       ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}"></i>
       </accordion-heading>
-      <div class="form-group pull-right app-container-blur" >
+      <div class=" pull-right app-container-blur" >
         <div class="col-md-8">
           <div class="form-group">
 <label>Status</label>
@@ -213,12 +213,16 @@
 
         <div class="panel-body">
           <form name="empanelment" id="emp">
-            <div class="form-group pull-right" style="margin-top: -102px;">
-               <span ng-show="!isSLATrackerFilled()">Plese fill in SLA Tracker To enable submit button</span>
+            <div class="row">
+              <div class="col-lg-12">
+                <div ng-show="!isSLATrackerFilled()"><h4>Please fill in SLA Tracker to enable submit button</h4></div>
+            <div class=" pull-right" style="margin-top: -40px">
+
                 <button class="btn btn-primary SLA-button  btn-text" ng-click="toSLATrackerStep1()">SLA Tracker</button>
             </div>
-
-            <hr class="line1 ">
+              </div>
+            </div>
+            <hr class="line1 " style="    margin-top: 10px;">
 
             <div class="col-md-12 ">
 

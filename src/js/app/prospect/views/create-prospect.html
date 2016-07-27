@@ -99,7 +99,7 @@
           </div>
         </div>
       </div>
-      <hr class="line1">
+      <hr class="line1 ">
       <div class="row ">
 
         <div class="col-lg-12 ">
@@ -453,7 +453,7 @@
               <div class="col-md-5 col-pad">
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Job Title<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="8" ng-model="requirement.jobTitle">
+                  <input class="form-control" type="text" tabindex="8" ng-model="requirement.jobTitle" alpha-num>
                 </div>
                 <div class="form-group label-floating age-text">
                   Functional Area<span class="required-field">*</span>
@@ -500,22 +500,22 @@
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">No Poach Companies<span class="required-field">*</span></label>
-                  <input class="form-control col-md-2" type="text" tabindex="15" ng-model="requirement.numberOfPoachCompanies">
+                  <input class="form-control col-md-2" numbers-only type="text" tabindex="15" ng-model="requirement.numberOfPoachCompanies">
                 </div>
 
               </div>
               <div class="col-md-5 col-md-offset-1">
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">No Of Positions<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="9" ng-model="requirement.numberOfPositions">
+                  <input class="form-control" type="text" tabindex="9" ng-model="requirement.numberOfPositions" numbers-only>
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Vacancy<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="10" ng-model="requirement.vacancy">
+                  <input class="form-control" type="text" tabindex="10" ng-model="requirement.vacancy" numbers-only>
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Job Location<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="12" ng-model="requirement.jobLocation">
+                  <input class="form-control" type="text" tabindex="12" ng-model="requirement.jobLocation" alpha-num>
                 </div>
                 <div class="form-group ">
                   <div class="font-ind age-text">Primary Level<span class="required-field">*</span>

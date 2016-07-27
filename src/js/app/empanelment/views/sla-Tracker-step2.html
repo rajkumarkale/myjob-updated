@@ -57,7 +57,7 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Salary Payout<span class="required-field">*</span></label>
               <input class="form-control" ng-model="SLATracker.activityOwner.salaryPayout"  name="salary"  type="text"
-                     ng-required="SLAform.salary.$error" >
+                     ng-required="SLAform.salary.$error" numbers-only>
             </div>
           </div>
         </div>
@@ -246,13 +246,13 @@
           <div  class="col-md-5 ">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Name<span class="required-field">*</span></label>
-              <input class="form-control"  type="text" ng-model="SLATracker.clientEscalationMatrix[0].name" name="name1" ng-required="SLAform.name1.$error">
+              <input class="form-control" only-alphabets type="text" ng-model="SLATracker.clientEscalationMatrix[0].name" name="name1" ng-required="SLAform.name1.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Name<span class="required-field">*</span></label>
-              <input class="form-control" type="text" ng-model="SLATracker.clientEscalationMatrix[1].name" name="name2" ng-required="SLAform.name2.$error">
+              <input class="form-control" only-alphabets type="text" ng-model="SLATracker.clientEscalationMatrix[1].name" name="name2" ng-required="SLAform.name2.$error">
             </div>
           </div>
         </div>
@@ -267,14 +267,14 @@
           <div  class="col-md-5">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Designation<span class="required-field">*</span></label>
-              <input class="form-control" type="text" ng-model="SLATracker.clientEscalationMatrix[0].designation" name="designation" ng-required="SLAform.designation.$error" >
+              <input class="form-control" alpha-num type="text" ng-model="SLATracker.clientEscalationMatrix[0].designation" name="designation" ng-required="SLAform.designation.$error" >
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Designation<span class="required-field">*</span></label>
               <input class="form-control" type="text"
-                     ng-model="SLATracker.clientEscalationMatrix[1].designation" name="designation2" ng-required="SLAform.designation2.$error"/>
+                    alpha-num  ng-model="SLATracker.clientEscalationMatrix[1].designation" name="designation2" ng-required="SLAform.designation2.$error"/>
             </div>
           </div>
         </div>
@@ -291,7 +291,7 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Contact Number<span class="required-field">*</span></label>
               <input class="form-control" type="text"
-                     ng-model="SLATracker.clientEscalationMatrix[0].phone" name="num1" ng-required="SLAform.num1.$error">
+                     ng-model="SLATracker.clientEscalationMatrix[0].phone" name="num1" ng-required="SLAform.num1.$error" numbers-only minlength="10" maxlength="10">
             </div>
           </div>
           <div  class="col-md-1"></div>
@@ -299,7 +299,7 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Contact Number<span class="required-field">*</span></label>
               <input class="form-control" type="text"
-                     ng-model="SLATracker.clientEscalationMatrix[1].phone" name="num2" ng-required="SLAform.num2.$error">
+                     ng-model="SLATracker.clientEscalationMatrix[1].phone" name="num2" ng-required="SLAform.num2.$error" numbers-only minlength="10" maxlength="10">
             </div>
           </div>
         </div>
@@ -315,13 +315,13 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Email ID<span class="required-field">*</span></label>
               <input class="form-control focusedInput1" type="email" required="required"
-                     name="id1" ng-model="SLATracker.clientEscalationMatrix[0].email">
+                     name="id1" ng-model="SLATracker.clientEscalationMatrix[0].email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im'>
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Email ID<span class="required-field">*</span></label>
-              <input class="form-control focusedInput1"  type="email" name="id2" ng-model="SLATracker.clientEscalationMatrix[1].email" required="required">
+              <input class="form-control focusedInput1"  type="email" name="id2" ng-model="SLATracker.clientEscalationMatrix[1].email" required="required" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im'>
             </div>
           </div>
         </div>

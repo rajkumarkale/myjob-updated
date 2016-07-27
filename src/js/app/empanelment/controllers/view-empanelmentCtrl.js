@@ -5,42 +5,42 @@ angular.module('com.module.empanelment')
 
 .controller('viewEmpanelmentCtrl', ['$scope', 'discussionService', '$state', 'saleModuleService', '$filter', function ($scope, discussionService, $state, saleModuleService, $filter) {
     $scope.data = {};
-  $scope.empanelmentCsvdata =[];
-  $scope.getArray =function(){
-    return $scope.empanelmentCsvdata;
-  };
+    $scope.empanelmentCsvdata = [];
+    $scope.getArray = function () {
+        return $scope.empanelmentCsvdata;
+    };
 
-  $scope.getCSVHeader = function () {
-    var headerArr = ["LegalEntity","BusinessUnit","Commercial Model","Agreement Start Date","Agreement Tenure","Business Vertical"];
-    return headerArr;
-  };
+    $scope.getCSVHeader = function () {
+        var headerArr = ["LegalEntity", "BusinessUnit", "Commercial Model", "Agreement Start Date", "Agreement Tenure", "Business Vertical"];
+        return headerArr;
+    };
     $scope.openDiscussions = function (possibility) {
         discussionService.setData(possibility);
         $state.go('app.viewDiscussions');
     };
     $scope.filteredRows = [];
-    $scope.sortType = 'legal_name';
+    $scope.sortType = 'client.legalName';
     $scope.sortReverse = false;
     $scope.open = function ($event, opened) {
         $event.preventDefault();
         $event.stopPropagation();
-      $scope.openDiscussions = function(possibility){
-                discussionService.setData(possibility);
-				$state.go('app.viewDiscussions');
-		};
-    $scope.open = function($event,opened) {
-      $event.preventDefault();
-      $event.stopPropagation();
-      $scope.openCal = opened;
+        $scope.openDiscussions = function (possibility) {
+            discussionService.setData(possibility);
+            $state.go('app.viewDiscussions');
+        };
+        $scope.open = function ($event, opened) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.openCal = opened;
 
-      if ($scope.openCal === 'opened1') {
-        $scope.opened1 = true;
-        $scope.opened2 = false;
-      } else if ($scope.openCal === 'opened2') {
-        $scope.opened2 = true;
-        $scope.opened1 = false;
-      }
-    }
+            if ($scope.openCal === 'opened1') {
+                $scope.opened1 = true;
+                $scope.opened2 = false;
+            } else if ($scope.openCal === 'opened2') {
+                $scope.opened2 = true;
+                $scope.opened1 = false;
+            }
+        }
     };
     saleModuleService.getDashboardData().then(function (response) {
         var data = response.data;
@@ -49,9 +49,11 @@ angular.module('com.module.empanelment')
 
     });
     $scope.getEmpanelments = function (currentPage, numPerPage) {
-        $scope.myPromise = saleModuleService.getSalesData().then(function (response) {
+        $scope.myPromise = saleModuleService.getSalesData({
+            stage: 'EMPANELMENT'
+        }).then(function (response) {
             console.log("possible", response);
-            $scope.data.possibilities = response;
+            $scope.data.empnelments = response;
         });
 
     };
@@ -60,11 +62,12 @@ angular.module('com.module.empanelment')
         console.log(empanelment);
         $state.go('app.createEmpanelment', {
             empanelment: empanelment
-
         });
     };
-    $scope.getEmpanelmentsByRange = function (currentPage, numPerPage) {
 
+    $scope.sumStartDate = new Date();
+    $scope.sumEndDate;
+    $scope.getEmpanelmentsByRange = function (currentPage, numPerPage) {
         var st = $filter('date')($scope.start, 'MM/dd/yyyy');
         var date1 = new Date(st).getTime();
         var ed = $filter('date')($scope.end, 'MM/dd/yyyy');
@@ -73,11 +76,12 @@ angular.module('com.module.empanelment')
             $scope.sumStartDate = $scope.start;
             $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');
             $scope.myPromise = saleModuleService.getSalesData({
+                stage: 'EMPANELMENT',
                 start: date1,
                 end: date2
             }).then(function (response) {
                 console.log("possible", response);
-                $scope.data.empanelments = response;
+                $scope.data.empnelments = response;
             });
         } else {
             CoreService.toastError('', 'Satrt date should be less than End date.');

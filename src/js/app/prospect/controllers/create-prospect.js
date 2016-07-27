@@ -1,5 +1,5 @@
 angular.module('com.module.prospect')
-    .controller('prospectCreateController', ['$scope', '$state', 'appConfig', '$modal', '$stateParams', '$filter', 'RequirementModel','saleModuleService', function ($scope, $state, appConfig, $modal, $stateParams, $filter, RequirementModel,saleModuleService) {
+    .controller('prospectCreateController', ['$scope', '$state', 'appConfig', '$modal', '$stateParams', '$filter', 'RequirementModel', 'saleModuleService','$timeout', function ($scope, $state, appConfig, $modal, $stateParams, $filter, RequirementModel, saleModuleService,$timeout) {
         $scope.values = appConfig.prospect.typeOfBusiness;
         $scope.prospectStatus = appConfig.prospect.status;
         $scope.suspectStatus = appConfig.suspect.status;
@@ -15,60 +15,102 @@ angular.module('com.module.prospect')
         $scope.$watch('saleObject.prospect', function (n, o) {
             if (n === 'AGREEMENT_ON_CLOSURE') {
                 $scope.title = 'Agreement on Closure';
+                $scope.displeyclosure = true;
                 $scope.displayagreement = true;
                 $scope.status_lost = false;
             } else if (n === 'LOST') {
                 $scope.status_lost = true;
                 $scope.displayagreement = false;
+                $scope.displeyclosure = false;
+            } else if (n === 'WORK_IN_PROGRESS') {
+                $scope.displeyclosure = false;
+                /*$scope.status_lost = true;*/
+                $scope.displayagreement = false;
             } else {
                 $scope.displayagreement = false;
                 $scope.status_lost = false;
+                $scope.displeyclosure = false;
             }
         });
 
         if ($stateParams.prospect) {
             $scope.saleObject = $stateParams.prospect;
+            var date = $filter('date')($scope.saleObject.estimatedClosure, 'MM/dd/yyyy');
+            $scope.closureDate=date;
+            if($scope.saleObject.client.clientName){
+                $timeout(function () {
+                    $("#clientName").removeClass('is-empty');
+                }, 10);
+            }
+            if($scope.saleObject.client.potentialNumbers){
+                $timeout(function () {
+                    $("#potentialNumbers").removeClass('is-empty');
+                }, 10);
+            }
+            if($scope.saleObject.client.revenue){
+                $timeout(function () {
+                    $("#revenue").removeClass('is-empty');
+                }, 10);
+            }
+            if($scope.saleObject.minimumRequirements){
+                $timeout(function () {
+                    $("#minimumRequirements").removeClass('is-empty');
+                }, 10);
+            }
+            
         }
         $scope.cancel = function () {
             $state.go('app.viewProspect');
         };
+        $scope.closureDate='';
         $scope.requirement = new RequirementModel({});
         $scope.submit = function () {
-            console.log('submit clicked');
-            var timestamp = $scope.date.getTime();
+            if($scope.saleObject.prospect==='AGREEMENT_ON_CLOSURE'){
+            var timestamp = $scope.closureDate.getTime();
             $scope.saleObject.estimatedClosure = timestamp;
-            $scope.savePromise = $scope.saleObject.update().then(function () {
+                }
+            $scope.myPromise = $scope.saleObject.update().then(function () {
                 $state.go('app.viewProspect');
             });
         };
+        
+        $scope.submitAOC=function(){
+            $scope.myPromise=$scope.saleObject.update().then(function (response) {
+                console.log(response);
+                $state.go('app.viewProspect');
+            });
+        }
         $scope.submitRequirement = function () {
             $scope.openReq('false');
             console.log($scope.requirement);
-            saleModuleService.addRequirement($scope.saleObject._id,$scope.requirement).then(function(response){
+            $scope.myPromise=saleModuleService.addRequirement($scope.saleObject._id, $scope.requirement).then(function (response) {
                 console.log(response.data);
+                $scope.requirements.push(response.data);
             });
 
         };
-        $scope.getRequirement=function(){
-            saleModuleService.getRequirements($scope.saleObject._id).then(function(response){
+        $scope.getRequirement = function () {
+            $scope.myPromise=saleModuleService.getRequirements($scope.saleObject._id).then(function (response) {
                 console.log(response.data);
-                $scope.requirements=response.data;
-                
+                $scope.requirements = response.data;
+
             });
         };
         $scope.getRequirement();
         
-        $scope.getRequiremetsByRange=function(){
+        $scope.sumStartDate = new Date();
+        $scope.sumEndDate;
+        $scope.getRequiremetsByRange = function () {
             var st = $filter('date')($scope.start, 'MM/dd/yyyy');
             var date1 = new Date(st).getTime();
             var ed = $filter('date')($scope.end, 'MM/dd/yyyy');
             var date2 = new Date(ed).getTime();
             if (date1 < date2) {
-                /*$scope.sumStartDate = $scope.start;
-                $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');*/
-                $scope.myPromise = saleModuleService.getRequirements($scope.saleObject._id,date1,date2).then(function (response) {
+                $scope.sumStartDate = $scope.start;
+                $scope.sumEndDate = $filter('date')($scope.end, 'to MMMM yyyy');
+                $scope.myPromise = saleModuleService.getRequirements($scope.saleObject._id, date1, date2).then(function (response) {
                     console.log(response.data);
-                    $scope.requirements=response.data;
+                    $scope.requirements = response.data;
                 });
             } else {
                 CoreService.toastError('', 'Satrt date should be less than End date.');

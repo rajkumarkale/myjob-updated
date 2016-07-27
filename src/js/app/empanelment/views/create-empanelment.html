@@ -106,7 +106,7 @@
 
         <div class="col-lg-10 ">
           <accordion  >
-            <accordion-group is-open="poc.isOpening"  >
+            <accordion-group is-open="true" ng-repeat="poc in saleObject.pointOfContacts" >
               <accordion-heading  >
           <span >
            Contact Person Details
@@ -116,11 +116,11 @@
               </accordion-heading>
               <div class="row app-container-blur">
                 <div class="col-md-5 col-pad">
-                  <div class=" form-group label-floating is-empty">
+                  <div class=" form-group label-floating">
                     <label class="control-label">Contact Person Name</label>
                     <input class="form-control bord-remove" data-ng-model="poc.name" type="text">
                   </div>
-                  <div class="form-group label-floating is-empty">
+                  <div class="form-group label-floating">
                     <label class="control-label">Phone Number</label>
                     <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
                   </div>
@@ -128,7 +128,7 @@
 
                 </div>
                 <div class="col-md-5 col-md-offset-2">
-                  <div class="form-group label-floating is-empty">
+                  <div class="form-group label-floating">
                     <label class="control-label">Address</label>
                     <input class="form-control bord-remove" data-ng-model="poc.supportLocation" type="text">
                   </div>
@@ -156,7 +156,7 @@
           <div class="col-md-8">
             <div class="form-group " style="margin: -15px;">
               <label class="control-label dropdown-col">Status</label>
-              <input  custom-select data="status_prospect" value="saleObject.prospect" type="text" placeholder="Status">
+              <input  custom-select data="prospectStatus" value="saleObject.prospect" type="text" placeholder="Status">
 
             </div>
           </div>
@@ -165,15 +165,15 @@
         <div class="row app-container-blur">
           <div class="col-md-12">
             <div class="col-md-6 form-custom-padding">
-              <div class="form-group label-floating is-empty">
+              <div class="form-group label-floating">
                 <label class="control-label">Client Name</label>
                 <input class="form-control" type="text" ng-model="saleObject.client.clientName">
               </div>
-              <div class="form-group label-floating is-empty">
+              <div class="form-group label-floating">
                 <label class="control-label">Business Potential Numbers</label>
                 <input class="form-control" type="text" ng-model="saleObject.client.potentialNumbers">
               </div>
-              <div class="form-group label-floating is-empty">
+              <div class="form-group label-floating">
                 <label class="control-label">Quantum of Business Bottomline</label>
                 <input class="form-control" type="text" ng-model="saleObject.client.turnover">
               </div>
@@ -187,11 +187,11 @@
                 <label class="control-label">Legal Entity</label>
                 <input class="form-control" type="text">
               </div>-->
-              <div class="form-group label-floating is-empty">
+              <div class="form-group label-floating">
                 <label class="control-label">Quantum of Business Topline</label>
                 <input class="form-control" type="text">
               </div>
-              <div class="form-group label-floating is-empty">
+              <div class="form-group label-floating">
                 <label class="control-label">Expected Date of Closure</label>
                 <input class="form-control" type="text">
               </div>

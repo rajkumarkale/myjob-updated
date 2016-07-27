@@ -114,11 +114,11 @@
               </accordion-heading>
               <div class="row app-container-blur">
                 <div class="col-md-6 col-pad">
-                  <div class=" form-group label-floating is-empty">
+                  <div class=" form-group label-floating">
                     <label class="control-label">Name</label>
                     <input class="form-control bord-remove" data-ng-model="poc.name" type="text">
                   </div>
-                  <div class="form-group label-floating is-empty">
+                  <div class="form-group label-floating">
                     <label class="control-label">Phone Number</label>
                     <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
                   </div>
@@ -126,11 +126,11 @@
 
                 </div>
                 <div class="col-md-5 ">
-                  <div class="form-group label-floating is-empty">
+                  <div class="form-group label-floating">
                     <label class="control-label">Address</label>
                     <input class="form-control bord-remove" data-ng-model="poc.supportLocation" type="text">
                   </div>
-                  <div class="form-group label-floating is-empty">
+                  <div class="form-group label-floating">
                     <label class="control-label">Contact Person Designation</label>
                     <input class="form-control bord-remove" type="text" data-ng-model="poc.designation" >
                   </div>
@@ -159,11 +159,11 @@
       <div class="row">
         <div class="col-md-12">
           <div class="col-md-6 form-custom-padding">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating is-empty" id="clientName">
               <label class="control-label">Client Name</label>
               <input class="form-control" type="text" ng-model="saleObject.client.clientName">
             </div>
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating is-empty" id="potentialNumbers">
               <label class="control-label">Business Potential Numbers</label>
               <input class="form-control" type="text" ng-model="saleObject.client.potentialNumbers">
             </div>
@@ -174,13 +174,13 @@
             </div>
           </div>
           <div class="col-md-6 form-custom-padding">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating is-empty" id="revenue">
               <label class="control-label">Annual Business Topline</label>
               <input class="form-control" type="text" ng-model="saleObject.client.revenue">
             </div>
-            <div class="form-group label-floating present">
+            <div class="form-group label-floating present" ng-show="displeyclosure">
               <label class="control-label">Expected Date of Closure</label>
-              <input class="form-control"  ng-model="exdate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
+              <input class="form-control"  ng-model="closureDate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
                      show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>
               <span class="hand-cursor" id="basic-addon2">
             <img src="img/calendar_icon.png" class="cal-align " ng-click="open($event,'opened3')" alt="" /></span>
@@ -232,7 +232,7 @@
       </div>
       <div class="panel panel-default second-panel ">
         <div class="panel-heading">
-          Summary in the month of Jan 2016 to May 2016
+          Summary in the month of {{sumStartDate | date:'MMMM yyyy '}}{{sumEndDate}}
         </div>
         <div class="panel-body">
           <div class="col-md-3">
@@ -251,7 +251,7 @@
                 NO OF POSITIONS
               </div>
               <div class="panel-body numbers-data">
-                000
+                {{saleObject.minimumRequirements?saleObject.minimumRequirements:'0'}}
               </div>
             </div>
           </div>
@@ -340,10 +340,15 @@
         </div>
       <div class=" row ">
         <div class="col-md-5 form-custom-padding">
-          <div class="form-group label-floating is-empty">
+          <div class="form-group label-floating is-empty" id="minimumRequirements">
             <label class="control-label">Min No of Requirements to be closed</label>
-            <input class="form-control" type="text">
+            <input class="form-control" type="text" ng-model="saleObject.minimumRequirements">
           </div>
+        </div>
+        <div class=" col-md-offset-5">
+          <!--<a ui-sref="app.viewProspect" class="auto">
+            <button class="btn btn-raised  data-button-cancel btn-text" ng-click="cancel()">Cancel</button>&nbsp;&nbsp;</a>-->
+          <button class="btn btn-primary data-button-sub btn-text" ng-click="submitAOC()">Submit</button>
         </div>
       </div><hr class="req-line">
       <h3   style="color:#049ad9" >All Requirements</h3><br>
@@ -382,10 +387,10 @@
 
 
           </td>
-          <td >{{requirement.name}}</td>
+          <td >{{requirement._id}}</td>
+          <td>{{requirement.name}}</td>
           <td>{{requirement.numberOfPositions}}</td>
           <td>{{requirement.spoc?requirement.spoc:'--'}}</td>
-          <td>{{requirement.name}}</td>
           <td>{{requirement.jobLocation}}</td>
           <td>{{requirement.addedBy?requirement.addedBy:'--'}}</td>
           <td>{{requirement.priority}}</td>

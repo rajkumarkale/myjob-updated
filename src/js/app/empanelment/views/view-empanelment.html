@@ -56,12 +56,12 @@
         <table class="table table-bod table table-hover m-n">
         <thead class="table-head">
         <tr>
-          <th class="col-lg-2  table-th-heading">Legal Entity <span ><img src="img/sort_icon.png"></span>
+          <th class="col-lg-2  table-th-heading">Legal Entity <span ng-click="sortType = 'client.legalName'; sortReverse = !sortReverse" ><img src="img/sort_icon.png"></span>
           </th>
-          <th class="col-lg-1 table-th-heading">Business Unit <span ><img src="img/sort_icon.png"></span>
+          <th class="col-lg-1 table-th-heading">Business Unit <span ng-click="sortType = 'client.businessUnit'; sortReverse = !sortReverse" ><img src="img/sort_icon.png"></span>
           </th>
           <th class="col-lg-2 table-th-heading">Commercial Model</th>
-          <th class="col-lg-3 table-th-heading">Agreement Start Date <span><img src="img/sort_icon.png"></span></th>
+          <th class="col-lg-3 table-th-heading">Agreement Start Date <span ng-click="sortType = 'client.businessUnit'; sortReverse = !sortReverse"><img src="img/sort_icon.png"></span></th>
           <th class=" table-th-heading">Agreement Tenure</th>
           <th class="table-th-heading">Business Vertical</th>
           <th class="table-th-heading " >Discussions</th>
@@ -69,29 +69,20 @@
         </tr>
         </thead>
         <tbody>
-        <tr data-ng-repeat="empanelment in filteredRows= (data.possibilities | orderBy:sortType:sortReverse| companyFilter:selectedItem) | filter:$root.searchView">
-          <td class="hand-cursor" ui-sref="app.createEmpanelment">Robert Martin</td>
-          <td class="col-lg-3">Paradigm Creatives</td>
-          <td class="cell-gap">Hyderabad</td>
+        <tr data-ng-repeat="empanelment in filteredRows= (data.empnelments | orderBy:sortType:sortReverse| companyFilter:selectedItem) | filter:$root.searchView">
+          <td class="hand-cursor" ng-click="openEditEmpanelment(empanelment)">{{empanelment.client.legalName}}</td>
+          <td class="col-lg-3">{{empanelment.client.businessUnit}}</td>
+          <td class="cell-gap">{{empanelment.client.legalName}}</td>
 
-          <td>Anthony Sanchez</td>
-          <td>Lorem Ipsum</td>
-          <td>0000000001</td>
+          <td>{{empanelment.client.legalName}}</td>
+          <td>{{empanelment.client.legalName}}</td>
+          <td>{{empanelment.client.legalName}}</td>
                    <td>
             <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(empanelment)">Discussion</button>
           </td>
         </tr>
-        <tr>
-          <td class="hand-cursor" ui-sref="app.createEmpanelment">Ashton Murray</td>
-          <td>Paradigm Creatives</td>
-          <td>Bangalore</td>
-          <td>James Maxwell</td>
-          <td>Lorem Ipsum</td>
-          <td>0000000000</td>
-          <td>
-            <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(empanelment)">Discussion</button>
-          </td>
-
+        <tr data-ng-if="filteredRows.length ===0">
+            <td colspan="7">No Empnelments!</td>
         </tr>
         </tbody>
       </table>

@@ -112,7 +112,7 @@ angular.module('com.module.prospect')
         $scope.myPromise = saleModuleService.getSalesData({
             stage: 'PROSPECT'
         }).then(function (response) {
-            console.log("possible", response);
+            console.log("prospects", response);
             $scope.data.prospects = response;
             $scope.data.totalItems = response.length;
           if($scope.data.prospects[0]){

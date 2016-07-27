@@ -16,6 +16,7 @@ module.factory('SaleModel', function (ClientModel, DiscussionModel, PointOfConta
         this.permission=modelData.permission;
         this.reasonOfLoss=modelData.reasonOfLoss;
         this.estimatedClosure=modelData.estimatedClosure;
+        this.minimumRequirements=modelData.minimumRequirements;
         this.documents=modelData.documents || [];
         if (modelData && modelData.roles) {
             this.roles = {

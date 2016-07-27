@@ -483,11 +483,11 @@
                 "OB": {
                     "data": [
                         {
-                            "key": "Post OB",
+                            "key": "POST_OB",
                             "displayText": "Post OB"
           },
                         {
-                            "key": "Pre OB",
+                            "key": "PRE_OB",
                             "displayText": "Pre OB"
           }
         ],

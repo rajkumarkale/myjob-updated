@@ -330,17 +330,17 @@
     </div>
     <div class="form-group1 ">
       <label class="BGV-text col-pad1 ">BGV<span class="required-field">*</span></label>&nbsp;
-      <input ng-model="SLATracker.bgv" type="radio" name="yes" class="check" value='true'>
+      <input ng-model="bgv.value" type="radio" ng-change="showOB()" name="yes" class="check" value='YES'>
       <label class="remote ">YES</label>
-      <input ng-model="SLATracker.bgv" type="radio" name="yes" class="check " value='false'>
+      <input ng-model="bgv.value" type="radio" ng-change="showOB()" name="yes" class="check " value='NO' checked>
       <label class="location ">NO</label>
     </div>
 
-    <div class="col-md-12 ">
+    <div class="col-md-12 " ng-show="OB">
       <div class="col-md-4 form-group col-pad-post insurence-text  ">
        <div class="form-group">
-                                <label class="control-label"></label>
-                                <div  custom-select data="OB" value=""></div>
+                                <label class="control-label">OB</label>
+                                <div  custom-select data="OBData" value="SLATracker.bgv"></div>
                             </div>
         <!--<select id="s1" class="form-control" placeholder="">
           <option value="Teliphonic">Post OB</option>
@@ -350,20 +350,20 @@
     </div>
     <div class="form-group1 col-pad BGV-text">
       <label class="contacts in-pad">Insurance<span class="required-field">*</span></label>
-      <input type="radio" name="insurence" class="check" ng-model="SLATracker.insurance" checked>
+      <input type="radio" name="insurence" class="check" ng-change="showIns()" ng-model="insurance.value" value="YES">
       <label class="remote">Applicable</label>
-      <input type="radio" name="insurence" class="check" ng-model="SLATracker.insurance">
+      <input type="radio" name="insurence" class="check" ng-change="showIns()" ng-model="insurance.value" checked value="NO">
       <label class="location">Not Applicable</label>
     </div>
-    <div class="form-group1 col-pad in-pad">
-      <input type="radio" name="family" class="check" checked ng-model="SLATracker.familiyAndIndividual">
+    <div class="form-group1 col-pad in-pad" ng-show="showInsurance">
+      <input type="radio" name="family" class="check" checked ng-model="SLATracker.familiyAndIndividual" value="FAMILY_FLOATER">
       <label class="remote">Family Floater</label>
-      <input type="radio" name="family" class="check" ng-model="SLATracker.familiyAndIndividual">
+      <input type="radio" name="family" class="check" ng-model="SLATracker.familiyAndIndividual" value="INDIVIDUAL_POLICY">
       <label class="location">Individual Policy</label>
 
     </div>
     <br>
-    <div class="form-group1 col-pad">
+    <div class="form-group1 col-pad" ng-show="showInsurance">
       <input type="checkbox" class="check gpa-check" id="input-confidencial" checked ng-model="SLATracker.gpa" required>
       <label class=" first-class1" for="input-confidencial">GPA<span class="required-field">*</span></label>
       <span class="error" ng-show="usrform.credit.$invalid && usrform.credit.$dirty">Please check dis field </span>

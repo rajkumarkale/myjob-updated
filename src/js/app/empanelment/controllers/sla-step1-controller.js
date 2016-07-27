@@ -32,7 +32,7 @@ angular.module('com.module.empanelment')
             });
         };
 
-        $scope.OB = appConfig.empanelment.OB;
+        $scope.OBData = appConfig.empanelment.OB;
         $scope.open = function ($event, opened) {
             $event.preventDefault();
             $event.stopPropagation();
@@ -75,5 +75,35 @@ angular.module('com.module.empanelment')
 
             }
         };
-
+        $scope.bgv = {
+            value: 'NO'
+        };
+        $scope.OB = false;
+        $scope.SLATracker.bgv = '';
+        $scope.showOB = function () {
+            if ($scope.bgv.value === 'NO') {
+                $scope.OB = false;
+                $scope.SLATracker.bgv = '';
+            } else {
+                $scope.OB = true;
+                $scope.OBData.selectedItem = '';
+            }
+        }
+        $scope.insurance = {
+            value: 'NO'
+        };
+        $scope.showInsurance = false;
+        $scope.SLATracker.insurance = null;
+        $scope.SLATracker.gpa = null;
+        $scope.showIns = function () {
+            if ($scope.insurance.value === 'NO') {
+                $scope.showInsurance = false;
+                $scope.SLATracker.insurance = null;
+                $scope.SLATracker.gpa = null;
+                $scope.SLATracker.familiyAndIndividual=null;
+            } else {
+                $scope.showInsurance = true;
+                
+            }
+        }
 }]);

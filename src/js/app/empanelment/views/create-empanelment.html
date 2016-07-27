@@ -214,7 +214,8 @@
         <div class="panel-body">
           <form name="empanelment" id="emp">
             <div class="form-group pull-right" style="margin-top: -102px;">
-                <button class="btn btn-primary SLA-button  btn-text" ui-sref="app.slaTracker">SLA Tracker</button>
+               <span ng-show="!isSLATrackerFilled()">Plese fill in SLA Tracker To enable submit button</span>
+                <button class="btn btn-primary SLA-button  btn-text" ng-click="toSLATrackerStep1()">SLA Tracker</button>
             </div>
 
             <hr class="line1 ">
@@ -320,7 +321,7 @@
                   </button>
                 </span>
                             </div>
-                            <span class="material-input control-label">Supported file formar PDF,JPEG</span>
+                            <span class="material-input control-label">Supported file format PDF,JPEG</span>
                           <span class="required-field">*</span>
                         </div>
                     </div>
@@ -330,7 +331,7 @@
                 <div class="form-group">
                     <a ui-sref="app.viewEmpanelment" class="auto">
                         <button class="btn btn-raised  data-button-cancel btn-text">Cancel</button>&nbsp;&nbsp;</a>
-                    <button class="btn btn-primary data-button-sub btn-text" data-ng-disabled="empanelment.$invalid">Submit</button>
+                    <button class="btn btn-primary data-button-sub btn-text" data-ng-disabled="empanelment.$invalid && !isSLATrackerFilled()" ng-click="submitEmpanelment()">Submit</button>
                 </div>
             </div>
 </form>

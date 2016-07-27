@@ -264,7 +264,7 @@
               <label class="control-label">Invoice Submission Date<span class="required-field">*</span></label>
               <input class="form-control"  ng-model="SLATracker.agreementAndImportantDates.invoiceSubmissionDate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened4"
                      show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened4')" readonly>
-              <span class="hand-cursor" id="basic-addon5>
+              <span class="hand-cursor" id="basic-addon5">
             <img src="img/calendar_icon.png" class="cal-align " style="margin-left:350px !important;" ng-click="open($event,'opened4')" alt="" /></span>
               <span class="error" ng-show="usrform.invoice.$invalid && usrform.invoice.$dirty">Please enter valid text </span>
             </div>
@@ -330,9 +330,9 @@
     </div>
     <div class="form-group1 ">
       <label class="BGV-text col-pad1 ">BGV<span class="required-field">*</span></label>&nbsp;
-      <input ng-model="SLATracker.bgv" type="radio" name="yes" class="check" checked>
+      <input ng-model="SLATracker.bgv" type="radio" name="yes" class="check" value='true'>
       <label class="remote ">YES</label>
-      <input ng-model="SLATracker.bgv" type="radio" name="yes" class="check ">
+      <input ng-model="SLATracker.bgv" type="radio" name="yes" class="check " value='false'>
       <label class="location ">NO</label>
     </div>
 
@@ -340,7 +340,7 @@
       <div class="col-md-4 form-group col-pad-post insurence-text  ">
        <div class="form-group">
                                 <label class="control-label"></label>
-                                <div  custom-select data="OB"></div>
+                                <div  custom-select data="OB" value=""></div>
                             </div>
         <!--<select id="s1" class="form-control" placeholder="">
           <option value="Teliphonic">Post OB</option>
@@ -374,8 +374,8 @@
         <a ui-sref="app.createEmpanelment" class="auto">
           <button type="button" class="btn btn-raised sla-cancel-button btn-text">Cancel</button>
         </a>
-        <a ui-sref="app.slaTracker-step2" class="auto">
-          <button class="btn btn-primary data-button btn-text" >Save & Continue</button>
+        <a class="auto">
+          <button class="btn btn-primary data-button btn-text" ng-click="toSLATrackerStep2()">Save & Continue</button>
         </a>
       </div>
     </form>

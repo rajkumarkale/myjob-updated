@@ -2003,6 +2003,8 @@
 }
 .status-AOC{
   background-color: orange!important;
+  width: 12px !important;
+  height: 12px !important;
 }
 
 /*create prospect agreement*/

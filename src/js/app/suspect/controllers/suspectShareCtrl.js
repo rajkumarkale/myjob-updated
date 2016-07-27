@@ -23,7 +23,7 @@ angular.module('com.module.suspect')
         $scope.uId=$item._id;
     };
 
-  $scope.transfer=function () {
+  $scope.saleTransfer=function () {
       saleModuleService.transfer(clinetId,$scope.uId).then(function(response){
           console.log(response);
           $modalInstance.close(response);
@@ -32,13 +32,13 @@ angular.module('com.module.suspect')
     $scope.prev={
         name:'EDIT'
     };
-    $scope.share=function () {
+    $scope.saleShare=function () {
         if($scope.prev.name==='EDIT'){
         $scope.privilage='EDIT';
     }else{
         $scope.privilage='VIEW';
     }
-        
+
        /* $scope.data={access_type :$scope.privilage,userIds:[{userId:$scope.uId}]}*/
       saleModuleService.share(clinetId,$scope.uId,$scope.privilage).then(function(response){
           console.log(response);

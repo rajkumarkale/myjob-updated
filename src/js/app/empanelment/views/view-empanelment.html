@@ -64,7 +64,7 @@
           <th class="col-lg-3 table-th-heading">Agreement Start Date <span ng-click="sortType = 'client.businessUnit'; sortReverse = !sortReverse"><img src="img/sort_icon.png"></span></th>
           <th class=" table-th-heading">Agreement Tenure</th>
           <th class="table-th-heading">Business Vertical</th>
-          <th class="table-th-heading " >Discussions</th>
+          <th class="table-th-heading " >Actions</th>
 
         </tr>
         </thead>
@@ -78,7 +78,8 @@
           <td>{{empanelment.client.legalName}}</td>
           <td>{{empanelment.client.legalName}}</td>
                    <td>
-            <button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(empanelment)">Discussion</button>
+                     <img src="img/discussion_icon.png" tooltip="Discussions" class="action-distance hand-cursor" data-ng-click="openDiscussions(empanelment)">
+            <!--<button class="btn btn-raised  btn-info m-n btn-sm button-txt" data-ng-click="openDiscussions(empanelment)">Discussion</button>-->
           </td>
         </tr>
         <tr data-ng-if="filteredRows.length ===0">

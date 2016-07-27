@@ -4,35 +4,13 @@ angular.module('com.module.prospect')
         $scope.prospectStatus = appConfig.prospect.status;
         $scope.suspectStatus = appConfig.suspect.status;
         $scope.turnover = appConfig.possibility.groupTurnover;
-        $scope.displayagreement = true;
-        $scope.status_lost = false;
         $scope.priority = appConfig.prospect.priority;
         $scope.requireStatus = appConfig.requirementKeys.requirementType;
         $scope.industry = appConfig.requirementKeys.industry;
         $scope.primaryLevel = appConfig.requirementKeys.primaryLevel;
         $scope.showAddReq = false;
-
-        $scope.$watch('saleObject.prospect', function (n, o) {
-            if (n === 'AGREEMENT_ON_CLOSURE') {
-                $scope.title = 'Agreement on Closure';
-                $scope.displeyclosure = true;
-                $scope.displayagreement = true;
-                $scope.status_lost = false;
-            } else if (n === 'LOST') {
-                $scope.status_lost = true;
-                $scope.displayagreement = false;
-                $scope.displeyclosure = false;
-            } else if (n === 'WORK_IN_PROGRESS') {
-                $scope.displeyclosure = false;
-                /*$scope.status_lost = true;*/
-                $scope.displayagreement = false;
-            } else {
-                $scope.displayagreement = false;
-                $scope.status_lost = false;
-                $scope.displeyclosure = false;
-            }
-        });
-
+        $scope.lostDisable=false;
+        $scope.blurLost=false;
         if ($stateParams.prospect) {
             $scope.saleObject = $stateParams.prospect;
             var date = $filter('date')($scope.saleObject.estimatedClosure, 'MM/dd/yyyy');
@@ -57,7 +35,7 @@ angular.module('com.module.prospect')
                     $("#minimumRequirements").removeClass('is-empty');
                 }, 10);
             }
-            
+
         }
         $scope.cancel = function () {
             $state.go('app.viewProspect');
@@ -73,19 +51,27 @@ angular.module('com.module.prospect')
                 $state.go('app.viewProspect');
             });
         };
-        
+
         $scope.submitAOC=function(){
             $scope.myPromise=$scope.saleObject.update().then(function (response) {
                 console.log(response);
                 $state.go('app.viewProspect');
             });
-        }
+        };
         $scope.submitRequirement = function () {
             $scope.openReq('false');
             console.log($scope.requirement);
             $scope.myPromise=saleModuleService.addRequirement($scope.saleObject._id, $scope.requirement).then(function (response) {
                 console.log(response.data);
                 $scope.requirements.push(response.data);
+              $scope.requirement={};
+              $scope.values.selectedItem = '';
+              $scope.prospectStatus .selectedItem = '';
+              $scope.suspectStatus.selectedItem = '';
+              $scope.priority .selectedItem = '';
+              $scope.requireStatus .selectedItem = '';
+              $scope.industry.selectedItem = '';
+              $scope.primaryLevel.selectedItem = '';
             });
 
         };
@@ -97,7 +83,7 @@ angular.module('com.module.prospect')
             });
         };
         $scope.getRequirement();
-        
+
         $scope.sumStartDate = new Date();
         $scope.sumEndDate;
         $scope.getRequiremetsByRange = function () {
@@ -270,4 +256,9 @@ angular.module('com.module.prospect')
                 $scope.showAddReq = false;
             }
         }
+      $scope.$watch('$stateParams.prospect.prospect',function(k,v){
+        if(k==='LOST' || k==='WON'){
+          $scope.blurLost=true;
+        }
+      });
   }]);

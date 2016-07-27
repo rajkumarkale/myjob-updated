@@ -26,7 +26,7 @@
     <div  class="col-md-12 ">
         <div class="container-fluid">
           <div class="col-md-5">
-            <div class="form-group label-floating" >
+            <div class="form-group label-floating"  ng-class="{'is-empty':!saleObject.client.clientName}">
               <label class="control-label">Client Name<span class="required-field">*</span></label>
               <input class="form-control "   name="client"   type="text" minlength="5"
                      maxlength="40" required ng-model="saleObject.client.clientName">
@@ -35,7 +35,7 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty " >
+            <div class="form-group label-floating" ng-class="{'is-empty':!SLATracker.commercials.fixedFee}">
               <label class="control-label">Monthly Service Fee<span class="required-field">*</span></label>
               <input class="form-control"    numbers-only name="n2" required="required"  ng-model="SLATracker.commercials.fixedFee" type="text"
                      minlength="3" maxlength="30" >
@@ -55,7 +55,7 @@
             <div class="form-group label-floating">
               <label class="control-label">Corporate office Address<span class="required-field">*</span></label>
               <input class="form-control" name="n3" ng-model="n3" required="required" type="text" minlength="6"
-                     maxlength="30"  alpha-num ng-model="slaeObject.client.address.address1">
+                     maxlength="30"  alpha-num ng-model="saleObject.client.address.address1">
               <span class="error" ng-show="usrform.n3.$invalid && usrform.n3.$dirty">Eg:Corp Off: B-84, Sector - 64, Noida </span>
 
             </div>
@@ -80,10 +80,10 @@
 
         <div class="container-fluid">
           <div class="col-md-5">
-            <div class="form-group label-floating">
+            <div class="form-group label-floating is-empty">
               <label class="control-label">Contact Number<span class="required-field">*</span></label>
               <input ng-model="contact" name="contact" class="focusedInput1 form-control" numbers-only minlength="10" maxlength="15"
-                     required ng-model="saleObject.client.getPrimaryContact().phone">
+                     required ng-model="saleObject.client.contactNumber">
               <span class="error" ng-show="usrform.contact.$invalid && usrform.contact.$dirty">Please enter valid text </span>
             </div>
           </div>
@@ -114,7 +114,7 @@
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label">Absorption Fee & Clauses<span class="required-field">*</span></label>
-              <input  ng-model="SLATracker.commercials.absorptionFeeAndClauses" name="absor" class=" form-control focusedInput1" type="text"
+              <input  ng-model="SLATracker.commercials.absorptionFee" name="absor" class=" form-control focusedInput1" type="text"
                        alpha-num required minlength="1">
               <span class="error" ng-show="usrform.absor.$invalid && usrform.absor.$dirty">Please enter valid text </span>
 

@@ -445,23 +445,23 @@
                 "pricingMode": {
                     "data": [
                         {
-                            "key": "Fixed Fee",
+                            "key": "FIXED_FEE",
                             "displayText": "Fixed Fee"
           },
                         {
-                            "key": "Fixed % Margin",
+                            "key": "FIXED_PERCENTAGE_MARGIN",
                             "displayText": "Fixed % Margin"
           },
                         {
-                            "key": "Fixed Rate Card",
+                            "key": "FIXED_RATE_CARD",
                             "displayText": "Fixed Rate Card"
           },
                         {
-                            "key": "Case to Case Basis",
+                            "key": "CASE_TO_TO_BASIS",
                             "displayText": "Case to Case Basis"
           },
                         {
-                            "key": "Hourly Rate",
+                            "key": "HOURLY_BASIS",
                             "displayText": "Hourly  Rate"
           }
         ],
@@ -470,11 +470,11 @@
                 "creditTerm": {
                     "data": [
                         {
-                            "key": "Collect & Pay",
+                            "key": "COLLECT_AND_Pay",
                             "displayText": "Collect & Pay"
           },
                         {
-                            "key": "Upfront",
+                            "key": "UPFRONT",
                             "displayText": "Upfront"
           }
         ],

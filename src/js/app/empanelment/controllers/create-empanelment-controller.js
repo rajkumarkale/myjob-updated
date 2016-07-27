@@ -28,7 +28,7 @@ var app = angular.module('com.module.empanelment')
 
         //sla tracker
         if ($scope.saleObject.SLATracker) {
-            $scope.SLATracker = $scope.saleObject.SLATracker;
+            $scope.SLATracker = new SLATrackerModel($scope.saleObject.SLATracker);
         } else {
             $scope.SLATracker = new SLATrackerModel({});
         }
@@ -44,13 +44,17 @@ var app = angular.module('com.module.empanelment')
         };
 
         //pricing
-        $scope.pricing = new pricingModel({});
+        if ($scope.saleObject.pricing) {
+            $scope.pricing = $scope.saleObject.pricing;
+        } else {
+            $scope.pricing = new pricingModel({});
+        }
+        
         $scope.submitEmpanelment = function () {
+            $scope.saleObject.pricing=$scope.pricing;
 
-
-
-            /*$scope.savePromise= $scope.saleObject.update().then(function(){
+            $scope.savePromise= $scope.saleObject.update().then(function(){
                    $state.go('app.viewEmpanelment');
-                 });*/
+                 });
         };
   }]);

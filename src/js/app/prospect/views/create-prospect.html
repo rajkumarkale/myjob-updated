@@ -182,7 +182,7 @@
             </div>
             <div class="form-group label-floating present" >
               <label class="control-label">Expected Date of Closure</label>
-              <input class="form-control"  ng-model="closureDate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
+              <input class="form-control"  ng-model="saleObject.estimatedClosure" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
                      show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>
               <span class="hand-cursor" id="basic-addon2">
             <img src="img/calendar_icon.png" class="cal-align " ng-click="open($event,'opened3')" alt="" /></span>
@@ -401,7 +401,7 @@
         </tbody>
       </table>
       <accordion class="plus col-md-12 re-accordian " ng-show="showAddReq">
-        <accordion-group is-open="status.open">
+        <accordion-group is-open="true">
           <accordion-heading>
             <span class="add-req"> Add Requirement</span><i class="pull-right glyphicon color-black" ng-class="{'glyphicon glyphicon-chevron-down': status.open, 'glyphicon glyphicon-chevron-right': !status.open}"></i>
           </accordion-heading>

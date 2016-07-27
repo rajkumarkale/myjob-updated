@@ -13,28 +13,6 @@ angular.module('com.module.prospect')
         $scope.blurLost=false;
         if ($stateParams.prospect) {
             $scope.saleObject = $stateParams.prospect;
-            var date = $filter('date')($scope.saleObject.estimatedClosure, 'MM/dd/yyyy');
-            $scope.closureDate=date;
-            if($scope.saleObject.client.clientName){
-                $timeout(function () {
-                    $("#clientName").removeClass('is-empty');
-                }, 10);
-            }
-            if($scope.saleObject.client.potentialNumbers){
-                $timeout(function () {
-                    $("#potentialNumbers").removeClass('is-empty');
-                }, 10);
-            }
-            if($scope.saleObject.client.revenue){
-                $timeout(function () {
-                    $("#revenue").removeClass('is-empty');
-                }, 10);
-            }
-            if($scope.saleObject.minimumRequirements){
-                $timeout(function () {
-                    $("#minimumRequirements").removeClass('is-empty');
-                }, 10);
-            }
 
         }
         $scope.cancel = function () {
@@ -43,10 +21,6 @@ angular.module('com.module.prospect')
         $scope.closureDate='';
         $scope.requirement = new RequirementModel({});
         $scope.submit = function () {
-            if($scope.saleObject.prospect==='AGREEMENT_ON_CLOSURE'){
-            var timestamp = $scope.closureDate.getTime();
-            $scope.saleObject.estimatedClosure = timestamp;
-                }
             $scope.myPromise = $scope.saleObject.update().then(function () {
                 $state.go('app.viewProspect');
             });

@@ -50,8 +50,15 @@ angular.module('com.module.suspect')
             $scope.saleObject.pointOfContacts.map(function (Obj, i) {
                 $timeout(function () {
                     $("#contact" + i + ' .is-empty').removeClass('is-empty');
-                }, 10);
+                 }, 10);
+                if (Obj.contactType === 'PRIMARY') {
+                    $timeout(function () {
+                        $("#contact" + i + ' .select ul').remove();
+                        $("#contact" + i + ' .select .placeholder').addClass('default-cursor');
+                        }, 10);
+                    }
             });
+            
         } else {
             $state.go('app.suspect-view');
         }

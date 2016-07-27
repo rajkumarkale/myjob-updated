@@ -141,13 +141,15 @@
         </div>
       </div>
 </div>
-<div class="container col-md-12 mrg-down">
-  <div class="panel panel-default second-panel ">
+<div class="container col-md-12 mrg-down" >
+  <div class="panel panel-default second-panel "  >
+    <form></form>
     <div class="panel-heading">
       Business Opportunities
     </div>
     <div class="panel-body">
-      <div class="form-group pull-right">
+
+      <div class="form-group pull-right" ng-class="{'app-container-blur':blurLost}">
         <div class="status-pro">
           <div class="form-group ">
             <label class="control-label ">Status</label>
@@ -157,7 +159,7 @@
       </div>
       <hr class="line1">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" ng-class="{'app-container-blur':blurLost}">
           <div class="col-md-6 form-custom-padding">
             <div class="form-group label-floating is-empty" id="clientName">
               <label class="control-label">Client Name</label>
@@ -191,11 +193,12 @@
             </div>
      </div>
         </div>
+
          <br>
-        <div class=" col-md-offset-5">
+        <div class=" col-md-offset-5 ">
           <a ui-sref="app.viewProspect" class="auto">
             <button class="btn btn-raised  data-button-cancel btn-text" ng-click="cancel()">Cancel</button>&nbsp;&nbsp;</a>
-          <button class="btn btn-primary data-button-sub btn-text" ng-click="submit()">Submit</button>
+          <button class="btn btn-primary data-button-sub btn-text"  ng-class="{'app-container-blur':blurLost}" ng-click="submit()">Submit</button>
         </div>
       </div>
 

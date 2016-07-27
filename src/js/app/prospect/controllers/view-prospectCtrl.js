@@ -159,20 +159,26 @@ angular.module('com.module.prospect')
                 CoreService.toastError('', 'Satrt date should be less than End date.');
             }
         };
-        $scope.openShare = function (tpl) {
-            var tpl = tpl;
-            var modalInstance = $modal.open({
-                templateUrl: function () {
-
-                    return 'js/app/prospect/views/' + tpl + '.html'
-
-                },
-                backdrop: 'static',
-                controller: 'shareCtrl',
-                size: 'sm'
-            });
-            modalInstance.result.then(function () {});
-        };
+  $scope.openShare = function (tpl, prospect) {
+    var tpl = tpl;
+    var modalInstance = $modal.open({
+      templateUrl: function () {
+        return 'js/app/suspect/views/' + tpl + '.html'
+      },
+      backdrop: 'static',
+      controller: 'suspectShareCtrl',
+      size: 'sm',
+      resolve: {
+        clinetId: function () {
+          return prospect._id;
+        }
+      }
+    });
+    modalInstance.result.then(function (response) {
+      $state.reload('app.suspect-view');
+    });
+  };
+       
         $scope.checkSelect = {};
         $scope.showShare = function (suspect) {
             var show = false;

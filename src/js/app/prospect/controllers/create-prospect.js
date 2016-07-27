@@ -11,6 +11,10 @@ angular.module('com.module.prospect')
         $scope.industry = appConfig.requirementKeys.industry;
         $scope.primaryLevel = appConfig.requirementKeys.primaryLevel;
         $scope.showAddReq = false;
+      $scope.lostDisable=false;
+/*
+$scope.blurLost=$stateParams.prospect.prospect;
+*/
 
         $scope.$watch('saleObject.prospect', function (n, o) {
             if (n === 'AGREEMENT_ON_CLOSURE') {
@@ -19,7 +23,9 @@ angular.module('com.module.prospect')
                 $scope.displayagreement = true;
                 $scope.status_lost = false;
             } else if (n === 'LOST') {
+
                 $scope.status_lost = true;
+              $scope.lostDisable=true;
                 $scope.displayagreement = false;
                 $scope.displeyclosure = false;
             } else if (n === 'WORK_IN_PROGRESS') {
@@ -57,7 +63,7 @@ angular.module('com.module.prospect')
                     $("#minimumRequirements").removeClass('is-empty');
                 }, 10);
             }
-            
+
         }
         $scope.cancel = function () {
             $state.go('app.viewProspect');
@@ -73,7 +79,7 @@ angular.module('com.module.prospect')
                 $state.go('app.viewProspect');
             });
         };
-        
+
         $scope.submitAOC=function(){
             $scope.myPromise=$scope.saleObject.update().then(function (response) {
                 console.log(response);
@@ -97,7 +103,7 @@ angular.module('com.module.prospect')
             });
         };
         $scope.getRequirement();
-        
+
         $scope.sumStartDate = new Date();
         $scope.sumEndDate;
         $scope.getRequiremetsByRange = function () {

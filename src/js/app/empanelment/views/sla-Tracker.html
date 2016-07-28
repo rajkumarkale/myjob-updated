@@ -54,7 +54,7 @@
           <div class="col-md-5">
             <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.client.address.address1}">
               <label class="control-label">Corporate office Address<span class="required-field">*</span></label>
-              <input class="form-control" name="n3" required="required" type="text" minlength="6"
+              <input class="form-control" name="n3" required="required" type="text" 
                      maxlength="30"  alpha-num ng-model="saleObject.client.address.address1">
               <span class="error" ng-show="usrform.n3.$invalid && usrform.n3.$dirty">Please enter your Address</span>
 
@@ -167,7 +167,7 @@
 
         <div class="container-fluid ">
           <div class="col-md-5 ">
-            <div class="form-group label-floating present" >
+            <div class="form-group label-floating present" ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.agreementStartDate}" >
               <label class="control-label">Agreement Start Date<span class="required-field">*</span></label>
               <input class="form-control"  ng-model="SLATracker.agreementAndImportantDates.agreementStartDate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened1"
                      show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened1')" readonly>
@@ -199,7 +199,7 @@
 
         <div class="container-fluid ">
           <div class="col-md-5">
-            <div class="form-group label-floating present">
+            <div class="form-group label-floating present" ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.agreementEndDate}">
               <label class="control-label">Agreement End Date<span class="required-field">*</span></label>
               <input class="form-control"  ng-model="SLATracker.agreementAndImportantDates.agreementEndDate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened2"
                      show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened2')" readonly>

@@ -74,7 +74,8 @@
           <td class="col-lg-3">{{empanelment.client.businessUnit}}</td>
           <td class="cell-gap">{{empanelment.pricing.mode?(empanelment.pricing.mode.split('_').join(' ')):'--'}}</td>
 
-          <td>{{empanelment.SLATracker.agreementAndImportantDates.agreementStartDate?(empanelment.SLATracker.agreementAndImportantDates.agreementStartDate|date:'dd-mm-yyyy'):'--'}}</td>
+          <td>{{empanelment.SLATracker.agreementAndImportantDates.agreementStartDate?
+            (empanelment.SLATracker.agreementAndImportantDates.agreementStartDate|date:'dd-mm-yyyy'):'--'}}</td>
           <td>{{empanelment.SLATracker.agreementAndImportantDates.agreementEndDate?(empanelment.SLATracker.agreementAndImportantDates.agreementEndDate|date:'dd-mm-yyyy'):'--'}}</td>
           <td>{{empanelment.client.vertical}}</td>
                    <td>

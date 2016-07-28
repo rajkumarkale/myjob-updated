@@ -56,7 +56,7 @@
               <label class="control-label">Corporate office Address<span class="required-field">*</span></label>
               <input class="form-control" name="n3" required="required" type="text" minlength="6"
                      maxlength="30"  alpha-num ng-model="saleObject.client.address.address1">
-              <span class="error" ng-show="usrform.n3.$invalid && usrform.n3.$dirty">Eg:Corp Off: B-84, Sector - 64, Noida </span>
+              <span class="error" ng-show="usrform.n3.$invalid && usrform.n3.$dirty">Please enter your Address</span>
 
             </div>
           </div>
@@ -213,7 +213,7 @@
           <div class="col-md-5 col-pad">
 
             <div class="form-group label-floating " data-ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.timeSheetSubmissionCutoff}">
-              <label class="control-label">Time Sheet submission Cutoff<span class="required-field">*</span></label>
+              <label class="control-label">Time Sheet submission cutoff<span class="required-field">*</span></label>
 
               <input ng-model="SLATracker.agreementAndImportantDates.timeSheetSubmissionCutoff" class="form-control" name="sub" type="text" alpha-num required>
               <span class="error" ng-show="usrform.sub.$invalid && usrform.sub.$dirty">Please enter valid text </span>
@@ -261,7 +261,7 @@
             <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.associateTerminationNotice}">
               <label class="control-label">Associate Termination Notice<span class="required-field">*</span></label>
               <input ng-model="SLATracker.agreementAndImportantDates.associateTerminationNotice"  name="notice" class=" form-control focusedInput1" type="text"
-                     required >
+                    alpha-num  required >
               <span class="error" ng-show="usrform.notice.$invalid && usrform.notice.$dirty">Please enter valid text </span>
 
             </div>
@@ -290,7 +290,7 @@
             <div class="form-group label-floating "  ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.paymentMode}">
               <label class="control-label">Payment Mode<span class="required-field">*</span></label>
               <input ng-model="SLATracker.agreementAndImportantDates.paymentMode" class="form-control" class="focusedInput1" type="text" ng-maxlength="25"
-              name="payment" required >
+              name="payment" required alpha-num>
               <span class="error" ng-show="usrform.payment.$invalid && usrform.payment.$dirty">Please enter valid text </span>
             </div>
           </div>
@@ -321,7 +321,7 @@
             <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.creditTerms}">
               <label class="control-label">Credit Terms<span class="required-field">*</span></label>
               <input ng-model="SLATracker.agreementAndImportantDates.creditTerms" class="form-control" class="focusedInput1" name="credit" type="text"
-                     required>
+                    alpha-num required>
               <span class="error" ng-show="usrform.credit.$invalid && usrform.credit.$dirty">Please enter valid text </span>
 
             </div>
@@ -375,7 +375,7 @@
     </div>
     <br>
     <div class="form-group1 col-pad" ng-show="showInsurance">
-      <input type="checkbox" class="check gpa-check" id="input-confidencial" checked ng-model="SLATracker.gpa" required>
+      <input type="checkbox" class="check gpa-check" id="input-confidencial" checked ng-model="SLATracker.gpa" >
       <label class=" first-class1" for="input-confidencial">GPA<span class="required-field">*</span></label>
       <span class="error" ng-show="usrform.credit.$invalid && usrform.credit.$dirty">Please check dis field </span>
     </div>
@@ -388,7 +388,7 @@
           <button type="button" class="btn btn-raised sla-cancel-button btn-text">Cancel</button>
         </a>
         <a class="auto">
-          <button class="btn btn-primary data-button btn-text" ng-click="toSLATrackerStep2()">Save & Continue</button>
+          <button class="btn btn-primary data-button btn-text" ng-click="toSLATrackerStep2()" data-ng-disabled="usrform.$invalid" >Save & Continue</button>
         </a>
       </div>
     </form>

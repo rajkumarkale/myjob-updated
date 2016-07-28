@@ -24,7 +24,7 @@ angular.module('com.module.empanelment')
     $scope.open = function ($event, opened) {
         $event.preventDefault();
         $event.stopPropagation();
-        
+
         $scope.open = function ($event, opened) {
             $event.preventDefault();
             $event.stopPropagation();
@@ -51,6 +51,20 @@ angular.module('com.module.empanelment')
         }).then(function (response) {
             console.log("possible", response);
             $scope.data.empnelments = response;
+          for (var i = 0; i <= $scope.data.empnelments.length; i++) {
+            var excelData = {
+              "LegalEntity": $scope.data.empnelments[i].client.legalName,
+              "Business_Unit": $scope.data.empnelments[i].client.businessUnit,
+             /* "commercial_model": $scope.data.empnelments[i].SLATracker.pricing.mode,
+              "Agreement_stratDate": $scope.data.empnelments[i].SLATracker.agreementAndImportantDates.agreementStartDate?
+                $scope.data.empnelments[i].SLATracker.agreementAndImportantDates.agreementStartDate:'--',
+              /!*"Agreement_stratDate": $scope.data.empnelments[i].SLATracker.agreementAndImportantDates.agreementStartDate,
+              "Agreement_Tenure": $scope.data.empnelments[i].SLATracker.agreementAndImportantDates.agreementStartDate,*!/*/
+              "Business_Vertical": $scope.data.empnelments[i].client.vertical
+            };
+            $scope.empanelmentCsvdata.push(excelData);
+
+          }
         });
 
     };

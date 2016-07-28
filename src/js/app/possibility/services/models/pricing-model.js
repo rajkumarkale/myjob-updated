@@ -3,13 +3,14 @@
  */
 var module = angular.module('com.module.possibility');
 module.factory('pricingModel', function () {
-  function pricingMode(modelData) {
-    this.pricingValue=modelData.pricingValue;
-    this.creditDays=modelData.creditDays;
-    this.payCycle=modelData.payCycle;
-    this.billCycle=modelData.billCycle;
-    
-  }
+    function pricingMode(modelData) {
+        this.creditTerm = modelData.creditTerm;
+        this.creditDays = modelData.creditDays;
+        this.payCycle = modelData.payCycle;
+        this.billCycle = modelData.billCycle;
+        this.mode = modelData.mode;
 
-  return pricingMode;
+    }
+
+    return pricingMode;
 });

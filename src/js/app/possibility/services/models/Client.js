@@ -9,6 +9,7 @@ function Client(modelData) {
     this.customerType = modelData.customerType;
     this.potentialNumbers=modelData.potentialNumbers;
     this.clientName=modelData.clientName;
+    this.contactNumber = modelData.contactNumber;
     this.address = {};
     if (modelData.address) {
         this.address = {

@@ -99,7 +99,7 @@
           </div>
         </div>
       </div>
-      <hr class="line1">
+      <hr class="line1 ">
       <div class="row ">
 
         <div class="col-lg-12 ">
@@ -161,11 +161,11 @@
       <div class="row">
         <div class="col-md-12" ng-class="{'app-container-blur':blurLost}">
           <div class="col-md-6 form-custom-padding">
-            <div class="form-group label-floating is-empty" id="clientName">
+            <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.client.clientName}">
               <label class="control-label">Client Name</label>
               <input class="form-control" type="text" tabindex="1" ng-model="saleObject.client.clientName" alpha-num>
             </div>
-            <div class="form-group label-floating is-empty" id="potentialNumbers">
+            <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.client.potentialNumbers}">
               <label class="control-label">Business Potential Numbers</label>
               <input class="form-control" type="text" tabindex="3" ng-model="saleObject.client.potentialNumbers" numbers-only>
             </div>
@@ -177,18 +177,22 @@
             </div>
           </div>
           <div class="col-md-6 form-custom-padding">
-            <div class="form-group label-floating is-empty" id="revenue">
+            <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.client.revenue}">
               <label class="control-label">Annual Business Topline</label>
               <input class="form-control" type="text" tabindex="2" ng-model="saleObject.client.revenue" alphnum-dot>
             </div>
             <div class="form-group label-floating present" >
               <label class="control-label">Expected Date of Closure</label>
+<<<<<<< HEAD
               <input class="form-control" tabindex="4" ng-model="closureDate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
+=======
+              <input class="form-control"  ng-model="saleObject.estimatedClosure" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
+>>>>>>> naresh/nareshnew
                      show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>
               <span class="hand-cursor" id="basic-addon2">
             <img src="img/calendar_icon.png" class="cal-align " ng-click="open($event,'opened3')" alt="" /></span>
             </div>
-            <div class="form-group label-floating is-empty" ng-show="saleObject.prospect==='LOST'">
+            <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.reasonOfLoss}" ng-show="saleObject.prospect==='LOST'">
               <label class="control-label">Reason of Loss</label>
               <input class="form-control" type="text" ng-model="saleObject.reasonOfLoss" tabindex="6" alphabets-only>
             </div>
@@ -344,7 +348,7 @@
         </div>
       <div class=" row ">
         <div class="col-md-5 form-custom-padding">
-          <div class="form-group label-floating is-empty" id="minimumRequirements">
+          <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.minimumRequirements}">
             <label class="control-label">Min No of Requirements to be closed</label>
             <input class="form-control" type="text"  tabindex="7" ng-model="saleObject.minimumRequirements" numbers-only>
           </div>
@@ -402,7 +406,7 @@
         </tbody>
       </table>
       <accordion class="plus col-md-12 re-accordian " ng-show="showAddReq">
-        <accordion-group is-open="status.open">
+        <accordion-group is-open="true">
           <accordion-heading>
             <span class="add-req"> Add Requirement</span><i class="pull-right glyphicon color-black" ng-class="{'glyphicon glyphicon-chevron-down': status.open, 'glyphicon glyphicon-chevron-right': !status.open}"></i>
           </accordion-heading>
@@ -454,7 +458,9 @@
               <div class="col-md-5 col-pad">
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Job Title<span class="required-field">*</span></label>
+
                   <input class="form-control" type="text" tabindex="15" ng-model="requirement.jobTitle" alphabets-only>
+
                 </div>
                 <div class="form-group label-floating age-text">
                   Functional Area<span class="required-field">*</span>
@@ -501,22 +507,24 @@
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">No Poach Companies<span class="required-field">*</span></label>
-                  <input class="form-control col-md-2" type="text" tabindex="15" ng-model="requirement.numberOfPoachCompanies">
+                  <input class="form-control col-md-2" numbers-only type="text" tabindex="15" ng-model="requirement.numberOfPoachCompanies">
                 </div>
 
               </div>
               <div class="col-md-5 col-md-offset-1">
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">No Of Positions<span class="required-field">*</span></label>
+
                   <input class="form-control" type="text" tabindex="16" ng-model="requirement.numberOfPositions" numbers-only>
+
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Vacancy<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="10" ng-model="requirement.vacancy">
+                  <input class="form-control" type="text" tabindex="10" ng-model="requirement.vacancy" numbers-only>
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Job Location<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="12" ng-model="requirement.jobLocation">
+                  <input class="form-control" type="text" tabindex="12" ng-model="requirement.jobLocation" alpha-num>
                 </div>
                 <div class="form-group ">
                   <div class="font-ind age-text">Primary Level<span class="required-field">*</span>

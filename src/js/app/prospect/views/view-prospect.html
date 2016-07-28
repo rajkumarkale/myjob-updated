@@ -101,7 +101,7 @@
                         <th class="table-th-heading"> Legal Entity <span ng-click="sortType = 'client.legalName'; sortReverse = !sortReverse"><img src="img/sort_icon.png"></span> </th>
                         <th class="table-th-heading">Business Unit <span ng-click="sortType = 'client.businessUnit'; sortReverse = !sortReverse"><img src="img/sort_icon.png"></span></th>
                         <th class="table-th-heading">Annual Number</th>
-                        <th class="table-th-heading">Annual Revenue</th>
+                        <th class="table-th-heading">Business Potential Number</th>
                         <th class="table-th-heading">Exp.Closure Date
                         </th>
                         <th class="table-th-heading">Contact Name</th>
@@ -117,15 +117,15 @@
                         </td>
                         <td class="hand-cursor td-text-color" ng-click="openEditProspect(prospect)">{{prospect.client.legalName}}</td>
                         <td>{{prospect.client.businessUnit}}</td>
-                        <td>{{prospect.annual_rate_no?prospect.annual_rate_no:'--'}}</td>
-                        <td>{{prospect.annual_rate_topline?prospect.annual_rate_topline:'--'}}</td>
-                        <td>{{prospect.estimated_closure?(prospect.estimated_closure|date):'--'}}</td>
-                        <td>000000</td>
-                        <td>000000</td>
+                        <td>{{prospect.client.revenue?prospect.client.revenue:'--'}}</td>
+                        <td>{{prospect.client.potentialNumbers?prospect.client.potentialNumbers:'--'}}</td>
+                        <td>{{prospect.estimatedClosure?(prospect.estimatedClosure|date:'dd-mm-yyyy'):'--'}}</td>
+                        <td>{{prospect.client.clientName?prospect.client.clientName:'--'}}</td>
+                        <td>{{prospect.client.contactNumber?prospect.client.contactNumber:'--'}}</td>
                         <td class="action-padding">
                             <table>
                                 <tr>
-                                    <td><img src="img/discussion_icon.png" tooltip="Discussions" class="action-distance hand-cursor" data-ng-click="openDiscussions(suspect)"></td>
+                                    <td><img src="img/discussion_icon.png" tooltip="Discussions" class="action-distance hand-cursor" data-ng-click="openDiscussions(prospect,'PROSPECT')"></td>
                                     <td>
                                         <img src="img/share_icon.png" tooltip="Share" class="action-distance " ng-click="openShare('share',prospect)" ng-show="showShare(prospect)" data-ng-class="{'hand-cursor':showShare(prospect)}">
                                         <img src="img/share_hide.png"  class="action-distance " ng-hide="showShare(prospect)">

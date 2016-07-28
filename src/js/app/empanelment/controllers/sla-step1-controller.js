@@ -2,9 +2,9 @@
  * Created by kveena on 7/18/2016.
  */
 angular.module('com.module.empanelment')
-    .controller('sla-step1-controller', ['$scope', '$state', 'appConfig', '$rootScope', '$stateParams', function ($scope, $state, appConfig, $rootScope, $stateParams) {
+    .controller('sla-step1-controller', ['$scope', '$state', 'appConfig', '$rootScope', '$stateParams', '$filter', function ($scope, $state, appConfig, $rootScope, $stateParams, $filter) {
         /*$scope.SLATracker=new SLATrackerModel({});*/
-    
+
         if ($stateParams.empanelment) {
             console.log($stateParams.empanelment);
             console.log($stateParams.SLATracker);
@@ -21,15 +21,22 @@ angular.module('com.module.empanelment')
         };
 
         $scope.submitSLA = function () {
+            /*$scope.SLATracker.agreementAndImportantDates.agreementEndDate = $scope.SLATracker.agreementAndImportantDates.agreementEndDate.getTime();
+            $scope.SLATracker.agreementAndImportantDates.agreementStartDate = $scope.SLATracker.agreementAndImportantDates.agreementStartDate.getTime();
+            $scope.SLATracker.agreementAndImportantDates.invoiceSubmissionDate = $scope.SLATracker.agreementAndImportantDates.invoiceSubmissionDate.getTime();
+            $scope.SLATracker.agreementAndImportantDates.payoutDate = $scope.SLATracker.agreementAndImportantDates.payoutDate.getTime();
 
-            $scope.saleObject.SLATracker=$scope.SLATracker;
+            $scope.SLATracker.agreementAndImportantDates.payrollInputUploadDate = $scope.SLATracker.agreementAndImportantDates.payrollInputUploadDate.getTime();*/
+            $scope.saleObject.SLATracker = $scope.SLATracker;
 
-            $scope.savePromise= $scope.saleObject.update().then(function(){
-                   $state.go('app.viewEmpanelment');
-                 });
+            $scope.savePromise = $scope.saleObject.update().then(function () {
+                $state.go('app.viewEmpanelment');
+            });
         };
 
-        $scope.OB = appConfig.empanelment.OB;
+
+        $scope.OBData = appConfig.empanelment.OB;
+
         $scope.open = function ($event, opened) {
             $event.preventDefault();
             $event.stopPropagation();
@@ -73,4 +80,39 @@ angular.module('com.module.empanelment')
             }
         };
 
+
+
+
+        $scope.bgv = {
+            value: 'NO'
+        };
+        $scope.OB = false;
+        $scope.SLATracker.bgv = '';
+        $scope.showOB = function () {
+            if ($scope.bgv.value === 'NO') {
+                $scope.OB = false;
+                $scope.SLATracker.bgv = '';
+            } else {
+                $scope.OB = true;
+                $scope.OBData.selectedItem = '';
+            }
+        }
+        $scope.insurance = {
+            value: 'NO'
+        };
+        $scope.showInsurance = false;
+        $scope.SLATracker.insurance = null;
+        $scope.SLATracker.gpa = null;
+        $scope.showIns = function () {
+            if ($scope.insurance.value === 'NO') {
+                $scope.showInsurance = false;
+                $scope.SLATracker.insurance = null;
+                $scope.SLATracker.gpa = null;
+                $scope.SLATracker.familiyAndIndividual=null;
+            } else {
+                $scope.showInsurance = true;
+
+            }
+        }
 }]);
+

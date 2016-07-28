@@ -299,10 +299,28 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-lg-5 col-pad">
-                        <div class="form-group is-empty is-fileinput hand-cursor">
-                            <input type="file" id="inputText" multiple="" class="hand-cursor"  ng-model="files" ngf-multiple="true"  ngf-select="upload($files)">
+                      <ul ng-show="empanelFile">
+                        <div  style="font:smaller">
+                          <div class="preview-div">
+                            <div class="col-md-2">
+                              <div class="previews" style="width: 150px;">
+                                <a ng-click="download(empanelFile.url)" class="hand-cursor">  <span tooltip="{{empanelFile.url | nameFilterTooltip}}">{{empanelFile.url | nameFilter}}</span></a>
+                              </div>
+                              <div class="form-group">
+                                <div class="preview-select">
+                                </div>
+                              </div>
+                              <div class="preview-select">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ul>
+
+                        <div class="form-group is-empty is-fileinput hand-cursor" data-ng-hide="empanelFile">
+                            <input type="file" id="fileB1" class="hand-cursor"  ng-model="fileB"   ngf-select="upload(fileB)">
                             <div class="input-group">
-                                <input type="text" readonly=""   class="form-control" placeholder="Pan Copy">
+                                <input type="text"  id="fileB2" readonly=""   class="form-control" placeholder="Pan Copy">
                                 <span class="input-group-btn input-group-sm ">
                   <button type="button" class="btn warm-status">
                   <i class="material-icons">Browse</i>
@@ -316,10 +334,27 @@
                     </div>
                     <div class="col-md-1"></div>
                     <div class="col-lg-5 col-pad">
-                        <div class="form-group is-empty is-fileinput hand-cursor">
-                            <input type="file" id="inputFile4"  class="hand-cursor"   ngf-select="uploadFileA(fileA)" ng-model="fileA" >
+                      <ul ng-show="empanelFile2">
+                        <div  style="font:smaller">
+                          <div class="preview-div">
+                            <div class="col-md-2">
+                              <div class="previews" style="width: 150px;">
+                              <a ng-click="download(empanelFile2.url)" class="hand-cursor"><span tooltip="{{empanelFile2.url | nameFilterTooltip}}">{{empanelFile2.url | nameFilter}}</span></a>
+                              </div>
+                              <div class="form-group">
+                                <div class="preview-select">
+                                </div>
+                              </div>
+                              <div class="preview-select">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ul>
+                        <div class="form-group is-empty is-fileinput hand-cursor" data-ng-hide="empanelFile">
+                            <input type="file" id="fileA1"  class="hand-cursor"   ngf-select="uploadFileA(fileA)" ng-model="fileA" >
                             <div class="input-group">
-                                <input type="text" readonly="" id="inputText2" class="form-control" placeholder="Agreement Copy">
+                                <input type="text" readonly="" id="fileA2" class="form-control" placeholder="Agreement Copy">
                                 <span class="input-group-btn input-group-sm">
                   <button type="button" class="btn warm-status">
                   <i class="material-icons">Browse</i>

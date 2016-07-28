@@ -14,9 +14,9 @@ angular.module('com.module.empanelment')
         var headerArr = ["LegalEntity", "BusinessUnit", "Commercial Model", "Agreement Start Date", "Agreement Tenure", "Business Vertical"];
         return headerArr;
     };
-    $scope.openDiscussions = function (possibility) {
-        discussionService.setData(possibility);
-        $state.go('app.viewDiscussions');
+    $scope.openDiscussions = function (empanelment,status) {
+        discussionService.setData(empanelment);
+        $state.go('app.viewDiscussions',{status:status});
     };
     $scope.filteredRows = [];
     $scope.sortType = 'client.legalName';
@@ -24,10 +24,7 @@ angular.module('com.module.empanelment')
     $scope.open = function ($event, opened) {
         $event.preventDefault();
         $event.stopPropagation();
-        $scope.openDiscussions = function (possibility) {
-            discussionService.setData(possibility);
-            $state.go('app.viewDiscussions');
-        };
+        
         $scope.open = function ($event, opened) {
             $event.preventDefault();
             $event.stopPropagation();

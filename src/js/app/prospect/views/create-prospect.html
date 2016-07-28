@@ -141,7 +141,7 @@
         </div>
       </div>
 </div>
-<div class="container col-md-12 mrg-down" >
+<div class="container col-md-12 mrg-down" ng-class="{'app-container-blur':saleObject.permission==='VIEW'}">
   <div class="panel panel-default second-panel "  >
     <form></form>
     <div class="panel-heading">
@@ -180,7 +180,7 @@
               <label class="control-label">Annual Business Topline</label>
               <input class="form-control" type="text" tabindex="2" ng-model="saleObject.client.revenue">
             </div>
-            <div class="form-group label-floating present" >
+            <div class="form-group label-floating present" ng-show="saleObject.prospect==='AGREEMENT_ON_CLOSURE'">
               <label class="control-label">Expected Date of Closure</label>
               <input class="form-control"  ng-model="saleObject.estimatedClosure" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
                      show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>

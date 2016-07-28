@@ -2,7 +2,7 @@ angular.module('com.module.possibility').factory('saleModuleService', function (
     'use strict';
 
 
-    var BASEURI = appConfig.apiUrl;/*'http://172.16.1.103:8000';*/
+    var BASEURI = 'http://172.16.1.103:8000';//appConfig.apiUrl;
 
 
     var getSalesData = function (params) {

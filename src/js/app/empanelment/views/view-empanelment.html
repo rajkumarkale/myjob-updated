@@ -75,8 +75,8 @@
           <td class="cell-gap">{{empanelment.pricing.mode?(empanelment.pricing.mode.split('_').join(' ')):'--'}}</td>
 
           <td>{{empanelment.SLATracker.agreementAndImportantDates.agreementStartDate?
-            (empanelment.SLATracker.agreementAndImportantDates.agreementStartDate|date:'dd-mm-yyyy'):'--'}}</td>
-          <td>{{empanelment.SLATracker.agreementAndImportantDates.agreementEndDate?(empanelment.SLATracker.agreementAndImportantDates.agreementEndDate|date:'dd-mm-yyyy'):'--'}}</td>
+            (empanelment.SLATracker.agreementAndImportantDates.agreementStartDate|date:'dd-MM-yyyy'):'--'}}</td>
+          <td>{{empanelment.SLATracker.agreementAndImportantDates.agreementEndDate?(empanelment.SLATracker.agreementAndImportantDates.agreementEndDate|date:'dd-MM-yyyy'):'--'}}</td>
           <td>{{empanelment.client.vertical}}</td>
                    <td>
                      <img src="img/discussion_icon.png" tooltip="Discussions" class="action-distance hand-cursor" data-ng-click="openDiscussions(empanelment,'EMPANELMENT')">

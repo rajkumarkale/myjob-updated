@@ -2,7 +2,7 @@
  * Created by revathi bandi on 5/11/2016.
  */
 var app = angular.module('com.module.empanelment')
-    .controller('empanelmentController', ['$scope', '$state', 'appConfig', '$stateParams', 'pricingModel', 'SLATrackerModel','Upload', function ($scope, $state, appConfig, $stateParams, pricingModel, SLATrackerModel,Upload) {
+    .controller('empanelmentController', ['$scope', '$state', 'appConfig', '$stateParams', 'pricingModel', 'SLATrackerModel','Upload','CoreService', function ($scope, $state, appConfig, $stateParams, pricingModel, SLATrackerModel,Upload,CoreService) {
         $scope.pricingModel = new pricingModel({});
         $scope.init = function ($stateParams) {
             $scope.pricingMode = appConfig.empanelment.pricingMode;
@@ -11,8 +11,11 @@ var app = angular.module('com.module.empanelment')
             $scope.status = appConfig.suspect.status;
             $scope.prospectStatus = appConfig.prospect.status;
 
+
         };
         $scope.init();
+      $scope.empanelFile=$stateParams.empanelment.documents[0];
+      $scope.empanelFile2=$stateParams.empanelment.documents[1];
         if ($stateParams.empanelment) {
             $scope.saleObject = $stateParams.empanelment;
         }
@@ -54,12 +57,12 @@ var app = angular.module('com.module.empanelment')
         $scope.createEmpanelment = function () {
           var obj = {};
           var obj1 = {};
-          obj.url = $scope.uploadFiles[0].url;
-          obj.type = $scope.uploadFiles[0].documentType;
+          obj.url = $scope.uploadFiles.url;
+          obj.type = 'OTHERS';
           $scope.saleObject.documents.push(obj);
 
           obj1.url = $scope.fileA.url;
-          obj1.type = $scope.fileA.documentType;
+          obj1.type = 'OTHERS';
           $scope.saleObject.documents.push(obj1);
             $scope.saleObject.pricing=$scope.pricing;
 
@@ -69,89 +72,61 @@ var app = angular.module('com.module.empanelment')
         };
 
       //watch on file upload pan
-      $scope.uploadFiles=[];
-      $scope.$watch('files', function() {
-        $scope.upload($scope.files);
-      });
+      $scope.fileB={};
       $scope.uploadPromise;
-      $scope.upload = function(files) {
-        $scope.fileNameLen = files[0].name.length-3;
-        $scope.fileFormat = files[0].name.substring($scope.fileNameLen);
-        if($scope.fileFormat=='pdf' || $scope.fileFormat=='jpg' || $scope.fileFormat=='epg') {
-          if (files && files.length) {
-            for (var i = 0; i < files.length; i++) {
-              var file = files[i];
-              if (!file.$error) {
+      $scope.upload = function(fileB) {
+        $scope.fileNameLenB = fileB.name.length-3;
+        $scope.fileFormatB = fileB.name.substring($scope.fileNameLenB);
+        if($scope.fileFormatB=='pdf' || $scope.fileFormatB=='epg' || $scope.fileFormatB=='jpg') {
                 $scope.uploadPromise = Upload.upload({
                   url: appConfig.apiUrl + '/api/upload/file',
                   data: {
-                    content: file
+                    content: fileB
                   }
                 }).then(function (resp) {
-                  file.url = resp.data.url;
-                  file.documentType = angular.copy(appConfig.possibility.documentType);
-                  $scope.uploadFiles.push(file);
+                  fileB.url = resp.data.url;
+                  fileB.documentType = angular.copy(appConfig.possibility.documentType);
+                  $scope.uploadFiles=fileB;
                 }, null, function (evt) {
                 });
-              }
-            }
-          }
-        }
 
+        }
         else{
-          CoreService.alertInfo('ERROR', 'Supported file formats are Docs & JPEG');
-          document.getElementById("inputText").value = "";
+          CoreService.toastError('ERROR', 'Supported file formats are Docs & PNG');
+          document.getElementById("fileB1").value = "";
+          document.getElementById("fileB2").value = "";
         }
       };
 
 $scope.fileA={};
       console.log($scope.fileA);
       $scope.uploadFileA=function(fileA){
-        $scope.uploadsPromise = Upload.upload({
-          url: appConfig.apiUrl + '/api/upload/file',
-          data: {
-            content: fileA
-          }
-        }).then(function (resp) {
-          fileA.url = resp.data.url;
-          fileA.documentType = angular.copy(appConfig.possibility.documentType);
-          $scope.fileA=fileA;
-        }, null, function (evt) {
-        });
-      };
-      //watch on file upload agreement
-  /*    $scope.uploadFile=[];
-      $scope.$watch('file1', function() {
-        $scope.uploads($scope.file1);
-      });
-      $scope.uploadsPromise;
-      $scope.uploads = function(file1) {
-        $scope.fileNameLen1 = file1[0].name.length-3;
-        $scope.fileFormat1 = file1[0].name.substring($scope.fileNameLen1);
-        if($scope.fileFormat1=='pdf' || $scope.fileFormat1=='jpg' || $scope.fileFormat1=='epg') {
-          if (file1 && file1.length) {
-
-              var _file = file1[0];
-              if (!_file.$error) {
-                $scope.uploadsPromise = Upload.uploads({
-                  url: appConfig.apiUrl + '/api/upload/file',
-                  data: {
-                    content: _file
-                  }
-                }).then(function (resp) {
-                  _file.url = resp.data.url;
-                  _file.documentType = angular.copy(appConfig.possibility.documentType);
-                  $scope.uploadFile.push(_file);
-                }, null, function (evt) {
-                });
-              }
+        $scope.fileNameLenA = fileA.name.length-3;
+        $scope.fileFormatA = fileA.name.substring($scope.fileNameLenA);
+        if($scope.fileFormatA=='pdf' || $scope.fileFormatA=='epg' || $scope.fileFormatA=='jpg') {
+          $scope.uploadsPromise = Upload.upload({
+            url: appConfig.apiUrl + '/api/upload/file',
+            data: {
+              content: fileA
             }
-
+          }).then(function (resp) {
+            fileA.url = resp.data.url;
+            fileA.documentType = angular.copy(appConfig.possibility.documentType);
+            $scope.fileA = fileA;
+          }, null, function (evt) {
+          });
         }
 
-        else{
-          CoreService.alertInfo('ERROR', 'Supported file formats are Docs & JPEG');
-          document.getElementById("inputText2").value = "";
-        }
-      };*/
+      else{
+        CoreService.toastError('ERROR', 'Supported file formats are Docs & PNG');
+          document.getElementById("fileA1").value = "";
+          document.getElementById("fileA2").value = "";
+      }
+      };
+      $scope.download=function(url){
+        var filename = url.substring(url.lastIndexOf('/')+1);
+        console.log(filename);
+        window.open(url);
+      };
+
   }]);

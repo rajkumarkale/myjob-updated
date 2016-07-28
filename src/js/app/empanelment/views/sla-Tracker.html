@@ -28,8 +28,8 @@
           <div class="col-md-5">
             <div class="form-group label-floating" >
               <label class="control-label">Client Name<span class="required-field">*</span></label>
-              <input class="form-control "   name="client"   type="text" minlength="5"
-                     maxlength="40" required ng-model="saleObject.client.clientName">
+              <input class="form-control "   name="client"   type="text"
+                     required ng-model="saleObject.client.clientName" alpha-num>
 <span class="error" ng-show="usrform.client.$invalid && usrform.client.$dirty">Eg:Neer Info Solutions Pvt Ltd </span>
             </div>
           </div>
@@ -38,7 +38,7 @@
             <div class="form-group label-floating is-empty " >
               <label class="control-label">Monthly Service Fee<span class="required-field">*</span></label>
               <input class="form-control"    numbers-only name="n2" required="required"  ng-model="SLATracker.commercials.fixedFee" type="text"
-                     minlength="3" maxlength="30" >
+                     >
               <span class="error" ng-show="usrform.n2.$invalid && usrform.n2.$dirty">Please enter numbers</span>
             </div>
           </div>
@@ -65,7 +65,7 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label"> Reimbursements Service Fee<span class="required-field">*</span></label>
               <input class="form-control" name="n4" required="required" ng-model="SLATracker.commercials.reimbursementsServiceFee" type="text"
-                     maxlength="20"  numbers-only>
+                      alpha-num>
               <span class="error" ng-show="usrform.n4.$invalid && usrform.n4.$dirty">Please enter valid a number </span>
 
             </div>
@@ -82,7 +82,7 @@
           <div class="col-md-5">
             <div class="form-group label-floating">
               <label class="control-label">Contact Number<span class="required-field">*</span></label>
-              <input ng-model="contact" name="contact" class="focusedInput1 form-control" numbers-only minlength="10" maxlength="15"
+              <input ng-model="contact" name="contact" class="focusedInput1 form-control" numbers-only minlength="10" maxlength="10"
                      required ng-model="saleObject.client.getPrimaryContact().phone">
               <span class="error" ng-show="usrform.contact.$invalid && usrform.contact.$dirty">Please enter valid text </span>
             </div>
@@ -91,7 +91,7 @@
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label">Sourcing Fee<span class="required-field">*</span></label>
-              <input ng-model="SLATracker.commercials.sourcingFee"  class="form-control focusedInput1" name="sourcing" numbers-only type="text"  minlength="10" maxlength="20"
+              <input ng-model="SLATracker.commercials.sourcingFee"  class="form-control focusedInput1" name="sourcing" numbers-only type="text"
                      required>
               <span class="error" ng-show="usrform.sourcing.$invalid && usrform.sourcing.$dirty">Please enter valid text </span>
             </div>
@@ -115,7 +115,7 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label">Absorption Fee & Clauses<span class="required-field">*</span></label>
               <input  ng-model="SLATracker.commercials.absorptionFeeAndClauses" name="absor" class=" form-control focusedInput1" type="text"
-                       alpha-num required minlength="1">
+                       numbers-only required >
               <span class="error" ng-show="usrform.absor.$invalid && usrform.absor.$dirty">Please enter valid text </span>
 
             </div>
@@ -176,7 +176,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label">Time Sheet Remainder<span class="required-field">*</span></label>
+              <label class="control-label">Time Sheet Reminder<span class="required-field">*</span></label>
               <input  ng-model="SLATracker.agreementAndImportantDates.timeSheetReminder" class="form-control" name="sheet" type="text"  alpha-num required>
               <span class="error" ng-show="usrform.sheet.$invalid && usrform.sheet.$dirty">Please enter valid text </span>
 
@@ -206,7 +206,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label">Time Sheet Submission Cutoff<span class="required-field">*</span></label>
+              <label class="control-label">Time Sheet submission cut off<span class="required-field">*</span></label>
               <input ng-model="SLATracker.agreementAndImportantDates.timeSheetSubmissionCutoff" class="form-control" name="sub" type="text" alpha-num required>
               <span class="error" ng-show="usrform.sub.$invalid && usrform.sub.$dirty">Please enter valid text </span>
 
@@ -232,7 +232,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating present">
-              <label class="control-label">Payroll input upload Date<span class="required-field">*</span></label>
+              <label class="control-label">Payroll Input upload Date<span class="required-field">*</span></label>
               <input class="form-control"  ng-model="SLATracker.agreementAndImportantDates.payrollInputUploadDate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
                      show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>
               <span class="hand-cursor" id="basic-addon4">
@@ -336,7 +336,7 @@
       <label class="location ">NO</label>
     </div>
 
-    <div class="col-md-12 ">
+    <div class="col-md-12 " ng-hide="SLATracker.bgv==='YES'">
       <div class="col-md-4 form-group col-pad-post insurence-text  ">
        <div class="form-group">
                                 <label class="control-label"></label>
@@ -355,6 +355,7 @@
       <input type="radio" name="insurence" class="check" ng-model="SLATracker.insurance">
       <label class="location">Not Applicable</label>
     </div>
+      <div ng-hide="SLATracker.insurance==='Applicable'">
     <div class="form-group1 col-pad in-pad">
       <input type="radio" name="family" class="check" checked ng-model="SLATracker.familiyAndIndividual">
       <label class="remote">Family Floater</label>
@@ -370,6 +371,7 @@
     </div>
     <br>
   </div>
+      </div>
       <div class="form-group cancel-sub-class">
         <a ui-sref="app.createEmpanelment" class="auto">
           <button type="button" class="btn btn-raised sla-cancel-button btn-text">Cancel</button>

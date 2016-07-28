@@ -4,13 +4,15 @@
 angular.module('com.module.empanelment')
     .controller('sla-step1-controller', ['$scope', '$state', 'appConfig', '$rootScope', '$stateParams', function ($scope, $state, appConfig, $rootScope, $stateParams) {
         /*$scope.SLATracker=new SLATrackerModel({});*/
+    
         if ($stateParams.empanelment) {
             console.log($stateParams.empanelment);
             console.log($stateParams.SLATracker);
         }
+
         $scope.saleObject = $stateParams.empanelment;
         $scope.SLATracker = $stateParams.SLATracker;
-        
+
         $scope.toSLATrackerStep2 = function () {
             $state.go('app.slaTracker-step2', {
                 empanelment: $scope.saleObject,
@@ -26,7 +28,7 @@ angular.module('com.module.empanelment')
                    $state.go('app.viewEmpanelment');
                  });
         };
-        
+
         $scope.OB = appConfig.empanelment.OB;
         $scope.open = function ($event, opened) {
             $event.preventDefault();

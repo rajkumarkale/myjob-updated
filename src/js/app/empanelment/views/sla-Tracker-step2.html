@@ -26,7 +26,7 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label" >TimeSheet/Attendance Cycle<span class="required-field">*</span></label>
               <input class="form-control" name="timesheet" ng-model="SLATracker.timeSheetAttendanceRelated.attendanceCycle" type="text"
-                     ng-required="SLAform.timesheet.$error">
+                     ng-required="SLAform.timesheet.$error" alpha-num>
 
             </div>
           </div>  <div  class="col-md-1"></div>
@@ -50,14 +50,14 @@
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Timesheet/Attendance Collection Process<span class="required-field">*</span></label>
               <textarea class="form-control  bord-remove" name="collection" ng-model="SLATracker.timeSheetAttendanceRelated.attendenceCollectionProcess"   type="text"
-              minlength="3" maxlength="20" ng-required="SLAform.n3.$error" ></textarea>
+               ng-required="SLAform.n3.$error" ></textarea>
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
               <label class="control-label" >Salary Payout<span class="required-field">*</span></label>
               <input class="form-control" ng-model="SLATracker.activityOwner.salaryPayout"  name="salary"  type="text"
-                     ng-required="SLAform.salary.$error" >
+                     ng-required="SLAform.salary.$error" alpha-num>
             </div>
           </div>
         </div>
@@ -76,9 +76,9 @@
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
             <div class="form-group label-floating is-empty">
-              <label class="control-label" >Invoice Submission & Payment Followup<span class="required-field">*</span></label>
+              <label class="control-label" >Invoice Submission & Payment followup<span class="required-field">*</span></label>
               <input class="form-control"  ng-model="SLATracker.activityOwner.invoiceSubmissionAndPaymentFollowup" class="focusedInput1" type="text"
-                     ng-required="SLAform.submission.$error">
+                     ng-required="SLAform.submission.$error" alpha-num>
             </div>
           </div>
         </div>

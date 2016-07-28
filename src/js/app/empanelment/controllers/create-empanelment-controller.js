@@ -58,10 +58,10 @@ var app = angular.module('com.module.empanelment')
           obj.type = $scope.uploadFiles[0].documentType;
           $scope.saleObject.documents.push(obj);
 
-          /*obj1.url = $scope.uploadFile[0].url;
-          obj1.type = $scope.uploadFile[0].documentType;
+          obj1.url = $scope.fileA.url;
+          obj1.type = $scope.fileA.documentType;
           $scope.saleObject.documents.push(obj1);
-            $scope.saleObject.pricing=$scope.pricing;*/
+            $scope.saleObject.pricing=$scope.pricing;
 
             $scope.savePromise= $scope.saleObject.update().then(function(){
                    $state.go('app.viewEmpanelment');
@@ -104,7 +104,21 @@ var app = angular.module('com.module.empanelment')
         }
       };
 
-
+$scope.fileA={};
+      console.log($scope.fileA);
+      $scope.uploadFileA=function(fileA){
+        $scope.uploadsPromise = Upload.upload({
+          url: appConfig.apiUrl + '/api/upload/file',
+          data: {
+            content: fileA
+          }
+        }).then(function (resp) {
+          fileA.url = resp.data.url;
+          fileA.documentType = angular.copy(appConfig.possibility.documentType);
+          $scope.fileA=fileA;
+        }, null, function (evt) {
+        });
+      };
       //watch on file upload agreement
   /*    $scope.uploadFile=[];
       $scope.$watch('file1', function() {

@@ -92,7 +92,7 @@ angular.module('com.module.possibility')
             document.getElementById('noEdit').style.pointerEvents = 'none';
             if ($scope.isNewPossibility) {
                 $scope.createPromise = $scope.create();
-                $state.go('app.viewPossibility');
+               
             } else {
                 $scope.update();
 

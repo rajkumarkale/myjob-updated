@@ -378,11 +378,11 @@
                 "data": [
                     {
                         "key": "PERMANANT_STAFFING",
-                        "displayText": "Permanant Staffing"
+                        "displayText": "Permanent Staffing"
           },
                     {
                         "key": "TEMP_STAFFING",
-                        "displayText": "Temparaury Staffing"
+                        "displayText": "Temporary Staffing"
           },
                     {
                         "key": "PROFESSIONAL_STAFFING",
@@ -394,7 +394,7 @@
           },
                     {
                         "key": "IT_STAFFING",
-                        "displayText": "It Staffing"
+                        "displayText": "IT Staffing"
           }
         ],
                 "selectedItem": ""

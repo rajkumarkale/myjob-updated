@@ -11,6 +11,7 @@ angular.module('com.module.prospect')
         $scope.showAddReq = false;
         $scope.lostDisable=false;
         $scope.blurLost=false;
+    
         if ($stateParams.prospect) {
             $scope.saleObject = $stateParams.prospect;
 

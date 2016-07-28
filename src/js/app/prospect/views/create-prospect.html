@@ -1,5 +1,5 @@
 
-<div class="container col-md-12 up-margin" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
+<div class="container col-md-12 up-margin" data-cg-busy="{promise:myPromise,message:'Loading Prospects'}">
   <accordion class="plus possibility-head" >
     <accordion-group is-open="status.open">
       <accordion-heading>
@@ -141,7 +141,7 @@
         </div>
       </div>
 </div>
-<div class="container col-md-12 mrg-down" >
+<div class="container col-md-12 mrg-down" ng-class="{'app-container-blur':saleObject.permission==='VIEW'}">
   <div class="panel panel-default second-panel "  >
     <form></form>
     <div class="panel-heading">
@@ -163,33 +163,36 @@
           <div class="col-md-6 form-custom-padding">
             <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.client.clientName}">
               <label class="control-label">Client Name</label>
-              <input class="form-control" type="text" tabindex="1" ng-model="saleObject.client.clientName">
+              <input class="form-control" type="text" tabindex="1" ng-model="saleObject.client.clientName" alpha-num>
             </div>
             <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.client.potentialNumbers}">
               <label class="control-label">Business Potential Numbers</label>
-              <input class="form-control" type="text" tabindex="3" ng-model="saleObject.client.potentialNumbers">
+              <input class="form-control" type="text" tabindex="3" ng-model="saleObject.client.potentialNumbers" numbers-only>
             </div>
             <div class="form-group label-floating">
               <label class="control-label">Annual Business Bottomline</label>
               <!--<input class="form-control" type="text" ng-model="saleObject.client.turnover">-->
-              <div   custom-select data="turnover" value="saleObject.client.turnover" tabindex="4" class="status-prospect"></div>
+              <div   custom-select data="turnover" value="saleObject.client.turnover" tabindex="5" class="status-prospect" ></div>
+
             </div>
           </div>
           <div class="col-md-6 form-custom-padding">
             <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.client.revenue}">
               <label class="control-label">Annual Business Topline</label>
-              <input class="form-control" type="text" tabindex="2" ng-model="saleObject.client.revenue">
+              <input class="form-control" type="text" tabindex="2" ng-model="saleObject.client.revenue" alphnum-dot>
             </div>
-            <div class="form-group label-floating present" >
+            <div class="form-group label-floating present" ng-show="saleObject.prospect==='AGREEMENT_ON_CLOSURE'">
               <label class="control-label">Expected Date of Closure</label>
+
               <input class="form-control"  ng-model="saleObject.estimatedClosure" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
+
                      show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>
               <span class="hand-cursor" id="basic-addon2">
             <img src="img/calendar_icon.png" class="cal-align " ng-click="open($event,'opened3')" alt="" /></span>
             </div>
             <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.reasonOfLoss}" ng-show="saleObject.prospect==='LOST'">
               <label class="control-label">Reason of Loss</label>
-              <input class="form-control" type="text" ng-model="saleObject.reasonOfLoss">
+              <input class="form-control" type="text" ng-model="saleObject.reasonOfLoss" tabindex="4" alphabets-only>
             </div>
      </div>
         </div>
@@ -235,7 +238,7 @@
       </div>
       <div class="panel panel-default second-panel ">
         <div class="panel-heading">
-          Summary in the month of {{sumStartDate | date:'MMMM yyyy '}}{{sumEndDate}}
+          Summary for the month of {{sumStartDate | date:'MMMM yyyy '}}{{sumEndDate}}
         </div>
         <div class="panel-body">
           <div class="col-md-3">
@@ -345,7 +348,7 @@
         <div class="col-md-5 form-custom-padding">
           <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.minimumRequirements}">
             <label class="control-label">Min No of Requirements to be closed</label>
-            <input class="form-control" type="text" ng-model="saleObject.minimumRequirements">
+            <input class="form-control" type="text"   ng-model="saleObject.minimumRequirements" numbers-only>
           </div>
         </div>
         <div class=" col-md-offset-5">
@@ -411,25 +414,25 @@
               <div class="col-md-5 col-pad">
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Name<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="1" ng-model="requirement.name">
+                  <input class="form-control" type="text" tabindex="6" ng-model="requirement.name" alpha-num>
                 </div>
 
                 <div class="form-group ">Requirement Type<span class="required-field">*</span>
-                  <div custom-select data="requireStatus" value="requirement.type" class=" age-select p-0" tabindex="3"></div>
+                  <div custom-select data="requireStatus" value="requirement.type" class=" age-select p-0" ></div>
                 </div>
                 <div class="form-group label-floating is-empty ">
                   <label class="control-label">Office Location<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="5" ng-model="requirement.officeLocation">
+                  <input class="form-control" type="text" tabindex="9" ng-model="requirement.officeLocation" alpha-num>
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Applicable Consulting Fee<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="7" ng-model="requirement.consultingFee">
+                  <input class="form-control" type="text" tabindex="10" ng-model="requirement.consultingFee" alphnum-dot>
                 </div>
               </div>
               <div class="col-md-5 col-md-offset-1">
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Manager<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="2" ng-model="requirement.manager">
+                  <input class="form-control" type="text" tabindex="7" ng-model="requirement.manager" alpha-num>
                 </div>
                 <!--<div class="form-group label-floating  age-text">
                 Permanent Staffing<span class="required-field">*</span>
@@ -437,12 +440,12 @@
                 </div>-->
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Practice<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="4" ng-model="requirement.practice">
+                  <input class="form-control" type="text" tabindex="8" ng-model="requirement.practice" alpha-num>
                 </div>
                 <div class="form-group label-floating  age-text">
                   Priority<span class="required-field">*</span>
 
-                  <div custom-select data="priority" value="requirement.priority" class=" age-select p-0" tabindex="6"></div>
+                  <div custom-select data="priority" value="requirement.priority" class=" age-select p-0" ></div>
 
                 </div>
               </div>
@@ -453,32 +456,34 @@
               <div class="col-md-5 col-pad">
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Job Title<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="8" ng-model="requirement.jobTitle" alpha-num>
+
+                  <input class="form-control" type="text" tabindex="11" ng-model="requirement.jobTitle" alpha-num>
+
                 </div>
                 <div class="form-group label-floating age-text">
                   Functional Area<span class="required-field">*</span>
 
-                  <div custom-select data="functional_area" value="requirement.functionalArea" class=" age-select p-0" tabindex="23"></div>
+                  <div custom-select data="functional_area" value="requirement.functionalArea" class=" age-select p-0" ></div>
 
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Qualification<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="11" ng-model="requirement.qualification">
+                  <input class="form-control" type="text" tabindex="14" ng-model="requirement.qualification" alpha-num>
                 </div>
                 <div class="form-group space-age">
                   <label class="col-md-3 p-0 age-text" >Age Group<span class="required-field">*</span></label>
 
                   <div class="col-md-9 p-r">
-                    <div custom-select data="ageData" value="requirement.ageGroupFrom" class="col-md-6 age-select p-0" tabindex="15"></div>
-                    <div custom-select data="ageData" value="requirement.ageGroupTo" class="col-md-6 age-select p-r p-l-20" tabindex="23"></div>
+                    <div custom-select data="ageData" value="requirement.ageGroupFrom" class="col-md-6 age-select p-0" ></div>
+                    <div custom-select data="ageData" value="requirement.ageGroupTo" class="col-md-6 age-select p-r p-l-20" ></div>
                   </div>
                 </div>
                 <div class="form-group space-top">
                   <label class="col-md-3 p-0 age-text" >Experience<span class="required-field">*</span></label>
                   <div class="col-md-9 p-r">
 
-                    <div custom-select data="Experience" value="requirement.experienceFrom" class="col-md-6 age-select p-0" tabindex="23"></div>
-                    <div custom-select data="Experience" value="requirement.experienceTo" class="col-md-6 age-select p-r p-l-20" tabindex="23"></div>
+                    <div custom-select data="Experience" value="requirement.experienceFrom" class="col-md-6 age-select p-0" ></div>
+                    <div custom-select data="Experience" value="requirement.experienceTo" class="col-md-6 age-select p-r p-l-20" ></div>
 
                   </div>
                 </div>
@@ -486,8 +491,8 @@
                   <label class="col-md-3 p-0 age-text" >CTC Range<span class="required-field">*</span></label>
                   <div class="col-md-9 p-r">
 
-                    <div custom-select data="CTC" value="requirement.ctcRangeFrom" class="col-md-6 age-select p-0" tabindex=""></div>
-                    <div custom-select data="CTC" value="requirement.ctcRangeTo" class="col-md-6 age-select p-r p-l-20" tabindex=""></div>
+                    <div custom-select data="CTC" value="requirement.ctcRangeFrom" class="col-md-6 age-select p-0" ></div>
+                    <div custom-select data="CTC" value="requirement.ctcRangeTo" class="col-md-6 age-select p-r p-l-20" ></div>
 
                   </div>
                 </div>
@@ -500,27 +505,29 @@
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">No Poach Companies<span class="required-field">*</span></label>
-                  <input class="form-control col-md-2" numbers-only type="text" tabindex="15" ng-model="requirement.numberOfPoachCompanies">
+                  <input class="form-control col-md-2" numbers-only type="text" tabindex="19" ng-model="requirement.numberOfPoachCompanies" alpha-num>
                 </div>
 
               </div>
               <div class="col-md-5 col-md-offset-1">
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">No Of Positions<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="9" ng-model="requirement.numberOfPositions" numbers-only>
+
+                  <input class="form-control" type="text" tabindex="12" ng-model="requirement.numberOfPositions" numbers-only>
+
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Vacancy<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="10" ng-model="requirement.vacancy" numbers-only>
+                  <input class="form-control" type="text" tabindex="13" ng-model="requirement.vacancy" alpha-num>
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Job Location<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="12" ng-model="requirement.jobLocation" alpha-num>
+                  <input class="form-control" type="text" tabindex="15" ng-model="requirement.jobLocation" alpha-num>
                 </div>
                 <div class="form-group ">
-                  <div class="font-ind age-text">Primary Level<span class="required-field">*</span>
-
-                    <div custom-select data="primaryLevel" value="requirement.primaryLevel" class=" age-select p-0" tabindex="23"></div>
+                  <div class="font-ind age-text">Primary Skill<span class="required-field">*</span>
+                    <input class="form-control" type="text" tabindex="16" ng-model="requirement.primaryLevel" alpha-num>
+               <!--     <div custom-select data="primaryLevel" value="requirement.primaryLevel" class=" age-select p-0" ></div>-->
 
                   </div>
                 </div>
@@ -528,18 +535,18 @@
                   <label class="col-md-3 p-0  age-text" >Relevent Experience<span class="required-field">*</span></label>
                   <div class="col-md-9 p-r m-t-20">
 
-                    <div custom-select data="Experience" value="requirement.relevantExperienceFrom" class="col-md-6 age-select p-0" tabindex="23"></div>
-                    <div custom-select data="Experience" value="requirement.relevantExperienceTo" class="col-md-6 age-select p-r p-l-20" tabindex="23"></div>
+                    <div custom-select data="Experience" value="requirement.relevantExperienceFrom" class="col-md-6 age-select p-0" ></div>
+                    <div custom-select data="Experience" value="requirement.relevantExperienceTo" class="col-md-6 age-select p-r p-l-20" ></div>
 
                   </div>
                 </div><br><br>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Remarks<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="13" ng-model="requirement.remarks">
+                  <input class="form-control" type="text" tabindex="17" ng-model="requirement.remarks" alpha-num>
                 </div>
                 <div class="form-group label-floating is-empty">
                   <label class="control-label">Target Employees<span class="required-field">*</span></label>
-                  <input class="form-control" type="text" tabindex="14" ng-model="requirement.targetEmployees">
+                  <input class="form-control" type="text" tabindex="18" ng-model="requirement.targetEmployees" alpha-num>
                 </div>
               </div>
 
@@ -548,7 +555,7 @@
               <div class="col-md-10 upward">
                 <label for="textArea" class=" mrg-label ">
                   <h3>Job Description<span class="required-field">*</span></h3></label>
-                <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea"   tabindex="16" ng-model="requirement.jobDesciption"></textarea>
+                <textarea class="form-control mrg-textarea no-resize" rows="4" id="textArea"    ng-model="requirement.jobDesciption"></textarea>
               </div>
             </div>
             <div class="col-md-6 col-md-offset-4">

@@ -2,7 +2,7 @@
  * Created by revathi bandi on 5/11/2016.
  */
 var app = angular.module('com.module.empanelment')
-    .controller('empanelmentController', ['$scope', '$state', 'appConfig', '$stateParams', 'pricingModel', 'SLATrackerModel', function ($scope, $state, appConfig, $stateParams, pricingModel, SLATrackerModel) {
+    .controller('empanelmentController', ['$scope', '$state', 'appConfig', '$stateParams', 'pricingModel', 'SLATrackerModel','Upload', function ($scope, $state, appConfig, $stateParams, pricingModel, SLATrackerModel,Upload) {
         $scope.pricingModel = new pricingModel({});
         $scope.init = function ($stateParams) {
             $scope.pricingMode = appConfig.empanelment.pricingMode;
@@ -10,6 +10,7 @@ var app = angular.module('com.module.empanelment')
             $scope.OB = appConfig.empanelment.OB;
             $scope.status = appConfig.suspect.status;
             $scope.prospectStatus = appConfig.prospect.status;
+
         };
         $scope.init();
         if ($stateParams.empanelment) {
@@ -38,7 +39,7 @@ var app = angular.module('com.module.empanelment')
                 empanelment: $scope.saleObject,
                 SLATracker: $scope.SLATracker
             })
-        }
+        };
         $scope.isSLATrackerFilled = function () {
             return $scope.saleObject.SLATracker ? true : false;
         };
@@ -49,12 +50,108 @@ var app = angular.module('com.module.empanelment')
         } else {
             $scope.pricing = new pricingModel({});
         }
-        
-        $scope.submitEmpanelment = function () {
+
+        $scope.createEmpanelment = function () {
+          var obj = {};
+          var obj1 = {};
+          obj.url = $scope.uploadFiles[0].url;
+          obj.type = $scope.uploadFiles[0].documentType;
+          $scope.saleObject.documents.push(obj);
+
+          obj1.url = $scope.fileA.url;
+          obj1.type = $scope.fileA.documentType;
+          $scope.saleObject.documents.push(obj1);
             $scope.saleObject.pricing=$scope.pricing;
 
             $scope.savePromise= $scope.saleObject.update().then(function(){
                    $state.go('app.viewEmpanelment');
                  });
         };
+
+      //watch on file upload pan
+      $scope.uploadFiles=[];
+      $scope.$watch('files', function() {
+        $scope.upload($scope.files);
+      });
+      $scope.uploadPromise;
+      $scope.upload = function(files) {
+        $scope.fileNameLen = files[0].name.length-3;
+        $scope.fileFormat = files[0].name.substring($scope.fileNameLen);
+        if($scope.fileFormat=='pdf' || $scope.fileFormat=='jpg' || $scope.fileFormat=='epg') {
+          if (files && files.length) {
+            for (var i = 0; i < files.length; i++) {
+              var file = files[i];
+              if (!file.$error) {
+                $scope.uploadPromise = Upload.upload({
+                  url: appConfig.apiUrl + '/api/upload/file',
+                  data: {
+                    content: file
+                  }
+                }).then(function (resp) {
+                  file.url = resp.data.url;
+                  file.documentType = angular.copy(appConfig.possibility.documentType);
+                  $scope.uploadFiles.push(file);
+                }, null, function (evt) {
+                });
+              }
+            }
+          }
+        }
+
+        else{
+          CoreService.alertInfo('ERROR', 'Supported file formats are Docs & JPEG');
+          document.getElementById("inputText").value = "";
+        }
+      };
+
+$scope.fileA={};
+      console.log($scope.fileA);
+      $scope.uploadFileA=function(fileA){
+        $scope.uploadsPromise = Upload.upload({
+          url: appConfig.apiUrl + '/api/upload/file',
+          data: {
+            content: fileA
+          }
+        }).then(function (resp) {
+          fileA.url = resp.data.url;
+          fileA.documentType = angular.copy(appConfig.possibility.documentType);
+          $scope.fileA=fileA;
+        }, null, function (evt) {
+        });
+      };
+      //watch on file upload agreement
+  /*    $scope.uploadFile=[];
+      $scope.$watch('file1', function() {
+        $scope.uploads($scope.file1);
+      });
+      $scope.uploadsPromise;
+      $scope.uploads = function(file1) {
+        $scope.fileNameLen1 = file1[0].name.length-3;
+        $scope.fileFormat1 = file1[0].name.substring($scope.fileNameLen1);
+        if($scope.fileFormat1=='pdf' || $scope.fileFormat1=='jpg' || $scope.fileFormat1=='epg') {
+          if (file1 && file1.length) {
+
+              var _file = file1[0];
+              if (!_file.$error) {
+                $scope.uploadsPromise = Upload.uploads({
+                  url: appConfig.apiUrl + '/api/upload/file',
+                  data: {
+                    content: _file
+                  }
+                }).then(function (resp) {
+                  _file.url = resp.data.url;
+                  _file.documentType = angular.copy(appConfig.possibility.documentType);
+                  $scope.uploadFile.push(_file);
+                }, null, function (evt) {
+                });
+              }
+            }
+
+        }
+
+        else{
+          CoreService.alertInfo('ERROR', 'Supported file formats are Docs & JPEG');
+          document.getElementById("inputText2").value = "";
+        }
+      };*/
   }]);

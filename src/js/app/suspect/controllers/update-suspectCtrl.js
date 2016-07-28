@@ -85,6 +85,7 @@ angular.module('com.module.suspect')
             $state.go('app.suspect-view');
         };
 
+      //watch on file upload
         $scope.$watch('files', function () {
             $scope.upload($scope.files);
         });

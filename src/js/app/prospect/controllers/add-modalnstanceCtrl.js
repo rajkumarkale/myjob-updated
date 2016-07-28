@@ -11,6 +11,7 @@ angular.module('com.module.prospect')
         $scope.discussion = new DiscussionModel({});
         $scope.status.selectedItem='';
 
+      //watch on file upload
     $scope.uploadFiles=[];
             $scope.$watch('files', function() {
             $scope.upload($scope.files);

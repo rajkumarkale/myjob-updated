@@ -252,7 +252,7 @@
 
                     <div class="container-fluid">
                         <div class="col-md-5">
-                            <div class="form-group label-floating" ng-class="'is-empty':!pricing.creditDays">
+                            <div class="form-group label-floating" data-ng-class="{'is-empty':!pricing.creditDays}">
                                 <label class="control-label">No Of credit Days<span class="required-field">*</span></label>
                                 <input class="form-control" ng-model="pricing.creditDays" name="n1" type="text" minlength="1" maxlength="20" numbers-only required>
                             </div>
@@ -299,14 +299,15 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-lg-5 col-pad">
-                        <div class="form-group is-empty is-fileinput">
-                            <input type="file" multiple="">
+                        <div class="form-group is-empty is-fileinput hand-cursor">
+                            <input type="file" id="inputText" multiple="" class="hand-cursor"  ng-model="files" ngf-multiple="true"  ngf-select="upload($files)">
                             <div class="input-group">
-                                <input type="text" readonly="" class="form-control" placeholder="Pan Copy">
+                                <input type="text" readonly=""   class="form-control" placeholder="Pan Copy">
                                 <span class="input-group-btn input-group-sm ">
                   <button type="button" class="btn warm-status">
                   <i class="material-icons">Browse</i>
                   </button>
+                                  <div data-cg-busy="{promise:uploadPromise,message:'Please Wait'}"></div>
                 </span>
                             </div>
                             <span class="material-input control-label ">Supported file format PDF,JPEG  </span>
@@ -315,14 +316,15 @@
                     </div>
                     <div class="col-md-1"></div>
                     <div class="col-lg-5 col-pad">
-                        <div class="form-group is-empty is-fileinput">
-                            <input type="file" id="inputFile4" multiple="">
+                        <div class="form-group is-empty is-fileinput hand-cursor">
+                            <input type="file" id="inputFile4"  class="hand-cursor" multiple=""   ngf-select="uploadFileA($file1)" ng-model="file1" ngf-multiple="true">
                             <div class="input-group">
-                                <input type="text" readonly="" class="form-control" placeholder="Agreement Copy">
+                                <input type="text" readonly="" id="inputText2" class="form-control" placeholder="Agreement Copy">
                                 <span class="input-group-btn input-group-sm">
                   <button type="button" class="btn warm-status">
                   <i class="material-icons">Browse</i>
                   </button>
+                                  <div data-cg-busy="{promise:uploadsPromise,message:'Please Wait'}"></div>
                 </span>
                             </div>
                             <span class="material-input control-label">Supported file format PDF,JPEG</span>
@@ -335,7 +337,7 @@
                 <div class="form-group">
                     <a ui-sref="app.viewEmpanelment" class="auto">
                         <button class="btn btn-raised  data-button-cancel btn-text">Cancel</button>&nbsp;&nbsp;</a>
-                    <button class="btn btn-primary data-button-sub btn-text" data-ng-disabled="empanelment.$invalid || !isSLATrackerFilled()" ng-click="submitEmpanelment()">Submit</button>
+                    <button class="btn btn-primary data-button-sub btn-text" data-ng-disabled="empanelment.$invalid || !isSLATrackerFilled()" ng-click="createEmpanelment()">Submit</button>
                 </div>
             </div>
 </form>

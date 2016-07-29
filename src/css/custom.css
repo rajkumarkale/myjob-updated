@@ -2002,6 +2002,8 @@
   background-color: #15b929 !important;
 }
 .status-AOC{
+    width:12px !important;
+    height: 12px !important;
   background-color: orange!important;
 }
 

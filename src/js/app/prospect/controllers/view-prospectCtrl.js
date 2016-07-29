@@ -7,15 +7,15 @@ angular.module('com.module.prospect')
 
         $scope.sortType = 'legal_name';
         $scope.sortReverse = false;
-        $scope.prospectCsvdata =[];
-        $scope.getArray =function(){
-        return $scope.prospectCsvdata;
-  };
+        $scope.prospectCsvdata = [];
+        $scope.getArray = function () {
+            return $scope.prospectCsvdata;
+        };
 
-  $scope.getCSVHeader = function () {
-    var headerArr = ["LegalEntity","BusinessUnit","Annual Number","Annual Revenue","Exp.Closure Date","Contact Name","ContactNumber"];
-    return headerArr;
-  };
+        $scope.getCSVHeader = function () {
+            var headerArr = ["LegalEntity", "BusinessUnit", "Annual Number", "Annual Revenue", "Exp.Closure Date", "Contact Name", "ContactNumber"];
+            return headerArr;
+        };
 
 
 
@@ -115,14 +115,22 @@ angular.module('com.module.prospect')
             console.log("prospects", response);
             $scope.data.prospects = response;
             $scope.data.totalItems = response.length;
-          if($scope.data.prospects[0]){
-          for(var i=0; i<=$scope.data.prospects.length;i++){
-            var excelData = {"LegalEntity":$scope.data.prospects[i].client.legalName,
-              "Business_Unit":$scope.data.prospects[i].client.businessUnit
-            };
-            $scope.prospectCsvdata.push(excelData);
+            if ($scope.data.prospects[0]) {
+                for (var i = 0; i <= $scope.data.prospects.length; i++) {
+                    var excelData = {
+                        "LegalEntity": $scope.data.prospects[i].client.legalName,
+                        "Business_Unit": $scope.data.prospects[i].client.businessUnit,
+                        "Annual Number": $scope.data.prospects[i].client.revenue ? $scope.data.prospects[i].client.revenue : '--',
+                        "Business Potential Number": $scope.data.prospects[i].client.potentialNumbers ? $scope.data.prospects[i].client.potentialNumbers : '--',
+                        "Exp.Closure Date": $scope.data.prospects[i].estimatedClosure ? $filter('date')($scope.data.prospects[i].estimatedClosure, 'dd/MM/yyyy') : '--',
+                        "Contant Name": $scope.data.prospects[i].client.clientName ? $scope.data.prospects[i].client.clientName : '--',
+                        "Contact Number": $scope.data.prospects[i].getPrimaryContact().phone ? $scope.data.prospects[i].getPrimaryContact().phone : '--'
 
-          }}
+                    };
+                    $scope.prospectCsvdata.push(excelData);
+
+                }
+            }
         });
         $scope.openEditProspect = function (prospect) {
             $state.go('app.create-prospect', {
@@ -159,26 +167,26 @@ angular.module('com.module.prospect')
                 CoreService.toastError('', 'Satrt date should be less than End date.');
             }
         };
-  $scope.openShare = function (tpl, prospect) {
-    var tpl = tpl;
-    var modalInstance = $modal.open({
-      templateUrl: function () {
-        return 'js/app/suspect/views/' + tpl + '.html'
-      },
-      backdrop: 'static',
-      controller: 'suspectShareCtrl',
-      size: 'sm',
-      resolve: {
-        clinetId: function () {
-          return prospect._id;
-        }
-      }
-    });
-    modalInstance.result.then(function (response) {
-      $state.reload('app.suspect-view');
-    });
-  };
-       
+        $scope.openShare = function (tpl, prospect) {
+            var tpl = tpl;
+            var modalInstance = $modal.open({
+                templateUrl: function () {
+                    return 'js/app/suspect/views/' + tpl + '.html'
+                },
+                backdrop: 'static',
+                controller: 'suspectShareCtrl',
+                size: 'sm',
+                resolve: {
+                    clinetId: function () {
+                        return prospect._id;
+                    }
+                }
+            });
+            modalInstance.result.then(function (response) {
+                $state.reload('app.suspect-view');
+            });
+        };
+
         $scope.checkSelect = {};
         $scope.showShare = function (suspect) {
             var show = false;

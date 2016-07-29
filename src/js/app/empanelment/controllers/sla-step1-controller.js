@@ -20,16 +20,9 @@ angular.module('com.module.empanelment')
             })
         };
 
-        $scope.submitSLA = function () {
-            /*$scope.SLATracker.agreementAndImportantDates.agreementEndDate = $scope.SLATracker.agreementAndImportantDates.agreementEndDate.getTime();
-            $scope.SLATracker.agreementAndImportantDates.agreementStartDate = $scope.SLATracker.agreementAndImportantDates.agreementStartDate.getTime();
-            $scope.SLATracker.agreementAndImportantDates.invoiceSubmissionDate = $scope.SLATracker.agreementAndImportantDates.invoiceSubmissionDate.getTime();
-            $scope.SLATracker.agreementAndImportantDates.payoutDate = $scope.SLATracker.agreementAndImportantDates.payoutDate.getTime();
-
-            $scope.SLATracker.agreementAndImportantDates.payrollInputUploadDate = $scope.SLATracker.agreementAndImportantDates.payrollInputUploadDate.getTime();*/
+        $scope.submitSLA = function () { 
             $scope.saleObject.SLATracker = $scope.SLATracker;
-
-            $scope.savePromise = $scope.saleObject.update().then(function () {
+            $scope.myPromise = $scope.saleObject.update().then(function () {
                 $state.go('app.viewEmpanelment');
             });
         };

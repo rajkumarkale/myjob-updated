@@ -21,6 +21,7 @@ angular.module('com.module.prospect')
         };
         $scope.closureDate='';
         $scope.requirement = new RequirementModel({});
+        
         $scope.submit = function () {
             $scope.myPromise = $scope.saleObject.update().then(function () {
                 $state.go('app.viewProspect');

@@ -111,7 +111,7 @@
 </div>-->
 
 
-<div class="container col-md-12 up-mrg" ng-class="{'app-container-blur':!isEditable}">
+<div class="container col-md-12 up-mrg" ng-class="{'app-container-blur':isEditable}">
   <form name="updateSuspectForm" novalidate>
     <div class="panel panel-default second-panel up-margin ">
 
@@ -258,9 +258,9 @@
                 <div class="col-md-6 col-md-offset-5" data-cg-busy="{promise:submitPromise,message:'Please Wait'}">
                     <div class="form-group">
                         <a ui-sref="app.suspect-view">
-                            <button data-ng-show="editForm()" class="btn btn-primary data-button-cancel btn-text hand-curser">Cancel</button>
+                            <button data-ng-show="!editForm()" class="btn btn-primary data-button-cancel btn-text hand-curser">Cancel</button>
                         </a>
-                        <button data-ng-show="editForm()" class="btn btn-primary data-button btn-text" data-ng-disabled="!isValid(updateSuspectForm.$valid)" data-ng-click="submit()">Submit</button>
+                        <button data-ng-show="!editForm()" class="btn btn-primary data-button btn-text" data-ng-disabled="!isValid(updateSuspectForm.$valid)" data-ng-click="submit()">Submit</button>
                     </div>
                 </div>
             </div>

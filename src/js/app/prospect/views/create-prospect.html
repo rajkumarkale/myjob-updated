@@ -198,7 +198,7 @@
         </div>
 
          <br>
-        <div class=" col-md-offset-5 ">
+        <div class=" col-md-offset-5 " data-cg-busy="{promise:myPromise,message:'Please Wait'}">
           <a ui-sref="app.viewProspect" class="auto">
             <button class="btn btn-raised  data-button-cancel btn-text" ng-click="cancel()">Cancel</button>&nbsp;&nbsp;</a>
           <button class="btn btn-primary data-button-sub btn-text"  ng-class="{'app-container-blur':blurLost}" ng-click="submit()">Submit</button>
@@ -351,7 +351,7 @@
             <input class="form-control" type="text"   ng-model="saleObject.minimumRequirements" numbers-only>
           </div>
         </div>
-        <div class=" col-md-offset-5">
+        <div class=" col-md-offset-5" data-cg-busy="{promise:myPromise,message:'Please Wait'}">
           <!--<a ui-sref="app.viewProspect" class="auto">
             <button class="btn btn-raised  data-button-cancel btn-text" ng-click="cancel()">Cancel</button>&nbsp;&nbsp;</a>-->
           <button class="btn btn-primary data-button-sub btn-text" ng-click="submitAOC()">Submit</button>
@@ -558,7 +558,7 @@
                 <textarea class="form-control mrg-textarea no-resize" rows="4" id="textArea"    ng-model="requirement.jobDesciption"></textarea>
               </div>
             </div>
-            <div class="col-md-6 col-md-offset-4">
+            <div class="col-md-6 col-md-offset-4" data-cg-busy="{promise:myPromise,message:'Please Wait'}">
               <div class="form-group ">
                 <a ui-sref="app.create-prospect" >
                   <button class="btn btn-primary data-button-cancel btn-text"  >Cancel</button>

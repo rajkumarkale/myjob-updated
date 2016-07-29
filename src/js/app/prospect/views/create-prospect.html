@@ -1,5 +1,5 @@
 
-<div class="container col-md-12 up-margin" data-cg-busy="{promise:myPromise,message:'Loading Prospects'}">
+<div class="container col-md-12 up-margin">
   <accordion class="plus possibility-head" >
     <accordion-group is-open="status.open">
       <accordion-heading>
@@ -147,7 +147,7 @@
     <div class="panel-heading">
       Business Opportunities
     </div>
-    <div class="panel-body">
+    <div class="panel-body" data-cg-busy="{promise:myPromise,message:'Please Wait'}">
 
       <div class="form-group pull-right" ng-class="{'app-container-blur':blurLost}">
         <div class="status-pro">
@@ -198,7 +198,7 @@
         </div>
 
          <br>
-        <div class=" col-md-offset-5 " data-cg-busy="{promise:myPromise,message:'Please Wait'}">
+        <div class=" col-md-offset-5 " >
           <a ui-sref="app.viewProspect" class="auto">
             <button class="btn btn-raised  data-button-cancel btn-text" ng-click="cancel()">Cancel</button>&nbsp;&nbsp;</a>
           <button class="btn btn-primary data-button-sub btn-text"  ng-class="{'app-container-blur':blurLost}" ng-click="submit()">Submit</button>

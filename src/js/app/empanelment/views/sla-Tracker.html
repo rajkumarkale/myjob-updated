@@ -239,7 +239,7 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating present">
+            <div class="form-group label-floating present" ng-class="{'is-empty':!SLATracker.agreementAndImportantDates.payrollInputUploadDate}">
               <label class="control-label">Payroll Input upload Date<span class="required-field">*</span></label>
               <input class="form-control"  ng-model="SLATracker.agreementAndImportantDates.payrollInputUploadDate" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
                      show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>

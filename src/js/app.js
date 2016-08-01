@@ -3,7 +3,6 @@ angular.module('app', [
   'ngAnimate',
   'ngCookies',
   'ngSanitize',
-  'ngTouch',
   'ui.router',
   'ui.bootstrap',
   'ui.utils',
@@ -25,7 +24,8 @@ angular.module('app', [
   'toaster',
   'nvd3',
   'highcharts-ng',
-  'ui.select'
+  'ui.select',
+  'ngMaterial'
 
 ]).config(function (datepickerConfig) {
       datepickerConfig.showWeeks = false;

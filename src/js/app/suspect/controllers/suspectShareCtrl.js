@@ -2,7 +2,7 @@
  * Created by rkale on 6/28/2016.
  */
 angular.module('com.module.suspect')
-  .controller('suspectShareCtrl',function ($scope,$modalInstance,$http,clinetId,$cookies,suspectService) {
+  .controller('suspectShareCtrl',function ($scope,$modalInstance,$http,clinetId,$cookies,saleModuleService) {
     $scope.data = '';
     $scope.uId = '';
     $scope.userId = JSON.parse($cookies.userData).userDetails._id;
@@ -23,29 +23,30 @@ angular.module('com.module.suspect')
         $scope.uId=$item._id;
     };
 
-  $scope.transfer=function () {
-      suspectService.transfer(clinetId,$scope.uId).then(function(response){
+  $scope.saleTransfer=function () {
+      saleModuleService.transfer(clinetId,$scope.uId).then(function(response){
           console.log(response);
           $modalInstance.close(response);
       });
     };
     $scope.prev={
-        name:'edit'
+        name:'EDIT'
     };
-    $scope.share=function () {
-        if($scope.prev.name==='edit'){
-        $scope.privilage='edit';
+    $scope.saleShare=function () {
+        if($scope.prev.name==='EDIT'){
+        $scope.privilage='EDIT';
     }else{
-        $scope.privilage='view';
+        $scope.privilage='VIEW';
     }
-        $scope.data={access_type :$scope.privilage,userIds:[{userId:$scope.uId}]}
-      suspectService.share($scope.data,clinetId).then(function(response){
+
+       /* $scope.data={access_type :$scope.privilage,userIds:[{userId:$scope.uId}]}*/
+      saleModuleService.share(clinetId,$scope.uId,$scope.privilage).then(function(response){
           console.log(response);
           $modalInstance.close(response);
       });
     };
     $scope.cancel=function () {
       $modalInstance.dismiss();
-    }
+    };
 
   });

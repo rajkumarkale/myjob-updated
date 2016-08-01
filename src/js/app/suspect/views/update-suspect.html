@@ -10,84 +10,105 @@
                         <div class="col-md-6 form-custom-padding">
                             <div class="form-group label-floating">
                                 <label class="control-label">Legal Entity</label>
-                                <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text">
+                                <input class="form-control" required data-ng-model="saleObject.client.legalName" type="text">
                             </div>
                             <div>
                                 <label class="control-label">Bussiness Vertical</label>
 
-                                <input class="form-control" data-ng-model="createPossibility.vertical" type="text">
+                                <div custom-select data="businessVertical" value="saleObject.client.vertical"></div>
                             </div>
                             <div>
                                 <label class="control-label">Employee Size of the Company</label>
-                                <input class="form-control" required data-ng-model="createPossibility.employee_size" type="text">
+                                <div custom-select data="employeeSize" value="saleObject.client.employeeSize" tabindex="5"></div>
                             </div>
                             <div class="form-group label-floating ">
-                                <label class="control-label">Address Line 1</label>
-                                <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 " type="text">
+                                <label class="control-label">Address 1</label>
+                                <input class="form-control" required data-ng-model="saleObject.client.address.address1" type="text">
                             </div>
                             <div class="form-group label-floating ">
                                 <label class="control-label">City</label>
-                                <input class="form-control" required data-ng-model="createPossibility.address.city " type="text">
+                                <input class="form-control" required data-ng-model="saleObject.client.address.city " type="text">
                             </div>
                             <div class="form-group label-floating ">
                                 <label class="control-label">Zipcode</label>
-                                <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text">
+                                <input class="form-control" required numbers-only maxlength="6" data-ng-model="saleObject.client.address.pin" type="text">
                             </div>
                             <div class="label-floating ">
                                 <label class="control-label">Country</label>
-                                <input class="form-control" required data-ng-model="createPossibility.address.country" type="text">
+                                <input class="form-control" required data-ng-model="saleObject.client.address.country" type="text">
                             </div>
                             <div class="up-margin">
-                                <ul>
-                                    <li ng-repeat="f in createPossibility.possibility_documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-                                        <img ng-src="{{f.url}}" class="thumb"></li>
-                                </ul>
                             </div>
                         </div>
                         <div class="col-md-6 form-custom-padding">
                             <div class="form-group label-floating ">
                                 <label class="control-label">Business Unit</label>
-                                <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text">
+                                <input class="form-control" required data-ng-model="saleObject.client.businessUnit" type="text">
                             </div>
                             <div class="form-group label-floating ">
                                 <label class="control-label">Website URL</label>
-                                <input class="form-control" required data-ng-model="createPossibility.url" type="text">
+                                <input class="form-control" required data-ng-model="saleObject.client.website" type="text">
                             </div>
                             <div>
                                 <label class="control-label">Group Turnover</label>
-                                <input class="form-control" data-ng-model="createPossibility.turnover" required type="text">
+                                <!--<input class="form-control" data-ng-model="createPossibility.client.turnover" required type="text">-->
+                                <div custom-select data="groupTurnover" value="saleObject.client.turnover">
+                                        </div>
                             </div>
                             <div>
                                 <label class="control-label">Type of Customer</label>
-                                <input class="form-control" data-ng-model="createPossibility.customer_type" type="text">
+                                <!--<input class="form-control" data-ng-model="createPossibility.client.customerType" type="text">-->
+                                <div custom-select data="customerType" value="saleObject.client.customerType">
+                                        </div>
                             </div>
                             <div class="form-group label-floating ">
-                                <label class="control-label">Address Line 2</label>
-                                <input class="form-control" data-ng-model="createPossibility.address.address_line_2" type="text">
+                                <label class="control-label">Address 2</label>
+                                <input class="form-control" data-ng-model="saleObject.client.address.address2" type="text">
                             </div>
                             <div class="form-group label-floating">
                                 <label class="control-label">State</label>
-                                <input class="form-control" required data-ng-model="createPossibility.address.state" type="text">
+                                <input class="form-control" required data-ng-model="saleObject.client.address.state" type="text">
                             </div>
                             <br>
                             <div>
                                 <label class="control-label">Status</label>
-                                <input class="form-control" required data-ng-model="met_status" type="text">
+                                <input class="form-control" required data-ng-model="saleObject.possibility" type="text">
                             </div>
                             <!--<div class="form-group1 pull-right ">
                                 <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
                                 <label class=" first-class2 ">Freeze</label>
                             </div>-->
                         </div>
+
                     </div>
+                <!--  <ul>
+                    <div ng-repeat="f in saleObject.documents" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
+                      <div class="preview-div">
+                        <div class="col-md-2">
+                          <div class="previews">
+                            <span tooltip="{{f.name}}">{{f.url | nameFilter}}</span>
+
+                          </div>
+                          <div class="form-group">
+                            <input class="no-border" type="text" ng-model="f.type">
+                          </div>
+                        </div>
+                        <div class="preview-select">
+
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </ul>-->
                 </div>
             </form>
         </accordion-group>
     </accordion>
 </div>
-<div class="text-right m-t-sm m-r-xs">
-    <button class="btn btn-primary edit-button mrg-edit" data-ng-click="editForm()"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
-</div>
+<!--<div class="text-right m-t-sm m-r-xs">
+    <button class="btn btn-primary edit-button mrg-edit" data-ng-show="editForm()"><i class="fa fa-pencil pencilicon-mrg"></i> Edit</button>
+</div>-->
 
 
 <div class="container col-md-12 up-mrg" ng-class="{'app-container-blur':!isEditable}">
@@ -95,26 +116,27 @@
     <div class="panel panel-default second-panel up-margin ">
 
             <div class="panel-title  panel-heading ">
-                Contact Details
+                {{suspectTitle}}
             </div>
             <div class="panel-body  ">
                 <div class="form-group pull-right mrg-suspect mrg-top-apply">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Status</label>
-                            <div custom-select data="status" class="select-suspect"></div>
-                            <!--<div id="grad1-status"></div>-->
+                            <div custom-select data="status" value="saleObject.suspect" class="select-suspect"></div>
                         </div>
                     </div>
                 </div>
                 <hr class="line1">
                 <div>
-                    <div class="row col-md-12 ">
+                    <div class="row col-md-12 " ng-repeat="poc in saleObject.pointOfContacts">
+                      <span class=" hand-cursor cross-contact" ng-click="removeContact($index)">
+                          </span>
                         <accordion close-others='opening' class="plus">
-                            <accordion-group is-open="poc.isOpen" ng-repeat="poc in point_of_contacts">
+                            <accordion-group is-open="true" >
                                 <accordion-heading>
                                     <span class="color-black buss-font">
-          {{$index+1}}) {{poc.support_area.selectedItem.displayText}} {{poc.contact_type.selectedItem.displayText}} Contact Person Details
+          {{$index+1}}) {{poc.supportArea.selectedItem.displayText}} {{poc.contactType.selectedItem.displayText}} Contact Person Details
           <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-chevron-down': poc.isOpen, 'glyphicon glyphicon-chevron-right': !poc.isOpen}">
             </i>
             </span>
@@ -124,7 +146,8 @@
                                         <div class="col-md-6 col-pad">
                                             <div class=" form-group label-floating is-empty">
                                                 <label class="control-label"> Name</label>
-                                                <input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)" required tabindex="1" alphabets-only>
+                                                <!--<input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)" required tabindex="1" alphabets-only>-->
+                                                <input class="form-control" ng-model="poc.name" required tabindex="1" alphabets-only>
                                                 <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
                                                 <div ng-show="noResults">
                                                     <i class="glyphicon glyphicon-remove"></i> No Results Found
@@ -136,28 +159,22 @@
                                             </div>
                                             <div class="form-group" ng-show="isEditable">
                                                 <label class="control-label">Support Area</label>
-                                                <div class="form-group" custom-select data="poc.support_area" tabindex="5">
+                                                <div class="form-group" custom-select data="supportArea" value="poc.supportArea" tabindex="5">
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="contacts">Contacts Provides</label>
-                                                <input type="checkbox" ng-model="poc.remote" class="check remote-check" tabindex="7" id="input-confidencial" ng-required="!poc.local">
-                                                <label class="remote" for="input-confidencial">Remote</label>
-                                                <input type="checkbox" ng-model="poc.local" class="check local-check" tabindex="8" id="input-confidencial1" ng-required="!poc.remote">
-                                                <label class="location" for="input-confidencial1">Local</label>
-                                            </div>
+                                            <multi-checkbox title="Support Type" options="contactOptions" value="poc.supportType"></multi-checkbox>
                                             <div class="up-margin">
 
                                                 <div class="form-group label-floating localadd-mrg">
                                                     <label class="control-label">Location</label>
-                                                    <input required data-ng-model="poc.support_location" class="form-control" type="text" tabindex="9" required alphabets-only>
+                                                    <input required data-ng-model="poc.supportLocation" class="form-control" type="text" tabindex="9" required alphabets-only>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-pad">
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label">Email ID</label>
-                                                <input class="form-control bord-remove" data-ng-model="poc.email_id" type="text" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' required tabindex="2">
+                                                <input class="form-control bord-remove" data-ng-model="poc.email" type="text" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' required tabindex="2">
                                             </div>
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label">Designation</label>
@@ -165,37 +182,19 @@
                                             </div>
                                             <div class="form-group" ng-show="isEditable">
                                                 <label class="control-label">Contact type</label>
-                                                <div class="form-group" custom-select data="poc.contact_type" tabindex="6"></div>
+                                                <div class="form-group" custom-select data="contactType" value="poc.contactType" tabindex="6"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </accordion-group>
                         </accordion>
-                      <div class=" pull-left">
-                        <a href="" class="btn btn-primary contacts-button mrgs-contact" ng-click="createNewContactList()"> <i class="fa fa-plus"></i> Contacts</a>
-                      </div>
-                    </div>
-<br><br>
 
+                    </div>
+<br><br><div class=" pull-left">
+                  <a href="" class="btn btn-primary contacts-button mrgs-contact" ng-click="createNewContactList()"> <i class="fa fa-plus"></i> Contacts</a>
+                </div>
                     <div class="row" ng-if="showRollOut">
-
-                        <!--<div class="col-md-6 form-custom-padding rollout-mrg">
-                  <h4 class="color-black">Roll out of a proposal</h4>
-                  <div class="form-group is-empty is-fileinput">
-                    <input type="file" id="inputFile4" multiple="">
-                    <div class="input-group">
-                      <input type="text" readonly="" class="form-control" placeholder="No selected file">
-                                            <span class="input-group-btn input-group-sm">
-                  <button type="button" class="btn warm-status btn-sm btn-text">
-                    <i class="fa fa-paperclip">&nbsp;&nbsp;Attach File</i>
-                  </button>
-                </span>
-                    </div>
-                    <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
-                  </div>
-                </div>-->
-
                         <div class="col-md-6 form-custom-padding rollout-mrg" ng-if="isEditable">
                           <h4 class="color-black">Roll out of a proposal</h4>
                             <div class="form-group is-empty is-fileinput">
@@ -208,31 +207,42 @@
                   </button>
                 </span>
                                 </div>
-                                <span class="material-input control-label ">Supported file format PDF,DOC,PPT.</span>
+                                <span class="material-input control-label ">Supported file format are DOC, JPEG & PNG.</span>
                             </div>
                         </div>
                         <div ng-repeat="f in uploadFiles" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
                                         <div class="preview-div">
                                             <div class="col-md-2">
                                                 <div class="previews">
-                                                    <img ng-src="{{f.url}}" class="preview-img">
+                                                   <!-- <img ng-src="{{f.url}}" class="preview-img">-->
                                                     <a class="remove" data-ng-click="removeFiles(index)"></a>
                                                     <span tooltip="{{f.name}}">{{::fileName}}</span>
                                                     <!--<p class="text-in">VOTER CARD</p>-->
 
                                                 </div>
+                                              <div class="form-group">
                                                 <label class="control-label ">Document Type</label>
-                                                <div class="preview-select" custom-select data="f.documentType">
-
+                                                <div class="preview-select" custom-select data="f.documentType" value="f.documentType">
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="up-margin" ng-if="!isEditable">
-                                <ul>
-                                    <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
-                                        <img ng-src="{{f.url}}" class="thumb"></li>
-                                </ul>
+                                      <ul >
+                                        <div ng-repeat="f in rollOutFile" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
+                                          <div class="preview-div">
+                                            <div class="col-md-2 roll-out">
+                                              <div class="previews">
+                                                <span tooltip="{{f.url | nameFilterTooltip}}">{{f.url | nameFilter}}</span>
+                                              </div>
+                                              <div class="form-group">
+                                                <input class="no-border" ng-model="f.type">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </ul>
                             </div>
                             <div class="up-margin" ng-if="!isEditable">
                                 <ul>
@@ -248,9 +258,9 @@
                 <div class="col-md-6 col-md-offset-5" data-cg-busy="{promise:submitPromise,message:'Please Wait'}">
                     <div class="form-group">
                         <a ui-sref="app.suspect-view">
-                            <button class="btn btn-primary data-button-cancel btn-text">Cancel</button>
+                            <button data-ng-show="editForm()" class="btn btn-primary data-button-cancel btn-text hand-curser">Cancel</button>
                         </a>
-                        <button class="btn btn-primary data-button btn-text" data-ng-disabled="!isValid(updateSuspectForm.$valid)" data-ng-click="submit(true)">Submit</button>
+                        <button data-ng-show="editForm()" class="btn btn-primary data-button btn-text" data-ng-disabled="!isValid(updateSuspectForm.$valid)" data-ng-click="submit()">Submit</button>
                     </div>
                 </div>
             </div>

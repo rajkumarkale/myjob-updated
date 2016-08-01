@@ -3,12 +3,13 @@
  */
 
 angular.module('com.module.prospect')
-    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, appConfig, possibilityCreateService, discussionService,$cookies,$state,Upload,CoreService,$filter,toaster) {
+    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, appConfig, possibilityCreateService, discussionService,$cookies,$state,Upload,CoreService,$filter,toaster,DiscussionModel) {
 
         $scope.status = appConfig.discussion.typeOfDiscussion;
         $scope.data = discussionService.getData();
         $scope.userId = JSON.parse($cookies.userData).userDetails._id;
-        $scope.discussion = {};
+        $scope.discussion = new DiscussionModel({});
+        $scope.status.selectedItem='';
 
     $scope.uploadFiles=[];
             $scope.$watch('files', function() {
@@ -17,7 +18,7 @@ angular.module('com.module.prospect')
             $scope.upload = function(files) {
               $scope.fileNameLen = files[0].name.length-3;
               $scope.fileFormat = files[0].name.substring($scope.fileNameLen);
-              if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx') {
+              if($scope.fileFormat=='pdf' || $scope.fileFormat=='ocx' || $scope.fileFormat=='ptx' || $scope.fileFormat=='png') {
                 if (files && files.length) {
                   for (var i = 0; i < files.length; i++) {
                     var file = files[i];
@@ -50,44 +51,26 @@ angular.module('com.module.prospect')
               }
 
               else{
-                CoreService.alertInfo('ERROR', 'please select supported file format only eg: pdf,docx,pptx');
-
+                CoreService.alertInfo('ERROR', 'Supported file formats are Docs & PNG');
                 document.getElementById("inputText").value = "";
               }
         };
 
         $scope.ok = function (discussion) {
-            console.log(discussion);
-            var reqData = {
-            text: $scope.discussion.summary,
-            mode: $scope.status.selectedItem.key,
-            client_unit_id: $scope.data.client_unit_id,
-            client_status_id: $scope.data.client_status,
-            discussed_by: $scope.userId,
-                venue:$scope.discussion.venue,
-                contact_person:discussion.name,
-                type:'FOLLOW_UP'
-
-        };
-            var time = $filter('date')($scope.discussion.time, 'HH:mm:ss');
-                var date = $filter('date')($scope.discussion.date, 'MM/dd/yyyy');
+            var time = $filter('date')($scope.time, 'HH:mm:ss');
+                var date = $filter('date')($scope.date, 'MM/dd/yyyy');
                 var dtstring = date + ' ' + time;
-                var timestamp = Math.round(new Date(dtstring).getTime() / 1000);
-            reqData.time_of_discussion=timestamp;
+                var timestamp = new Date(dtstring).getTime();
+            $scope.discussion.timeOfDiscussion=timestamp;
             if($scope.uploadFiles.length>0){
-                reqData.documents=[$scope.uploadFiles[0].url];
+                $scope.discussion.documents=[{url:$scope.uploadFiles[0].url}];
 
             }
-         $scope.discussionPromise= possibilityCreateService.createDiscussion(reqData).success(function (response) {
-                /*CoreService.toastSuccess('Disscussions?', 'Created Discussion successfully.');*/
-                //console.log(response);
-                $modalInstance.close(response);
-
-            }).error(function (err) {
-                $scope.authError = err.message;
-             $modalInstance.dismiss();
-                /*CoreService.toastSuccess('Fail?', 'Failed to Create Discussions.');*/
+          $scope.discussionPromise= $scope.discussion.create($scope.discussion,$scope.data._id).then(function (response) {
+              $modalInstance.close(response.data);
+              $state.go('app.viewDiscussions');
             });
+
         };
         $scope.cancel = function () {
             $modalInstance.dismiss();

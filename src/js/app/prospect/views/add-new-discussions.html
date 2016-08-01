@@ -8,11 +8,11 @@
           <div class="col-md-6 form-custom-padding">
             <div class="form-group label-floating is-empty">
               <label for="i1" class="control-label">Contact Person Name</label>
-              <input type="text" class="form-control" id="i1" ng-model="discussion.name" required alphabets-only tabindex="1">
+              <input type="text" class="form-control" id="i1" ng-model="discussion.contactPerson" required alphabets-only tabindex="1">
             </div>
             <div class="form-group">
               <div class="input-group col-md-9 present">
-                <input type="text"  class="form-control hand-cursor"  placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="discussion.date" tabindex="3" is-open="opened1"
+                <input type="text"  class="form-control hand-cursor"  placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="date" tabindex="3" is-open="opened1"
                        show-button-bar="false" ng-required="true" ng-click="open($event,'opened')" readonly>
                                                 <span class="input-group-addon" id="basic-addon2">
             <img src="img/calendar_icon.png" class="calendar-img " alt="" /></span>
@@ -20,11 +20,9 @@
             </div>
           <div class="form-group">
             <label class="control-label">Type of Discussion</label>
-          <div  custom-select data="status" tabindex="5"></div>
+          <div  custom-select data="status" value="discussion.mode" tabindex="5"></div>
           </div>
-
         </div>
-
           <div class="col-md-6 form-custom-padding">
             <div class="form-group label-floating is-empty">
               <label for="i7" class="control-label">Venue</label>
@@ -32,35 +30,16 @@
             </div>
             <div class="form-group">
               <div class="input-group col-md-9">
-                <input type="time" class="form-control"  placeholder="Time" ng-model="discussion.time" required tabindex="4">
-
+                <input type="time" class="form-control"  placeholder="Time" ng-model="time" required tabindex="4">
               </div>
             </div>
-            <!--<div class="form-group diss-radios-form">
-              <div class="radio radio-primary">
-                <label>
-                  <input type="radio" name="call" id="optionsRadios1" value="FRESH" checked="true" ng-model="discussion.calltype">
-                  <span class="circle" ></span>
-                  <span class="check" ></span>
-                  Fresh Call
-                </label>
-                <label>
-                  <input type="radio" value="FOLLOW_UP" name="call" ng-model="discussion.calltype">
-                  <span class="circle"></span>
-                  <span class="check"></span>
-                  Follow Up Call
-                </label>
-              </div>
-            </div>-->
           </div>
         </div>
       </div>
       <div class="row">
-
-
-          <div class="col-md-11 upward">
+     <div class="col-md-11 upward">
             <label for="textArea" class=" mrg-label"><h4>Discussion Summary</h4></label>
-            <textarea class="form-control mrg-textarea no-resize" rows="3" id="textArea" ng-model="discussion.summary" tabindex="5" required></textarea>
+            <textarea alphnum-dot class="form-control mrg-textarea no-resize" rows="3" id="textArea" ng-model="discussion.summary" tabindex="5" required></textarea>
           </div>
       </div>
        <div class="row">
@@ -75,19 +54,29 @@
                   </button>
                 </span>
              </div>
-             <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
+             <span class="material-input control-label">Supported file formats are DOC & PNG.</span>
            </div>
          </div>
+       <!--  <ul>
+           <div ng-repeat="f in uploadFiles" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
+             <div class="preview-div">
+               <div class="col-md-2">
+                 <div class="previews">
+                   <a class="remove" data-ng-click="removeFiles($index)"></a>
+                   <span tooltip="{{f.name}}">{{::fileName}}</span>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </ul>-->
        </div>
-       <div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
-       <!--<button ngf-select="upload($files)" multiple
-            accept="image/*">Select Files</button>-->
+       <div data-cg-busy="{promise:uploadPromise,message:'Please Wait'}"></div>
       <div class="centerButton" data-cg-busy="{promise:discussionPromise,message:'Please Wait'}">
         <a href="javascript:void(0)" class="btn btn-raised  data-button-cancel" ng-click="cancel()">Cancel</a>&nbsp;
         <a href="javascript:void(0)" ng-disabled='newDiscussionForm.$invalid' class="btn btn-raised  data-button-sub" ng-click="ok(discussion)" tabindex="7">Submit</a>
       </div>
-
       </div>
-  </form>
+</form>
+  </div>
 </div>
 

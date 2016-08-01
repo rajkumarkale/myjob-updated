@@ -55,7 +55,6 @@
 
 }
 .row-height{
-  background-color: white;
   height: 35px
 }
 
@@ -65,7 +64,7 @@
 }
 .add-button{
   margin-top: 3px;
-  margin-right: 5px;
+  margin-right: 4px;
 }
 .table-up-mrg{
   margin-top: -15px;
@@ -99,7 +98,7 @@
   border-radius: 3px;
 }
 .date-pick-right-mrg{
-  margin-right: -35px;
+  margin-right: -39px;
   margin-bottom: 10px;
 }
 @media (min-width: 768px) {
@@ -207,4 +206,171 @@ div > div > svg > text {visibility: hidden;}
   border-top: 1px solid #8c8b8b;
   margin-top: 105px;
   width: 100% !important;
+}
+.error-msg{
+  background-color: #f81212;
+  color: white;
+  border-radius: 3px;
+  padding: 4px;
+  font-size: 10px;}
+
+.action-distance{
+  margin-right: 15px !important;
+
+}
+
+.status-padding-symbol{
+  margin-left: 20px !important;
+}
+
+.action-padding{
+  padding-left: 45px !important;
+}
+
+.delete-color{
+color: #049ad9}
+@media (min-width: 768px){
+  .app-aside-folded .navi > ul > li > a{
+    padding: 10px 20px;
+  }
+
+}
+/*.monthtpl .btn, .input-group-btn .btn{
+
+  padding: 8px 7px;
+  margin: 2px 1px;
+  font-size: 10px;}*/
+.present .dropdown-menu table > tbody > tr > td .btn.btn-default {
+  padding: 8px 7px;
+  margin: 2px 1px;
+  font-size: 10px;
+}
+
+/*.yeartpl .btn, .input-group-btn .btn{
+  padding: 8px 5px !important;
+  margin: 4px 1px !important;
+  font-size: 12px !important;
+  }*/
+.cal-img{
+  border-top: 2px solid #DADDDF !important;
+  border-right: 2px solid #DADDDF !important;
+  border-bottom: 2px solid #DADDDF !important;
+  padding: 3px 6px ;
+}
+.input-group .input-group-addon {
+  border: 0;
+  background: white !important;
+}
+.date-bottom-mrg{
+  margin-bottom: -15px !important;
+}
+.date-rigght-mrg{
+  margin-right: -15px !important;
+}
+
+.preview-file{
+  margin-top:21px !important;
+}
+.age-select .select{min-width: 100% !important;}
+.p-0{padding: 0px;margin: -1px}
+.present .dropdown-menu table > tbody > tr > td .btn.btn-sm {color: #636363 !important;}
+.form-group .checkbox label, .form-group .radio label, .form-group  .age-text {
+  font-size: 16px !important; color:#8c8c8c;}
+.age-text{font-size: 16px !important; color:#8c8c8c;}
+.space-age{margin-top: 40px}
+.space-top{margin-top: 74px}
+.font-ind{font-size: 16px}
+
+.m-r .select{margin-right: -21px !important;}
+.p-bottom{padding-bottom: 33px;}
+.client-req{font-size: 19px;
+  color: #049ad9;
+  margin-left: 30px;}
+.p-r {padding-right: 0px !important;}
+.p-l-20{padding-left: 20px;}
+.m-t-20{margin-top: 20px}
+
+.roll-out{
+  margin-top: 50px;
+  margin-left: -109px;
+}
+.tooltipp {
+  position: relative;
+  display: inline-block;
+}
+.tooltipp .tooltiptextt {
+  visibility: hidden;
+  width: 80px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 3px 2px 3px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+font-size: 11px !important;
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+.tooltipp:hover .tooltiptextt {
+  visibility: visible;
+  opacity: 1;
+}
+.excel{width: 47px;
+  padding: 4px;
+  text-transform: none;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-right: 10px;}
+.excel_pos{    width: 47px;
+  padding: 4px;
+  text-transform: none;
+  font-size: 14px;
+  margin-top: 4px;
+  }
+.select-scroll{
+  overflow-y: auto !important;
+  max-height: 180px !important;
+  width: 100% !important;}
+.cal-align{
+  margin-left: 446px !important;
+  margin-top: -58px;
+  width: 20px;
+  height: 20px;
+}
+.req-plus{  height: 40px;
+  margin-bottom: 12px;
+  background-color: #f3f3f3;}
+.req-line{border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 31px;}
+.re-accordian{ margin-top: 23px;}
+.add-req{color: #5c5d5b;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0px;}
+.status-pro{margin-top: -71px;
+  width: 198px;}
+.excel-row{height: 38px;
+  background-color: white;
+  margin-bottom: 9px;
+  margin-top: 10px;}
+.excel-emp{width: 47px;
+  padding: 4px;
+  text-transform: none;
+  font-size: 14px;
+  margin-top: 0px;
+  margin-left: 1058px;}
+.gap{margin-bottom: 7px;}
+.gap-suspect{margin-bottom: -9px;}
+.gap-prospect{margin-bottom: -27px;}
+.all-pro{margin-top: -8px;}
+.c-details{
+  margin-top:85px;
+}
+.c-details2{
+  margin-top:-15px
 }

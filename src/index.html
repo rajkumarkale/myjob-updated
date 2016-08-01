@@ -22,8 +22,6 @@
   <link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.css" />
   <link rel="stylesheet" href="bower_components/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.css" />
   <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
-  <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css" />
-  <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
   <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css" />
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
   <!-- endbower -->
@@ -109,9 +107,6 @@
 <script src="bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
 <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
-<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-<script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
-<script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
 <script src="bower_components/d3/d3.js"></script>
 <script src="bower_components/nvd3/build/nv.d3.js"></script>
 <script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
@@ -122,6 +117,7 @@
 <script src="bower_components/angular-aria/angular-aria.js"></script>
 <script src="bower_components/angular-messages/angular-messages.js"></script>
 <script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/ng-csv/build/ng-csv.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -129,7 +125,6 @@
 <script src="vendor/angular/angular-translate/loader-static-files.js"></script>
 <script src="vendor/angular/angular-translate/storage-cookie.js"></script>
 <script src="vendor/angular/angular-translate/storage-local.js"></script>
-<script src="vendor/jquery/bootstrap-material-init.js"></script>
 <script src="vendor/libs/html2canvas.js"></script>
 <script src="vendor/angular/angular-colorpicker/angular-bootstrap-colorpicker.js"></script>
 <script src="vendor/angular/angular-messages/angular-messages.js"></script>
@@ -152,7 +147,6 @@
 <script src="js/app/suspect/app-suspect.js"></script>
 <script src="js/app/suspect/config/config.js"></script>
 <script src="js/app/suspect/config/router.js"></script>
-<script src="js/app/suspect/services/suspectService.js"></script>
 <script src="js/app/suspect/controllers/add-contactCtrl.js"></script>
 
 <script src="js/app/possibility/app-possibility.js"></script>
@@ -161,7 +155,15 @@
 <script src="js/app/possibility/controllers/possibility-list.js"></script>
 <script src="js/app/possibility/controllers/create-possibility.js"></script>
 <script src="js/app/possibility/controllers/create-client-model-controller.js"></script>
-<script src="js/app/possibility/controllers/edit-possibility.js"></script>
+<script src="js/app/possibility/services/sale-factory.js"></script>
+<script src="js/app/possibility/services/models/Client.js"></script>
+<script src="js/app/possibility/directives/multi-checkbox.js"></script>
+<script src="js/app/possibility/services/models/Requirement.js"></script>
+<script src="js/app/possibility/services/models/sla-tracker.js"></script>
+<script src="js/app/possibility/services/models/pricing-model.js"></script>
+<script src="js/app/possibility/services/models/PointOfContact.js"></script>
+<script src="js/app/possibility/services/models/Discussion.js"></script>
+<script src="js/app/possibility/services/models/Sale.js"></script>
 <script src="js/app/possibility/services/possibility-list-service.js"></script>
 <script src="js/app/possibility/services/factory.js"></script>
 <script src="js/app/possibility/directives/custom-select-directive.js"></script>
@@ -170,11 +172,13 @@
 <script src="js/app/possibility/directives/alphanumeric.js"></script>
 <script src="js/app/possibility/directives/alphabets-only.js"></script>
 <script src="js/app/possibility/directives/alphanumDot.js"></script>
+<script src="js/app/possibility/Filters/file-nameFilter.js"></script>
 
 <script src="js/app/empanelment/config/config.js"></script>
 <script src="js/app/empanelment/config/router.js"></script>
 <script src="js/app/empanelment/controllers/create-empanelment-controller.js"></script>
 <script src="js/app/empanelment/controllers/view-empanelmentCtrl.js"></script>
+<script src="js/app/empanelment/controllers/sla-step1-controller.js"></script>
 
 <script src="js/app/prospect/config/config.js"></script>
 <script src="js/app/prospect/config/router.js"></script>
@@ -183,6 +187,7 @@
 <script src="js/app/prospect/controllers/view-prospectCtrl.js"></script>
 <script src="js/app/prospect/controllers/view-discussion.js"></script>
 <script src="js/app/prospect/controllers/add-modalnstanceCtrl.js"></script>
+<script src="js/app/prospect/controllers/add-requirement.js"></script>
 <script src="js/app/prospect/controllers/shareCtrl.js"></script>
 <script src="js/app/prospect/services/prospectService.js"></script>
 
@@ -202,7 +207,6 @@
 <script src="js/app/user/controllers/app-controller.js"></script>
 <script src="js/app/user/controllers/change-password-controller.js"></script>
 <script src="js/app/user/controllers/support-controller.js"></script>
-<script src="js/app/user/controllers/invoices-controller.js"></script>
 <script src="js/app/user/controllers/profile-controller.js"></script>
 <script src="js/app/user/controllers/dashboard-controller.js"></script>
 <script src="js/app/user/directives/change-password.js"></script>

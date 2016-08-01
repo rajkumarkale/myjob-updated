@@ -12,12 +12,20 @@ angular.module('com.module.prospect').config(['$stateProvider', function ($state
     .state('app.create-prospect', {
       url: '/create-prospect',
       templateUrl: 'js/app/prospect/views/create-prospect.html',
-      controller:'prospectCreateController'
+      controller:'prospectCreateController',
+      params: {
+        prospect: null
+    }
     })
     .state('app.viewDiscussions', {
-      url: '/view-discussions',
+      url: '/view-discussions/:status',
       templateUrl: 'js/app/prospect/views/view-discussions.html',
       controller:'viewDiscussionCtrl'
-    });
+    })
+  /*.state('app.Requirements', {
+    url: '/view-Requirements',
+    templateUrl: 'js/app/prospect/views/add-requirement.html',
+    controller:'addRequirement'
+  })*/;
 
 }]);

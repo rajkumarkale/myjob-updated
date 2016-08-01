@@ -1,7 +1,7 @@
-<div><div class="select">
+<div><div class="select"><!--ng-click="isopen()" ng-class="{'is-open':open}"-->
   <span class="placeholder"><p class="dropdown-title" >{{dataList.selectedItem.displayText}}</p></span>
-  <ul>
-    <li ng-repeat="data in dataList.data" ng-model="(dataList.selectedItem)"  ng-click="dataList.selectedItem = data" data-value="{{data}}">{{data.displayText}}</li>
+  <ul class="select-scroll">
+    <li ng-repeat="data in dataList.data" ng-click="onChange(data)" data-value="{{data}}">{{data.displayText}}</li>
   </ul>
 </div>
 </div>

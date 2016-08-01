@@ -2,6 +2,7 @@
 <div   class="panel main-content panel-primary" >
   <div class="pheading">
     <div class="panel-heading  "><h4 class="SLA-text"><strong>SLA Tracker Internal Process(Ver 1.0)</strong></h4></div></div>
+  <form name="SLAform" id="sla" novalidate>
   <div class="panel-body ">
     <div class="container">
     <div class="row">
@@ -13,57 +14,62 @@
     </div></div>
     <div class="text-class" >All fields are mandatory</div>
     <div class="row client-text " >
-        <div class="col-md-6">TimeSheet/Atendence Related</div>
+        <div class="col-md-6">TimeSheet/Attendance Related</div>
         <div class="col-md-6">Activity Owners</div>
     </div>
 
     <div  class="col-md-12 ">
 
-      <form  name="usrform" novalidate id="usrform" class="bs-component ">
+
         <div class="container-fluid ">
           <div  class="col-md-5">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >TimeSheet/Attendence Cycle</label>
-              <input class="form-control" name="n1"  type="text" >
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.timeSheetAttendanceRelated.attendanceCycle}">
+              <label class="control-label" >TimeSheet/Attendance Cycle<span class="required-field">*</span></label>
+              <input class="form-control" name="timesheet" ng-model="SLATracker.timeSheetAttendanceRelated.attendanceCycle" type="text"
+                     ng-required="SLAform.timesheet.$error" alpha-num>
 
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >TimeSheet and Payroll</label>
-              <input class="form-control" type="text">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.activityOwner.timeSheeetAndPayroll}">
+              <label class="control-label" >TimeSheet and Payroll<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="SLATracker.activityOwner.timeSheeetAndPayroll" name="timepay "type="text"
+                     ng-required="SLAform.timepay.$error" alpha-num>
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form name="usrform" novalidate class="bs-component">
+
         <div class="container-fluid">
           <div  class="col-md-5">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Timesheet/Atendence Collection Process</label>
-              <textarea class="form-control  bord-remove" name="n3"   type="text"
-              minlength="3" maxlength="20" ng-required="usrform.n3.$error" ></textarea>
+            <div class="form-group label-floating "  ng-class="{'is-empty':!SLATracker.timeSheetAttendanceRelated.attendenceCollectionProcess}">
+              <label class="control-label" >Timesheet/Attendance Collection Process<span class="required-field">*</span></label>
+              <textarea class="form-control  bord-remove" name="collection" ng-model="SLATracker.timeSheetAttendanceRelated.attendenceCollectionProcess"   type="text"
+               ng-required="SLAform.n3.$error" alpha-num></textarea>
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Salary Payout</label>
-              <input class="form-control" name="n4"  type="text" >
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.activityOwner.salaryPayout}">
+              <label class="control-label" >Salary Payout<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="SLATracker.activityOwner.salaryPayout"  name="salary"  type="text"
+
+                     ng-required="SLAform.salary.$error" alpha-num>
+
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
@@ -71,38 +77,38 @@
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Invoice Submission & Payment Followup</label>
-              <input class="form-control" class="focusedInput1" type="text" required>
+
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.activityOwner.invoiceSubmissionAndPaymentFollowup}">
+              <label class="control-label" >Invoice submission & Payment followup<span class="required-field">*</span></label>
+              <input class="form-control"  ng-model="SLATracker.activityOwner.invoiceSubmissionAndPaymentFollowup" class="focusedInput1" type="text"
+                     ng-required="SLAform.submission.$error" alpha-num>
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >PO</label>
-              <input class="form-control" class="focusedInput1" type="text">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.activityOwner.po}">
+              <label class="control-label" >PO<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="SLATracker.activityOwner.po" class="focusedInput1" name="po" type="text"
+                     ng-required="SLAform.po.$error" alpha-num>
             </div>
           </div>
         </div>
 
-      </form>
-
     </div>
     <div class="col-md-12 ">
 
-      <form class="bs-component">
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
@@ -110,14 +116,15 @@
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Disputes & Resolutions</label>
-              <input class="form-control" type="text">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.activityOwner.disputesAndResolution}">
+              <label class="control-label" >Disputes & Resolutions<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="SLATracker.activityOwner.disputesAndResolution" type="text" name="disputes"
+                     ng-required="SLAform.disputes.$error" alpha-num>
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
   </div>
@@ -129,70 +136,74 @@
 
     <div  class="col-md-12 ">
 
-      <form  name="usrform" class="bs-component ">
+
         <div class="container-fluid ">
           <div  class="col-md-5 ">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Payroll Cycle</label>
-              <input class="form-control"  type="text">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.payrollAndInvoice.payrollCycle}">
+              <label class="control-label" >Payroll Cycle<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="SLATracker.payrollAndInvoice.payrollCycle" name="cycle" type="text"
+                     ng-required="SLAform.cycle.$error" alpha-num>
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div  class="form-group label-floating is-empty">
-              <label class="control-label" >PO Process</label>
-              <input class="form-control" type="text">
+            <div  class="form-group label-floating " ng-class="{'is-empty':!SLATracker.poAndInvoiceRelated.poProcess}">
+              <label class="control-label" >PO Process<span class="required-field">*</span></label>
+              <input class="form-control" ng-model="SLATracker.poAndInvoiceRelated.poProcess" name="process" type="text"
+                     ng-required="SLAform.process.$error" alpha-num>
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form  class="bs-component">
+
         <div class="container-fluid ">
           <div  class="col-md-5">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Leaves</label>
-              <input class="form-control" type="text" >
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.payrollAndInvoice.leaves}">
+              <label class="control-label" >Leaves<span class="required-field">*</span></label>
+              <input class="form-control" type="text" ng-model="SLATracker.payrollAndInvoice.leaves" alpha-num name="leaves" ng-required="SLAform.leaves.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Discounts</label>
-              <input class="form-control" type="text" >
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.poAndInvoiceRelated.discounts}">
+              <label class="control-label" >Discounts<span class="required-field">*</span></label>
+              <input class="form-control" alpha-num type="text" ng-model="SLATracker.poAndInvoiceRelated.discounts"name="discounts" ng-required="SLAform.discounts.$error">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Billing & Invoice Process</label>
-              <input class="form-control" class="focusedInput1" type="text" required>
+            <div class="form-group label-floating "  ng-class="{'is-empty':!SLATracker.payrollAndInvoice.billingAndInvoiceProcess}">
+              <label class="control-label" >Billing & Invoice Process<span class="required-field">*</span></label>
+              <input class="form-control" class="focusedInput1" type="text" alpha-num
+                     ng-model="SLATracker.payrollAndInvoice.billingAndInvoiceProcess" name="billing" ng-required="SLAform.billing.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Billing Office Address & Contact Number</label>
-              <input class="form-control" class="focusedInput1" type="text" required>
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.poAndInvoiceRelated.billingOfficeAddress}">
+              <label class="control-label" >Billing Office Address & Contact Number<span class="required-field">*</span></label>
+              <input class="form-control" class="focusedInput1" type="text" alpha-num
+                     ng-model="SLATracker.poAndInvoiceRelated.billingOfficeAddress" name="ofc" ng-required="SLAform.ofc.$error">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
             <div class="form-group label-floating is-empty">
@@ -200,14 +211,14 @@
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Shipping Office Address & Contact Number</label>
-              <input class="form-control" type="text">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.poAndInvoiceRelated.shippingOfficeAdress}">
+              <label class="control-label" >Shipping Office Address & Contact Number<span class="required-field">*</span></label>
+              <input class="form-control"  alpha-num type="text" ng-model="SLATracker.poAndInvoiceRelated.shippingOfficeAdress" name="shipping" ng-required="SLAform.shipping.$error" >
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     </div>
@@ -218,7 +229,7 @@
 
     </div>
     <div  class="col-md-12 ">
-      <form  name="usrform" class="bs-component ">
+
         <div class="container-fluid ">
         <div  class="col-md-5 ">
          <h3 class="text-left first-contact" >1st Point of Contact</h3>
@@ -228,92 +239,97 @@
             <h3 class="text-left first-contact second-contact" >2nd Point of Contact</h3>
             </div>
         </div>
-      </form>
+
     </div>
 
     <div  class="col-md-12 ">
 
-      <form  name="usrform" class="bs-component ">
+
         <div class="container-fluid ">
           <div  class="col-md-5 ">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Name</label>
-              <input class="form-control"  type="text">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.clientEscalationMatrix[0].name}">
+              <label class="control-label" >Name<span class="required-field">*</span></label>
+              <input class="form-control" alpha-num type="text" ng-model="SLATracker.clientEscalationMatrix[0].name" name="name1" ng-required="SLAform.name1.$error">
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Name</label>
-              <input class="form-control" type="text">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.clientEscalationMatrix[1].name}">
+              <label class="control-label" >Name<span class="required-field">*</span></label>
+              <input class="form-control" alpha-num type="text" ng-model="SLATracker.clientEscalationMatrix[1].name" name="name2" ng-required="SLAform.name2.$error">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
     <div class="col-md-12 ">
 
-      <form  class="bs-component">
+
         <div class="container-fluid ">
           <div  class="col-md-5">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Designation</label>
-              <input class="form-control" type="text" >
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.clientEscalationMatrix[0].designation}">
+              <label class="control-label" >Designation<span class="required-field">*</span></label>
+              <input class="form-control" alpha-num type="text" ng-model="SLATracker.clientEscalationMatrix[0].designation" name="designation" ng-required="SLAform.designation.$error" >
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Designation</label>
-              <input class="form-control" type="text" >
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.clientEscalationMatrix[1].designation}">
+              <label class="control-label" >Designation<span class="required-field">*</span></label>
+              <input class="form-control" type="text"
+                    alpha-num  ng-model="SLATracker.clientEscalationMatrix[1].designation" name="designation2" ng-required="SLAform.designation2.$error"/>
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
 
-    <div class="col-md-12 ">
+    <div class="col-md-12">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Contact Number</label>
-              <input class="form-control" type="text">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.clientEscalationMatrix[0].phone}">
+              <label class="control-label" >Contact Number<span class="required-field">*</span></label>
+              <input class="form-control" type="text"
+                     ng-model="SLATracker.clientEscalationMatrix[0].phone" name="num1" ng-required="SLAform.num1.$error" numbers-only minlength="10" maxlength="10">
             </div>
-          </div>  <div  class="col-md-1"></div>
+          </div>
+          <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Contact Number</label>
-              <input class="form-control" type="text">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.clientEscalationMatrix[1].phone}">
+              <label class="control-label" >Contact Number<span class="required-field">*</span></label>
+              <input class="form-control" type="text"
+                     ng-model="SLATracker.clientEscalationMatrix[1].phone" name="num2" ng-required="SLAform.num2.$error" numbers-only minlength="10" maxlength="10">
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
-    <div class="col-md-12 ">
+    <div class="col-md-12">
 
-      <form class="bs-component">
+
         <div class="container-fluid">
           <div class="col-md-5">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Email ID</label>
-              <input class="form-control" class="focusedInput1" type="email" required="required">
+            <div class="form-group label-floating " ng-class="{'is-empty':!SLATracker.clientEscalationMatrix[0].email}">
+              <label class="control-label" >Email ID<span class="required-field">*</span></label>
+              <input class="form-control focusedInput1" type="email" required="required"
+                     name="id1" ng-model="SLATracker.clientEscalationMatrix[0].email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im'>
             </div>
           </div>  <div  class="col-md-1"></div>
           <div class="col-md-5 col-pad">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label" >Email ID</label>
-              <input class="form-control" class="focusedInput1" type="email" required="required">
+            <div class="form-group label-floating" ng-class="{'is-empty':!SLATracker.clientEscalationMatrix[1].email}">
+              <label class="control-label" >Email ID<span class="required-field">*</span></label>
+              <input class="form-control focusedInput1"  type="email" name="id2" ng-model="SLATracker.clientEscalationMatrix[1].email" required="required" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im'>
             </div>
           </div>
         </div>
 
-      </form>
+
 
     </div>
 
@@ -324,9 +340,10 @@
      <button  type="button" class="btn btn-raised data-button1 btn-text ">Cancel</button>&nbsp;&nbsp;
    </a>
     <button  class="btn btn-raised   data-SLA-save btn-text">Save</button>
-    <button type="button" class="btn btn-raised  data-button3 btn-text">Submit</button>
+    <button type="button" class="btn btn-raised  data-button3 btn-text" data-ng-disabled="SLAform.$invalid" ng-click="submitSLA()">Submit</button>
 
   </div>
+  </form>
 
   </div>
 

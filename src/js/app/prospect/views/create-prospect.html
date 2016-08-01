@@ -1,5 +1,5 @@
 
-<div class="container col-md-12 up-margin" data-cg-busy="{promise:myPromise,message:'Retriving Possibilities'}">
+<div class="container col-md-12 up-margin" data-cg-busy="{promise:myPromise,message:'Loading Prospects'}">
   <accordion class="plus possibility-head" >
     <accordion-group is-open="status.open">
       <accordion-heading>
@@ -12,36 +12,36 @@
             <div class="col-md-6 form-custom-padding">
               <div class="form-group label-floating">
                 <label class="control-label">Legal Entity</label>
-                <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.legalName" type="text">
               </div>
               <div>
                 <label class="control-label">Bussiness Vertical</label>
 
-                <input class="form-control" data-ng-model="createPossibility.vertical" type="text">
+                <input class="form-control" data-ng-model="saleObject.client.vertical" type="text">
               </div>
               <div>
                 <label class="control-label">Employee Size of the Company</label>
-                <input class="form-control" required data-ng-model="createPossibility.employee_size" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.employeeSize" type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Address Line 1</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 " type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.address1 " type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">City</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.city " type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.city " type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Zipcode</label>
-                <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text">
+                <input class="form-control" required numbers-only maxlength="6" data-ng-model="saleObject.client.address.pin" type="text">
               </div>
               <div class="label-floating ">
                 <label class="control-label">Country</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.country" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.country" type="text">
               </div>
               <div class="up-margin">
                 <ul>
-                  <li ng-repeat="f in createPossibility.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
+                  <li ng-repeat="f in saleObject.client.documents" style="font:smaller">{{f.name?f.name:f.type}} {{f.$error}} {{f.$errorParam}}
                     <img ng-src="{{f.url}}" class="thumb"></li>
                 </ul>
               </div>
@@ -49,36 +49,32 @@
             <div class="col-md-6 form-custom-padding">
               <div class="form-group label-floating ">
                 <label class="control-label">Business Unit</label>
-                <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.businessUnit" type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Website URL</label>
-                <input class="form-control" required data-ng-model="createPossibility.url" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.website" type="text">
               </div>
               <div>
                 <label class="control-label">Group Turnover</label>
-                <input class="form-control" data-ng-model="createPossibility.turnover" required type="text">
+                <input class="form-control" data-ng-model="saleObject.client.turnover" required type="text">
               </div>
               <div>
                 <label class="control-label">Type of Customer</label>
-                <input class="form-control" data-ng-model="createPossibility.customer_type" type="text">
+                <input class="form-control" data-ng-model="saleObject.client.customerType" type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Address Line 2</label>
-                <input class="form-control" data-ng-model="createPossibility.address.address_line_2" type="text">
+                <input class="form-control" data-ng-model="saleObject.client.address.address2" type="text">
               </div>
               <div class="form-group label-floating">
                 <label class="control-label">State</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.state" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.state" type="text">
               </div>
               <br>
               <div data-ng-if="!isNewPossibility">
                 <label class="control-label">Status</label>
-                <input class="form-control" required data-ng-model="createPossibility.current_status.status" type="text">
-              </div>
-              <div class="form-group1 pull-right ">
-                <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
-                <label class=" first-class2 ">Freeze</label>
+                <input class="form-control" required data-ng-model="saleObject.possibility" type="text">
               </div>
             </div>
           </div>
@@ -87,118 +83,6 @@
     </accordion-group>
   </accordion>
 </div>
-
-
-<!--<div class="container col-md-12">
-  <div class="panel panel-default second-panel up-margin ">
-    <div class="panel-title  panel-heading ">
-      Client Details
-    </div>
-    <div class="panel-body  ">
-      <div class="form-group pull-right mrg-formgrp mrg-top-apply">
-        <div class="col-md-8">
-          <div class="form-group">
-            <label class="control-label">Status</label>
-            <div custom-select data="status"></div>
-            <div id="grad1-status"></div>
-          </div>
-        </div>
-      </div>
-      <hr class="line1">
-      <div class=" pull-right">
-        <a href="" class="btn btn-raised btn-info btn-md glyphicon glyphicon-plus" ng-click="createNewContactList()"> Contact</a>
-      </div>
-      <div class="row ">
-        <div class="col-lg-10 ">
-          <accordion close-others='opening' class="plus">
-            <accordion-group is-open="poc.isOpen" >
-              <accordion-heading>
-                                <span class="color-black ">
-           Contact Person Details
-          <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}">
-            </i>
-            </span>
-              </accordion-heading>
-              <div class="row" >
-                <div class="col-md-5 col-pad">
-                  <div class=" form-group label-floating is-empty">
-                    <label class="control-label">Contact Person Name</label>
-                    <input class="form-control" ng-model="poc.name" typeahead="name as name.name for name in getNames($viewValue)" type="text" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setdata($item, $model, $label,$event,$index)">
-                    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh">Processing</i>
-                    <div ng-show="noResults">
-                      <i class="glyphicon glyphicon-remove"></i> No Results Found
-                    </div>
-                  </div>
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Phone Number</label>
-                    <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
-                  </div>
-                  <div>
-                    <label class="control-label">Support Area</label>
-                    <div class="form-group" custom-select data="poc.support_area">
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-5 col-md-offset-2">
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Email ID</label>
-                    <input class="form-control bord-remove" data-ng-model="poc.email_id" type="text">
-                  </div>
-                  <div class="form-group label-floating is-empty">
-                    <label class="control-label">Designation</label>
-                    <input class="form-control bord-remove" type="text" data-ng-model="poc.designation">
-                  </div>
-                  <div>
-                    <label class="control-label">Contact type</label>
-                    <div class="form-group" custom-select data="poc.contact_type"></div>
-                  </div>
-                </div>
-              </div>
-            </accordion-group>
-          </accordion>
-        </div>
-
-        <div class="col-md-12" ng-if="showRollOut">
-          <h4 class="color-black">Roll out of a proposal</h4>
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <div ngf-drop ngf-select="upload($files,1)" ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-allow-dir="true" ngf-multiple="false" accept="image/*">Drop PDF,DOC or IMAGE here or click to upload</div>
-              <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-              <div data-cg-busy="{promise:uploadPromise,message:'Uploading Files'}"></div>
-            </div>
-            <ul>
-              <div ng-repeat="f in uploadFiles" style="font:smaller"> {{f.$error}} {{f.$errorParam}}
-                &lt;!&ndash;<img ng-src="{{f.url}}" class="thumb">&ndash;&gt;
-                <div class="preview-div">
-                  <div class="col-md-2">
-                    <div class="previews">
-                      <img ng-src="{{f.url}}" class="preview-img">
-                      <a class="remove" data-ng-click="removeFiles($index)"></a>
-                      <span style="word-wrap: break-word;" tooltip="{{f.name}}">{{fileName}}</span>
-                      &lt;!&ndash;<p class="text-in">VOTER CARD</p>&ndash;&gt;
-                    </div>
-                    <div class="preview-select" custom-select data="f.documentType">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div data-cg-busy="{promise:submitPromise,message:'Updating'}"></div>
-      <div class="col-md-6 col-md-offset-5">
-        <div class="form-group">
-          <a ui-sref="app.suspect-view">
-            <button class="btn btn-primary data-button">Cancel</button>
-          </a>
-          <button class="btn btn-primary data-button" data-ng-click="submit(true)">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>-->
 <div class="container col-md-12 mrg-down ">
   <accordion class="plus possibility-head">
     <accordion-group is-open="poc.isOpen" >
@@ -210,137 +94,122 @@
         <div class="col-md-8">
           <div class="form-group ">
             <label class="control-label">Status</label>
-            <div   custom-select data="status" class="select-suspect"></div>
+            <div   custom-select data="suspectStatus" value="saleObject.suspect" class="select-suspect"></div>
 
           </div>
         </div>
       </div>
-      <hr class="line1">
+      <hr class="line1 ">
       <div class="row ">
 
-        <div class="col-lg-10 ">
-          <accordion  >
-            <accordion-group is-open="poc.isOpening" >
-              <accordion-heading >
-          <span >
+        <div class="col-lg-12 ">
+          <accordion class="prospect-ac" ng-repeat="poc in saleObject.pointOfContacts">
+            <accordion-group is-open="true" >
+              <accordion-heading  >
+          <span class="color-black " style="font-weight: normal">
            Contact Person Details
-          <i class="pull-right glyphicon" ng-class="{' glyphicon-minus': poc.isOpening, ' glyphicon-plus': !poc.isOpening}">
+          <i class="pull-right glyphicon" ng-class="{' glyphicon glyphicon-chevron-down': poc.isOpening, ' glyphicon glyphicon-chevron-right': !poc.isOpening}">
             </i>
             </span>
               </accordion-heading>
               <div class="row app-container-blur">
-                <div class="col-md-5 col-pad">
-                  <div class=" form-group label-floating is-empty">
+                <div class="col-md-6 col-pad">
+                  <div class=" form-group label-floating">
                     <label class="control-label">Name</label>
                     <input class="form-control bord-remove" data-ng-model="poc.name" type="text">
                   </div>
-                  <div class="form-group label-floating is-empty">
+                  <div class="form-group label-floating">
                     <label class="control-label">Phone Number</label>
                     <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
                   </div>
 
 
                 </div>
-                <div class="col-md-5 col-md-offset-2">
-                  <div class="form-group label-floating is-empty">
+                <div class="col-md-5 ">
+                  <div class="form-group label-floating">
                     <label class="control-label">Address</label>
-                    <input class="form-control bord-remove" data-ng-model="poc.support_location" type="text">
+                    <input class="form-control bord-remove" data-ng-model="poc.supportLocation" type="text">
                   </div>
-                  <div class="form-group">
-                    <input class="form-control bord-remove" type="text" data-ng-model="poc.designation" placeholder="Contact Person Designation">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Contact Person Designation</label>
+                    <input class="form-control bord-remove" type="text" data-ng-model="poc.designation" >
                   </div>
                 </div>
               </div>
             </accordion-group>
           </accordion>
         </div>
-       <!-- <div class="col-md-6">
-          <h4 class="color-black">Roll out of a proposal</h4>
-          <div class="form-group is-empty is-fileinput">
-            <input type="file" id="inputFile4" multiple="">
-            <div class="input-group">
-              <input type="text" readonly="" class="form-control" placeholder="No selected file">
-                <span class="input-group-btn input-group-sm">
-                  <button type="button" class="btn warm-status btn-sm glyphicon glyphicon-paperclip">
-                  <i class="material-icons">attach file</i>
-                  </button>
-                </span>
-            </div>
-            <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
-          </div>
-        </div>-->
       </div>
 </div>
-<div class="container col-md-12 mrg-down">
-  <div class="panel panel-default second-panel ">
+<div class="container col-md-12 mrg-down" >
+  <div class="panel panel-default second-panel "  >
+    <form></form>
     <div class="panel-heading">
       Business Opportunities
     </div>
     <div class="panel-body">
-      <div class="form-group pull-right">
-        <div class="col-md-8">
-          <div class="form-group mrg-formgrp">
-            <label class="control-label">Status</label>
-            <div   custom-select data="status_prospect" class="status-prospect"></div>
 
+      <div class="form-group pull-right" ng-class="{'app-container-blur':blurLost}">
+        <div class="status-pro">
+          <div class="form-group ">
+            <label class="control-label ">Status</label>
+            <div   custom-select data="prospectStatus" value="saleObject.prospect" class="status-prospect"></div>
           </div>
-
         </div>
       </div>
       <hr class="line1">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" ng-class="{'app-container-blur':blurLost}">
           <div class="col-md-6 form-custom-padding">
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.client.clientName}">
               <label class="control-label">Client Name</label>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" tabindex="1" ng-model="saleObject.client.clientName" alpha-num>
             </div>
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.client.potentialNumbers}">
               <label class="control-label">Business Potential Numbers</label>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" tabindex="3" ng-model="saleObject.client.potentialNumbers" numbers-only>
             </div>
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating">
               <label class="control-label">Annual Business Bottomline</label>
-              <input class="form-control" type="text">
-            </div>
-            <div class="form-group businessprospect-mrg">
-              <input custom-select data="values" placeholder="Business Vertical" />
+              <!--<input class="form-control" type="text" ng-model="saleObject.client.turnover">-->
+              <div   custom-select data="turnover" value="saleObject.client.turnover" tabindex="5" class="status-prospect" ></div>
+
             </div>
           </div>
           <div class="col-md-6 form-custom-padding">
-            <div class="form-group label-floating is-empty">
-              <label class="control-label">Legal Entity</label>
-              <input class="form-control" type="text">
-            </div>
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.client.revenue}">
               <label class="control-label">Annual Business Topline</label>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" tabindex="2" ng-model="saleObject.client.revenue" alphnum-dot>
             </div>
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating present" >
               <label class="control-label">Expected Date of Closure</label>
-              <input class="form-control" type="text">
+
+              <input class="form-control"  ng-model="saleObject.estimatedClosure" aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy"  is-open="opened3"
+
+                     show-button-bar="false" ng-required="true" style="padding-left: 6px" ng-click="open($event,'opened3')" readonly>
+              <span class="hand-cursor" id="basic-addon2">
+            <img src="img/calendar_icon.png" class="cal-align " ng-click="open($event,'opened3')" alt="" /></span>
             </div>
-            <div class="form-group label-floating is-empty">
+            <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.reasonOfLoss}" ng-show="saleObject.prospect==='LOST'">
               <label class="control-label">Reason of Loss</label>
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" ng-model="saleObject.reasonOfLoss" tabindex="4" alphabets-only>
             </div>
-
-
-          </div>
+     </div>
         </div>
+
          <br>
-        <div class=" col-md-offset-5" ng-hide="displayagreement">
+        <div class=" col-md-offset-5 ">
           <a ui-sref="app.viewProspect" class="auto">
-            <button class="btn btn-raised  data-button-cancel btn-text">Cancel</button>&nbsp;&nbsp;</a>
-          <button class="btn btn-primary data-button-sub btn-text">Submit</button>
+            <button class="btn btn-raised  data-button-cancel btn-text" ng-click="cancel()">Cancel</button>&nbsp;&nbsp;</a>
+          <button class="btn btn-primary data-button-sub btn-text"  ng-class="{'app-container-blur':blurLost}" ng-click="submit()">Submit</button>
         </div>
       </div>
 
     </div>
   </div>
-  <div class="panel panel-default second-panel panelmrgs-prospect"  ng-if="displayagreement">
+  <div class="panel panel-default second-panel panelmrgs-prospect"  ng-show="saleObject.prospect==='AGREEMENT_ON_CLOSURE'">
    <div class="panel-heading">
-     {{title}}
+     Agreement on Closure
    </div>
     <div class="panel-body">
       <div>
@@ -348,25 +217,28 @@
           <div class="pull-right overall-pad date-pick-right-mrg">
             <form  name="form" class="form-inline" novalidate>
               <div class="present">
-                <input type="text" class="form-control bord-given" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt1" is-open="opened1"
-                       show-button-bar="false" ng-required="true">
-                <div class="calendar-reset"><img src="img/calendar_icon.png" ng-click="open($event,'opened1')" alt=""/></div>
-              </div>
-              <div class="second-dateinput present">
-                <label  class="labels-dates poss-mrg">To</label>
-                <input type="text" class="form-control bord-given" aria-describedby="basic-addon1" datepicker-popup="dd-MMMM-yyyy" ng-model="dt2" is-open="opened2"
-                       show-button-bar="false" ng-required="true">
-                <div class="secondcalendar-reset"><img src="img/calendar_icon.png" ng-click="open($event,'opened2')" alt=""/></div>
-              </div>
+                <div class="input-group col-md-4" style="margin-right: 10px">
 
-              <button class="btn btn-primary btn-raised filter mrg-top refactor">Submit</button>
+                  <input type="text" class="form-control bord-given " aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="start" is-open="opened1"
+                         show-button-bar="false" ng-required="true" style="padding-left: 6px">
+                  <span class="input-group-addon cal-img hand-cursor" ng-click="open($event,'opened1')"><img src="img/calendar_icon.png" alt=""  /></span>
+                </div>
+                <div class="input-group col-md-4" style="margin-right: 6px">
+
+                  <input type="text" class="form-control bord-given " aria-describedby="basic-addon1"  datepicker-popup="dd-MMMM-yyyy" ng-model="end" is-open="opened2"
+                         show-button-bar="false" ng-required="true" style="padding-left: 6px">
+                  <span class="input-group-addon cal-img hand-cursor" ng-click="open($event,'opened2')"><img src="img/calendar_icon.png" alt=""  /></span>
+                </div>
+
+                <button class="btn btn-primary btn-raised filter" ng-click="getRequiremetsByRange()">Go</button>
+              </div>
             </form>
           </div>
         </div>
       </div>
       <div class="panel panel-default second-panel ">
         <div class="panel-heading">
-          Summary in the month of Jan 2016 to May 2016
+          Summary for the month of {{sumStartDate | date:'MMMM yyyy '}}{{sumEndDate}}
         </div>
         <div class="panel-body">
           <div class="col-md-3">
@@ -385,7 +257,7 @@
                 NO OF POSITIONS
               </div>
               <div class="panel-body numbers-data">
-                000
+                {{saleObject.minimumRequirements?saleObject.minimumRequirements:'0'}}
               </div>
             </div>
           </div>
@@ -469,84 +341,246 @@
               </div>
             </div>
           </div>
-          <div class="col-md-12">
-            <div class="col-md-6 form-custom-padding">
-              <div class="form-group label-floating is-empty">
-                <label class="control-label">Min No of Demands to be closed</label>
-                <input class="form-control" type="text">
-              </div>
-              <button class="btn btn-primary data-button btn-text" ng-click="requirement()"><i class="fa fa-plus"  ></i>&nbsp;&nbsp;Requirement</button>
-            </div>
-            <div class="col-md-6 form-custom-padding">
-              <div class="form-group label-floating is-empty">
-                <label class="control-label">Min No of Rquirements to be closed</label>
-                <input class="form-control" type="text">
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default second-panel panelmrgs-prospect" ng-if="Requirement" >
 
-    <div class="panel-heading">
-      {{titlereq}}
-    </div>
-    <div class="panel-body">
-      <form name="Requirement">
-      <div class="col-md-12">
-        <div class="col-md-6 form-custom-padding">
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Skill</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Location</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Pay Rate</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">JD</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Shift</label>
-            <input class="form-control" type="text">
+        </div>
+      <div class=" row ">
+        <div class="col-md-5 form-custom-padding">
+          <div class="form-group label-floating" ng-class="{'is-empty':!saleObject.minimumRequirements}">
+            <label class="control-label">Min No of Requirements to be closed</label>
+            <input class="form-control" type="text"   ng-model="saleObject.minimumRequirements" numbers-only>
           </div>
         </div>
-        <div class="col-md-6 form-custom-padding">
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Experience</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">No of Positions</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Bill Rate</label>
-            <input class="form-control" type="text">
-          </div>
-          <div class="form-group label-floating is-empty">
-            <label class="control-label">Source of Requirment</label>
-            <input class="form-control" type="text">
-          </div>
+        <div class=" col-md-offset-5">
+          <!--<a ui-sref="app.viewProspect" class="auto">
+            <button class="btn btn-raised  data-button-cancel btn-text" ng-click="cancel()">Cancel</button>&nbsp;&nbsp;</a>-->
+          <button class="btn btn-primary data-button-sub btn-text" ng-click="submitAOC()">Submit</button>
         </div>
+      </div><hr class="req-line">
+      <h3   style="color:#049ad9" >All Requirements</h3><br>
+      <div class="req-plus">
+        <label class=" btn-raised hand-cursor pull-right glyphicon glyphicon-plus add-button plus-fa " ng-click="openReq('true')">
+        </label>
       </div>
-        </form>
-      <div class="col-md-6 col-md-offset-5">
-        <div class="form-group">
-          <a >
-            <button class="btn btn-primary data-button-cancel btn-text" ng-click="requirement('close')">Cancel</button>
-          </a>
-          <button class="btn btn-primary data-button btn-text">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
+      <table class=" table-topdiv table table-bod m-n "   >
+        <thead class="table-head " >
+        <tr>
 
-</div>
+          <th class="table-th-heading"></th>
+          <th  class="table-th-heading">Req ID  <span ><img src="img/sort_icon.png"></span> </th>
+          <th class="table-th-heading">Client Name <span ><img src="img/sort_icon.png"></span></th>
+          <th class="table-th-heading">Positions <span ><img src="img/sort_icon.png"></span></th>
+          <th class="table-th-heading">SPOC <span ><img src="img/sort_icon.png" class="" ></span></th>
+          <th class="table-th-heading">Job Location</th>
+          <th class="table-th-heading">Added By</th>
+          <th class="table-th-heading">Priority</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="requirement in requirements" >
+          <td>
+
+            <div class="chekbox">
+              <label>
+                <input type="checkbox" class="poss">
+                <span class="checkbox-material">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+
+
+          </td>
+          <td >{{requirement._id}}</td>
+          <td>{{requirement.name}}</td>
+          <td>{{requirement.numberOfPositions}}</td>
+          <td>{{requirement.spoc?requirement.spoc:'--'}}</td>
+          <td>{{requirement.jobLocation}}</td>
+          <td>{{requirement.addedBy?requirement.addedBy:'--'}}</td>
+          <td>{{requirement.priority}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <accordion class="plus col-md-12 re-accordian " ng-show="showAddReq">
+        <accordion-group is-open="true">
+          <accordion-heading>
+            <span class="add-req"> Add Requirement</span><i class="pull-right glyphicon color-black" ng-class="{'glyphicon glyphicon-chevron-down': status.open, 'glyphicon glyphicon-chevron-right': !status.open}"></i>
+          </accordion-heading>
+          <form name="Requirement">
+            <div class="col-md-12 p-bottom">
+              <h4 class="client-req">Client Details</h4>
+              <div class="col-md-5 col-pad">
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Name<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="6" ng-model="requirement.name" alpha-num>
+                </div>
+
+                <div class="form-group ">Requirement Type<span class="required-field">*</span>
+                  <div custom-select data="requireStatus" value="requirement.type" class=" age-select p-0" ></div>
+                </div>
+                <div class="form-group label-floating is-empty ">
+                  <label class="control-label">Office Location<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="9" ng-model="requirement.officeLocation" alpha-num>
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Applicable Consulting Fee<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="10" ng-model="requirement.consultingFee" alphnum-dot>
+                </div>
+              </div>
+              <div class="col-md-5 col-md-offset-1">
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Manager<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="7" ng-model="requirement.manager" alpha-num>
+                </div>
+                <!--<div class="form-group label-floating  age-text">
+                Permanent Staffing<span class="required-field">*</span>
+                  <div custom-select data="status_prospect" value="saleObject.prospect" class=" age-select p-0" tabindex="23"></div>
+                </div>-->
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Practice<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="8" ng-model="requirement.practice" alpha-num>
+                </div>
+                <div class="form-group label-floating  age-text">
+                  Priority<span class="required-field">*</span>
+
+                  <div custom-select data="priority" value="requirement.priority" class=" age-select p-0" ></div>
+
+                </div>
+              </div>
+            </div>
+            <hr style="width: 100%;
+    border-top: 2px solid #8c8b8b;">
+            <div class="col-md-12">
+              <div class="col-md-5 col-pad">
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Job Title<span class="required-field">*</span></label>
+
+                  <input class="form-control" type="text" tabindex="11" ng-model="requirement.jobTitle" alpha-num>
+
+                </div>
+                <div class="form-group label-floating age-text">
+                  Functional Area<span class="required-field">*</span>
+
+                  <div custom-select data="functional_area" value="requirement.functionalArea" class=" age-select p-0" ></div>
+
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Qualification<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="14" ng-model="requirement.qualification" alpha-num>
+                </div>
+                <div class="form-group space-age">
+                  <label class="col-md-3 p-0 age-text" >Age Group<span class="required-field">*</span></label>
+
+                  <div class="col-md-9 p-r">
+                    <div custom-select data="ageData" value="requirement.ageGroupFrom" class="col-md-6 age-select p-0" ></div>
+                    <div custom-select data="ageData" value="requirement.ageGroupTo" class="col-md-6 age-select p-r p-l-20" ></div>
+                  </div>
+                </div>
+                <div class="form-group space-top">
+                  <label class="col-md-3 p-0 age-text" >Experience<span class="required-field">*</span></label>
+                  <div class="col-md-9 p-r">
+
+                    <div custom-select data="Experience" value="requirement.experienceFrom" class="col-md-6 age-select p-0" ></div>
+                    <div custom-select data="Experience" value="requirement.experienceTo" class="col-md-6 age-select p-r p-l-20" ></div>
+
+                  </div>
+                </div>
+                <div class="form-group space-top">
+                  <label class="col-md-3 p-0 age-text" >CTC Range<span class="required-field">*</span></label>
+                  <div class="col-md-9 p-r">
+
+                    <div custom-select data="CTC" value="requirement.ctcRangeFrom" class="col-md-6 age-select p-0" ></div>
+                    <div custom-select data="CTC" value="requirement.ctcRangeTo" class="col-md-6 age-select p-r p-l-20" ></div>
+
+                  </div>
+                </div>
+                <div class="form-group space-top">
+                  <div class="font-ind age-text">Industry<span class="required-field">*</span>
+
+                    <div custom-select data="industry" value="requirement.inydustry" class=" age-select p-0" tabindex=""></div>
+
+                  </div>
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">No Poach Companies<span class="required-field">*</span></label>
+                  <input class="form-control col-md-2" numbers-only type="text" tabindex="19" ng-model="requirement.numberOfPoachCompanies" alpha-num>
+                </div>
+
+              </div>
+              <div class="col-md-5 col-md-offset-1">
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">No Of Positions<span class="required-field">*</span></label>
+
+                  <input class="form-control" type="text" tabindex="12" ng-model="requirement.numberOfPositions" numbers-only>
+
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Vacancy<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="13" ng-model="requirement.vacancy" alpha-num>
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Job Location<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="15" ng-model="requirement.jobLocation" alpha-num>
+                </div>
+                <div class="form-group ">
+                  <div class="font-ind age-text">Primary Skill<span class="required-field">*</span>
+                    <input class="form-control" type="text" tabindex="16" ng-model="requirement.primaryLevel" alpha-num>
+               <!--     <div custom-select data="primaryLevel" value="requirement.primaryLevel" class=" age-select p-0" ></div>-->
+
+                  </div>
+                </div>
+                <div class="form-group ">
+                  <label class="col-md-3 p-0  age-text" >Relevent Experience<span class="required-field">*</span></label>
+                  <div class="col-md-9 p-r m-t-20">
+
+                    <div custom-select data="Experience" value="requirement.relevantExperienceFrom" class="col-md-6 age-select p-0" ></div>
+                    <div custom-select data="Experience" value="requirement.relevantExperienceTo" class="col-md-6 age-select p-r p-l-20" ></div>
+
+                  </div>
+                </div><br><br>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Remarks<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="17" ng-model="requirement.remarks" alpha-num>
+                </div>
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label">Target Employees<span class="required-field">*</span></label>
+                  <input class="form-control" type="text" tabindex="18" ng-model="requirement.targetEmployees" alpha-num>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-10 upward">
+                <label for="textArea" class=" mrg-label ">
+                  <h3>Job Description<span class="required-field">*</span></h3></label>
+                <textarea class="form-control mrg-textarea no-resize" rows="4" id="textArea"    ng-model="requirement.jobDesciption"></textarea>
+              </div>
+            </div>
+            <div class="col-md-6 col-md-offset-4">
+              <div class="form-group ">
+                <a ui-sref="app.create-prospect" >
+                  <button class="btn btn-primary data-button-cancel btn-text"  >Cancel</button>
+                </a>
+
+                <button class="btn btn-primary data-button btn-text" ng-click="submitRequirement()" >Submit</button>
+
+              </div>
+            </div>
+          </form>
+        </accordion-group>
+      </accordion>
+            </div>
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+

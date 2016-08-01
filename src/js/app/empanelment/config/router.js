@@ -13,15 +13,27 @@ angular.module('com.module.empanelment')
     .state('app.createEmpanelment', {
       url: '/create-empanelment',
       templateUrl: 'js/app/empanelment/views/create-empanelment.html',
-      controller:'empanelmentController'
+      controller:'empanelmentController',
+      params: {
+        empanelment: null
+    }
     })
     .state('app.slaTracker', {
       url: '/SLA-Tracker',
       templateUrl: 'js/app/empanelment/views/sla-Tracker.html',
-      controller:'empanelmentController'
+      controller:'sla-step1-controller',
+      params: {
+        empanelment: null,
+          SLATracker:null
+    }
     })
     .state('app.slaTracker-step2', {
       url: '/SLA-Tracker-step2',
-      templateUrl: 'js/app/empanelment/views/sla-Tracker-step2.html'
+      templateUrl: 'js/app/empanelment/views/sla-Tracker-step2.html',
+      controller:'sla-step1-controller',
+      params: {
+        empanelment: null,
+          SLATracker:null
+    }
     });
 }]);

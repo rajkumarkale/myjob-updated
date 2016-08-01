@@ -1,97 +1,15 @@
 
   <div class="container col-md-12 all-dateinputs">
-
     <div class="panel panel-primary " style="padding-bottom: 20px">
       <div class=" panel-heading summary">
-
         <div class="panel-title ">Discussions</div>
       </div>
       <div class="row distance discussion-buton">
-        <div class="pull-right">
-          <button ng-click="openAddDiscussions()" class="btn btn-raised btn-info glyphicon glyphicon-plus "> </button>
+        <div class="pull-right" ng-hide="showDiscuss">
+          <button ng-click="openAddDiscussions()" ng-show="showAddButton" class="btn btn-raised btn-info glyphicon glyphicon-plus "> </button>
         </div>
       </div>
       <hr class="line2">
-
-<!--
-    <div class="container-custom panel panel-default discussion-container " >
-      <div class="container ">
-        <div class="discussion-body">
-          <div class="row ">
-            <div class="col-lg-8 ">
-              <table>
-                <tr>
-                  <td>
-                    <label class="contact-person">
-                      Contact Person:
-                    </label>
-                    <label class="person-name">
-                      <h4>Rober Martin </h4>
-                    </label>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <label class="type-of-call">
-                      Type Of Call:
-                    </label>
-                    <label class="call-follow">
-                      Follow Up
-                    </label>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <label class="type-of-call">
-                      Type Of Discussion:
-                    </label>
-                    <label class="call-follow">
-                      Email
-                    </label>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-            <div class="col-lg-2 space-mrg" >
-
-              <table>
-                <tr>
-                  <td>
-                    <label class="date-venue">
-                      20-04-2016,12:PM
-                    </label>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <label class="date-venue">
-                      Venue:
-                    </label>
-                    <label class="location-name">
-                      Hyderabad
-                    </label>
-                  </td>
-                </tr>
-              </table>
-            </div>
-
-          </div>
-          <div class=" col-lg-11 left-align summary-text" >
-            <p class="summary-details">
-              <span class="summary-head ">Summary: </span>&nbsp;
-              Lorem Ipsum is ply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>-->
 <div  data-cg-busy="{promise:getDiscussionPromise,message:'Please Wait'}"></div>
     <div class="container-custom panel panel-default discussion-container" ng-repeat="discussion in discussions | orderBy:sortType:reverse track by $index ">
       <div class="container ">
@@ -105,7 +23,7 @@
                       Contact Person:
                     </label>
                     <label class="person-name">
-                      <h4>{{discussion.contact_person | uppercase}} </h4>
+                      <h4>{{discussion.contactPerson | uppercase}} </h4>
                     </label>
                   </td>
                 </tr>
@@ -136,20 +54,17 @@
                       Logged by:
                     </label>
                     <label class="call-follow">
-                      {{discussion.logged_by| uppercase}}
+                      {{discussion.loggedBy.name| uppercase}}
                     </label>
                   </td>
                 </tr>
               </table>
             </div>
-
             <div class="col-lg-2 ">
-
               <table>
                 <tr>
                   <td>
-                    <label class="date-venue">{{discussion.time_of_discussion*1000 | date:'dd/MM/yyyy, hh:mm a'}}
-
+                    <label class="date-venue">{{discussion.timeOfDiscussion | date:'dd/MM/yyyy, hh:mm a'}}
             </label>
             </td>
             </tr>
@@ -164,28 +79,24 @@
                   </td>
                 </tr>
             </table>
-
           </div>
-
         </div>
         <div class=" col-lg-11 left-align summary-text">
           <p class="summary-details">
             <span class="summary-head ">Summary: </span>&nbsp;
-            {{discussion.text}}
+            {{discussion.summary}}
           </p>
           <div ng-if="discussion.documents[0]">
             <div class="attachment">
               1 Attachment
             </div>
             <div class="attach-image">
-              <a><img src="img/Attach-icon.png" class="attach-image-detail" ng-click="download(discussion.documents[0])"/></a>
+              <a><img src="img/Attach-icon.png" class="attach-image-detail" ng-click="download(discussion.documents[0].url)"/></a>
             </div>
           </div>
         </div>
       </div>
-
     </div>
-
     </div>
 
 

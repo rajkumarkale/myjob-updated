@@ -11,32 +11,32 @@
             <div class="col-md-6 form-custom-padding">
               <div class="form-group label-floating">
                 <label class="control-label">Legal Entity</label>
-                <input class="form-control" required data-ng-model="createPossibility.legal_name" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.legalName" type="text">
               </div>
               <div>
                 <label class="control-label">Bussiness Vertical</label>
 
-                <input class="form-control" data-ng-model="createPossibility.vertical" type="text">
+                <input class="form-control" data-ng-model="saleObject.client.vertical" type="text">
               </div>
               <div>
                 <label class="control-label">Employee Size of the Company</label>
-                <input class="form-control" required data-ng-model="createPossibility.employee_size" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.employeeSize" type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Address Line 1</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.address_line_1 " type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.address1 " type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">City</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.city " type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.city " type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Zipcode</label>
-                <input class="form-control" required numbers-only maxlength="6" data-ng-model="createPossibility.address.pin" type="text">
+                <input class="form-control" required numbers-only maxlength="6" data-ng-model="saleObject.client.address.pin" type="text">
               </div>
               <div class="label-floating ">
                 <label class="control-label">Country</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.country" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.country" type="text">
               </div>
               <div class="up-margin">
                 <ul>
@@ -48,37 +48,37 @@
             <div class="col-md-6 form-custom-padding">
               <div class="form-group label-floating ">
                 <label class="control-label">Business Unit</label>
-                <input class="form-control" required data-ng-model="createPossibility.unit_name" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.businessUnit" type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Website URL</label>
-                <input class="form-control" required data-ng-model="createPossibility.url" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.website" type="text">
               </div>
               <div>
                 <label class="control-label">Group Turnover</label>
-                <input class="form-control" data-ng-model="createPossibility.turnover" required type="text">
+                <input class="form-control" data-ng-model="saleObject.client.turnover" required type="text">
               </div>
               <div>
                 <label class="control-label">Type of Customer</label>
-                <input class="form-control" data-ng-model="createPossibility.customer_type" type="text">
+                <input class="form-control" data-ng-model="saleObject.client.customerType" type="text">
               </div>
               <div class="form-group label-floating ">
                 <label class="control-label">Address Line 2</label>
-                <input class="form-control" data-ng-model="createPossibility.address.address_line_2" type="text">
+                <input class="form-control" data-ng-model="saleObject.client.address.address2" type="text">
               </div>
               <div class="form-group label-floating">
                 <label class="control-label">State</label>
-                <input class="form-control" required data-ng-model="createPossibility.address.state" type="text">
+                <input class="form-control" required data-ng-model="saleObject.client.address.state" type="text">
               </div>
               <br>
               <div data-ng-if="!isNewPossibility">
                 <label class="control-label">Status</label>
-                <input class="form-control" required data-ng-model="createPossibility.current_status.status" type="text">
+                <input class="form-control" required data-ng-model="saleObject.possibility" type="text">
               </div>
-              <div class="form-group1 pull-right ">
+              <!--<div class="form-group1 pull-right ">
                 <input data-ng-model="createPossibility.freeze" type="checkbox" class="check">
                 <label class=" first-class2 ">Freeze</label>
-              </div>
+              </div>-->
             </div>
           </div>
         </div>
@@ -93,11 +93,11 @@
         <span>Contact Details</span><i class="pull-right glyphicon"
                                       ng-class="{' glyphicon-minus': poc.isOpen, ' glyphicon-plus': !poc.isOpen}"></i>
       </accordion-heading>
-      <div class="form-group pull-right app-container-blur" >
+      <div class=" pull-right app-container-blur" >
         <div class="col-md-8">
           <div class="form-group">
-
-            <div custom-select data="status"  style="margin: -15px;margin-top: -5px"></div>
+<label>Status</label>
+            <div custom-select data="status" value="saleObject.suspect" style="margin: -15px;margin-top: -5px"></div>
           </div>
         </div>
       </div>
@@ -106,7 +106,7 @@
 
         <div class="col-lg-10 ">
           <accordion  >
-            <accordion-group is-open="poc.isOpening"  >
+            <accordion-group is-open="true" ng-repeat="poc in saleObject.pointOfContacts" >
               <accordion-heading  >
           <span >
            Contact Person Details
@@ -116,11 +116,11 @@
               </accordion-heading>
               <div class="row app-container-blur">
                 <div class="col-md-5 col-pad">
-                  <div class=" form-group label-floating is-empty">
+                  <div class=" form-group label-floating">
                     <label class="control-label">Contact Person Name</label>
                     <input class="form-control bord-remove" data-ng-model="poc.name" type="text">
                   </div>
-                  <div class="form-group label-floating is-empty">
+                  <div class="form-group label-floating">
                     <label class="control-label">Phone Number</label>
                     <input class="form-control bord-remove" data-ng-model="poc.phone" type="text">
                   </div>
@@ -128,9 +128,9 @@
 
                 </div>
                 <div class="col-md-5 col-md-offset-2">
-                  <div class="form-group label-floating is-empty">
+                  <div class="form-group label-floating">
                     <label class="control-label">Address</label>
-                    <input class="form-control bord-remove" data-ng-model="poc.support_location" type="text">
+                    <input class="form-control bord-remove" data-ng-model="poc.supportLocation" type="text">
                   </div>
                   <div class="form-group">
                     <input class="form-control bord-remove" type="text" data-ng-model="poc.designation" placeholder="Contact Person Designation">
@@ -140,21 +140,7 @@
             </accordion-group>
           </accordion>
         </div>
-        <!-- <div class="col-md-6">
-           <h4 class="color-black">Roll out of a proposal</h4>
-           <div class="form-group is-empty is-fileinput">
-             <input type="file" id="inputFile4" multiple="">
-             <div class="input-group">
-               <input type="text" readonly="" class="form-control" placeholder="No selected file">
-                 <span class="input-group-btn input-group-sm">
-                   <button type="button" class="btn warm-status btn-sm glyphicon glyphicon-paperclip">
-                   <i class="material-icons">attach file</i>
-                   </button>
-                 </span>
-             </div>
-             <span class="material-input control-label">Supported file format PDF,DOC,PPT.</span>
-           </div>
-         </div>-->
+
       </div>
 </div>
 <div class="container col-md-12 mrg-top panel-body ">
@@ -169,7 +155,8 @@
         <div class="form-group pull-right">
           <div class="col-md-8">
             <div class="form-group " style="margin: -15px;">
-              <input  custom-select data="status_prospect"  type="text" placeholder="Status">
+              <label class="control-label dropdown-col">Status</label>
+              <input  custom-select data="prospectStatus" value="saleObject.prospect" type="text" placeholder="Status">
 
             </div>
           </div>
@@ -178,32 +165,33 @@
         <div class="row app-container-blur">
           <div class="col-md-12">
             <div class="col-md-6 form-custom-padding">
-              <div class="form-group label-floating is-empty">
+              <div class="form-group label-floating">
                 <label class="control-label">Client Name</label>
-                <input class="form-control" type="text">
+                <input class="form-control" type="text" ng-model="saleObject.client.clientName">
               </div>
-              <div class="form-group label-floating is-empty">
+              <div class="form-group label-floating">
                 <label class="control-label">Business Potential Numbers</label>
-                <input class="form-control" type="text">
+                <input class="form-control" type="text" ng-model="saleObject.client.potentialNumbers">
               </div>
-              <div class="form-group label-floating is-empty">
+              <div class="form-group label-floating">
                 <label class="control-label">Quantum of Business Bottomline</label>
-                <input class="form-control" type="text">
+                <input class="form-control" type="text" ng-model="saleObject.client.turnover">
               </div>
-              <div class="form-group">
+              <!--<div class="form-group">
+                <label class="control-label dropdown-col">Business Vertical</label>
                 <input custom-select data="values" placeholder="Business Vertical" />
-              </div>
+              </div>-->
             </div>
             <div class="col-md-6 form-custom-padding">
-              <div class="form-group label-floating is-empty">
+              <!--<div class="form-group label-floating is-empty">
                 <label class="control-label">Legal Entity</label>
                 <input class="form-control" type="text">
-              </div>
-              <div class="form-group label-floating is-empty">
+              </div>-->
+              <div class="form-group label-floating">
                 <label class="control-label">Quantum of Business Topline</label>
                 <input class="form-control" type="text">
               </div>
-              <div class="form-group label-floating is-empty">
+              <div class="form-group label-floating">
                 <label class="control-label">Expected Date of Closure</label>
                 <input class="form-control" type="text">
               </div>
@@ -224,75 +212,88 @@
         </div>
 
         <div class="panel-body">
-            <div class="form-group pull-right">
-                <button class="btn btn-primary SLA-button mrg-top btn-text" ui-sref="app.slaTracker">SLA Tracker</button>
-            </div>
+          <form name="empanelment" id="emp">
+            <div class="row">
+              <div class="col-lg-12">
+                <div ng-show="!isSLATrackerFilled()"><h4>Please fill in SLA Tracker to enable submit button</h4></div>
+            <div class=" pull-right" >
 
-            <hr class="line1 ">
+                <button class="btn btn-primary SLA-button  btn-text" ng-click="toSLATrackerStep1()">SLA Tracker</button>
+            </div>
+              </div>
+            </div>
+            <hr class="line1 " style="    margin-top: 10px;">
 
             <div class="col-md-12 ">
 
-                <form name="usrform" novalidate id="usrform1" class="bs-component">
+
                     <div class="container-fluid">
                         <div class="col-md-5">
                             <div class="form-group">
-                                <label class="control-label">Pricing Mode</label>
-                                <div custom-select data="pricingMode"></div>
+                                <label class="control-label">Pricing Mode<span class="required-field">*</span></label>
+                                <div custom-select data="pricingMode" value="pricing.mode"></div>
                             </div>
                         </div>
                         <div class="col-md-1"></div>
                         <div class="col-md-5 col-pad">
                             <div class="form-group">
-                                <label class="control-label">Credit Term</label>
-                                <div custom-select data="creditTerm"></div>
+                                <label class="control-label">Credit Term<span class="required-field">*</span></label>
+                                <div custom-select data="creditTerm" value="pricing.creditTerm"></div>
                             </div>
                         </div>
                     </div>
 
-                </form>
+
 
             </div>
 
             <div class="col-md-12 ">
 
-                <form name="usrform" novalidate id="usrform1" class="bs-component">
+
                     <div class="container-fluid">
                         <div class="col-md-5">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label">No Of credit Days</label>
-                                <input class="form-control" name="n1" type="text" minlength="3" maxlength="20" alpha-num>
+                            <div class="form-group label-floating" ng-class="'is-empty':!pricing.creditDays">
+                                <label class="control-label">No Of credit Days<span class="required-field">*</span></label>
+                                <input class="form-control" ng-model="pricing.creditDays" name="n1" type="text" minlength="1" maxlength="20" numbers-only required>
                             </div>
                         </div>
                         <div class="col-md-1"></div>
                         <div class="col-md-5 col-pad">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label">PayCycle Date</label>
-                                <input class="form-control" required="required" type="text" minlength="3" maxlength="20" alpha-num>
+                            <div class="form-group ">
+                              <div class="input-group col-md-9 present">
+                                <input type="text" class="form-control hand-cursor" placeholder="Pay Cycle Date" datepicker-popup="dd-MMMM-yyyy" ng-model="pricing.payCycle" is-open="opened1" show-button-bar="false" ng-required="true" ng-click="open($event,'opened')" readonly>
+                                                <span class="input-group-addon required-field" id="basic-addon">
+            <img src="img/calendar_icon.png" class="calendar-img " alt="" />*</span>
+                              </div>
+
                             </div>
                         </div>
                     </div>
 
-                </form>
+
 
             </div>
             <div class="col-md-12 ">
 
-                <form name="usrform" novalidate id="usrform" class="bs-component">
-                    <div class="container-fluid">
-                        <div class="col-md-5">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label">Bill Cycle Date</label>
-                                <input class="form-control" name="n1" type="text" minlength="3" maxlength="20" alpha-num>
-                            </div>
-                        </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-5 col-pad">
-                            <div class="form-group label-floating ">
-                            </div>
-                        </div>
-                    </div>
+                <div class="container-fluid">
+                  <div class="col-md-5 ">
+                    <div class="form-group ">
+                      <div class="input-group col-md-9 present">
+                        <input type="text" class="form-control hand-cursor" placeholder="Bill Cycle Date" datepicker-popup="dd-MMMM-yyyy" ng-model="pricing.billCycle" is-open="opened2" show-button-bar="false" ng-required="true" ng-click="opendate($event,'opened')" readonly>
+                                                <span class="input-group-addon required-field" id="basic-addon2">
+            <img src="img/calendar_icon.png" class="calendar-img " alt="" />*</span>
+                      </div>
 
-                </form>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-5 col-pad">
+                    <div class="form-group label-floating ">
+                    </div>
+                  </div>
+                </div>
+
+
 
             </div>
             <div class="col-md-12">
@@ -302,13 +303,14 @@
                             <input type="file" multiple="">
                             <div class="input-group">
                                 <input type="text" readonly="" class="form-control" placeholder="Pan Copy">
-                                <span class="input-group-btn input-group-sm">
+                                <span class="input-group-btn input-group-sm ">
                   <button type="button" class="btn warm-status">
                   <i class="material-icons">Browse</i>
                   </button>
                 </span>
                             </div>
-                            <span class="material-input control-label">Supported file format PDF,JPEG</span>
+                            <span class="material-input control-label ">Supported file format PDF,JPEG  </span>
+                          <span class="required-field">*</span>
                         </div>
                     </div>
                     <div class="col-md-1"></div>
@@ -323,7 +325,8 @@
                   </button>
                 </span>
                             </div>
-                            <span class="material-input control-label">Supported file formar PDF,JPEG</span>
+                            <span class="material-input control-label">Supported file format PDF,JPEG</span>
+                          <span class="required-field">*</span>
                         </div>
                     </div>
                 </div>
@@ -332,10 +335,10 @@
                 <div class="form-group">
                     <a ui-sref="app.viewEmpanelment" class="auto">
                         <button class="btn btn-raised  data-button-cancel btn-text">Cancel</button>&nbsp;&nbsp;</a>
-                    <button class="btn btn-primary data-button-sub btn-text">Submit</button>
+                    <button class="btn btn-primary data-button-sub btn-text" data-ng-disabled="empanelment.$invalid || !isSLATrackerFilled()" ng-click="submitEmpanelment()">Submit</button>
                 </div>
             </div>
-
+</form>
         </div>
 
     </div>

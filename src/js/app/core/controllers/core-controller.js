@@ -1,6 +1,6 @@
 angular.module('app')
-  .controller('AppCtrl', ['$scope', '$translate',  '$window', '$state', '$rootScope','$templateCache','$interpolate',
-    function ($scope, $translate,  $window, $state, $rootScope,$templateCache,$interpolate) {
+  .controller('AppCtrl', ['$scope',   '$window', '$state', '$rootScope','$templateCache','$interpolate',
+    function ($scope,   $window, $state, $rootScope,$templateCache,$interpolate) {
       'use strict';
       // add 'ie' classes to html
       var isIE = !!navigator.userAgent.match(/MSIE/i);
@@ -37,12 +37,12 @@ angular.module('app')
       });
       $scope.lang = {isopen: false};
       $scope.langs = {en: 'English', de_DE: 'German', it_IT: 'Italian'};
-      $scope.selectLang = $scope.langs[$translate.proposedLanguage()] || "English";
+     /* $scope.selectLang = $scope.langs[$translate.proposedLanguage()] || "English";*/
       $scope.setLang = function (langKey, $event) {
         // set the current lang
         $scope.selectLang = $scope.langs[langKey];
         // You can change the language during runtime
-        $translate.use(langKey);
+      /*  $translate.use(langKey);*/
         $scope.lang.isopen = !$scope.lang.isopen;
       };
 
@@ -50,7 +50,7 @@ angular.module('app')
 
         $state.go('access.signin');
       });
-      $templateCache.put('/dialogs/confirm.html','<div class="modal-header dialog-header-confirm"><button type="button" class="close" ng-click="no()">&times;</button><h4 class="modal-title"><span class="'+startSym+'icon'+endSym+'"></span> '+startSym+'header'+endSym+'</h4></div><div class="modal-body" ng-bind-html="msg"></div><div class="modal-footer"><button type="button" class="btn btn-default" ng-click="yes()">'+startSym+'"Yes" | translate'+endSym+'</button><button type="button" class="btn btn-primary" ng-click="no()">'+startSym+'"No" | translate'+endSym+'</button></div>');
+    /*  $templateCache.put('/dialogs/confirm.html','<div class="modal-header dialog-header-confirm"><button type="button" class="close" ng-click="no()">&times;</button><h4 class="modal-title"><span class="'+startSym+'icon'+endSym+'"></span> '+startSym+'header'+endSym+'</h4></div><div class="modal-body" ng-bind-html="msg"></div><div class="modal-footer"><button type="button" class="btn btn-default" ng-click="yes()">'+startSym+'"Yes" | translate'+endSym+'</button><button type="button" class="btn btn-primary" ng-click="no()">'+startSym+'"No" | translate'+endSym+'</button></div>');*/
 
       function isSmartDevice($window) {
         var ua = $window['navigator']['userAgent'] || $window['navigator']['vendor'] || $window['opera'];

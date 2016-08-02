@@ -8,8 +8,8 @@ angular.module('com.module.access')
     function ($q, $cookies, $location) {
       return {
         'request': function (config) {
-          if ($cookies.userData) {
-            var token = JSON.parse($cookies.userData).token;
+          if ($cookies.get('userData')) {
+            var token = JSON.parse($cookies.get('userData')).token;
             token ? config.headers.Authorization = token : null;
           }
           return config;

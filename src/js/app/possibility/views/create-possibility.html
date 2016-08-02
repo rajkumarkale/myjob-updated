@@ -1,3 +1,4 @@
+
 <div>
     <div data-ng-if="!isNewPossibility" class="text-right m-t-sm m-r-xs">
 <div data-ng-if="isEditable || isNewPossibility ">
@@ -17,23 +18,31 @@
                     <div class="form-group pull-right mrg-formgrp mrg-top-apply">
                         <div class="col-md-6">
                             <div id="stat" class="form-group">
+                              <md-input-container>
                                 <label class="control-label">Status</label>
+                                <md-select ng-model="saleObject.possibility" >
+                                  <md-option ng-repeat="data in status" ng-value="data.displayText" >
+                                    {{data.displayText}}
+                                  </md-option>
+                                </md-select>
                                 <div custom-select data="status" value="saleObject.possibility" class="select-poss"></div>
-                            </div>
+                                </md-input-container>   </div>
                         </div>
                     </div>
                     <hr class="hr-line">
+                  <md-content layout-padding>
                     <form name="createPossibilityForm" id="possibility" novalidate class="form-validation">
+
   <div id="noEdit">
                         <div class="row ">
                             <div class="col-md-12 ">
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-
+                                      <md-input-container class="md-block">
                                         <label class="control-label">Legal Entity<span class="required-field">*</span></label>
 
                                         <input class="form-control" required data-ng-model="saleObject.client.legalName" type="text" tabindex="1" alpha-num>
-
+</md-input-container>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label dropdown-col">Business Vertical<span class="required-field">*</span></label>
@@ -45,35 +54,36 @@
                                         <div custom-select data="employeeSize" value="saleObject.client.employeeSize" tabindex="5"></div>
                                     </div>
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Website URL<span class="required-field">*</span></label>
+                                      <md-input-container class="md-block">    <label class="control-label">Website URL<span class="required-field">*</span></label>
                                         <input  class="form-control" required data-ng-model="saleObject.client.website" type="text" name="website" tabindex="7" ng-pattern='/^(www)[a-zA-Z0-9-\.]+\.[a-z]{2,4}/'>
-<span class="error-msg" ng-show="createPossibilityForm.website.$error.pattern">Format EX: www.yahoo.com</span>
+</md-input-container><span class="error-msg" ng-show="createPossibilityForm.website.$error.pattern">Format EX: www.yahoo.com</span>
                                     </div>
 
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Address 2</label>
+                                      <md-input-container class="md-block">            <label class="control-label">Address 2</label>
                                         <input class="form-control" data-ng-model="saleObject.client.address.address2" type="text" tabindex="9">
-                                    </div>
+                                  </md-input-container>  </div>
                                   <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                    <label class="control-label">State<span class="required-field">*</span></label>
-                                    <input class="form-control" required data-ng-model="saleObject.client.address.state" type="text" tabindex="11" alphabets-only>
-
+                                    <md-input-container class="md-block">       <label class="control-label">State<span class="required-field">*</span></label>
+                                <input class="form-control" required data-ng-model="saleObject.client.address.state" type="text" tabindex="11" alphabets-only>
+                                    </md-input-container>
                                   </div>
 
                                   <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                  <label class="control-label">Zip Code<span class="required-field">*</span></label>
-                                  <input class="form-control" required numbers-only maxlength="6" data-ng-model="saleObject.client.address.pin" type="text" tabindex="13">
-
-                                </div>
+                                    <md-input-container class="md-block">    <label class="control-label">Zip Code<span class="required-field">*</span></label>
+                               <input class="form-control" required numbers-only maxlength="6" data-ng-model="saleObject.client.address.pin" type="text" tabindex="13">
+                                    </md-input-container>
+                                  </div>
 
                                 </div>
 
 
                                 <div class="col-md-6 form-custom-padding">
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
+                                      <md-input-container class="md-block">
                                         <label class="control-label">Business Unit<span class="required-field">*</span></label>
                                         <input class="form-control" required data-ng-model="saleObject.client.businessUnit" type="text" tabindex="2" alpha-num>
-
+                                      </md-input-container>
                                     </div>
 
                                     <div class="form-group">
@@ -90,20 +100,20 @@
 
                                     </div>
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">Address 1<span class="required-field">*</span></label>
-                                        <input class="form-control" required data-ng-model="saleObject.client.address.address1" type="text" tabindex="8">
-
+                                      <md-input-container class="md-block"> <label class="control-label">Address 1<span class="required-field">*</span></label>
+                                       <input class="form-control" required data-ng-model="saleObject.client.address.address1" type="text" tabindex="8">
+                                      </md-input-container>
                                     </div>
 
                                     <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                        <label class="control-label">City<span class="required-field">*</span></label>
-                                        <input class="form-control" required data-ng-model="saleObject.client.address.city " type="text" tabindex="10" alphabets-only>
+                                      <md-input-container class="md-block"><label class="control-label">City<span class="required-field">*</span></label>
+                                        </md-input-container><input class="form-control" required data-ng-model="saleObject.client.address.city " type="text" tabindex="10" alphabets-only>
 
                                     </div>
                                   <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                    <label class="control-label">Country<span class="required-field">*</span></label>
+                                    <md-input-container class="md-block"><label class="control-label">Country<span class="required-field">*</span></label>
                                     <input class="form-control" required data-ng-model="saleObject.client.address.country" type="text" tabindex="12" alphabets-only>
-
+                                    </md-input-container>
                                   </div>
                                     <br>
                               <!--    <div class="form-group pull-right freeze-mrg">
@@ -193,23 +203,23 @@
           </span> </accordion-heading>
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Name<span class="required-field">*</span></label>
+                                          <md-input-container class="md-block">    <label class="control-label">Name<span class="required-field">*</span></label>
                                             <input class="form-control" required data-ng-model="poc.name" type="text" tabindex="15" alphabets-only>
-
+                                          </md-input-container>
                                         </div>
 
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Designation<span class="required-field">*</span></label>
-                                            <input data-ng-model="poc.designation" required class="form-control" type="text" tabindex="17" alphabets-only>
-
+                                          <md-input-container class="md-block"><label class="control-label">Designation<span class="required-field">*</span></label>
+                                        <input data-ng-model="poc.designation" required class="form-control" type="text" tabindex="17" alphabets-only>
+                                          </md-input-container>
                                         </div>
 
                                         <multi-checkbox title="Support Type" options="contactOptions" value="poc.supportType"></multi-checkbox>
                                         <div>
                                             <div class="form-group label-floating localadd-mrg" data-ng-class="{'is-empty':isNewPossibility}">
-                                                <label class="control-label">Location<span class="required-field">*</span></label>
+                                              <md-input-container class="md-block"><label class="control-label">Location<span class="required-field">*</span></label>
                                                 <input required data-ng-model="poc.supportLocation" class="form-control" type="text" tabindex="22" alphabets-only>
-
+                                              </md-input-container>
                                             </div>
                                         </div>
 
@@ -217,24 +227,24 @@
                                     </div>
                                     <div class="col-md-6 form-custom-padding">
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Phone Number<span class="required-field">*</span></label>
-                                            <input class="form-control" numbers-only minlength="10" maxlength="15" data-ng-model="poc.phone" required type="text" tabindex="16">
-
+                                          <md-input-container class="md-block"><label class="control-label">Phone Number<span class="required-field">*</span></label>
+                                          <input class="form-control" numbers-only minlength="10" maxlength="15" data-ng-model="poc.phone" required type="text" tabindex="16">
+                                          </md-input-container>
                                         </div>
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Email Id<span class="required-field">*</span></label>
-                                            <input required data-ng-model="poc.email" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="18">
+                                          <md-input-container class="md-block"><label class="control-label">Email Id<span class="required-field">*</span></label>
+                                            </md-input-container><input required data-ng-model="poc.email" class="form-control" type="email" ng-pattern='/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/im' tabindex="18">
                                         </div>
                                         <div class="form-group label-floating " data-ng-class="{'is-empty':isNewPossibility}">
-                                            <label class="control-label">Department<span class="required-field">*</span></label>
+                                          <md-input-container class="md-block"><label class="control-label">Department<span class="required-field">*</span></label>
                                             <input required data-ng-model="poc.department" class="form-control" type="text" tabindex="21" alpha-num>
-                                        </div>
+                                          </md-input-container>  </div>
 
                                         <div ng-if="poc.contactType ==='PRIMARY'">
                                             <div class="form-group label-floating ">
-                                                <label class="control-label">Type of Contact<span class="required-field">*</span></label>
-                                                <input class="form-control" disabled data-ng-model="poc.contactType" required type="text">
-
+                                              <md-input-container class="md-block"><label class="control-label">Type of Contact<span class="required-field">*</span></label>
+                                             <input class="form-control" disabled data-ng-model="poc.contactType" required type="text">
+                                              </md-input-container>
                                             </div>
                                         </div>
                                         <div ng-if="poc.contactType !=='PRIMARY'" class=" form-group mrg-contacttype">
@@ -262,9 +272,9 @@
                                 <div class="col-md-12">
                                     <div class="col-md-6 form-custom-padding">
                                         <div id='dname' class="form-group label-floating is-empty">
-                                            <label for="i1" class="control-label">Contact Person Name<span class="required-field">*</span></label>
+                                          <md-input-container class="md-block"><label for="i1" class="control-label">Contact Person Name<span class="required-field">*</span></label>
                                             <input type="text" class="form-control" id="i1" ng-model="freshDiscussion.contactPerson" required tabindex="25" alphabets-only>
-                                        </div>
+                                          </md-input-container>  </div>
                                         <div class="form-group">
                                             <div class="input-group col-md-9 present">
                                                 <input type="text" tabindex="27" class="form-control hand-cursor" placeholder="Date" datepicker-popup="dd-MMMM-yyyy" ng-model="discussion.date" is-open="opened1" show-button-bar="false" datepicker-options="dateOptions" ng-required="true" ng-click="open($event,'opened')" readonly>
@@ -365,12 +375,14 @@
                                 <button class="btn btn-primary data-button data-button-sub btn-text" data-ng-disabled="!isValid(createPossibilityForm.$valid)" data-ng-click="save()">{{isNewPossibility?'Submit':'Update'}}</button>
                             </div>
                         </div>
-                    </form>
+
+                    </form></md-content>
                 </div>
 
             </div>
         </div>
     </div>
 </div>
+
 
 

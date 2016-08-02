@@ -7,7 +7,7 @@ angular.module('com.module.prospect')
 
         $scope.status = appConfig.discussion.typeOfDiscussion;
         $scope.data = discussionService.getData();
-        $scope.userId = JSON.parse($cookies.userData).userDetails._id;
+        $scope.userId = JSON.parse($cookies.get('userData')).userDetails._id;
         $scope.discussion = new DiscussionModel({});
         $scope.status.selectedItem='';
 

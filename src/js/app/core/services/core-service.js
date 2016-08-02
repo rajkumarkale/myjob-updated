@@ -1,16 +1,9 @@
 'use strict';
 var app = angular.module('com.module.core');
 
-app.service('CoreService', ['dialogs', 'toaster', function ( dialogs, toaster) {
+app.service('CoreService', ['toaster', function ( toaster) {
 
 
-  this.alert = function (title, text) {
-    return dialogs.notify(title,text);
-  };
-
-  this.alertSuccess = function (title, text) {
-   return  dialogs.notify(title,text);
-  };
 
   this.alertError = function (title, text) {
     return dialogs.error(text);

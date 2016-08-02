@@ -1,5 +1,5 @@
-angular.module('com.module.access').controller('SignInFormController',['$scope', '$location', 'toaster',  'AuthService', 'appConfig','authService','$state', '$stateParams', '$modal', '$cookies','CoreService',
-  function ($scope, $location, toaster,  AuthService, appConfig,authService,$state, $stateParams, $modal,$cookies,CoreService) {
+angular.module('com.module.access').controller('SignInFormController',['$scope', '$location', 'toaster',   'appConfig','AuthService','$state', '$stateParams', '$modal', '$cookies','CoreService',
+  function ($scope, $location, toaster, appConfig,AuthService,$state, $stateParams, $modal,$cookies,CoreService) {
   'use strict';
   $scope.logIn = function (user) {
     $scope.myPromise = AuthService.login({

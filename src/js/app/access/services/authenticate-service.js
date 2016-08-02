@@ -15,12 +15,13 @@ angular.module('com.module.access')
         url: appConfig.apiUrl+'/api/login',
         data: data
       }).success(function (data) {
-        
+
        var user = {
          token: data.authHeader,
          userDetails:data.user
        };
-       $cookies.userData = JSON.stringify(user);
+
+        $cookies.put('userData',JSON.stringify(user))
        deferred.resolve(user);
      }).error(function (error) {
        deferred.reject(error);

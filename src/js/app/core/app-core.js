@@ -9,5 +9,5 @@
  *
  *
  */
-angular.module ('com.module.core',['dialogs.main','toaster']);
+angular.module ('com.module.core',['toaster']);
 

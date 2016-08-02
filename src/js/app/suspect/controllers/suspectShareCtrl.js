@@ -5,7 +5,7 @@ angular.module('com.module.suspect')
   .controller('suspectShareCtrl',function ($scope,$modalInstance,$http,clinetId,$cookies,saleModuleService) {
     $scope.data = '';
     $scope.uId = '';
-    $scope.userId = JSON.parse($cookies.userData).userDetails._id;
+    $scope.userId = JSON.parse($cookies.get('userData')).userDetails._id;
     $scope.getNames = function (val) {
             return $http({
                     method: 'GET',

@@ -1687,7 +1687,7 @@
 }
 .data-button3
 {
-  background-color: #3499ff !important;color: white !important;margin-left: 15%;
+  background-color: #3499ff !important;color: white !important;/*margin-left: 15%;*/
   width: 130px;
   border-radius: 0;
   padding: 10px 24px;
@@ -2002,6 +2002,8 @@
   background-color: #15b929 !important;
 }
 .status-AOC{
+    width:12px !important;
+    height: 12px !important;
   background-color: orange!important;
 }
 

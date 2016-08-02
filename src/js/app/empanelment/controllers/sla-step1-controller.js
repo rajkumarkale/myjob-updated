@@ -20,16 +20,9 @@ angular.module('com.module.empanelment')
             })
         };
 
-        $scope.submitSLA = function () {
-            /*$scope.SLATracker.agreementAndImportantDates.agreementEndDate = $scope.SLATracker.agreementAndImportantDates.agreementEndDate.getTime();
-            $scope.SLATracker.agreementAndImportantDates.agreementStartDate = $scope.SLATracker.agreementAndImportantDates.agreementStartDate.getTime();
-            $scope.SLATracker.agreementAndImportantDates.invoiceSubmissionDate = $scope.SLATracker.agreementAndImportantDates.invoiceSubmissionDate.getTime();
-            $scope.SLATracker.agreementAndImportantDates.payoutDate = $scope.SLATracker.agreementAndImportantDates.payoutDate.getTime();
-
-            $scope.SLATracker.agreementAndImportantDates.payrollInputUploadDate = $scope.SLATracker.agreementAndImportantDates.payrollInputUploadDate.getTime();*/
+        $scope.submitSLA = function () { 
             $scope.saleObject.SLATracker = $scope.SLATracker;
-
-            $scope.savePromise = $scope.saleObject.update().then(function () {
+            $scope.myPromise = $scope.saleObject.update().then(function () {
                 $state.go('app.viewEmpanelment');
             });
         };
@@ -84,35 +77,38 @@ angular.module('com.module.empanelment')
 
 
         $scope.bgv = {
-            value: 'NO'
+            value: $scope.SLATracker.bgv ? 'YES':'NO'
         };
         $scope.OB = false;
-        $scope.SLATracker.bgv = '';
+     
         $scope.showOB = function () {
             if ($scope.bgv.value === 'NO') {
                 $scope.OB = false;
-                $scope.SLATracker.bgv = '';
+                $scope.SLATracker.bgv = null;
+                 $scope.OBData.s = '';
             } else {
                 $scope.OB = true;
-                $scope.OBData.selectedItem = '';
+                $scope.OBData = '';
             }
         }
+        $scope.showOB();
         $scope.insurance = {
-            value: 'NO'
+            value: $scope.SLATracker.insurance?'YES':'NO'
         };
         $scope.showInsurance = false;
-        $scope.SLATracker.insurance = null;
-        $scope.SLATracker.gpa = null;
+        //$scope.SLATracker.insurance = null;
+        //$scope.SLATracker.gpa = null;
         $scope.showIns = function () {
             if ($scope.insurance.value === 'NO') {
                 $scope.showInsurance = false;
                 $scope.SLATracker.insurance = null;
                 $scope.SLATracker.gpa = null;
-                $scope.SLATracker.familiyAndIndividual=null;
-            } else {
-                $scope.showInsurance = true;
 
+                
+            } else {
+                $scope.showInsurance = true  
             }
         }
+        $scope.showIns();
 }]);
 

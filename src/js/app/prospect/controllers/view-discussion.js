@@ -1,8 +1,9 @@
 angular.module('com.module.prospect')
 .controller('viewDiscussionCtrl',['$scope','possibilityCreateService','discussionService','$cookies','$modal','$stateParams','saleModuleService',function($scope,possibilityCreateService,discussionService,$cookies,$modal,$stateParams,saleModuleService){
     $scope.data=discussionService.getData();
-    $scope.userId=JSON.parse($cookies.get('userData')).userDetails._id;
-    $scope.showAddButton=($stateParams.status===$scope.data.stage);
+
+    $scope.userId=JSON.parse($cookies.userData).userDetails._id;
+    $scope.showAddButton=($stateParams.status===$scope.data.stage && $scope.data.permission!=='VIEW');
     $scope.sortType='timeOfDiscussion';
     $scope.reverse=true;
     $scope.showDiscuss=false;

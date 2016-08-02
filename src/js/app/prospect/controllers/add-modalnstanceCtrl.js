@@ -11,6 +11,7 @@ angular.module('com.module.prospect')
         $scope.discussion = new DiscussionModel({});
         $scope.status.selectedItem='';
 
+      //watch on file upload
     $scope.uploadFiles=[];
             $scope.$watch('files', function() {
             $scope.upload($scope.files);
@@ -51,7 +52,7 @@ angular.module('com.module.prospect')
               }
 
               else{
-                CoreService.alertInfo('ERROR', 'Supported file formats are Docs & PNG');
+                CoreService.toastError('ERROR', 'Supported file formats are Docs & PNG');
                 document.getElementById("inputText").value = "";
               }
         };

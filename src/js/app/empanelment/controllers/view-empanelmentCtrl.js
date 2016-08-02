@@ -14,9 +14,11 @@ angular.module('com.module.empanelment')
         var headerArr = ["LegalEntity", "BusinessUnit", "Commercial Model", "Agreement Start Date", "Agreement Tenure", "Business Vertical"];
         return headerArr;
     };
-    $scope.openDiscussions = function (empanelment,status) {
+    $scope.openDiscussions = function (empanelment, status) {
         discussionService.setData(empanelment);
-        $state.go('app.viewDiscussions',{status:status});
+        $state.go('app.viewDiscussions', {
+            status: status
+        });
     };
     $scope.filteredRows = [];
     $scope.sortType = 'client.legalName';
@@ -51,20 +53,18 @@ angular.module('com.module.empanelment')
         }).then(function (response) {
             console.log("possible", response);
             $scope.data.empnelments = response;
-          for (var i = 0; i <= $scope.data.empnelments.length; i++) {
-            var excelData = {
-              "LegalEntity": $scope.data.empnelments[i].client.legalName,
-              "Business_Unit": $scope.data.empnelments[i].client.businessUnit,
-             /* "commercial_model": $scope.data.empnelments[i].SLATracker.pricing.mode,
-              "Agreement_stratDate": $scope.data.empnelments[i].SLATracker.agreementAndImportantDates.agreementStartDate?
-                $scope.data.empnelments[i].SLATracker.agreementAndImportantDates.agreementStartDate:'--',
-              /!*"Agreement_stratDate": $scope.data.empnelments[i].SLATracker.agreementAndImportantDates.agreementStartDate,
-              "Agreement_Tenure": $scope.data.empnelments[i].SLATracker.agreementAndImportantDates.agreementStartDate,*!/*/
-              "Business_Vertical": $scope.data.empnelments[i].client.vertical
-            };
-            $scope.empanelmentCsvdata.push(excelData);
+            for (var i = 0; i <= $scope.data.empnelments.length; i++) {
+                var excelData = {
+                    "LegalEntity": $scope.data.empnelments[i].client.legalName,
+                    "Business_Unit": $scope.data.empnelments[i].client.businessUnit,
+                    "commercial_model": $scope.data.empnelments[i].pricing ? $scope.data.empnelments[i].pricing.mode : '--',
+                    "Agreement_stratDate": $scope.data.empnelments[i].SLATracker ? $filter('date')($scope.data.empnelments[i].SLATracker.agreementAndImportantDates.agreementStartDate, 'dd/MM/yyyy') : '--',
+                    "Agreement_Tenure": $scope.data.empnelments[i].SLATracker ?$filter('date')($scope.data.empnelments[i].SLATracker.agreementAndImportantDates.agreementEndDate, 'dd/MM/yyyy') : '--',
+                    "Business_Vertical": $scope.data.empnelments[i].client.vertical
+                };
+                $scope.empanelmentCsvdata.push(excelData);
 
-          }
+            }
         });
 
     };

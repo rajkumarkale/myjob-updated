@@ -11,6 +11,7 @@ angular.module('com.module.prospect')
         $scope.showAddReq = false;
         $scope.lostDisable=false;
         $scope.blurLost=false;
+    
         if ($stateParams.prospect) {
             $scope.saleObject = $stateParams.prospect;
 
@@ -20,6 +21,7 @@ angular.module('com.module.prospect')
         };
         $scope.closureDate='';
         $scope.requirement = new RequirementModel({});
+        
         $scope.submit = function () {
             $scope.myPromise = $scope.saleObject.update().then(function () {
                 $state.go('app.viewProspect');
@@ -233,6 +235,8 @@ angular.module('com.module.prospect')
       $scope.$watch('$stateParams.prospect.prospect',function(k,v){
         if(k==='LOST' || k==='WON'){
           $scope.blurLost=true;
+        }else{
+           $scope.blurLost=false; 
         }
       });
   }]);
